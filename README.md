@@ -1,6 +1,6 @@
 ## Information
 
-<img src="https://github.com/igorjoxa1118/Tokio_night/blob/main/screenshots/Screen.png?raw=true" alt="Rice Showcase" align="right" width="400px">
+<img src="https://github.com/igorjoxa1118/NeoCity/blob/main/screenshots/Screen.png?raw=true" alt="Rice Showcase" align="right" width="400px">
 
 - **OS:** [Garuda Linux](https://garudalinux.org/)
 - **WM:** [i3-gaps](https://github.com/Airblader/i3)
@@ -113,7 +113,7 @@ $${\color{lightgreen}Необходимые \space условия \space пут�
   <summary>Открой</summary>
 
 ```python
-exec_always --no-startup-id "$HOME/.config/i3/polybar/Tokio_night/launch.sh"
+exec_always --no-startup-id "$HOME/.config/i3/polybar/NeoCity/launch.sh"
 ```
 
 ```python
@@ -165,10 +165,10 @@ $${\color{lightgreen}Что \space еще \space ?}$$
 > Открыть плеер, нажать ":" и вставить это:
 
 ```python
-colorscheme Tokio_night
+colorscheme NeoCity
 ```
 
-4. Ссылка на тему [Firefox](https://addons.mozilla.org/en-US/firefox/addon/tokio_night/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+4. Ссылка на тему [Firefox](https://addons.mozilla.org/en-US/firefox/addon/NeoCity/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 
 5. Плеер mpv умеет искать треки и загружать музыкальный плейлист из Youtube. Иконка присутствует на polybar
 
