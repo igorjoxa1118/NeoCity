@@ -1,0 +1,126 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "version": 2,
+    "final_space": true,
+    "blocks": [
+      {
+        "type": "prompt",
+        "alignment": "left",
+        "segments": [
+          {
+            "type": "root",
+            "style": "plain",
+            "foreground": "#BDE6FB",
+            "background": "#000000",
+            "template": " ⚡"
+          },
+          {
+            "type": "os",
+            "style": "plain",
+            "foreground": "#fafafa",
+            "background": "#22172d",
+            "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+            "properties": {
+              "alpine": "\uf300",
+              "arch": "\uf303",
+              "centos": "\uf304",
+              "debian": "\uf306",
+              "elementary": "\uf309",
+              "fedora": "\uf30a",
+              "gentoo": "\uf30d",
+              "linux": "\ue712",
+              "macos": "\ue711",
+              "manjaro": "\uf312",
+              "mint": "\uf30f",
+              "opensuse": "\uf314",
+              "raspbian": "\uf315",
+              "ubuntu": "\uf31c",
+              "windows": "\ue62a",
+              "wsl": "\ue712"
+            }
+          },
+          {
+            "type": "path",
+            "style": "plain",
+            "foreground": "#000000",
+            "background": "#BDE6FB",
+            "template": " {{ .Path }} ",
+            "properties": {
+              "folder_icon": "\ue5fe",
+              "folder_separator_icon": "<transparent> \ue0bd </>",
+              "home_icon": "\uf7db",
+              "style": "agnoster_short"
+            }
+          },
+          {
+            "type": "git",
+            "style": "plain",
+            "foreground": "#000000",
+            "background": "#BDE6FB",
+            "template": "<#000000>\ue0b1 </>{{ .HEAD }}{{ if .Staging.Changed }}<#FF6F00> \uf046 {{ .Staging.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
+            "properties": {
+              "fetch_stash_count": true,
+              "fetch_status": true
+            }
+          },
+          {
+            "type": "executiontime",
+            "style": "diamond",
+            "foreground": "#000000",
+            "background": "#BDE6FB",
+            "trailing_diamond": "\ue0b0",
+            "template": "<#000000>\ue0b1 </>{{ .FormattedMs }}s ",
+            "properties": {
+              "style": "dallas",
+              "threshold": 0
+            }
+          }
+        ]
+      },
+      {
+        "type": "prompt",
+        "alignment": "right",
+        "segments": [
+          {
+            "type": "session",
+            "style": "diamond",
+            "foreground": "#000000",
+            "background": "#BDE6FB",
+            "leading_diamond": "\ue0c5",
+            "template": " {{ if .SSHSession }}\uf817 {{ end }}{{ .UserName }}<transparent> / </>{{ .HostName }}"
+          },
+          {
+            "type": "time",
+            "style": "diamond",
+            "foreground": "#000000",
+            "background": "#BDE6FB",
+            "trailing_diamond": "\ue0c5",
+            "template": "<#000000> \ue31e\uf0fb </>{{ .CurrentDate | date .Format }} ",
+            "properties": {
+              "time_format": "3:04:05 PM"
+            }
+          }
+        ]
+      },
+      {
+        "type": "prompt",
+        "alignment": "left",
+        "segments": [
+          {
+            "type": "exit",
+            "style": "plain",
+            "foreground": "#BDE6FB",
+            "foreground_templates": [
+              "{{ if gt .Code 0 }}#ff0000{{ end }}"
+            ],
+            "template": "\ufb0c ",
+            "properties": {
+              "always_enabled": true
+            }
+          }
+        ],
+        "newline": true
+      }
+    ]
+  }
+  

@@ -1,0 +1,169 @@
+/* 
+
+    Copyright © 2022 To Cyb3rTh1eveZ																	 
+
+     ██████╗██╗   ██╗██████╗ ██████╗ ██████╗ ████████╗██╗  ██╗ ██╗███████╗██╗   ██╗███████╗███████╗	 
+    ██╔════╝╚██╗ ██╔╝██╔══██╗╚════██╗██╔══██╗╚══██╔══╝██║  ██║███║██╔════╝██║   ██║██╔════╝╚══███╔╝     
+    ██║      ╚████╔╝ ██████╔╝ █████╔╝██████╔╝   ██║   ███████║╚██║█████╗  ██║   ██║█████╗    ███╔╝      
+    ██║       ╚██╔╝  ██╔══██╗ ╚═══██╗██╔══██╗   ██║   ██╔══██║ ██║██╔══╝  ╚██╗ ██╔╝██╔══╝   ███╔╝       
+    ╚██████╗   ██║   ██████╔╝██████╔╝██║  ██║   ██║   ██║  ██║ ██║███████╗ ╚████╔╝ ███████╗███████╗     
+     ╚═════╝   ╚═╝   ╚═════╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═╝╚══════╝  ╚═══╝  ╚══════╝╚══════╝     
+
+    Copyright (C) Mahmoud Mohamed (00xWolf)  <https://github.com/mmsaeed509>								 
+    LICENSE © GNU-GPL3
+
+ */
+
+configuration {
+    font:                           "Iosevka Term Regular 12";
+    show-icons:                     true;
+    display-drun: 					"";
+    drun-display-format:            "{icon} {name}";
+    disable-history:                false;
+	click-to-exit: 					true;
+}
+
+@import "colors.rasi"
+
+window {
+    transparency:                   "real";
+    background-color:               @background-alt;
+    text-color:                     @selected;
+    border:                  		1px;
+    border-color:                  	@border;
+    border-radius:                  10px;
+    width:                          355px;
+    location:                       center;
+    anchor:                         center;
+    x-offset:                       700;
+    y-offset:                       -425;
+}
+
+prompt {
+    enabled: 						true;
+	margin: 						0px 0px 0px 10px;
+    padding:    					6px 6px 6px 6px;
+	background-color: 				@border;
+	text-color: 					@selected;
+    border:                  		1px;
+    border-color:                  	@background;
+    border-radius:                  5px;
+}
+
+textbox-prompt-colon {
+	expand: 						false;
+	str: 							"﬉";
+    border-radius:                  5px;
+    background-color:               @background;
+    text-color:                     @background-alt;
+    padding:    					6px 10px 6px 10px;
+	font:							"Iosevka Nerd Font 10";
+}
+
+entry {
+    background-color:               @background-alt;
+    text-color:                     @background-alt;
+    placeholder-color:              @background-alt;
+    placeholder:                    "";
+    expand:                         true;
+    horizontal-align:               0;
+    blink:                          false;
+    padding:                        6px;
+}
+
+inputbar {
+	children: 						[ textbox-prompt-colon, prompt ];
+    spacing:                        0;
+    background-color:               @background-alt;
+    text-color:                     @selected;
+    border:                  		0px 0px 0px 0px;
+    border-radius:                  5px;
+    border-color:                  	@border;
+    expand:                         false;
+    margin:                         0px 0px 0px 0px;
+    padding:                        0px;
+    position:                       center;
+}
+
+case-indicator {
+    background-color:               @background-alt;
+    text-color:                     @selected;
+    spacing:                        0;
+}
+
+
+listview {
+    background-color:               @background-alt;
+    columns:                        1;
+    lines:							5;
+    spacing:                        10px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         horizontal;
+}
+
+mainbox {
+    background-color:               @background-alt;
+    children:                       [ inputbar, listview ];
+    spacing:                       	10px;
+    padding:                        10px;
+}
+
+element {
+    background-color:               @background-alt;
+    text-color:                     @selected;
+    orientation:                    horizontal;
+    border:                  		1px;
+    border-radius:                  5px;
+    border-color:                  	@border;
+    padding:                        23.5px 25px 23.5px 25px;
+}
+
+element-icon {
+    background-color: 				inherit;
+    text-color:       				inherit;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    size:                           0px;
+    border:                         0px;
+}
+
+element-text {
+    background-color: 				inherit;
+    text-color:       				inherit;
+	font:							"feather 14";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         0px 0px 0px 0px;
+}
+
+element selected {
+    background-color:               @background;
+    text-color:                     @background-alt;
+    border:                  		0px;
+    border-radius:                  0px;
+    border-color:                  	@border;
+}
+
+element.active,
+element.selected.urgent {
+  background-color: @active;
+  text-color: @background-alt;
+  border-color: @active;
+}
+
+element.selected.urgent {
+  border-color: #bb9af7;
+}
+
+element.urgent,
+element.selected.active {
+  background-color: @off;
+  text-color: @background-alt;
+  border-color: @off;
+}
+
+element.selected.active {
+  border-color: @border;
+}

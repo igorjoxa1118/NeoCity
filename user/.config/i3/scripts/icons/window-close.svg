@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48px" height="48px" viewBox="0 0 48 48" version="1.1">
+<defs>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="58.84" y1="5.34223" x2="5.2673" y2="58.4691" >
+<stop offset="0" style="stop-color:rgb(99.607843%,47.45098%,43.921569%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(86.27451%,19.607843%,50.980392%);stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="40.9467" y1="23.1141" x2="23.0891" y2="40.823" >
+<stop offset="0" style="stop-color:rgb(99.607843%,47.45098%,43.921569%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(86.27451%,19.607843%,50.980392%);stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="linear2" gradientUnits="userSpaceOnUse" x1="40.9467" y1="23.1141" x2="23.0891" y2="40.823" >
+<stop offset="0" style="stop-color:rgb(99.607843%,47.45098%,43.921569%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(86.27451%,19.607843%,50.980392%);stop-opacity:1;"/>
+</linearGradient>
+</defs>
+<g id="surface1">
+<path style="fill:none;stroke-width:8;stroke-linecap:butt;stroke-linejoin:miter;stroke:url(#linear0);stroke-miterlimit:10;" d="M 59 32 C 59 17.09375 46.90625 5 32 5 C 17.09375 5 5 17.09375 5 32 C 5 46.90625 17.09375 59 32 59 C 46.90625 59 59 46.90625 59 32 Z M 59 32 " transform="matrix(0.75,0,0,0.75,0,0)"/>
+<path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:url(#linear1);stroke-miterlimit:4;" d="M 41 41 L 23 23 " transform="matrix(0.75,0,0,0.75,0,0)"/>
+<path style="fill:none;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke:url(#linear2);stroke-miterlimit:4;" d="M 23 41 L 41 23 " transform="matrix(0.75,0,0,0.75,0,0)"/>
+</g>
+</svg>

@@ -1,0 +1,24 @@
+filetype: html
+
+detect:
+  filename: "\\.html?$"
+
+rules:
+  - statement: "</[a-zA-Z0-9]+>"
+  - type: "<!DOCTYPE html>"
+  - statement:
+      start: "<[a-zA-Z0-9\\-_]"
+      end: ">"
+      rules:
+        - function: "[a-zA-Z0-9\\-_]+\\s?="
+        - operator: "[=]"
+        - string:
+            start: "\""
+            skip: "\\\\."
+            end: "\""
+            rules: []
+
+  - comment:
+      start: "<!--"
+      end: "-->"
+      rules: []

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CONKEWW=$(pidof eww)
+
+if [[ ! ${CONKEWW} ]]; then
+  eww --config $HOME/.config/conkeww/ open conkeww-main
+else
+  kill ${CONKEWW}
+fi

@@ -1,0 +1,42 @@
+* {
+  bg-color: #171D20;
+  selected: #BDE6FB;
+  text: #BDE6FB;
+
+  background-color: transparent;
+  text-color: @text;
+}
+
+window {
+  width: 30%;
+  height: 35%;
+}
+
+mainbox {
+  background-color: @bg-color;
+  padding: 0.5em;
+}
+
+element {
+  padding: 0.3em;
+  border-radius: 3px;
+}
+
+element selected {
+  background-color: @selected;
+}
+
+element-icon {
+  size: 16;
+  margin: 0 5 0 0;
+}
+
+button {
+  padding: 0.2em 1em;
+}
+
+button selected {
+  padding: 0.1em;
+  border-radius: 3px;
+  background-color: @selected;
+}
