@@ -7,35 +7,35 @@
  */
    
   --z0mbi3-bg: #16161e;
-  --z0mbi3-icon-color: #bb9af7;
+  --z0mbi3-icon-color: #3EB7FF;
   --z0mbi3-nav-toolbar-padding: 8px;
   --z0mbi3-sidebar-bg: var(--z0mbi3-bg);
-  --z0mbi3-sidebar-color: #f7768e;
+  --z0mbi3-sidebar-color: #FF5FED;
   --z0mbi3-tab-border-radius: 0px;
-  --z0mbi3-tab-color: #2ac3de;
+  --z0mbi3-tab-color: #8787ff;
   --z0mbi3-tab-font-family: "Iosevka Term";
   --z0mbi3-tab-font-size: 12pt;
   --z0mbi3-tab-font-weight: 600;
   --z0mbi3-tab-height: 42px;
-  --z0mbi3-tab-pinned-bg: #2ac3de;
+  --z0mbi3-tab-pinned-bg: #8787ff;
   --z0mbi3-tab-selected-bg: #69323C;
   --z0mbi3-tab-soundplaying-bg: #e95c39;
-  --z0mbi3-urlbar-color: #f7768e;
-  --z0mbi3-urlbar-focused-color: #2ac3de;
+  --z0mbi3-urlbar-color: #FF5FED;
+  --z0mbi3-urlbar-focused-color: #8787ff;
   --z0mbi3-urlbar-font-family: "Iosevka Term";
   --z0mbi3-urlbar-font-size: 12pt;
   --z0mbi3-urlbar-font-weight: 800;
-  --z0mbi3-urlbar-results-color: #2ac3de;
+  --z0mbi3-urlbar-results-color: #8787ff;
   --z0mbi3-urlbar-results-font-family: "Iosevka Term";
   --z0mbi3-urlbar-results-font-size: 12pt;
   --z0mbi3-urlbar-results-font-weight: 700;
-  --z0mbi3-urlbar-results-url-color: #2ac3de;
+  --z0mbi3-urlbar-results-url-color: #8787ff;
 
   /* Overriden Firefox variables*/
   --toolbar-bgcolor: var(--z0mbi3-bg) !important;
   --lwt-sidebar-background-color: var(--z0mbi3-bg) !important;
   --tab-border-radius: 0 !important;
-  --lwt-toolbarbutton-icon-fill-attention: #bb9af7 !important;
+  --lwt-toolbarbutton-icon-fill-attention: #3EB7FF !important;
   --toolbarbutton-icon-fill-attention: var(--lwt-toolbarbutton-icon-fill-attention) !important;
 }
 
@@ -46,7 +46,7 @@
 
 #PlacesToolbar menupopup[placespopup="true"] {
   --arrowpanel-background: var(--z0mbi3-bg) !important;
-  --arrowpanel-color: #bb9af7 !important;
+  --arrowpanel-color: #3EB7FF !important;
 }
 
 .tab-background[selected="true"] {
@@ -273,14 +273,14 @@ toolbarbutton.bookmark-item:hover,
 
 /*Darken panels to match theme*/
 .panel-subview-body,#appMenu-zoomReset-button,.panel-mainview,.panel-subviews {
-  color: #bb9af7 !important;
+  color: #3EB7FF !important;
   background: var(--url-and-searchbar-background-color) !important;}
 .panel-subview-footer,[class^="PanelUI-"] {
-  color: #bb9af7 !important;
+  color: #3EB7FF !important;
   background: var(--toolbar-bgcolor) !important;}
 /*stops possible clashes with extension popups*/
 .webextension-popup-browser {
-  background: #bb9af7;
+  background: #3EB7FF;
 }
 
 /************************************/
