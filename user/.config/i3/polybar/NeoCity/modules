@@ -855,3 +855,12 @@ content-background = ${color.background_alfa}
 content-foreground = ${color.neocity_orange}
 content-padding = 0
 click-left = /usr/bin/kodi &
+
+[module/tor]
+type = custom/text
+content = "鷺  "
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /opt/tor-browser/Browser/firefox &
