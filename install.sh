@@ -81,9 +81,10 @@ dependencias=(base-devel yad cmus jgmenu rsync mpv jq git socat mpd polkit-gnome
               caja polybar rofi dunst xdg-user-dirs engrampa bc nitrogen picom yt-dlp \
               fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-autosuggestions \
               zsh-history-substring-search starship bluez-utils bluez-tools bluez-plugins bluez-libs bluez blueman zziplib zip xarchiver unzip unarj \
-              unarchiver p7zip libzip karchive gnome-autoar file-roller engrampa cpio arj perl libarchive)
+              unarchiver p7zip libzip karchive gnome-autoar file-roller engrampa cpio arj perl libarchive telegram-desktop code discord gimp blender krita ristretto \
+              kdenlive kodi kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform hypnotix )
 
-dependencias_yay=(cava zscroll-git ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar zenity-gtk3 eww musikcube i3lock-color pamac-aur kazam)
+dependencias_yay=(cava zscroll-git ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar zenity-gtk3 eww musikcube i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple)
 
 if [ ! -f /usr/bin/firefox ];then 
  sudo pacman -S firefox
