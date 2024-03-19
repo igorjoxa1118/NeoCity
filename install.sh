@@ -82,9 +82,15 @@ dependencias=(base-devel yad cmus jgmenu rsync mpv jq git socat mpd polkit-gnome
               fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-autosuggestions \
               zsh-history-substring-search starship bluez-utils bluez-tools bluez-plugins bluez-libs bluez blueman zziplib zip xarchiver unzip unarj \
               unarchiver p7zip libzip karchive gnome-autoar file-roller engrampa cpio arj perl libarchive telegram-desktop code discord gimp blender krita ristretto \
-              kdenlive kodi kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform hypnotix )
+              kdenlive kodi kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2 qemu-ui-spice-core qemu-ui-spice-app \
+              qemu-ui-sdl qemu-ui-opengl qemu-ui-gtk qemu-ui-dbus qemu-ui-curses qemu-system-x86-firmware qemu-system-x86 qemu-img qemu-hw-usb-smartcard \
+              qemu-hw-usb-redirect qemu-hw-usb-host qemu-hw-display-virtio-vga-gl qemu-hw-display-virtio-vga qemu-hw-display-virtio-gpu-pci-gl \
+              qemu-hw-display-virtio-gpu-pci qemu-hw-display-virtio-gpu-gl qemu-hw-display-virtio-gpu qemu-hw-display-qxl qemu-desktop qemu-common \
+              qemu-chardev-spice qemu-block-ssh qemu-block-nfs qemu-block-dmg qemu-base qemu-audio-spice qemu-audio-sdl qemu-audio-pipewire qemu-audio-pa \
+              qemu-audio-oss qemu-audio-jack qemu-audio-dbus qemu-audio-alsa libvirt virt-manager-meta )
 
-dependencias_yay=(cava zscroll-git ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar zenity-gtk3 eww musikcube i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple)
+dependencias_yay=(cava zscroll-git ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
+                  zenity-gtk3 eww musikcube i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
 
 if [ ! -f /usr/bin/firefox ];then 
  sudo pacman -S firefox
