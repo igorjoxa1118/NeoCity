@@ -88,7 +88,7 @@ dependencias=(base-devel yad cmus jgmenu rsync mpv jq git socat mpd polkit-gnome
               qemu-hw-display-virtio-vga-gl qemu-hw-display-virtio-vga qemu-hw-display-virtio-gpu-pci-gl \
               qemu-hw-display-virtio-gpu-pci qemu-hw-display-virtio-gpu-gl qemu-hw-display-virtio-gpu qemu-hw-display-qxl qemu-desktop qemu-common \
               qemu-chardev-spice qemu-block-ssh qemu-block-nfs qemu-block-dmg qemu-base qemu-audio-spice qemu-audio-sdl qemu-audio-pipewire qemu-audio-pa \
-              qemu-audio-oss qemu-audio-jack qemu-audio-dbus qemu-audio-alsa libvirt virt-manager-meta qemu virt-viewer dnsmasq bridge-utils openbsd-netcat ebtables iptables libguestfs)
+              qemu-audio-oss qemu-audio-jack qemu-audio-dbus qemu-audio-alsa libvirt qemu virt-viewer dnsmasq bridge-utils openbsd-netcat ebtables iptables libguestfs)
 
 dependencias_yay=(cava zscroll-git ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
                   zenity-gtk3 eww musikcube i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
