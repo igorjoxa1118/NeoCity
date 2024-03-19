@@ -199,7 +199,6 @@ clear
 
 func_install_dots() {
 logo "Install dotfiles"
-sudo cp -rf "$pwd"/etc/libvirtd.conf /etc
 cp -rf "$pwd"/user/.* "$HOME"
 sed -i "s/vir0id/${user}/g" "$HOME/.config/nitrogen/bg-saved.cfg"
 sed -i "s/vir0id/${user}/g" "$HOME/.config/nitrogen/nitrogen.cfg"
@@ -323,18 +322,18 @@ clear
 
 logo "Enabling services"
 
-### --- Проверка, включена ли служба mpd на глобальном (системном) уровне. --- ###
+### --- Проверка, включена ли служб на глобальном (системном) уровне. --- ###
 
 	if systemctl is-enabled --quiet mpd.service; then
 		echo -e "${LIGHTBLUE}Disabling and stopping the global mpd service"
 		sudo systemctl stop mpd.service
 		sudo systemctl disable mpd.service
+    sudo usermod -a -G libvirt $(whoami)
+    newgrp libvirt
 	fi
 
 echo -e "${ORANGE}Enabling and starting the user-level mpd service"
 sudo systemctl enable --now mpd.service
-sudo usermod -a -G libvirt $(whoami)
-newgrp libvirt
 echo -e "${LIGHTGREEN}Done!!"
 sleep 2
 clear
