@@ -227,8 +227,8 @@ logo "Power supply install"
 ad=$(ls /sys/class/power_supply/ | awk "NR==1 { print $2 }" | grep A)
 bat=$(ls /sys/class/power_supply/ | awk "NR==2 { print $2 }" | grep B)
 
-sed -i "s/AC/${ad}/g" "$HOME"/.config/i3/rices/emilia/modules
-sed -i "s/BAT0/${bat}/g" "$HOME"/.config/i3/rices/emilia/modules
+sed -i "s/AC/${ad}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
+sed -i "s/BAT0/${bat}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
 echo -e "${PURPLE}Power supply install done!"
 sleep 2
 clear
@@ -242,22 +242,22 @@ wl_int=$(ip -o link show | sed -rn '/^[0-9]+: wl/{s/.: ([^:]*):.*/\1/p}')
 
 ### --- Проверка проводных сетевых интерфейсов. Добавляем интерфейсы в конфиги. --- ###
 if [ ! -z "$en_int" ]; then
-sed -i "s/enp59s0/${en_int}/g" "$HOME"/.config/i3/rices/emilia/modules
+sed -i "s/enp59s0/${en_int}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
 else
   if [ ! -z "$et_int" ]; then
-  sed -i "s/enp59s0/${et_int}/g" "$HOME"/.config/i3/rices/emilia/modules
+  sed -i "s/enp59s0/${et_int}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
   else
   read -p "What is you Wired connection interface?(Example: eth0, enp59s0): " et_int_custom
-  sed -i "s/enp59s0/${et_int_custom}/g" "$HOME"/.config/i3/rices/emilia/modules
+  sed -i "s/enp59s0/${et_int_custom}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
   fi
 fi
 
 ### --- Проверка безпроводных сетевых интерфейсов. Добавляем интерфейсы в конфиги. --- ###
 if [ ! -z "$wl_int" ]; then
-sed -i "s/wlp0s20f3/${wl_int}/g" "$HOME"/.config/i3/rices/emilia/modules
+sed -i "s/wlp0s20f3/${wl_int}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
 else
 read -p "What is you Wireless connection interface?(Example: wlan0, wlp0s20f3): " wl_int_custom
-sed -i "s/wlp0s20f3/${wl_int_custom}/g" "$HOME"/.config/i3/rices/emilia/modules
+sed -i "s/wlp0s20f3/${wl_int_custom}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
 fi
 }
 echo -e "${LIGHTCYAN}Connection interfaces install done!"
@@ -312,7 +312,7 @@ nvidia_detect()
         rm -rf "$HOME/.config/i3/rices/emilia/config.ini"
         cd "$pwd"/not_nvidia_polybar || exit
         cp -R config.ini "$HOME/.config/i3/rices/emilia/"
-        sed -i "s/nvidia_wmi_ec_backlight/${blacklight}/g" "$HOME"/.config/i3/rices/emilia/modules
+        sed -i "s/nvidia_wmi_ec_backlight/${blacklight}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
         echo -e "${CYAN}Nvidia card no found!"
     fi
 }
