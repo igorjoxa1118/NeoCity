@@ -76,16 +76,23 @@ clear
 
                                           ######### -------------- Зависимости ------------------########
 
-dependencias=(base-devel yad cmus jgmenu rsync mpv jq git socat mpd polkit-gnome stalonetray kitty lsd ranger \
-              micro blueman mousepad ristretto firefox thunar thunar-volman thunar-media-tags-plugin thunar-archive-plugin \
-              caja polybar rofi dunst xdg-user-dirs engrampa bc nitrogen picom yt-dlp \
-              fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-autosuggestions \
-              zsh-history-substring-search starship bluez-utils bluez-tools bluez-plugins bluez-libs bluez blueman zziplib zip xarchiver unzip unarj \
-              unarchiver p7zip libzip karchive gnome-autoar file-roller engrampa cpio arj perl libarchive telegram-desktop code discord gimp blender krita ristretto \
-              kdenlive kodi kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2)
+dependencias=(base-devel dunst imagemagick \
+libwebp maim mpc neovim ncmpcpp npm pamixer \
+papirus-icon-theme \
+redshift rustup ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
+ttf-joypixels eww ttf-terminus-nerd ueberzug webp-pixbuf-loader xclip \
+xdo catppuccin-cursors-mocha ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common \
+ttf-nerd-fonts-symbols-mono yad cmus jgmenu rsync mpv jq git socat mpd polkit-gnome \
+stalonetray kitty lsd ranger micro blueman mousepad ristretto firefox thunar thunar-volman \
+thunar-media-tags-plugin thunar-archive-plugin polybar rofi xdg-user-dirs engrampa bc \
+nitrogen picom yt-dlp fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-autosuggestions \
+zsh-history-substring-search starship bluez-utils bluez-tools bluez-plugins bluez-libs bluez \
+zziplib zip xarchiver unzip unarj unarchiver p7zip libzip karchive gnome-autoar file-roller \
+cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenlive kodi \
+kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2)
 
 dependencias_yay=(cava zscroll-git ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
-                  zenity-gtk3 eww musikcube i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
+zenity-gtk3 musikcube i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
 
 if [ ! -f /usr/bin/firefox ];then 
  sudo pacman -S firefox
