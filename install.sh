@@ -104,6 +104,7 @@ is_installed() {
   return $?
 }
 
+
                                           ########## ---------- Установка пакетов из стандартных репозиториев pacman ---------- ##########
 
 printf "%s%sChecking for required packages...%s\n" "${BLD}" "${CBL}" "${CNC}"
