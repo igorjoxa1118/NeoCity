@@ -6,7 +6,6 @@ include "$HOME/.config/i3/rules"
 include "$HOME/.config/i3/autostart"
 include "$HOME/.config/i3/colors"
 
-
 font pango:Iosevka Term Regular 12
 
 set $mod Mod4

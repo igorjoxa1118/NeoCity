@@ -1,0 +1,36 @@
+2024-04-26 07:14:19.912 [info] Getting Manifest... enkia.tokyo-night
+2024-04-26 07:14:20.064 [info] Installing extension: enkia.tokyo-night
+2024-04-26 07:14:21.187 [error] Could not load vsce-sign module Cannot find module '@vscode/vsce-sign'
+Require stack:
+- /usr/lib/code/out/bootstrap-amd.js
+- /usr/lib/code/out/bootstrap-fork.js
+2024-04-26 07:14:21.195 [info] Extension signature verification is not done: enkia.tokyo-night
+2024-04-26 07:14:21.239 [info] Extracted extension to file:///home/vir0id/.vscode-oss/extensions/enkia.tokyo-night-1.0.6-universal: enkia.tokyo-night
+2024-04-26 07:14:21.251 [info] Renamed to /home/vir0id/.vscode-oss/extensions/enkia.tokyo-night-1.0.6-universal
+2024-04-26 07:14:21.253 [info] Extracting extension completed. enkia.tokyo-night
+2024-04-26 07:14:21.270 [info] Extension installed successfully: enkia.tokyo-night
+2024-04-26 07:14:21.342 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/vir0id/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/vir0id/.vscode-oss/extensions/extensions.json.vsctmp'
+    at r.create (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:30080)
+    at a (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:30195)
+    at i.fb (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:36500)
+    at i.stat (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:28946)
+    at async $.stat (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:16092)
+    at async K.sb (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:108402)
+2024-04-26 07:28:54.166 [info] Getting Manifest... catppuccin.catppuccin-vsc
+2024-04-26 07:28:54.315 [info] Installing extension: catppuccin.catppuccin-vsc
+2024-04-26 07:28:55.244 [error] Could not load vsce-sign module Cannot find module '@vscode/vsce-sign'
+Require stack:
+- /usr/lib/code/out/bootstrap-amd.js
+- /usr/lib/code/out/bootstrap-fork.js
+2024-04-26 07:28:55.251 [info] Extension signature verification is not done: catppuccin.catppuccin-vsc
+2024-04-26 07:28:55.294 [info] Extracted extension to file:///home/vir0id/.vscode-oss/extensions/catppuccin.catppuccin-vsc-3.14.0-universal: catppuccin.catppuccin-vsc
+2024-04-26 07:28:55.306 [info] Renamed to /home/vir0id/.vscode-oss/extensions/catppuccin.catppuccin-vsc-3.14.0-universal
+2024-04-26 07:28:55.309 [info] Extracting extension completed. catppuccin.catppuccin-vsc
+2024-04-26 07:28:55.328 [info] Extension installed successfully: catppuccin.catppuccin-vsc
+2024-04-26 07:28:55.398 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/vir0id/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/vir0id/.vscode-oss/extensions/extensions.json.vsctmp'
+    at r.create (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:30080)
+    at a (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:53:30195)
+    at i.fb (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:36500)
+    at i.stat (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:28946)
+    at async $.stat (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:58:16092)
+    at async K.sb (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:104:108402)

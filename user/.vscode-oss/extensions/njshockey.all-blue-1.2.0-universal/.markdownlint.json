@@ -1,0 +1,6 @@
+{
+	"default": true,
+	"ul-indent": { "indent": 4 },
+	"no-hard-tabs": false,
+	"single-trailing-newline": true
+}

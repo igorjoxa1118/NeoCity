@@ -1,0 +1,57 @@
+{
+	"name": "Cooklang",
+	"displayName": "cooklang",
+	"description": "Cooklang syntax",
+	"version": "0.0.4",
+	"publisher": "dubadub",
+	"repository": "https://github.com/cooklang/CookVSCode",
+	"icon": "cooklang.png",
+	"engines": {
+		"vscode": "^1.50.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"configurationDefaults": {
+			"[cook]": {
+				"editor.wordWrap": "on",
+				"editor.quickSuggestions": false
+			}
+		},
+		"languages": [
+			{
+				"id": "cook",
+				"aliases": [
+					"cook",
+					"cooklang"
+				],
+				"extensions": [
+					".cook"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "cook",
+				"scopeName": "source.cook",
+				"path": "./syntaxes/cook.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"installedTimestamp": 1677768273856,
+		"id": "078d8a48-9e4c-444d-b344-853baf08a9ee",
+		"publisherDisplayName": "dubadub",
+		"publisherId": "3fc161c3-05ad-4d28-bedd-2a525edf0161",
+		"targetPlatform": "universal",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"preRelease": false
+	},
+	"devDependencies": {
+		"vsce": "^2.5.1"
+	}
+}

@@ -1,0 +1,37 @@
+2024-04-26 06:01:28.336 [error] Error: The editor could not be opened because the file was not found.
+    at R.gc (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:28131)
+    at async R.setInput (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:27187)
+    at async r.S (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:24784)
+    at async r.L (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:23348)
+    at async r.openEditor (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:22337)
+    at async vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2476:24162
+2024-04-26 06:01:28.417 [info] Started local extension host with pid 67328.
+2024-04-26 06:01:31.278 [info] [perf] Render performance baseline is 62ms
+2024-04-26 06:01:44.693 [error] Error: The editor could not be opened because the file was not found.
+    at R.gc (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:28131)
+    at async R.setInput (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:27187)
+    at async r.S (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:24784)
+    at async r.L (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:23348)
+    at async r.openEditor (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:22337)
+    at async vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2476:24162
+2024-04-26 06:01:45.606 [error] Error: The editor could not be opened because the file was not found.
+    at R.gc (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:28131)
+    at async R.setInput (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:27187)
+    at async r.S (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:24784)
+    at async r.L (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:23348)
+    at async r.openEditor (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:22337)
+    at async vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2476:24162
+2024-04-26 06:01:46.660 [error] Error: The editor could not be opened because the file was not found.
+    at R.gc (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:28131)
+    at async R.setInput (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:27187)
+    at async r.S (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:24784)
+    at async r.L (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:23348)
+    at async r.openEditor (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:22337)
+    at async vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2476:24162
+2024-04-26 06:01:48.024 [error] Error: The editor could not be opened because the file was not found.
+    at R.gc (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:28131)
+    at async R.setInput (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:27187)
+    at async r.S (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:24784)
+    at async r.L (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:23348)
+    at async r.openEditor (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:22337)
+    at async vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2476:24162

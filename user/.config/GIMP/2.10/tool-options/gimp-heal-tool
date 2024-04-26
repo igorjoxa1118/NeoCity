@@ -1,0 +1,11 @@
+# GIMP gimp-heal-tool options
+
+(foreground (color-rgb 0 0.69411764705882351 0.62352941176470589))
+(background (color-rgb 0.61176470588235299 0.37254901960784315 1))
+(brush "2. Hardness 050")
+(dynamics "Dynamics Off")
+(palette "Предыдущие цвета")
+(brush-size 1)
+(brush-hardness 0.5)
+
+# end of gimp-heal-tool options

@@ -1,0 +1,12 @@
+================================================================================
+SESSION: 25 Apr 2024 09:06:22 +0300. Executing /usr/bin/krita /home/vir0id/.config/jgmenu/prepend.csv
+
+Krita Version: 5.2.2, Qt version compiled: 5.15.12, loaded: 5.15.13. Process ID: 1099591
+-- -- -- -- -- -- -- --
+25 Apr 2024 09:06:22 +0300: Style: fusion. Available styles: qt5ct-style, Windows, Fusion
+25 Apr 2024 09:06:23 +0300: Creating database from scratch (database didn't exist, new schema version: 0.0.17).
+25 Apr 2024 09:06:44 +0300: Importing text/csv to application/x-krita. Location: /home/vir0id/.config/jgmenu/prepend.csv. Real location: /home/vir0id/.config/jgmenu/prepend.csv. Batchmode: 0
+25 Apr 2024 09:06:44 +0300: Failed to load image from text/csv
+25 Apr 2024 09:06:44 +0300: Loading /home/vir0id/.config/jgmenu/prepend.csv failed: Неизвестная ошибка.
+25 Apr 2024 09:06:45 +0300: Loading canceled: .
+25 Apr 2024 09:06:46 +0300: CLOSING SESSION

@@ -1,0 +1,1 @@
+{Mesa/llvmpipe (LLVM 17.0.6, 256 bits)/4.5 (Core Profile) Mesa 24.0.5-arch1.1}=SUPPORTED

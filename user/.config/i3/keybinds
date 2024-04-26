@@ -151,7 +151,7 @@ bindsym $Mod+n scratchpad toggle
 
 #---------------------------------------------
 ## Клавиши для запуска приложений
-bindsym $mod+d exec --no-startup-id "$HOME/.config/i3/polybar/NeoCity/rofi/launchers/type-2/launcher.sh"
+bindsym $mod+d exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --menu"
 #bindsym $mod+Return exec --no-startup-id "xfce4-terminal --title term-tiling --hide-menubar"
 #bindsym $mod1+t exec --no-startup-id "xfce4-terminal --title floating"
 #bindsym $mod1+r exec --no-startup-id "xfce4-terminal --title float -e ranger"

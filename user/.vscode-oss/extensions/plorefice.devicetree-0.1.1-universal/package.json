@@ -1,0 +1,60 @@
+{
+	"name": "devicetree",
+	"displayName": "DeviceTree",
+	"description": "DeviceTree Language Support for Visual Studio Code",
+	"version": "0.1.1",
+	"icon": "images/icon.png",
+	"publisher": "plorefice",
+	"author": {
+		"name": "Pietro Lorefice"
+	},
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"homepage": "https://github.com/plorefice/vscode-devicetree",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/plorefice/vscode-devicetree.git"
+	},
+	"bugs": {
+		"url": "https://github.com/plorefice/vscode-devicetree/issues"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "dts",
+				"aliases": [
+					"DeviceTree",
+					"dts"
+				],
+				"extensions": [
+					".dts",
+					".dtsi",
+					".dtso"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "dts",
+				"scopeName": "source.dts",
+				"path": "./syntaxes/dts.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "a30c48dc-04fd-475f-9308-db7a0c1a612c",
+		"publisherId": "9751f406-588b-485d-931f-9531191923f5",
+		"publisherDisplayName": "plorefice",
+		"targetPlatform": "universal",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1677387283222,
+		"preRelease": false
+	}
+}

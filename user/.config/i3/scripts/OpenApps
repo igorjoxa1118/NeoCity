@@ -13,34 +13,40 @@ WIDGET_DIR="$HOME/.config/i3/eww"
 
 case "$1" in
     --menu)
-        rofi -show drun -theme "$HOME/.config/i3/rofi/launchers/type-3/style-2"
+        rofi -show drun -theme "$HOME"/.config/i3/scripts/Launcher.rasi 
         ;;
     --rice)
         RiceSelector
         ;;
     --terminal)
-        alacritty
+        Term --terminal
         ;;
     --floating)
-        alacritty --class FloaTerm,FloaTerm -o window.dimensions.lines=22 window.dimensions.columns=90
+        Term --floating
         ;;
-    --update)
-        alacritty --hold --class FloaTerm,FloaTerm -o window.dimensions.lines=22 window.dimensions.columns=90 -e Updates --update-system
+    --update-paru)
+        Term --update-paru
+        ;;
+    --update-garuda)
+        Term --update-garuda
         ;;
     --checkupdates)
-        alacritty --hold --class Updating,Updating -o window.dimensions.lines=22 window.dimensions.columns=47 -e Updates --print-updates
+        Term --checkupdates
         ;;
+    --netmanager)
+		NetManagerDM
+		;;
     --ranger)
-        alacritty --class FloaTerm,FloaTerm -o window.dimensions.lines=14 window.dimensions.columns=90 -e ranger
+        Term --ranger
         ;;
     --nvim)
-        alacritty -e nvim
+        Term --nvim
         ;;
     --music)
-        alacritty --class FloaTerm,FloaTerm -o window.dimensions.lines=18 window.dimensions.columns=67 -e ncmpcpp
+        Term --music
         ;;
     --fetch)
-        alacritty --hold --class FloaTerm,FloaTerm -o window.dimensions.lines=26 window.dimensions.columns=40 -e ~/.local/bin/sysfetch
+        Term --fetch
         ;;
         # Apps
     --filemanager)
@@ -56,12 +62,15 @@ case "$1" in
         telegram-desktop
         ;;
     --whats)
-        whatsapp-nativefier --disable-gpu
+        whatsdesk --disable-gpu
         ;;
     --soundcontrol)
         pavucontrol
         ;;
         # Eww Widgets
+    --KeyHelp)
+		eww -c "$WIDGET_DIR" open --toggle csheet
+		;;    
     --powermenu)
         eww -c "$WIDGET_DIR" open --toggle powermenu
         ;;

@@ -1,0 +1,3 @@
+2024-04-14 13:09:33.861 [info] Initial editor state {"filesToOpenOrCreate":[{"fileUri":{"$mid":1,"path":"/home/igorjoxa/.config/bspwm/sxhkdrc","scheme":"file"},"type":1,"exists":true,"options":{}}],"filesToDiff":[],"filesToMerge":[]}
+2024-04-14 13:09:34.270 [info] Started local extension host with pid 7167.
+2024-04-14 13:09:37.129 [info] [perf] Render performance baseline is 38ms

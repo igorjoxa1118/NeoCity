@@ -1,0 +1,7 @@
+2024-04-14 12:51:46.723 [info] Extension host with pid 15308 started
+2024-04-14 12:51:46.809 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-04-14 12:51:46.846 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+2024-04-14 12:51:46.856 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-04-14 12:51:46.875 [info] Eager extensions activated
+2024-04-14 12:51:46.881 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-04-14 12:51:46.884 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'

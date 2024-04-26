@@ -1,0 +1,9 @@
+[Default Applications]
+application/x-zerosize=code-oss.desktop
+
+[Added Associations]
+application/x-zerosize=code-oss.desktop;
+application/x-shellscript=code-oss.desktop;
+text/x-csrc=code-oss.desktop;
+image/jpeg=org.xfce.ristretto.desktop;
+text/x-python3=code-oss.desktop;

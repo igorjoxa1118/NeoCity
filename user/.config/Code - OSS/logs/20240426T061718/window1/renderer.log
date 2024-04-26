@@ -1,0 +1,5 @@
+2024-04-26 06:17:20.391 [info] Initial editor state {"filesToOpenOrCreate":[{"fileUri":{"$mid":1,"path":"/home/vir0id/Документы/bspwm/depend","scheme":"file"},"type":1,"exists":true,"options":{}}],"filesToDiff":[],"filesToMerge":[]}
+2024-04-26 06:17:20.870 [info] Started local extension host with pid 184808.
+2024-04-26 06:17:23.604 [info] [perf] Render performance baseline is 38ms
+2024-04-26 07:21:42.951 [info] Started local extension host with pid 660924.
+2024-04-26 07:21:46.629 [info] [perf] Render performance baseline is 67ms

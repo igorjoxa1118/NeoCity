@@ -1,0 +1,40 @@
+{
+	"name": "lemontree-dark",
+	"displayName": "Lemon Tree Dark",
+	"publisher": "huytd",
+	"description": "Lemon Tree Dark Theme",
+	"icon": "icon.png",
+	"repository": {
+		"url": "https://github.com/huytd/lemontree-dark-vscode"
+	},
+	"version": "0.0.2",
+	"engines": {
+		"vscode": "^1.15.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Lemon Tree Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Lemon Tree Dark-color-theme.json"
+			}
+		]
+	},
+	"license": "MIT",
+	"scripts": {
+		"publish": "vsce publish && ovsx publish -p $OVSX_TOKEN"
+	},
+	"__metadata": {
+		"id": "a52c3e1d-ca2d-4146-87c6-0fbae6ccd9f9",
+		"publisherId": "0b66216d-5e91-4e88-96bf-1c53c0428af0",
+		"publisherDisplayName": "huytd",
+		"targetPlatform": "universal",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1699469818270,
+		"preRelease": false
+	}
+}

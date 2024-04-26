@@ -1,237 +1,148 @@
-# Path section
-# Set $PATH if ~/.local/bin exist
-if [ -d "$HOME/.local/bin" ]; then
-    export PATH=$HOME/.local/bin:$PATH
+#  ╔═╗╔═╗╦ ╦╦═╗╔═╗  ╔═╗╔═╗╔╗╔╔═╗╦╔═╗	- z0mbi3
+#  ╔═╝╚═╗╠═╣╠╦╝║    ║  ║ ║║║║╠╣ ║║ ╦	- https://github.com/gh0stzk/dotfiles
+#  ╚═╝╚═╝╩ ╩╩╚═╚═╝  ╚═╝╚═╝╝╚╝╚  ╩╚═╝	- My zsh conf
+
+#  ┬  ┬┌─┐┬─┐┌─┐
+#  └┐┌┘├─┤├┬┘└─┐
+#   └┘ ┴ ┴┴└─└─┘
+export VISUAL="${EDITOR}"
+export EDITOR='code'
+export TERM='kitty'
+export TERMINAL='kitty'
+export BROWSER='firefox'
+export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
+
+if [ -d "$HOME/.local/bin" ] ;
+  then PATH="$HOME/.local/bin:$PATH"
 fi
 
-eval "$(starship init zsh)"
-function set_win_title(){
-    echo -ne "\033]0; $USER@$HOST:${PWD/$HOME/~} \007"
+#  ┬  ┌─┐┌─┐┌┬┐  ┌─┐┌┐┌┌─┐┬┌┐┌┌─┐
+#  │  │ │├─┤ ││  ├┤ ││││ ┬││││├┤ 
+#  ┴─┘└─┘┴ ┴─┴┘  └─┘┘└┘└─┘┴┘└┘└─┘
+autoload -Uz compinit
+
+for dump in ~/.config/zsh/zcompdump(N.mh+24); do
+  compinit -d ~/.config/zsh/zcompdump
+done
+
+compinit -C -d ~/.config/zsh/zcompdump
+
+autoload -Uz add-zsh-hook
+autoload -Uz vcs_info
+precmd () { vcs_info }
+_comp_options+=(globdots)
+
+zstyle ':completion:*' verbose true
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} 'ma=48;5;197;1'
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:warnings' format "%B%F{red}No matches for:%f %F{magenta}%d%b"
+zstyle ':completion:*:descriptions' format '%F{yellow}[-- %d --]%f'
+zstyle ':vcs_info:*' formats ' %B%s-[%F{magenta}%f %F{yellow}%b%f]-'
+
+#  ┬ ┬┌─┐┬┌┬┐┬┌┐┌┌─┐  ┌┬┐┌─┐┌┬┐┌─┐
+#  │││├─┤│ │ │││││ ┬   │││ │ │ └─┐
+#  └┴┘┴ ┴┴ ┴ ┴┘└┘└─┘  ─┴┘└─┘ ┴ └─┘
+expand-or-complete-with-dots() {
+  echo -n "\e[31m…\e[0m"
+  zle expand-or-complete
+  zle redisplay
 }
-precmd_functions+=(set_win_title)
+zle -N expand-or-complete-with-dots
+bindkey "^I" expand-or-complete-with-dots
 
+#  ┬ ┬┬┌─┐┌┬┐┌─┐┬─┐┬ ┬
+#  ├─┤│└─┐ │ │ │├┬┘└┬┘
+#  ┴ ┴┴└─┘ ┴ └─┘┴└─ ┴ 
+HISTFILE=~/.config/zsh/zhistory
+HISTSIZE=5000
+SAVEHIST=5000
 
-## Plugins section: Enable fish style features
-# Use syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#  ┌─┐┌─┐┬ ┬  ┌─┐┌─┐┌─┐┬    ┌─┐┌─┐┌┬┐┬┌─┐┌┐┌┌─┐
+#  ┌─┘└─┐├─┤  │  │ ││ ││    │ │├─┘ │ ││ ││││└─┐
+#  └─┘└─┘┴ ┴  └─┘└─┘└─┘┴─┘  └─┘┴   ┴ ┴└─┘┘└┘└─┘
+setopt AUTOCD              # change directory just by typing its name
+setopt PROMPT_SUBST        # enable command substitution in prompt
+setopt MENU_COMPLETE       # Automatically highlight first element of completion menu
+setopt LIST_PACKED		   # The completion menu takes less space.
+setopt AUTO_LIST           # Automatically list choices on ambiguous completion.
+setopt HIST_IGNORE_DUPS	   # Do not write events to history that are duplicates of previous events
+setopt HIST_FIND_NO_DUPS   # When searching history don't display results already cycled through twice
+setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
 
-# Use autosuggestion
+#  ┌┬┐┬ ┬┌─┐  ┌─┐┬─┐┌─┐┌┬┐┌─┐┌┬┐
+#   │ ├─┤├┤   ├─┘├┬┘│ ││││├─┘ │ 
+#   ┴ ┴ ┴└─┘  ┴  ┴└─└─┘┴ ┴┴   ┴
+function dir_icon {
+  if [[ "$PWD" == "$HOME" ]]; then
+    echo "%B%F{cyan}%f%b"
+  else
+    echo "%B%F{cyan}%f%b"
+  fi
+}
+
+PS1='%B%F{blue}%f%b  %B%F{magenta}%n%f%b $(dir_icon)  %B%F{red}%~%f%b${vcs_info_msg_0_} %(?.%B%F{green}.%F{red})%f%b '
+
+#  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
+#  ├─┘│  │ ││ ┬││││└─┐
+#  ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Use history substring search
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-# Use fzf
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
-# Arch Linux command-not-found support, you must have package pkgfile installed
-# https://wiki.archlinux.org/index.php/Pkgfile#.22Command_not_found.22_hook
-[[ -e /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
+#  ┌─┐┬ ┬┌─┐┌┐┌┌─┐┌─┐  ┌┬┐┌─┐┬─┐┌┬┐┬┌┐┌┌─┐┬  ┌─┐  ┌┬┐┬┌┬┐┬  ┌─┐
+#  │  ├─┤├─┤││││ ┬├┤    │ ├┤ ├┬┘│││││││├─┤│  └─┐   │ │ │ │  ├┤ 
+#  └─┘┴ ┴┴ ┴┘└┘└─┘└─┘   ┴ └─┘┴└─┴ ┴┴┘└┘┴ ┴┴─┘└─┘   ┴ ┴ ┴ ┴─┘└─┘
+function xterm_title_precmd () {
+	print -Pn -- '\e]2;%n@%m %~\a'
+	[[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
+}
 
-# Advanced command-not-found hook
-[[ -e /usr/share/doc/find-the-command/ftc.zsh ]] && source /usr/share/doc/find-the-command/ftc.zsh
+function xterm_title_preexec () {
+	print -Pn -- '\e]2;%n@%m %~ %# ' && print -n -- "${(q)1}\a"
+	[[ "$TERM" == 'screen'* ]] && { print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-} %# ' && print -n -- "${(q)1}\e\\"; }
+}
 
-
-## Options section
-setopt correct                                                  # Auto correct mistakes
-setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
-setopt nocaseglob                                               # Case insensitive globbing
-setopt rcexpandparam                                            # Array expension with parameters
-setopt nocheckjobs                                              # Don't warn about running processes when exiting
-setopt numericglobsort                                          # Sort filenames numerically when it makes sense
-setopt nobeep                                                   # No beep
-setopt appendhistory                                            # Immediately append history instead of overwriting
-setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
-setopt autocd                                                   # if only directory path is entered, cd there.
-setopt auto_pushd
-setopt pushd_ignore_dups
-setopt pushdminus
-
-# Completion.
-autoload -Uz compinit
-compinit
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
-zstyle ':completion:*' rehash true                              # automatically find new executables in path 
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
-zstyle ':completion:*' completer _expand _complete _ignored _approximate
-zstyle ':completion:*' menu select
-zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
-zstyle ':completion:*:descriptions' format '%U%F{cyan}%d%f%u'
-
-# Speed up completions
-zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.cache/zcache
-
-# automatically load bash completion functions
-autoload -U +X bashcompinit && bashcompinit
-
-HISTFILE=~/.zhistory
-HISTSIZE=50000
-SAVEHIST=10000
-
-
-## Keys
-# Use emacs key bindings
-bindkey -e
-
-# [PageUp] - Up a line of history
-if [[ -n "${terminfo[kpp]}" ]]; then
-  bindkey -M emacs "${terminfo[kpp]}" up-line-or-history
-  bindkey -M viins "${terminfo[kpp]}" up-line-or-history
-  bindkey -M vicmd "${terminfo[kpp]}" up-line-or-history
-fi
-# [PageDown] - Down a line of history
-if [[ -n "${terminfo[knp]}" ]]; then
-  bindkey -M emacs "${terminfo[knp]}" down-line-or-history
-  bindkey -M viins "${terminfo[knp]}" down-line-or-history
-  bindkey -M vicmd "${terminfo[knp]}" down-line-or-history
+if [[ "$TERM" == (kitty*|alacritty*|termite*|gnome*|konsole*|kterm*|putty*|rxvt*|screen*|tmux*|xterm*) ]]; then
+	add-zsh-hook -Uz precmd xterm_title_precmd
+	add-zsh-hook -Uz preexec xterm_title_preexec
 fi
 
-# Start typing + [Up-Arrow] - fuzzy find history forward
-if [[ -n "${terminfo[kcuu1]}" ]]; then
-  autoload -U up-line-or-beginning-search
-  zle -N up-line-or-beginning-search
+#  ┌─┐┬  ┬┌─┐┌─┐
+#  ├─┤│  │├─┤└─┐
+#  ┴ ┴┴─┘┴┴ ┴└─┘
+alias mirrors="sudo reflector --verbose --latest 5 --country 'United States' --age 6 --sort rate --save /etc/pacman.d/mirrorlist"
 
-  bindkey -M emacs "${terminfo[kcuu1]}" up-line-or-beginning-search
-  bindkey -M viins "${terminfo[kcuu1]}" up-line-or-beginning-search
-  bindkey -M vicmd "${terminfo[kcuu1]}" up-line-or-beginning-search
-fi
-# Start typing + [Down-Arrow] - fuzzy find history backward
-if [[ -n "${terminfo[kcud1]}" ]]; then
-  autoload -U down-line-or-beginning-search
-  zle -N down-line-or-beginning-search
+alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias mantenimiento="yay -Sc && sudo pacman -Scc"
+alias purga="sudo pacman -Rns $(pacman -Qtdq) ; sudo fstrim -av"
+alias update="paru -Syu --nocombinedupgrade"
 
-  bindkey -M emacs "${terminfo[kcud1]}" down-line-or-beginning-search
-  bindkey -M viins "${terminfo[kcud1]}" down-line-or-beginning-search
-  bindkey -M vicmd "${terminfo[kcud1]}" down-line-or-beginning-search
-fi
+alias vm-on="sudo systemctl start libvirtd.service"
+alias vm-off="sudo systemctl stop libvirtd.service"
 
-# [Home] - Go to beginning of line
-if [[ -n "${terminfo[khome]}" ]]; then
-  bindkey -M emacs "${terminfo[khome]}" beginning-of-line
-  bindkey -M viins "${terminfo[khome]}" beginning-of-line
-  bindkey -M vicmd "${terminfo[khome]}" beginning-of-line
-fi
-# [End] - Go to end of line
-if [[ -n "${terminfo[kend]}" ]]; then
-  bindkey -M emacs "${terminfo[kend]}"  end-of-line
-  bindkey -M viins "${terminfo[kend]}"  end-of-line
-  bindkey -M vicmd "${terminfo[kend]}"  end-of-line
-fi
+alias music="ncmpcpp"
 
-# [Shift-Tab] - move through the completion menu backwards
-if [[ -n "${terminfo[kcbt]}" ]]; then
-  bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
-  bindkey -M viins "${terminfo[kcbt]}" reverse-menu-complete
-  bindkey -M vicmd "${terminfo[kcbt]}" reverse-menu-complete
-fi
-
-# [Backspace] - delete backward
-bindkey -M emacs '^?' backward-delete-char
-bindkey -M viins '^?' backward-delete-char
-bindkey -M vicmd '^?' backward-delete-char
-# [Delete] - delete forward
-if [[ -n "${terminfo[kdch1]}" ]]; then
-  bindkey -M emacs "${terminfo[kdch1]}" delete-char
-  bindkey -M viins "${terminfo[kdch1]}" delete-char
-  bindkey -M vicmd "${terminfo[kdch1]}" delete-char
-else
-  bindkey -M emacs "^[[3~" delete-char
-  bindkey -M viins "^[[3~" delete-char
-  bindkey -M vicmd "^[[3~" delete-char
-
-  bindkey -M emacs "^[3;5~" delete-char
-  bindkey -M viins "^[3;5~" delete-char
-  bindkey -M vicmd "^[3;5~" delete-char
-fi
-
-typeset -g -A key
-if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
-	autoload -Uz add-zle-hook-widget
-	function zle_application_mode_start { echoti smkx }
-	function zle_application_mode_stop { echoti rmkx }
-	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
-	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
-fi
-
-# Control Left - go back a word
-key[Control-Left]="${terminfo[kLFT5]}"
-if [[ -n "${key[Control-Left]}"  ]]; then
-	bindkey -M emacs "${key[Control-Left]}"  backward-word
-	bindkey -M viins "${key[Control-Left]}"  backward-word
-	bindkey -M vicmd "${key[Control-Left]}"  backward-word
-fi
-
-# Control Left - go forward a word
-key[Control-Right]="${terminfo[kRIT5]}"
-if [[ -n "${key[Control-Right]}" ]]; then
-	bindkey -M emacs "${key[Control-Right]}" forward-word
-	bindkey -M viins "${key[Control-Right]}" forward-word
-	bindkey -M vicmd "${key[Control-Right]}" forward-word
-fi
-
-# Alt Left - go back a word
-key[Alt-Left]="${terminfo[kLFT3]}"
-if [[ -n "${key[Alt-Left]}"  ]]; then
-	bindkey -M emacs "${key[Alt-Left]}"  backward-word
-	bindkey -M viins "${key[Alt-Left]}"  backward-word
-	bindkey -M vicmd "${key[Alt-Left]}"  backward-word
-fi
-
-# Control Right - go forward a word
-key[Alt-Right]="${terminfo[kRIT3]}"
-if [[ -n "${key[Alt-Right]}" ]]; then
-	bindkey -M emacs "${key[Alt-Right]}" forward-word
-	bindkey -M viins "${key[Alt-Right]}" forward-word
-	bindkey -M vicmd "${key[Alt-Right]}" forward-word
-fi
-
-## Useful aliases
-alias grubup="sudo update-grub"
-alias fixpacman="sudo rm /var/lib/pacman/db.lck"
-alias tarnow='tar -acf '
-alias untar='tar -zxvf '
-alias wget='wget -c '
-alias rmpkg="sudo pacman -Rdd"
-alias psmem='ps auxf | sort -nr -k 4'
-alias psmem10='ps auxf | sort -nr -k 4 | head -10'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='grep -F --color=auto'
-alias egrep='grep -E --color=auto'
-alias hw='hwinfo --short'                                   # Hardware Info
-alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed packages according to size in MB (expac must be installed)
-alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'			# List amount of -git packages
-
-# Get fastest mirrors 
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist" 
-alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist" 
-alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist" 
-alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist" 
-
-# Help people new to Arch
-alias apt-get='man pacman'
-alias apt='man pacman'
-alias helpme='cht.sh --shell'
-alias pacdiff='sudo -H DIFFPROG=meld pacdiff'
-alias please='sudo'
-alias tb='nc termbin.com 9999'
-alias upd="/usr/bin/update"
-
-# Helpful aliases
-alias ls='lsd'
+alias ls='lsd -a --group-directories-first'
+alias ll='lsd -la --group-directories-first'
 alias la='lsd --almost-all --long'
 alias llm='lsd --timesort --long'
 alias lS='lsd --oneline --classic'
 alias lt='lsd --tree --depth=2'
+
+# Replace yay with paru if installed
+[ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
+
+#  ┌─┐┬ ┬┌┬┐┌─┐  ┌─┐┌┬┐┌─┐┬─┐┌┬┐
+#  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │ 
+#  ┴ ┴└─┘ ┴ └─┘  └─┘ ┴ ┴ ┴┴└─ ┴ 
+#$HOME/.local/bin/colorscript -r
+
+# Archiso
+alias makeiso="sudo mkarchiso -v ."
 
 # Replace yay with paru if installed
 [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
@@ -243,9 +154,8 @@ export MCFLY_INTERFACE_VIEW=BOTTOM
 export MCFLY_RESULTS_SORT=LAST_RUN
 eval "$(mcfly init zsh)"
 
-## Run neofetch
-neofetch
-## Posh theme
-eval "$(oh-my-posh init zsh --config ~/.poshthemes/NeoCity.omp.json)"
 # Custom exports
 export MICRO_CONFIG_HOME=/home/vir0id/.config/micro
+
+# Neofetch apps
+neofetch

@@ -1,0 +1,84 @@
+{
+	"name": "Lisp-Syntax",
+	"version": "0.2.1",
+	"publisher": "slbtty",
+	"description": "Syntax highlight for lisp family of languages",
+	"author": {
+		"name": "Yasuhiro Matsumoto (a.k.a mattn)"
+	},
+	"icon": "images/lisp.png",
+	"categories": [
+		"Languages"
+	],
+	"license": "MIT",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/shenlebantongying/vscode-lisp-syntax"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"typescript": "3.7.4",
+		"vscode": "1.1.36"
+	},
+	"engines": {
+		"vscode": "^0.10.10"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "lisp",
+				"aliases": [
+					"Lisp",
+					"lisp",
+					"Scheme",
+					"scheme"
+				],
+				"extensions": [
+					".lisp",
+					".cl",
+					".asd",
+					".ros",
+					".lsp",
+					".el",
+					".fnl",
+					".scm",
+					".rkt"
+				],
+				"configuration": "./Lisp.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "lisp",
+				"scopeName": "source.lisp",
+				"path": "./syntaxes/Lisp.tmLanguage"
+			},
+			{
+				"scopeName": "markdown.lisp.codeblock",
+				"path": "./syntaxes/codeblock.json",
+				"injectTo": [
+					"text.html.markdown"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.block.superjs": "lisp"
+				}
+			}
+		]
+	},
+	"readmeFilename": "README.md",
+	"bugs": {
+		"url": "https://github.com/shenlebantongying/vscode-lisp-syntax/issues"
+	},
+	"__metadata": {
+		"id": "4b208cc8-00d4-4420-9846-b49d4cca1feb",
+		"publisherId": "73171d3a-e9ab-46de-9bff-a880b27484d5",
+		"publisherDisplayName": "slbtty",
+		"targetPlatform": "universal",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1674886658877,
+		"preRelease": false
+	}
+}
