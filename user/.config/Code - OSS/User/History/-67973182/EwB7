@@ -1,0 +1,46 @@
+#------------------------------------
+## Специальные окна. Правила для окон
+#------------------------------------
+# for_window [window_role="stalonetray"] floating enable
+for_window [window_role="pop-up|bubble|task_dialog|Preferences|setup"] floating enable
+for_window [window_type="dialog|menu"] floating enable
+for_window [window_role="browser|GtkFileChooserDialog"] resize set 800 600, move position center
+for_window [window_role="demo"] resize set 800 600, move position center
+#for_window [class="(?i)thunar"] move window to scratchpad, scratchpad show, floating enable, resize set 800 400, move position center
+for_window [class="(?i)simplescreenrecorder"] floating enable, move position 5 30  
+for_window [class="(?i)nitrogen|engrampa|flameshot|file-roller|fsearch|qt5ct"] floating enable, resize set 600 500, move position center 
+for_window [class="(?i)atril|pavucontrol|lxappearance|viewnior|keepassxc|veracrypt"] floating enable
+for_window [class="(?i)mpv"] floating enable, resize set 350 250, sticky enable, move window to position 1000 85
+# for_window [title="(?i)htop"] floating enable, resize set 1280 600, move position center, focus
+for_window [class="(?i)firefox|kitty|thunar|caja|code|mousepad|mupdf|blender|gimp|krita|telegram-desktop|kodi"] focus
+for_window [window_role="demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
+for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 350, move absolute position 0 418
+for_window [title="float"] move window to scratchpad, scratchpad show, floating enable, resize set 1280 600, move position center, focus
+for_window [title="floating"] move window to scratchpad, scratchpad show, floating enable, resize set 720 400, move position center, focus
+
+#-----------------------------------------------------------------
+## Правила для вкладок/закладок окон. 
+## Групируются в закладки на рабочих пространствах со 2-го по 9-ое.
+for_window [workspace=$ws2] layout tabbed
+for_window [workspace=$ws3] layout tabbed
+for_window [workspace=$ws4] layout tabbed
+for_window [workspace=$ws5] layout tabbed
+for_window [workspace=$ws6] layout tabbed
+for_window [workspace=$ws7] layout tabbed
+for_window [workspace=$ws8] layout tabbed
+for_window [workspace=$ws9] layout tabbed
+#-----------------------------------------------------------------
+
+#---------------------------------------------
+## Приложения/программы которые будут открываться на заданном рабочем пространстве
+assign [class="(?i)xfce4-terminal|kitty|xterm|htop"] $ws1
+assign [class="(?i)firefox|chromium"] $ws2
+assign [class="(?i)mousepad|leafpad|code"] $ws3
+assign [class="(?i)thunar|caja"] $ws4
+assign [class="(?i)blender|krita|gimp"] $ws5
+assign [class="(?i)fractal|telegram|discord"] $ws6
+assign [class="(?i)smplayer|kodi|retroarch|Hypnotix.py"] $ws7
+assign [class="(?i)ristretto|qpdfview"] $ws8
+assign [class="(?i)virtualbox|Virt-manager"] $ws9
+assign [class="(?i)qBittorrent|simplescreenrecorder|transmission-gtk"] $ws10
+#---------------------------------------------

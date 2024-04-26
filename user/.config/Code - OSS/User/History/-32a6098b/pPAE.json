@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../../bspwm"
+		}
+	],
+	"settings": {
+		"ocaml.sandbox": {
+			"kind": "global"
+		}
+	}
+}

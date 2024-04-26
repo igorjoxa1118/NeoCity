@@ -1,0 +1,20 @@
+<colors>
+	<color name="TitleTextColor">ffbb9af7</color>
+	<color name="NormalTextColor">ffbb9af7</color>	
+	<color name="AltTextColor">ff16161e</color>	
+	<color name="LabelTextColor">FFBCB1D5</color>	
+	<color name="FocusColor">fff7768e</color>	
+	<color name="SelectedColor">FF4C3165</color>	
+	<color name="DisabledColor">FF606060</color>
+	<color name="black">FF000000</color>
+	<color name="invalid">FFFF6666</color>
+	<color name="shadow">AA000000</color>
+	<color name="ItemDiffuse">DD110022</color>
+    <color name="BackgroundColor">ff16161e</color>
+    <color name="BorderDiffuse">DD662277</color>
+	<color name="dialog">FF263336</color>
+    <color name="ScrollBar">11FFFFFF</color>
+	<color name="LowTemp">FF66CCFF</color>
+	<color name="HighTemp">FFFF7766</color>
+	<color name="Alert">FFFFFF00</color>
+</colors>

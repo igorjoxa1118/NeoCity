@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=NeoCity
+Comment=An Flat Gtk+ theme based on Elegant Design
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=NeoCity
+MetacityTheme=NeoCity
+IconTheme=BeautyLine
+CursorTheme=ArchTrix
+ButtonLayout=close,minimize,maximize:menu

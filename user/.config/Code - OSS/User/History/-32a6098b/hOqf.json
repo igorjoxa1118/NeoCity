@@ -1,0 +1,8 @@
+{
+	"folders": [],
+	"settings": {
+		"ocaml.sandbox": {
+			"kind": "global"
+		}
+	}
+}

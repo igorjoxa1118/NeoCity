@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Search-Tube
+Comment=Search for your favorite music. Play your favorite playlists
+GenericName=
+Keywords=youtube; search; tube;
+Exec=sh /home/eddy/.config/i3/scripts/polybar-mpv/mpv-youtube-playlist.sh
+Terminal=false
+Type=Application
+Icon=/home/eddy/.config/i3/scripts/polybar-mpv/icons/youtube.svg
+Path=/home/eddy/.config/i3/scripts/polybar-mpv/
+Categories=Video;Audio;
+NoDisplay=false

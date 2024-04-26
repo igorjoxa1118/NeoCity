@@ -1,0 +1,19 @@
+@define-color bg-color #171d20;
+@define-color fg-color #1e2529;
+@define-color sel-color #bde6fb;
+
+@define-color tbg-color_0_3 shade (@bg-color, 0.3);
+@define-color tbg-color_0_45 shade (@bg-color, 0.45);
+@define-color tbg-color_0_5 shade (@bg-color, 0.5);
+@define-color tbg-color_0_7 shade (@bg-color, 0.7); 
+@define-color tbg-color_0_075 shade (@bg-color, 0.075);
+
+@define-color tbg-color_0_1 shade (@fg-color, 0.1);
+@define-color tbg-color_0_15 shade (@fg-color, 0.15);
+@define-color tbg-color_0_2 shade (@fg-color, 0.2);
+@define-color tbg-color_0_3 shade (@fg-color, 0.3);
+@define-color tbg-color_0_4 shade (@fg-color, 0.4);
+@define-color tbg-color_0_45 shade (@fg-color, 0.45);
+@define-color tbg-color_0_5 shade (@fg-color, 0.5);
+@define-color tbg-color_0_7 shade (@fg-color, 0.7);
+@define-color tbg-color_0_8 shade (@fg-color, 0.8);

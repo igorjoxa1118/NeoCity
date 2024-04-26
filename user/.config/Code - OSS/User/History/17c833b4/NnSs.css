@@ -1,0 +1,45 @@
+@define-color bg-color #171d20;
+@define-color fg-color #1e2529;
+@define-color sel-color #bde6fb;
+@define-color backdrop-bg-color #1a2022;
+@define-color disabled-color #6d8692;
+@define-color border-color #1a2125;
+@define-color label-disabled-backdrop-color #3b494d;
+@define-color popup-backdrop-color #14191a;
+
+/*Text backport*/
+@define-color text-backport-color #6f828a;
+
+@define-color tbg-color_0_15 shade (@bg-color, 0.15);
+@define-color tbg-color_0_3 shade (@bg-color, 0.3);
+@define-color tbg-color_0_45 shade (@bg-color, 0.45);
+@define-color tbg-color_0_5 shade (@bg-color, 0.5);
+@define-color tbg-color_0_7 shade (@bg-color, 0.7); 
+@define-color tbg-color_0_075 shade (@bg-color, 0.075);
+@define-color tbg-color_0_8 shade (@bg-color, 0.8);
+@define-color tbg-color_0_095 shade (@bg-color, 0.095);
+
+@define-color tfg-color_0_5 shade (@fg-color, 0.5);
+@define-color tfg-color_0_6 shade (@fg-color, 0.6);
+@define-color tfg-color_0_7 shade (@fg-color, 0.7);
+
+@define-color tset-color_0_1 shade (@sel-color, 0.1);
+@define-color tsel-color_0_15 shade (@sel-color, 0.15);
+@define-color tsel-color_0_2 shade (@sel-color, 0.2);
+@define-color tsel-color_0_25 shade (@sel-color, 0.25);
+@define-color tsel-color_0_3 shade (@sel-color, 0.3);
+@define-color tsel-color_0_4 shade (@sel-color, 0.4);
+@define-color tsel-color_0_45 shade (@sel-color, 0.45);
+@define-color tsel-color_0_5 shade (@sel-color, 0.5);
+@define-color tsel-color_0_6 shade (@sel-color, 0.6);
+@define-color tsel-color_0_7 shade (@sel-color, 0.7);
+@define-color tsel-color_0_75 shade (@sel-color, 0.75);
+@define-color tsel-color_0_8 shade (@sel-color, 0.8);
+@define-color tsel-color_0_9 shade (@sel-color, 0.9);
+
+
+
+
+@define-color disabled-color_0_45 shade (@disabled-color, 0.45);
+@define-color tpopup-backdrop-color_0.075 shade (@popup-backdrop-color, 0.075);
+@define-color tpopup-backdrop-color_0.45 shade (@popup-backdrop-color, 0.45);

@@ -1,0 +1,10 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.colorTheme": "Tokyo Night",
+    "workbench.editorAssociations": {
+        "*.sqlite": "default",
+        "*.qbtheme": "default",
+        "*.xbt": "default"
+    },
+    "git.openRepositoryInParentFolders": "always"
+}

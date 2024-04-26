@@ -1,0 +1,227 @@
+#-------------------------------------
+## Закрыть сфокусированное окно "kill"
+bindsym $mod+q kill
+#-------------------------------------
+
+#---------------------------------------------------
+## Если открыты несколько окон на одном пространстве,
+## то можно мереключаться мешду ними
+bindsym $mod1+Tab focus right
+# bindsym $mod+Tab focus left
+#---------------------------------------------------
+
+#---------------------------------------------------------------------------------------
+## Переключение между открытыми окнами(на одном рабочем пространстве)
+## Альтернативное переключение мешду окнами, вы можете использовать стрелочки клавиатуры:
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+#---------------------------------------------------------------------------------------
+
+#---------------------------------------------------------
+## Перемещение на пространство влево/вправо (Ctrl+Alt-Влево/Вправо)
+bindsym Ctrl+Mod1+Right workspace next
+bindsym Ctrl+Mod1+Left workspace prev
+bindsym Ctrl+control+Left exec i3-msg move container to workspace $ws-left; exec i3-msg workspace $ws-left
+bindsym Ctrl+control+Right exec i3-msg move container to workspace $ws-right; exec i3-msg workspace $ws-right
+#bindsym $mod+Ctrl+Left move left
+#bindsym $mod+Ctrl+k move down
+#bindsym $mod+Ctrl+l move up
+#bindsym $mod+Ctrl+Right move right
+
+# move focused window to next/prev workspace
+#bindsym $mod+Shift+Left move left
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
+#bindsym $mod+Shift+Right move right
+
+# alternatively, you can use the cursor keys:
+#bindsym $mod+mod1+Left move left
+#bindsym $mod+mod1+Down move down
+#bindsym $mod+mod1+Up move up
+#bindsym $mod+mod1+Right move right
+#----------------------------------------------------------
+
+#-----------------------------------------------------------------------
+## Разрезать ориентацию по горизонтале(окно будет открыто по горизонтале)
+bindsym $mod+h split h
+#-----------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+## Разрезать ориентацию по вертикале(окно будет открыто по вертикале)
+bindsym $mod+v split v
+#-------------------------------------------------------------------
+
+#---------------------------
+## Октрыть окно на весь экран
+bindsym $mod+f fullscreen toggle
+#---------------------------
+
+#---------------------------------------------------------
+## Сгрупировать окна в закладки(Столбик, строку, разделить)
+bindsym $mod+y layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+u layout toggle split
+#---------------------------------------------------------
+
+#---------------------
+## Плавающий режим окна
+bindsym $mod+c floating toggle
+#---------------------
+
+## change focus between tiling / floating windows
+bindsym $mod1+x focus mode_toggle
+
+## focus the parent container
+bindsym $mod+a focus parent
+
+## focus the child container
+bindsym $mod1+d focus child
+
+bindsym $mod+g sticky toggle
+
+#---------------------------------------------
+## Переключиться на другое рабочее пространство
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+#---------------------------------------------
+
+#------------------------------------------------------------------
+## Перетащить сфокусированное окно на рабочее пространство от 1 до 9
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+##------------------------------------------------------------------
+
+#---------------------------------------------
+## Перезагрузить, перезапустить, выйти из i3
+bindsym $mod+shift+c reload
+bindsym $mod+shift+r restart
+bindsym $mod+mod1+Delete exec "$HOME/.config/i3/bin/i3-logout"
+# bindsym $mod+shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#---------------------------------------------
+
+#-------------------------------------------------
+## Режим растягивания окон. Изменение размера окна.
+mode "resize" {
+        bindsym j resize shrink width 3 px or 3 ppt
+        bindsym k resize grow height 3 px or 3 ppt
+        bindsym l resize shrink height 3 px or 3 ppt
+        bindsym semicolon resize grow width 3 px or 3 ppt
+
+        bindsym Left resize shrink width 3 px or 3 ppt
+        bindsym Down resize grow height 3 px or 3 ppt
+        bindsym Up resize shrink height 3 px or 3 ppt
+        bindsym Right resize grow width 3 px or 3 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize" # Войти в режим растягивания. Так же выключить режим.
+#-------------------------------------------------
+
+#-------------------------
+## Отправить окно в боакнот
+bindsym $Mod1+v move scratchpad
+bindsym $Mod+x scratchpad show
+bindsym $Mod+n scratchpad toggle
+#-------------------------
+
+#---------------------------------------------
+## Клавиши для запуска приложений
+bindsym $mod+d exec --no-startup-id "$HOME/.config/i3/polybar/NeoCity/rofi/launchers/type-2/launcher.sh"
+#bindsym $mod+Return exec --no-startup-id "xfce4-terminal --title term-tiling --hide-menubar"
+#bindsym $mod1+t exec --no-startup-id "xfce4-terminal --title floating"
+#bindsym $mod1+r exec --no-startup-id "xfce4-terminal --title float -e ranger"
+#bindsym $mod1+m exec --no-startup-id "xfce4-terminal -e ncmpcpp"
+#bindsym $mod1+h exec --no-startup-id "xfce4-terminal --title float -e htop"
+bindsym $mod+Return exec --no-startup-id "kitty"
+bindsym $mod1+t exec --no-startup-id "kitty --title floating"
+bindsym $mod1+Return exec --no-startup-id "kitty --title float -e ranger"
+bindsym $mod1+p exec --no-startup-id "kitty --title -e musikcube"
+#bindsym $mod1+h exec --no-startup-id "kitty --title float -e htop"
+bindsym $mod1+f exec --no-startup-id "firefox"
+bindsym $mod1+l exec --no-startup-id "$HOME/.config/i3/bin/multilock.sh"
+bindsym $mod1+space exec --no-startup-id "skippy-xd"
+bindsym $mod1+q exec --no-startup-id "$HOME/.config/i3/bin/findapp thunar"
+bindsym $mod1+e exec --no-startup-id "mousepad"
+bindsym $mod1+w exec --no-startup-id "$HOME/.config/i3/bin/i3_switch_workspace.sh"
+bindsym Ctrl+space exec --no-startup-id "rofi -show window"
+bindsym Print exec --no-startup-id "kazam -f"
+#bindsym $mod1+c  exec --no-startup-id "thunar"
+bindsym $mod1+c  exec --no-startup-id "caja"
+#bindsym $mod1+s exec --no-startup-id "subl3"
+#bindsym Print exec --no-startup-id "$HOME/.config/i3/bin/flameshot.sh -c"
+#bindsym $mod1+Print exec --no-startup-id "flameshot gui"
+
+#bindsym $mod+Ctrl+Up exec mpc volume +2
+#bindsym $mod+Ctrl+Down exec mpc volume -2
+#bindsym $mod+Ctrl+Left exec mpc prev
+#bindsym $mod+Ctrl+Right exec mpc next
+#bindsym $mod+Ctrl+d exec mpc del 0
+bindsym $mod1+Ctrl+e exec toggle-conkeww
+#---------------------------------------------
+
+
+#-------------------------------
+## Режим редактирование отступов
+bindsym $mod+mod1+g mode "$mode_gaps" # Войти в режим отступов.
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym mod1+plus  gaps inner all plus 5
+        bindsym mod1+minus gaps inner all minus 5
+        bindsym mod1+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym mod1+plus  gaps outer all plus 5
+        bindsym mod1+minus gaps outer all minus 5
+        bindsym mod1+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+#-------------------------------
+
+#--------eww--------#
+
+

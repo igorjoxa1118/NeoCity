@@ -1,0 +1,21 @@
+## Theming
+calamares-branding-garuda
+calamares-garuda
+calamares-tools
+garuda-tools-base-git
+grub-theme-garuda-live
+
+
+## Tools
+arch-install-scripts
+chntpw
+clonezilla
+ddrescue
+fsarchiver
+garuda-boot-repair
+garuda-live-skel
+garuda-live-systemd
+gparted
+gsmartcontrol
+nbd
+testdisk

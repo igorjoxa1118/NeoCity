@@ -1,0 +1,10 @@
+2024-04-25 05:46:35.124 [error] Error: Не удалось открыть редактор, так как файл не найден.
+    at M.gc (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:28131)
+    at async M.setInput (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2355:27187)
+    at async r.S (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:24784)
+    at async r.L (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:23348)
+    at async r.openEditor (vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2353:22337)
+    at async vscode-file://vscode-app/usr/lib/code/out/vs/workbench/workbench.desktop.main.js:2476:24162
+2024-04-25 05:46:35.159 [info] Started local extension host with pid 15764.
+2024-04-25 05:46:38.003 [info] [perf] Render performance baseline is 54ms
+2024-04-25 13:31:49.442 [warning] [File Watcher (node.js)] Watcher shutdown because watched path got deleted

@@ -1,0 +1,20 @@
+pkgname=Tokio_night
+pkgver=1.0
+pkgrel=1
+pkgdesc='Polybar theme for i3-gaps'
+url="https://github.com/igorjoxa1118/Tokio_night"
+arch=("any")
+license=("GPL")
+makedepends=('git')
+depends=("autotiling" "ttf-iosevkaterm-nerd" "ttf-iosevka-nerd")
+source=("git+${url}.git")
+sha256sums=('SKIP')
+
+
+package() {
+
+  cd ${srcdir}/${pkgname}
+  install -dm755 "${pkgdir}/home/$USER/.config/i3"
+  cp -r i3/* ${pkgdir}/home/$USER/.config/i3
+
+}

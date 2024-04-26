@@ -1,0 +1,63 @@
+# Tokio_night_i3
+pkgname=Tokio_night
+pkgver=0.1
+pkgrel=1
+pkgdesc='Theme for i3wm'
+arch=('i686' 'x86_64')
+url="https://github.com/igorjoxa1118/Tokio_night"
+license=('LGPL')
+conflicts=('')
+
+depends=('autotiling' 'ttf-iosevkaterm-nerd' 'ttf-iosevka-nerd')
+
+makedepends=('')
+
+backup=('usr/share/calamares/modules/bootloader.conf'
+        'usr/share/calamares/modules/displaymanager.conf'
+        'usr/share/calamares/modules/initcpio.conf'
+        'usr/share/calamares/modules/unpackfs.conf')
+
+source+=("https://github.com/calamares/calamares/releases/download/v${pkgver}/calamares-${pkgver}.tar.gz"
+         git+https://github.com/ctlos/calamares#branch=master)
+
+sha256sums=('SKIP'
+            'SKIP')
+
+prepare() {
+    cp -a ${srcdir}/calamares/* ${srcdir}/calamares-${pkgver}
+    rm -rf ${srcdir}/calamares
+    cd ${srcdir}/calamares-${pkgver}
+    sed -i -e 's/"Install configuration files" OFF/"Install configuration files" ON/' CMakeLists.txt
+
+    # change branding
+    sed -i -e "s/default/ctlos/g" src/branding/CMakeLists.txt
+
+}
+
+build() {
+    cd ${srcdir}/calamares-${pkgver}
+
+    mkdir -p build
+    cd build
+        cmake .. \
+              -DCMAKE_BUILD_TYPE=Release \
+              -DCMAKE_INSTALL_PREFIX=/usr \
+              -DCMAKE_INSTALL_LIBDIR=lib \
+              -DWITH_KF5DBus=OFF \
+              -DBoost_NO_BOOST_CMAKE=ON \
+              -DSKIP_MODULES="webview interactiveterminal initramfs \
+                              initramfscfg dracut dracutlukscfg \
+                              dummyprocess dummypython dummycpp \
+                              dummypythonqt services-openrc services-systemd \
+                              keyboardq localeq welcomeq"
+        make
+}
+
+package() {
+    cd ${srcdir}/calamares-${pkgver}/build
+    make DESTDIR="$pkgdir" install
+    install -Dm644 "../data/calamares.desktop" "$pkgdir/usr/share/applications/calamares.desktop"
+    install -Dm755 "../data/calamares_polkit" "$pkgdir/usr/bin/calamares_polkit"
+    install -Dm644 "../data/49-nopasswd-calamares.rules" "$pkgdir/etc/polkit-1/rules.d/49-nopasswd-calamares.rules"
+    chmod 750 "$pkgdir"/etc/polkit-1/rules.d
+}

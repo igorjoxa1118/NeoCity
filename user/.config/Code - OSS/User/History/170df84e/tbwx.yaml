@@ -1,0 +1,385 @@
+- name: "Kernel & Drivers"
+  description: "Install Kernel & Drivers"
+  critical: false
+  hidden: false
+  selected: false
+  subgroups:
+  - name: "Linux-lts"
+    description: "Install linux-lts kernel"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - linux-lts
+      - linux-lts-headers
+  - name: "Linux-zen"
+    description: "Install linux-zen kernel"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - linux-zen
+      - linux-zen-headers
+  - name: "Nvidia"
+    description: "Install nvidia"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - nvidia
+      - nvidia-settings
+      - nvidia-utils
+      - lib32-nvidia-utils
+  - name: "Nvidia-lts"
+    description: "Install nvidia-lts"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - nvidia-lts
+      - nvidia-settings
+      - nvidia-utils
+  - name: "Printing"
+    description: "Support for printing (Cups)"
+    hidden: false
+    selected: false
+    critical: false
+    packages:
+      - cups
+      - cups-filters
+      - cups-pdf
+      - ghostscript
+      - gsfonts
+      - foomatic-db
+      - foomatic-db-engine
+      - foomatic-db-ppds
+      - foomatic-db-nonfree
+      - foomatic-db-nonfree-ppds
+      - gutenprint
+      - foomatic-db-gutenprint-ppds
+      - system-config-printer
+      - hplip
+      - splix
+
+- name: "Desktop environment"
+  description: "Install Desktop environment"
+  critical: false
+  hidden: false
+  selected: false
+  subgroups:
+  - name: "Xfce"
+    description: "Desktop environment"
+    critical: false
+    hidden: false
+    selected: false
+    expanded: true
+    packages:
+      - ctlos-xfce-skel
+  - name: "Openbox"
+    description: "Window manager"
+    hidden: false
+    selected: false
+    critical: false
+    packages:
+      - ctlos-openbox-skel
+  - name: "Bspwm"
+    description: "Tiling window manager"
+    hidden: false
+    selected: false
+    critical: false
+    packages:
+      - ctlos-bspwm-skel
+  - name: "I3 wm"
+    description: "Tiling window manager"
+    hidden: false
+    selected: false
+    critical: false
+    packages:
+      - ctlos-i3-skel
+  - name: "Budgie"
+    description: "Desktop environment"
+    hidden: false
+    selected: false
+    critical: false
+    packages:
+      - budgie-desktop
+      - gnome
+      - gnome-multi-writer
+      - gnome-usage
+      - network-manager-applet
+      - fwupd
+  - name: "GNOME"
+    description: "Desktop environment"
+    hidden: false
+    selected: false
+    critical: false
+    packages:
+      - gnome
+      - gnome-tweaks
+      - nautilus-sendto
+      - gnome-nettool
+      - gnome-usage
+      - gnome-multi-writer
+      - adwaita-icon-theme
+      - chrome-gnome-shell
+      - gnome-software-packagekit-plugin
+      - gnome-packagekit
+      - fwupd
+  - name: "Lxqt"
+    description: "Desktop environment"
+    hidden: false
+    selected: false
+    critical: false
+    packages:
+      - lxqt
+      - xdg-utils
+      - libpulse
+      - libstatgrab
+      - libsysstat
+      - network-manager-applet
+      - oxygen-icons
+      - breeze
+      - breeze-gtk
+      - pavucontrol-qt
+  - name: "Cinnamon"
+    description: "Desktop environment"
+    hidden: false
+    selected: false
+    critical: false
+    packages:
+      - cinnamon
+      - cinnamon-translations
+      - gnome-terminal
+      - gnome-system-monitor
+      - gpicview-gtk3
+      - x-apps
+      - nemo-fileroller
+      - nemo-image-converter
+      - nemo-preview
+      - nemo-seahorse
+      - nemo-share
+      - blueberry
+  - name: "Mate"
+    description: "Desktop environment"
+    hidden: false
+    selected: false
+    critical: false
+    packages:
+      - mate
+      - mate-extra
+      - network-manager-applet
+  - name: "Deepin"
+    description: "Desktop environment"
+    hidden: false
+    selected: false
+    critical: false
+    packages:
+      - deepin
+      - deepin-extra
+      - file-roller
+  - name: "KDE Plasma"
+    description: "Desktop environment"
+    hidden: false
+    selected: false
+    critical: false
+    packages:
+      - plasma
+      - packagekit-qt5
+      - kdeconnect
+      - fwupd
+      - python-dbus
+      - kdebase-meta
+      - python-dbus
+      - gwenview
+      - ark
+      - okular
+
+- name: "Applications"
+  description: "Install Applications"
+  critical: false
+  hidden: false
+  selected: false
+  subgroups:
+  - name: "Internet"
+    description: "Internet software"
+    critical: false
+    hidden: false
+    selected: false
+    expanded: true
+    packages:
+      - chromium
+      - opera
+      - qutebrowser
+      - hexchat
+      - telegram-desktop
+      - discord
+      - pidgin
+      - falkon
+      - filezilla
+      - geary
+      - thunderbird
+      - deluge
+      - qbittorrent
+      - transmission-gtk
+      - ktorrent
+      - wireshark-qt
+  - name: "Terminals"
+    description: "Terminals"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - alacritty
+      - gnome-terminal
+      - guake
+      - kitty
+      - konsole
+      - lxterminal
+      - sakura
+      - termite
+      - terminator
+      - tilix
+      - tilda
+  - name: "File Manager"
+    description: "Filemanager"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - thunar
+      - caja
+      - dolphin
+      - nautilus
+      - nemo
+      - nemo-fileroller
+      - pcmanfm
+      - krusader
+      - catfish
+      - file-roller
+  - name: "Fonts"
+    description: "Fonts"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - adobe-source-sans-pro-fonts
+      - noto-fonts
+      - noto-fonts-emoji
+      - noto-fonts-cjk
+      - ttf-bitstream-vera
+      - ttf-dejavu
+      - ttf-droid
+      - ttf-hack
+      - ttf-inconsolata
+      - ttf-liberation
+      - ttf-roboto
+      - ttf-ubuntu-font-family
+      - terminus-font
+  - name: "Dev Tools"
+    description: "Development"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - code
+      - neovim
+      - emacs
+      - gitg
+  - name: "Graphics & Media"
+    description: "Graphics & Media"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - blender
+      - darktable
+      - digikam
+      - krita
+      - gimp
+      - pinta
+      - audacity
+      - kdenlive
+      - obs-studio
+      - deadbeef
+      - lollypop
+  - name: "Other"
+    description: "Other"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - grub-customizer
+      - gnome-disk-utility
+      - cheese
+      - liferea
+      - mcomix
+  - name: "Virtualbox"
+    description: "Install virtualbox"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - virtualbox
+      - virtualbox-host-modules-arch
+      - virtualbox-host-dkms
+      - virtualbox-guest-iso
+      - virtualbox-guest-dkms
+  - name: "Usb iso"
+    description: "Usb"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - gnome-multi-writer
+      - imagewriter
+      - woeusb
+  - name: "Games"
+    description: "Install Games pkg"
+    critical: false
+    hidden: false
+    selected: false
+    expanded: true
+    packages:
+      - extremetuxracer
+      - gnome-chess
+      - gnuchess
+      - lutris
+      - playonlinux
+      - teeworlds
+
+- name: "Office"
+  description: "Install Office pkg"
+  critical: false
+  hidden: false
+  selected: false
+  subgroups:
+  - name: "Abiword"
+    description: "Install abiword"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - abiword
+  - name: "Gnumeric"
+    description: "Install gnumeric"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - gnumeric
+  - name: "Libre Office Fresh"
+    description: "Install libre office fresh"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - libreoffice-fresh
+      # - libreoffice-fresh-$LOCALE
+  - name: "Libre Office Still"
+    description: "Install libre office still"
+    critical: false
+    hidden: false
+    selected: false
+    packages:
+      - libreoffice-still
+      # - libreoffice-still-${LOCALE}

@@ -1,0 +1,24 @@
+# Maintainer: Alex Creio <ctlos@protonmail.com>
+
+srcname=skel
+pkgname=virOS-i3-skel
+pkgdesc='Settings I3 wm'
+pkgver=1.3.2
+pkgrel=1
+arch=('any')
+url="https://github.com/igorjoxa1118/skel"
+license=('GPL')
+makedepends=('git')
+depends=('i3-wm')
+source=("git+$url.git")
+sha256sums=('SKIP')
+install=README.install
+
+package() {
+  cd ${srcdir}/${srcname}/
+  install -dm755 "${pkgdir}/usr/local/bin"
+  install -dm755 "${pkgdir}/etc/skel"
+
+  cp -rf usr/local/bin/. "${pkgdir}/usr/local/bin"
+  cp -rf etc/skel/. "$pkgdir/etc/skel"
+}

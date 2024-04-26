@@ -1,0 +1,8 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.colorTheme": "Lemon Tree Dark",
+    "workbench.editorAssociations": {
+        "*.sqlite": "default",
+        "*.qbtheme": "default"
+    }
+}

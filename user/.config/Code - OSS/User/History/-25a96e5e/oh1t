@@ -1,0 +1,44 @@
+# Maintainer: dr460nf1r3 <dr460nf1r3 at garudalinux dot org>
+# Contributor: Librewish <librewish@gmail.com>
+
+pkgname=garuda-common-settings
+pkgver="2.6.23"
+_commit='7734878323b117c89d7c97cbe049a8c44b5dcee5'
+pkgrel=1
+arch=('any')
+url="https://github.com/igorjoxa1118/garuda-common-settings/$pkgname"
+license=('GPL')
+source=("https://github.com/igorjoxa1118/garuda-common-settings/garuda-common-settings-${_commit}.tar.gz")
+sha256sums=('SKIP')
+pkgdesc='Garuda Linux common settings'
+depends=('btrfsmaintenance'
+	'garuda-bash-config'
+	'garuda-hooks'
+	'garuda-icons'
+	'garuda-migrations'
+	'garuda-update'
+	'garuda-wallpapers'
+	'profile-sync-daemon'
+	'zram-generator'
+	'systemd-oomd-defaults'
+	'noto-color-emoji-fontconfig')
+optdepends=('garuda-browser-settings: Garuda Linux Browser settings'
+	'performance-tweaks: Tuning for best performance'
+	'powersave-tweaks: Tuning for lower power usage'
+	'pacutils: Required for garuda-inxi funstuff')
+makedepends=('polkit')
+conflicts=('systemd-swap' 'ipw2100-fw' 'ipw2200-fw' 'firedragon-extension-xdm-browser-monitor')
+backup=(etc/sudoers.d/{editor,insults,pwfeedback})
+install=$pkgname.install
+
+package() {
+	install -d "$pkgdir"/etc
+	cp -rf "$srcdir"/$pkgname-$_commit/etc "$pkgdir"
+	install -d "$pkgdir"/usr
+	cp -rf "$srcdir"/$pkgname-$_commit/usr "$pkgdir"
+
+	# Fix permissions
+	chmod -R 750 "$pkgdir"/etc/sudoers.d/
+	chmod -R 750 "$pkgdir"/usr/share/polkit-1/rules.d/
+	chown -R root:polkitd "$pkgdir"/usr/share/polkit-1/rules.d
+}

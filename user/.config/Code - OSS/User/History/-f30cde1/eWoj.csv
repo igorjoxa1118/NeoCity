@@ -1,0 +1,27 @@
+@icon,,18,17,16,16,0,left,top,#7AA2F7,#7AA2F7,'$HOME'/.config/jgmenu/MenuIcons/search.png
+@search,,42,15,150,20,2,left,top,#c0caf5,#7aa2f7,search ...
+
+Terminal,kitty -float,'$HOME'/.config/jgmenu/MenuIcons/terminal.png
+
+Web Browser,firefox,'$HOME'/.config/jgmenu/MenuIcons/web-browser.png
+
+File manager,thunar,'$HOME'/.config/jgmenu/MenuIcons/file-manager.png
+
+Text Editor,kitty -e micro,'$HOME'/.config/jgmenu/MenuIcons/edit-note.png
+
+Music Player,music --albumArtCover,'$HOME'/.config/jgmenu/MenuIcons/music.png
+
+^sep()
+Applications,^checkout(lx-apps),'$HOME'/.config/jgmenu/MenuIcons/applications.png
+
+Exit,powermenu,'$HOME'/.config/jgmenu/MenuIcons/exit.png
+
+I3,^checkout(i3),'$HOME'/.config/jgmenu/MenuIcons/bspwm.png
+^tag(i3)
+Edit Config, kitty -e micro ~/.config/i3/config, '$HOME'/.config/jgmenu/MenuIcons/edit-note.png
+Restart, i3-msg restart, '$HOME'/.config/jgmenu/MenuIcons/restart.png
+Exit, i3-msg exit, '$HOME'/.config/jgmenu/MenuIcons/exit.png
+Reboot, reboot, '$HOME'/.config/jgmenu/MenuIcons/reboot.png
+Shutdown, shutdown -h now, '$HOME'/.config/jgmenu/MenuIcons/shutdown.png
+
+^tag(lx-apps)

@@ -1,0 +1,8 @@
+/*Обнуление*/
+*(padding: 0; margin:0; border:0;)
+
+.block {
+height: 50%;
+border-radius: 15px;
+box-shadow: 0 0 10px #000;
+}

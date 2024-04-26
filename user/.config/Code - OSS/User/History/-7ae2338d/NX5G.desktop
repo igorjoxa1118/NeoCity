@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=BackMenu
+Comment=Search for your favorite music. Play your favorite playlists
+GenericName=
+Keywords=youtube; search; tube;
+Exec=sh /home/vir0id/Загрузки/Скрипты/menu.sh
+Terminal=false
+Type=Application
+Icon=/home/vir0id/Загрузки/Скрипты/icons/backup.svg
+Path=/home/vir0id/Загрузки/Скрипты/
+Categories=System;
+NoDisplay=false
+Name[ru_RU]=backmenu.desktop

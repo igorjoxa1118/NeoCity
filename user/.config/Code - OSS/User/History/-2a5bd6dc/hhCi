@@ -1,0 +1,32 @@
+pkgname=Tokio_night
+pkgver=1.0
+pkgrel=1
+pkgdesc='Polybar theme for i3-gaps'
+url="https://github.com/igorjoxa1118/Tokio_night"
+arch=("any")
+license=("GPL")
+makedepends=('git')
+depends=("autotiling" "ttf-iosevkaterm-nerd" "ttf-iosevka-nerd" "oh-my-posh-bin" "cmus")
+source=("git+${url}.git")
+sha256sums=('SKIP')
+
+package() {
+
+  cd ${srcdir}/${pkgname}
+  
+  install -dm755 "${pkgdir}/$HOME/.config/i3"
+  install -dm755 "${pkgdir}/$HOME/.themes"
+  install -dm755 "${pkgdir}/$HOME/.icons"
+  install -dm755 "${pkgdir}/$HOME/.config/blender/config/colorshemas/"
+  install -dm755 "${pkgdir}/$HOME/.poshthemes/"
+  install -dm755 "${pkgdir}/$HOME/.config/cmus/"
+  install -dm755 "${pkgdir}/$HOME/.wallpapers/garuda-wallpapers/"
+  
+  cp -r i3/* ${pkgdir}/$HOME/.config/i3
+  cp -r theme/* ${pkgdir}/$HOME/.themes
+  cp -r icons/* ${pkgdir}/$HOME/.icons
+  cp -r Blender/colorchemas* ${pkgdir}/$HOME/.config/blender/colorshemas/
+  cp -r poshthemes/* ${pkgdir}/$HOME/.poshthemes/
+  cp -r cmus/* ${pkgdir}/$HOME/.config/cmus/
+  cp -r wallpaper/* ${pkgdir}/$HOME/.wallpapers/garuda-wallpapers/
+}

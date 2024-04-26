@@ -1,0 +1,490 @@
+
+# ##########################################
+
+[module/i3]
+type = internal/i3
+index-sort = true
+strip-wsnumbers = true
+enable-scroll = true
+format = <label-state> <label-mode>
+wrapping-scroll = false
+
+ws-icon-0 = 1; Terminal
+ws-icon-1 = 2; Firefox
+ws-icon-2 = 3;ﬥ Code
+ws-icon-3 = 4; File
+ws-icon-4 = 5; Blen|Gimp 
+ws-icon-5 = 6; Telegram 
+ws-icon-6 = 7; Video
+ws-icon-7 = 8; Pictures
+ws-icon-8 = 9; Virtual
+ws-icon-9 = 10; Other
+ws-icon-default = 
+
+format-font = 7
+
+label-mode = %mode%
+label-mode-padding = 1
+label-mode-background = ${colors.black}
+
+
+; focused = Active workspace on focused monitor
+label-focused = %icon%
+label-focused-background = ${colors.Garuda_light}
+label-focused-foreground = ${colors.black}
+label-focused-underline= ${colors.text_color}
+label-focused-padding = 1
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %icon%
+label-unfocused-padding = 1
+; Цвет не активного рабочего места
+label-unfocused-foreground = ${colors.i3_violet}
+label-unfocused-background = ${colors.Cyberpunk_bg}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %icon%
+label-visible-foreground = ${colors.background}
+label-visible-background = ${colors.text_color}
+label-visible-underline = ${colors.text_color}
+label-visible-padding = 1
+
+; urgent = Workspace with urgency hint set
+label-urgent = %icon%
+; Цвет окрывающегося рабочего места
+label-urgent-foreground = ${colors.Garuda_light}
+label-urgent-padding = 1
+label-urgent-background = ${colors.Cyberpunk_bg}
+
+label-occupied = %icon%
+label-occupied-foreground = ${colors.text_color}
+label-occupied-padding = 1
+label-occupied-background = ${colors.Cyberpunk_bg}
+
+label-empty = %icon%
+label-empty-foreground = ${colors.text_color}
+label-empty-padding = 1
+label-empty-background = ${colors.Cyberpunk_bg}
+
+
+# ##########################################
+
+[module/drive]
+type = custom/text
+interval = 5
+# format-padding = 1
+click-left = rclone mount my-drive: ~/GDrive/ &
+click-right = umount ~/GDrive/ &
+content = " Drive"
+content-font = 7
+content-foreground = ${colors.retrowave_cyan}
+
+[module/uparch]
+type = custom/script
+exec = ~/.config/i3/polybar/uparch.sh
+interval = 600
+format = <label>
+label-font = 7
+format-prefix = "ﮨ  "
+format-prefix-foreground = ${colors.Garuda_light}
+format-foreground = ${colors.text_color}
+click-left = "urxvt -name Pacui -e ~/.bin/pacui &"
+
+
+
+[module/tor]
+type = custom/script
+exec = ~/.config/i3/polybar/status tor
+interval = 5
+format = <label>
+label-font = 7
+# format-padding = 1
+click-left = "systemctl restart tor"
+click-right = "systemctl stop tor"
+format-prefix = "  "
+format-prefix-font = 7
+format-prefix-foreground = ${colors.retrowave_cyan}
+
+[module/title]
+type = internal/xwindow
+format-padding = 8
+label = "%title:0:20:...%"
+label-maxlen = 20
+
+
+
+[module/term]
+type = custom/text
+content = "        "
+content-foreground = ${colors.Garuda_light}
+# click-left = "urxvt -name tmux -geometry 190x50 -e tmux new -s proc -d ranger\; splitw -dv htop\; splitw -dh gotop\; splitw -dh\; attach &"
+click-left = "urxvt -name Tmux -e sh -c 'tmux attach || tmux new -s work' &"
+#click-right = "urxvt -name Tmux -e sh -c '~/.bin/rxrun.sh' &"
+
+
+[module/app]
+type = custom/text
+content = " Menu"
+content-foreground = ${colors.black}
+content-background = ${colors.Garuda_dark}
+content-padding = 1
+content-font = 7
+click-left = "$HOME/.config/rofi/launchers/type-1/launcher.sh"
+
+
+
+[module/rss]
+type = custom/text
+content = "      "
+content-foreground = ${colors.Garuda_light}
+click-left = "urxvt -name Newsboat -e newsboat &"
+click-right =
+
+
+
+[module/cpu]
+type = internal/cpu
+interval = 5
+format-prefix = "    "
+format-prefix-foreground = ${colors.Garuda_light}
+label = %percentage%%
+label-font = 7
+label-foreground = ${colors.text_color}
+
+
+
+[module/memory]
+type = internal/memory
+interval = 5
+format-prefix = "   "
+format-prefix-foreground = ${colors.Garuda_light}
+label = %percentage_used%%
+label-font = 7
+label-foreground = ${colors.text_color}
+
+[module/blueman-manager]
+type = custom/text
+content-prefix = "Blueman"
+content-prefix-foreground = ${colors.retrowave_cyan}
+content = ""
+content-font = 7
+content-prefix-padding = 1
+content-foreground = ${colors.Garuda_light}
+click-left = /usr/bin/blueman-manager &
+
+
+;[module/alsa]
+;type = internal/pulseaudio
+;format-volume = <ramp-volume> <label-volume>
+;format-muted =  0%
+;ramp-volume-0 = 
+;ramp-volume-1 = 
+;ramp-volume-2 = 
+;ramp-volume-foreground = ${colors.retrowave_cyan}
+###########################
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+;format-volume = <label-volume> <bar-volume>
+format-volume = <bar-volume>
+label-volume = VOL %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.Garuda_light} 
+bar-volume-foreground-1 = ${colors.Garuda_light}
+bar-volume-foreground-2 = ${colors.Garuda_light}
+bar-volume-foreground-3 = ${colors.Garuda_light}
+bar-volume-foreground-4 = ${colors.Garuda_light}
+bar-volume-foreground-5 = ${colors.Garuda_light}
+bar-volume-foreground-6 = ${colors.Garuda_light}
+bar-volume-gradient = false
+bar-volume-indicator = 
+bar-volume-indicator-font = 7
+bar-volume-indicator-foreground = ${colors.Garuda_light}
+bar-volume-fill = ─
+bar-volume-fill-font = 7
+bar-volume-empty = ─
+bar-volume-empty-font = 7
+bar-volume-empty-foreground = ${colors.text_color} 
+
+###########################
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+blacklist-1 = caps lock
+format-prefix = " "
+format-prefix-foreground = ${colors.retrowave_cyan}
+format-prefix-padding = 1
+label = %layout%
+label-layout-font = 7
+label-layout-foreground = ${colors.text_color}
+
+
+
+[module/power]
+type = custom/text
+content = ""
+content-padding = 1
+content-font = 7
+content-foreground = ${colors.black}
+content-background = ${colors.retrowave_cyan}
+click-left = ~/.config/rofi/powermenu/type-1/powermenu.sh
+
+
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+# password = mysecretpassword
+interval = 2
+format-online = <icon-prev> <icon-stop> <toggle> <icon-next>
+label-offline =  mpd off
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
+icon-play-foreground = ${colors.retrowave_cyan}
+icon-pause-foreground = ${colors.text_color}
+icon-stop-foreground = ${colors.retrowave_cyan}
+icon-prev-foreground = ${colors.Garuda_light}
+icon-next-foreground = ${colors.Garuda_light}
+content-font = 7
+
+[module/date]
+type = internal/date
+interval = 5
+# date = "%e %b,"
+date-alt = "%e %B %Y,"
+time = "%H:%M"
+time-alt = "%H:%M:%S"
+format-prefix = " "
+format-prefix-foreground = ${colors.retrowave_cyan}
+# format-underline = #5294E2
+label =%{A3:gsimplecal & disown:}%date% %time%%{A}
+# label = %date% %time%
+# format-background = #132332
+label-foreground = ${colors.text_color}
+label-font = 7
+# format-padding =
+
+[module/wireless-nmtui]
+type = internal/network
+
+interface = wlp0s20f3
+
+format-connected =%{A1:~/.config/rofi/bin/network:}<ramp-signal>  <label-connected>%{A}
+format-packetloss = <animation-packetloss>
+label-connected = %local_ip%
+label-connected-foreground = ${colors.text_color}
+format-connected-font = 7
+
+format-disconnected = "  NoDetect'"
+ramp-signal-0 = 
+ramp-signal-0-foreground = ${colors.blue_gradient}
+ramp-signal-1 = 
+ramp-signal-1-foreground = ${colors.blue_gradient}
+ramp-signal-2 = 
+ramp-signal-2-foreground = ${colors.blue_gradient} 
+ramp-signal-3 = 
+ramp-signal-3-foreground = ${colors.retrowave_cyan}
+ramp-signal-4 = 
+ramp-signal-4-foreground = ${colors.retrowave_cyan}
+ramp-signal-5 = 
+ramp-signal-5-foreground = ${colors.retrowave_cyan}
+
+format-connected-underline = ${colors.Garuda_light}
+
+animation-packetloss-0 = ⚠
+animation-packetloss-0-foreground = #9D059E
+animation-packetloss-1 = 📶
+animation-packetloss-1-foreground = #000000
+
+animation-packetloss-framerate = 500
+
+##################
+##################
+
+[module/wired-network]
+type = internal/network
+interface = enp1s0
+interval = 3.0
+
+udspeed-minwidth = 5
+
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected = "   %downspeed%  "
+label-connected-font = 7
+label-connected-foreground = ${colors.Garuda_light}
+label-connected-background = ${colors.Cyberpunk_bg}
+
+label-disconnected = " disconnected"
+label-disconnected-font = 7
+label-disconnected-foreground = ${colors.retrowave_cyan}
+label-disconnected-background = ${colors.Cyberpunk_bg}
+
+
+
+
+##################
+# Software modules
+##################
+
+[module/pamac]
+type = custom/text
+content = " Pamac"
+content-font = 7
+content-foreground = ${colors.retrowave_cyan}
+click-left = /usr/bin/pamac-manager &
+
+[module/terminal]
+type = custom/text
+content = " Terminal"
+content-font = 7
+content-foreground = ${colors.Garuda_light}
+click-left = /usr/bin/xfce4-terminal --hide-menubar &
+click-right =
+
+[module/web]
+type = custom/text
+content = " Firefox"
+content-font = 7
+content-foreground = ${colors.Garuda_light}
+click-left = /usr/bin/firefox &
+
+[module/thunar]
+type = custom/text
+content = " Thunar"
+content-font = 7
+content-foreground = ${colors.Garuda_light}
+click-left = /usr/bin/thunar &
+
+[module/rawtherapee]
+type = custom/text
+content = " Rawtherapee"
+content-font = 7
+content-foreground = ${colors.Garuda_light}
+click-left = /usr/bin/rawtherapee &
+
+[module/gimp]
+type = custom/text
+content = " Gimp"
+content-font = 7
+content-foreground = ${colors.retrowave_cyan}
+click-left = /usr/bin/gimp &
+
+[module/blender]
+type = custom/text
+content = " Blender"
+content-font = 7
+content-foreground = ${colors.retrowave_cyan}
+click-left = /usr/bin/blender &
+
+[module/code]
+type = custom/text
+content = "ﬥ Code"
+content-font = 7
+content-foreground = ${colors.retrowave_cyan}
+click-left = /usr/bin/code &
+
+[module/telegram]
+type = custom/text
+content = " Telegram"
+content-font = 7
+content-foreground = ${colors.retrowave_cyan}
+click-left = /usr/bin/telegram-desktop &
+
+
+[module/kodi]
+type = custom/text
+content = " Kodi"
+content-font = 7
+content-foreground = ${colors.retrowave_cyan}
+click-left = /usr/bin/kodi &
+
+########################################
+########################################
+
+[module/backlight]
+type = internal/backlight
+
+; Use the following command to list available cards:
+; $ ls -1 /sys/class/backlight/
+card = nvidia_wmi_ec_backlight
+
+; Use the `/sys/class/backlight/.../actual-brightness` file
+; rather than the regular `brightness` file.
+; Defaults to true unless the specified card is an amdgpu backlight.
+; New in version 3.6.0
+use-actual-brightness = true
+
+; Enable changing the backlight with the scroll wheel
+; NOTE: This may require additional configuration on some systems. Polybar will
+; write to `/sys/class/backlight/${self.card}/brightness` which requires polybar
+; to have write access to that file.
+; DO NOT RUN POLYBAR AS ROOT. 
+; The recommended way is to add the user to the
+; `video` group and give that group write-privileges for the `brightness` file.
+; See the ArchWiki for more information:
+; https://wiki.archlinux.org/index.php/Backlight#ACPI
+; Default: false
+enable-scroll = true
+; Available tags:
+;   <label> (default)
+;   <ramp>
+;   <bar>
+format = <bar>
+format-foreground = ${colors.retrowave_cyan}
+bar-empty-foreground = ${colors.text_color}
+; Available tokens:
+;   %percentage% (default)
+label = %percentage%%
+
+; Only applies if <ramp> is used
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+; Only applies if <bar> is used
+bar-width = 10
+bar-indicator = 
+bar-indicator-font = 7
+bar-fill = ─
+bar-empty = ─
+
+#################################
+#################################
+
+[module/cmus]
+type = custom/script
+
+exec = ~/.config/i3/polybar/polybar-cmus/cmus.sh
+exec-if = pgrep -x cmus
+interval = 1
+
+click-left = cmus-remote --next
+click-right = cmus-remote --prev
+click-middle = cmus-remote --pause
+scroll-up = cmus-remote --volume +5%
+scroll-down = cmus-remote --volume -5%
+
+label-font = 7
+format = <label>
+format-underline = ${colors.foreground-alt}
+label = %output%
+label-maxlen = 50

@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = filesystem
+
+[Action]
+Description = Add Ctlos specifc config.
+When = PostTransaction
+Exec = /bin/sh -c "sed -i 's|vir0id|liveuser|g' /home/liveuser/.config/nitrogen/bg-saved.cfg /home/liveuser/.config/nitrogen/nitrogen.cfg"

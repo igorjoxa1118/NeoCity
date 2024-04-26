@@ -1,0 +1,83 @@
+{
+	"name": "theme-dracula-dark-plus",
+	"version": "2.24.4",
+	"displayName": "Dracula Dark+",
+	"homepage": "https://gitlab.com/mateuszdrewniak/dracula-dark-plus",
+	"description": "Yet another Dracula Official Theme fork, but with colors switched to resemble Dark+",
+	"publisher": "MateuszDrewniak",
+	"license": "MIT",
+	"scripts": {
+		"build": "node ./scripts/build.js",
+		"lint": "node ./scripts/lint.js",
+		"package": "vsce package -o ./bin/dracula.vsix",
+		"vscode:prepublish": "npm run build",
+		"vsce-publish": "vsce publish"
+	},
+	"maintainers": [
+		"Derek P Sifford <dereksifford@gmail.com>",
+		"Matheus Calegaro <matheuscalegaro@outlook.com>",
+		"Mateusz Drewniak <matmg24@gmail.com"
+	],
+	"contributors": [
+		"Krzysztof Wisznarewski",
+		"Daniel Ramos",
+		"Eric Jackson",
+		"Elliott Pogue",
+		"Ajit Singh",
+		"Teddy Bradford",
+		"Mateusz Drewniak"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://gitlab.com/mateuszdrewniak/dracula-dark-plus"
+	},
+	"engines": {
+		"vscode": "^1.13.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"dracula",
+		"dracula-refined",
+		"dark +",
+		"dark",
+		"theme",
+		"color-theme"
+	],
+	"icon": "icon.png",
+	"galleryBanner": {
+		"color": "#171924",
+		"theme": "dark"
+	},
+	"contributes": {
+		"themes": [
+			{
+				"label": "Dracula Dark+",
+				"uiTheme": "vs-dark",
+				"path": "./theme/dracula.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"js-yaml": "^4.1.0",
+		"prettier": "^2.6.0",
+		"tinycolor2": "^1.4.2",
+		"vsce": "^2.7.0"
+	},
+	"dependencies": {
+		"keytar": "^7.9.0"
+	},
+	"__metadata": {
+		"id": "815e376b-a6af-4edd-bf53-88ea0e8c6f82",
+		"publisherId": "2aa307bf-881b-4ae8-ab6f-7746dfc1abde",
+		"publisherDisplayName": "MateuszDrewniak",
+		"targetPlatform": "universal",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1713089623916,
+		"pinned": false,
+		"source": "gallery"
+	}
+}

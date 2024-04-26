@@ -1,0 +1,32 @@
+pkgname=Tokio_night
+pkgver=1.0
+pkgrel=1
+pkgdesc="Polybar theme for i3-gaps"
+arch=('any')
+url='https://github.com/igorjoxa1118/Tokio_night'
+license=('GPL')
+conflicts=('i3wm')
+makedepends=('git')
+source=(git+https://github.com/igorjoxa1118/Tokio_night)
+md5sums=('SKIP')
+
+package() {
+  cd ${srcdir}/$_pkgname
+
+  # Generic assets
+  install -Dm644 -t "${pkgdir}/.config/i3/"
+  cp -r ${srcdir}/$pkgname/i3/* ${pkgdir}/.config/i3/
+}
+
+
+pkgname=skeuos
+pkgver=1.0
+pkgrel=1
+pkgdesc='Gtk+ theme'
+url="https://github.com/ctlos/skeuos"
+arch=("any")
+license=("GPL")
+makedepends=('git')
+depends=("gtk-engine-murrine" "gtk-engines")
+source=("git+${url}.git")
+sha256sums=('SKIP')

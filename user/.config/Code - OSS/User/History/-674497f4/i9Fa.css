@@ -1,0 +1,100 @@
+@define-color bg-color #ffffff;
+@define-color fg-color #ffffff;
+@define-color sel-color #ffffff;
+@define-color backdrop-bg-color #ffffff;
+@define-color text-backport-color #ffffff; /*Цвет всего текста не активного окна*/
+@define-color button-backdrop-background-color #ffffff; /*Кнопки не активного окна*/
+@define-color button-backdrop-checked-background-color #ffffff; /*Выделение в тексте на левой панели*/
+@define-color spinbutton-not-vertical-button-shadow #ffffff; /*Цвет кнопок активного окна*/
+@define-color spinbutton-not-vertical-image-entry-image #ffffff; /*Цвет текста заголовка окна*/
+@define-color stackswitcher-button-backdrop-checked-background-color #ffffff; /*Цвет кнопок заголовка не активного окна*/
+@define-color notebook-header-tabs-arrow-hover-button-hover-background-color #ffffff; /*Цвет кнопок заголовка активного окна*/
+@define-color assistant-sidebar-backdrop-border-color #ffffff; /*Рамка кнопок не активного окна*/
+@define-color assistant-sidebar-backdrop-background-color #ffffff; /*Рамка чекбокса активого окна*/
+
+@define-color disabled-color #ffffff;
+@define-color border-color #ffffff;
+@define-color button-destructive-action-flat-backdrop #ffffff; 
+@define-color button-destructive-action-hover-background #ffffff; 
+@define-color button-backdrop-active-background-color #ffffff;
+@define-color button-backdrop-disabled-checked-background-color #ffffff;
+@define-color button-suggested-action-flat-backdrop-background-color #ffffff;
+@define-color spinbutton-not-vertical-image-backdrop-entry-image-backdrop-color #ffffff;
+@define-color spinbutton-drop-active-not-vertical-entry-drop-active-focus-entry-drop-active #ffffff;
+@define-color gtkstyle-fallback-hover-background-color #ffffff;
+@define-color gtkstyle-fallback-active-background-color #ffffff;
+@define-color treeview-view-header-button-hover-color #ffffff;
+@define-color label-disabled-backdrop-color #ffffff;
+@define-color popup-backdrop-color #ffffff; 
+@define-color label-error-color #ffffff;
+@define-color entry-tag-hover-background-color #ffffff;
+@define-color treeview-view-disabled-selected-color #ffffff;
+@define-color treeview-view-disabled-selected-backdrop-color #ffffff;
+@define-color treeview-view-backdrop-border-left-color #ffffff;
+@define-color treeview-view-drop-active-border-color #ffffff;
+@define-color treeview-view-expander-color #ffffff;
+@define-color treeview-view-expander-selected-color #ffffff;
+@define-color treeview-view-expander-selected-backdrop-color #ffffff;
+@define-color treeview-view-expander-backdrop-color #ffffff;
+@define-color menu-arrow-top-menu-arrow-top-context-menu-arrow-top-border-top #ffffff;
+@define-color menu-arrow-hover-menu-arrow-hover-context-menu-arrow-hover-background-color #ffffff;
+@define-color treeview-view-selected-border-left-color #ffffff;
+@define-color treeview-view-selected-border-left-color-seccond #ffffff;
+@define-color treeview-view-rubberband-flowbox-rubberband-border #ffffff;
+@define-color assistant-sidebar-backdrop-border-color #ffffff;
+@define-color spinbutton-drop-active-not-vertical-entry-drop-active-focus-entry-drop-active-background-color #ffffff;
+@define-color spinbutton-drop-active-not-vertical-entry-drop-active-focus-entry-drop-active-background-color #ffffff;
+
+/**/
+@define-color notebook-header-tabs-button:active-circle-farthest-corner-at-center #ffffff;
+@define-color button-suggested-action:hover-background-color #ffffff;
+@define-color button-suggested-action:hover-background-color #00ff00; 
+@define-color notebook-header-tabs-arrow-disabled-active-header-tabs-arrow:disabled:checked-button:disabled:active-button:disabled:checked-background-color #ffffff;
+@define-color button-suggested-action-backdrop-active-button-suggested-action-flat-backdrop-checked-background-color #ffffff;
+@define-color button-suggested-action-backdrop-disabled-active-button-suggested-action-flat-backdrop-disabled-checked-background-color #ffffff;
+@define-color button-suggested-action-disabled-active-button-suggested-action-disabled-checked-background-color #ffffff;
+
+
+
+
+/*Transparent*/
+@define-color tbg-color_0_15 shade (@bg-color, 0.15);
+@define-color tbg-color_0_3 shade (@bg-color, 0.3);
+@define-color tbg-color_0_45 shade (@bg-color, 0.45);
+@define-color tbg-color_0_5 shade (@bg-color, 0.5);
+@define-color tbg-color_0_7 shade (@bg-color, 0.7); 
+@define-color tbg-color_0_075 shade (@bg-color, 0.075);
+@define-color tbg-color_0_8 shade (@bg-color, 0.8);
+@define-color tbg-color_0_095 shade (@bg-color, 0.095);
+@define-color tfg-color_0_5 shade (@fg-color, 0.5);
+@define-color tfg-color_0_6 shade (@fg-color, 0.6);
+@define-color tfg-color_0_7 shade (@fg-color, 0.7);
+@define-color tset-color_0 shade (@sel-color, 0);
+@define-color tset-color_0_1 shade (@sel-color, 0.1);
+@define-color tsel-color_0_15 shade (@sel-color, 0.15);
+@define-color tsel-color_0_2 shade (@sel-color, 0.2);
+@define-color tsel-color_0_25 shade (@sel-color, 0.25);
+@define-color tsel-color_0_3 shade (@sel-color, 0.3);
+@define-color tsel-color_0_4 shade (@sel-color, 0.4);
+@define-color tsel-color_0_45 shade (@sel-color, 0.45);
+@define-color tsel-color_0_5 shade (@sel-color, 0.5);
+@define-color tsel-color_0_05 shade (@sel-color, 0.05);
+@define-color tsel-color_0_6 shade (@sel-color, 0.6);
+@define-color tsel-color_0_7 shade (@sel-color, 0.7);
+@define-color tsel-color_0_75 shade (@sel-color, 0.75);
+@define-color tsel-color_0_8 shade (@sel-color, 0.8);
+@define-color tsel-color_0_9 shade (@sel-color, 0.9);
+@define-color disabled-color_0_45 shade (@disabled-color, 0.45);
+@define-color tpopup-backdrop-color_0.075 shade (@popup-backdrop-color, 0.075);
+@define-color tpopup-backdrop-color_0.45 shade (@popup-backdrop-color, 0.45);
+@define-color label-error-disabled-color_02 shade (@label-error-color, 0.2);
+@define-color label-error-disabled-color_04 shade (@label-error-color, 0.4);
+@define-color label-error-disabled-color_05 shade (@label-error-color, 0.5);
+@define-color label-error-disabled-color_08 shade (@label-error-color, 0.8);
+@define-color tbutton-destructive-action-flat-backdrop shade (@button-destructive-action-flat-backdrop, 0.8);
+@define-color tentry-tag-hover-background-color shade (@entry-tag-hover-background-color, 0.9);
+@define-color treeview-view-selected-border-left-color-seccond_01 shade (@treeview-view-selected-border-left-color-seccond, 0.1);
+@define-color treeview-view-selected-border-left-color-seccond_0_45 shade (@treeview-view-selected-border-left-color-seccond, 0.45);
+@define-color treeview-view-selected-border-left-color-seccond_0_125 shade (@treeview-view-selected-border-left-color-seccond, 0.125);
+@define-color ttreeview-view-rubberband-flowbox-rubberband-border_0_2 shade (@treeview-view-rubberband-flowbox-rubberband-border, 0.2);
+@define-color tentry-warning_0_3 shade (@entry-warning, 0.3);

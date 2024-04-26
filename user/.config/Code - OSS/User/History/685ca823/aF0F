@@ -1,0 +1,22 @@
+pkgname=Search-Tube
+pkgver=1.0
+pkgrel=1
+pkgdesc='Search for your favorite music. Play your favorite playlists'
+url="https://github.com/igorjoxa1118/Search-Tube"
+arch=("any")
+license=("GPL")
+makedepends=('git')
+
+depends=("yad")
+
+source=("git+${url}.git")
+sha256sums=('SKIP')
+
+package() {
+
+  install -dm755 "${pkgdir}/usr/share/applications"
+  install -dm755 "${pkgdir}/$HOME/.local/bin/Search-Tube"
+  cd ${srcdir}/${pkgname}
+  cp -r scripts/*.sh ${pkgdir}/$HOME/.local/bin/Search-Tube
+  cp -r scripts/*.desktop ${pkgdir}/usr/share/applications
+}
