@@ -80,7 +80,7 @@ dependencias=(base-devel dunst imagemagick \
 libwebp maim mpc neovim ncmpcpp npm pamixer \
 papirus-icon-theme \
 redshift rustup ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
-ttf-joypixels eww ttf-terminus-nerd ueberzug webp-pixbuf-loader xclip \
+ttf-joypixels ttf-terminus-nerd ueberzug webp-pixbuf-loader xclip \
 xdo ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common \
 ttf-nerd-fonts-symbols-mono yad cmus jgmenu rsync mpv jq git socat mpd polkit-gnome \
 stalonetray kitty lsd ranger micro blueman mousepad ristretto firefox thunar thunar-volman \
@@ -91,7 +91,7 @@ zziplib zip xarchiver unzip unarj unarchiver p7zip libzip karchive gnome-autoar 
 cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenlive kodi \
 kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2)
 
-dependencias_yay=(cava zscroll-git catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
+dependencias_yay=(cava zscroll-git eww-git catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
 zenity-gtk3 musikcube i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
 
 if [ ! -f /usr/bin/firefox ];then 
