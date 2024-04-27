@@ -27,7 +27,6 @@ WHITE='\033[1;37m'
 pwd=$(pwd)
 backup_folder=~/.Backup_files
 date=$(date +%Y%m%d-%H%M%S)
-yay_git="https://aur.archlinux.org/yay.git"
 repo_url="https://github.com/igorjoxa1118/NeoCity"
 
 
@@ -91,7 +90,7 @@ zziplib zip xarchiver unzip unarj unarchiver p7zip libzip karchive gnome-autoar 
 cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenlive kodi \
 kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2)
 
-dependencias_yay=(cava zscroll-git eww-git catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
+dependencias_paru=(cava zscroll-git eww-git catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
 zenity-gtk3 musikcube i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
 
 if [ ! -f /usr/bin/firefox ];then 
@@ -131,27 +130,30 @@ clear
 sleep 2 
 clear
 
-                                          ########## ---------- Установка yay---------- ##########
-logo "Do you have yay? Install it?"
+                                          ########## ---------- Установка paru---------- ##########
+logo "Do you have paru? Install it?"
 
-clone_yay() {
-    if [[ -d "$HOME/Downloads" ]]; then
-       cd "$HOME/Downloads" || exit
-       git clone $yay_git
-       cd "$HOME/Downloads/yay" || exit
-       makepkg -si --noconfirm
-    else
-       cd "$HOME" || exit
-       git clone $yay_git
-       cd "$HOME/yay" || exit
-       makepkg -si --noconfirm
-    fi
+clone_paru() {
+# Installing Paru
+if command -v paru >/dev/null 2>&1; then
+    printf "%s%sParu is already installed%s\n" "${BLD}" "${CGR}" "${CNC}"
+else
+    printf "%s%sInstalling paru%s\n" "${BLD}" "${CBL}" "${CNC}"
+    {
+        cd "$HOME" || exit
+        git clone https://aur.archlinux.org/paru-bin.git
+        cd paru-bin || exit
+        makepkg -si --noconfirm
+        } || {
+        printf "\n%s%sFailed to install Paru. You may need to install it manually%s\n" "${BLD}" "${CRE}" "${CNC}"
+    }
+fi
 }
 
 while true; do
-	read -rp "Do you want yay? [y/N]: " yn
+	read -rp "Do you want paru? [y/N]: " yn
 		case $yn in
-			[Yy]* ) clone_yay && break;;
+			[Yy]* ) clone_paru && break;;
 			[Nn]* ) break;;
 			* ) printf " Error: just write 'y' or 'n'\n\n";;
 		esac
@@ -160,19 +162,19 @@ clear
 
                                           ########## ---------- Установка пакетов AUR---------- ##########
 
-is_installed_yay() {
-  yay -Qi "$1" &> /dev/null
+is_installed_paru() {
+  paru -Qi "$1" &> /dev/null
   return $?
 }
 
 printf "%s%sChecking for required packages...%s\n" "${BLD}" "${CBL}" "${CNC}"
-for pkges_yay in "${dependencias_yay[@]}"
+for pkges_paru in "${dependencias_paru[@]}"
 do
-  if ! is_installed_yay "$pkges_yay"; then
-    yay -S "$pkges_yay" --noconfirm
+  if ! is_installed_paru "$pkges_paru"; then
+    paru -S "$pkges_paru" --noconfirm
     printf "\n"
   else
-    printf '%s%s is already installed on your system!%s\n' "${CGR}" "$pkges_yay" "${CNC}"
+    printf '%s%s is already installed on your system!%s\n' "${CGR}" "$pkges_paru" "${CNC}"
     sleep 1
   fi
 done
@@ -326,18 +328,16 @@ logo "Enabling services"
 
 ### --- Проверка, включена ли служб на глобальном (системном) уровне. --- ###
 
-	if systemctl is-enabled --quiet mpd.service; then
-		echo -e "${LIGHTBLUE}Disabling and stopping the global mpd service"
-    sleep 2
-		sudo systemctl stop mpd.service
-		sudo systemctl disable mpd.service
-	fi
+if systemctl is-enabled --quiet mpd.service; then
+    printf "\n%s%sDisabling and stopping the global mpd service%s\n" "${BLD}" "${CBL}" "${CNC}"
+    sudo systemctl stop mpd.service
+    sudo systemctl disable mpd.service
+fi
 
-echo -e "${ORANGE}Enabling and starting the user-level mpd service"
-sleep 2
-   systemctl --user enable --now mpd
-echo -e "${LIGHTGREEN}Done!!"
+printf "\n%s%sEnabling and starting the user-level mpd service%s\n" "${BLD}" "${CYE}" "${CNC}"
+systemctl --user enable --now mpd.service
 
+printf "%s%sDone!!%s\n\n" "${BLD}" "${CGR}" "${CNC}"
 sleep 2
 clear
 
