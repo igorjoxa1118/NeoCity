@@ -91,7 +91,7 @@ cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenli
 kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2)
 
 dependencias_paru=(cava zscroll-git eww-git catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
-zenity-gtk3 musikcube i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
+zenity-gtk3 i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
 
 if [ ! -f /usr/bin/firefox ];then 
  sudo pacman -S firefox
@@ -244,22 +244,22 @@ wl_int=$(ip -o link show | sed -rn '/^[0-9]+: wl/{s/.: ([^:]*):.*/\1/p}')
 
 ### --- Проверка проводных сетевых интерфейсов. Добавляем интерфейсы в конфиги. --- ###
 if [ ! -z "$en_int" ]; then
-sed -i "s/enp59s0/${en_int}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
+sed -i "s/enp1s0/${en_int}/g" "$HOME"/.config/i3/scripts/system.ini
 else
   if [ ! -z "$et_int" ]; then
-  sed -i "s/enp59s0/${et_int}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
+  sed -i "s/enp1s0/${et_int}/g" "$HOME"/.config/i3/scripts/system.ini
   else
   read -p "What is you Wired connection interface?(Example: eth0, enp59s0): " et_int_custom
-  sed -i "s/enp59s0/${et_int_custom}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
+  sed -i "s/enp1s0/${et_int_custom}/g" "$HOME"/.config/i3/scripts/system.ini
   fi
 fi
 
 ### --- Проверка безпроводных сетевых интерфейсов. Добавляем интерфейсы в конфиги. --- ###
 if [ ! -z "$wl_int" ]; then
-sed -i "s/wlp0s20f3/${wl_int}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
+sed -i "s/wlp0s20f3/${wl_int}/g" "$HOME"/.config/i3/scripts/system.ini
 else
 read -p "What is you Wireless connection interface?(Example: wlan0, wlp0s20f3): " wl_int_custom
-sed -i "s/wlp0s20f3/${wl_int_custom}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
+sed -i "s/wlp0s20f3/${wl_int_custom}/g" "$HOME"/.config/i3/scripts/system.ini
 fi
 }
 echo -e "${LIGHTCYAN}Connection interfaces install done!"
@@ -270,6 +270,11 @@ clear
 func_install_dots
 sleep 2
 clear
+
+if [ -f "$HOME"/.config/gtk-3.0/bookmarks ]; then
+tmpuser=$(whoami)
+sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.config/gtk-3.0/bookmarks
+fi
 
 ### --- Установка темы и конфигов Firefox --- ###
 logo "Firefox theme install"
