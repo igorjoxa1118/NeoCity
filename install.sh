@@ -350,21 +350,16 @@ echo -e "${ORANGE}Done!"
 ########## --------- Замена шелла на zsh ---------- ##########
 
 
+logo "Changing default shell to zsh"
 
-shell_change() {
-  logo "Changing default shell to zsh"
 	if [[ $SHELL != "/usr/bin/zsh" ]]; then
-		echo -e "${ORANGE}Changing your shell to zsh. Your root password is needed."
-		# Переключиться на zsh
-		sudo chsh -s /usr/bin/zsh
-    chsh -s /usr/bin/zsh
-		echo -e "${LIGHTBLUE}Shell changed to zsh. Please reboot."
-	else
-		echo -e "${CYAN}Your shell is already zsh! Installation finished, now reboot"
-	fi
-}
-
-
-if shell_change; then
-reboot
-fi
+    printf "\n%s%sChanging your shell to zsh. Your root password is needed.%s\n\n" "${BLD}" "${CYE}" "${CNC}"
+    # Cambia la shell a zsh
+    chsh -s $(which zsh)
+    printf "%s%sShell changed to zsh. Please reboot.%s\n\n" "${BLD}" "${CGR}" "${CNC}"
+    sleep 2
+  else
+    printf "%s%sYour shell is already zsh\nGood bye! installation finished, now reboot%s\n" "${BLD}" "${CGR}" "${CNC}"
+    sleep 2
+  fi
+  zsh
