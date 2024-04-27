@@ -328,18 +328,25 @@ logo "Enabling services"
 
 	if systemctl is-enabled --quiet mpd.service; then
 		echo -e "${LIGHTBLUE}Disabling and stopping the global mpd service"
+    sleep 2
 		sudo systemctl stop mpd.service
 		sudo systemctl disable mpd.service
-    sudo usermod -a -G libvirt $(whoami)
-    newgrp libvirt
 	fi
 
 echo -e "${ORANGE}Enabling and starting the user-level mpd service"
-sudo systemctl enable --now mpd.service
+sleep 2
+   systemctl --user enable --now mpd
 echo -e "${LIGHTGREEN}Done!!"
+
 sleep 2
 clear
 
+### --- Добавление пользователя в группы вирутальных машин. --- ###
+echo -e "${ORANGE}Enabling Groups"
+sleep 2
+    sudo usermod -a -G libvirt $(whoami)
+    newgrp libvirt
+echo -e "${ORANGE}Done!"
 ########## --------- Замена шелла на zsh ---------- ##########
 
 
@@ -350,6 +357,7 @@ shell_change() {
 		echo -e "${ORANGE}Changing your shell to zsh. Your root password is needed."
 		# Переключиться на zsh
 		sudo chsh -s /usr/bin/zsh
+    chsh -s /usr/bin/zsh
 		echo -e "${LIGHTBLUE}Shell changed to zsh. Please reboot."
 	else
 		echo -e "${CYAN}Your shell is already zsh! Installation finished, now reboot"
