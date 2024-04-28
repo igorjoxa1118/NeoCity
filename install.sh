@@ -91,7 +91,7 @@ cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenli
 kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2)
 
 dependencias_paru=(cava zscroll-git eww-git catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
-zenity-gtk3 i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
+zenity-gtk3 lightdm-webkit2-theme-tty-git i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
 
 if [ ! -f /usr/bin/firefox ];then 
  sudo pacman -S firefox
@@ -265,6 +265,25 @@ fi
 echo -e "${LIGHTCYAN}Connection interfaces install done!"
 sleep 2
 clear
+
+if [ -f /usr/bin/lightdm-gtk-greeter ]; then
+  sudo pacman -R lightdm-gtk-greeter --noconfirm
+  elif [ -f /etc/lightdm/slick-greeter.conf ]; then
+    sudo rm -rf /etc/lightdm/slick-greeter.conf
+    elif [ -f /usr/bin/web-greeter ]; then
+      sudo pacman -R web-greeter --noconfirm
+else
+  echo "lightdm not found"
+  sleep 2
+fi
+
+sudo pacman -S lightdm lightdm-webkit2-greeter 
+yay -S web-greeter
+
+if [ -f /usr/share/lightdm-webkit/themes/tty/css/default.css ]; then
+   sudo rm /usr/share/lightdm-webkit/themes/tty/css/default.css
+   sudo cp $pwd/lightdm/default.css /usr/share/lightdm-webkit/themes/tty/css/
+fi
 
 ### --- Завершение копирования dot-файлов --- ###
 func_install_dots
