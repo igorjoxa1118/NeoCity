@@ -83,7 +83,7 @@ ttf-joypixels ttf-terminus-nerd ueberzug webp-pixbuf-loader xclip \
 xdo ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common \
 ttf-nerd-fonts-symbols-mono yad cmus jgmenu rsync mpv jq git socat mpd polkit-gnome \
 stalonetray kitty lsd ranger micro blueman mousepad ristretto firefox thunar thunar-volman \
-thunar-media-tags-plugin thunar-archive-plugin polybar rofi xdg-user-dirs engrampa bc \
+thunar-media-tags-plugin thunar-archive-plugin physlock polybar rofi xdg-user-dirs engrampa bc \
 nitrogen lxappearance feh picom yt-dlp fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-autosuggestions \
 zsh-history-substring-search starship bluez-utils bluez-tools bluez-plugins bluez-libs bluez \
 zziplib zip xarchiver unzip unarj unarchiver p7zip libzip karchive gnome-autoar file-roller \
