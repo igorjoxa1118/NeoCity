@@ -270,8 +270,6 @@ if [ -f /usr/bin/lightdm-gtk-greeter ]; then
   sudo pacman -R lightdm-gtk-greeter --noconfirm
   elif [ -f /etc/lightdm/slick-greeter.conf ]; then
     sudo rm -rf /etc/lightdm/slick-greeter.conf
-    elif [ -f /usr/bin/web-greeter ]; then
-      sudo pacman -R web-greeter --noconfirm
 else
   echo "lightdm not found"
   sleep 2
@@ -283,7 +281,7 @@ sudo pacman -S lightdm lightdm-webkit2-greeter
 if [ -f /usr/share/lightdm-webkit/themes/tty/css/default.css ]; then
    sudo rm /usr/share/lightdm-webkit/themes/tty/css/default.css
    sudo cp $pwd/lightdm/default.css /usr/share/lightdm-webkit/themes/tty/css/
-   sudo cp $pwd/lightdm/settings/* /etc/lightdm/
+   sudo rm -rf /etc/lightdm/* && sudo cp $pwd/lightdm/settings/* /etc/lightdm/
 fi
 
 ### --- Завершение копирования dot-файлов --- ###
