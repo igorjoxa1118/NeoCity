@@ -283,6 +283,7 @@ sudo pacman -S lightdm lightdm-webkit2-greeter
 if [ -f /usr/share/lightdm-webkit/themes/tty/css/default.css ]; then
    sudo rm /usr/share/lightdm-webkit/themes/tty/css/default.css
    sudo cp $pwd/lightdm/default.css /usr/share/lightdm-webkit/themes/tty/css/
+   sudo sed -i "s/greeter-session=lightdm-slick-greeter/greeter-session=lightdm-webkit2-greeter/g" /etc/lightdm/lightdm.conf
 fi
 
 ### --- Завершение копирования dot-файлов --- ###
