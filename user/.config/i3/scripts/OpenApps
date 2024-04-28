@@ -16,41 +16,44 @@ case "$1" in
         rofi -show drun -theme "$HOME"/.config/i3/scripts/Launcher.rasi 
         ;;
     --rice)
-        RiceSelector
+        ~/.config/i3/scripts/RiceSelector
         ;;
     --terminal)
-        Term --terminal
+        ~/.config/i3/scripts/Term --terminal
         ;;
     --floating)
-        Term --floating
+        ~/.config/i3/scripts/Term --floating
         ;;
     --update-paru)
-        Term --update-paru
+        ~/.config/i3/scripts/Term --update-paru
+        ;;
+    --update-pacman)
+        ~/.config/i3/scripts/Term --update-pacman
         ;;
     --update-garuda)
-        Term --update-garuda
+        ~/.config/i3/scripts/Term --update-garuda
         ;;
     --checkupdates)
-        Term --checkupdates
+        ~/.config/i3/scripts/Term --checkupdates
         ;;
     --netmanager)
-		NetManagerDM
+		~/.config/i3/scripts/NetManagerDM
 		;;
     --ranger)
-        Term --ranger
+        ~/.config/i3/scripts/Term --ranger
         ;;
     --nvim)
-        Term --nvim
+        ~/.config/i3/scripts/Term --nvim
         ;;
     --music)
-        Term --music
+        ~/.config/i3/scripts/Term --music
         ;;
     --fetch)
-        Term --fetch
+        ~/.config/i3/scripts/Term --fetch
         ;;
         # Apps
     --filemanager)
-        thunar
+        ~/.config/i3/scripts/thunar
         ;;
     --browser)
         firefox

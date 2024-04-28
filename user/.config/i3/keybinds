@@ -30,22 +30,7 @@ bindsym Ctrl+Mod1+Right workspace next
 bindsym Ctrl+Mod1+Left workspace prev
 bindsym Ctrl+control+Left exec i3-msg move container to workspace $ws-left; exec i3-msg workspace $ws-left
 bindsym Ctrl+control+Right exec i3-msg move container to workspace $ws-right; exec i3-msg workspace $ws-right
-#bindsym $mod+Ctrl+Left move left
-#bindsym $mod+Ctrl+k move down
-#bindsym $mod+Ctrl+l move up
-#bindsym $mod+Ctrl+Right move right
 
-# move focused window to next/prev workspace
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
-
-# alternatively, you can use the cursor keys:
-#bindsym $mod+mod1+Left move left
-#bindsym $mod+mod1+Down move down
-#bindsym $mod+mod1+Up move up
-#bindsym $mod+mod1+Right move right
 #----------------------------------------------------------
 
 #-----------------------------------------------------------------------
@@ -152,16 +137,14 @@ bindsym $Mod+n scratchpad toggle
 #---------------------------------------------
 ## Клавиши для запуска приложений
 bindsym $mod+d exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --menu"
-#bindsym $mod+Return exec --no-startup-id "xfce4-terminal --title term-tiling --hide-menubar"
-#bindsym $mod1+t exec --no-startup-id "xfce4-terminal --title floating"
-#bindsym $mod1+r exec --no-startup-id "xfce4-terminal --title float -e ranger"
-#bindsym $mod1+m exec --no-startup-id "xfce4-terminal -e ncmpcpp"
-#bindsym $mod1+h exec --no-startup-id "xfce4-terminal --title float -e htop"
-bindsym $mod+Return exec --no-startup-id "kitty"
-bindsym $mod1+t exec --no-startup-id "kitty --title floating"
-bindsym $mod1+Return exec --no-startup-id "kitty --title float -e ranger"
-bindsym $mod1+p exec --no-startup-id "kitty --title -e musikcube"
-#bindsym $mod1+h exec --no-startup-id "kitty --title float -e htop"
+bindsym $mod+Return exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --terminal"
+bindsym $mod1+t exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --floating"
+bindsym $mod1+Return exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --ranger"
+bindsym $mod1+p exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --music"
+bindsym $mod1+u exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --update-pacman"
+bindsym $mod1+j exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --update-paru"
+bindsym $mod1+n exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --update-garuda"
+bindsym $mod1+m exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --checkupdates"
 bindsym $mod1+f exec --no-startup-id "firefox"
 bindsym $mod1+l exec --no-startup-id "$HOME/.config/i3/bin/multilock.sh"
 bindsym $mod1+space exec --no-startup-id "skippy-xd"

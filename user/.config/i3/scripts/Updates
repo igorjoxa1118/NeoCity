@@ -38,13 +38,18 @@ update_paru() {
 }
 
 update_garuda() {
-    garuda-update
+    sudo garuda-update
+}
+
+update_pacman() {
+    sudo pacman -Syu
 }
 
 case "$1" in
     --get-updates)get_total_updates ;;
     --print-updates)print_updates ;;
     --update-paru)update_paru ;;
+    --update-pacman)update_pacman ;;
     --update-garuda)update_garuda ;;
     --help|*)echo -e "Updates [options]
 
@@ -52,5 +57,6 @@ Options:
 	--get-updates		Get the number of updates available.
 	--print-updates		Print the number of available package to update.
 	--update-paru		Update your system including the AUR packages.
+    --update-pacman		Update your system including the default packages.
     --update-garuda		Update your system including the Garuda packages.\n"
 esac
