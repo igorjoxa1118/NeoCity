@@ -277,8 +277,8 @@ else
   sleep 2
 fi
 
+paru -S web-greeter
 sudo pacman -S lightdm lightdm-webkit2-greeter 
-yay -S web-greeter
 
 if [ -f /usr/share/lightdm-webkit/themes/tty/css/default.css ]; then
    sudo rm /usr/share/lightdm-webkit/themes/tty/css/default.css
