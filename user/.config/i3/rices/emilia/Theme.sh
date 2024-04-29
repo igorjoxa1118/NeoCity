@@ -11,18 +11,12 @@
 #
 read -r RICETHEME < "$HOME"/.config/i3/.rice
 rice_dir="$HOME/.config/i3/rices/$RICETHEME"
-# Set i3 configuration for Emilia
-#set_i3_config() {
-#	bspc config border_width 0
-#	bspc config top_padding 56
-#	bspc config bottom_padding 2
-#	bspc config left_padding 2
-#	bspc config right_padding 2
-#	bspc config normal_border_color "#414868"
-#	bspc config active_border_color "#7aa2f7"
-#	bspc config focused_border_color "#bb9af7"
-#	bspc config presel_feedback_color "#7aa2f7"
-#}
+
+# Terminate already running bar instances
+killall -q polybar
+
+# Wait until the processes have been shut down
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Reload terminal colors
 set_term_config() {
@@ -164,12 +158,10 @@ launch_bars() {
 		MONITOR=$mon polybar -q emi-bar -c "${rice_dir}"/config.ini &
 		MONITOR=$mon polybar -q emi-bar2 -c "${rice_dir}"/config.ini &
 	done
-
 }
 
 ### ---------- Apply Configurations ---------- ###
 
-#set_i3_config
 set_term_config
 set_picom_config
 launch_bars

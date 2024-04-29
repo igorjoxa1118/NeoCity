@@ -9,19 +9,14 @@
 #  Url     :  https://github.com/gh0stzk/dotfiles
 #  About   :  This file will configure and launch the rice.
 #
+read -r RICETHEME < "$HOME"/.config/i3/.rice
+rice_dir="$HOME/.config/i3/rices/$RICETHEME"
 
-# Set i3 configuration for Aline
-set_i3_config() {
-	i3-msg config border_width 0
-	i3-msg config top_padding 57
-	i3-msg config bottom_padding 2
-	i3-msg config left_padding 2
-	i3-msg config right_padding 2
-	i3-msg config normal_border_color "#6e6a86"
-	i3-msg config active_border_color "#907aa9"
-	i3-msg config focused_border_color "#56949f"
-	i3-msg config presel_feedback_color "#d7827e"
-}
+# Terminate already running bar instances
+killall -q polybar
+
+# Wait until the processes have been shut down
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Reload terminal colors
 set_term_config() {
@@ -167,7 +162,6 @@ launch_bars() {
 
 ### ---------- Apply Configurations ---------- ###
 
-set_i3_config
 set_term_config
 set_picom_config
 launch_bars

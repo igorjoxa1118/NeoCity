@@ -13,12 +13,13 @@
 #            ███████║███████╗███████╗███████╗╚██████╗   ██║   ╚██████╔╝██║  ██║
 #            ╚══════╝╚══════╝╚══════╝╚══════╝ ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
 #
-
+#set -x
 # Some vars
 i3_dir="$HOME/.config/i3"
 current_rice_file="$i3_dir/.rice"
 preview_dir="$i3_dir/rices/${options[*]}"
 rofi_command="rofi -dmenu -theme $i3_dir/scripts/RiceSelector.rasi"
+i3_rice_in_config=$(< "$current_rice_file")
 
 # Variables to try to define the correct size of the images for your resolution
 monitor_res=$(xdpyinfo | awk '/dimensions/{print $2}' | cut -d 'x' -f1)
@@ -56,5 +57,7 @@ selected=$(printf "%s\n" "${options[@]}" | while read -r A ; do  echo -en "$A\x0
 # If a valid option was selected, write the value to the configuration file and restart BSPWM.
 [[ -n "$selected" && "$selected" != "$current_rice" ]] || exit 1
 echo "$selected" > "$current_rice_file"
-i3-msg wm -r
+
+sed -i "s/"$i3_rice_in_config"/"$selected"/g" "$HOME"/.config/i3/autostart
+i3-msg restart
 exit 0

@@ -75,9 +75,9 @@ clear
 
                                           ######### -------------- Зависимости ------------------########
 
-dependencias=(base-devel dunst imagemagick \
+dependencias=(base-devel alacritty brightnessctl dunst imagemagick \
 libwebp maim mpc neovim ncmpcpp npm pamixer \
-papirus-icon-theme \
+papirus-icon-theme pacman-contrib physlock playerctl python-gobject \
 redshift rustup ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
 ttf-joypixels ttf-terminus-nerd ueberzug webp-pixbuf-loader xclip \
 xdo ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common \
@@ -88,7 +88,10 @@ nitrogen lxappearance feh picom yt-dlp fzf mcfly neofetch zsh zsh-syntax-highlig
 zsh-history-substring-search starship bluez-utils bluez-tools bluez-plugins bluez-libs bluez \
 zziplib zip xarchiver unzip unarj unarchiver p7zip libzip karchive gnome-autoar file-roller \
 cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenlive kodi \
-kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2)
+kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2 xorg-xdpyinfo xorg-xwininfo \
+xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot xdotool)
+
+
 
 dependencias_paru=(cava zscroll-git eww-git catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
 zenity-gtk3 lightdm-webkit2-theme-tty-git i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
