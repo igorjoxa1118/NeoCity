@@ -9,19 +9,14 @@
 #  Url     :  https://github.com/gh0stzk/dotfiles
 #  About   :  This file will configure and launch the rice.
 #
+read -r RICETHEME < "$HOME"/.config/i3/.rice
+rice_dir="$HOME/.config/i3/rices/$RICETHEME"
 
-# Set bspwm configuration for Isabel
-set_bspwm_config() {
-	bspc config border_width 0
-	bspc config top_padding 2
-	bspc config bottom_padding 42
-	bspc config left_padding 2
-	bspc config right_padding 2
-	bspc config normal_border_color "#b8bfe5"
-	bspc config active_border_color "#b8bfe5"
-	bspc config focused_border_color "#7560d3"
-	bspc config presel_feedback_color "#81ae5f"
-}
+# Terminate already running bar instances
+killall -q polybar
+
+# Wait until the processes have been shut down
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Reload terminal colors
 set_term_config() {
@@ -167,7 +162,6 @@ launch_bars() {
 
 ### ---------- Apply Configurations ---------- ###
 
-set_bspwm_config
 set_term_config
 set_picom_config
 launch_bars
