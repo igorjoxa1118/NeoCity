@@ -16,7 +16,7 @@ s/, / /g'`)
        :space-evenly 'false'
        :spacing 10
 
-    (conkeww-pane :title "vir0id"
+    (conkeww-pane :title "Welcome"
                   :color magenta
                   :spacing 69 
                   :value-css "font-weight: 700; color: ==color=="
@@ -33,16 +33,23 @@ Time:      === ${date}"
                   :text
 "
 Win+Enter       === Terminal
+Win+Alt+T       === Select Terminal
+Alt+T           === Float Terminal
+Alt+U           === Pacman Update
+Alt+J           === Paru Update
+Alt+N           === Garuda Update
+Alt+Space       === Themes Selector
+Win+Alt+W       === Select Wallpapers
 Win+D           === Rofi AppMenu
 Alt+F           === Firefox
-Alt+C           === Caja
+Alt+C           === Thunar
 Alt+Enter       === Ranger
-Alt+D           === MusikCube
+Alt+P           === MusikPlayer
+Alt+Ctrl+E      === Keybinds
+Print           === Screenshot
 Alt+L           === Lock Screen
 Alt+Q           === Kill Window
-Alt+Ctrl+E      === Conkeww
-Print           === Screenshot
-Ctrl+Shft+R     === Reload
+Ctrl+Shft+R     === Restart WM
 "
       )
     )
