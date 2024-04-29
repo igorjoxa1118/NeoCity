@@ -9,19 +9,14 @@
 #  Url     :  https://github.com/gh0stzk/dotfiles
 #  About   :  This file will configure and launch the rice.
 #
+read -r RICETHEME < "$HOME"/.config/i3/.rice
+rice_dir="$HOME/.config/i3/rices/$RICETHEME"
 
-# Set bspwm configuration for Karla
-set_bspwm_config() {
-	bspc config border_width 3
-	bspc config top_padding 48
-	bspc config bottom_padding 2
-	bspc config left_padding 2
-	bspc config right_padding 2
-	bspc config normal_border_color "#21222c"
-	bspc config active_border_color "#353c52"
-	bspc config focused_border_color "#353c52"
-	bspc config presel_feedback_color "#8656e3"
-}
+# Terminate already running bar instances
+killall -q polybar
+
+# Wait until the processes have been shut down
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Reload terminal colors
 set_term_config() {
@@ -64,7 +59,7 @@ EOF
 
 # Set compositor configuration
 set_picom_config() {
-	sed -i "$HOME"/.config/bspwm/picom.conf \
+	sed -i "$HOME"/.config/i3/picom.conf \
 		-e "s/normal = .*/normal =  { fade = false; shadow = false; }/g" \
 		-e "s/shadow-color = .*/shadow-color = \"#000000\"/g" \
 		-e "s/corner-radius = .*/corner-radius = 0/g" \
@@ -74,15 +69,15 @@ set_picom_config() {
 
 # Set dunst notification daemon config
 set_dunst_config() {
-	sed -i "$HOME"/.config/bspwm/dunstrc \
+	sed -i "$HOME"/.config/i3/dunstrc \
 		-e "s/transparency = .*/transparency = 8/g" \
 		-e "s/frame_color = .*/frame_color = \"#0E1113\"/g" \
 		-e "s/separator_color = .*/separator_color = \"#353c52\"/g" \
 		-e "s/font = .*/font = JetBrainsMono NF Medium 9/g" \
 		-e "s/foreground='.*'/foreground='#7a44e3'/g"
 
-	sed -i '/urgency_low/Q' "$HOME"/.config/bspwm/dunstrc
-	cat >>"$HOME"/.config/bspwm/dunstrc <<-_EOF_
+	sed -i '/urgency_low/Q' "$HOME"/.config/i3/dunstrc
+	cat >>"$HOME"/.config/i3/dunstrc <<-_EOF_
 		[urgency_low]
 		timeout = 3
 		background = "#0E1113"
@@ -102,7 +97,7 @@ set_dunst_config() {
 
 # Set eww colors
 set_eww_colors() {
-	cat >"$HOME"/.config/bspwm/eww/colors.scss <<EOF
+	cat >"$HOME"/.config/i3/eww/colors.scss <<EOF
 // Eww colors for Karla rice
 \$bg: #0E1113;
 \$bg-alt: #111517;
@@ -121,7 +116,7 @@ EOF
 
 # Set jgmenu colors for Karla
 set_jgmenu_colors() {
-	sed -i "$HOME"/.config/bspwm/jgmenurc \
+	sed -i "$HOME"/.config/i3/jgmenurc \
 		-e 's/color_menu_bg = .*/color_menu_bg = #0E1113/' \
 		-e 's/color_norm_fg = .*/color_norm_fg = #afb1db/' \
 		-e 's/color_sel_bg = .*/color_sel_bg = #111517/' \
@@ -131,7 +126,7 @@ set_jgmenu_colors() {
 
 # Set Rofi launcher config
 set_launcher_config() {
-	sed -i "$HOME/.config/bspwm/scripts/Launcher.rasi" \
+	sed -i "$HOME/.config/i3/scripts/Launcher.rasi" \
 		-e '22s/\(font: \).*/\1"JetBrainsMono NF Bold 9";/' \
 		-e 's/\(background: \).*/\1#0E1113F7;/' \
 		-e 's/\(background-alt: \).*/\1#0E1113F5;/' \
@@ -140,7 +135,7 @@ set_launcher_config() {
 		-e "s/rices\/[[:alnum:]\-]*/rices\/${RICETHEME}/g"
 
 	# NetworkManager launcher
-	sed -i "$HOME/.config/bspwm/scripts/NetManagerDM.rasi" \
+	sed -i "$HOME/.config/i3/scripts/NetManagerDM.rasi" \
 		-e '12s/\(background: \).*/\1#0E1113F7;/' \
 		-e '13s/\(background-alt: \).*/\1#0E1113F5;/' \
 		-e '14s/\(foreground: \).*/\1#afb1db;/' \
@@ -149,7 +144,7 @@ set_launcher_config() {
 		-e '17s/\(urgent: \).*/\1#e71c5b;/'
 
 	# WallSelect menu colors
-	sed -i "$HOME/.config/bspwm/scripts/WallSelect.rasi" \
+	sed -i "$HOME/.config/i3/scripts/WallSelect.rasi" \
 		-e 's/\(main-bg: \).*/\1#0E1113F7;/' \
 		-e 's/\(main-fg: \).*/\1#afb1db;/' \
 		-e 's/\(select-bg: \).*/\1#3d7fea;/' \
@@ -169,7 +164,6 @@ launch_bars() {
 
 ### ---------- Apply Configurations ---------- ###
 
-set_bspwm_config
 set_term_config
 set_picom_config
 launch_bars
