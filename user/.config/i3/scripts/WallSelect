@@ -17,6 +17,9 @@
 #             the wallpapers included in the theme you are in.
 #			  08.12.2023 08:37:20
 
+i3_dir="$HOME/.config/i3"
+current_rice_file="$i3_dir/.rice"
+i3_rice_in_config=$(< "$current_rice_file")
 
 # Verifies if xdpyinfo and imagemagick are installed
 if ! command -v xdpyinfo > /dev/null 2>&1; then
@@ -28,8 +31,8 @@ elif ! command -v convert > /dev/null 2>&1; then
 fi
 
 # Set some variables
-wall_dir="${HOME}/.config/i3/rices/${RICETHEME}/walls"
-cacheDir="${HOME}/.cache/$(whoami)/${RICETHEME}"
+wall_dir="${HOME}/.config/i3/rices/${i3_rice_in_config}/walls"
+cacheDir="${HOME}/.cache/$(whoami)/${i3_rice_in_config}"
 rofi_command="rofi -dmenu -theme ${HOME}/.config/i3/scripts/WallSelect.rasi -theme-str ${rofi_override}"
 
 monitor_res=$(xdpyinfo | awk '/dimensions/{print $2}' | cut -d 'x' -f1)

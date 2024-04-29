@@ -147,6 +147,7 @@ bindsym $mod1+m exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --checku
 bindsym $mod1+Return exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --ranger"
 bindsym $mod1+space exec --no-startup-id "$HOME/.config/i3/scripts/RiceSelector"
 bindsym $mod+$mod1+t exec --no-startup-id "$HOME/.config/i3/scripts/Term --selecterm"
+bindsym $mod+$mod1+w exec --no-startup-id "$HOME/.config/i3/scripts/WallSelect"
 bindsym $mod1+f exec --no-startup-id "firefox"
 bindsym $mod1+l exec --no-startup-id "$HOME/.config/i3/bin/multilock.sh"
 bindsym $mod1+s exec --no-startup-id "skippy-xd"
