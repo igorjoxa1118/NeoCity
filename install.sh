@@ -97,7 +97,7 @@ dependencias_paru=(cava zscroll-git eww-git catppuccin-cursors-mocha ytdlp-gui o
 zenity-gtk3 lightdm-webkit2-theme-tty-git i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
 
 if [ ! -f /usr/bin/firefox ];then 
- sudo pacman -S firefox
+ sudo pacman -S firefox --noconfirm
  exit;
 fi
 
@@ -280,8 +280,8 @@ else
   sleep 2
 fi
 
-paru -S web-greeter
-sudo pacman -S lightdm lightdm-webkit2-greeter 
+paru -S web-greeter --noconfirm
+sudo pacman -S lightdm lightdm-webkit2-greeter --noconfirm
 
 if [ -f /usr/share/lightdm-webkit/themes/tty/css/default.css ]; then
    sudo rm /usr/share/lightdm-webkit/themes/tty/css/default.css
