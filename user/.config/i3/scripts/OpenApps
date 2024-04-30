@@ -53,7 +53,7 @@ case "$1" in
         ;;
         # Apps
     --filemanager)
-        ~/.config/i3/scripts/thunar
+        thunar
         ;;
     --browser)
         firefox

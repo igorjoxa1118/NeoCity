@@ -1,47 +1,71 @@
-#!/bin/bash
-# Based on https://github.com/sandeel/i3-new-workspace
-# Script occupies free workspace with lowest possible number
-# Add -m as an argument to move current container to the next workspace
+#!/usr/bin/env bash
+# ----------------------------------
+# Author: Quinn Wilby
+# Email:  contact@loki.moe
+# Github: https://github.com/druanae
+# ----------------------------------
+# This script will get the workspace Information for i3wm
+# and output a lemonbar-formatted string.
+# To use this you will need the jq package, otherwise the only dependency is i3.
+# ----------------------------------
+# To change the colours edit the col variables at the start.
+# To change the workspace names edit the values in the $workspaces var
+# To set the secondary monitor edit the $Sec_Mon variable with the monitor name.
 
-# Enable strict mode
-set -euo pipefail
+groups() {
+    # Variable Declarations
+    col_focused="#0000FF"
+    col_inactive_focused="#00FF00"
+    col_inactive="#666"
+    col_inactive_secondary="#666600"
+    col_urgent="#FF0000"
+    col_empty="#444"
+    Sec_Mon="HDMI-0"
 
-function show_help {
-    echo "USAGE:"
-    echo "    i3-new-workspace [OPTIONS]"
-    echo
-    echo "OPTIONS:"
-    echo "    -m, --move   Move current container to the new workspace"
-    echo "    -c, --carry  Carry (move and focus) current container to the new workspace"
-    echo "    -h, --help   Print help information"
+    # Workspace Names
+    declare -a workspaces=(
+        "1" # WS01
+        "2" # WS02
+        "3" # WS03
+        "4" # WS04
+        "5" # WS05
+        "6" # WS06
+        "7" # WS07
+        "8" # WS08 
+        "9" # WS09 
+        "10" # WS10
+    )
+    # Get Workspace Information
+    status="$(i3-msg -t get_workspaces)"
+    
+    list=$(echo $status | jq '.[].num' | wc -l)
+    list=$((list - 1))
+    for ((i=0;i<=$list;i++))
+    do  
+        focused=$(echo $status | jq ".[$i].focused")
+        visible=$(echo $status | jq ".[$i].visible")
+        urgent=$(echo $status | jq ".[$i].urgent")
+        output=$(echo $status | jq ".[$i].output")
+        num=$(($(echo $status | jq ".[$i].num") - 1))
+        if [ $visible == "true" ]; then
+            if [ $focused == "true" ]; then
+                workspaces[$num]="%{F$col_focused}${workspaces[$num]}%{F-}"
+            else
+                workspaces[$num]="%{F$col_inactive_focused}${workspaces[$num]}%{F-}"
+            fi
+        elif [ $urgent == "true" ]; then
+            workspaces[$num]="%{F$col_urgent}${workspaces[$num]}%{F-}"
+        elif [ $output == "$Sec_Mon" ]; then
+            workspaces[$num]="%{F$col_inactive_secondary}${workspaces[$num]}%{F-}"
+        else
+            workspaces[$num]="%{F$col_inactive}${workspaces[$num]}%{F-}"
+        fi  
+    done
+    declare outstring
+    for i in {0..9}; do
+        outstring="${outstring}%{F$col_empty}${workspaces[$i]}%{F-} "
+    done
+    echo $outstring
+
 }
-
-# Use swaymsg if WAYLAND_DISPLAY is set
-msg_cmd=${WAYLAND_DISPLAY+swaymsg}
-msg_cmd=${msg_cmd:-i3-msg}
-
-# Set options
-opt_mode=new
-
-# Process CLI arguments
-while [ $# -gt 0 ] ; do
-    case $1 in
-        "--move"|"-m") opt_mode=move ;;
-        "--carry"|"-c") opt_mode=carry ;;
-        "--help"|"-h"|"-?") show_help ; exit 0 ;;
-        *) show_help ; exit 1 ;;
-    esac
-    shift
-done
-
-ws_json=$($msg_cmd -t get_workspaces)
-for i in {1..10} ; do
-    [[ $ws_json =~ \"num\":\ ?$i ]] && continue
-
-    case $opt_mode in
-        "new") $msg_cmd workspace number "$i" ;;
-        "move") $msg_cmd move container to workspace number "$i" ;;
-        "carry") $msg_cmd move container to workspace number "$i", workspace number "$i" ;;
-    esac
-    break
-done
+groups

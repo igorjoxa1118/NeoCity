@@ -6,30 +6,30 @@
 ;;---------- Widgets ----------;;
 
 ;; Workspaces
-(deflisten workspaces "scripts/WorkSpaces")
+(deflisten workspaces "/scripts/WorkSpaces")
 
 ;; Time vars
 (defpoll TIME :interval "1s" "date '+%I:%M %p'")
 (defpoll DATE :interval "1m" "date '+%A, %B %d'")
 
-;; Weather vars
-(defpoll ICON :interval "15m" "Weather icon")
-(defpoll TEMP :interval "15m" "Weather current_temp")
-(defpoll HEX  :interval "15m" "Weather hex")
-(defpoll CITY  :interval "15m" "Weather city")
+;; ~/.config/i3/scripts/Weather vars
+(defpoll ICON :interval "15m" "~/.config/i3/scripts/Weather icon")
+(defpoll TEMP :interval "15m" "~/.config/i3/scripts/Weather current_temp")
+(defpoll HEX  :interval "15m" "~/.config/i3/scripts/Weather hex")
+(defpoll CITY  :interval "15m" "~/.config/i3/scripts/Weather city")
 
 ;; Updates vars
-(defpoll UPDATES :interval "2m" "Updates --get-updates")
+(defpoll UPDATES :interval "2m" "~/.config/i3/scripts/Updates --get-updates")
 
 ;; Volume vars
 (defpoll volume_icon :interval "1s" "scripts/volume.sh --icon")
 (defpoll volume_value :interval "1s" "scripts/volume.sh --vol")
 
 ;; Music vars
-(defpoll SONG 	:interval "1s" "MediaControl --title")
-(defpoll ARTIST :interval "1s" "MediaControl --artist")
-(defpoll COVER 	:interval "1s" "MediaControl --cover")
-(defpoll STATUS :interval "1s" "MediaControl --status")
+(defpoll SONG 	:interval "1s" "~/.config/i3/scripts/MediaControl --title")
+(defpoll ARTIST :interval "1s" "~/.config/i3/scripts/MediaControl --artist")
+(defpoll COVER 	:interval "1s" "~/.config/i3/scripts/MediaControl --cover")
+(defpoll STATUS :interval "1s" "~/.config/i3/scripts/MediaControl --status")
 
 ;; Network
 (defpoll WIFIICON :interval "10s" "scripts/check-network --icon")
@@ -48,8 +48,8 @@
 			(button :style "background-image: url('images/dashboard.png');"
 				    :class "icons"
 				    :valign "center"
-				    :onclick "cd ; OpenApps --menu"
-				    :onrightclick "OpenApps --rice")
+				    :onclick "cd ; ~/.config/i3/scripts/OpenApps --menu"
+				    :onrightclick "~/.config/i3/scripts/OpenApps --rice")
 		 )
 	)
 )
@@ -67,37 +67,37 @@
 			(button :style "background-image: url('images/zombie.png');"
 					:class "icons"
 					:valign "center"
-					:onclick "OpenApps --fetch"))
+					:onclick "~/.config/i3/scripts/OpenApps --fetch"))
 			
 			(eventbox :cursor "pointer"		  
 			(button :style "background-image: url('images/terminal.png');"
 					:class "icons"
 					:valign "center"
-					:onclick "cd ; OpenApps --terminal"))
+					:onclick "cd ; ~/.config/i3/scripts/OpenApps --terminal"))
 			
 			(eventbox :cursor "pointer"		  
 			(button :style "background-image: url('images/firefox.png');"
 					:class "icons"
 					:valign "center"
-					:onclick "OpenApps --browser"))
+					:onclick "~/.config/i3/scripts/OpenApps --browser"))
 			
 			(eventbox :cursor "pointer"		  
 			(button :style "background-image: url('images/files.png');"
 					:class "icons"
 					:valign "center"
-					:onclick "cd ; OpenApps --filemanager"))
+					:onclick "cd ; ~/.config/i3/scripts/OpenApps --filemanager"))
 			
 			(eventbox :cursor "pointer"		  
 			(button :style "background-image: url('images/notes.png');"
 					:class "icons"
 					:valign "center"
-					:onclick "OpenApps --editor"))
+					:onclick "~/.config/i3/scripts/OpenApps --editor"))
 			
 			(eventbox :cursor "pointer"		  
 			(button :style "background-image: url('images/telegram.png');"
 					:class "icons"
 					:valign "center"
-					:onclick "OpenApps --telegram"))
+					:onclick "~/.config/i3/scripts/OpenApps --telegram"))
 	)
 )
 
@@ -113,7 +113,7 @@
 			  :style "background-image: url('${COVER}');")
 			  
 		 (eventbox :cursor "pointer"
-		 (button :onclick "OpenApps --player"
+		 (button :onclick "~/.config/i3/scripts/OpenApps --player"
 		 (box :orientation "v"
 			  :class "song-info"
 			  :spacing 0
@@ -140,16 +140,16 @@
 			  
 			  (eventbox :cursor "pointer"
 				(button :class "player-previous" 
-						:onclick "MediaControl --previous" "󰒮"))
+						:onclick "~/.config/i3/scripts/MediaControl --previous" "󰒮"))
 						
 			  (eventbox :cursor "pointer"
 				(button :class "player-toggle" 
-						:onclick "MediaControl --toggle" 
+						:onclick "~/.config/i3/scripts/MediaControl --toggle" 
 						{STATUS == "Playing" ? "󰏤" : STATUS == "Paused" ? "󰐊" : "󰓛"}))
 						
 			  (eventbox :cursor "pointer"
 				(button :class "player-next" 
-						:onclick "MediaControl --next" "󰒭"))
+						:onclick "~/.config/i3/scripts/MediaControl --next" "󰒭"))
 		 )
 	)
 )
@@ -161,8 +161,8 @@
 		 :space-evenly "false"
 
 		 (eventbox :cursor "pointer"
-		 (button :onclick "OpenApps --update"
-				 :onrightclick "OpenApps --checkupdates"
+		 (button :onclick "~/.config/i3/scripts/OpenApps --update"
+				 :onrightclick "~/.config/i3/scripts/OpenApps --checkupdates"
 				 (box :orientation "h"
 					  :spacing 2
 					  :valign "center"
@@ -197,7 +197,7 @@
 		 ))
 
 		 (eventbox :cursor "pointer"
-		 (button :onclick "OpenApps --netmanager"
+		 (button :onclick "~/.config/i3/scripts/OpenApps --netmanager"
 				 (box :orientation "h"
 					  :spacing 3
 					  :valign "center"
@@ -214,7 +214,7 @@
 		 ))
 
 		 (eventbox :cursor "pointer"
-		 (button :onclick "OpenApps --usercard"
+		 (button :onclick "~/.config/i3/scripts/OpenApps --usercard"
 				 (box :orientation "h"
 					  :spacing 3
 					  :valign "center"
@@ -231,7 +231,7 @@
 		 ))
 
 		 (eventbox :cursor "pointer"
-		 (button :onclick "OpenApps --powermenu"
+		 (button :onclick "~/.config/i3/scripts/OpenApps --powermenu"
 				 (box :orientation "h"
 					  :spacing 3
 					  :valign "center"
@@ -245,14 +245,14 @@
 	)
 )
 
-;; weather
+;; ~/.config/i3/scripts/Weather
 (defwidget clock [] 
 	(box :class "mainbars"
 		 :spacing 15
 		 :space-evenly "false"
 		 
 		 (eventbox :cursor "pointer"
-		 (button :onclick "OpenApps --calendar"
+		 (button :onclick "~/.config/i3/scripts/OpenApps --calendar"
 		 (box :orientation "v"
 			  :spacing 0
 			  :halign "start"
@@ -261,8 +261,8 @@
 		 )))
 			
 		 (box :orientation "h" :spacing 5
-			(label :class "weathericon" :style "color: ${HEX};" :tooltip CITY :text ICON)
-			(label :class "weathertemp" :text "${TEMP}°C")
+			(label :class "~/.config/i3/scripts/Weathericon" :style "color: ${HEX};" :tooltip CITY :text ICON)
+			(label :class "~/.config/i3/scripts/Weathertemp" :text "${TEMP}°C")
 		)
 	)
 )
