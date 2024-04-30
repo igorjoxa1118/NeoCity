@@ -15,11 +15,13 @@
 #
 #set -x
 # Some vars
+user=$(whoami)
 i3_dir="$HOME/.config/i3"
 current_rice_file="$i3_dir/.rice"
 preview_dir="$i3_dir/rices/${options[*]}"
 rofi_command="rofi -dmenu -theme $i3_dir/scripts/RiceSelector.rasi"
 i3_rice_in_config=$(< "$current_rice_file")
+
 
 # Variables to try to define the correct size of the images for your resolution
 monitor_res=$(xdpyinfo | awk '/dimensions/{print $2}' | cut -d 'x' -f1)
@@ -63,6 +65,15 @@ sed -i "s/"$i3_rice_in_config"/"$selected"/g" "$HOME"/.config/i3/autostart
 wall_old="catppuccin_triangle.webp"
     feh_walls_list=$(ls "$HOME"/.config/i3/rices/$selected/walls | grep "png" | head -1)
 sed -i "s/"$wall_old"/"$feh_walls_list"/g" "$HOME"/.config/i3/autostart
+
+###----Change GTK Themes
+gtk_themes_name='gtk-theme-name='
+gtk_themes_name_old="gtk-theme-name=""$i3_rice_in_config"""
+gtk_themes_name_new="gtk-theme-name=""$selected"""
+sed -i "s/"$gtk_themes_name"$i3_rice_in_config"/"$gtk_themes_name"$selected"/g" "$HOME"/.config/gtk-3.0/settings.ini
+sed -i "s/"$gtk_themes_name"$i3_rice_in_config"/"$gtk_themes_name"$selected"/g" "$HOME"/.config/gtk-4.0/settings.ini
+sed -i "s/"$i3_rice_in_config"/"$selected"/g" "$HOME"/.gtkrc-2.0
+sed -i "s/vir0id/${user}/g" "$HOME"/.gtkrc-2.0
 
 i3-msg restart
 exit 0

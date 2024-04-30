@@ -1,0 +1,60 @@
+#!/bin/bash
+
+change_fun() {
+##-Hex
+##-1
+sed -i "s/"$bg"/"$aline_bg"/g" "$HOME"/.themes/NeoCity_Fog/cinnamon/cinnamon.css
+sed -i "s/"$bg"/"$aline_bg"/g" "$HOME"/.themes/NeoCity_Fog/gnome-shell/gnome-shell.css
+sed -i "s/"$bg"/"$aline_bg"/g" "$HOME"/.themes/NeoCity_Fog/gnome-shell/pad-osd.css
+sed -i "s/"$bg"/"$aline_bg"/g" "$HOME"/.themes/NeoCity_Fog/gtk-2.0/gtkrc
+sed -i "s/"$bg"/"$aline_bg"/g" "$HOME"/.themes/NeoCity_Fog/gtk-2.0/gtkrc.hidpi
+sed -i "s/"$bg"/"$aline_bg"/g" "$HOME"/.themes/NeoCity_Fog/gtk-3.0/gtk-dark.css
+sed -i "s/"$bg"/"$aline_bg"/g" "$HOME"/.themes/NeoCity_Fog/gtk-3.0/gtk.css
+sed -i "s/"$bg"/"$aline_bg"/g" "$HOME"/.themes/NeoCity_Fog/gtk-4.0/gtk.css
+##-2
+sed -i "s/"$mb"/"$aline_bg_alt"/g" "$HOME"/.themes/NeoCity_Fog/cinnamon/cinnamon.css
+sed -i "s/"$mb"/"$aline_bg_alt"/g" "$HOME"/.themes/NeoCity_Fog/gnome-shell/gnome-shell.css
+sed -i "s/"$mb"/"$aline_bg_alt"/g" "$HOME"/.themes/NeoCity_Fog/gnome-shell/pad-osd.css
+sed -i "s/"$mb"/"$aline_bg_alt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-2.0/gtkrc
+sed -i "s/"$mb"/"$aline_bg_alt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-2.0/gtkrc.hidpi
+sed -i "s/"$mb"/"$aline_bg_alt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-3.0/gtk-dark.css
+sed -i "s/"$mb"/"$aline_bg_alt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-3.0/gtk.css
+sed -i "s/"$mb"/"$aline_bg_alt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-4.0/gtk.css
+##-3
+sed -i "s/"$blue"/"$aline_fg"/g" "$HOME"/.themes/NeoCity_Fog/cinnamon/cinnamon.css
+sed -i "s/"$blue"/"$aline_fg"/g" "$HOME"/.themes/NeoCity_Fog/gnome-shell/gnome-shell.css
+sed -i "s/"$blue"/"$aline_fg"/g" "$HOME"/.themes/NeoCity_Fog/gnome-shell/pad-osd.css
+sed -i "s/"$blue"/"$aline_fg"/g" "$HOME"/.themes/NeoCity_Fog/gtk-2.0/gtkrc
+sed -i "s/"$blue"/"$aline_fg"/g" "$HOME"/.themes/NeoCity_Fog/gtk-2.0/gtkrc.hidpi
+sed -i "s/"$blue"/"$aline_fg"/g" "$HOME"/.themes/NeoCity_Fog/gtk-3.0/gtk-dark.css
+sed -i "s/"$blue"/"$aline_fg"/g" "$HOME"/.themes/NeoCity_Fog/gtk-3.0/gtk.css
+sed -i "s/"$blue"/"$aline_fg"/g" "$HOME"/.themes/NeoCity_Fog/gtk-4.0/gtk.css
+##-Transparent
+##-1
+sed -i "s/"$bgt"/"$aline_bgt"/g" "$HOME"/.themes/NeoCity_Fog/cinnamon/cinnamon.css
+sed -i "s/"$bgt"/"$aline_bgt"/g" "$HOME"/.themes/NeoCity_Fog/gnome-shell/gnome-shell.css
+sed -i "s/"$bgt"/"$aline_bgt"/g" "$HOME"/.themes/NeoCity_Fog/gnome-shell/pad-osd.css
+sed -i "s/"$bgt"/"$aline_bgt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-2.0/gtkrc
+sed -i "s/"$bgt"/"$aline_bgt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-2.0/gtkrc.hidpi
+sed -i "s/"$bgt"/"$aline_bgt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-3.0/gtk-dark.css
+sed -i "s/"$bgt"/"$aline_bgt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-3.0/gtk.css
+sed -i "s/"$bgt"/"$aline_bgt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-4.0/gtk.css
+##-2
+sed -i "s/"$mbt"/"$aline_bg_altt"/g" "$HOME"/.themes/NeoCity_Fog/cinnamon/cinnamon.css
+sed -i "s/"$mbt"/"$aline_bg_altt"/g" "$HOME"/.themes/NeoCity_Fog/gnome-shell/gnome-shell.css
+sed -i "s/"$mbt"/"$aline_bg_altt"/g" "$HOME"/.themes/NeoCity_Fog/gnome-shell/pad-osd.css
+sed -i "s/"$mbt"/"$aline_bg_altt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-2.0/gtkrc
+sed -i "s/"$mbt"/"$aline_bg_altt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-2.0/gtkrc.hidpi
+sed -i "s/"$mbt"/"$aline_bg_altt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-3.0/gtk-dark.css
+sed -i "s/"$mbt"/"$aline_bg_altt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-3.0/gtk.css
+sed -i "s/"$mbt"/"$aline_bg_altt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-4.0/gtk.css
+##-3
+sed -i "s/"$bluet"/"$aline_fgt"/g" "$HOME"/.themes/NeoCity_Fog/cinnamon/cinnamon.css
+sed -i "s/"$bluet"/"$aline_fgt"/g" "$HOME"/.themes/NeoCity_Fog/gnome-shell/gnome-shell.css
+sed -i "s/"$bluet"/"$aline_fgt"/g" "$HOME"/.themes/NeoCity_Fog/gnome-shell/pad-osd.css
+sed -i "s/"$bluet"/"$aline_fgt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-2.0/gtkrc
+sed -i "s/"$bluet"/"$aline_fgt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-2.0/gtkrc.hidpi
+sed -i "s/"$bluet"/"$aline_fgt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-3.0/gtk-dark.css
+sed -i "s/"$bluet"/"$aline_fgt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-3.0/gtk.css
+sed -i "s/"$bluet"/"$aline_fgt"/g" "$HOME"/.themes/NeoCity_Fog/gtk-4.0/gtk.css
+}

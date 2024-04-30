@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/vir0id/.gtkrc-2.0.mine"
-gtk-theme-name="NeoCity_Fog"
+gtk-theme-name="emilia"
 gtk-icon-theme-name="Magna-Dark-Icons"
 gtk-font-name="JetBrainsMono NF 10"
 gtk-cursor-theme-name="Catppuccin-Mocha-Blue-Cursors"
