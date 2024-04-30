@@ -41,4 +41,4 @@ exec_always --no-startup-id "autotiling"
 #exec_always eww --config $HOME/.config/conkeww/ open conkeww-main
 #
 # Wallpaper
-exec_always --no-startup-id "feh -z --no-fehbg --bg-fill $HOME/.config/i3/rices/emilia/walls/catppuccin_triangle.webp"
+exec_always --no-startup-id "feh -z --no-fehbg --bg-fill $HOME/.config/i3/rices/emilia/walls/"

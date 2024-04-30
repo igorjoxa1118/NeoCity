@@ -3,3 +3,4 @@
 (include "powermenu/powermenu.yuck")
 (include "profilecard/profilecard.yuck")
 (include "player/player.yuck")
+(include "workspaces/workspaces.yuck")

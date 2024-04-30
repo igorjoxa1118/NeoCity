@@ -16,7 +16,7 @@
 				(label :show-truncated false :text "")))
     (eventbox :cursor "pointer"
 		(button :class "powermenu exit" 
-				:onclick "bspc quit" 
+				:onclick "i3-msg exit" 
 				:tooltip "Logout bspwm"
 				(label :show-truncated false :text "")))
     (eventbox :cursor "pointer"
