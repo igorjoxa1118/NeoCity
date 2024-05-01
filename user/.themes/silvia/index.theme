@@ -7,6 +7,6 @@ Encoding=UTF-8
 [X-GNOME-Metatheme]
 GtkTheme=silvia
 MetacityTheme=silvia
-IconTheme=Magna-Dark-Icons
+IconTheme=BeautySolar
 CursorTheme=Catppuccin-Mocha-Blue-Cursors
 ButtonLayout=close,minimize,maximize:menu
