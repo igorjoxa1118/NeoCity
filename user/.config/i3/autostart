@@ -18,10 +18,11 @@ exec --no-startup-id "gnome-keyring-daemon --start --components=pkcs11"
 
 ##### Start bar
 
-# NeoCity theme
+# Start themes
 exec_always --no-startup-id $HOME/.config/i3/rices/emilia/Theme.sh
-# Sweet theme #
-#exec_always --no-startup-id "$HOME/.config/i3/polybar/Sweet/launch.sh"
+# Wallpaper
+exec_always --no-startup-id "feh -z --no-fehbg --bg-fill $HOME/.config/i3/rices/emilia/walls/"
+
 ####################
 
 exec_always --no-startup-id "dunst -config $HOME/.config/dunst/dunstrc"
@@ -40,5 +41,3 @@ exec_always --no-startup-id "autotiling"
 #sed -i "s/colors\/color-.*/colors\/color-tokyo.yuck\")/g" $HOME/.config/conkeww/eww.yuck
 #exec_always eww --config $HOME/.config/conkeww/ open conkeww-main
 #
-# Wallpaper
-exec_always --no-startup-id "feh -z --no-fehbg --bg-fill $HOME/.config/i3/rices/emilia/walls/"
