@@ -6,36 +6,36 @@
  *    ╚═╝╚═╝╩ ╩╚═╝╩╚═╝   ╩ ╩ ╩╚═╝╩ ╩╚═╝	z0mbi3 Fox Firefox Theme
  */
    
-  --z0mbi3-bg: #171924;
-  --z0mbi3-icon-color: #7aa2f7;
+  --z0mbi3-bg: #1D1F28;
+  --z0mbi3-icon-color: #FDFDFD;
   --z0mbi3-nav-toolbar-padding: 8px;
   --z0mbi3-sidebar-bg: var(--z0mbi3-bg);
-  --z0mbi3-sidebar-color: #9ece6a;
+  --z0mbi3-sidebar-color: #79E6F3;
   --z0mbi3-tab-border-radius: 0px;
-  --z0mbi3-tab-color: #7aa2f7;
+  --z0mbi3-tab-color: #FDFDFD;
   --z0mbi3-tab-font-family: "JetBrainsMono NF", serif;
   --z0mbi3-tab-font-size: 10pt;
   --z0mbi3-tab-font-weight: 600;
   --z0mbi3-tab-height: 42px;
-  --z0mbi3-tab-pinned-bg: #7aa2f7;
-  --z0mbi3-tab-selected-bg: #344569;
-  --z0mbi3-tab-soundplaying-bg: #e95c39;
-  --z0mbi3-urlbar-color: #9ece6a;
-  --z0mbi3-urlbar-focused-color: #7aa2f7;
+  --z0mbi3-tab-pinned-bg: #FDFDFD;
+  --z0mbi3-tab-selected-bg: #15171E;
+  --z0mbi3-tab-soundplaying-bg: #F37F97;
+  --z0mbi3-urlbar-color: #79E6F3;
+  --z0mbi3-urlbar-focused-color: #FDFDFD;
   --z0mbi3-urlbar-font-family: "JetBrainsMono NF", serif;
   --z0mbi3-urlbar-font-size: 12pt;
   --z0mbi3-urlbar-font-weight: 800;
-  --z0mbi3-urlbar-results-color: #7aa2f7;
+  --z0mbi3-urlbar-results-color: #FDFDFD;
   --z0mbi3-urlbar-results-font-family: "JetBrainsMono NF", serif;
   --z0mbi3-urlbar-results-font-size: 12pt;
   --z0mbi3-urlbar-results-font-weight: 700;
-  --z0mbi3-urlbar-results-url-color: #7aa2f7;
+  --z0mbi3-urlbar-results-url-color: #FDFDFD;
 
   /* Overriden Firefox variables*/
   --toolbar-bgcolor: var(--z0mbi3-bg) !important;
   --lwt-sidebar-background-color: var(--z0mbi3-bg) !important;
   --tab-border-radius: 0 !important;
-  --lwt-toolbarbutton-icon-fill-attention: #7aa2f7 !important;
+  --lwt-toolbarbutton-icon-fill-attention: #FDFDFD !important;
   --toolbarbutton-icon-fill-attention: var(--lwt-toolbarbutton-icon-fill-attention) !important;
 }
 
@@ -46,7 +46,7 @@
 
 #PlacesToolbar menupopup[placespopup="true"] {
   --arrowpanel-background: var(--z0mbi3-bg) !important;
-  --arrowpanel-color: #7aa2f7 !important;
+  --arrowpanel-color: #FDFDFD !important;
 }
 
 .tab-background[selected="true"] {
@@ -273,14 +273,14 @@ toolbarbutton.bookmark-item:hover,
 
 /*Darken panels to match theme*/
 .panel-subview-body,#appMenu-zoomReset-button,.panel-mainview,.panel-subviews {
-  color: #7aa2f7 !important;
+  color: #FDFDFD !important;
   background: var(--url-and-searchbar-background-color) !important;}
 .panel-subview-footer,[class^="PanelUI-"] {
-  color: #7aa2f7 !important;
+  color: #FDFDFD !important;
   background: var(--toolbar-bgcolor) !important;}
 /*stops possible clashes with extension popups*/
 .webextension-popup-browser {
-  background: #7aa2f7;
+  background: #FDFDFD;
 }
 
 /************************************/
