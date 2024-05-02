@@ -61,6 +61,7 @@ selected=$(printf "%s\n" "${options[@]}" | while read -r A ; do  echo -en "$A\x0
 echo "$selected" > "$current_rice_file"
 
 sed -i "s/"$i3_rice_in_config"/"$selected"/g" "$HOME"/.config/i3/autostart
+sed -i "s/"$i3_rice_in_config"/"$selected"/g" "$HOME"/.config/kitty/kitty.conf
 
 wall_old="catppuccin_triangle.webp"
     feh_walls_list=$(ls "$HOME"/.config/i3/rices/$selected/walls | grep "png" | head -1)
