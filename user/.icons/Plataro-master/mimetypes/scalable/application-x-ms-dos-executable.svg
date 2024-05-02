@@ -1,0 +1,9 @@
+<svg width="48" version="1.1" xmlns="http://www.w3.org/2000/svg" height="48">
+<path style="fill:#203040" d="M 3,3 V 45 H 45 V 3 Z"/>
+<g style="stroke-width:1.25">
+<path style="fill:#ff4c4c" d="M 18,18 H 28 V 28 H 18 Z"/>
+<path style="fill:#51ff00" d="M 29,18 H 39 V 28 H 29 Z"/>
+<path style="fill:#53a8ff" d="M 18,29 H 28 V 39 H 18 Z"/>
+<path style="fill:#fffd00" d="M 29,29 H 39 V 39 H 29 Z"/>
+</g>
+</svg>

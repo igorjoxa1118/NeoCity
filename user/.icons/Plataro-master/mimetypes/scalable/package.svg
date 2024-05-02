@@ -1,0 +1,22 @@
+<svg width="48" version="1.1" xmlns="http://www.w3.org/2000/svg" height="48">
+<path style="fill:#b99337" id="rect4090" d="M 3,3 V 45 H 45 V 3 Z"/>
+<g style="fill-rule:evenodd">
+<path style="fill:#34495e" id="shape0" d="m 20.0024,3 h 7.96956 V 21.794 H 20.0024 Z"/>
+<g style="stroke-width:1.227;fill:#ecf0f1">
+<path id="shape2" d="m 23.218,3 h 4.78162 v 1.50291 h -4.78162 z "/>
+<path id="shape3" d="m 20.0413,4.5061 h 4.78162 v 1.50291 h -4.78162 z "/>
+<path id="shape4" d="m 23.2184,6.0093 h 4.78162 v 1.50291 h -4.78162 z "/>
+<path id="shape5" d="m 20.0366,7.5163 h 4.78162 v 1.50291 h -4.78162 z "/>
+<path id="shape6" d="m 23.2134,9.0193 h 4.78162 v 1.50291 h -4.78162 z "/>
+<path id="shape7" d="m 20.0366,10.5249 h 4.78162 v 1.50291 h -4.78162 z "/>
+<path id="shape8" d="m 23.2134,12.028 h 4.78162 v 1.50291 h -4.78162 z "/>
+<path id="shape9" d="m 20.0048,13.5337 h 4.78162 v 1.50291 h -4.78162 Z "/>
+<path id="shape10" d="m 23.1814,15.0367 h 4.78162 v 1.50291 h -4.78162 z "/>
+<path id="shape11" d="m 20.0048,16.5423 h 4.78162 v 1.50291 h -4.78162 Z "/>
+<path id="shape12" d="m 23.1819,18.0454 h 4.78162 v 1.50291 h -4.78162 z "/>
+<path id="shape13" d="m 20,19.5525 h 4.78163 v 1.50291 h -4.78162 z "/>
+<path id="shape17" d="m 20.0165,21.1785 h 7.95755 v 10.0166 h -7.95755 z "/>
+</g>
+<path style="fill:#2c3e50" id="shape18" d="m 21.6932,22.1784 h 4.66442 v 2.36961 H 21.6932 Z"/>
+</g>
+</svg>

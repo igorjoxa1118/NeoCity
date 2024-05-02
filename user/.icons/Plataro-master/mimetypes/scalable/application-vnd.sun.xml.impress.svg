@@ -1,0 +1,14 @@
+<svg width="48" version="1.1" xmlns="http://www.w3.org/2000/svg" height="48">
+<path style="fill:#d35400" id="rect4090" d="m 3,3 v 42 h 42 v -42 Z "/>
+<g style="stroke-linecap:square;fill-rule:evenodd;stroke:#003bc3;stroke-width:0">
+<rect width="26" x="9" y="9" height="24" style="fill:#bdc3c7;stroke-miterlimit:2" id="shape0"/>
+<g style="stroke-miterlimit:2.013">
+<rect width="27" x="12" y="12" height="24" style="fill:#ecf0f1" id="shape01"/>
+<rect width="4.1719556" x="17.933516" y="23.26083" height="11.101808" style="fill:#f1c40f" id="rect12"/>
+</g>
+<g style="stroke-miterlimit:2">
+<rect width="4.1719556" x="23.934948" y="16.705688" height="17.656895" style="fill:#e74c3c" id="shape1"/>
+<rect width="4.1719556" x="29.953775" y="26.510443" height="7.8242631" style="fill:#2ecc71" id="shape2"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64" version="1.1">
+<defs> <linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(55.992188,0,0,56,4.003906,4)"> <stop offset="0" style="stop-color:#00bbff;stop-opacity:1;"/> <stop offset="1" style="stop-color:#0085b5;stop-opacity:1;"/> </linearGradient> </defs>
+<defs>
+<radialGradient id="radial0" gradientUnits="userSpaceOnUse" cx="432.679993" cy="476.109985" fx="432.679993" fy="476.109985" r="135.889999" gradientTransform="matrix(0.280551,0,0,0.263948,-89.336298,-93.495489)">
+<stop offset="0" style="stop-color:url(#linear0);stop-opacity:0.333333;"/>
+<stop offset="1" style="stop-color:url(#linear0);stop-opacity:0;"/>
+</radialGradient>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#radial0);" d="M -9.433594 73.683594 L 22.332031 33.308594 L -9.433594 -9.335938 L 11.113281 -9.335938 L 36.558594 25.171875 L -2.175781 73.683594 L -9.441406 73.683594 M 27.355469 39.457031 L 66.085938 -9.335938 L 73.546875 -9.335938 L 41.765625 30.703125 C 41.765625 30.703125 73.546875 73.683594 73.546875 73.683594 L 53 73.683594 L 27.359375 39.457031 "/>
+</g>
+</svg>

@@ -1,0 +1,11 @@
+<svg width="24" version="1.0" xmlns="http://www.w3.org/2000/svg" height="24" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<linearGradient id="ButtonColor-6" y1="21" x1="10.31979" y2="1" x2="10.31979" gradientUnits="userSpaceOnUse">
+<stop offset="0" style="stop-color:#c8c8c8"/>
+<stop offset="1" style="stop-color:#e6e6e6"/>
+</linearGradient>
+<linearGradient gradientTransform="matrix(0.2570698,0,0,0.2570698,-0.33949467,-0.7525833)" xlink:href="#ButtonColor-6" id="linearGradient3022" y1="90" x1="48" y2="5.9877172" gradientUnits="userSpaceOnUse" x2="48"/>
+</defs>
+<rect width="21.593863" x="1.2029241" y="0.78983551" rx="1.5424188" height="21.593863" style="opacity:.75;fill:url(#linearGradient3022)"/>
+<path style="fill:#24a058;stroke-linejoin:round;stroke-width:.2" d="m 8.5991,3.7102 -5.0509,3.1082 3.1776,2.5948 5.0509,-3.0666 -3.1776,-2.6364 z  m 6.7715,0 -3.1915,2.6364 5.0509,3.0666 3.1915,-2.5948 -5.0509,-3.1082 z  m -8.6725,6.2165 -2.6364,2.234 -.2775,.2359 2.6503,1.5402 2.1924,1.2905 2.8168,-2.4283 -4.7456,-2.8723 z  m 10.5597,0 -4.7456,2.8723 2.8168,2.4283 4.8427,-2.8307 l -.2636,-.2359 -2.6503,-2.234 z  m -5.481,3.136 -3.2192,2.6364 -1.6235,-.8742 0,.444 0,.4718 .7771,.4718 4.0657,2.4977 0,-5.6475 z  m .4024,0 0,5.6475 4.8427,-2.9695 0,-.9158 -.8187,.444 -.8048,.4302 -3.2192,-2.6364 z "/>
+</svg>

@@ -1,0 +1,37 @@
+<svg width="48" version="1.1" xmlns="http://www.w3.org/2000/svg" height="48" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<linearGradient id="linearGradient1432">
+<stop offset="0"/>
+<stop offset="0.11" style="stop-opacity:.2"/>
+<stop offset="0.9" style="stop-opacity:.2"/>
+<stop offset="1" style="stop-color:#fff;stop-opacity:.5"/>
+</linearGradient>
+<linearGradient xlink:href="#linearGradient1432" id="linearGradient1434" y1="45" x1="8.2068243" y2="4.0139256" x2="8.1992188" gradientUnits="userSpaceOnUse"/>
+</defs>
+<path style="fill:#c19761" d="m 8,3 h 32 c 2.77,0 5,2.23 5,5 v 32 c 0,2.77 -2.23,5 -5,5 H 8 C 5.23,45 3,42.77 3,40 V 8 C 3,5.23 5.23,3 8,3 Z"/>
+<g style="fill-rule:evenodd">
+<path style="opacity:.5" d="m 20,2.9922 h 8 v 19.6657 h -8 z"/>
+<g style="fill:#ecf0f1">
+<path d="m 20,2.998 h 4.8 V 4.45376 H 20 Z"/>
+<path d="M 23.2,4.4539 H 28 v 1.45577 h -4.8 z"/>
+<path d="m 20,5.9123 h 4.8 V 7.36807 H 20 Z"/>
+<path d="M 23.2,7.3682 H 28 v 1.45577 h -4.8 z"/>
+<path d="m 20,8.828 h 4.8 v 1.45577 H 20 Z"/>
+<path d="M 23.2,10.2839 H 28 v 1.45577 h -4.8 z"/>
+<path d="m 20,11.7422 h 4.8 v 1.45577 H 20 Z"/>
+<path d="M 23.2,13.1982 H 28 v 1.45577 h -4.8 z"/>
+<path d="m 20,14.656679 h 4.8 v 1.45577 H 20 Z"/>
+<path d="M 23.2,16.1125 H 28 v 1.45577 h -4.8 z"/>
+<path d="m 20,17.571 h 4.8 v 1.45577 H 20 Z"/>
+<path d="M 23.2,19.0269 H 28 v 1.45577 h -4.8 z"/>
+<path d="m 20,20.4867 h 4.8 v 1.45577 H 20 Z"/>
+</g>
+<path style="opacity:.05" d="M 18,36.3 H 30 L 29.45,21.8 h -10.9 z"/>
+<path style="opacity:.07" d="m 18.25,35.9 h 11.5 L 29.3,21.825 H 18.7 Z"/>
+<path style="opacity:.15" d="m 18.5,35.5 h 11 L 29.2,21.85 H 18.8 Z"/>
+<path style="opacity:.25" d="M 18.8,35.2 H 29.2 L 29.1,21.9 H 18.9 Z"/>
+<path style="opacity:.15" d="m 20,33.5 h 8 v -4 h -8 z"/>
+<path style="fill:#ecf0f1" d="M 19,22 V 35 H 29 V 22 Z m 2,8 h 6 v 3 h -6 z"/>
+</g>
+<path style="opacity:.2;fill:url(#linearGradient1434)" d="m 8,3 c -2.77,0 -5,2.23 -5,5 v 32 c 0,2.77 2.23,5 5,5 h 32 c 2.77,0 5,-2.23 5,-5 v -32 c 0,-2.77 -2.23,-5 -5,-5 h -32 z  m .1992,1.5 h 31.6016 c 2.0498,0 3.69922,1.64942 3.69922,3.69922 v 30.9004 c 0,2.0498 -1.64942,3.69922 -3.69922,3.69922 h -31.6016 c -2.0498,0 -3.69922,-1.64942 -3.69922,-3.69922 v -30.9004 c 0,-2.0498 1.64942,-3.69922 3.69922,-3.69922 z "/>
+</svg>

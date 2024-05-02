@@ -1,0 +1,21 @@
+<svg width="48" version="1.1" xmlns="http://www.w3.org/2000/svg" height="48">
+<rect width="42" x="3" y="3" height="42" style="fill:#8e44ad;fill-rule:evenodd;stroke:none" id="rect834"/>
+<g style="stroke-miterlimit:2;stroke:#003bc3;stroke-linecap:square;stroke-width:0;fill-rule:evenodd" id="g846" transform="translate(-0.42998409,0.55029345)">
+<rect width="18.661978" x="15.095809" y="12.870722" height="21.157793" style="fill:#7f8c8d" id="shape0"/>
+<g style="fill:#bdc3c7">
+<rect width="12.468332" x="24.399841" y="12.870722" height="6.5100894" id="shape1"/>
+<rect width="12.468332" x="24.399841" y="20.194614" height="6.5100894" id="shape2"/>
+<rect width="12.468332" x="24.399841" y="27.518415" height="6.5100894" id="shape3"/>
+</g>
+<g style="fill:#ecf0f1">
+<rect width="12.447607" x="11.991795" y="12.870907" height="6.5100927" id="shape11"/>
+<rect width="12.447607" x="11.991795" y="20.194799" height="6.5100927" id="shape21"/>
+<rect width="12.447607" x="11.991795" y="27.518599" height="6.5100927" id="shape31"/>
+</g>
+<g style="fill:#fff">
+<rect width="1.9868864" x="12.851046" y="13.84724" height="3.8995519" id="shape4"/>
+<rect width="1.9868864" x="12.851046" y="21.171135" height="3.8995519" id="shape5"/>
+<rect width="1.9868864" x="12.905171" y="28.494936" height="3.8995519" id="shape6"/>
+</g>
+</g>
+</svg>

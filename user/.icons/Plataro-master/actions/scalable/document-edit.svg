@@ -1,0 +1,36 @@
+<svg width="48" version="1.1" xmlns="http://www.w3.org/2000/svg" height="48" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<linearGradient id="linearGradient3770">
+<stop offset="0" style="stop-color:#ffda7d"/>
+<stop offset="0.30000001" style="stop-color:#ffda7d"/>
+<stop offset="0.30000001" style="stop-color:#ffc941"/>
+<stop offset="0.60000002" style="stop-color:#ffc941"/>
+<stop offset="0.60000002" style="stop-color:#dc9e00"/>
+<stop offset="1" style="stop-color:#dc9e00"/>
+</linearGradient>
+<linearGradient id="linearGradient880">
+<stop offset="0" style="stop-color:#666"/>
+<stop offset="1"/>
+</linearGradient>
+<linearGradient gradientTransform="matrix(0.75722601,0.75722601,-1.0350281,1.0350281,15.788394,-28.145285)" xlink:href="#linearGradient3770" id="linearGradient3849" y1="23.72045" x1="34.265" y2="23.72045" gradientUnits="userSpaceOnUse" x2="45.4021"/>
+<linearGradient xlink:href="#linearGradient880" id="linearGradient882" y1="39.928188" x1="3.4801226" y2="44.521946" x2="8.0639439" gradientUnits="userSpaceOnUse"/>
+</defs>
+<g style="stroke-width:1.024">
+<path style="opacity:.5" d="M 5.372,6.628 V 43.3718 H 44.2077 L 44.372,6.626 31.6432,6.6279 Z"/>
+<path style="fill:#ecf0f1" d="m 4.5719,5.628 v 36.7438 h 38.8357 l .1643,-36.7458 -12.7288,.0019 z "/>
+</g>
+<g style="fill-rule:evenodd">
+<g style="fill:#7f8c8d">
+<rect width="26.684752" x="10.630051" y="16.781309" height="2.9221342"/>
+<rect width="20.151466" x="13.91404" y="10.937055" height="2.9221342"/>
+<rect width="26.684752" x="10.620342" y="22.625603" height="2.9221342"/>
+<rect width="26.684752" x="10.670486" y="28.469894" height="2.9221342"/>
+<rect width="26.684752" x="10.660777" y="34.314095" height="2.9221342"/>
+</g>
+<path style="fill:#d57000" d="m 40.8133,.0224 c -0.789224,0.107445 -1.73142,0.585611 -2.34536,1.19913 l -5.078,5.0282 8.3699,8.3798 5.078,-5.0282 c 1.00968,-1.009 1.51051,-2.91817 0.849442,-3.58027 l -5.7495,-5.7491 c -0.241174,-0.241556 -0.650899,-0.314072 -1.12444,-0.249602 Z "/>
+<path style="fill:#d0d0d0" d="m 33.4095,6.2693 -5.2783,5.2591 8.3703,8.3794 5.2779,-5.2587 z "/>
+<path style="fill:url(#linearGradient3849)" d="m 28.1302,11.5225 -21.8351,21.7182 8.4354,8.4054 21.7695,-21.7437 Z "/>
+<path style="fill:#e9d078" d="m 6.3484,33.274 -6.335,14.726 14.7048,-6.346 -8.3699,-8.3798 Z "/>
+<path style="fill:url(#linearGradient882)" d="m 3.4802,39.9281 -3.4668,8.0719 8.0505,-3.4781 -4.5838,-4.5938 Z "/>
+</g>
+</svg>

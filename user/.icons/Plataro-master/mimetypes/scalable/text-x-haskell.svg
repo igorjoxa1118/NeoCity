@@ -1,0 +1,9 @@
+<svg width="48" version="1.1" xmlns="http://www.w3.org/2000/svg" height="48">
+<rect width="42" x="3" y="3" height="42" style="fill:#b3b3b3;fill-rule:evenodd;stroke:none" id="rect824"/>
+<g style="fill:none" id="group0" transform="matrix(1.1470591,0,0,0.91859617,9.8592855,11.574453)">
+<path style="fill:#34495e" id="shape0" d="M 0,17.8025 5.49455,8.90123 0,0 H 4.12086 L 9.61544,8.90123 4.12086,17.8025 Z m 0,0" transform="translate(1.07605,3.34609)"/>
+<path style="fill:#34495e" id="shape1" d="M 0,17.8025 5.51341,8.90123 0,0 h 4.135 l 11.0266,17.8025 h -4.135 L 7.58091,12.2394 4.135,17.8025 Z m 0,0" transform="translate(6.58005,3.34609)"/>
+<path style="fill:#34495e" id="shape2" d="m 1.8314,2.9893 -1.8314,-2.9891 6.41,-.0002 v 2.98934 z " transform="translate(18.0451,12.9851)"/>
+<path style="fill:#34495e" id="shape3" d="m 1.8368,2.9893 -1.8368,-2.9891 9.1835,-.0002 v 2.98934 z " transform="translate(15.2941,8.53609)"/>
+</g>
+</svg>

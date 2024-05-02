@@ -1,0 +1,14 @@
+<svg width="24" version="1.0" xmlns="http://www.w3.org/2000/svg" height="24" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<linearGradient id="ButtonColor-6" y1="21" x1="10.31979" y2="1" x2="10.31979" gradientUnits="userSpaceOnUse">
+<stop offset="0" style="stop-color:#c8c8c8"/>
+<stop offset="1" style="stop-color:#e6e6e6"/>
+</linearGradient>
+<linearGradient gradientTransform="matrix(0.2570698,0,0,0.2570698,-0.33949467,-0.7525833)" xlink:href="#ButtonColor-6" id="linearGradient3023" y1="90" x1="48" y2="5.9877172" gradientUnits="userSpaceOnUse" x2="48"/>
+</defs>
+<rect width="21.593863" x="1.2029241" y="0.78983551" rx="1.5424188" height="21.593863" style="opacity:.75;fill:url(#linearGradient3023)"/>
+<g style="fill:#333;fill-rule:evenodd">
+<rect width="2" x="-0.47398683" y="6.8587441" height="19.213" transform="rotate(-45)"/>
+<rect width="2" x="15.46525" y="-9.080493" height="19.213" transform="matrix(0.70710678,0.70710678,0.70710678,-0.70710678,0,0)"/>
+</g>
+</svg>
