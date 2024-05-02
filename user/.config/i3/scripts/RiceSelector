@@ -131,5 +131,17 @@ elif [[ "$selected" == silvia ]]; then
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=BeautySolar/g" "$HOME"/.config/gtk-4.0/settings.ini
 fi
 
+###---FifeFox theme choiser
+grep_ff=$(ls "$HOME"/.mozilla/firefox | grep default-release)
+path_to_ff=""$HOME"/.mozilla/firefox/"$grep_ff"/chrome"
+path_to_ff_themes=""$HOME"/.mozilla/FoxThemes"
+theme_name="userChrome.css"
+
+    if [ -d "$path_to_ff" ]; then
+        cp -rf "$path_to_ff_themes"/"$selected"/"$theme_name" "$path_to_ff"
+    else
+        echo "Somthing wrong"
+    fi
+
 i3-msg restart
 exit 0
