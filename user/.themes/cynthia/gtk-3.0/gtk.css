@@ -204,7 +204,7 @@ treeview.view:selected:not(.progressbar):not(.trough),
 modelbutton.flat:selected,
 .menuitem.button.flat:selected {
   color: #c5c9c5;
-  background-color: rgba(120, 102, 69, 0.2);
+  background-color: rgba(120, 102, 69, 1);
 }
 
 .nemo-window .view selection,

@@ -203,8 +203,8 @@ row:selected,
 treeview.view:selected:not(.progressbar):not(.trough),
 modelbutton.flat:selected,
 .menuitem.button.flat:selected {
-  color: #575279;
-  background-color: rgba(87, 82, 121, 0.2); /*Цвет выбранного пункта в thunar. (Документы, Загрузки и т.д)*/
+  color: #faf4ed;
+  background-color: rgba(87, 82, 121, 0.5); /*Цвет выбранного пункта в thunar. (Документы, Загрузки и т.д)*/
 }
 
 .nemo-window .view selection,
@@ -214,8 +214,8 @@ modelbutton.flat:selected,
 .nautilus-window flowboxchild:selected .icon-item-background,
 flowbox flowboxchild:selected,
 .background.csd .view:selected {
-  color: #575279;
-  background-color: rgba(247, 118, 142, 0.2);
+  color: #faf4ed;
+  background-color: rgba(87, 82, 121, 0.5);
 }
 
 .nemo-window .nemo-window-pane widget.entry:selected,

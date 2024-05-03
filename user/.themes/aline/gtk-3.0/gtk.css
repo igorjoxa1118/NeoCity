@@ -204,7 +204,7 @@ treeview.view:selected:not(.progressbar):not(.trough),
 modelbutton.flat:selected,
 .menuitem.button.flat:selected {
   color: #f2e9e1;
-  background-color: rgba(77, 72, 107, 0.2);
+  background-color: rgba(87, 82, 121, 1);
 }
 
 .nemo-window .view selection,
@@ -214,8 +214,8 @@ modelbutton.flat:selected,
 .nautilus-window flowboxchild:selected .icon-item-background,
 flowbox flowboxchild:selected,
 .background.csd .view:selected {
-  color: #575279;
-  background-color: rgba(242, 233, 225, 0.2);
+  color: #f2e9e1;
+  background-color: rgba(87, 82, 121, 1);;
 }
 
 .nemo-window .nemo-window-pane widget.entry:selected,

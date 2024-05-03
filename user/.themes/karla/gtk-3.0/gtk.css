@@ -203,8 +203,8 @@ row:selected,
 treeview.view:selected:not(.progressbar):not(.trough),
 modelbutton.flat:selected,
 .menuitem.button.flat:selected {
-  color: #afb1db;
-  background-color: rgba(11, 14, 16, 0.2);
+  color: #0E1113;
+  background-color: rgba(10, 156, 245, 1);
 }
 
 .nemo-window .view selection,
@@ -3575,8 +3575,8 @@ menu menuitem:hover,
 .menu menuitem:hover,
 .context-menu menuitem:hover {
   transition: none;
-  background-color: #0b0e10;
-  color: #afb1db;
+  background-color: #0A9CF5;
+  color: #0b0e10;
   font-weight: 500;
 }
 
