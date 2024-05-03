@@ -329,7 +329,7 @@ StScrollBar StButton#hhandle:active {
 .popup-combo-menu {
   padding: 3px;
   color: #d8dee9;
-  background-color: rgba(34, 35, 48, 0.95);
+  background-color: rgba(76, 86, 106, 0.95);
   border-radius: 12px;
   margin: 6px;
   border: 1px solid rgba(216, 222, 233, 0.2);
@@ -929,7 +929,7 @@ StScrollBar StButton#hhandle:active {
   margin-from-right-edge-of-screen: 18px;
   width: 28em;
   color: #d8dee9;
-  background-color: rgba(34, 35, 48, 0.9);
+  background-color: rgba(76, 86, 106, 0.9);
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.35);
   margin: 7px 12px 17px 12px;
 }
@@ -2063,7 +2063,7 @@ StScrollBar StButton#hhandle:active {
 .workspace-graph .workspace:active .windows {
   -active-window-background: rgba(84, 92, 126, 0.75);
   -active-window-border: rgba(0, 0, 0, 0.8);
-  -inactive-window-background: rgba(34, 35, 48, 0.75);
+  -inactive-window-background: rgba(76, 86, 106, 0.75);
   -inactive-window-border: rgba(0, 0, 0, 0.8);
 }
 
@@ -2228,7 +2228,7 @@ StScrollBar StButton#hhandle:active {
 }
 
 .desklet-drag-placeholder {
-  background-color: rgba(34, 35, 48, 0.95);
+  background-color: rgba(76, 86, 106, 0.95);
   box-shadow: inset 0 0 0 1px rgba(216, 222, 233, 0.1);
 }
 
