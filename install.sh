@@ -93,7 +93,7 @@ xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot xdotool)
 
 
 
-dependencias_paru=(cava zscroll-git eww-git catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
+dependencias_paru=(cava zscroll-git eww-git gnome-icon-theme catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
 zenity-gtk3 lightdm-webkit2-theme-tty-git i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
 
 if [ ! -f /usr/bin/firefox ];then 
