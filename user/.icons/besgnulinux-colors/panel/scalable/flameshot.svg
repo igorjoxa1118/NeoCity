@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16" version="1.1">
+<defs>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<rect x="0" y="0" width="16" height="16" style="fill:rgb(0%,0%,0%);fill-opacity:0.5;stroke:none;"/>
+  </g>
+</mask>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="16" height="16"/>
+</clipPath>
+<g id="surface5" clip-path="url(#clip1)">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(67.058825%,40.000001%,100%);fill-opacity:1;" d="M 14 3.332031 C 14 3.332031 13.867188 4.769531 11.320312 5.90625 C 11.296875 6.515625 11.210938 7.132812 10.996094 7.71875 C 10.648438 8.683594 9.933594 9.5625 8.796875 10.011719 C 6.960938 10.738281 6.070312 11.652344 5.609375 12.414062 C 6.378906 11.859375 7.628906 11.324219 9.6875 11.117188 C 13.578125 10.726562 14 3.332031 14 3.332031 Z M 14 3.332031 "/>
+</g>
+<mask id="mask1">
+  <g filter="url(#alpha)">
+<rect x="0" y="0" width="16" height="16" style="fill:rgb(0%,0%,0%);fill-opacity:0.75;stroke:none;"/>
+  </g>
+</mask>
+<clipPath id="clip2">
+  <rect x="0" y="0" width="16" height="16"/>
+</clipPath>
+<g id="surface8" clip-path="url(#clip2)">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(67.058825%,40.000001%,100%);fill-opacity:1;" d="M 9.828125 1.332031 C 9.828125 1.332031 10.109375 3.480469 7.667969 5.335938 C 7.867188 5.902344 8.007812 6.515625 8 7.15625 C 7.992188 8.03125 7.6875 8.953125 6.949219 9.707031 C 6.453125 10.210938 6.085938 10.675781 5.816406 11.101562 C 6.421875 10.496094 7.289062 9.890625 8.550781 9.390625 C 12.394531 7.867188 9.828125 1.332031 9.828125 1.332031 Z M 9.828125 1.332031 "/>
+</g>
+</defs>
+<g id="surface1">
+<use xlink:href="#surface5" mask="url(#mask0)"/>
+<use xlink:href="#surface8" mask="url(#mask1)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(67.058825%,40.000001%,100%);fill-opacity:1;" d="M 3.121094 8.335938 C 5.953125 5.003906 5.316406 2.667969 5.316406 2.667969 C 5.316406 2.667969 8.941406 6.726562 6.472656 9.238281 C 3.714844 12.046875 4.484375 14 4.484375 14 C 4.484375 14 1.496094 10.246094 3.121094 8.335938 Z M 3.121094 8.335938 "/>
+</g>
+</svg>

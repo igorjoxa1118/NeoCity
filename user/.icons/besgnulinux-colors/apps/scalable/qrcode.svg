@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(55.351351,0,0,55.351351,4.324324,4.337838)">
+<stop offset="0" style="stop-color:#00a2ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#00ffae;stop-opacity:1;"/>
+</linearGradient>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<image id="image14" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAApklEQVR4nO3awQ3CMBQFwQ+ilBTBhf7pgRRDC7FENIrYOdvW6p09kyRJkvyl2+L558xsZ4T80D4z76OHH4uPbzPzWrwjHB7gfmbFFTSADtAaQAdoDaADtAbQAVoD6ACtAXSA1gA6QGsAHaA1gA7QGkAHaA2gA7QG0AFaA+gArQF0gNYAOkBrAB2gNYAO0BpAB2gNoAO01X+C+ykVv/XRAUmSJMkFfAHjSgU4cVCLUQAAAABJRU5ErkJggg=="/>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<use xlink:href="#image14"/>
+  </g>
+</mask>
+<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(34.594595,0,0,34.594595,14.702703,14.702703)">
+<stop offset="0" style="stop-color:#00a2ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#00ffae;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface13" clip-path="url(#clip1)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 14.703125 14.703125 L 49.296875 14.703125 L 49.296875 49.296875 L 14.703125 49.296875 Z M 14.703125 14.703125 "/>
+</g>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 4.324219 4.335938 L 4.324219 59.6875 L 59.675781 59.6875 L 59.675781 4.335938 Z M 9.511719 9.527344 L 54.488281 9.527344 L 54.488281 54.5 L 9.511719 54.5 Z M 9.511719 9.527344 "/>
+<use xlink:href="#surface13" mask="url(#mask0)"/>
+</g>
+</svg>

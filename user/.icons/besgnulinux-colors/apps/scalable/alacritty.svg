@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<image id="image13" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAp0lEQVR4nO3awQ3CMBBFwYXQAf2XSAmR6AB8sUZR3pxX1tM/eyZJktzVY+HmPTPH7pBNzpn5/Dp4LTxyzHUH+OupA7QG0AFaA+gArQF0gNYAOkBrAB2gNYAO0BpAB2gNoAO0BtABWgPoAK0BdIDWADpAawAdoDWADtAaQAdoDaADtAbQAVoD6ACtAXSA1gA6QGsAHaA1gA7QVn6Ln9sr9rlye5Ik2ewLrp8EZLQ4uXMAAAAASUVORK5CYII="/>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<use xlink:href="#image13"/>
+  </g>
+</mask>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface12" clip-path="url(#clip1)">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 51.890625 32 C 51.890625 42.988281 42.988281 51.890625 32 51.890625 C 21.011719 51.890625 12.109375 42.988281 12.109375 32 C 12.109375 21.011719 21.011719 12.109375 32 12.109375 C 42.988281 12.109375 51.890625 21.011719 51.890625 32 Z M 51.890625 32 "/>
+</g>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(11.764706%,20.392157%,25.098041%);fill-opacity:1;" d="M 55.351562 32 C 55.351562 44.894531 44.894531 55.351562 32 55.351562 C 19.105469 55.351562 8.648438 44.894531 8.648438 32 C 8.648438 19.101562 19.105469 8.648438 32 8.648438 C 44.894531 8.648438 55.351562 19.101562 55.351562 32 Z M 55.351562 32 "/>
+<use xlink:href="#surface12" mask="url(#mask0)"/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(12.156863%,63.921571%,96.862745%);fill-opacity:1;" d="M 29.898438 33.855469 L 28.953125 36.0625 L 32 45.195312 L 35.046875 36.0625 L 34.101562 33.855469 Z M 29.898438 33.855469 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(97.254902%,56.470591%,10.588235%);fill-opacity:1;" d="M 29.96875 18.800781 L 20.832031 42.152344 L 24.890625 42.152344 L 32 24.890625 L 39.109375 42.152344 L 43.167969 42.152344 L 34.03125 18.800781 Z M 29.96875 18.800781 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(75.294119%,89.803922%,98.431373%);fill-opacity:1;" d="M 32 28.953125 L 29.898438 33.855469 L 32 39.105469 L 34.101562 33.855469 Z M 32 28.953125 "/>
+</g>
+</svg>

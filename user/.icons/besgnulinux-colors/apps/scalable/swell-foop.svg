@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<image id="image14" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAq0lEQVR4nO3ZMQ5BURgF4SEKnT3YgU1YrMrGNEqeUEgk4tV3JG++8jb/5LQXkizZaubtCOwHNkzACbgOvPmxmXnbA4eBDTfgPPDel7V1+F80gB1gawA7wNYAdoCtAewAWwPYAbYGsANsDWAH2BrADrA1gB1gawA7wNYAdoCtAewA2+IHmPsam3h/V41yH3jrx9zn6A7YDmx4AhfgMfBmkiRJkiRJkiRJkmRRXjd3Cy0PxzgwAAAAAElFTkSuQmCC"/>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<use xlink:href="#image14"/>
+  </g>
+</mask>
+<clipPath id="clip2">
+  <path d="M 4.324219 4.324219 L 31 4.324219 L 31 31 L 4.324219 31 Z M 4.324219 4.324219 "/>
+</clipPath>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(26.360361,0,0,26.355855,4.328829,4.36036)">
+<stop offset="0" style="stop-color:#00fff2;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#0062ff;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface13" clip-path="url(#clip1)">
+<g clip-path="url(#clip2)" clip-rule="nonzero">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 30.6875 17.539062 C 30.6875 24.8125 24.789062 30.714844 17.511719 30.714844 C 10.234375 30.714844 4.335938 24.8125 4.328125 17.539062 C 4.328125 10.261719 10.230469 4.363281 17.511719 4.363281 C 24.789062 4.363281 30.6875 10.261719 30.6875 17.539062 Z M 30.6875 17.539062 "/>
+</g>
+</g>
+<image id="image27" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAoklEQVR4nO3ZqxXCUBQF0Qmw0NRLLTRFAxSBjEJgssDf4TNbxtzzxgaSJEmSJEmSJEmSJL9vEW/vgdPwhhW4bz8cBo+/OgFn4Dh48wpcth/MAAvPx08GeHvvbvD4RyqAPcBWAHuArQD2AFsB7AG2AtgDbAWwB9gKYA+wFcAeYCuAPcBWAHuArQD2AFsB7AG2vw9g/hpbef6rm9xwG7yV5As8AMOBBv1KjEwuAAAAAElFTkSuQmCC"/>
+<mask id="mask1">
+  <g filter="url(#alpha)">
+<use xlink:href="#image27"/>
+  </g>
+</mask>
+<clipPath id="clip4">
+  <path d="M 33 33 L 59.675781 33 L 59.675781 59.675781 L 33 59.675781 Z M 33 33 "/>
+</clipPath>
+<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(26.360361,0,0,26.355855,33.315314,33.315314)">
+<stop offset="0" style="stop-color:#00fff2;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#0062ff;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip3">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface26" clip-path="url(#clip3)">
+<g clip-path="url(#clip4)" clip-rule="nonzero">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 59.675781 46.5 C 59.671875 53.773438 53.769531 59.671875 46.496094 59.671875 C 39.21875 59.671875 33.320312 53.773438 33.3125 46.5 C 33.3125 39.21875 39.214844 33.3125 46.496094 33.3125 C 53.78125 33.3125 59.679688 39.21875 59.675781 46.5 Z M 59.675781 46.5 "/>
+</g>
+</g>
+<linearGradient id="linear2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(26.360361,0,0,26.360361,4.324324,33.315314)">
+<stop offset="0" style="stop-color:#00fff2;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#0062ff;stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="linear3" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-26.355855,0,0,-26.355855,59.675676,30.684686)">
+<stop offset="0" style="stop-color:#00fff2;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#0062ff;stop-opacity:1;"/>
+</linearGradient>
+</defs>
+<g id="surface1">
+<use xlink:href="#surface13" mask="url(#mask0)"/>
+<use xlink:href="#surface26" mask="url(#mask1)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear2);" d="M 30.6875 46.5 C 30.679688 53.78125 24.78125 59.675781 17.503906 59.675781 C 10.226562 59.675781 4.328125 53.78125 4.324219 46.5 C 4.320312 39.21875 10.21875 33.3125 17.503906 33.3125 C 24.785156 33.3125 30.6875 39.21875 30.6875 46.5 Z M 30.6875 46.5 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear3);" d="M 59.675781 30.6875 L 33.320312 30.6875 L 33.320312 4.328125 L 59.675781 4.328125 Z M 59.675781 30.6875 "/>
+</g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16" version="1.1">
+<defs>
+<radialGradient id="radial0" gradientUnits="userSpaceOnUse" cx="8" cy="8" fx="8" fy="8" r="7" gradientTransform="matrix(0.666667,0,0,0.666667,2.666667,2.666667)">
+<stop offset="0" style="stop-color:rgb(0%,80.000001%,100%);stop-opacity:0;"/>
+<stop offset="1" style="stop-color:rgb(0%,80.000001%,100%);stop-opacity:1;"/>
+</radialGradient>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#radial0);" d="M 3.332031 3.332031 L 3.332031 12.667969 L 12.667969 12.667969 L 12.667969 3.332031 Z M 3.332031 3.332031 "/>
+</g>
+</svg>

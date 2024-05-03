@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<image id="image13" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAlElEQVR4nO3ZywlCQRREwVb8pGAS5h+GiYgLE9AInghXbJ5WbYcZDr2dBAAAAPg3m3bAG85JToP71ySXpcPd4OFv2Sc5Du4fXh1uBw//BAO0A9oM0A5oM0A7oM0A7YA2A7QD2gzQDmgzQDugzQDtgDYDtAPaDNAOaDNAO6DNAO2AtjX8DN2SPAb3758KAQAAAADW7wmPgQUtj0eWnAAAAABJRU5ErkJggg=="/>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<use xlink:href="#image13"/>
+  </g>
+</mask>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface12" clip-path="url(#clip1)">
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 50.941406 18.394531 L 41.710938 24.289062 L 43.097656 37.480469 L 53.386719 41.339844 C 54.679688 38.394531 55.347656 35.214844 55.351562 32 C 55.339844 27.113281 53.800781 22.359375 50.941406 18.394531 Z M 50.941406 18.394531 "/>
+</g>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,39.215687%,30.980393%);fill-opacity:1;" d="M 55.351562 32 C 55.351562 44.894531 44.894531 55.351562 32 55.351562 C 19.105469 55.351562 8.648438 44.894531 8.648438 32 C 8.648438 19.105469 19.105469 8.648438 32 8.648438 C 44.894531 8.648438 55.351562 19.105469 55.351562 32 Z M 55.351562 32 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 36.015625 27.808594 L 42.914062 23.484375 C 43.476562 23.132812 43.992188 23.378906 44.0625 24.039062 L 45.492188 37.230469 C 45.5625 37.890625 45.113281 38.25 44.488281 38.027344 L 36.808594 35.324219 L 36.972656 36.910156 C 37.113281 38.234375 36.152344 39.421875 34.828125 39.5625 L 19.238281 41.199219 C 17.914062 41.339844 16.726562 40.382812 16.585938 39.050781 L 15.453125 28.261719 C 15.3125 26.9375 16.277344 25.75 17.601562 25.613281 L 33.1875 23.972656 C 34.511719 23.835938 35.699219 24.789062 35.839844 26.121094 Z M 36.015625 27.808594 L 29.644531 31.800781 C 29.082031 32.15625 29.132812 32.621094 29.761719 32.839844 L 36.808594 35.324219 Z M 36.015625 27.808594 "/>
+<use xlink:href="#surface12" mask="url(#mask0)"/>
+</g>
+</svg>

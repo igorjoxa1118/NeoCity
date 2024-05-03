@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(34.630632,0,0,43.027027,15.027027,11.027027)">
+<stop offset="0" style="stop-color:#05f7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#e6ff05;stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(53.945946,0,0,55.351351,5.027027,4.324324)">
+<stop offset="0" style="stop-color:#05f7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#e6ff05;stop-opacity:1;"/>
+</linearGradient>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 29.078125 35.496094 L 15.027344 11.027344 L 22.496094 11.027344 L 32.339844 28.1875 L 42.191406 11.027344 L 49.660156 11.027344 L 35.558594 35.441406 L 35.558594 54.054688 L 29.078125 54.054688 Z M 29.078125 35.496094 "/>
+<path style=" stroke:none;fill-rule:evenodd;fill:url(#linear1);" d="M 32 4.324219 C 17.1875 4.324219 5.027344 15.875 5.027344 30.171875 C 5.027344 37.792969 8.554688 44.5625 14.015625 49.28125 L 14.015625 59.675781 L 23.996094 54.6875 C 26.53125 55.449219 29.179688 56.023438 32 56.023438 C 46.8125 56.023438 58.972656 44.472656 58.972656 30.171875 C 58.972656 15.875 46.8125 4.324219 32 4.324219 Z M 32 8.820312 C 44.496094 8.820312 54.476562 18.410156 54.476562 30.171875 C 54.476562 41.9375 44.496094 51.527344 32 51.527344 C 29.3125 51.527344 26.746094 51.015625 24.339844 50.191406 L 23.433594 49.914062 L 18.511719 52.367188 L 18.511719 47.3125 L 17.671875 46.609375 C 12.679688 42.679688 9.523438 36.789062 9.523438 30.171875 C 9.523438 18.410156 19.503906 8.820312 32 8.820312 Z M 32 8.820312 "/>
+</g>
+</svg>

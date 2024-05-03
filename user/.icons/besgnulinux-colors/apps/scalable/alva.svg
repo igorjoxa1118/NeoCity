@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<image id="image14" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAApElEQVR4nO3asQkCURQF0VkRe7Bba7Ehe7AGI1nQzHiTfcPinPjDG278IUmSJEmSJEmS/Itl8NZt6M4K3IHnlsfnfVt+FuA6dOsNXLY+Pu0YcggNYAfYGsAOsDWAHWBrADvA1gB2gK0B7ABbA9gBtgawA2wNYAfYGsAOsDWAHWBrADvA1gB2gK0B7ABbA9gBtgawA2xTP0Q+wGPo1gq8hm4lObgvqQkIJKNDulkAAAAASUVORK5CYII="/>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<use xlink:href="#image14"/>
+  </g>
+</mask>
+<clipPath id="clip2">
+  <path d="M 28 27 L 52 27 L 52 59.675781 L 28 59.675781 Z M 28 27 "/>
+</clipPath>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(22.950449,0,0,32.400902,28.202703,27.274774)">
+<stop offset="0" style="stop-color:#ffae00;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#bf1d1d;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface13" clip-path="url(#clip1)">
+<g clip-path="url(#clip2)" clip-rule="nonzero">
+<path style=" stroke:none;fill-rule:evenodd;fill:url(#linear0);" d="M 50.199219 27.273438 C 50.96875 27.273438 51.429688 28.179688 50.976562 28.828125 L 29.941406 59.261719 C 29.386719 60.039062 28.203125 59.648438 28.203125 58.6875 L 28.203125 28.257812 C 28.203125 27.71875 28.636719 27.273438 29.160156 27.273438 Z M 50.199219 27.273438 "/>
+</g>
+</g>
+<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(22.950449,0,0,32.400902,14.702703,4.324324)">
+<stop offset="0" style="stop-color:#ffae00;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#bf1d1d;stop-opacity:1;"/>
+</linearGradient>
+<image id="image27" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAeklEQVR4nO3WsQ3DMBADQMbIMGk8gGfyEtnOgNtMkB0yQHpXaqQ3oLuawBOsPgEAAAAAAGAOj8H3XknWxuyZ5NuxS5Lk2fvAxZZkb8y+M2CApfeBuzNAdYFqBqguUM0A1QWqGaC6QLXRn+CR5NeY/fQsAgAAAAAAwGz+rWEGr9VQCuMAAAAASUVORK5CYII="/>
+<mask id="mask1">
+  <g filter="url(#alpha)">
+<use xlink:href="#image27"/>
+  </g>
+</mask>
+<linearGradient id="linear2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(9.450449,0,0,9.450449,28.202703,27.274774)">
+<stop offset="0" style="stop-color:#ffae00;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#bf1d1d;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip3">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface26" clip-path="url(#clip3)">
+<path style=" stroke:none;fill-rule:evenodd;fill:url(#linear2);" d="M 33.605469 27.273438 L 33.605469 32.675781 L 28.203125 32.675781 L 28.203125 36.726562 L 36.699219 36.726562 C 37.21875 36.726562 37.652344 36.28125 37.652344 35.742188 L 37.652344 27.273438 Z M 33.605469 27.273438 "/>
+</g>
+</defs>
+<g id="surface1">
+<use xlink:href="#surface13" mask="url(#mask0)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 36.257812 4.4375 C 36.386719 4.363281 36.539062 4.324219 36.6875 4.324219 C 37.175781 4.324219 37.652344 4.703125 37.652344 5.3125 L 37.652344 27.410156 L 33.605469 27.410156 L 33.605469 15.226562 L 21.539062 32.675781 L 28.269531 32.675781 L 28.269531 36.726562 L 15.660156 36.726562 C 14.882812 36.726562 14.429688 35.8125 14.886719 35.171875 L 35.929688 4.738281 C 36.011719 4.613281 36.121094 4.511719 36.257812 4.4375 Z M 36.257812 4.4375 "/>
+<use xlink:href="#surface26" mask="url(#mask1)"/>
+</g>
+</svg>

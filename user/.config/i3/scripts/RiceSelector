@@ -90,13 +90,13 @@ elif [[ "$selected" == cristina ]]; then
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Plataro-master/g" "$HOME"/.config/gtk-3.0/settings.ini
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Plataro-master/g" "$HOME"/.config/gtk-4.0/settings.ini
 elif [[ "$selected" == cynthia ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Newaita"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Newaita/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Newaita/g" "$HOME"/.config/gtk-4.0/settings.ini
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Gruvbox"\"/g" "$HOME"/.gtkrc-2.0
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Gruvbox/g" "$HOME"/.config/gtk-3.0/settings.ini
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Gruvbox/g" "$HOME"/.config/gtk-4.0/settings.ini
 elif [[ "$selected" == daniela ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Lyra-pink-dark"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Lyra-pink-dark/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Lyra-pink-dark/g" "$HOME"/.config/gtk-4.0/settings.ini
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Colorful-Dark-Icons"\"/g" "$HOME"/.gtkrc-2.0
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Colorful-Dark-Icons/g" "$HOME"/.config/gtk-3.0/settings.ini
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Colorful-Dark-Icons/g" "$HOME"/.config/gtk-4.0/settings.ini
 elif [[ "$selected" == emilia ]]; then
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Magna-Dark-Icons"\"/g" "$HOME"/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Magna-Dark-Icons/g" "$HOME"/.config/gtk-3.0/settings.ini
@@ -110,9 +110,9 @@ elif [[ "$selected" == jan ]]; then
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=besgnulinux-mono-cyan/g" "$HOME"/.config/gtk-3.0/settings.ini
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=besgnulinux-mono-cyan/g" "$HOME"/.config/gtk-4.0/settings.ini
 elif [[ "$selected" == karla ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Lyra-pink-dark"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Lyra-pink-dark/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Lyra-pink-dark/g" "$HOME"/.config/gtk-4.0/settings.ini
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Vallunar2.0-dark"\"/g" "$HOME"/.gtkrc-2.0
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Vallunar2.0-dark/g" "$HOME"/.config/gtk-3.0/settings.ini
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Vallunar2.0-dark/g" "$HOME"/.config/gtk-4.0/settings.ini
 elif [[ "$selected" == marisol ]]; then
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Zafiro-Nord-Black-Blue"\"/g" "$HOME"/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Zafiro-Nord-Black-Blue/g" "$HOME"/.config/gtk-3.0/settings.ini
@@ -122,9 +122,9 @@ elif [[ "$selected" == melissa ]]; then
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Zafiro-Nord-Black-Blue/g" "$HOME"/.config/gtk-3.0/settings.ini
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Zafiro-Nord-Black-Blue/g" "$HOME"/.config/gtk-4.0/settings.ini
 elif [[ "$selected" == pamela ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Wings-Dark-Icons"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Wings-Dark-Icons/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Wings-Dark-Icons/g" "$HOME"/.config/gtk-4.0/settings.ini
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"besgnulinux-colors"\"/g" "$HOME"/.gtkrc-2.0
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=besgnulinux-colors/g" "$HOME"/.config/gtk-3.0/settings.ini
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=besgnulinux-colors/g" "$HOME"/.config/gtk-4.0/settings.ini
 elif [[ "$selected" == silvia ]]; then
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"BeautySolar"\"/g" "$HOME"/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=BeautySolar/g" "$HOME"/.config/gtk-3.0/settings.ini

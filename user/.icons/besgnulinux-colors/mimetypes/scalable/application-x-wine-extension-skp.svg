@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<rect x="0" y="0" width="64" height="64" style="fill:rgb(0%,0%,0%);fill-opacity:0.15;stroke:none;"/>
+  </g>
+</mask>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="49.570999" y1="52.714001" x2="51.714001" y2="54.856998" gradientTransform="matrix(2.3333,0,0,2.3333,-68.667,-72.000999)">
+<stop offset="0" style="stop-color:rgb(0%,0%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(0%,0%,0%);stop-opacity:0;"/>
+</linearGradient>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface5" clip-path="url(#clip1)">
+<path style=" stroke:none;fill-rule:evenodd;fill:url(#linear0);" d="M 56 46 L 42 60 L 51 60 C 53.769531 60 56 57.769531 56 55 Z M 56 46 "/>
+</g>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(21.568628%,65.490198%,89.803922%);fill-opacity:1;" d="M 13 4 L 51 4 C 53.761719 4 56 6.238281 56 9 L 56 55 C 56 57.761719 53.761719 60 51 60 L 13 60 C 10.238281 60 8 57.761719 8 55 L 8 9 C 8 6.238281 10.238281 4 13 4 Z M 13 4 "/>
+<use xlink:href="#surface5" mask="url(#mask0)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 35.546875 22.582031 L 21.027344 24.421875 L 22.066406 26.707031 L 32.578125 25.15625 L 36.378906 29.066406 L 42.503906 27.992188 Z M 32.699219 29.492188 L 22.699219 31.191406 L 23.675781 33.746094 L 29.113281 32.71875 L 30.507812 35.128906 L 36.269531 33.890625 Z M 29.425781 37.570312 L 24.480469 38.652344 L 25.429688 41.417969 L 30.769531 40.070312 Z M 29.425781 37.570312 "/>
+</g>
+</svg>

@@ -1,0 +1,447 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(55.333334,0,0,55.351351,4.333333,4.324324)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<image id="image14" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAfUlEQVR4nO3VsQ3CUAwE0AswRHomYCpGYhZmQemjVIzAABQfRZaMlPfqk21d4wQAAA5pKp43J7kOMmuSpXjvbpfiebck90HmmeRRvHe36gKmJOcfMn/j1H1ANwV0H9BNAd0HdDt8AdVv8J3kNchsxTsBAAAAAAAAAAAAgG8f5V4GvBNDhEoAAAAASUVORK5CYII="/>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<use xlink:href="#image14"/>
+  </g>
+</mask>
+<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,28.049551,20.148649)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface13" clip-path="url(#clip1)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 28.050781 20.148438 L 20.144531 20.148438 L 20.144531 12.242188 L 28.050781 12.242188 Z M 28.050781 20.148438 "/>
+</g>
+<image id="image27" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAf0lEQVR4nO3VsQ2DMBQE0AvJDGzBUNkl26WHiiHYgCY1yFbAQrwnubsvna5xAgAAt/QozPdJhp27Jcm3utHJXoX5IcknSbeRGZO8qxudrHSA7veeO5nLuFTZIxigdYHWDNC6QGu3H6D0G1ySTNkebq6vAwAAAAAAAAAAAAD8yQqMuga0IltTXQAAAABJRU5ErkJggg=="/>
+<mask id="mask1">
+  <g filter="url(#alpha)">
+<use xlink:href="#image27"/>
+  </g>
+</mask>
+<linearGradient id="linear2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,20.144145,20.148649)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip2">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface26" clip-path="url(#clip2)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear2);" d="M 20.144531 20.148438 L 12.238281 20.148438 L 12.238281 12.242188 L 20.144531 12.242188 Z M 20.144531 20.148438 "/>
+</g>
+<image id="image40" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAd0lEQVR4nO3WQQ2DQBQE0IEgogIqAFtIRAEeqqC9VUIdLFlC+Gl47zybzM7pJwAAAABwK0Nn/pFk3nn3TbIdbnSxqTP/TLIkGRuZV/5ogNZHbsEA1QWqGaC6QDUDVBeo1nsHvJOsaR9Cn+N1AAAAAAAAAACAk/0A6z0G045r6WUAAAAASUVORK5CYII="/>
+<mask id="mask2">
+  <g filter="url(#alpha)">
+<use xlink:href="#image40"/>
+  </g>
+</mask>
+<linearGradient id="linear3" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,20.144145,28.054054)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip3">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface39" clip-path="url(#clip3)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear3);" d="M 20.144531 28.054688 L 12.238281 28.054688 L 12.238281 20.148438 L 20.144531 20.148438 Z M 20.144531 28.054688 "/>
+</g>
+<image id="image53" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAeElEQVR4nO3VsQkCURRE0btiDyYWYSmWamo3BiZmlmBivgvC/+CeEw+8YZJXAACwS8vge6fqvJJ5Vq8BXao6jjr0damuK5lbdR/QpRo/wFIdNmSGWSvz9wwwu8BsBphdYLbdDzD6Db6rx4YMAAAAAAAAAAAAAPCbD+12BsdZ99g+AAAAAElFTkSuQmCC"/>
+<mask id="mask3">
+  <g filter="url(#alpha)">
+<use xlink:href="#image53"/>
+  </g>
+</mask>
+<linearGradient id="linear4" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.9009,0,0,-7.905406,35.950449,20.148649)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip4">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface52" clip-path="url(#clip4)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear4);" d="M 35.949219 20.148438 L 28.050781 20.148438 L 28.050781 12.242188 L 35.949219 12.242188 Z M 35.949219 20.148438 "/>
+</g>
+<image id="image66" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAcElEQVR4nO3WsQnDUAwE0IvJFKntpTxuPIZTO2t4AvMhCBTwe7WQjquUAAAAAMCtPIr3vZLMg5lvkr347s+exfuWJOtg5p0/KmDqDtBNAd0BuimgO0A3BXQH6Fb9BxxJtsHMp/gmAAAAAAAAAABw7QTQBga5C5AmiwAAAABJRU5ErkJggg=="/>
+<mask id="mask4">
+  <g filter="url(#alpha)">
+<use xlink:href="#image66"/>
+  </g>
+</mask>
+<linearGradient id="linear5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,28.049551,28.054054)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip5">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface65" clip-path="url(#clip5)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear5);" d="M 28.050781 28.054688 L 20.144531 28.054688 L 20.144531 20.148438 L 28.050781 20.148438 Z M 28.050781 28.054688 "/>
+</g>
+<image id="image79" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAdklEQVR4nO3WsQ2DQBAEwAXRgxP3QC20ShV04cyx3YE7ePRIcLKYifel/Y0uAQAAAAAAgFsYOvOPJPPOu2+S7XCji02d+WeSJcnYyLzyRwO0PnILBqguUM0A1QWqGaC6QLXeO+CdZE37EPocrwMAAAAAAACc5AdBAwa38BSd6gAAAABJRU5ErkJggg=="/>
+<mask id="mask5">
+  <g filter="url(#alpha)">
+<use xlink:href="#image79"/>
+  </g>
+</mask>
+<linearGradient id="linear6" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,20.144145,35.959459)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip6">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface78" clip-path="url(#clip6)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear6);" d="M 20.144531 35.960938 L 12.238281 35.960938 L 12.238281 28.054688 L 20.144531 28.054688 Z M 20.144531 35.960938 "/>
+</g>
+<image id="image92" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAeUlEQVR4nO3VsQ3CMBQE0AtigZRZA4ZnCOaIUqaip6dxY/kb5b36y3e6xgkAAFzSUl3gx5ZkbdwcSc5egfdeD3XySPJs3LySvHsFzjbAkuQ2MnBo2IwMUF2gmgGqC1S7/ACzfYNnkr1x8xlRBAAAAAAAAAAAAAD+3BcBSgbNGvNlUgAAAABJRU5ErkJggg=="/>
+<mask id="mask6">
+  <g filter="url(#alpha)">
+<use xlink:href="#image92"/>
+  </g>
+</mask>
+<linearGradient id="linear7" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,43.855855,20.148649)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip7">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface91" clip-path="url(#clip7)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear7);" d="M 43.855469 20.148438 L 35.949219 20.148438 L 35.949219 12.242188 L 43.855469 12.242188 Z M 43.855469 20.148438 "/>
+</g>
+<image id="image105" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAbklEQVR4nO3WoQ1CURBE0QuhCASSUiibFugC8cvA4D+CvCXhHD3JTkZtAQAAAMBfOSy+d64uO5lntS3oUtVp1aG3a3XbydxbOMBx1aFfZYDpAtMMMF1gmgGmC0xb/Qds1eODDAAAAAAAAAAA8B0vlNoGwXzKnjYAAAAASUVORK5CYII="/>
+<mask id="mask7">
+  <g filter="url(#alpha)">
+<use xlink:href="#image105"/>
+  </g>
+</mask>
+<linearGradient id="linear8" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.9009,0,0,-7.905406,35.950449,28.054054)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip8">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface104" clip-path="url(#clip8)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear8);" d="M 35.949219 28.054688 L 28.050781 28.054688 L 28.050781 20.148438 L 35.949219 20.148438 Z M 35.949219 28.054688 "/>
+</g>
+<image id="image118" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAcUlEQVR4nO3WsQnDAAwEwI/JEGlSeRavnQm8grtAMoZHEASBAr6rhfR8pQQAAAAAAAAu4da875FkLWa+SY7muz+7N+97JtmKmT1/VMAyHWCaAqYDTFPAdIBpCpgOMK37D3gneRUzn+abAAAAAAAAQO0E4c4GrBLcym4AAAAASUVORK5CYII="/>
+<mask id="mask8">
+  <g filter="url(#alpha)">
+<use xlink:href="#image118"/>
+  </g>
+</mask>
+<linearGradient id="linear9" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,28.049551,35.959459)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip9">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface117" clip-path="url(#clip9)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear9);" d="M 28.050781 35.960938 L 20.144531 35.960938 L 20.144531 28.054688 L 28.050781 28.054688 Z M 28.050781 35.960938 "/>
+</g>
+<image id="image131" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAd0lEQVR4nO3WsQ3CQBREwQeiAmfkFEBC/xkl0AE5Eg3QgS1bghMwE++X9ja6AgAAAAAAAACAn7ZbmT9W54W7R3Xd3OjDDivzU3Wp9jOZe180wNxD/oIBRhcYzQCjC4xmgNEFRlv7EZqq08Lds7ptbgQAAAAAvNMLoWQGCYPss88AAAAASUVORK5CYII="/>
+<mask id="mask9">
+  <g filter="url(#alpha)">
+<use xlink:href="#image131"/>
+  </g>
+</mask>
+<linearGradient id="linear10" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,20.144145,43.864865)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip10">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface130" clip-path="url(#clip10)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear10);" d="M 20.144531 43.863281 L 12.238281 43.863281 L 12.238281 35.960938 L 20.144531 35.960938 Z M 20.144531 43.863281 "/>
+</g>
+<image id="image144" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAgUlEQVR4nO3VsQkCQRiE0U8RrMDINuzfTizAwEww8uzgVARXuffSgZ9hWNgCAIBFWo0u8KZ9tZ3Jp+pcXV89uPm00Zcdqt1MPlXH6vTqwX8bYFWtZ/J7b77quWOLYIDRBUYzwOgCoy1+gH/7Bi9P8qm6faMIAAAAAAAAAAAAAPy4B2byCeakQf1FAAAAAElFTkSuQmCC"/>
+<mask id="mask10">
+  <g filter="url(#alpha)">
+<use xlink:href="#image144"/>
+  </g>
+</mask>
+<linearGradient id="linear11" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,51.76126,20.148649)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip11">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface143" clip-path="url(#clip11)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear11);" d="M 51.761719 20.148438 L 43.855469 20.148438 L 43.855469 12.242188 L 51.761719 12.242188 Z M 51.761719 20.148438 "/>
+</g>
+<image id="image157" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAb0lEQVR4nO3WsQ2DAAwEwAdlAToWoGD/FbJL0rECPQ0Ulgzirrbs11dOAAAAAOBVhu4AB3OS6WTmn2SrOvipWlRkSbKezHxTWMBYteipFNAdoJsCugN0U0B3gG53+wN+F2bKfgAAAAAAAAAAAHiBHTUoBe83L383AAAAAElFTkSuQmCC"/>
+<mask id="mask11">
+  <g filter="url(#alpha)">
+<use xlink:href="#image157"/>
+  </g>
+</mask>
+<linearGradient id="linear12" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,43.855855,28.054054)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip12">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface156" clip-path="url(#clip12)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear12);" d="M 43.855469 28.054688 L 35.949219 28.054688 L 35.949219 20.148438 L 43.855469 20.148438 Z M 43.855469 28.054688 "/>
+</g>
+<image id="image170" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAcElEQVR4nO3WsQlCURBE0atYg6KN2H9oI4pWYWL+s33CPyce2GGiLQAAAAAAANiFw/C9c3XdyLyqz0CXqk5Th36u1X0j82hwgOPUoX9lgNUFVjPA6gKrGWB1gdWmH6FLddvIPKv3QBcAAAAAAADYky+oewYYuxT99AAAAABJRU5ErkJggg=="/>
+<mask id="mask12">
+  <g filter="url(#alpha)">
+<use xlink:href="#image170"/>
+  </g>
+</mask>
+<linearGradient id="linear13" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.9009,0,0,-7.905406,35.950449,35.959459)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip13">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface169" clip-path="url(#clip13)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear13);" d="M 35.949219 35.960938 L 28.050781 35.960938 L 28.050781 28.054688 L 35.949219 28.054688 Z M 35.949219 35.960938 "/>
+</g>
+<image id="image183" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAcklEQVR4nO3WsQnDUAwE0IvxBL9K6pTefxzXTuUZMsI3QSAT3quFdFylBAAAAAAAAAAA/tqjeN8zyXsy80myF9/92Vq8byTZJjNLblTA0h2gmwK6A3RTQHeAbgroDtCt+hEaSV6TmTPJUXwXAAAAALjmC4XsBTFITzjFAAAAAElFTkSuQmCC"/>
+<mask id="mask13">
+  <g filter="url(#alpha)">
+<use xlink:href="#image183"/>
+  </g>
+</mask>
+<linearGradient id="linear14" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,28.049551,43.864865)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip14">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface182" clip-path="url(#clip14)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear14);" d="M 28.050781 43.863281 L 20.144531 43.863281 L 20.144531 35.960938 L 28.050781 35.960938 Z M 28.050781 43.863281 "/>
+</g>
+<image id="image196" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAe0lEQVR4nO3VMQ6BQQCE0Y8oFGoS53D/wln0ag1u4M8qbPBeu7PJ7DRbAAAAAAAAAAAAAPCTVoP5Y3VauHetzm83+rDNYH5b7av1i8zoqFO9eshfMMDsArMZYHaB2f5+gNFvsOpR3RfOv8bon72rDguZW3V5rw4AAPAhT3DIBzTkSSIRAAAAAElFTkSuQmCC"/>
+<mask id="mask14">
+  <g filter="url(#alpha)">
+<use xlink:href="#image196"/>
+  </g>
+</mask>
+<linearGradient id="linear15" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,20.144145,51.77027)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip15">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface195" clip-path="url(#clip15)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear15);" d="M 20.144531 51.769531 L 12.238281 51.769531 L 12.238281 43.863281 L 20.144531 43.863281 Z M 20.144531 51.769531 "/>
+</g>
+<image id="image209" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAd0lEQVR4nO3WMQqDQBRF0WcQUtulz/7X4jqEVIJpdQdGEfwMOaedYbi8ahIAAAAA+CtddcBJryTPnfM1ySfJ9+iD/dWim72TDDvna5IxJwZ4XC1qnQGqA6oZoDqgmgGqA6q19g+Yksw/7ix3hAAAAAAAAAAAQCM2ShgI4KPv8tIAAAAASUVORK5CYII="/>
+<mask id="mask15">
+  <g filter="url(#alpha)">
+<use xlink:href="#image209"/>
+  </g>
+</mask>
+<linearGradient id="linear16" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,51.76126,28.054054)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip16">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface208" clip-path="url(#clip16)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear16);" d="M 51.761719 28.054688 L 43.855469 28.054688 L 43.855469 20.148438 L 51.761719 20.148438 Z M 51.761719 28.054688 "/>
+</g>
+<image id="image222" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAcklEQVR4nO3WoQ7CQBAE0KGpx9RU8f+f1tQ0KAQCjzmzYSm8pyd7k1GXAAAAAAAAwF+4dBd4syS5DjJ7knvVg3PVoSJrktsg80zhAFPVobMyQHeBbgboLtDNAN0Fun3bP2BL8hhkjk8UAQAAAAAAgB/zAq5gBw9ZZ1oAAAAAAElFTkSuQmCC"/>
+<mask id="mask16">
+  <g filter="url(#alpha)">
+<use xlink:href="#image222"/>
+  </g>
+</mask>
+<linearGradient id="linear17" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,43.855855,35.959459)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip17">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface221" clip-path="url(#clip17)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear17);" d="M 43.855469 35.960938 L 35.949219 35.960938 L 35.949219 28.054688 L 43.855469 28.054688 Z M 43.855469 35.960938 "/>
+</g>
+<image id="image235" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAcElEQVR4nO3WoQqCURCE0U/xAQwGo+//ZIKC1WCw2P+2V/ScPLDDpC0AAAAAAAAAAPhpu+F7p+q8kblW94EuVR2mDn0cq8tG5tngAPupQ9/KAKsLrGaA1QVWM8DqAqtN/wG36rWReUwUAQAAAIA/9QZUXQcCN3eXZAAAAABJRU5ErkJggg=="/>
+<mask id="mask17">
+  <g filter="url(#alpha)">
+<use xlink:href="#image235"/>
+  </g>
+</mask>
+<linearGradient id="linear18" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.9009,0,0,-7.905406,35.950449,43.864865)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip18">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface234" clip-path="url(#clip18)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear18);" d="M 35.949219 43.863281 L 28.050781 43.863281 L 28.050781 35.960938 L 35.949219 35.960938 Z M 35.949219 43.863281 "/>
+</g>
+<image id="image248" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAeUlEQVR4nO3WsQrCUAwF0FspFNzc3Pv/v+TqXHHXxf2hBkL1HHhbyA1ZXhIAAAAAAAAAAAAA+ElTcb9zknVQc01yKc792Fzcb0lyGtTcijO/cugeoJsFdA/QzQK6B+j29wuo/gYfr7cb1YfQMeM74J5kK84FAADe8wTtHgcfA4QTmAAAAABJRU5ErkJggg=="/>
+<mask id="mask18">
+  <g filter="url(#alpha)">
+<use xlink:href="#image248"/>
+  </g>
+</mask>
+<linearGradient id="linear19" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,28.049551,51.77027)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip19">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface247" clip-path="url(#clip19)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear19);" d="M 28.050781 51.769531 L 20.144531 51.769531 L 20.144531 43.863281 L 28.050781 43.863281 Z M 28.050781 51.769531 "/>
+</g>
+<image id="image261" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAdUlEQVR4nO3WsQqDQBRE0TGEVFYB//8HbVJFbExhvyiCjyXntA+Wy1SbAAAAAAAAwF8YqgNOeid5Ne5bkk+S5eiDz6tFN5uSjI37lmTNiQEeV4t6Z4DqgGoGqA6oZoDqgGq9/QPm7B+dlu8dIQAAAAAAANCZHwcfCP5k9RJsAAAAAElFTkSuQmCC"/>
+<mask id="mask19">
+  <g filter="url(#alpha)">
+<use xlink:href="#image261"/>
+  </g>
+</mask>
+<linearGradient id="linear20" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,51.76126,35.959459)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip20">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface260" clip-path="url(#clip20)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear20);" d="M 51.761719 35.960938 L 43.855469 35.960938 L 43.855469 28.054688 L 51.761719 28.054688 Z M 51.761719 35.960938 "/>
+</g>
+<image id="image274" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAb0lEQVR4nO3WIQ7DQAwEwG1UmICA/P+JRyqlsLzkiCU36Qy27NUiJwAAAAAAAAAAcGuP7gBf9iTrZGYkeVUdfFYtKrIlOSYz7xQWsFQtuioFdAfopoDuAN0U0B2g26/9ASPJOZkp+wEAAAAA4A99ABwWBwDHr/opAAAAAElFTkSuQmCC"/>
+<mask id="mask20">
+  <g filter="url(#alpha)">
+<use xlink:href="#image274"/>
+  </g>
+</mask>
+<linearGradient id="linear21" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,43.855855,43.864865)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip21">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface273" clip-path="url(#clip21)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear21);" d="M 43.855469 43.863281 L 35.949219 43.863281 L 35.949219 35.960938 L 43.855469 35.960938 Z M 43.855469 43.863281 "/>
+</g>
+<image id="image287" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAdklEQVR4nO3VoQpCURRE0a2IyST4/x8oiBaDRYtGee1e8a2VD8ww5RQAAAAAAAAAAAAA/KXN4LxjdVq4OVeXAV2q2o0KettXh4Wb24giH9uRYb/IALMLzGaA2QVmW/0Ao99g1XNC5lejB7hWj4Wb+4giAACwci9d0gb8Ot9SVQAAAABJRU5ErkJggg=="/>
+<mask id="mask21">
+  <g filter="url(#alpha)">
+<use xlink:href="#image287"/>
+  </g>
+</mask>
+<linearGradient id="linear22" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.9009,0,0,-7.905406,35.950449,51.77027)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip22">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface286" clip-path="url(#clip22)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear22);" d="M 35.949219 51.769531 L 28.050781 51.769531 L 28.050781 43.863281 L 35.949219 43.863281 Z M 35.949219 51.769531 "/>
+</g>
+<image id="image300" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAcElEQVR4nO3WQQqDMBRF0VcVEbr/tSoWqTuoiuAn5ZxpQri8URIAAAAAAAAAAPhrr+qAi95J+oM7c5LP2QeHWznPm5KMP86/SdZcGKC7W9Q6A1QHVDNAdUA1A1QHVGvtIzTl+CO0JNkeaAEAAACAFu1bugcXP1z14QAAAABJRU5ErkJggg=="/>
+<mask id="mask22">
+  <g filter="url(#alpha)">
+<use xlink:href="#image300"/>
+  </g>
+</mask>
+<linearGradient id="linear23" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,51.76126,43.864865)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip23">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface299" clip-path="url(#clip23)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear23);" d="M 51.761719 43.863281 L 43.855469 43.863281 L 43.855469 35.960938 L 51.761719 35.960938 Z M 51.761719 43.863281 "/>
+</g>
+<image id="image313" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAeElEQVR4nO3WuwrCAAwF0OujIvj/nyoWStHBzcEuoan1nDkklyxJAgAAAAAAAAAAAAC7dOgO8OGW5LpQc08yVg08VzUqckpyWah5VA48Vjb7RRbQHaCbBXQH6Pb3C9jaGUyS55rDtvYIDXn/At9MSeYVsgAAwJ69AO3KBhY4U+9qAAAAAElFTkSuQmCC"/>
+<mask id="mask23">
+  <g filter="url(#alpha)">
+<use xlink:href="#image313"/>
+  </g>
+</mask>
+<linearGradient id="linear24" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-7.905406,0,0,-7.905406,43.855855,51.77027)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip24">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface312" clip-path="url(#clip24)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear24);" d="M 43.855469 51.769531 L 35.949219 51.769531 L 35.949219 43.863281 L 43.855469 43.863281 Z M 43.855469 51.769531 "/>
+</g>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 7.246094 4.335938 C 6.28125 4.390625 4.335938 4.878906 4.335938 7.796875 L 4.335938 32.011719 C 4.335938 47.335938 16.671875 59.675781 32 59.675781 C 47.328125 59.675781 59.664062 47.335938 59.664062 32.011719 C 59.664062 16.679688 47.328125 4.335938 32 4.335938 L 7.789062 4.335938 C 7.789062 4.335938 7.570312 4.3125 7.246094 4.335938 Z M 10.261719 8.292969 C 11.351562 8.292969 12.238281 9.175781 12.238281 10.269531 C 12.238281 11.363281 11.351562 12.242188 10.261719 12.242188 C 9.171875 12.242188 8.285156 11.363281 8.285156 10.269531 C 8.285156 9.175781 9.171875 8.292969 10.261719 8.292969 Z M 32 12.242188 C 42.914062 12.242188 51.761719 21.09375 51.761719 32.011719 C 51.761719 42.921875 42.914062 51.769531 32 51.769531 C 21.085938 51.769531 12.238281 42.921875 12.238281 32.011719 C 12.238281 21.09375 21.085938 12.242188 32 12.242188 Z M 32 12.242188 "/>
+<use xlink:href="#surface13" mask="url(#mask0)"/>
+<use xlink:href="#surface26" mask="url(#mask1)"/>
+<use xlink:href="#surface39" mask="url(#mask2)"/>
+<use xlink:href="#surface52" mask="url(#mask3)"/>
+<use xlink:href="#surface65" mask="url(#mask4)"/>
+<use xlink:href="#surface78" mask="url(#mask5)"/>
+<use xlink:href="#surface91" mask="url(#mask6)"/>
+<use xlink:href="#surface104" mask="url(#mask7)"/>
+<use xlink:href="#surface117" mask="url(#mask8)"/>
+<use xlink:href="#surface130" mask="url(#mask9)"/>
+<use xlink:href="#surface143" mask="url(#mask10)"/>
+<use xlink:href="#surface156" mask="url(#mask11)"/>
+<use xlink:href="#surface169" mask="url(#mask12)"/>
+<use xlink:href="#surface182" mask="url(#mask13)"/>
+<use xlink:href="#surface195" mask="url(#mask14)"/>
+<use xlink:href="#surface208" mask="url(#mask15)"/>
+<use xlink:href="#surface221" mask="url(#mask16)"/>
+<use xlink:href="#surface234" mask="url(#mask17)"/>
+<use xlink:href="#surface247" mask="url(#mask18)"/>
+<use xlink:href="#surface260" mask="url(#mask19)"/>
+<use xlink:href="#surface273" mask="url(#mask20)"/>
+<use xlink:href="#surface286" mask="url(#mask21)"/>
+<use xlink:href="#surface299" mask="url(#mask22)"/>
+<use xlink:href="#surface312" mask="url(#mask23)"/>
+</g>
+</svg>

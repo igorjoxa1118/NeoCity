@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(55.351351,0,0,55.351351,4.324324,4.324324)">
+<stop offset="0" style="stop-color:#00fff2;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#0062ff;stop-opacity:1;"/>
+</linearGradient>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<image id="image14" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAiUlEQVR4nO3WsQ3CQBAEwLVFYkAio0gXSBHQB01YQiQ0cAR/FsxIn93rVvvJJwAAAAAAAAAAAAA/airOH77Y8fqcXaoUcEyyJjkXd9yS3It3hqm86JzkmuRS3HEqzg81dwfopoDuAN0U0B2gmwK6A3RTQHeAbn9fQOUrvCV5JFmKO57FeQAARngDmFoHBr/LWgoAAAAASUVORK5CYII="/>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<use xlink:href="#image14"/>
+  </g>
+</mask>
+<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(11.585585,0,0,10.810811,11.936937,42.972973)">
+<stop offset="0" style="stop-color:#00fff2;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#0062ff;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface13" clip-path="url(#clip1)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 19.511719 42.972656 C 23.015625 42.972656 23.523438 43.472656 23.523438 46.976562 L 23.523438 49.785156 C 23.523438 53.285156 23.015625 53.785156 19.511719 53.785156 L 15.945312 53.785156 C 12.441406 53.785156 11.9375 53.285156 11.9375 49.785156 L 11.9375 46.976562 C 11.9375 43.472656 12.441406 42.972656 15.945312 42.972656 Z M 19.511719 42.972656 "/>
+</g>
+<image id="image27" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAiElEQVR4nO3Wuw0CMRAE0OFTACkt0A4t0SSdEABHchLSZUZnL4L3JIerGU3kBAAAAAAAAAAAAOBHbQbl7D7Muq9dZGnfO2B2TnJqvJmSXJI81q/zNmqAQ5Jj482zR5Gl7YiQb2aA6gLVDFBdoJoBqgtUM0B1gWp/P8Cor/A1ya3xZpofAAA9vAAANwkV0ld9pQAAAABJRU5ErkJggg=="/>
+<mask id="mask1">
+  <g filter="url(#alpha)">
+<use xlink:href="#image27"/>
+  </g>
+</mask>
+<linearGradient id="linear2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(11.585585,0,0,10.810811,26.369368,42.972973)">
+<stop offset="0" style="stop-color:#00fff2;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#0062ff;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip2">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface26" clip-path="url(#clip2)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear2);" d="M 33.945312 42.972656 C 37.449219 42.972656 37.957031 43.472656 37.957031 46.976562 L 37.957031 49.785156 C 37.957031 53.285156 37.449219 53.785156 33.945312 53.785156 L 30.378906 53.785156 C 26.875 53.785156 26.367188 53.285156 26.367188 49.785156 L 26.367188 46.976562 C 26.367188 43.472656 26.875 42.972656 30.378906 42.972656 Z M 33.945312 42.972656 "/>
+</g>
+<image id="image40" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAiklEQVR4nO3Wyw3CMBAE0OFz4EIB1JmyqIMaqIIGkBLSgh0JNjLvnXes0ZycAAAAAAAAAAAAAAzqUF2gwXlDZk7yaTnc+wDXJFNnZklyT/JsOd6y7i+dktw6M3OSS+vxsfPx4RigukA1A1QXqGaA6gLVDFBdoNrfD7D3r/A7yaMzsyR5faELAMBYVnD5CeruExUAAAAAAElFTkSuQmCC"/>
+<mask id="mask2">
+  <g filter="url(#alpha)">
+<use xlink:href="#image40"/>
+  </g>
+</mask>
+<linearGradient id="linear3" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(11.581081,0,0,10.810811,40.806307,42.972973)">
+<stop offset="0" style="stop-color:#00fff2;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#0062ff;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip3">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface39" clip-path="url(#clip3)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear3);" d="M 48.378906 42.972656 C 51.882812 42.972656 52.386719 43.472656 52.386719 46.976562 L 52.386719 49.785156 C 52.386719 53.285156 51.882812 53.785156 48.378906 53.785156 L 44.8125 53.785156 C 41.300781 53.785156 40.808594 53.285156 40.808594 49.785156 L 40.808594 46.976562 C 40.808594 43.472656 41.300781 42.972656 44.8125 42.972656 Z M 48.378906 42.972656 "/>
+</g>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 7.785156 4.324219 C 5.875 4.324219 4.324219 5.875 4.324219 7.785156 L 4.324219 56.214844 C 4.324219 58.125 5.875 59.675781 7.785156 59.675781 L 56.214844 59.675781 C 58.125 59.675781 59.675781 58.125 59.675781 56.214844 L 59.675781 7.785156 C 59.675781 5.875 58.125 4.324219 56.214844 4.324219 Z M 10.039062 8.757812 L 13.3125 8.757812 C 13.839844 8.757812 14.269531 9.1875 14.269531 9.714844 L 14.269531 12.976562 C 14.269531 13.511719 13.839844 13.945312 13.3125 13.945312 L 10.039062 13.945312 C 9.511719 13.945312 9.082031 13.511719 9.082031 12.976562 L 9.082031 9.714844 C 9.082031 9.1875 9.511719 8.757812 10.039062 8.757812 Z M 8.054688 16.78125 L 55.945312 16.78125 C 56.476562 16.78125 56.90625 17.210938 56.90625 17.742188 L 56.90625 55.945312 C 56.90625 56.476562 56.476562 56.90625 55.945312 56.90625 L 8.054688 56.90625 C 7.523438 56.90625 7.09375 56.476562 7.09375 55.945312 L 7.09375 17.742188 C 7.09375 17.210938 7.523438 16.78125 8.054688 16.78125 Z M 8.054688 16.78125 "/>
+<use xlink:href="#surface13" mask="url(#mask0)"/>
+<use xlink:href="#surface26" mask="url(#mask1)"/>
+<use xlink:href="#surface39" mask="url(#mask2)"/>
+</g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(50.117118,0,0,50.112612,6.099099,6.103604)">
+<stop offset="0" style="stop-color:#ffae00;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#bf1d1d;stop-opacity:1;"/>
+</linearGradient>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<image id="image14" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAoElEQVR4nO3YMQ6CQBgF4YFg4QE4qmfgrlbGhFiBFHuD/UlelPl6YHihWUCSJEmSJEmSJEmS9P+G4LNvwFxo2IAnsFcipsrFRTPwoA3R4wUswFqJSA4w0F6+d4CJE77gsXqDX+cA6YA0B0gHpDlAOiDNAdIBaQ6QDkhzgHRAWvI0uNGOtL0Nb4r/AiD7Q2QE7oWGHfgA39OKJEmSJEnSJRzTiw0VY3lYSgAAAABJRU5ErkJggg=="/>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<use xlink:href="#image14"/>
+  </g>
+</mask>
+<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(13.837838,0,0,13.837838,32,32)">
+<stop offset="0" style="stop-color:#ffae00;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#bf1d1d;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface13" clip-path="url(#clip1)">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 45.835938 38.917969 C 45.835938 42.738281 42.738281 45.835938 38.917969 45.835938 C 35.097656 45.835938 32 42.738281 32 38.917969 C 32 35.097656 35.097656 32 38.917969 32 C 42.738281 32 45.835938 35.097656 45.835938 38.917969 Z M 45.835938 38.917969 "/>
+</g>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 29.136719 6.105469 C 28.253906 6.105469 27.363281 6.445312 26.6875 7.121094 C 25.335938 8.476562 25.335938 10.660156 26.6875 12.011719 L 36.296875 21.621094 L 11.242188 21.621094 C 9.328125 21.621094 7.785156 23.164062 7.785156 25.082031 C 7.785156 26.996094 9.328125 28.539062 11.242188 28.539062 C 15.660156 28.53125 19.109375 28.539062 24.835938 28.539062 L 7.113281 46.257812 C 5.761719 47.613281 5.761719 49.792969 7.113281 51.148438 C 8.46875 52.503906 10.660156 52.503906 12.011719 51.148438 C 15.1875 47.960938 17.707031 45.449219 21.8125 41.351562 C 23.023438 49.875 30.3125 56.207031 38.917969 56.214844 C 48.472656 56.214844 56.214844 48.472656 56.214844 38.917969 C 56.210938 34.335938 54.386719 29.9375 51.136719 26.699219 L 51.148438 26.6875 C 51.148438 26.6875 37.917969 13.488281 31.582031 7.121094 C 30.90625 6.445312 30.015625 6.105469 29.136719 6.105469 Z M 38.917969 28.539062 C 44.648438 28.539062 49.296875 33.1875 49.296875 38.917969 C 49.296875 44.648438 44.648438 49.296875 38.917969 49.296875 C 33.1875 49.296875 28.539062 44.648438 28.539062 38.917969 C 28.539062 33.1875 33.1875 28.539062 38.917969 28.539062 Z M 38.917969 28.539062 "/>
+<use xlink:href="#surface13" mask="url(#mask0)"/>
+</g>
+</svg>

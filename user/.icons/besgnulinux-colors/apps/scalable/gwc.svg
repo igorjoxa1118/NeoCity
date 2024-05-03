@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-3.459459,0.000000000000000423,-0.000000000000005932,-48.432432,35.459459,56.216216)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-3.459459,0.000000000000000423,-0.000000000000004237,-34.594595,28.540541,49.297297)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="linear2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-3.459459,0.000000000000000423,-0.000000000000003389,-27.675676,21.621622,45.837838)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="linear3" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(-3.459459,0.000000000000000423,-0.00000000000000127,-10.378378,14.702703,35.459459)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="linear4" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(3.459459,0,0,34.594595,38.918919,14.702703)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="linear5" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(3.459459,0,0,27.675676,45.837838,18.162162)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="linear6" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(3.459459,0,0,10.378378,52.756757,25.081081)">
+<stop offset="0" style="stop-color:#00b7ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#ee42d9;stop-opacity:1;"/>
+</linearGradient>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 35.460938 56.214844 L 35.460938 7.785156 L 32 7.785156 L 32 56.214844 Z M 35.460938 56.214844 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 28.539062 49.296875 L 28.539062 14.703125 L 25.082031 14.703125 L 25.082031 49.296875 Z M 28.539062 49.296875 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear2);" d="M 21.621094 45.835938 L 21.621094 18.164062 L 18.164062 18.164062 L 18.164062 45.835938 Z M 21.621094 45.835938 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear3);" d="M 14.703125 35.460938 L 14.703125 25.082031 L 11.242188 25.082031 L 11.242188 35.460938 Z M 14.703125 35.460938 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear4);" d="M 38.917969 14.703125 L 38.917969 49.296875 L 42.378906 49.296875 L 42.378906 14.703125 Z M 38.917969 14.703125 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear5);" d="M 45.835938 18.164062 L 45.835938 45.835938 L 49.296875 45.835938 L 49.296875 18.164062 Z M 45.835938 18.164062 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear6);" d="M 52.757812 25.082031 L 52.757812 35.460938 L 56.214844 35.460938 L 56.214844 25.082031 Z M 52.757812 25.082031 "/>
+</g>
+</svg>

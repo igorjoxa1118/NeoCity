@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<image id="image14" width="64" height="64" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAjUlEQVR4nO3ZwQ2BQRRG0UdUoRFqUIca1UAj6rAV+ddzhXOWL7O4+bYzAwAAAAB/ZbdxO8/McXXIIs+Zub8fDhuPrjNzWZKz3m0+BthHIV/DAHVAzQB1QM0AdUDNAHVAzQB1QM0AdUDNAHVAzQB1QM0AdUDNAHVAzQB1QG3rY+Q0v/0x8qgjAAAAACD0AsPdBmG0ZaP7AAAAAElFTkSuQmCC"/>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<use xlink:href="#image14"/>
+  </g>
+</mask>
+<clipPath id="clip2">
+  <path d="M 4.324219 21 L 59.675781 21 L 59.675781 43 L 4.324219 43 Z M 4.324219 21 "/>
+</clipPath>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(55.351351,0,0,21,4.324324,21.5)">
+<stop offset="0" style="stop-color:#00a2ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#00ffae;stop-opacity:1;"/>
+</linearGradient>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface13" clip-path="url(#clip1)">
+<g clip-path="url(#clip2)" clip-rule="nonzero">
+<path style=" stroke:none;fill-rule:evenodd;fill:url(#linear0);" d="M 10.050781 21.5 L 10.050781 27.230469 L 4.324219 27.230469 L 4.324219 29.136719 L 11.960938 29.136719 L 11.960938 23.410156 L 13.863281 23.410156 L 13.863281 34.863281 L 19.59375 34.863281 L 19.59375 29.136719 L 31.050781 29.136719 L 31.050781 23.410156 L 32.949219 23.410156 L 32.949219 34.863281 L 38.679688 34.863281 L 38.679688 29.136719 L 48.21875 29.136719 L 48.21875 23.410156 L 50.136719 23.410156 L 50.136719 34.863281 L 55.855469 34.863281 L 55.855469 29.136719 L 59.675781 29.136719 L 59.675781 27.230469 L 53.949219 27.230469 L 53.949219 32.949219 L 52.039062 32.949219 L 52.039062 21.5 L 46.320312 21.5 L 46.320312 27.230469 L 36.769531 27.230469 L 36.769531 32.949219 L 34.863281 32.949219 L 34.863281 21.5 L 29.136719 21.5 L 29.136719 27.230469 L 17.679688 27.230469 L 17.679688 32.949219 L 15.78125 32.949219 L 15.78125 21.5 Z M 46.320312 36.769531 L 46.320312 42.5 L 48.21875 42.5 L 48.21875 36.769531 Z M 42.5 38.679688 L 42.5 42.5 L 44.40625 42.5 L 44.40625 38.679688 Z M 50.136719 38.679688 L 50.136719 42.5 L 52.039062 42.5 L 52.039062 38.679688 Z M 38.679688 40.589844 L 38.679688 42.5 L 40.589844 42.5 L 40.589844 40.589844 Z M 53.949219 40.589844 L 53.949219 42.5 L 55.855469 42.5 L 55.855469 40.589844 Z M 53.949219 40.589844 "/>
+</g>
+</g>
+</defs>
+<g id="surface1">
+<use xlink:href="#surface13" mask="url(#mask0)"/>
+</g>
+</svg>

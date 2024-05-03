@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<filter id="alpha" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+  <feColorMatrix type="matrix" in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+</filter>
+<mask id="mask0">
+  <g filter="url(#alpha)">
+<rect x="0" y="0" width="64" height="64" style="fill:rgb(0%,0%,0%);fill-opacity:0.15;stroke:none;"/>
+  </g>
+</mask>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="49.570999" y1="52.714001" x2="51.714001" y2="54.856998" gradientTransform="matrix(2.3333,0,0,2.3333,-68.667,-72.000999)">
+<stop offset="0" style="stop-color:rgb(0%,0%,0%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(0%,0%,0%);stop-opacity:0;"/>
+</linearGradient>
+<clipPath id="clip1">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface5" clip-path="url(#clip1)">
+<path style=" stroke:none;fill-rule:evenodd;fill:url(#linear0);" d="M 56 46 L 42 60 L 51 60 C 53.769531 60 56 57.769531 56 55 Z M 56 46 "/>
+</g>
+<mask id="mask1">
+  <g filter="url(#alpha)">
+<rect x="0" y="0" width="64" height="64" style="fill:rgb(0%,0%,0%);fill-opacity:0.75;stroke:none;"/>
+  </g>
+</mask>
+<clipPath id="clip2">
+  <rect x="0" y="0" width="64" height="64"/>
+</clipPath>
+<g id="surface8" clip-path="url(#clip2)">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 41.25 26 L 34.796875 27.117188 C 34.890625 31.339844 30.609375 34.277344 26.59375 26.320312 L 19.003906 27.4375 C 20.183594 31.742188 24.425781 32.269531 27.257812 34.535156 C 25.84375 36.65625 19.414062 35.378906 19.585938 42 L 26.039062 40.882812 C 25.945312 36.660156 33.394531 33.101562 37.410156 41.058594 L 45.003906 39.941406 C 43.816406 35.628906 39.308594 35.21875 36.480469 32.941406 C 37.882812 29.855469 42.519531 32.628906 41.25 26 "/>
+</g>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(98.039216%,29.411766%,17.647059%);fill-opacity:1;" d="M 13 4 L 51 4 C 53.761719 4 56 6.238281 56 9 L 56 55 C 56 57.761719 53.761719 60 51 60 L 13 60 C 10.238281 60 8 57.761719 8 55 L 8 9 C 8 6.238281 10.238281 4 13 4 Z M 13 4 "/>
+<use xlink:href="#surface5" mask="url(#mask0)"/>
+<use xlink:href="#surface8" mask="url(#mask1)"/>
+</g>
+</svg>

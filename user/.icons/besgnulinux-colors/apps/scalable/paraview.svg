@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(20.355855,0,0,51.891892,6.054054,6.054054)">
+<stop offset="0" style="stop-color:#00a2ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#00ffae;stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(20.351351,0,0,51.891892,21.824324,6.054054)">
+<stop offset="0" style="stop-color:#00a2ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#00ffae;stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="linear2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(20.355855,0,0,51.891892,37.590091,6.054054)">
+<stop offset="0" style="stop-color:#00a2ff;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#00ffae;stop-opacity:1;"/>
+</linearGradient>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 16.976562 6.054688 L 26.410156 6.054688 L 15.488281 57.945312 L 6.054688 57.945312 Z M 16.976562 6.054688 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 32.746094 6.054688 L 42.175781 6.054688 L 31.253906 57.945312 L 21.824219 57.945312 Z M 32.746094 6.054688 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear2);" d="M 48.511719 6.054688 L 57.945312 6.054688 L 47.023438 57.945312 L 37.589844 57.945312 Z M 48.511719 6.054688 "/>
+</g>
+</svg>

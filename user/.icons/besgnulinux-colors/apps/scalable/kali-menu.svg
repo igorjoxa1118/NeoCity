@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(20.756757,0,0,55.351351,6.054054,4.324324)">
+<stop offset="0" style="stop-color:#ffae00;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#bf1d1d;stop-opacity:1;"/>
+</linearGradient>
+<linearGradient id="linear1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1" gradientTransform="matrix(33.175676,0,0,40.567568,24.77027,4.324324)">
+<stop offset="0" style="stop-color:#ffae00;stop-opacity:1;"/>
+<stop offset="0.5" style="stop-color:#dddddd;stop-opacity:1;"/>
+<stop offset="1" style="stop-color:#bf1d1d;stop-opacity:1;"/>
+</linearGradient>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 16.203125 4.324219 L 16.664062 4.324219 C 22.265625 4.324219 26.8125 8.949219 26.8125 14.652344 L 26.8125 49.347656 C 26.8125 55.050781 22.265625 59.675781 16.664062 59.675781 L 16.203125 59.675781 C 10.597656 59.675781 6.054688 55.050781 6.054688 49.347656 L 6.054688 14.652344 C 6.054688 8.949219 10.597656 4.324219 16.203125 4.324219 Z M 16.203125 4.324219 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear1);" d="M 24.769531 4.324219 C 27.8125 6.78125 29.855469 10.515625 29.855469 14.703125 L 29.855469 18.164062 L 37.1875 18.164062 C 36.945312 14.355469 41.511719 11.242188 44.109375 11.242188 C 46.460938 11.242188 47.566406 11.28125 47.566406 14.703125 L 47.566406 18.164062 L 51.789062 18.164062 C 56.042969 16.085938 57.945312 11.347656 57.945312 8.855469 C 57.945312 6.296875 49.710938 4.324219 45.179688 4.324219 Z M 30.269531 21.621094 L 30.269531 36.53125 C 39.851562 45.734375 51.476562 44.867188 51.476562 44.867188 C 51.476562 44.867188 52.6875 39.613281 44.867188 30.929688 L 36.671875 21.621094 L 30.476562 21.621094 C 30.410156 21.621094 30.335938 21.621094 30.269531 21.621094 Z M 40.582031 30.375 L 46.390625 36.390625 C 40.164062 36.945312 38.957031 33.417969 40.582031 30.375 Z M 40.582031 30.375 "/>
+</g>
+</svg>

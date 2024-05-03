@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<clipPath id="clip1">
+  <path d="M 24 16 L 45 16 L 45 48 L 24 48 Z M 24 16 "/>
+</clipPath>
+<clipPath id="clip2">
+  <path d="M 24.816406 16 L 24.816406 44.363281 L 31.328125 36.625 L 35.617188 46.722656 C 36.058594 47.757812 37.273438 48.25 38.332031 47.820312 C 39.394531 47.390625 39.898438 46.207031 39.457031 45.171875 L 35.070312 34.847656 L 44.167969 34.871094 Z M 24.816406 16 "/>
+</clipPath>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="14" y1="8" x2="6" y2="16" >
+<stop offset="0" style="stop-color:rgb(100%,100%,100%);stop-opacity:1;"/>
+<stop offset="0.125" style="stop-color:rgb(100%,100%,100%);stop-opacity:0;"/>
+<stop offset="1" style="stop-color:rgb(100%,100%,100%);stop-opacity:0;"/>
+</linearGradient>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(30.19608%,30.19608%,30.19608%);fill-opacity:1;" d="M 58 32 C 58 46.359375 46.359375 58 32 58 C 17.640625 58 6 46.359375 6 32 C 6 17.640625 17.640625 6 32 6 C 46.359375 6 58 17.640625 58 32 Z M 58 32 "/>
+<g clip-path="url(#clip1)" clip-rule="nonzero">
+<g clip-path="url(#clip2)" clip-rule="nonzero">
+<path style="fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;stroke-width:1.3;stroke-linecap:butt;stroke-linejoin:miter;stroke:url(#linear0);stroke-miterlimit:4;" d="M 7.999136 2.685359 L 7.999136 16.686386 L 11.133689 12.866522 L 13.198319 17.851049 C 13.410799 18.362036 13.995589 18.604995 14.505166 18.392888 C 15.016622 18.18078 15.259188 17.59652 15.046708 17.085534 L 12.935069 11.989168 L 17.314417 12.000737 Z M 7.999136 2.685359 " transform="matrix(2.0774,0,0,2.0258,8.199,10.56)"/>
+</g>
+</g>
+</g>
+</svg>
