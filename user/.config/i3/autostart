@@ -25,7 +25,7 @@ exec_always --no-startup-id "feh -z --no-fehbg --bg-fill $HOME/.config/i3/rices/
 
 ####################
 
-exec_always --no-startup-id "dunst -config $HOME/.config/dunst/dunstrc"
+exec_always --no-startup-id "dunst -config $HOME/.config/emilia/dunst/dunstrc"
 exec --no-startup-id nm-applet
 # exec --no-startup-id redshift-gtk
 exec --no-startup-id parcellite
