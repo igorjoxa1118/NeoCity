@@ -184,7 +184,7 @@ StScrollView StScrollBar {
 }
 
 StScrollBar StBin#trough {
-  background-color: rgba(36, 40, 59, 0.1);
+  background-color: rgba(39, 36, 59, 0.1);
   border-radius: 9999px;
 }
 
@@ -563,7 +563,7 @@ StScrollBar StButton#hhandle:active {
   color: #e0def4;
   font-size: 1em;
   padding: 0px;
-  background-color: rgba(36, 40, 59, 0.85);
+  background-color: rgba(39, 36, 59, 0.85);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 0 0 16px rgba(0, 0, 0, 0.24);
 }
 
@@ -777,7 +777,7 @@ StScrollBar StButton#hhandle:active {
 .about-scrollBox {
   border: 1px solid rgba(224, 222, 244, 0.12);
   border-radius: 6px;
-  background-color: #24283b;
+  background-color: #27243B;
   padding: 4px;
   padding-right: 0;
   border-radius: 0;
@@ -1019,7 +1019,7 @@ StScrollBar StButton#hhandle:active {
 
 .switcher-list {
   color: #e0def4;
-  background-color: rgba(36, 40, 59, 0.95);
+  background-color: rgba(39, 36, 59, 0.95);
   border: none;
   border-radius: 6px;
   padding: 20px;
@@ -1516,7 +1516,7 @@ StScrollBar StButton#hhandle:active {
   spacing: 1em;
   padding: 16px;
   color: rgba(224, 222, 244, 0.7);
-  background-color: rgba(36, 40, 59, 0.75);
+  background-color: rgba(39, 36, 59, 0.75);
 }
 
 .osd-window {
@@ -1528,7 +1528,7 @@ StScrollBar StButton#hhandle:active {
   min-height: 64px;
   color: rgba(224, 222, 244, 0.7);
   border-radius: 0;
-  background-color: rgba(36, 40, 59, 0.75);
+  background-color: rgba(39, 36, 59, 0.75);
   border: none;
 }
 
@@ -1726,7 +1726,7 @@ StScrollBar StButton#hhandle:active {
   padding: 12px;
   spacing: 6px;
   border: none;
-  background-color: #24283b;
+  background-color: #27243B;
   border-radius: 6px;
   color: #e0def4;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.35), 0 3px 12px rgba(0, 0, 0, 0.16);

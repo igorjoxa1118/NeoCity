@@ -204,7 +204,7 @@ treeview.view:selected:not(.progressbar):not(.trough),
 modelbutton.flat:selected,
 .menuitem.button.flat:selected {
   color: #cdd6f4;
-  background-color: rgba(205, 214, 244, 0.2);
+  background-color: rgba(44, 61, 43, 0.2);
 }
 
 .nemo-window .view selection,
@@ -3549,7 +3549,7 @@ menu,
   background-color: #181825;
   background-clip: border-box;
   border-radius: 12px;
-  border: 1px solid rgba(205, 214, 244, 0.2);
+  border: 1px solid rgba(44, 61, 43, 0.2);
 }
 
 .csd menu,
@@ -3575,7 +3575,7 @@ menu menuitem:hover,
 .menu menuitem:hover,
 .context-menu menuitem:hover {
   transition: none;
-  background-color: #292e42;
+  background-color: #2C3D2B;
   color: #cdd6f4;
   font-weight: 500;
 }
@@ -3655,7 +3655,7 @@ menu > arrow,
   min-width: 16px;
   padding: 4px;
   background-color: #181825;
-  color: rgba(205, 214, 244, 0.7);
+  color: rgba(44, 61, 43, 0.7);
 }
 
 menu > arrow.top,
@@ -9630,7 +9630,7 @@ tooltip.background.chromium {
  * Firefox *
  ***********/
 #MozillaGtkWidget > widget text {
-  background-color: #3c3d47;
+  background-color: #181825;
 }
 
 #MozillaGtkWidget > widget text:selected {
@@ -9647,7 +9647,7 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > frame > border {
-  border-color: #3c3d47;
+  border-color: #181825;
 }
 
 #MozillaGtkWidget > widget > entry,

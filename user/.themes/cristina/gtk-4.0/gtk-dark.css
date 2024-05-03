@@ -2946,7 +2946,7 @@ popover.background modelbutton {
 
 popover.background modelbutton:hover {
   transition: none;
-  background-color: #292e42;
+  background-color: #7D1347;
   color: #e0def4;
 }
 

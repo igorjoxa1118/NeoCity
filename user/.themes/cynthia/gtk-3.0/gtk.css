@@ -204,7 +204,7 @@ treeview.view:selected:not(.progressbar):not(.trough),
 modelbutton.flat:selected,
 .menuitem.button.flat:selected {
   color: #c5c9c5;
-  background-color: rgba(197, 201, 197, 0.2);
+  background-color: rgba(120, 102, 69, 0.2);
 }
 
 .nemo-window .view selection,
@@ -3575,7 +3575,7 @@ menu menuitem:hover,
 .menu menuitem:hover,
 .context-menu menuitem:hover {
   transition: none;
-  background-color: #292e42;
+  background-color: #786645;
   color: #c5c9c5;
   font-weight: 500;
 }
@@ -9630,7 +9630,7 @@ tooltip.background.chromium {
  * Firefox *
  ***********/
 #MozillaGtkWidget > widget text {
-  background-color: #3c3d47;
+  background-color: #181616;
 }
 
 #MozillaGtkWidget > widget text:selected {
@@ -9647,7 +9647,7 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > frame > border {
-  border-color: #3c3d47;
+  border-color: #181616;
 }
 
 #MozillaGtkWidget > widget > entry,

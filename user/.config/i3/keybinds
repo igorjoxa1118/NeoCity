@@ -50,9 +50,9 @@ bindsym $mod+f fullscreen toggle
 
 #---------------------------------------------------------
 ## Сгрупировать окна в закладки(Столбик, строку, разделить)
-bindsym $mod+y layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+u layout toggle split
+bindsym $mod+$mod1+x layout stacking
+bindsym $mod+$mod1+z layout tabbed
+bindsym $mod+z layout toggle split
 #---------------------------------------------------------
 
 #---------------------
