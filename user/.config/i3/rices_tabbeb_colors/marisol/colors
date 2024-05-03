@@ -1,0 +1,16 @@
+#------------
+## marisol
+#------------
+## Цвета окон 
+#------------
+    # Класс                 border  backgr. text    indicator
+    client.focused          #222330 #222330 #7aa2f7 #81a1c1
+    client.unfocused        #222330 #171924 #5D7CBC #81a1c1
+    client.focused_inactive #222330 #171924 #5D7CBC #81a1c1
+    client.placeholder      #222330 #171924 #5D7CBC #81a1c1
+    client.urgent           #222330 #171924 #5D7CBC #81a1c1
+
+    client.background       #171924
+
+    
+#--------------

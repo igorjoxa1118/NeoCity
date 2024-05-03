@@ -68,9 +68,11 @@ wall_old="catppuccin_triangle.webp"
 sed -i "s/"$wall_old"/"$feh_walls_list"/g" "$HOME"/.config/i3/autostart
 
 ###----Change GTK Themes
+##-- Some vars
 gtk_themes_name='gtk-theme-name='
 gtk_themes_name_old="gtk-theme-name=""$i3_rice_in_config"""
 gtk_themes_name_new="gtk-theme-name=""$selected"""
+
 sed -i "s/gtk-theme-name=.*/gtk-theme-name="$selected"/g" "$HOME"/.config/gtk-3.0/settings.ini
 sed -i "s/gtk-theme-name=.*/gtk-theme-name="$selected"/g" "$HOME"/.config/gtk-4.0/settings.ini
 sed -i "s/gtk-theme-name=.*/gtk-theme-name="\"""$selected"""\"/g" "$HOME"/.gtkrc-2.0
@@ -142,6 +144,14 @@ theme_name="userChrome.css"
     else
         echo "Somthing wrong"
     fi
+
+###---Change colors for Tabbed
+tabbed_path=""$HOME"/.config/i3/rices_tabbeb_colors/"$selected""
+       if [ -f "$tabbed_path"/colors ]; then
+         cp -rf "$tabbed_path"/colors "$i3_dir"
+       else
+         echo "Color file not exist!"
+       fi
 
 i3-msg restart
 exit 0
