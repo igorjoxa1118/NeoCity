@@ -143,7 +143,7 @@ stage {
 #notification StEntry:hover {
   color: #e0def4;
   background-color: rgba(224, 222, 244, 0.04);
-  border: 2px solid #e0def4;
+  border: 2px solid #7D1347;
 }
 
 #menu-search-entry:insensitive,
@@ -332,7 +332,7 @@ StScrollBar StButton#hhandle:active {
   background-color: rgba(41, 39, 64, 0.95);
   border-radius: 12px;
   margin: 6px;
-  border: 1px solid rgba(224, 222, 244, 0.2);
+  border: 1px solid rgba(125, 19, 71, 0.2);
   box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.05),
     0 4px 6px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.05),
     0 0 0 1px rgba(0, 0, 0, 0.75);
@@ -639,7 +639,7 @@ StScrollBar StButton#hhandle:active {
 #selected.window-caption {
   background-color: #e0def4;
   color: rgba(0, 0, 0, 0.87);
-  border: 1px solid #e0def4;
+  border: 1px solid #7D1347;
   spacing: 25px;
 }
 
@@ -657,7 +657,7 @@ StScrollBar StButton#hhandle:active {
 
 .expo-workspaces-name-entry:focus,
 #selected.expo-workspaces-name-entry:focus {
-  border: 1px solid #e0def4;
+  border: 1px solid #7D1347;
   background-color: #e0def4;
   color: rgba(0, 0, 0, 0.87);
   font-style: italic;
@@ -667,7 +667,7 @@ StScrollBar StButton#hhandle:active {
 }
 
 .expo-workspace-thumbnail-frame {
-  border: 4px solid rgba(224, 222, 244, 0);
+  border: 4px solid rgba(125, 19, 71, 0);
   background-color: rgba(224, 222, 244, 0);
   border-radius: 6px;
 }
@@ -775,7 +775,7 @@ StScrollBar StButton#hhandle:active {
 }
 
 .about-scrollBox {
-  border: 1px solid rgba(224, 222, 244, 0.12);
+  border: 1px solid rgba(125, 19, 71, 0.12);
   border-radius: 6px;
   background-color: #27243B;
   padding: 4px;
@@ -1040,7 +1040,7 @@ StScrollBar StButton#hhandle:active {
 
 .switcher-list .item-box:outlined {
   padding: 8px;
-  border: 1px solid #e0def4;
+  border: 1px solid #7D1347;
 }
 
 .switcher-list .item-box:selected {
@@ -1267,7 +1267,7 @@ StScrollBar StButton#hhandle:active {
 }
 
 .magnifier-zoom-region {
-  border: 2px solid #e0def4;
+  border: 2px solid #7D1347;
 }
 
 .magnifier-zoom-region .full-screen {
@@ -2049,7 +2049,7 @@ StScrollBar StButton#hhandle:active {
 }
 
 .workspace-graph .workspace:active {
-  border: 1px solid #e0def4;
+  border: 1px solid #7D1347;
   background-gradient-direction: none;
 }
 
@@ -2258,7 +2258,7 @@ StScrollBar StButton#hhandle:active {
 .tile-hud,
 .tile-hud.snap {
   background-color: rgba(247, 118, 142, 0.3);
-  border: 1px solid #e0def4;
+  border: 1px solid #7D1347;
 }
 
 .xkcd-box {
