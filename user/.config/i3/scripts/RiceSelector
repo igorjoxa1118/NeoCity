@@ -67,85 +67,8 @@ wall_old="catppuccin_triangle.webp"
     feh_walls_list=$(ls "$HOME"/.config/i3/rices/$selected/walls | grep "png" | head -1)
 sed -i "s/"$wall_old"/"$feh_walls_list"/g" "$HOME"/.config/i3/autostart
 
-###----Change GTK Themes
-##-- Some vars
-gtk_themes_name='gtk-theme-name='
-gtk_themes_name_old="gtk-theme-name=""$i3_rice_in_config"""
-gtk_themes_name_new="gtk-theme-name=""$selected"""
-
-sed -i "s/gtk-theme-name=.*/gtk-theme-name="$selected"/g" "$HOME"/.config/gtk-3.0/settings.ini
-sed -i "s/gtk-theme-name=.*/gtk-theme-name="$selected"/g" "$HOME"/.config/gtk-4.0/settings.ini
-sed -i "s/gtk-theme-name=.*/gtk-theme-name="\"""$selected"""\"/g" "$HOME"/.gtkrc-2.0
-
-###----Change icons
-if [[ "$selected" == aline ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Magna-Dark-Icons"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Magna-Dark-Icons/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Magna-Dark-Icons/g" "$HOME"/.config/gtk-4.0/settings.ini
-elif [[ "$selected" == brenda ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"buuf-nestort"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=buuf-nestort/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=buuf-nestort/g" "$HOME"/.config/gtk-4.0/settings.ini
-elif [[ "$selected" == cristina ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Plataro-master"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Plataro-master/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Plataro-master/g" "$HOME"/.config/gtk-4.0/settings.ini
-elif [[ "$selected" == cynthia ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Gruvbox"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Gruvbox/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Gruvbox/g" "$HOME"/.config/gtk-4.0/settings.ini
-elif [[ "$selected" == daniela ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Colorful-Dark-Icons"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Colorful-Dark-Icons/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Colorful-Dark-Icons/g" "$HOME"/.config/gtk-4.0/settings.ini
-elif [[ "$selected" == emilia ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Magna-Dark-Icons"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Magna-Dark-Icons/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Magna-Dark-Icons/g" "$HOME"/.config/gtk-4.0/settings.ini
-elif [[ "$selected" == isabel ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Flat-Remix-Blue-Dark"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Flat-Remix-Blue-Dark/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Flat-Remix-Blue-Dark/g" "$HOME"/.config/gtk-4.0/settings.ini
-elif [[ "$selected" == jan ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"besgnulinux-mono-cyan"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=besgnulinux-mono-cyan/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=besgnulinux-mono-cyan/g" "$HOME"/.config/gtk-4.0/settings.ini
-elif [[ "$selected" == karla ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Vallunar2.0-dark"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Vallunar2.0-dark/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Vallunar2.0-dark/g" "$HOME"/.config/gtk-4.0/settings.ini
-elif [[ "$selected" == marisol ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Zafiro-Nord-Black-Blue"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Zafiro-Nord-Black-Blue/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Zafiro-Nord-Black-Blue/g" "$HOME"/.config/gtk-4.0/settings.ini
-elif [[ "$selected" == melissa ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Zafiro-Nord-Black-Blue"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Zafiro-Nord-Black-Blue/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Zafiro-Nord-Black-Blue/g" "$HOME"/.config/gtk-4.0/settings.ini
-elif [[ "$selected" == pamela ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"besgnulinux-colors"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=besgnulinux-colors/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=besgnulinux-colors/g" "$HOME"/.config/gtk-4.0/settings.ini
-elif [[ "$selected" == silvia ]]; then
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"BeautySolar"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=BeautySolar/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=BeautySolar/g" "$HOME"/.config/gtk-4.0/settings.ini
-fi
-
-###---FifeFox theme choiser
-grep_ff=$(ls "$HOME"/.mozilla/firefox | grep default-release)
-path_to_ff=""$HOME"/.mozilla/firefox/"$grep_ff"/chrome"
-path_to_ff_themes=""$HOME"/.mozilla/FoxThemes"
-theme_name="userChrome.css"
-
-    if [ -d "$path_to_ff" ]; then
-        cp -rf "$path_to_ff_themes"/"$selected"/"$theme_name" "$path_to_ff"
-    else
-        echo "Somthing wrong"
-    fi
-
 ###---Change colors for Tabbed
-tabbed_path=""$HOME"/.config/i3/rices_tabbeb_colors/"$selected""
+tabbed_path=""$HOME"/.config/i3/rices/"$selected"/tabbed"
        if [ -f "$tabbed_path"/colors ]; then
          cp -rf "$tabbed_path"/colors "$i3_dir"
        else
