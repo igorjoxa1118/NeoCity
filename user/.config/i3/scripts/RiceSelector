@@ -15,7 +15,6 @@
 #
 #set -x
 # Some vars
-user=$(whoami)
 i3_dir="$HOME/.config/i3"
 current_rice_file="$i3_dir/.rice"
 preview_dir="$i3_dir/rices/${options[*]}"
@@ -60,14 +59,16 @@ selected=$(printf "%s\n" "${options[@]}" | while read -r A ; do  echo -en "$A\x0
 [[ -n "$selected" && "$selected" != "$current_rice" ]] || exit 1
 echo "$selected" > "$current_rice_file"
 
+###---Global set wallpapers
+feh_walls_list=$(ls "$HOME"/.config/i3/rices/$selected/walls | grep "png" | head -1)
+wall_old="catppuccin_triangle.webp"
+
 sed -i "s/"$i3_rice_in_config"/"$selected"/g" "$HOME"/.config/i3/autostart
 sed -i "s/"$i3_rice_in_config"/"$selected"/g" "$HOME"/.config/kitty/kitty.conf
-
-wall_old="catppuccin_triangle.webp"
-    feh_walls_list=$(ls "$HOME"/.config/i3/rices/$selected/walls | grep "png" | head -1)
 sed -i "s/"$wall_old"/"$feh_walls_list"/g" "$HOME"/.config/i3/autostart
 
-###---Change colors for Tabbed
+
+###---Global. Change colors for Tabbed
 tabbed_path=""$HOME"/.config/i3/rices/"$selected"/tabbed"
        if [ -f "$tabbed_path"/colors ]; then
          cp -rf "$tabbed_path"/colors "$i3_dir"
