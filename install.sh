@@ -29,9 +29,6 @@ backup_folder=~/.Backup_files
 date=$(date +%Y%m%d-%H%M%S)
 repo_url="https://github.com/igorjoxa1118/NeoCity"
 
-
-user=$(whoami)
-
 logo () {
 	
 	local text="${1:?}"
@@ -207,9 +204,6 @@ clear
 func_install_dots() {
 logo "Install dotfiles"
 cp -rf "$pwd"/user/.* "$HOME"
-sed -i "s/vir0id/${user}/g" "$HOME/.config/nitrogen/bg-saved.cfg"
-sed -i "s/vir0id/${user}/g" "$HOME/.config/nitrogen/nitrogen.cfg"
-sed -i "s/vir0id/${user}/g" "$HOME/.zshrc"
 echo -e "${GRE}Copy dots succesfully!"
 
 if [[ ! -d "/usr/share/garuda" ]]; then
@@ -295,10 +289,14 @@ func_install_dots
 sleep 2
 clear
 
-if [ -f "$HOME"/.config/gtk-3.0/bookmarks ]; then
+##-- Установка пользователя в конфиги
 tmpuser=$(whoami)
+sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.config/blender/4.1/config/bookmarks.txt
+sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.gtkrc-2.0
+sed -i "s/vir0id/${tmpuser}/g" "$HOME/.config/nitrogen/bg-saved.cfg"
+sed -i "s/vir0id/${tmpuser}/g" "$HOME/.config/nitrogen/nitrogen.cfg"
+sed -i "s/vir0id/${tmpuser}/g" "$HOME/.zshrc"
 sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.config/gtk-3.0/bookmarks
-fi
 
 ### --- Установка темы и конфигов Firefox --- ###
 logo "Firefox theme install"

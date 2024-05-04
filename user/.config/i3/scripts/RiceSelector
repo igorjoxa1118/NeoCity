@@ -76,7 +76,6 @@ gtk_themes_name_new="gtk-theme-name=""$selected"""
 sed -i "s/gtk-theme-name=.*/gtk-theme-name="$selected"/g" "$HOME"/.config/gtk-3.0/settings.ini
 sed -i "s/gtk-theme-name=.*/gtk-theme-name="$selected"/g" "$HOME"/.config/gtk-4.0/settings.ini
 sed -i "s/gtk-theme-name=.*/gtk-theme-name="\"""$selected"""\"/g" "$HOME"/.gtkrc-2.0
-sed -i "s/vir0id/${user}/g" "$HOME"/.gtkrc-2.0
 
 ###----Change icons
 if [[ "$selected" == aline ]]; then
