@@ -336,10 +336,14 @@ nvidia_detect()
   blacklight=$(ls -1 /sys/class/backlight/)
 
     if [ $(lspci -k | grep -A 2 -E "(VGA|3D)" | grep -i nvidia | wc -l) -gt 0 ]; then
-        echo -e "${ORANGE}Nvidia card found!"
+        rm -rf "$HOME/.config/i3/rices/emilia/config.ini"
+        cd "$pwd"/polybar_rices/nvidia || exit
+        cp -R config.ini "$HOME/.config/i3/rices/emilia/"
+        sed -i "s/nvidia_wmi_ec_backlight/${blacklight}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
+        echo -e "${ORANGE}Nvidia found!"
     else
         rm -rf "$HOME/.config/i3/rices/emilia/config.ini"
-        cd "$pwd"/not_nvidia_polybar || exit
+        cd "$pwd"/polybar_rices/not_nvidia || exit
         cp -R config.ini "$HOME/.config/i3/rices/emilia/"
         sed -i "s/nvidia_wmi_ec_backlight/${blacklight}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
         echo -e "${CYAN}Nvidia card no found!"
