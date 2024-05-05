@@ -96,34 +96,6 @@ set_picom_config() {
 		-e "s/\".*:class_g = 'FloaTerm'\"/\"95:class_g = 'FloaTerm'\"/g"
 }
 
-# Set dunst notification daemon config
-set_dunst_config() {
-	sed -i "$HOME"/.config/i3/dunstrc \
-		-e "s/transparency = .*/transparency = 8/g" \
-		-e "s/frame_color = .*/frame_color = \"#0b0e10\"/g" \
-		-e "s/separator_color = .*/separator_color = \"#353c52\"/g" \
-		-e "s/font = .*/font = JetBrainsMono NF Medium 9/g" \
-		-e "s/foreground='.*'/foreground='#7a44e3'/g"
-
-	sed -i '/urgency_low/Q' "$HOME"/.config/i3/dunstrc
-	cat >>"$HOME"/.config/i3/dunstrc <<-_EOF_
-		[urgency_low]
-		timeout = 3
-		background = "#0b0e10"
-		foreground = "#afb1db"
-
-		[urgency_normal]
-		timeout = 6
-		background = "#0b0e10"
-		foreground = "#afb1db"
-
-		[urgency_critical]
-		timeout = 0
-		background = "#0b0e10"
-		foreground = "#afb1db"
-	_EOF_
-}
-
 # Set eww colors
 set_eww_colors() {
 	cat >"$HOME"/.config/i3/eww/colors.scss <<EOF
@@ -199,7 +171,6 @@ set_firefox_theme
 set_term_config
 set_picom_config
 launch_bars
-set_dunst_config
 set_eww_colors
 set_jgmenu_colors
 set_launcher_config
