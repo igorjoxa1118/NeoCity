@@ -203,7 +203,7 @@ row:selected,
 treeview.view:selected:not(.progressbar):not(.trough),
 modelbutton.flat:selected,
 .menuitem.button.flat:selected {
-  color: #f2e9e1;
+  color: #faf4ed;
   background-color: rgba(87, 82, 121, 1);
 }
 

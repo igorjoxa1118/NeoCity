@@ -181,12 +181,12 @@ treeview.expander:disabled {
 
 iconview,
 .view {
-  color: #e0def4;
+  color: #7d1347;
 }
 
 iconview:disabled,
 .view:disabled {
-  color: rgba(224, 222, 244, 0.5);
+  color: rgba(125, 19, 71, 0.5);
 }
 
 textview text {
@@ -195,7 +195,7 @@ textview text {
 
 textview border {
   background-color: #292740;
-  color: rgba(224, 222, 244, 0.7);
+  color: rgba(125, 19, 71, 0.7);
 }
 
 iconview:hover,
@@ -3083,17 +3083,17 @@ tabbar scrolledwindow:not(.pinned) > tabbox tab:checked:disabled,
 notebook > header > tabs > tab:checked:disabled,
 tabbar scrolledwindow:not(.pinned) > tabbox tab:selected:disabled,
 notebook > header > tabs > tab:selected:disabled {
-  color: rgba(224, 222, 244, 0.5);
+  color: rgba(125, 19, 71, 0.5);
 }
 
 frame > paned > notebook > header,
 notebook.frame > header {
-  background-color: rgba(224, 222, 244, 0.04);
+  background-color: rgba(125, 19, 71, 0.04);
 }
 
 notebook,
 notebook.frame {
-  background-color: #232136;
+  background-color: #7d1347;
   border-radius: 12px;
 }
 
@@ -3108,7 +3108,7 @@ notebook.frame frame > list row.activatable {
 
 notebook > header {
   border: none;
-  background-color: rgba(224, 222, 244, 0.04);
+  background-color: rgba(125, 19, 71, 0.04);
   padding: 3px;
   margin: 3px;
   border-radius: 9px;
