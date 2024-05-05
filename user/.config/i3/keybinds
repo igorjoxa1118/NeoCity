@@ -156,8 +156,8 @@ bindsym $mod1+e exec --no-startup-id "mousepad"
 bindsym $mod1+w exec --no-startup-id "$HOME/.config/i3/bin/i3_switch_workspace.sh"
 bindsym Ctrl+space exec --no-startup-id "rofi -show window"
 bindsym Print exec --no-startup-id "kazam -f"
-#bindsym $mod1+c  exec --no-startup-id "thunar"
-bindsym $mod1+c  exec --no-startup-id "caja"
+bindsym $mod1+c  exec --no-startup-id "thunar"
+#bindsym $mod1+c  exec --no-startup-id "caja"
 #bindsym $mod1+s exec --no-startup-id "subl3"
 #bindsym Print exec --no-startup-id "$HOME/.config/i3/bin/flameshot.sh -c"
 #bindsym $mod1+Print exec --no-startup-id "flameshot gui"
@@ -167,7 +167,7 @@ bindsym $mod1+c  exec --no-startup-id "caja"
 #bindsym $mod+Ctrl+Left exec mpc prev
 #bindsym $mod+Ctrl+Right exec mpc next
 #bindsym $mod+Ctrl+d exec mpc del 0
-bindsym $mod1+Ctrl+e exec toggle-conkeww
+bindsym $mod1+Ctrl+k exec toggle-conkeww
 #---------------------------------------------
 
 
