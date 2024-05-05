@@ -76,5 +76,21 @@ tabbed_path=""$HOME"/.config/i3/rices/"$selected"/tabbed"
          echo "Color file not exist!"
        fi
 
+###---Global. Change colors for Eww
+eww_path=""$HOME"/.config/i3/eww/powermenu/rice_colors/"$selected""
+       if [ -f "$eww_path"/colors.scss ]; then
+         cp -rf "$eww_path"/colors.scss "$HOME"/.config/i3/eww/
+       else
+         echo "Color file not exist!"
+       fi
+
+###---Global. Change colors for Launcher
+launcher_path=""$HOME"/.config/i3/eww/launcher_colors/"$selected""
+       if [ -f "$launcher_path"/Launcher.rasi ]; then
+         cp -rf "$launcher_path"/Launcher.rasi "$HOME"/.config/i3/scripts/
+       else
+         echo "Color file not exist!"
+       fi
+
 i3-msg restart
 exit 0

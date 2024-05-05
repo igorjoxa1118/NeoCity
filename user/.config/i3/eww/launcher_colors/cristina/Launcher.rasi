@@ -1,5 +1,5 @@
 // # z0mbi3 - https://github.com/gh0stzk/dotfiles
-// Emilia
+// Cristina
 //----- Main Configuration -----//
 
 configuration {
@@ -19,12 +19,12 @@ configuration {
 //----- Global Properties -----//
 
 * {
-font: "JetBrainsMono NF Bold 9";
-background: #171924;
-background-alt: #171924E0;
-foreground: #7aa2f7;
-foreground-alt: #7aa2f7;
-selected: #333f5e;
+font: "Terminess Nerd Font Mono Bold 10";
+background: #232136;
+background-alt: #232136E0;
+foreground: #e0def4;
+foreground-alt: #e0def4;
+selected: #872758;
 }
 
 //----- Main Window -----//
@@ -71,7 +71,7 @@ inputbar {
     spacing:                     10px;
     padding:                     50px 100px;
     background-color:            transparent;
-    background-image:            url("~/.config/i3/rices/emilia/rofi.webp", width);
+    background-image:            url("~/.config/i3/rices/cristina/rofi.webp", width);
     text-color:                  @foreground;
     orientation:                 horizontal;
     children:                    [ "textbox-prompt-colon", "entry" ];

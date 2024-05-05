@@ -1,5 +1,5 @@
 // # z0mbi3 - https://github.com/gh0stzk/dotfiles
-// Emilia
+// Karla
 //----- Main Configuration -----//
 
 configuration {
@@ -20,11 +20,10 @@ configuration {
 
 * {
 font: "JetBrainsMono NF Bold 9";
-background: #171924;
-background-alt: #171924E0;
-foreground: #7aa2f7;
-foreground-alt: #7aa2f7;
-selected: #333f5e;
+background: #0b0e10F7;
+background-alt: #0b0e10F5;
+foreground: #afb1db;
+selected: #0a8ede;
 }
 
 //----- Main Window -----//
@@ -71,7 +70,7 @@ inputbar {
     spacing:                     10px;
     padding:                     50px 100px;
     background-color:            transparent;
-    background-image:            url("~/.config/i3/rices/emilia/rofi.webp", width);
+    background-image:            url("~/.config/i3/rices/karla/rofi.webp", width);
     text-color:                  @foreground;
     orientation:                 horizontal;
     children:                    [ "textbox-prompt-colon", "entry" ];
@@ -135,7 +134,7 @@ element normal.normal {
 }
 element selected.normal {
     background-color:            @selected;
-    text-color:                  @foreground-alt;
+    text-color:                  @background;
 }
 element-icon {
     background-color:            transparent;
