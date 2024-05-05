@@ -204,7 +204,7 @@ treeview.view:selected:not(.progressbar):not(.trough),
 modelbutton.flat:selected,
 .menuitem.button.flat:selected {
   color: #8be9fd;
-  background-color: rgba(81, 92, 113, 1);
+  background-color: rgba(86, 106, 127, 1);
 }
 
 .nemo-window .view selection,
@@ -214,8 +214,8 @@ modelbutton.flat:selected,
 .nautilus-window flowboxchild:selected .icon-item-background,
 flowbox flowboxchild:selected,
 .background.csd .view:selected {
-  color: #f8f8f2;
-  background-color: rgba(247, 118, 142, 0.2);
+  color: #8be9fd;
+  background-color: rgba(86, 106, 127, 0.2);
 }
 
 .nemo-window .nemo-window-pane widget.entry:selected,
@@ -229,8 +229,8 @@ textview text selection:focus,
 textview text selection,
 widget.view:selected,
 .view:selected {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #f8f8f2;
+  color: rgba(139, 233, 253, 0.87);
+  background-color: #566a7f;
 }
 
 .linked:not(.vertical) > button,
@@ -3645,7 +3645,7 @@ menu menuitem label:dir(ltr),
 menu .view:selected,
 .menu .view:selected,
 .context-menu .view:selected {
-  background-color: #f8f8f2;
+  background-color: #566a7f;
 }
 
 menu > arrow,
@@ -6536,7 +6536,7 @@ popover.emoji-completion .emoji:hover {
 }
 
 .nautilus-window.background.csd notebook scrolledwindow .view:selected {
-  background-color: rgba(248, 248, 242, 0.20);
+  background-color: rgba(86, 106, 127, 0.20);
 }
 
 .nautilus-window.background.csd
@@ -8773,11 +8773,11 @@ overlay grid.horizontal > revealer > scrolledwindow.frame:dir(rtl) {
 }
 
 .side-panel .view:selected {
-  background-image: image(#f8f8f2);
+  background-image: image(#566a7f);
 }
 
 .side-panel .view:selected:hover {
-  background-image: image(rgba(210, 210, 210, 0.9896));
+  background-image: image(rgba(86, 106, 127, 0.9896));
 }
 
 .songs-list:hover {
@@ -9246,8 +9246,8 @@ window#GearyMainWindow.background.csd
   scrolledwindow
   treeview.view:active {
   border-radius: 6px;
-  background-color: #f8f8f2;
-  color: rgba(0, 0, 0, 0.87);
+  background-color: #566a7f;
+  color: rgba(139, 233, 253, 0.87);
 }
 
 .geary-main-window.unified separator.geary-sidebar-pane-separator {

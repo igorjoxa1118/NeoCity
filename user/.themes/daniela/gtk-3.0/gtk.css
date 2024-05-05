@@ -204,7 +204,7 @@ treeview.view:selected:not(.progressbar):not(.trough),
 modelbutton.flat:selected,
 .menuitem.button.flat:selected {
   color: #cdd6f4;
-  background-color: rgba(44, 61, 43, 1);
+  background-color: rgba(60, 76, 63, 1);
 }
 
 .nemo-window .view selection,
@@ -215,7 +215,7 @@ modelbutton.flat:selected,
 flowbox flowboxchild:selected,
 .background.csd .view:selected {
   color: #cdd6f4;
-  background-color: rgba(247, 118, 142, 0.2);
+  background-color: rgba(60, 76, 63, 0.2);
 }
 
 .nemo-window .nemo-window-pane widget.entry:selected,
@@ -229,8 +229,8 @@ textview text selection:focus,
 textview text selection,
 widget.view:selected,
 .view:selected {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #cdd6f4;
+  color: rgba(205, 214, 244, 0.87);
+  background-color: #3c4c3f;
 }
 
 .linked:not(.vertical) > button,
@@ -361,11 +361,11 @@ window.background.csd > stack.view {
 }
 
 textview text {
-  background-color: #181825;
+  background-color: #cdd6f4;
 }
 
 textview border {
-  background-color: #171924;
+  background-color: #3c4c3f;
   color: rgba(205, 214, 244, 0.7);
 }
 
@@ -3645,7 +3645,7 @@ menu menuitem label:dir(ltr),
 menu .view:selected,
 .menu .view:selected,
 .context-menu .view:selected {
-  background-color: #cdd6f4;
+  background-color: #3c4c3f;
 }
 
 menu > arrow,
@@ -3654,8 +3654,8 @@ menu > arrow,
   min-height: 16px;
   min-width: 16px;
   padding: 4px;
-  background-color: #181825;
-  color: rgba(44, 61, 43, 0.7);
+  background-color: #3c4c3f;
+  color: rgba(205, 214, 244, 0.7);
 }
 
 menu > arrow.top,
@@ -6536,7 +6536,7 @@ popover.emoji-completion .emoji:hover {
 }
 
 .nautilus-window.background.csd notebook scrolledwindow .view:selected {
-  background-color: rgba(205, 214, 244, 0.20);
+  background-color: rgba(60, 76, 63, 0.20);
 }
 
 .nautilus-window.background.csd
@@ -8773,11 +8773,11 @@ overlay grid.horizontal > revealer > scrolledwindow.frame:dir(rtl) {
 }
 
 .side-panel .view:selected {
-  background-image: image(#cdd6f4);
+  background-image: image(#3c4c3f);
 }
 
 .side-panel .view:selected:hover {
-  background-image: image(rgba(210, 210, 210, 0.9896));
+  background-image: image(rgba(60, 76, 63, 0.9896));
 }
 
 .songs-list:hover {
@@ -9246,8 +9246,8 @@ window#GearyMainWindow.background.csd
   scrolledwindow
   treeview.view:active {
   border-radius: 6px;
-  background-color: #cdd6f4;
-  color: rgba(0, 0, 0, 0.87);
+  background-color: #3c4c3f;
+  color: rgba(205, 214, 244, 0.87);
 }
 
 .geary-main-window.unified separator.geary-sidebar-pane-separator {

@@ -215,7 +215,7 @@ modelbutton.flat:selected,
 flowbox flowboxchild:selected,
 .background.csd .view:selected {
   color: #FDFDFD;
-  background-color: rgba(247, 118, 142, 0.2);
+  background-color: rgba(180, 107, 202, 0.2);
 }
 
 .nemo-window .nemo-window-pane widget.entry:selected,
@@ -229,8 +229,8 @@ textview text selection:focus,
 textview text selection,
 widget.view:selected,
 .view:selected {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #FDFDFD;
+  color: rgba(253, 253, 253, 0.87);
+  background-color: #b46bca;
 }
 
 .linked:not(.vertical) > button,
@@ -3645,7 +3645,7 @@ menu menuitem label:dir(ltr),
 menu .view:selected,
 .menu .view:selected,
 .context-menu .view:selected {
-  background-color: #FDFDFD;
+  background-color: #b46bca;
 }
 
 menu > arrow,
@@ -6536,7 +6536,7 @@ popover.emoji-completion .emoji:hover {
 }
 
 .nautilus-window.background.csd notebook scrolledwindow .view:selected {
-  background-color: rgba(253, 253, 253, 0.20);
+  background-color: rgba(180, 107, 202, 0.20);
 }
 
 .nautilus-window.background.csd
@@ -8773,11 +8773,11 @@ overlay grid.horizontal > revealer > scrolledwindow.frame:dir(rtl) {
 }
 
 .side-panel .view:selected {
-  background-image: image(#FDFDFD);
+  background-image: image(#b46bca);
 }
 
 .side-panel .view:selected:hover {
-  background-image: image(rgba(210, 210, 210, 0.9896));
+  background-image: image(rgba(180, 107, 202, 0.9896));
 }
 
 .songs-list:hover {
@@ -9246,8 +9246,8 @@ window#GearyMainWindow.background.csd
   scrolledwindow
   treeview.view:active {
   border-radius: 6px;
-  background-color: #FDFDFD;
-  color: rgba(0, 0, 0, 0.87);
+  background-color: #b46bca;
+  color: rgba(253, 253, 253, 0.87);
 }
 
 .geary-main-window.unified separator.geary-sidebar-pane-separator {

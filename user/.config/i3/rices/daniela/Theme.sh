@@ -29,9 +29,9 @@ set_gtk_theme() {
 }
 
 set_icons() {
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Magna-Dark-Icons"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Magna-Dark-Icons/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Magna-Dark-Icons/g" "$HOME"/.config/gtk-4.0/settings.ini	
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"BeautyLine"\"/g" "$HOME"/.gtkrc-2.0
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=BeautyLine/g" "$HOME"/.config/gtk-3.0/settings.ini
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=BeautyLine/g" "$HOME"/.config/gtk-4.0/settings.ini	
 }
 
 set_firefox_theme() {

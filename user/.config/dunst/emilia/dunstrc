@@ -317,7 +317,7 @@
     background = "#171924"
     #foreground = "#848b92"
     foreground = "#7aa2f7"
-    frame_color = "#9C5FFF"
+    frame_color = "#333f5e"
     timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
@@ -326,7 +326,7 @@
     background = "#171924"
     #foreground = "#7693ac"
     foreground = "#7aa2f7"
-    frame_color = "#9C5FFF"
+    frame_color = "#333f5e"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
@@ -335,7 +335,7 @@
     background = "#171924"
     #foreground = "#b05655"
     foreground = "#7aa2f7"
-    frame_color = "#9C5FFF"
+    frame_color = "#333f5e"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
