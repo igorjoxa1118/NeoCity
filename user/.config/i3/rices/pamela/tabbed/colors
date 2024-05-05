@@ -1,0 +1,16 @@
+#------------
+## pamela
+#------------
+## Цвета окон 
+#------------
+    # Класс                 border  backgr. text    indicator
+    client.focused          #2f354b #b46bca #15171E #C574DD
+    client.unfocused        #b46bca #15171E #4F5771 #C574DD
+    client.focused_inactive #2f354b #15171E #34394A #C574DD
+    client.placeholder      #2f354b #15171E #34394A #C574DD
+    client.urgent           #2f354b #15171E #34394A #C574DD
+
+    client.background       #15171E
+
+    
+#--------------

@@ -11,6 +11,7 @@
 #
 read -r RICETHEME < "$HOME"/.config/i3/.rice
 rice_dir="$HOME/.config/i3/rices/$RICETHEME"
+i3_dir="$HOME/.config/i3"
 
 # Terminate already running bar instances
 killall -q polybar
@@ -18,6 +19,33 @@ killall -q eww
 
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
+###--Start rice
+
+set_gtk_theme() {
+	sed -i "s/gtk-theme-name=.*/gtk-theme-name="$RICETHEME"/g" "$HOME"/.config/gtk-3.0/settings.ini
+    sed -i "s/gtk-theme-name=.*/gtk-theme-name="$RICETHEME"/g" "$HOME"/.config/gtk-4.0/settings.ini
+    sed -i "s/gtk-theme-name=.*/gtk-theme-name="\"""$RICETHEME"""\"/g" "$HOME"/.gtkrc-2.0
+}
+
+set_icons() {
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Magna-Dark-Icons"\"/g" "$HOME"/.gtkrc-2.0
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Magna-Dark-Icons/g" "$HOME"/.config/gtk-3.0/settings.ini
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Magna-Dark-Icons/g" "$HOME"/.config/gtk-4.0/settings.ini	
+}
+
+set_firefox_theme() {
+grep_ff=$(ls "$HOME"/.mozilla/firefox | grep default-release)
+path_to_ff=""$HOME"/.mozilla/firefox/"$grep_ff"/chrome"
+path_to_ff_themes=""$HOME"/.mozilla/FoxThemes"
+theme_name="userChrome.css"
+
+    if [ -d "$path_to_ff" ]; then
+        cp -rf "$path_to_ff_themes"/"$RICETHEME"/"$theme_name" "$path_to_ff"
+    else
+        echo "Somthing wrong"
+    fi
+}
 
 # Reload terminal colors
 set_term_config() {
@@ -136,7 +164,7 @@ set_launcher_config() {
 		-e 's/\(background: \).*/\1#181825;/' \
 		-e 's/\(background-alt: \).*/\1#181825E0;/' \
 		-e 's/\(foreground: \).*/\1#CDD6F4;/' \
-		-e 's/\(selected: \).*/\1#F5C2E7;/' \
+		-e 's/\(selected: \).*/\1#3c4c3f;/' \
 		-e "s/rices\/[[:alnum:]\-]*/rices\/${RICETHEME}/g"
 
 	# NetworkManager launcher
@@ -166,6 +194,9 @@ launch_bars() {
 }
 
 ### ---------- Apply Configurations ---------- ###
+set_gtk_theme
+set_icons
+set_firefox_theme
 
 set_term_config
 set_picom_config

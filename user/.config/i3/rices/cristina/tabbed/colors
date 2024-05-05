@@ -1,0 +1,16 @@
+#------------
+## cristina
+#------------
+## Цвета окон 
+#------------
+    # Класс                 border  backgr. text    indicator
+    client.focused          #292740 #7D1347 #e0def4 #34738e
+    client.unfocused        #7D1347 #232136 #5B558B #34738e
+    client.focused_inactive #292740 #232136 #5B558B #34738e
+    client.placeholder      #292740 #232136 #5B558B #34738e
+    client.urgent           #292740 #232136 #5B558B #34738e
+
+    client.background       #232136
+
+    
+#--------------

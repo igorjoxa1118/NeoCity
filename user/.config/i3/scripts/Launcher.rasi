@@ -23,7 +23,7 @@ font: "JetBrainsMono NF Bold 9";
 background: #171924;
 background-alt: #171924E0;
 foreground: #7aa2f7;
-selected: #7aa2f7;
+selected: #333f5e;
 }
 
 //----- Main Window -----//

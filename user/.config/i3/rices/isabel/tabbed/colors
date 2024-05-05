@@ -1,0 +1,16 @@
+#------------
+## isabel
+#------------
+## Цвета окон 
+#------------
+    # Класс                 border  backgr. text    indicator
+    client.focused          #191D23 #524688 #abb2bf #81a1c1
+    client.unfocused        #524688 #14171c #4B5768 #81a1c1
+    client.focused_inactive #524688 #14171c #2F3641 #81a1c1
+    client.placeholder      #524688 #14171c #2F3641 #81a1c1
+    client.urgent           #524688 #14171c #2F3641 #81a1c1
+
+    client.background       #171924
+
+    
+#--------------

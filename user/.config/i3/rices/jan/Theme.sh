@@ -11,6 +11,7 @@
 #
 read -r RICETHEME < "$HOME"/.config/i3/.rice
 rice_dir="$HOME/.config/i3/rices/$RICETHEME"
+i3_dir="$HOME/.config/i3"
 
 # Terminate already running bar instances
 killall -q polybar
@@ -19,6 +20,33 @@ killall -q eww
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
+###--Start rice
+
+set_gtk_theme() {
+	sed -i "s/gtk-theme-name=.*/gtk-theme-name="$RICETHEME"/g" "$HOME"/.config/gtk-3.0/settings.ini
+    sed -i "s/gtk-theme-name=.*/gtk-theme-name="$RICETHEME"/g" "$HOME"/.config/gtk-4.0/settings.ini
+    sed -i "s/gtk-theme-name=.*/gtk-theme-name="\"""$RICETHEME"""\"/g" "$HOME"/.gtkrc-2.0
+}
+
+set_icons() {
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"besgnulinux-mono-cyan"\"/g" "$HOME"/.gtkrc-2.0
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=besgnulinux-mono-cyan/g" "$HOME"/.config/gtk-3.0/settings.ini
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=besgnulinux-mono-cyan/g" "$HOME"/.config/gtk-4.0/settings.ini	
+}
+
+set_firefox_theme() {
+grep_ff=$(ls "$HOME"/.mozilla/firefox | grep default-release)
+path_to_ff=""$HOME"/.mozilla/firefox/"$grep_ff"/chrome"
+path_to_ff_themes=""$HOME"/.mozilla/FoxThemes"
+theme_name="userChrome.css"
+
+    if [ -d "$path_to_ff" ]; then
+        cp -rf "$path_to_ff_themes"/"$RICETHEME"/"$theme_name" "$path_to_ff"
+    else
+        echo "Somthing wrong"
+    fi
+}
+
 # Reload terminal colors
 set_term_config() {
 	cat >"$HOME"/.config/alacritty/rice-colors.toml <<EOF
@@ -26,13 +54,13 @@ set_term_config() {
 
 # Default colors
 [colors.primary]
-background = "#070219"
+background = "#212a4c"
 foreground = "#27fbfe"
 
 # Cursor colors
 [colors.cursor]
 cursor = "#fb007a"
-text = "#070219"
+text = "#212a4c"
 
 # Normal colors
 [colors.normal]
@@ -72,7 +100,7 @@ set_picom_config() {
 set_dunst_config() {
 	sed -i "$HOME"/.config/i3/dunstrc \
 		-e "s/transparency = .*/transparency = 8/g" \
-		-e "s/frame_color = .*/frame_color = \"#070219\"/g" \
+		-e "s/frame_color = .*/frame_color = \"#212a4c\"/g" \
 		-e "s/separator_color = .*/separator_color = \"#fb007a\"/g" \
 		-e "s/font = .*/font = JetBrainsMono NF Medium 9/g" \
 		-e "s/foreground='.*'/foreground='#27fbfe'/g"
@@ -81,17 +109,17 @@ set_dunst_config() {
 	cat >>"$HOME"/.config/i3/dunstrc <<-_EOF_
 		[urgency_low]
 		timeout = 3
-		background = "#070219"
+		background = "#212a4c"
 		foreground = "#27fbfe"
 
 		[urgency_normal]
 		timeout = 6
-		background = "#070219"
+		background = "#212a4c"
 		foreground = "#27fbfe"
 
 		[urgency_critical]
 		timeout = 0
-		background = "#070219"
+		background = "#212a4c"
 		foreground = "#27fbfe"
 	_EOF_
 }
@@ -100,9 +128,9 @@ set_dunst_config() {
 set_eww_colors() {
 	cat >"$HOME"/.config/i3/eww/colors.scss <<EOF
 // Eww colors for Jan rice
-\$bg: #070219;
+\$bg: #212a4c;
 \$bg-alt: #09021f;
-\$fg: #c0caf5;
+\$fg: #4DD0E1;
 \$black: #626483;
 \$lightblack: #262831;
 \$red: #fb007a;
@@ -118,10 +146,10 @@ EOF
 # Set jgmenu colors for Jan
 set_jgmenu_colors() {
 	sed -i "$HOME"/.config/i3/jgmenurc \
-		-e 's/color_menu_bg = .*/color_menu_bg = #070219/' \
-		-e 's/color_norm_fg = .*/color_norm_fg = #c0caf5/' \
+		-e 's/color_menu_bg = .*/color_menu_bg = #212a4c/' \
+		-e 's/color_norm_fg = .*/color_norm_fg = #4DD0E1/' \
 		-e 's/color_sel_bg = .*/color_sel_bg = #09021f/' \
-		-e 's/color_sel_fg = .*/color_sel_fg = #c0caf5/' \
+		-e 's/color_sel_fg = .*/color_sel_fg = #4DD0E1/' \
 		-e 's/color_sep_fg = .*/color_sep_fg = #626483/'
 }
 
@@ -129,16 +157,16 @@ set_jgmenu_colors() {
 set_launcher_config() {
 	sed -i "$HOME/.config/i3/scripts/Launcher.rasi" \
 		-e '22s/\(font: \).*/\1"Terminess Nerd Font Mono Bold 10";/' \
-		-e 's/\(background: \).*/\1#070219F0;/' \
-		-e 's/\(background-alt: \).*/\1#070219E0;/' \
-		-e 's/\(foreground: \).*/\1#c0caf5;/' \
-		-e 's/\(selected: \).*/\1#fb007af0;/' \
+		-e 's/\(background: \).*/\1#212a4cF0;/' \
+		-e 's/\(background-alt: \).*/\1#212a4cE0;/' \
+		-e 's/\(foreground: \).*/\1#4DD0E1;/' \
+		-e 's/\(selected: \).*/\1#1b4967f0;/' \
 		-e "s/rices\/[[:alnum:]\-]*/rices\/${RICETHEME}/g"
 
 	# NetworkManager launcher
 	sed -i "$HOME/.config/i3/scripts/NetManagerDM.rasi" \
-		-e '12s/\(background: \).*/\1#070219F0;/' \
-		-e '13s/\(background-alt: \).*/\1#070219;/' \
+		-e '12s/\(background: \).*/\1#212a4cF0;/' \
+		-e '13s/\(background-alt: \).*/\1#212a4c;/' \
 		-e '14s/\(foreground: \).*/\1#27fbfe;/' \
 		-e '15s/\(selected: \).*/\1#19bffe;/' \
 		-e '16s/\(active: \).*/\1#a6e22e;/' \
@@ -146,10 +174,10 @@ set_launcher_config() {
 
 	# WallSelect menu colors
 	sed -i "$HOME/.config/i3/scripts/WallSelect.rasi" \
-		-e 's/\(main-bg: \).*/\1#070219F0;/' \
-		-e 's/\(main-fg: \).*/\1#c0caf5;/' \
+		-e 's/\(main-bg: \).*/\1#212a4cF0;/' \
+		-e 's/\(main-fg: \).*/\1#4DD0E1;/' \
 		-e 's/\(select-bg: \).*/\1#fb007a;/' \
-		-e 's/\(select-fg: \).*/\1#070219;/'
+		-e 's/\(select-fg: \).*/\1#212a4c;/'
 }
 
 # Launch the bar
@@ -162,6 +190,9 @@ launch_bars() {
 }
 
 ### ---------- Apply Configurations ---------- ###
+set_gtk_theme
+set_icons
+set_firefox_theme
 
 set_term_config
 set_picom_config

@@ -160,7 +160,7 @@ set_launcher_config() {
 		-e 's/\(background: \).*/\1#171924;/' \
 		-e 's/\(background-alt: \).*/\1#171924E0;/' \
 		-e 's/\(foreground: \).*/\1#7aa2f7;/' \
-		-e 's/\(selected: \).*/\1#7aa2f7;/' \
+		-e 's/\(selected: \).*/\1#333f5e;/' \
 		-e "s/rices\/[[:alnum:]\-]*/rices\/${RICETHEME}/g"
 
 	# NetworkManager launcher
