@@ -92,5 +92,21 @@ launcher_path=""$HOME"/.config/i3/eww/launcher_colors/"$selected""
          echo "Color file not exist!"
        fi
 
+###---Global. Change colors for Launcher
+NM_path=""$HOME"/.config/i3/eww/NetworkManager_colors/"$selected""
+       if [ -f "$NM_path"/NetManagerDM.rasi ]; then
+         cp -rf "$NM_path"/NetManagerDM.rasi "$HOME"/.config/i3/scripts/
+       else
+         echo "Color file not exist!"
+       fi
+
+###---Global. Change colors for Keybinds
+keybinds_path=""$HOME"/.config/conkeww/colors/"$selected""
+       if [ -f "$keybinds_path"/color-main.yuck ]; then
+         cp -rf "$keybinds_path"/color-main.yuck "$HOME"/.config/conkeww/colors/
+       else
+         echo "Color file not exist!"
+       fi
+
 i3-msg restart
 exit 0
