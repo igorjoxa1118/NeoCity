@@ -1,3 +1,0 @@
-2024-04-14 13:20:10.952 [info] Initial editor state {"filesToOpenOrCreate":[{"fileUri":{"$mid":1,"path":"/home/igorjoxa/.config/blender/4.1/config/colorschemas/dracula.xml","scheme":"file"},"type":1,"exists":true,"options":{}}],"filesToDiff":[],"filesToMerge":[]}
-2024-04-14 13:20:11.551 [info] Started local extension host with pid 9622.
-2024-04-14 13:20:14.485 [info] [perf] Render performance baseline is 38ms

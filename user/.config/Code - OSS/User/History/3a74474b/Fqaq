@@ -1,4 +1,0 @@
-# virOS repository
-[virOS-repo]
-SigLevel = Never
-Server = https://192.168.1.2/$repo/$arch/

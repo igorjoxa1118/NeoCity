@@ -1,6 +1,0 @@
-2024-04-26 06:37:39.678 [info] Initial editor state {"filesToOpenOrCreate":[{"fileUri":{"$mid":1,"path":"/run/user/1000/gvfs/sftp:host=192.168.122.235/home/vir0id/.zshrc","scheme":"file"},"type":1,"exists":true,"options":{}}],"filesToDiff":[],"filesToMerge":[]}
-2024-04-26 06:37:40.060 [info] Started local extension host with pid 668062.
-2024-04-26 06:37:43.168 [info] [perf] Render performance baseline is 38ms
-2024-04-26 13:41:30.127 [info] Started local extension host with pid 3797407.
-2024-04-26 13:41:33.477 [info] Started local extension host with pid 3797911.
-2024-04-26 13:41:34.129 [error] No registered selector for ID: ms-vscode.npm-command

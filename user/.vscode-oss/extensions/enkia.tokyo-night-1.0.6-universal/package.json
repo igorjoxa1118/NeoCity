@@ -63,8 +63,9 @@
 		"targetPlatform": "universal",
 		"updated": false,
 		"isPreReleaseVersion": false,
-		"installedTimestamp": 1703786327624,
+		"installedTimestamp": 1715008564782,
 		"pinned": false,
-		"preRelease": false
+		"hasPreReleaseVersion": false,
+		"source": "gallery"
 	}
 }
