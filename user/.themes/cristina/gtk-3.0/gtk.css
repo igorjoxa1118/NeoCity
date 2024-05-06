@@ -164,10 +164,10 @@ read if you used those and something break with a version upgrade you're on your
 
 @keyframes ripple-on-headerbar {
   from {
-    background-image: radial-gradient(circle, #7D1347 0%, transparent 0%);
+    background-image: radial-gradient(circle, #e0def4 0%, transparent 0%);
   }
   to {
-    background-image: radial-gradient(circle, #7D1347 100%, transparent 0%);
+    background-image: radial-gradient(circle, #e0def4 100%, transparent 0%);
   }
 }
 
@@ -361,7 +361,7 @@ window.background.csd > stack.view {
 }
 
 textview text {
-  background-color: #232136;
+  background-color: #7D1347;
 }
 
 textview border {
@@ -1418,7 +1418,7 @@ treeview entry:focus {
   margin: 2px;
   border-radius: 9999px;
   box-shadow: none;
-  background-color: rgba(224, 222, 244, 0.12);
+  background-color: rgba(135, 39, 88, 0.12);
   color: #e0def4;
 }
 
@@ -1590,7 +1590,7 @@ actionbar
   > button:disabled:not(.suggested-action):not(.destructive-action),
 button:disabled {
   box-shadow: none;
-  background-color: rgba(224, 222, 244, 0.04);
+  background-color: rgba(125, 19, 71, 0.04);
   color: rgba(224, 222, 244, 0.5);
 }
 
@@ -2315,12 +2315,12 @@ button.osd {
 }
 
 button.osd:hover {
-  background-color: rgba(247, 118, 142, 0.8);
+  background-color: rgba(125, 19, 71, 0.8);
   color: rgba(0, 0, 0, 0.87);
 }
 
 button.osd:active {
-  background-color: rgba(247, 118, 142, 0.6);
+  background-color: rgba(125, 19, 71, 0.6);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -2743,7 +2743,7 @@ frame.documents-dropdown:backdrop,
 toolbar.osd:backdrop {
   box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3),
     0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
-    inset 0 1px rgba(224, 222, 244, 0.1);
+    inset 0 1px rgba(125, 19, 71, 0.1);
 }
 
 frame.left.documents-dropdown,
@@ -3310,7 +3310,7 @@ headerbar.windowhandle
   padding-right: 6px;
   border-image: radial-gradient(
       circle closest-corner at center calc(100% - 1px),
-      #e0def4 0%,
+      #872758 0%,
       transparent 0%
     )
     0 0 0/0 0 0px;
@@ -3321,7 +3321,7 @@ headerbar.windowhandle
 .path-bar.linked:not(.vertical) > button:checked {
   border-image: radial-gradient(
       circle closest-corner at center calc(100% - 1px),
-      #e0def4 100%,
+      #872758 100%,
       transparent 0%
     )
     0 0 2/0 0 2px;
@@ -3433,10 +3433,10 @@ treeview.view.expander:disabled {
 treeview.view.progressbar {
   border: none;
   box-shadow: none;
-  background-color: #e0def4;
+  background-color: #7D1347;
   background-image: none;
   border-radius: 9999px;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(224, 222, 244, 0.87);
 }
 
 treeview.view.progressbar:selected:hover {
@@ -3645,7 +3645,7 @@ menu menuitem label:dir(ltr),
 menu .view:selected,
 .menu .view:selected,
 .context-menu .view:selected {
-  background-color: #e0def4;
+  background-color: #7D1347;
 }
 
 menu > arrow,
@@ -3654,7 +3654,7 @@ menu > arrow,
   min-height: 16px;
   min-width: 16px;
   padding: 4px;
-  background-color: #232136;
+  background-color: #7D1347;
   color: rgba(224, 222, 244, 0.7);
 }
 
@@ -3840,7 +3840,7 @@ notebook.frame > header {
 
 notebook,
 notebook.frame {
-  background-color: #7d1347;
+  background-color: #232136;
   border-radius: 12px;
 }
 
@@ -3926,7 +3926,7 @@ notebook > header tab > box {
 }
 
 notebook > header tab > box:drop(active) {
-  background-color: rgba(224, 222, 244, 0.12);
+  background-color: rgba(35, 33, 54, 0.12);
   color: #e0def4;
 }
 
@@ -5196,7 +5196,7 @@ button.file separator {
  * Lists *
  *********/
 list {
-  border-color: rgba(224, 222, 244, 0.12);
+  border-color: rgba(125, 19, 71, 0.12);
   background-color: #232136;
 }
 
@@ -5568,11 +5568,11 @@ separator.sidebar {
  ****************/
 row image.sidebar-icon {
   transition: color 75ms cubic-bezier(0, 0, 0.2, 1);
-  color: rgba(224, 222, 244, 0.7);
+  color: rgba(125, 19, 71, 0.7);
 }
 
 row image.sidebar-icon:disabled {
-  color: rgba(224, 222, 244, 0.3);
+  color: rgba(125, 19, 71, 0.3);
 }
 
 placessidebar.sidebar > viewport.frame {
@@ -5602,7 +5602,7 @@ placessidebar.sidebar row:selected {
 placessidebar.sidebar row:selected,
 placessidebar.sidebar row:selected image.sidebar-icon,
 placessidebar.sidebar row:selected button.sidebar-button {
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(135, 39, 88, 0.87);
 }
 
 placessidebar.sidebar row:disabled {
@@ -8340,7 +8340,7 @@ window.background
 
 .polari-room-list .sidebar > row.activatable:selected {
   background-color: #e0def4;
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(135, 39, 88, 0.87);
 }
 
 stack.view.polari-entry-area {
@@ -8773,7 +8773,7 @@ overlay grid.horizontal > revealer > scrolledwindow.frame:dir(rtl) {
 }
 
 .side-panel .view:selected {
-  background-image: image(#e0def4);
+  background-image: image(#872758);
 }
 
 .side-panel .view:selected:hover {
