@@ -2257,7 +2257,7 @@ StScrollBar StButton#hhandle:active {
 .tile-preview.snap,
 .tile-hud,
 .tile-hud.snap {
-  background-color: rgba(247, 118, 142, 0.3);
+  background-color: rgba(127, 112, 81, 0.3);
   border: 1px solid #c5c9c5;
 }
 

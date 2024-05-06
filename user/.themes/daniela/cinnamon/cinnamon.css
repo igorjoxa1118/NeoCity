@@ -455,7 +455,7 @@ StScrollBar StButton#hhandle:active {
   height: 0;
   margin: 0;
   padding: 0;
-  border-color: rgba(205, 214, 244, 0.12);
+  rgba(60, 76, 63, 0.12);
   border-bottom-width: 0;
   border-bottom-style: solid;
   background-color: transparent;
@@ -1661,7 +1661,7 @@ StScrollBar StButton#hhandle:active {
   color: rgba(205, 214, 244, 0.7);
   background-gradient-direction: none;
   background-color: rgba(205, 214, 244, 0.25);
-  border-color: rgba(205, 214, 244, 0.3);
+  rgba(60, 76, 63, 0.3);
 }
 
 .window-list-item-box:active:hover,
@@ -1679,7 +1679,7 @@ StScrollBar StButton#hhandle:active {
     rgba(205, 214, 244, 0.7) 0%,
     rgba(205, 214, 244, 0.7) 100%
   );
-  border-color: #cdd6f4;
+  border-color: #3c4c3f;
   background-color: rgba(205, 214, 244, 0.2);
 }
 
@@ -1810,7 +1810,7 @@ StScrollBar StButton#hhandle:active {
   color: rgba(205, 214, 244, 0.7);
   background-gradient-direction: none;
   background-color: transparent;
-  border-color: rgba(205, 214, 244, 0.3);
+  rgba(60, 76, 63, 0.3);
 }
 
 .grouped-window-list-item-box:active:hover {
@@ -1821,7 +1821,7 @@ StScrollBar StButton#hhandle:active {
   color: rgba(205, 214, 244, 0.7);
   background-gradient-direction: none;
   background-color: rgba(205, 214, 244, 0.2);
-  border-color: #cdd6f4;
+  border-color: #3c4c3f;
 }
 
 .grouped-window-list-item-box:focus:hover {
@@ -2257,7 +2257,7 @@ StScrollBar StButton#hhandle:active {
 .tile-preview.snap,
 .tile-hud,
 .tile-hud.snap {
-  background-color: rgba(247, 118, 142, 0.3);
+  background-color: rgba(60, 76, 63, 0.3);
   border: 1px solid #cdd6f4;
 }
 

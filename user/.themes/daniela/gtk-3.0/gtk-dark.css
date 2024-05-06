@@ -215,7 +215,7 @@ modelbutton.flat:selected,
 flowbox flowboxchild:selected,
 .background.csd .view:selected {
   color: #cdd6f4;
-  background-color: rgba(247, 118, 142, 0.2);
+  background-color: rgba(60, 76, 63, 0.2);
 }
 
 .nemo-window .nemo-window-pane widget.entry:selected,
@@ -1052,7 +1052,7 @@ XfdesktopIconView.view flowbox treeview.view flowbox .content-view .rubberband,
 flowbox treeview.view .content-view .rubberband,
 .content-view flowbox treeview.view .rubberband {
   border: 1px solid #cdd6f4;
-  background-color: rgba(247, 118, 142, 0.3);
+  background-color: rgba(60, 76, 63, 0.3);
 }
 
 flowbox flowboxchild {
@@ -2315,12 +2315,12 @@ button.osd {
 }
 
 button.osd:hover {
-  background-color: rgba(247, 118, 142, 0.8);
+  background-color: rgba(60, 76, 63, 0.8);
   color: rgba(0, 0, 0, 0.87);
 }
 
 button.osd:active {
-  background-color: rgba(247, 118, 142, 0.6);
+  background-color: rgba(60, 76, 63, 0.6);
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -2352,23 +2352,23 @@ button.suggested-action:disabled {
 
 button.suggested-action:hover {
   box-shadow: inset 0 0 0 9999px transparent,
-    0 2px 2.4px -1px rgba(247, 118, 142, 0.2),
-    0 4px 3px 0 rgba(247, 118, 142, 0.14), 0 1px 6px 0 rgba(247, 118, 142, 0.12);
+    0 2px 2.4px -1px rgba(60, 76, 63, 0.2),
+    0 4px 3px 0 rgba(60, 76, 63, 0.14), 0 1px 6px 0 rgba(60, 76, 63, 0.12);
 }
 
 button.suggested-action:checked {
-  background-color: rgba(247, 118, 142, 0.961);
+  background-color: rgba(60, 76, 63, 0.961);
 }
 
 button.suggested-action:checked:hover {
   box-shadow: inset 0 0 0 9999px transparent,
-    0 3px 3px -3px rgba(247, 118, 142, 0.3),
-    0 2px 3px -1px rgba(247, 118, 142, 0.24),
-    0 2px 5px 0 rgba(247, 118, 142, 0.12);
+    0 3px 3px -3px rgba(60, 76, 63, 0.3),
+    0 2px 3px -1px rgba(60, 76, 63, 0.24),
+    0 2px 5px 0 rgba(60, 76, 63, 0.12);
 }
 
 button.suggested-action:focus {
-  box-shadow: 0 0 0 2px rgba(247, 118, 142, 0.35);
+  box-shadow: 0 0 0 2px rgba(60, 76, 63, 0.35);
 }
 
 button.suggested-action.flat {
@@ -2383,7 +2383,7 @@ button.suggested-action.flat:disabled {
 }
 
 button.suggested-action.flat:checked {
-  background-color: rgba(247, 118, 142, 0.3);
+  background-color: rgba(60, 76, 63, 0.3);
 }
 
 button.destructive-action {
@@ -2400,8 +2400,8 @@ button.destructive-action:disabled {
 
 button.destructive-action:hover {
   box-shadow: inset 0 0 0 9999px transparent,
-    0 2px 2.4px -1px rgba(247, 118, 142, 0.2),
-    0 4px 3px 0 rgba(247, 118, 142, 0.14), 0 1px 6px 0 rgba(247, 118, 142, 0.12);
+    0 2px 2.4px -1px rgba(60, 76, 63, 0.2),
+    0 4px 3px 0 rgba(60, 76, 63, 0.14), 0 1px 6px 0 rgba(60, 76, 63, 0.12);
 }
 
 button.destructive-action:checked {
@@ -2410,13 +2410,13 @@ button.destructive-action:checked {
 
 button.destructive-action:checked:hover {
   box-shadow: inset 0 0 0 9999px transparent,
-    0 3px 3px -3px rgba(247, 118, 142, 0.3),
-    0 2px 3px -1px rgba(247, 118, 142, 0.24),
-    0 2px 5px 0 rgba(247, 118, 142, 0.12);
+    0 3px 3px -3px rgba(60, 76, 63, 0.3),
+    0 2px 3px -1px rgba(60, 76, 63, 0.24),
+    0 2px 5px 0 rgba(60, 76, 63, 0.12);
 }
 
 button.destructive-action:focus {
-  box-shadow: 0 0 0 2px rgba(247, 118, 142, 0.35);
+  box-shadow: 0 0 0 2px rgba(60, 76, 63, 0.35);
 }
 
 button.destructive-action.flat {
@@ -2815,7 +2815,7 @@ toolbar:not(.inline-toolbar):not(.osd) switch {
   padding: 6px;
   border-style: solid;
   border-width: 0 1px 1px;
-  border-color: rgba(205, 214, 244, 0.12);
+  rgba(60, 76, 63, 0.12);
   background-color: #171924;
 }
 
@@ -2824,7 +2824,7 @@ searchbar > revealer > box,
   padding: 6px;
   border-style: solid;
   border-width: 0 0 1px;
-  border-color: rgba(205, 214, 244, 0.12);
+  border-color: rgba(60, 76, 63, 0.12);
   background-color: #181825;
   background-clip: border-box;
 }
@@ -3477,7 +3477,7 @@ treeview.view header.button.dnd {
   padding: 2px 6px;
   border-style: none solid solid;
   border-width: 1px;
-  border-color: rgba(205, 214, 244, 0.12);
+  rgba(60, 76, 63, 0.12);
   border-radius: 0;
   box-shadow: none;
   background-color: #181825;
@@ -4143,7 +4143,7 @@ switch {
 
 switch:checked {
   background-color: #cdd6f4;
-  border-color: #cdd6f4;
+  border-color: #3c4c3f;
 }
 
 switch:disabled {
@@ -5083,7 +5083,7 @@ overshoot.top {
     0,
     center top,
     0.75,
-    to(rgba(247, 118, 142, 0.24)),
+    to(rgba(60, 76, 63, 0.24)),
     to(transparent)
   );
   background-repeat: no-repeat;
@@ -5100,7 +5100,7 @@ overshoot.bottom {
     0,
     center bottom,
     0.75,
-    to(rgba(247, 118, 142, 0.24)),
+    to(rgba(60, 76, 63, 0.24)),
     to(transparent)
   );
   background-repeat: no-repeat;
@@ -5117,7 +5117,7 @@ overshoot.left {
     0,
     left center,
     0.75,
-    to(rgba(247, 118, 142, 0.24)),
+    to(rgba(60, 76, 63, 0.24)),
     to(transparent)
   );
   background-repeat: no-repeat;
@@ -5134,7 +5134,7 @@ overshoot.right {
     0,
     right center,
     0.75,
-    to(rgba(247, 118, 142, 0.24)),
+    to(rgba(60, 76, 63, 0.24)),
     to(transparent)
   );
   background-repeat: no-repeat;
@@ -5147,7 +5147,7 @@ overshoot.right {
 junction {
   border-style: solid none none solid;
   border-width: 1px;
-  border-color: rgba(205, 214, 244, 0.12);
+  rgba(60, 76, 63, 0.12);
   background-color: #181825;
 }
 
@@ -5196,7 +5196,7 @@ button.file separator {
  * Lists *
  *********/
 list {
-  border-color: rgba(205, 214, 244, 0.12);
+  rgba(60, 76, 63, 0.12);
   background-color: #181825;
 }
 
@@ -5359,7 +5359,7 @@ calendar:selected {
 
 calendar.header {
   border-style: none none solid;
-  border-color: rgba(205, 214, 244, 0.12);
+  rgba(60, 76, 63, 0.12);
   border-radius: 0;
 }
 
@@ -8648,7 +8648,7 @@ ideeditorutilities > dzldockpaned > box > stackswitcher button {
 ideeditorutilities > dzldockpaned > box > stackswitcher button:active {
   background-image: radial-gradient(
     circle,
-    rgba(247, 118, 142, 0.7) 10%,
+    rgba(60, 76, 63, 0.7) 10%,
     transparent 0%
   );
 }
@@ -8756,12 +8756,12 @@ overlay grid.horizontal > revealer > scrolledwindow.frame:dir(rtl) {
  *********/
 .side-panel:dir(ltr) {
   border-style: solid;
-  border-color: rgba(205, 214, 244, 0.12);
+  rgba(60, 76, 63, 0.12);
 }
 
 .side-panel:dir(rtl) {
   border-style: solid;
-  border-color: rgba(205, 214, 244, 0.12);
+  rgba(60, 76, 63, 0.12);
 }
 
 .side-panel .view {
@@ -9615,7 +9615,7 @@ window.background.chromium treeview.view button {
 }
 
 window.background.chromium menu {
-  border-color: #cdd6f4;
+  border-color: #3c4c3f;
 }
 
 window.background.chromium menu menuitem {
@@ -9659,7 +9659,7 @@ tooltip.background.chromium {
 
 #MozillaGtkWidget > widget > entry:disabled,
 #MozillaGtkWidget > widget > button > button:disabled {
-  border-color: rgba(205, 214, 244, 0.12);
+  rgba(60, 76, 63, 0.12);
 }
 
 #MozillaGtkWidget > widget > entry {
@@ -9668,7 +9668,7 @@ tooltip.background.chromium {
 }
 
 #MozillaGtkWidget > widget > entry:focus {
-  border-color: #cdd6f4;
+  border-color: #3c4c3f;
   box-shadow: inset 0 0 0 1px #cdd6f4;
 }
 
@@ -10037,7 +10037,7 @@ PanelSeparator {
 
 MatePanelAppletFrameDBus {
   border-style: solid;
-  border-color: rgba(205, 214, 244, 0.12);
+  rgba(60, 76, 63, 0.12);
 }
 
 .mate-panel-menu-bar.horizontal MatePanelAppletFrameDBus {
@@ -11115,7 +11115,7 @@ frame.raven-frame > border {
 .raven .raven-background {
   border-style: solid none;
   border-width: 1px;
-  border-color: rgba(205, 214, 244, 0.12);
+  rgba(60, 76, 63, 0.12);
   background-color: #181825;
 }
 
@@ -11600,7 +11600,7 @@ window.background.csd.thunar
 }
 
 .nemo-window paned > .sidebar .places-treeview {
-  -nemoplacestreeview-disk-full-bg-color: rgba(247, 118, 142, 0.961);
+  -nemoplacestreeview-disk-full-bg-color: rgba(60, 76, 63, 0.961);
   -nemoplacestreeview-disk-full-fg-color: rgba(0, 0, 0, 0.87);
 }
 

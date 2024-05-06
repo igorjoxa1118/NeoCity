@@ -213,7 +213,7 @@ treeview.view > rubberband,
 gridview > rubberband,
 flowbox > rubberband {
   border: 1px solid #7D1347;
-  background-color: rgba(247, 118, 142, 0.3);
+  background-color: rgba(135, 39, 88, 0.3);
 }
 
 flowbox > flowboxchild {
@@ -609,14 +609,14 @@ editablelabel > stack > text {
     background-image: radial-gradient(
       farthest-side,
       #e0def4 0%,
-      rgba(247, 118, 142, 0) 0%
+      rgba(135, 39, 88, 0) 0%
     );
   }
   to {
     background-image: radial-gradient(
       farthest-side,
       #e0def4 95%,
-      rgba(247, 118, 142, 0)
+      rgba(135, 39, 88, 0)
     );
   }
 }
@@ -1120,23 +1120,23 @@ button.suggested-action:disabled {
 
 button.suggested-action:hover {
   box-shadow: inset 0 0 0 9999px transparent,
-    0 2px 2.4px -1px rgba(247, 118, 142, 0.2),
-    0 4px 3px 0 rgba(247, 118, 142, 0.14), 0 1px 6px 0 rgba(247, 118, 142, 0.12);
+    0 2px 2.4px -1px rgba(135, 39, 88, 0.2),
+    0 4px 3px 0 rgba(135, 39, 88, 0.14), 0 1px 6px 0 rgba(135, 39, 88, 0.12);
 }
 
 button.suggested-action:checked {
-  background-color: rgba(247, 118, 142, 0.961);
+  background-color: rgba(135, 39, 88, 0.961);
 }
 
 button.suggested-action:checked:hover {
   box-shadow: inset 0 0 0 9999px transparent,
-    0 3px 3px -3px rgba(247, 118, 142, 0.3),
-    0 2px 3px -1px rgba(247, 118, 142, 0.24),
-    0 2px 5px 0 rgba(247, 118, 142, 0.12);
+    0 3px 3px -3px rgba(135, 39, 88, 0.3),
+    0 2px 3px -1px rgba(135, 39, 88, 0.24),
+    0 2px 5px 0 rgba(135, 39, 88, 0.12);
 }
 
 button.suggested-action:focus {
-  box-shadow: 0 0 0 2px rgba(247, 118, 142, 0.35);
+  box-shadow: 0 0 0 2px rgba(135, 39, 88, 0.35);
 }
 
 button.suggested-action.flat {
@@ -1153,7 +1153,7 @@ button.suggested-action.flat:disabled {
 }
 
 button.suggested-action.flat:checked {
-  background-color: rgba(247, 118, 142, 0.3);
+  background-color: rgba(135, 39, 88, 0.3);
 }
 
 button.destructive-action {
@@ -2558,7 +2558,7 @@ window.devel headerbar.titlebar {
   background: #232136
       cross-fade(10% -gtk-icontheme('system-run-symbolic'), image(transparent))
       90% 0/256px 256px no-repeat,
-    linear-gradient(to right, transparent 65%, rgba(247, 118, 142, 0.1)),
+    linear-gradient(to right, transparent 65%, rgba(135, 39, 88, 0.1)),
     linear-gradient(to top, #343434 3px, #393939);
 }
 
@@ -4529,8 +4529,8 @@ overshoot.top {
   background-size: 200% 70%;
   background-image: radial-gradient(
     farthest-side at top,
-    rgba(247, 118, 142, 0.24) 99%,
-    rgba(247, 118, 142, 0) 100%
+    rgba(135, 39, 88, 0.24) 99%,
+    rgba(135, 39, 88, 0) 100%
   );
   background-repeat: no-repeat;
   background-position: center top;
@@ -4543,8 +4543,8 @@ overshoot.bottom {
   background-size: 200% 70%;
   background-image: radial-gradient(
     farthest-side at bottom,
-    rgba(247, 118, 142, 0.24) 99%,
-    rgba(247, 118, 142, 0) 100%
+    rgba(135, 39, 88, 0.24) 99%,
+    rgba(135, 39, 88, 0) 100%
   );
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -4557,8 +4557,8 @@ overshoot.left {
   background-size: 200% 70%;
   background-image: radial-gradient(
     farthest-side at left,
-    rgba(247, 118, 142, 0.24) 99%,
-    rgba(247, 118, 142, 0) 100%
+    rgba(135, 39, 88, 0.24) 99%,
+    rgba(135, 39, 88, 0) 100%
   );
   background-repeat: no-repeat;
   background-position: left center;
@@ -4571,8 +4571,8 @@ overshoot.right {
   background-size: 200% 70%;
   background-image: radial-gradient(
     farthest-side at right,
-    rgba(247, 118, 142, 0.24) 99%,
-    rgba(247, 118, 142, 0) 100%
+    rgba(135, 39, 88, 0.24) 99%,
+    rgba(135, 39, 88, 0) 100%
   );
   background-repeat: no-repeat;
   background-position: right center;
@@ -5785,7 +5785,7 @@ iconview:selected,
 flowbox > flowboxchild:selected,
 calendar > grid > label.today {
   color: #e0def4;
-  background-color: rgba(247, 118, 142, 0.2);
+  background-color: rgba(135, 39, 88, 0.2);
 }
 
 text > selection,
