@@ -8,5 +8,10 @@
     },
     "git.openRepositoryInParentFolders": "always",
     "git.autofetch": true,
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "editor.fontFamily": "MesloLGS NF Regular",
+    "workbench.settings.applyToAllProfiles": [
+        "editor.fontFamily"
+    ],
+    "editor.fontLigatures": false
 }

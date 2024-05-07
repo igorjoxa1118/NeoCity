@@ -19,7 +19,7 @@ configuration {
 //----- Global Properties -----//
 
 * {
-font: "scientifica 12";
+font: "MesloLGS NF Regular 9";
 background: #3c3836;
 background-alt: #3c3836E0;
 foreground: #fbf1c7;

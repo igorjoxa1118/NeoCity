@@ -84,6 +84,13 @@ eww_path=""$HOME"/.config/i3/eww/powermenu/rice_colors/"$selected""
          echo "Color file not exist!"
        fi
 
+eww_player_path=""$HOME"/.config/i3/eww/player/colors/"$selected""
+       if [ -f "$eww_player_path"/player.scss ]; then
+         cp -rf "$eww_player_path"/player.scss "$HOME"/.config/i3/eww/player/
+       else
+         echo "Color file not exist!"
+       fi
+
 ###---Global. Change colors for Launcher
 launcher_path=""$HOME"/.config/i3/eww/launcher_colors/"$selected""
        if [ -f "$launcher_path"/Launcher.rasi ]; then

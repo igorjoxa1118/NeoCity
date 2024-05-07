@@ -339,16 +339,17 @@ nvidia_detect()
         rm -rf "$HOME/.config/i3/rices/emilia/config.ini"
         cd "$pwd"/polybar_rices/nvidia || exit
         cp -R config.ini "$HOME/.config/i3/rices/emilia/"
-        sed -i "s/nvidia_wmi_ec_backlight/${blacklight}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
+        sed -i "s/intel_backlight/${blacklight}/g" "$HOME"/.config/i3/scripts/system.ini
         echo -e "${ORANGE}Nvidia found!"
     else
         rm -rf "$HOME/.config/i3/rices/emilia/config.ini"
         cd "$pwd"/polybar_rices/not_nvidia || exit
         cp -R config.ini "$HOME/.config/i3/rices/emilia/"
-        sed -i "s/nvidia_wmi_ec_backlight/${blacklight}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
+        sed -i "s/intel_backlight/${blacklight}/g" "$HOME"/.config/i3/scripts/system.ini
         echo -e "${CYAN}Nvidia card no found!"
     fi
 }
+
 nvidia_detect
 sleep 2
 clear
