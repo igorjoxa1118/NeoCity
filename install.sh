@@ -255,10 +255,10 @@ fi
 
 ### --- Проверка безпроводных сетевых интерфейсов. Добавляем интерфейсы в конфиги. --- ###
 if [ ! -z "$wl_int" ]; then
-sed -i "s/wlp0s20f3/${wl_int}/g" "$HOME"/.config/i3/scripts/system.ini
+sed -i "s/wlan0/${wl_int}/g" "$HOME"/.config/i3/scripts/system.ini
 else
 read -p "What is you Wireless connection interface?(Example: wlan0, wlp0s20f3): " wl_int_custom
-sed -i "s/wlp0s20f3/${wl_int_custom}/g" "$HOME"/.config/i3/scripts/system.ini
+sed -i "s/wlan0/${wl_int_custom}/g" "$HOME"/.config/i3/scripts/system.ini
 fi
 }
 echo -e "${LIGHTCYAN}Connection interfaces install done!"
