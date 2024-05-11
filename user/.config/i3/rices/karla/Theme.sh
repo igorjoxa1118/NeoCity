@@ -152,13 +152,14 @@ set_launcher_config() {
 		-e 's/\(select-fg: \).*/\1#0b0e10;/'
 }
 
+DPI=$(xrdb -query | sed -nE 's/^Xft\.dpi:\s*//p')
+#HEIGHT=$((37 * DPI / 96))
+
 # Launch the bar
 launch_bars() {
 
 	for mon in $(polybar --list-monitors | cut -d":" -f1); do
 		(MONITOR=$mon polybar -q karla-bar -c "${rice_dir}"/config.ini) &
-		(MONITOR=$mon polybar -q karla-bar2 -c "${rice_dir}"/config.ini) &
-		(MONITOR=$mon polybar -q karla-bar3 -c "${rice_dir}"/config.ini) &
 	done
 
 }
@@ -169,7 +170,7 @@ set_icons
 set_firefox_theme
 
 set_term_config
-set_picom_config
+#set_picom_config
 launch_bars
 set_eww_colors
 set_jgmenu_colors

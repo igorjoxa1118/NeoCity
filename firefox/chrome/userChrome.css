@@ -7,13 +7,14 @@
  */
    
   --z0mbi3-bg: #171924;
+  --z0mbi3-fg: #1C1F2D;
   --z0mbi3-icon-color: #7aa2f7;
   --z0mbi3-nav-toolbar-padding: 8px;
   --z0mbi3-sidebar-bg: var(--z0mbi3-bg);
   --z0mbi3-sidebar-color: #9ece6a;
   --z0mbi3-tab-border-radius: 0px;
   --z0mbi3-tab-color: #7aa2f7;
-  --z0mbi3-tab-font-family: "JetBrainsMono NF", serif;
+  --z0mbi3-tab-font-family: "MesloLGS NF", serif;
   --z0mbi3-tab-font-size: 10pt;
   --z0mbi3-tab-font-weight: 600;
   --z0mbi3-tab-height: 42px;
@@ -22,11 +23,11 @@
   --z0mbi3-tab-soundplaying-bg: #e95c39;
   --z0mbi3-urlbar-color: #9ece6a;
   --z0mbi3-urlbar-focused-color: #7aa2f7;
-  --z0mbi3-urlbar-font-family: "JetBrainsMono NF", serif;
+  --z0mbi3-urlbar-font-family: "MesloLGS NF", serif;
   --z0mbi3-urlbar-font-size: 12pt;
   --z0mbi3-urlbar-font-weight: 800;
   --z0mbi3-urlbar-results-color: #7aa2f7;
-  --z0mbi3-urlbar-results-font-family: "JetBrainsMono NF", serif;
+  --z0mbi3-urlbar-results-font-family: "MesloLGS NF", serif;
   --z0mbi3-urlbar-results-font-size: 12pt;
   --z0mbi3-urlbar-results-font-weight: 700;
   --z0mbi3-urlbar-results-url-color: #7aa2f7;
@@ -240,14 +241,14 @@ border-bottom: unset !important;
 }
 
 #urlbar-background {
-	background-color: var(--z0mbi3-bg) !important;
+	background-color: var(--z0mbi3-fg) !important;
 	border: none !important;
 	outline: none !important;
 	opacity: .95 !important;
 }
 
 .toolbar-items {
-  background-color: var(--z0mbi3-bg) !important;
+  background-color: var(--z0mbi3-fg) !important;
 }
 
 #reload-button:not([disabled="true"]),

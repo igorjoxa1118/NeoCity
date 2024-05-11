@@ -152,12 +152,15 @@ set_launcher_config() {
 		-e 's/\(select-fg: \).*/\1#171924;/'
 }
 
+DPI=$(xrdb -query | sed -nE 's/^Xft\.dpi:\s*//p')
+# HEIGHT=$((26 * DPI / 96))
+
 # Launch the bar
 launch_bars() {
 
 	for mon in $(polybar --list-monitors | cut -d":" -f1); do
-		MONITOR=$mon polybar -q emi-bar -c "${rice_dir}"/config.ini &
-		MONITOR=$mon polybar -q emi-bar2 -c "${rice_dir}"/config.ini &
+		MONITOR=$mon polybar emi-bar -c "${rice_dir}"/config.ini &
+		MONITOR=$mon polybar emi-bar2 -c "${rice_dir}"/config.ini &
 	done
 }
 
