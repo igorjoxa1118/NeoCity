@@ -164,6 +164,9 @@ launch_bars() {
 
 }
 
+DPI=$(xrdb -query | sed -nE 's/^Xft\.dpi:\s*//p')
+# HEIGHT=$((26 * DPI / 96))
+
 ### ---------- Apply Configurations ---------- ###
 set_gtk_theme
 set_icons

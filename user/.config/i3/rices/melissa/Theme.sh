@@ -152,6 +152,9 @@ set_launcher_config() {
 		-e 's/\(select-fg: \).*/\1#3b4252;/'
 }
 
+DPI=$(xrdb -query | sed -nE 's/^Xft\.dpi:\s*//p')
+# HEIGHT=$((26 * DPI / 96))
+
 # Launch the bar
 launch_bars() {
 
