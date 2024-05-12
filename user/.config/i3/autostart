@@ -21,7 +21,7 @@ exec --no-startup-id "gnome-keyring-daemon --start --components=pkcs11"
 ###-- Start themes
 exec_always --no-startup-id $HOME/.config/i3/rices/emilia/Theme.sh
 ###-- Wallpaper
-exec_always --no-startup-id "feh -f -z --no-fehbg --bg-fill $HOME/.config/i3/rices/emilia/walls/arch-black-4k.png"
+exec_always --no-startup-id "feh -z --no-fehbg --bg-fill $HOME/.config/i3/rices/emilia/walls/"
 ###-- Dunst notification themes
 exec_always --no-startup-id "dunst -config $HOME/.config/dunst/emilia/dunstrc"
 ####################
