@@ -81,7 +81,7 @@ xdo ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common \
 ttf-nerd-fonts-symbols-mono yad cmus jgmenu rsync mpv jq git socat mpd polkit-gnome \
 stalonetray kitty lsd ranger micro blueman mousepad ristretto firefox thunar thunar-volman \
 thunar-media-tags-plugin thunar-archive-plugin polybar rofi xdg-user-dirs engrampa bc \
-nitrogen lxappearance-gtk3 feh picom yt-dlp fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-autosuggestions \
+nitrogen feh picom yt-dlp fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-autosuggestions \
 zsh-history-substring-search starship bluez-utils bluez-tools bluez-plugins bluez-libs bluez \
 zziplib zip xarchiver unzip unarj unarchiver p7zip libzip karchive gnome-autoar file-roller \
 cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenlive kodi \
@@ -181,6 +181,10 @@ done
 sleep 2
 clear
 
+if [ -f /usr/bin/lxappearance ]; then
+  sudo pacman -R lxappearance
+  sudo pacman -S lxappearance-gtk3 --noconfirm
+fi
                                           ########## ---------- Резервная копия файлов и каталогов ---------- ##########
 
 logo "Backup files"
