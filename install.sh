@@ -208,6 +208,7 @@ clear
 func_install_dots() {
 logo "Install dotfiles"
 cp -rf "$pwd"/user/.* "$HOME"
+cp -rf "$pwd"/user/Test_Musik "$HOME"
 echo -e "${GRE}Copy dots succesfully!"
 
 if [[ ! -f "/usr/local/bin/toggle-conkeww" ]]; then
