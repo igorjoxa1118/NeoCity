@@ -93,6 +93,13 @@ xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot xdotool)
 dependencias_paru=(cava zscroll-git eww-git gnome-icon-theme catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
 zenity-gtk3 lightdm-webkit2-theme-tty-git i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
 
+pipewire_pkg=(gst-plugin-pipewire libpipewire libwireplumber pipewire pipewire-alsa \
+pipewire-audio pipewire-jack pipewire-pulse pipewire-v4l2 pipewire-x11-bell \
+pipewire-zeroconf qemu-audio-pipewire wireplumber multilib/lib32-libpipewire \
+multilib/lib32-pipewire multilib/lib32-pipewire-jack)
+
+pipewire_pkg_yay=(pipewire-support)
+
 if [ ! -f /usr/bin/firefox ];then 
  sudo pacman -S firefox --noconfirm
  exit;
@@ -102,7 +109,6 @@ is_installed() {
   pacman -Qi "$1" &> /dev/null
   return $?
 }
-
 
                                           ########## ---------- Установка пакетов из стандартных репозиториев pacman ---------- ##########
 
@@ -185,6 +191,23 @@ if [ -f /usr/bin/lxappearance ]; then
   sudo pacman -R lxappearance
   sudo pacman -S lxappearance-gtk3 --noconfirm
 fi
+
+function pipewire_func() {
+  sudo pacman -Rdd pulseaudio pulseaudio-bluetooth pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack pulseaudio-lirc pulseaudio-zeroconf --noconfirm
+  sudo pacman -S "${pipewire_pkg[@]}" --noconfirm
+  paru -S "${pipewire_pkg_yay[@]}" --noconfirm
+}
+
+while true; do
+	read -rp "Do you want Pipewire? [y/N]: " yn
+		case $yn in
+			[Yy]* ) pipewire_func && break;;
+			[Nn]* ) break;;
+			* ) printf " Error: just write 'y' or 'n'\n\n";;
+		esac
+    done
+clear
+
                                           ########## ---------- Резервная копия файлов и каталогов ---------- ##########
 
 logo "Backup files"
@@ -265,7 +288,7 @@ else
 read -p "What is you Wireless connection interface?(Example: wlp0s20f3, wlp0s20f3): " wl_int_custom
 sed -i "s/wlp0s20f3/${wl_int_custom}/g" "$HOME"/.config/i3/scripts/system.ini
 fi
-}
+
 echo -e "${LIGHTCYAN}Connection interfaces install done!"
 sleep 2
 clear
