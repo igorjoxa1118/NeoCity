@@ -95,8 +95,8 @@ zenity-gtk3 lightdm-webkit2-theme-tty-git i3lock-color pamac-aur kazam kodi-addo
 
 pipewire_pkg=(gst-plugin-pipewire libpipewire libwireplumber pipewire pipewire-alsa \
 pipewire-audio pipewire-jack pipewire-pulse pipewire-v4l2 pipewire-x11-bell \
-pipewire-zeroconf qemu-audio-pipewire wireplumber multilib/lib32-libpipewire \
-multilib/lib32-pipewire multilib/lib32-pipewire-jack)
+pipewire-zeroconf qemu-audio-pipewire wireplumber lib32-libpipewire \
+multilib/lib32-pipewire lib32-pipewire-jack)
 
 pipewire_pkg_yay=(pipewire-support)
 
@@ -246,7 +246,7 @@ sudo cp -r "$HOME"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/
 else
 sudo cp -r "$HOME"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/
 fi
-
+}
 sleep 2
 clear
 
