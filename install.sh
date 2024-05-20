@@ -300,8 +300,8 @@ elif [ -d /etc/lightdm ]; then
 elif [ ! -f /usr/bin/sddm ]; then
   sudo pacman -S sddm --noconfirm
   paru -S sddm-conf-git --noconfirm
-  sudo cp -rf $pwd/lightdm/sddm.conf.d /etc/
-  sudo cp -rf $pwd/lightdm/catppuccin-mocha /usr/share/sddm/themes
+  sudo cp -rf $pwd/sddm/sddm.conf.d /etc/
+  sudo cp -rf $pwd/sddm/catppuccin-mocha /usr/share/sddm/themes
   sudo systemctl enable sddm
 else
   echo "install DM manualy"
