@@ -294,22 +294,18 @@ sleep 2
 clear
 
 if [ -f /usr/bin/lightdm-gtk-greeter ]; then
-  sudo pacman -R lightdm-gtk-greeter --noconfirm
-elif [ -f /etc/lightdm/slick-greeter.conf ]; then
-    sudo rm -rf /etc/lightdm/slick-greeter.conf
+  sudo pacman -Rs lightdm lightdm-settings lightdm-gtk-greeter --noconfirm
+elif [ -d /etc/lightdm ]; then
+  sudo rm -rf /etc/lightdm
+elif [ ! -f /usr/bin/sddm ]; then
+  sudo pacman -S sddm --noconfirm
+  paru -S sddm-conf-git --noconfirm
+  sudo cp -rf $pwd/lightdm/sddm.conf.d /etc/
+  sudo cp -rf $pwd/lightdm/catppuccin-mocha /usr/share/sddm/themes
+  sudo systemctl enable sddm
 else
-  echo "lightdm not found"
+  echo "install DM manualy"
   sleep 2
-fi
-
-paru -S web-greeter --noconfirm
-sudo pacman -S lightdm lightdm-webkit2-greeter --noconfirm
-
-if [ -f /usr/share/lightdm-webkit/themes/tty/css/default.css ]; then
-   sudo rm /usr/share/lightdm-webkit/themes/tty/css/default.css
-   sudo cp $pwd/lightdm/default.css /usr/share/lightdm-webkit/themes/tty/css/
-   sudo cp $pwd/lightdm/bg.jpg /usr/share/lightdm-webkit/themes/tty/img/
-   sudo rm -rf /etc/lightdm/* && sudo cp $pwd/lightdm/settings/* /etc/lightdm/
 fi
 
 ### --- Завершение копирования dot-файлов --- ###
