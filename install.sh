@@ -308,7 +308,6 @@ if [ -f /usr/bin/lightdm ]; then
   if [ -d /etc/lightdm ]; then
   sudo rm -rf /etc/lightdm
   fi
-elif [ -f /usr/bin/sddm ]; then
   paru -S sddm-conf-git --noconfirm
   sudo cp -rf $pwd/sddm/sddm.conf.d /etc/
   sudo cp -rf $pwd/sddm/catppuccin-mocha /usr/share/sddm/themes
