@@ -24,7 +24,7 @@ LIGHTBLUE='\033[1;34m'
 LIGHTPURPLE='\033[1;35m'
 LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
-pwd=$(pwd)
+work_dir=$(pwd)
 backup_folder=~/.Backup_files
 date=$(date +%Y%m%d-%H%M%S)
 repo_url="https://github.com/igorjoxa1118/NeoCity"
@@ -48,14 +48,14 @@ ____   ____.__        _______  .__    .___     .___      __    _____.__.__
     printf ' %s [%s%s %s%s %s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${text}" "${CNC}" "${CRE}" "${CNC}"
 }
 
-                                          ########## ---------- Скрипт НЕ должен быть запущен от sudo ---------- ##########
+########## ---------- Скрипт НЕ должен быть запущен от sudo ---------- ##########
 
 if [ "$(id -u)" = 0 ]; then
     echo -e "${LIGHTBLUE}This script MUST NOT be run as root user."
     exit 1
 fi
 
-                                          ########## ---------- Приветики пистолетики =) ---------- ##########
+########## ---------- Приветики пистолетики =) ---------- ##########
 
 logo "Welcome!"
 printf '%s%s Please launch and close Firefox if you have it. Otherwise, the Firefox theme wont install the first time.\nThis script checks to see if you have the necessary requirements, and if not, it will install them.%s\n\n' "${BLD}" "${CRE}" "${CNC}"
@@ -70,7 +70,7 @@ while true; do
     done
 clear
 
-                                          ######### -------------- Зависимости ------------------########
+######### -------------- Зависимости ------------------########
 
 dependencias=(base-devel alacritty brightnessctl dunst imagemagick \
 libwebp maim mpc neovim ncmpcpp npm pamixer \
@@ -110,7 +110,7 @@ is_installed() {
   return $?
 }
 
-                                          ########## ---------- Установка пакетов из стандартных репозиториев pacman ---------- ##########
+########## ---------- Установка пакетов из стандартных репозиториев pacman ---------- ##########
 
 printf "%s%sChecking for required packages...%s\n" "${BLD}" "${CBL}" "${CNC}"
 for pkges in "${dependencias[@]}"
@@ -126,7 +126,7 @@ done
 sleep 2
 clear
 
-                                          ########## ---------- Проверка существование домашних каталогов ---------- ##########
+########## ---------- Проверка существование домашних каталогов ---------- ##########
 
 # Проверка того, что архив user-dirs.dirs не существует в ~/.config
 	if [ ! -e "$HOME/.config/user-dirs.dirs" ]; then
@@ -136,7 +136,7 @@ clear
 sleep 2 
 clear
 
-                                          ########## ---------- Установка paru---------- ##########
+########## ---------- Установка paru---------- ##########
 logo "Do you have paru? Install it?"
 
 clone_paru() {
@@ -166,7 +166,7 @@ while true; do
     done
 clear
 
-                                          ########## ---------- Установка пакетов AUR---------- ##########
+########## ---------- Установка пакетов AUR---------- ##########
 
 is_installed_paru() {
   paru -Qi "$1" &> /dev/null
@@ -229,12 +229,13 @@ for del in polybar rofi picom.conf; do
    echo -e "${YELLOW}$del deleted"
 done
 clear
+
 ########## ---------- Установка dot-файлов и темы для Firefox ---------- ##########
 logo "Install dotfiles"
 sleep 2
 func_install_dots() {
-cp -rf "$pwd"/user/.* "$HOME"
-cp -rf "$pwd"/user/Test_Musik "$HOME"
+cp -rf "$work_dir"/user/.* "$HOME"
+cp -rf "$work_dir"/user/Test_Musik "$HOME"
 echo -e "${GRE}Copy dots succesfully!"
 
 if [[ ! -f "/usr/local/bin/toggle-conkeww" ]]; then
@@ -304,18 +305,25 @@ logo "Install SDDM"
 sleep 2
 if [ -f /usr/bin/lightdm ]; then
   sudo pacman -Rdd lightdm lightdm-gtk-greeter --noconfirm
-  sudo pacman -S sddm --noconfirm
-  if [ -d /etc/lightdm ]; then
-  sudo rm -rf /etc/lightdm
-  fi
   paru -S sddm-conf-git --noconfirm
-  sudo cp -rf $pwd/sddm/sddm.conf.d /etc/
-  sudo cp -rf $pwd/sddm/catppuccin-mocha /usr/share/sddm/themes
-  sudo systemctl enable sddm
-  echo -e "${LIGHTCYAN}Done!"
-else
-  echo -e "${LIGHTCYAN}install DM manualy"
+ if [ -d /usr/bin/sddm ]; then
+   sudo cp -rf $work_dir/sddm/sddm.conf.d /etc/
+   sudo cp -rf $work_dir/sddm/catppuccin-mocha /usr/share/sddm/themes
+   sudo systemctl enable sddm
+   echo -e "${LIGHTCYAN}Done!"
+ else 
+   sudo pacman -S sddm --noconfirm
+   sudo cp -rf $work_dir/sddm/sddm.conf.d /etc/
+   sudo cp -rf $work_dir/sddm/catppuccin-mocha /usr/share/sddm/themes
+   sudo systemctl enable sddm
+   echo -e "${LIGHTCYAN}Done!"
+ fi
 fi
+
+if [ -d /etc/lightdm ]; then
+  sudo rm -rf /etc/lightdm
+fi
+
 sleep 2
 clear
 
@@ -339,7 +347,7 @@ grep_ff=$(ls ~/.mozilla/firefox | grep default-release)
 
 copy_ff_func() {
 if [ ! -z "$grep_ff" ]; then
-for ff_themes in "$pwd"/firefox/*; do
+for ff_themes in "$work_dir"/firefox/*; do
   cp -R "${ff_themes}" ~/.mozilla/firefox/"$grep_ff"
   if [ $? -eq 0 ]; then
 	echo -e "${LIGHTBLUE}$ff_themes install done!"
@@ -370,13 +378,13 @@ nvidia_detect() {
 
     if [ $(lspci -k | grep -A 2 -E "(VGA|3D)" | grep -i nvidia | wc -l) -gt 0 ]; then
         rm -rf "$HOME/.config/i3/rices/emilia/config.ini"
-        cd "$pwd"/polybar_rices/nvidia || exit
+        cd "$work_dir"/polybar_rices/nvidia || exit
         cp -R config.ini "$HOME/.config/i3/rices/emilia/"
         sed -i "s/intel_backlight/${blacklight}/g" "$HOME"/.config/i3/scripts/system.ini
         echo -e "${ORANGE}Nvidia found!"
     else
         rm -rf "$HOME/.config/i3/rices/emilia/config.ini"
-        cd "$pwd"/polybar_rices/not_nvidia || exit
+        cd "$work_dir"/polybar_rices/not_nvidia || exit
         cp -R config.ini "$HOME/.config/i3/rices/emilia/"
         sed -i "s/intel_backlight/${blacklight}/g" "$HOME"/.config/i3/scripts/system.ini
         echo -e "${CYAN}Nvidia card no found!"
@@ -390,7 +398,7 @@ clear
                                         ### ---------- Включение сервиса MPD ---------- ###
 
 ### --- Проверка, включена ли служб на глобальном (системном) уровне. --- ###
-logo "Enabling services"
+logo "Enabling MPD services"
 sleep 2
 
 if systemctl is-enabled --quiet mpd.service; then
@@ -407,7 +415,7 @@ sleep 2
 clear
 
 ### --- Добавление пользователя в группы вирутальных машин. --- ###
-logo "Enabling Groups"
+logo "Add libvirt Group"
 sleep 2
 echo -e "${ORANGE}Enabling Groups"
 sleep 2
