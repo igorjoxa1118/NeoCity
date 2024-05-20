@@ -105,6 +105,12 @@ if [ ! -f /usr/bin/firefox ];then
  exit;
 fi
 
+if [ -f /usr/bin/zenity ]; then
+  sudo pacman -Rdd zenity
+elif [ -f /usr/bin/i3lock ]; then
+  sudo pacman -Rdd i3lock
+fi
+
 is_installed() {
   pacman -Qi "$1" &> /dev/null
   return $?
