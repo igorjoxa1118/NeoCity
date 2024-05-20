@@ -91,7 +91,7 @@ xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot xdotool)
 
 
 dependencias_paru=(cava zscroll-git eww-git gnome-icon-theme catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
-zenity-gtk3 lightdm-webkit2-theme-tty-git i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
+zenity-gtk3 i3lock-color pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
 
 pipewire_pkg=(gst-plugin-pipewire libpipewire libwireplumber pipewire pipewire-alsa \
 pipewire-audio pipewire-jack pipewire-pulse pipewire-v4l2 pipewire-x11-bell \
@@ -194,7 +194,7 @@ fi
 
 function pipewire_func() {
  if [ -f /usr/bin/pulseaudio ]; then
-  sudo pacman -Rs pulseaudio pulseaudio-bluetooth pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack pulseaudio-lirc pulseaudio-zeroconf --noconfirm
+  sudo pacman -Rdd pulseaudio pulseaudio-bluetooth pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack pulseaudio-lirc pulseaudio-zeroconf --noconfirm
  elif [ ! -f /usr/bin/pipewire ]; then
   sudo pacman -S "${pipewire_pkg[@]}" --noconfirm
   paru -S "${pipewire_pkg_yay[@]}" --noconfirm
@@ -213,9 +213,9 @@ while true; do
     done
 clear
 
-                                          ########## ---------- Резервная копия файлов и каталогов ---------- ##########
-
+########## ---------- Резервная копия файлов и каталогов ---------- ##########
 logo "Backup files"
+sleep 2
 echo -e "${CYAN}Backup files will be stored in .Backup_files"
 
 rsync -aAEHSXxr --exclude=".cache/mozilla/*" ~/.[^.]* $backup_folder
@@ -231,6 +231,7 @@ done
 clear
 ########## ---------- Установка dot-файлов и темы для Firefox ---------- ##########
 logo "Install dotfiles"
+sleep 2
 func_install_dots() {
 cp -rf "$pwd"/user/.* "$HOME"
 cp -rf "$pwd"/user/Test_Musik "$HOME"
@@ -249,13 +250,15 @@ else
 sudo cp -r "$HOME"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/
 fi
 }
+
 ### --- Завершение копирования dot-файлов --- ###
 func_install_dots
 sleep 2
 clear
+
 ########## ---------- Установка сведений о батареи ---------- ##########
 logo "Power supply install"
-
+sleep 2
 ad=$(ls /sys/class/power_supply/ | awk "NR==1 { print $2 }" | grep A)
 bat=$(ls /sys/class/power_supply/ | awk "NR==2 { print $2 }" | grep B)
 
@@ -267,7 +270,7 @@ clear
 
 ### -- Переменные для сетевых интерфейсов -- ###
 logo "Connection interfaces install"
-
+sleep 2
 en_int=$(ip -o link show | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
 et_int=$(ip -o link show | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
 wl_int=$(ip -o link show | sed -rn '/^[0-9]+: wl/{s/.: ([^:]*):.*/\1/p}')
@@ -295,10 +298,12 @@ fi
 echo -e "${LIGHTCYAN}Connection interfaces install done!"
 sleep 2
 clear
+
 ### --- Установка SDDM --- ###
-logo "Connection interfaces install"
-if [ -f /usr/bin/lightdm-gtk-greeter ]; then
-  sudo pacman -Rs lightdm lightdm-settings lightdm-gtk-greeter --noconfirm
+logo "Install SDDM"
+sleep 2
+if [ -f /usr/bin/lightdm ]; then
+  sudo pacman -Rdd lightdm lightdm-settings lightdm-gtk-greeter --noconfirm
 elif [ -d /etc/lightdm ]; then
   sudo rm -rf /etc/lightdm
 elif [ ! -f /usr/bin/sddm ]; then
@@ -315,6 +320,8 @@ sleep 2
 clear
 
 ##-- Установка пользователя в конфиги
+logo "Add user configs"
+sleep 2
 tmpuser=$(whoami)
 sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.config/blender/4.1/config/bookmarks.txt
 sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.gtkrc-2.0
@@ -322,9 +329,12 @@ sed -i "s/vir0id/${tmpuser}/g" "$HOME/.config/nitrogen/bg-saved.cfg"
 sed -i "s/vir0id/${tmpuser}/g" "$HOME/.config/nitrogen/nitrogen.cfg"
 sed -i "s/vir0id/${tmpuser}/g" "$HOME/.zshrc"
 sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.config/gtk-3.0/bookmarks
+sleep 2
+clear
 
 ### --- Установка темы и конфигов Firefox --- ###
 logo "Firefox theme install"
+sleep 2
 grep_ff=$(ls ~/.mozilla/firefox | grep default-release)
 
 copy_ff_func() {
@@ -351,11 +361,10 @@ fi
 
 sleep 2
 clear
-                                        #### ------- Проверка видеокарты. Если карта отсутствует, то модули на polybar будут другие --- ###
 
-
-
+#### ------- Проверка видеокарты. Если карта отсутствует, то модули на polybar будут другие --- ###
 logo "Check nvidia driver"
+sleep 2
 nvidia_detect() {
   blacklight=$(ls -1 /sys/class/backlight/)
 
@@ -380,9 +389,9 @@ clear
 
                                         ### ---------- Включение сервиса MPD ---------- ###
 
-logo "Enabling services"
-
 ### --- Проверка, включена ли служб на глобальном (системном) уровне. --- ###
+logo "Enabling services"
+sleep 2
 
 if systemctl is-enabled --quiet mpd.service; then
     printf "\n%s%sDisabling and stopping the global mpd service%s\n" "${BLD}" "${CBL}" "${CNC}"
@@ -398,16 +407,17 @@ sleep 2
 clear
 
 ### --- Добавление пользователя в группы вирутальных машин. --- ###
+logo "Enabling Groups"
+sleep 2
 echo -e "${ORANGE}Enabling Groups"
 sleep 2
     sudo usermod -a -G libvirt $(whoami)
     newgrp libvirt
 echo -e "${ORANGE}Done!"
+
 ########## --------- Замена шелла на zsh ---------- ##########
-
-
 logo "Changing default shell to zsh"
-
+sleep 2
 	if [[ $SHELL != "/usr/bin/zsh" ]]; then
     printf "\n%s%sChanging your shell to zsh. Your root password is needed.%s\n\n" "${BLD}" "${CYE}" "${CNC}"
     # Cambia la shell a zsh
