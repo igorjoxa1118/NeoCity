@@ -414,6 +414,8 @@ sleep 2
     sudo usermod -a -G libvirt $(whoami)
     newgrp libvirt
 echo -e "${ORANGE}Done!"
+sleep 2
+clear
 
 ########## --------- Замена шелла на zsh ---------- ##########
 logo "Changing default shell to zsh"
@@ -426,5 +428,5 @@ sleep 2
   else
     printf "%s%sYour shell is already zsh\nGood bye! installation finished, now reboot%s\n" "${BLD}" "${CGR}" "${CNC}"
   fi
-  sleep 2
-  zsh
+sleep 2
+zsh
