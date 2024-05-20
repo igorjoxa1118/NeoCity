@@ -304,8 +304,11 @@ logo "Install SDDM"
 sleep 2
 if [ -f /usr/bin/lightdm ]; then
   sudo pacman -Rdd lightdm lightdm-gtk-greeter --noconfirm
-  sudo rm -rf /etc/lightdm
   sudo pacman -S sddm --noconfirm
+  if [ -d /etc/lightdm ]; then
+  sudo rm -rf /etc/lightdm
+  fi
+elif [ -f /usr/bin/sddm ]; then
   paru -S sddm-conf-git --noconfirm
   sudo cp -rf $pwd/sddm/sddm.conf.d /etc/
   sudo cp -rf $pwd/sddm/catppuccin-mocha /usr/share/sddm/themes
