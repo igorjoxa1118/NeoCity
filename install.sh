@@ -229,32 +229,30 @@ for del in polybar rofi picom.conf; do
    echo -e "${YELLOW}$del deleted"
 done
 clear
-                                          ########## ---------- Установка dot-файлов и темы для Firefox ---------- ##########
-
-
-
-func_install_dots() {
+########## ---------- Установка dot-файлов и темы для Firefox ---------- ##########
 logo "Install dotfiles"
+func_install_dots() {
 cp -rf "$pwd"/user/.* "$HOME"
 cp -rf "$pwd"/user/Test_Musik "$HOME"
 echo -e "${GRE}Copy dots succesfully!"
 
 if [[ ! -f "/usr/local/bin/toggle-conkeww" ]]; then
-sudo mkdir -p /usr/share/garuda/jgmenu/
-sudo cp -r "$HOME"/.config/i3/bin/toggle-conkeww /usr/local/bin
-sudo cp -r "$HOME"/.config/i3/bin/i3-new-workspace /usr/local/bin
-sudo chmod 755 /usr/local/bin/i3-new-workspace
-sudo cp -r "$HOME"/.config/i3/bin/colors /usr/local/bin
-sudo cp -r "$HOME"/.config/i3/bin/def-dmenu /usr/local/bin
-sudo cp -r "$HOME"/.config/i3/bin/def-nmdmenu /usr/local/bin
-sudo cp -r "$HOME"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/
+  sudo mkdir -p /usr/share/garuda/jgmenu/
+  sudo cp -r "$HOME"/.config/i3/bin/toggle-conkeww /usr/local/bin
+  sudo cp -r "$HOME"/.config/i3/bin/i3-new-workspace /usr/local/bin
+  sudo chmod 755 /usr/local/bin/i3-new-workspace
+  sudo cp -r "$HOME"/.config/i3/bin/colors /usr/local/bin
+  sudo cp -r "$HOME"/.config/i3/bin/def-dmenu /usr/local/bin
+  sudo cp -r "$HOME"/.config/i3/bin/def-nmdmenu /usr/local/bin
+  sudo cp -r "$HOME"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/
 else
 sudo cp -r "$HOME"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/
 fi
 }
+### --- Завершение копирования dot-файлов --- ###
+func_install_dots
 sleep 2
 clear
-
 ########## ---------- Установка сведений о батареи ---------- ##########
 logo "Power supply install"
 
@@ -297,7 +295,8 @@ fi
 echo -e "${LIGHTCYAN}Connection interfaces install done!"
 sleep 2
 clear
-
+### --- Установка SDDM --- ###
+logo "Connection interfaces install"
 if [ -f /usr/bin/lightdm-gtk-greeter ]; then
   sudo pacman -Rs lightdm lightdm-settings lightdm-gtk-greeter --noconfirm
 elif [ -d /etc/lightdm ]; then
@@ -308,13 +307,10 @@ elif [ ! -f /usr/bin/sddm ]; then
   sudo cp -rf $pwd/sddm/sddm.conf.d /etc/
   sudo cp -rf $pwd/sddm/catppuccin-mocha /usr/share/sddm/themes
   sudo systemctl enable sddm
+  echo -e "${LIGHTCYAN}Done!"
 else
   echo -e "${LIGHTCYAN}install DM manualy"
-  sleep 2
 fi
-
-### --- Завершение копирования dot-файлов --- ###
-func_install_dots
 sleep 2
 clear
 
@@ -359,9 +355,8 @@ clear
 
 
 
-nvidia_detect()
-{
-  logo "Check nvidia driver"
+logo "Check nvidia driver"
+nvidia_detect() {
   blacklight=$(ls -1 /sys/class/backlight/)
 
     if [ $(lspci -k | grep -A 2 -E "(VGA|3D)" | grep -i nvidia | wc -l) -gt 0 ]; then
@@ -418,9 +413,8 @@ logo "Changing default shell to zsh"
     # Cambia la shell a zsh
     chsh -s $(which zsh)
     printf "%s%sShell changed to zsh. Please reboot.%s\n\n" "${BLD}" "${CGR}" "${CNC}"
-    sleep 2
   else
     printf "%s%sYour shell is already zsh\nGood bye! installation finished, now reboot%s\n" "${BLD}" "${CGR}" "${CNC}"
-    sleep 2
   fi
+  sleep 2
   zsh
