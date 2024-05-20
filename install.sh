@@ -304,9 +304,7 @@ logo "Install SDDM"
 sleep 2
 if [ -f /usr/bin/lightdm ]; then
   sudo pacman -Rdd lightdm lightdm-gtk-greeter --noconfirm
-elif [ -d /etc/lightdm ]; then
   sudo rm -rf /etc/lightdm
-elif [ ! -f /usr/bin/sddm ]; then
   sudo pacman -S sddm --noconfirm
   paru -S sddm-conf-git --noconfirm
   sudo cp -rf $pwd/sddm/sddm.conf.d /etc/
