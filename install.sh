@@ -193,9 +193,14 @@ if [ -f /usr/bin/lxappearance ]; then
 fi
 
 function pipewire_func() {
-  sudo pacman -Rdd pulseaudio pulseaudio-bluetooth pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack pulseaudio-lirc pulseaudio-zeroconf --noconfirm
+ if [ -f /usr/bin/pulseaudio ]; then
+  sudo pacman -Rs pulseaudio pulseaudio-bluetooth pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack pulseaudio-lirc pulseaudio-zeroconf --noconfirm
+ elif [ ! -f /usr/bin/pipewire ]; then
   sudo pacman -S "${pipewire_pkg[@]}" --noconfirm
   paru -S "${pipewire_pkg_yay[@]}" --noconfirm
+ else 
+  echo -e "${ORANGE}Somthing wrong!!"
+ fi
 }
 
 while true; do
@@ -304,7 +309,7 @@ elif [ ! -f /usr/bin/sddm ]; then
   sudo cp -rf $pwd/sddm/catppuccin-mocha /usr/share/sddm/themes
   sudo systemctl enable sddm
 else
-  echo "install DM manualy"
+  echo -e "${LIGHTCYAN}install DM manualy"
   sleep 2
 fi
 
