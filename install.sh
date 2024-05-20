@@ -100,15 +100,20 @@ multilib/lib32-pipewire lib32-pipewire-jack)
 
 pipewire_pkg_yay=(pipewire-support)
 
-if [ ! -f /usr/bin/firefox ];then 
+if [ ! -f /usr/bin/firefox ]; then 
  sudo pacman -S firefox --noconfirm
  exit;
 fi
 
 if [ -f /usr/bin/zenity ]; then
-  sudo pacman -Rdd zenity
+  sudo pacman -Rdd zenity --noconfirm
 elif [ -f /usr/bin/i3lock ]; then
-  sudo pacman -Rdd i3lock
+  sudo pacman -Rdd i3lock --noconfirm
+fi
+
+if [ -f /usr/bin/lxappearance ]; then
+  sudo pacman -R lxappearance --noconfirm
+  sudo pacman -S lxappearance-gtk3 --noconfirm
 fi
 
 is_installed() {
@@ -192,11 +197,6 @@ do
 done
 sleep 2
 clear
-
-if [ -f /usr/bin/lxappearance ]; then
-  sudo pacman -R lxappearance
-  sudo pacman -S lxappearance-gtk3 --noconfirm
-fi
 
 function pipewire_func() {
  if [ -f /usr/bin/pulseaudio ]; then
