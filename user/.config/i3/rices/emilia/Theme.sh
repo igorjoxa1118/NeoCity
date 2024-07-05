@@ -47,6 +47,12 @@ theme_name="userChrome.css"
     fi
 }
 
+# Blender themes
+
+# blender_themes() {
+# 	sed -i "s/colorshemas/.*/colorshemas/"$RICETHEME"/g" "$HOME"/.config/blender/4.1/config/bookmarks.txt
+# }
+
 # Reload terminal colors
 set_term_config() {
 	cat >"$HOME"/.config/alacritty/rice-colors.toml <<EOF

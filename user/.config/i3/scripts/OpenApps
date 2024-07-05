@@ -59,7 +59,7 @@ case "$1" in
         firefox
         ;;
     --editor)
-        geany
+        code
         ;;
     --telegram)
         telegram-desktop
