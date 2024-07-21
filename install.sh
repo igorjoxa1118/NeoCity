@@ -73,7 +73,7 @@ clear
 ######### -------------- Зависимости ------------------########
 
 dependencias=(base-devel alacritty brightnessctl dunst imagemagick \
-libwebp maim mpc neovim ncmpcpp npm pamixer \
+libwebp maim mpc neovim ncmpcpp npm pamixer neovim\
 papirus-icon-theme pacman-contrib physlock playerctl python-gobject \
 redshift rustup ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
 ttf-joypixels ttf-terminus-nerd ueberzug webp-pixbuf-loader xclip \
@@ -343,6 +343,9 @@ sed -i "s/vir0id/${tmpuser}/g" "$HOME/.config/nitrogen/bg-saved.cfg"
 sed -i "s/vir0id/${tmpuser}/g" "$HOME/.config/nitrogen/nitrogen.cfg"
 sed -i "s/vir0id/${tmpuser}/g" "$HOME/.zshrc"
 sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.config/gtk-3.0/bookmarks
+sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.local/share/applications/nvim.desktop
+sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.local/share/applications/ranger.desktop
+sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.local/share/applications/zfetch.desktop
 sleep 2
 clear
 
