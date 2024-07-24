@@ -1,6 +1,6 @@
-*.foreground:    #bb9af7
-*.background:    #16161E
-*.cursorColor:   #bb9af7
+*.foreground:    #1C1F2D
+*.background:    #171924
+*.cursorColor:   #7aa2f7
 *.highlightColor:#3A3F4B
 
 !*fading:                  40
@@ -61,7 +61,7 @@ URxvt*urgentOnBell: true
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollTtyKeypress: true
-URxvt.font: xft:Consolas:pixelsize=12, xft:Segoe UI Symbol:style=Regular:pixelsize=12, xft:Unifont:pixelsize=12
+URxvt.font: xft:Consolas:pixelsize=10, xft:Segoe UI Symbol:style=Regular:pixelsize=10, xft:Unifont:pixelsize=10
 URxvt.letterSpace : -2 ! Put characters slightly closer together
 URxvt.termName : rxvt-unicode-256color
 !Urxvt*termName:  screen-256color
