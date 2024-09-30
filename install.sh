@@ -246,17 +246,14 @@ clear
 echo -e "${GRE}Copy dots succesfully!"
 sleep 2
   if [ -d $work_dir/pkgs_virOS ]; then
-    sudo pacman -U $work_dir/pkgs_virOS/*.zst
+    sudo pacman -U $work_dir/pkgs_virOS/*.zst --noconfirm
   else
     mkdir $work_dir/pkgs_virOS
     cd $work_dir/pkgs_virOS
-    gdown 1HmABBwXzDZMyN_YKdLH8Ue-Ni4E17Tqu
-    gdown 1mK6qNf8536B_4C9Z49sKLrrZMpiIduzq
-    gdown 1pUesa_WDbAflg_GJPMfQPHV13KFmTdwq
-    sudo pacman -U $work_dir/pkgs_virOS/*.zst
-clear
-echo -e "${GRE}Packages in system!"
-sleep 2
+    gdown --folder 19SlCmblUJts_I5dlAwd2C3tq7q2-wLbS
+    echo -e "${GRE}Packages in system!"
+    sleep 2
+    sudo pacman -U $work_dir/pkgs_virOS/*.zst --noconfirm
   fi
 
 if [[ ! -f "/usr/local/bin/toggle-conkeww" ]]; then
