@@ -1,0 +1,9 @@
+<keymap>
+   <global>
+       <keyboard>
+           <F5>ReloadSkin()</F5>
+           <F7>Notification(Testing 123,Hello world)</F7>
+           <F8>Skin.ToggleDebug()</F8>
+       </keyboard>
+   </global>
+</keymap>

@@ -1,0 +1,13 @@
+DEPENDIENCIES:
+python3, mate-terminal
+
+CUSTOM ACTION:
+
+[Basic]
+Name: Index
+Description: Index items at the folder this is opened and create a text file
+Command: mate-terminal --name "thunar" --title "INDEX: %f" -- python3 "~/.config/Thunar/linux-thunar-custom-actions/Index/index.py" %f
+
+[Appearance Conditions]
+File Pattern: *
+Appears if selection contains: Directories

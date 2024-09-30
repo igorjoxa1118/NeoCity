@@ -1,0 +1,17 @@
+_conf() {
+  cp -rf /etc/skel-i3/. /etc/skel
+  rm -rf /etc/skel-i3
+}
+
+_sett() {
+   echo "QT_QPA_PLATFORMTHEME=qt5ct" > /etc/environment
+}
+
+post_install() {
+  _conf
+  _sett
+}
+
+post_upgrade() {
+  _conf
+}

@@ -1,0 +1,12 @@
+mkdir -p ~/.mysp-data && sudo chown -R 799:799 ~/.mysp-data
+mkdir -p ~/.mysp-logs && sudo chown -R 799:799 ~/.mysp-logs
+
+sudo useradd -m msaiotsensingplatform
+sudo groupadd msaiotsensingplatform //ignore the error
+sudo usermod -aG msaiotsensingplatform msaiotsensingplatform
+mkdir -p ~/.mysp-data
+sudo chown -R msaiotsensingplatform:msaiotsensingplatform ~/.mysp-data
+sudo chmod -R 777 ~/.mysp-data
+mkdir -p ~/.mysp-logs
+sudo chown -R msaiotsensingplatform:msaiotsensingplatform ~/.mysp-logs
+sudo chmod -R 777 ~/.mysp-logs

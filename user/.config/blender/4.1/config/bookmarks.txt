@@ -1,0 +1,3 @@
+[Bookmarks]
+[Recent]
+/home/vir0id/.config/blender/colorshemas/

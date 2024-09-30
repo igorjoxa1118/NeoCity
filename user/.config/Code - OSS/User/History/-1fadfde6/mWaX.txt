@@ -1,0 +1,12 @@
+DEPENDIENCIES:
+python3, mate-terminal
+
+CUSTOM ACTION:
+
+[Basic]
+Name: Rename Files Based on Parent Folder
+Command: mate-terminal --name "thunar" --title "RENAMING FILES BASED ON PARENT FOLDER" -- python3 "~/.config/Thunar/linux-thunar-custom-actions/Rename-Files-Based-On-Parent-Folder/rename-files-based-on-parent-folder.py" %f
+
+[Appearance Conditions]
+File Pattern: *
+Appears if selection contains: Directories

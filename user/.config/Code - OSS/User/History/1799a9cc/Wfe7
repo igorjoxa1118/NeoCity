@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+
+#	Script to open with selected terminal
+# Author: z0mbi3
+#	url: https://github.com/gh0stzk/dotfiles
+
+cfg_term="$HOME/.config/i3/scripts/.term"
+
+if [ ! -e "$cfg_term" ]; then
+    touch "$cfg_term"
+    echo alacritty >"$cfg_term"
+fi
+
+MY_TERM=$(<"$cfg_term")
+export MY_TERM
+
+
+
+CHOOSE_TERMINAL() {
+
+ALACRITTY="Alacritty"
+KITTY="Kitty"
+
+options="$ALACRITTY\n$KITTY"
+chosen="$(echo -e "$options" | rofi -theme "$HOME"/.config/i3/scripts/TermSelector.rasi -dmenu)"
+	case $chosen in
+
+			"$ALACRITTY")
+				echo alacritty >"${cfg_term}"
+				;;
+			"$KITTY")
+				echo kitty >"${cfg_term}"
+				;;
+	esac
+}
+
+if [[ "$1" == "--selecterm" ]]; then
+  CHOOSE_TERMINAL
+fi
+
+if [[ "$MY_TERM" == "alacritty" ]]; then
+
+	if [[ "$1" == "--terminal" ]]; then
+		alacritty
+	elif [[ "$1" == "--floating" ]]; then
+		alacritty --title floating
+	elif [[ "$1" == "--update-paru" ]]; then
+		alacritty  --title floating -e ~/.config/i3/scripts/Updates --update-paru
+	elif [[ "$1" == "--update-pacman" ]]; then
+		alacritty --title floating -e ~/.config/i3/scripts/Updates --update-pacman
+	elif [[ "$1" == "--update-garuda" ]]; then
+		alacritty  --title floating -e ~/.config/i3/scripts/Updates --update-garuda
+	elif [[ "$1" == "--checkupdates" ]]; then
+		alacritty --title floating -e ~/.config/i3/scripts/Updates --print-updates
+	elif [[ "$1" == "--ranger" ]]; then
+		alacritty --title floating -e ranger
+	elif [[ "$1" == "--nvim" ]]; then
+		alacritty -e nvim
+	elif [[ "$1" == "--music" ]]; then
+		alacritty --title floating -e $music
+	elif [[ "$1" == "--fetch" ]]; then
+		alacritty --title floating -e ~/.local/bin/sysfetch
+	fi
+	
+elif [[ "$MY_TERM" == "kitty" ]]; then
+
+	if [[ "$1" == "--terminal" ]]; then
+		kitty 
+	elif [[ "$1" == "--floating" ]]; then
+		kitty --title floating
+	elif [[ "$1" == "--update-paru" ]]; then
+		kitty --title floating -e ~/.config/i3/scripts/Updates --update-paru
+	elif [[ "$1" == "--update-pacman" ]]; then
+		kitty  --title floating -e ~/.config/i3/scripts/Updates --update-pacman
+	elif [[ "$1" == "--update-garuda" ]]; then
+		kitty  --title floating -e ~/.config/i3/scripts/Updates --update-garuda
+	elif [[ "$1" == "--checkupdates" ]]; then
+		kitty --title floating -e ~/.config/i3/scripts/Updates --print-updates
+	elif [[ "$1" == "--ranger" ]]; then
+		kitty --title floating -e ranger
+	elif [[ "$1" == "--nvim" ]]; then
+		kitty -e nvim
+	elif [[ "$1" == "--music" ]]; then
+		kitty --title floating -e $music
+	elif [[ "$1" == "--fetch" ]]; then
+		kitty --title floating -e ~/.local/bin/sysfetch
+	fi
+	
+fi

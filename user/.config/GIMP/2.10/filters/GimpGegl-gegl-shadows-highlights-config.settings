@@ -1,0 +1,13 @@
+# settings
+
+(GimpGegl-gegl-shadows-highlights-config "2024-09-22 13:22:51"
+    (time 1727000571)
+    (shadows 1.8799999999999999)
+    (highlights -36.869999999999997)
+    (whitepoint 0.625)
+    (radius 70.069999999999993)
+    (compress 60.939999999999998)
+    (shadows-ccorrect 100)
+    (highlights-ccorrect 44.380000000000003))
+
+# end of settings

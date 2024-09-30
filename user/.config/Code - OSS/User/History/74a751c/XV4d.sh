@@ -1,0 +1,30 @@
+#!/bin/bash
+#set -x 
+del="$(pwd)"
+zst=$(ls | grep Tokio_night)
+BAK_DIR="$HOME/.config/config_bak"
+config_main="$HOME/.config"
+
+check() {
+for dir in "$del/pkg" "$del/src" "$del/Tokio_night" "$zst"
+ do if [[ -d $dir ]] || [[ -f $zst ]]; then
+   rm -rf $dir
+   rm -rf $zst
+   fi
+done
+}
+
+if check; then
+   mv -f $BAK_DIR/* $config_main
+   mv -f $BAK_DIR/home/.* $HOME
+
+  if [[ ! -s "$BAK_DIR/home" ]]; then
+   rm -rf "$BAK_DIR/home"
+   fi
+
+  if [[ ! -s $BAK_DIR ]]; then
+   rm -rf "$BAK_DIR"
+  else
+   echo "Directory not empty"
+   fi
+fi

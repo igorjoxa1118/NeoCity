@@ -1,0 +1,27 @@
+user: dark_grey #cyan
+group: dark_grey #foreground
+permission:
+  read: dark_grey #purple
+  write: dark_grey #pink
+  exec: red #cyan
+  exec-sticky: dark_grey #cyan
+  no-access: dark_grey #red
+  octal: 6
+  acl: dark_grey
+  context: dark_grey
+date:
+  hour-old: 183 #comment 20% lighter
+  day-old: 103 #comment
+  older: dark_grey #current line
+size:
+  none: 60 #current line
+  small: 60 #green
+  medium: 222 #orange
+  large: 210 #red
+inode:
+  valid: white #foreground
+  invalid: 210 #red
+links:
+  valid: white #cyan
+  invalid: 210 #red
+tree-edge: 183 #purple

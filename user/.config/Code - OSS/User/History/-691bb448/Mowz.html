@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <!-- Favicon -->
+    <link rel="icon" href="public/img/favicon/favicon.svg">
+    <!-- CSS -->
+    <link rel="stylesheet" href="public/css/main.css">
+</head>
+<body>
+    <nav>
+        <!-- Time -->
+        <p id="time" data-mode="pulse" data-format="24h"></p>
+        <!-- Search bar -->
+        <form
+            action="https://www.google.com/search"
+            method="get"
+            target="_self"
+            id="search-form"
+        >
+            <input
+                id="search"
+                type="text"
+                name="q"
+                placeholder="Search..."
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="off"
+                spellcheck="false"
+            >
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960"><path d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"/></svg>
+            </button>
+        </form>
+    </nav>
+    <main>
+        <hr id="rule-main" class="hide">
+        <section id="bookmarks">
+        </section>
+        <hr id="rule-feed" class="hide">
+        <section id="feed">
+        </section>
+    </main>
+    <footer>
+        <button id="personalize">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve"><path d="M24,44c-2.7,0-5.3-0.5-7.8-1.6c-2.4-1-4.6-2.5-6.4-4.3s-3.2-3.9-4.3-6.4S4,26.7,4,24c0-2.8,0.5-5.4,1.6-7.9 s2.5-4.5,4.4-6.3s4-3.2,6.5-4.2s5.1-1.6,8-1.6c2.6,0,5.1,0.4,7.5,1.3s4.4,2.1,6.2,3.7c1.8,1.6,3.2,3.4,4.2,5.6 c1.1,2.2,1.6,4.5,1.6,7.1c0,3.6-1,6.4-3.1,8.5c-2.1,2.1-4.9,3.1-8.4,3.1h-3.8c-0.6,0-1.1,0.2-1.5,0.7s-0.6,1-0.6,1.5 c0,0.7,0.2,1.3,0.7,1.9c0.5,0.6,0.7,1.3,0.7,2.2c0,0.9-0.4,1.8-1.2,2.8S25,44,24,44z M12.4,25.3c0.7,0,1.2-0.2,1.8-0.8 s0.8-1.1,0.8-1.8c0-0.7-0.2-1.2-0.8-1.8c-0.5-0.5-1.1-0.8-1.8-0.8s-1.2,0.2-1.8,0.8c-0.5,0.5-0.8,1.1-0.8,1.8c0,0.7,0.2,1.2,0.8,1.8 S11.7,25.3,12.4,25.3z M18.6,16.8c0.7,0,1.2-0.2,1.8-0.8c0.5-0.5,0.8-1.1,0.8-1.7s-0.2-1.2-0.8-1.8s-1.1-0.8-1.8-0.8 c-0.7,0-1.2,0.2-1.8,0.8s-0.8,1.1-0.8,1.8s0.2,1.2,0.8,1.7C17.4,16.5,18,16.8,18.6,16.8z M29.4,16.8c0.7,0,1.2-0.2,1.8-0.8 c0.5-0.5,0.8-1.1,0.8-1.7s-0.2-1.2-0.8-1.8s-1.1-0.8-1.8-0.8s-1.2,0.2-1.8,0.8s-0.8,1.1-0.8,1.8s0.2,1.2,0.8,1.7 C28.1,16.5,28.7,16.8,29.4,16.8z M35.9,25.3c0.7,0,1.2-0.2,1.8-0.8s0.8-1.1,0.8-1.8c0-0.7-0.2-1.2-0.8-1.8c-0.5-0.5-1.1-0.8-1.8-0.8 c-0.7,0-1.2,0.2-1.8,0.8c-0.5,0.5-0.8,1.1-0.8,1.8c0,0.7,0.2,1.2,0.8,1.8S35.2,25.3,35.9,25.3z"/></svg>
+        </button>
+        <div id="settings" class="hide">
+            <ul>
+                <li>
+                    <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M480 936q-150 0-255-105T120 576q0-150 105-255t255-105q8 0 17 .5t23 1.5q-36 32-56 79t-20 99q0 90 63 153t153 63q52 0 99-18.5t79-51.5q1 12 1.5 19.5t.5 14.5q0 150-105 255T480 936Z"/></svg>
+                        <span>Theme</span>
+                    </h2>
+                    <button id="settings-theme-switch">Switch</button>
+                </li>
+                <li>
+                    <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960"><path d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"/></svg>
+                        <span>Search</span>
+                    </h2>
+                    <div>
+                        <select id="settings-search">
+                            <option value="https://www.google.com/search">Google</option>
+                            <option value="https://duckduckgo.com/">DuckDuckGo</option>
+                            <option value="https://www.bing.com/search">Bing</option>
+                            <option value="https://search.yahoo.com/search">Yahoo</option>
+                            <option value="https://www.ecosia.org/search">Ecosia</option>
+                            <option value="https://www.qwant.com/">Qwant</option>
+                            <option value="https://www.startpage.com/do/search">Startpage</option>
+                            <option value="https://you.com/search?q=">You</option>
+                            <option value="https://www.phind.com/search">Phind</option>
+                        </select>
+                        <input type="checkbox" id="settings-search-switch" checked>
+                        <label for="settings-search-switch"></label>
+                    </div>
+                </li>
+                <li>
+                    <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="m627 769 45-45-159-160V363h-60v225l174 181ZM480 976q-82 0-155-31.5t-127.5-86Q143 804 111.5 731T80 576q0-82 31.5-155t86-127.5Q252 239 325 207.5T480 176q82 0 155 31.5t127.5 86Q817 348 848.5 421T880 576q0 82-31.5 155t-86 127.5Q708 913 635 944.5T480 976Z"/></svg>
+                        <span>Time</span>
+                    </h2>
+                    <div>
+                        <select id="settings-time-mode">
+                            <option value="pulse">Pulse</option>
+                            <option value="static">Static</option>
+                        </select>
+                        <button id="settings-time-format">24h</button>
+                        <input type="checkbox" id="settings-time-switch" checked>
+                        <label for="settings-time-switch"></label>
+                    </div>
+                </li>
+                <li>
+                    <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M220 976q-24 0-42-18t-18-42V236q0-24 18-42t42-18h520q24 0 42 18t18 42v680q0 24-18 42t-42 18H220Zm266-474 97-56 97 56V236H486v266Z"/></svg>
+                        <span>Bookmarks</span>
+                    </h2>
+                    <div>
+                        <button id="settings-bookmarks">Edit</button>
+                        <input type="checkbox" id="settings-bookmarks-switch" checked>
+                        <label for="settings-bookmarks-switch"></label>
+                    </div>
+                </li>
+                <li class="settings-content hide">
+                    <textarea id="settings-bookmarks-edit" rows="20" wrap="off" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
+                    <a class="info" href="https://github.com/PonyLucky/gh0stzk-Firefox/tree/master/extension#bookmarks" target="_blank" title="Info / Help">i</a>
+                    <button id="settings-bookmarks-save">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M840 373v503q0 24-18 42t-42 18H180q-24 0-42-18t-18-42V276q0-24 18-42t42-18h503l157 157ZM479.765 811Q523 811 553.5 780.735q30.5-30.264 30.5-73.5Q584 664 553.735 633.5q-30.264-30.5-73.5-30.5Q437 603 406.5 633.265q-30.5 30.264-30.5 73.5Q376 750 406.265 780.5q30.264 30.5 73.5 30.5ZM233 472h358V329H233v143Z"/></svg>
+                        <span>Save</span>
+                    </button>
+                </li>
+                <li>
+                    <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M218 936q-41 0-69.5-28.5T120 838q0-41 28.5-69.5T218 740q41 0 69.5 28.5T316 838q0 41-28.5 69.5T218 936Zm492 0q0-122-46.5-229.5T537 519q-80-80-187.5-126.5T120 346v-90q141 0 264.5 53.5t216 146q92.5 92.5 146 216T800 936h-90Zm-238 0q0-158-97-259T120 576v-90q97 0 178 34t139.5 94Q496 674 529 756.5T562 936h-90Z"/></svg>
+                        <span>News</span>
+                    </h2>
+                    <div>
+                        <button id="settings-news">Edit</button>
+                        <input type="checkbox" id="settings-news-switch" checked>
+                        <label for="settings-news-switch"></label>
+                    </div>
+                </li>
+                <li class="settings-content hide">
+                    <textarea id="settings-news-edit" rows="20" wrap="off" spellcheck="false" autocorrect="off" autocomplete="off"></textarea>
+                    <button id="settings-news-save">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M840 373v503q0 24-18 42t-42 18H180q-24 0-42-18t-18-42V276q0-24 18-42t42-18h503l157 157ZM479.765 811Q523 811 553.5 780.735q30.5-30.264 30.5-73.5Q584 664 553.735 633.5q-30.264-30.5-73.5-30.5Q437 603 406.5 633.265q-30.5 30.264-30.5 73.5Q376 750 406.265 780.5q30.264 30.5 73.5 30.5ZM233 472h358V329H233v143Z"/></svg>
+                        <span>Save</span>
+                    </button>
+                </li>
+                <li>
+                    <h2>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="m388 976-20-126q-19-7-40-19t-37-25l-118 54-93-164 108-79q-2-9-2.5-20.5T185 576q0-9 .5-20.5T188 535L80 456l93-164 118 54q16-13 37-25t40-18l20-127h184l20 126q19 7 40.5 18.5T669 346l118-54 93 164-108 77q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l108 78-93 164-118-54q-16 13-36.5 25.5T592 850l-20 126H388Zm92-270q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Z"/></svg>
+                        <span>Config</span>
+                    </h2>
+                    <div>
+                        <button id="settings-import" class="btn-icon" title="Import settings from JSON">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M220 896q-24 0-42-18t-18-42V693h60v143h520V693h60v143q0 24-18 42t-42 18H220Zm260-153L287 550l43-43 120 120V256h60v371l120-120 43 43-193 193Z"/></svg>
+                        </button>
+                        <button id="settings-export" class="btn-icon" title="Export settings to JSON">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M220 896q-24 0-42-18t-18-42V693h60v143h520V693h60v143q0 24-18 42t-42 18H220Zm230-153V372L330 492l-43-43 193-193 193 193-43 43-120-120v371h-60Z"/></svg>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+            <div class="settings-footer">
+                <button id="settings-fullscreen">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M200 856V663h60v133h133v60H200Zm0-367V296h193v60H260v133h-60Zm367 367v-60h133V663h60v193H567Zm133-367V356H567v-60h193v193h-60Z"/></svg>
+                    <span>Fullscreen</span>
+                </button>
+                <button id="settings-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                    <span>Close</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+    <!-- JS -->
+    <script src="shared/themes.js"></script>
+    <script src="shared/bookmarks.js"></script>
+    <!-- <script src="shared/feeds.js"></script> -->
+    <script src="public/js/themes.js"></script>
+    <script src="public/js/nav.js"></script>
+    <script src="public/js/bookmarks.js"></script>
+    <script src="public/js/feed.js"></script>
+    <script src="public/js/personalize.js"></script>
+    <script src="public/js/settings.js"></script>
+    <script src="public/js/cors.js"></script>
+    <script src="public/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,2637 @@
+commands = {}
+dependencies = {
+   ["nvim-treesitter"] = {
+      ["scm-1"] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   }
+}
+modules = {
+   ["autoload/nvim_treesitter.vim"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.caching"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.compat"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.configs"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.fold"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.health"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.highlight"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.incremental_selection"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.indent"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.info"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.install"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.locals"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.parsers"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.query"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.query_predicates"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.shell_command_selectors"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.statusline"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.ts_utils"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.tsrange"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["lua.nvim-treesitter.utils"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["plugin.nvim-treesitter"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ada/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ada/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ada/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/agda/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/agda/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/arduino/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/arduino/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/arduino/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/arduino/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/arduino/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/astro/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/astro/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/astro/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/astro/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/astro/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/awk/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/awk/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bash/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bash/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bash/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bash/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bass/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bass/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bass/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bass/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bass/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/beancount/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/beancount/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bibtex/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bibtex/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bibtex/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bicep/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bicep/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bicep/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bicep/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/bicep/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/blueprint/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/c/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/c/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/c/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/c/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/c/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/c_sharp/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/c_sharp/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/c_sharp/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/c_sharp/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/capnp/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/capnp/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/capnp/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/capnp/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/capnp/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/chatito/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/chatito/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/chatito/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/chatito/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/chatito/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/clojure/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/clojure/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/clojure/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/clojure/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cmake/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cmake/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/comment/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/commonlisp/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/commonlisp/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/commonlisp/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cooklang/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cpon/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cpon/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cpon/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cpon/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cpon/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cpp/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cpp/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cpp/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cpp/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cpp/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/css/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/css/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/css/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/css/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cuda/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cuda/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cuda/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cuda/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cuda/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cue/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cue/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cue/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cue/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/cue/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/d/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/d/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/d/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/d/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/dart/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/dart/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/dart/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/dart/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/dart/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/devicetree/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/devicetree/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/devicetree/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/devicetree/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/devicetree/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/dhall/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/dhall/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/dhall/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/diff/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/dockerfile/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/dockerfile/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/dot/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/dot/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ebnf/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ecma/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ecma/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ecma/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ecma/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ecma/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/eex/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/eex/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elixir/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elixir/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elixir/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elixir/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elixir/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elm/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elm/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elsa/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elsa/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elsa/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elsa/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elsa/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elvish/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/elvish/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/embedded_template/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/embedded_template/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/erlang/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/erlang/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fennel/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fennel/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fennel/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fennel/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/firrtl/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/firrtl/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/firrtl/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/firrtl/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/firrtl/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fish/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fish/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fish/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fish/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fish/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/foam/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/foam/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/foam/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/foam/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/foam/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fortran/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fortran/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fortran/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fsh/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/func/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fusion/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fusion/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fusion/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/fusion/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gdscript/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gdscript/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gdscript/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gdscript/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gdscript/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/git_config/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/git_config/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/git_rebase/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/git_rebase/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gitattributes/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gitattributes/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gitcommit/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gitcommit/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gitignore/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gleam/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gleam/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gleam/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gleam/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gleam/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/glimmer/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/glsl/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/glsl/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/glsl/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/glsl/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/glsl/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/go/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/go/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/go/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/go/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/go/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/godot_resource/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/godot_resource/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/godot_resource/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gomod/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gomod/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gosum/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gowork/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/gowork/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/graphql/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/graphql/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/graphql/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hack/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hare/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hare/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hare/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hare/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hare/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/haskell/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/haskell/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/haskell/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hcl/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hcl/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hcl/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hcl/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/heex/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/heex/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/heex/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/heex/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/heex/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hjson/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hjson/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hjson/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hjson/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hjson/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hlsl/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hlsl/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hlsl/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hlsl/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hlsl/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hocon/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/hocon/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/html/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/html/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/html/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/html/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/html/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/html_tags/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/html_tags/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/html_tags/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/htmldjango/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/htmldjango/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/htmldjango/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/htmldjango/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/http/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/http/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ini/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ini/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/janet_simple/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/janet_simple/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/janet_simple/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/janet_simple/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/java/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/java/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/java/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/java/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/java/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/javascript/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/javascript/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/javascript/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/javascript/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/javascript/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/jq/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/jq/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/jsdoc/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/json/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/json/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/json/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/json/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/json5/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/json5/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/jsonc/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/jsonc/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/jsonc/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/jsonc/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/jsonc/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/jsonnet/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/jsx/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/jsx/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/jsx/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/jsx/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/julia/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/julia/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/julia/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/julia/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/julia/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/kdl/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/kdl/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/kdl/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/kdl/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/kdl/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/kotlin/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/kotlin/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/kotlin/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/kotlin/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/lalrpop/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/lalrpop/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/lalrpop/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/latex/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/latex/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/latex/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ledger/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ledger/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ledger/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ledger/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/llvm/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/lua/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/lua/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/lua/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/lua/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/lua/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/luadoc/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/luap/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/luau/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/luau/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/luau/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/luau/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/luau/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/m68k/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/m68k/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/m68k/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/m68k/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/make/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/make/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/make/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/markdown/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/markdown/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/markdown/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/markdown_inline/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/markdown_inline/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/matlab/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/matlab/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/matlab/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/menhir/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/menhir/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/mermaid/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/meson/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/meson/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/meson/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/mlir/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/mlir/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/nickel/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ninja/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ninja/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ninja/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/nix/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/nix/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/nix/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/nix/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ocaml/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ocaml/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ocaml/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ocaml/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ocaml/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ocaml_interface/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ocaml_interface/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ocaml_interface/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ocaml_interface/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ocaml_interface/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ocamllex/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ocamllex/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pascal/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pascal/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pascal/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pascal/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pascal/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/passwd/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/perl/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/perl/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/perl/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/php/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/php/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/php/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/php/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/php/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/phpdoc/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pioasm/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pioasm/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/po/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/po/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/po/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/poe_filter/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/poe_filter/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/poe_filter/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/poe_filter/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pony/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pony/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pony/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pony/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pony/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/prisma/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/proto/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/proto/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/prql/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/prql/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pug/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/pug/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/puppet/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/puppet/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/puppet/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/puppet/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/puppet/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/python/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/python/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/python/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/python/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/python/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ql/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ql/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ql/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ql/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ql/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/qmldir/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/qmldir/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/qmljs/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/qmljs/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/query/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/query/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/query/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/query/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/query/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/r/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/r/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/r/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/r/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/racket/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/racket/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/racket/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rasi/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rasi/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rasi/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rasi/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/regex/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rego/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rego/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rnoweb/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rnoweb/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rnoweb/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ron/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ron/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ron/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ron/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ron/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rst/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rst/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rst/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ruby/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ruby/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ruby/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ruby/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ruby/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rust/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rust/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rust/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rust/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/rust/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/scala/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/scala/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/scala/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/scala/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/scheme/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/scheme/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/scheme/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/scss/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/scss/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/scss/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/slint/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/slint/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/smali/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/smali/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/smali/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/smali/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/smali/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/smithy/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/solidity/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/sparql/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/sparql/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/sparql/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/sparql/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/sparql/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/sql/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/sql/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/squirrel/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/squirrel/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/squirrel/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/squirrel/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/squirrel/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/starlark/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/starlark/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/starlark/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/starlark/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/starlark/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/supercollider/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/supercollider/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/supercollider/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/supercollider/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/supercollider/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/surface/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/surface/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/surface/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/surface/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/svelte/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/svelte/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/svelte/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/svelte/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/swift/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/swift/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/swift/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/sxhkdrc/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/sxhkdrc/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/sxhkdrc/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/t32/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/t32/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/t32/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/t32/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tablegen/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tablegen/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tablegen/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tablegen/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tablegen/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/teal/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/teal/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/teal/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/teal/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/teal/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/terraform/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/terraform/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/terraform/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/terraform/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/thrift/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/thrift/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/thrift/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/thrift/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/thrift/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tiger/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tiger/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tiger/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tiger/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tiger/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tlaplus/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tlaplus/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tlaplus/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tlaplus/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/todotxt/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/toml/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/toml/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/toml/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/toml/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/toml/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tsx/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tsx/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tsx/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tsx/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/tsx/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/turtle/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/turtle/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/turtle/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/turtle/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/turtle/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/twig/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/twig/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/typescript/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/typescript/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/typescript/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/typescript/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/typescript/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ungrammar/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ungrammar/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ungrammar/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ungrammar/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/ungrammar/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/uxntal/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/uxntal/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/uxntal/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/uxntal/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/uxntal/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/v/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/v/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/v/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/v/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/v/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/vala/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/vala/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/verilog/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/verilog/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/verilog/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/verilog/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/vhs/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/vim/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/vim/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/vim/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/vim/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/vimdoc/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/vimdoc/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/vue/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/vue/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/vue/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/vue/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/wgsl/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/wgsl/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/wgsl/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/wgsl_bevy/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/wgsl_bevy/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/wgsl_bevy/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yaml/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yaml/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yaml/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yaml/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yaml/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yang/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yang/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yang/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yang/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yuck/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yuck/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yuck/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yuck/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/yuck/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/zig/folds.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/zig/highlights.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/zig/indents.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/zig/injections.scm"] = {
+      "nvim-treesitter/scm-1"
+   },
+   ["queries/zig/locals.scm"] = {
+      "nvim-treesitter/scm-1"
+   }
+}
+repository = {
+   ["nvim-treesitter"] = {
+      ["scm-1"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               ["autoload/nvim_treesitter.vim"] = "autoload/nvim_treesitter.vim",
+               ["lua.nvim-treesitter"] = "lua/nvim-treesitter.lua",
+               ["lua.nvim-treesitter.caching"] = "lua/nvim-treesitter/caching.lua",
+               ["lua.nvim-treesitter.compat"] = "lua/nvim-treesitter/compat.lua",
+               ["lua.nvim-treesitter.configs"] = "lua/nvim-treesitter/configs.lua",
+               ["lua.nvim-treesitter.fold"] = "lua/nvim-treesitter/fold.lua",
+               ["lua.nvim-treesitter.health"] = "lua/nvim-treesitter/health.lua",
+               ["lua.nvim-treesitter.highlight"] = "lua/nvim-treesitter/highlight.lua",
+               ["lua.nvim-treesitter.incremental_selection"] = "lua/nvim-treesitter/incremental_selection.lua",
+               ["lua.nvim-treesitter.indent"] = "lua/nvim-treesitter/indent.lua",
+               ["lua.nvim-treesitter.info"] = "lua/nvim-treesitter/info.lua",
+               ["lua.nvim-treesitter.install"] = "lua/nvim-treesitter/install.lua",
+               ["lua.nvim-treesitter.locals"] = "lua/nvim-treesitter/locals.lua",
+               ["lua.nvim-treesitter.parsers"] = "lua/nvim-treesitter/parsers.lua",
+               ["lua.nvim-treesitter.query"] = "lua/nvim-treesitter/query.lua",
+               ["lua.nvim-treesitter.query_predicates"] = "lua/nvim-treesitter/query_predicates.lua",
+               ["lua.nvim-treesitter.shell_command_selectors"] = "lua/nvim-treesitter/shell_command_selectors.lua",
+               ["lua.nvim-treesitter.statusline"] = "lua/nvim-treesitter/statusline.lua",
+               ["lua.nvim-treesitter.ts_utils"] = "lua/nvim-treesitter/ts_utils.lua",
+               ["lua.nvim-treesitter.tsrange"] = "lua/nvim-treesitter/tsrange.lua",
+               ["lua.nvim-treesitter.utils"] = "lua/nvim-treesitter/utils.lua",
+               ["plugin.nvim-treesitter"] = "plugin/nvim-treesitter.lua",
+               ["queries/ada/folds.scm"] = "queries/ada/folds.scm",
+               ["queries/ada/highlights.scm"] = "queries/ada/highlights.scm",
+               ["queries/ada/locals.scm"] = "queries/ada/locals.scm",
+               ["queries/agda/folds.scm"] = "queries/agda/folds.scm",
+               ["queries/agda/highlights.scm"] = "queries/agda/highlights.scm",
+               ["queries/arduino/folds.scm"] = "queries/arduino/folds.scm",
+               ["queries/arduino/highlights.scm"] = "queries/arduino/highlights.scm",
+               ["queries/arduino/indents.scm"] = "queries/arduino/indents.scm",
+               ["queries/arduino/injections.scm"] = "queries/arduino/injections.scm",
+               ["queries/arduino/locals.scm"] = "queries/arduino/locals.scm",
+               ["queries/astro/folds.scm"] = "queries/astro/folds.scm",
+               ["queries/astro/highlights.scm"] = "queries/astro/highlights.scm",
+               ["queries/astro/indents.scm"] = "queries/astro/indents.scm",
+               ["queries/astro/injections.scm"] = "queries/astro/injections.scm",
+               ["queries/astro/locals.scm"] = "queries/astro/locals.scm",
+               ["queries/awk/highlights.scm"] = "queries/awk/highlights.scm",
+               ["queries/awk/injections.scm"] = "queries/awk/injections.scm",
+               ["queries/bash/folds.scm"] = "queries/bash/folds.scm",
+               ["queries/bash/highlights.scm"] = "queries/bash/highlights.scm",
+               ["queries/bash/injections.scm"] = "queries/bash/injections.scm",
+               ["queries/bash/locals.scm"] = "queries/bash/locals.scm",
+               ["queries/bass/folds.scm"] = "queries/bass/folds.scm",
+               ["queries/bass/highlights.scm"] = "queries/bass/highlights.scm",
+               ["queries/bass/indents.scm"] = "queries/bass/indents.scm",
+               ["queries/bass/injections.scm"] = "queries/bass/injections.scm",
+               ["queries/bass/locals.scm"] = "queries/bass/locals.scm",
+               ["queries/beancount/folds.scm"] = "queries/beancount/folds.scm",
+               ["queries/beancount/highlights.scm"] = "queries/beancount/highlights.scm",
+               ["queries/bibtex/folds.scm"] = "queries/bibtex/folds.scm",
+               ["queries/bibtex/highlights.scm"] = "queries/bibtex/highlights.scm",
+               ["queries/bibtex/indents.scm"] = "queries/bibtex/indents.scm",
+               ["queries/bicep/folds.scm"] = "queries/bicep/folds.scm",
+               ["queries/bicep/highlights.scm"] = "queries/bicep/highlights.scm",
+               ["queries/bicep/indents.scm"] = "queries/bicep/indents.scm",
+               ["queries/bicep/injections.scm"] = "queries/bicep/injections.scm",
+               ["queries/bicep/locals.scm"] = "queries/bicep/locals.scm",
+               ["queries/blueprint/highlights.scm"] = "queries/blueprint/highlights.scm",
+               ["queries/c/folds.scm"] = "queries/c/folds.scm",
+               ["queries/c/highlights.scm"] = "queries/c/highlights.scm",
+               ["queries/c/indents.scm"] = "queries/c/indents.scm",
+               ["queries/c/injections.scm"] = "queries/c/injections.scm",
+               ["queries/c/locals.scm"] = "queries/c/locals.scm",
+               ["queries/c_sharp/folds.scm"] = "queries/c_sharp/folds.scm",
+               ["queries/c_sharp/highlights.scm"] = "queries/c_sharp/highlights.scm",
+               ["queries/c_sharp/injections.scm"] = "queries/c_sharp/injections.scm",
+               ["queries/c_sharp/locals.scm"] = "queries/c_sharp/locals.scm",
+               ["queries/capnp/folds.scm"] = "queries/capnp/folds.scm",
+               ["queries/capnp/highlights.scm"] = "queries/capnp/highlights.scm",
+               ["queries/capnp/indents.scm"] = "queries/capnp/indents.scm",
+               ["queries/capnp/injections.scm"] = "queries/capnp/injections.scm",
+               ["queries/capnp/locals.scm"] = "queries/capnp/locals.scm",
+               ["queries/chatito/folds.scm"] = "queries/chatito/folds.scm",
+               ["queries/chatito/highlights.scm"] = "queries/chatito/highlights.scm",
+               ["queries/chatito/indents.scm"] = "queries/chatito/indents.scm",
+               ["queries/chatito/injections.scm"] = "queries/chatito/injections.scm",
+               ["queries/chatito/locals.scm"] = "queries/chatito/locals.scm",
+               ["queries/clojure/folds.scm"] = "queries/clojure/folds.scm",
+               ["queries/clojure/highlights.scm"] = "queries/clojure/highlights.scm",
+               ["queries/clojure/injections.scm"] = "queries/clojure/injections.scm",
+               ["queries/clojure/locals.scm"] = "queries/clojure/locals.scm",
+               ["queries/cmake/folds.scm"] = "queries/cmake/folds.scm",
+               ["queries/cmake/highlights.scm"] = "queries/cmake/highlights.scm",
+               ["queries/comment/highlights.scm"] = "queries/comment/highlights.scm",
+               ["queries/commonlisp/folds.scm"] = "queries/commonlisp/folds.scm",
+               ["queries/commonlisp/highlights.scm"] = "queries/commonlisp/highlights.scm",
+               ["queries/commonlisp/locals.scm"] = "queries/commonlisp/locals.scm",
+               ["queries/cooklang/highlights.scm"] = "queries/cooklang/highlights.scm",
+               ["queries/cpon/folds.scm"] = "queries/cpon/folds.scm",
+               ["queries/cpon/highlights.scm"] = "queries/cpon/highlights.scm",
+               ["queries/cpon/indents.scm"] = "queries/cpon/indents.scm",
+               ["queries/cpon/injections.scm"] = "queries/cpon/injections.scm",
+               ["queries/cpon/locals.scm"] = "queries/cpon/locals.scm",
+               ["queries/cpp/folds.scm"] = "queries/cpp/folds.scm",
+               ["queries/cpp/highlights.scm"] = "queries/cpp/highlights.scm",
+               ["queries/cpp/indents.scm"] = "queries/cpp/indents.scm",
+               ["queries/cpp/injections.scm"] = "queries/cpp/injections.scm",
+               ["queries/cpp/locals.scm"] = "queries/cpp/locals.scm",
+               ["queries/css/folds.scm"] = "queries/css/folds.scm",
+               ["queries/css/highlights.scm"] = "queries/css/highlights.scm",
+               ["queries/css/indents.scm"] = "queries/css/indents.scm",
+               ["queries/css/injections.scm"] = "queries/css/injections.scm",
+               ["queries/cuda/folds.scm"] = "queries/cuda/folds.scm",
+               ["queries/cuda/highlights.scm"] = "queries/cuda/highlights.scm",
+               ["queries/cuda/indents.scm"] = "queries/cuda/indents.scm",
+               ["queries/cuda/injections.scm"] = "queries/cuda/injections.scm",
+               ["queries/cuda/locals.scm"] = "queries/cuda/locals.scm",
+               ["queries/cue/folds.scm"] = "queries/cue/folds.scm",
+               ["queries/cue/highlights.scm"] = "queries/cue/highlights.scm",
+               ["queries/cue/indents.scm"] = "queries/cue/indents.scm",
+               ["queries/cue/injections.scm"] = "queries/cue/injections.scm",
+               ["queries/cue/locals.scm"] = "queries/cue/locals.scm",
+               ["queries/d/folds.scm"] = "queries/d/folds.scm",
+               ["queries/d/highlights.scm"] = "queries/d/highlights.scm",
+               ["queries/d/indents.scm"] = "queries/d/indents.scm",
+               ["queries/d/injections.scm"] = "queries/d/injections.scm",
+               ["queries/dart/folds.scm"] = "queries/dart/folds.scm",
+               ["queries/dart/highlights.scm"] = "queries/dart/highlights.scm",
+               ["queries/dart/indents.scm"] = "queries/dart/indents.scm",
+               ["queries/dart/injections.scm"] = "queries/dart/injections.scm",
+               ["queries/dart/locals.scm"] = "queries/dart/locals.scm",
+               ["queries/devicetree/folds.scm"] = "queries/devicetree/folds.scm",
+               ["queries/devicetree/highlights.scm"] = "queries/devicetree/highlights.scm",
+               ["queries/devicetree/indents.scm"] = "queries/devicetree/indents.scm",
+               ["queries/devicetree/injections.scm"] = "queries/devicetree/injections.scm",
+               ["queries/devicetree/locals.scm"] = "queries/devicetree/locals.scm",
+               ["queries/dhall/folds.scm"] = "queries/dhall/folds.scm",
+               ["queries/dhall/highlights.scm"] = "queries/dhall/highlights.scm",
+               ["queries/dhall/injections.scm"] = "queries/dhall/injections.scm",
+               ["queries/diff/highlights.scm"] = "queries/diff/highlights.scm",
+               ["queries/dockerfile/highlights.scm"] = "queries/dockerfile/highlights.scm",
+               ["queries/dockerfile/injections.scm"] = "queries/dockerfile/injections.scm",
+               ["queries/dot/highlights.scm"] = "queries/dot/highlights.scm",
+               ["queries/dot/injections.scm"] = "queries/dot/injections.scm",
+               ["queries/ebnf/highlights.scm"] = "queries/ebnf/highlights.scm",
+               ["queries/ecma/folds.scm"] = "queries/ecma/folds.scm",
+               ["queries/ecma/highlights.scm"] = "queries/ecma/highlights.scm",
+               ["queries/ecma/indents.scm"] = "queries/ecma/indents.scm",
+               ["queries/ecma/injections.scm"] = "queries/ecma/injections.scm",
+               ["queries/ecma/locals.scm"] = "queries/ecma/locals.scm",
+               ["queries/eex/highlights.scm"] = "queries/eex/highlights.scm",
+               ["queries/eex/injections.scm"] = "queries/eex/injections.scm",
+               ["queries/elixir/folds.scm"] = "queries/elixir/folds.scm",
+               ["queries/elixir/highlights.scm"] = "queries/elixir/highlights.scm",
+               ["queries/elixir/indents.scm"] = "queries/elixir/indents.scm",
+               ["queries/elixir/injections.scm"] = "queries/elixir/injections.scm",
+               ["queries/elixir/locals.scm"] = "queries/elixir/locals.scm",
+               ["queries/elm/highlights.scm"] = "queries/elm/highlights.scm",
+               ["queries/elm/injections.scm"] = "queries/elm/injections.scm",
+               ["queries/elsa/folds.scm"] = "queries/elsa/folds.scm",
+               ["queries/elsa/highlights.scm"] = "queries/elsa/highlights.scm",
+               ["queries/elsa/indents.scm"] = "queries/elsa/indents.scm",
+               ["queries/elsa/injections.scm"] = "queries/elsa/injections.scm",
+               ["queries/elsa/locals.scm"] = "queries/elsa/locals.scm",
+               ["queries/elvish/highlights.scm"] = "queries/elvish/highlights.scm",
+               ["queries/elvish/injections.scm"] = "queries/elvish/injections.scm",
+               ["queries/embedded_template/highlights.scm"] = "queries/embedded_template/highlights.scm",
+               ["queries/embedded_template/injections.scm"] = "queries/embedded_template/injections.scm",
+               ["queries/erlang/folds.scm"] = "queries/erlang/folds.scm",
+               ["queries/erlang/highlights.scm"] = "queries/erlang/highlights.scm",
+               ["queries/fennel/folds.scm"] = "queries/fennel/folds.scm",
+               ["queries/fennel/highlights.scm"] = "queries/fennel/highlights.scm",
+               ["queries/fennel/injections.scm"] = "queries/fennel/injections.scm",
+               ["queries/fennel/locals.scm"] = "queries/fennel/locals.scm",
+               ["queries/firrtl/folds.scm"] = "queries/firrtl/folds.scm",
+               ["queries/firrtl/highlights.scm"] = "queries/firrtl/highlights.scm",
+               ["queries/firrtl/indents.scm"] = "queries/firrtl/indents.scm",
+               ["queries/firrtl/injections.scm"] = "queries/firrtl/injections.scm",
+               ["queries/firrtl/locals.scm"] = "queries/firrtl/locals.scm",
+               ["queries/fish/folds.scm"] = "queries/fish/folds.scm",
+               ["queries/fish/highlights.scm"] = "queries/fish/highlights.scm",
+               ["queries/fish/indents.scm"] = "queries/fish/indents.scm",
+               ["queries/fish/injections.scm"] = "queries/fish/injections.scm",
+               ["queries/fish/locals.scm"] = "queries/fish/locals.scm",
+               ["queries/foam/folds.scm"] = "queries/foam/folds.scm",
+               ["queries/foam/highlights.scm"] = "queries/foam/highlights.scm",
+               ["queries/foam/indents.scm"] = "queries/foam/indents.scm",
+               ["queries/foam/injections.scm"] = "queries/foam/injections.scm",
+               ["queries/foam/locals.scm"] = "queries/foam/locals.scm",
+               ["queries/fortran/folds.scm"] = "queries/fortran/folds.scm",
+               ["queries/fortran/highlights.scm"] = "queries/fortran/highlights.scm",
+               ["queries/fortran/indents.scm"] = "queries/fortran/indents.scm",
+               ["queries/fsh/highlights.scm"] = "queries/fsh/highlights.scm",
+               ["queries/func/highlights.scm"] = "queries/func/highlights.scm",
+               ["queries/fusion/folds.scm"] = "queries/fusion/folds.scm",
+               ["queries/fusion/highlights.scm"] = "queries/fusion/highlights.scm",
+               ["queries/fusion/indents.scm"] = "queries/fusion/indents.scm",
+               ["queries/fusion/locals.scm"] = "queries/fusion/locals.scm",
+               ["queries/gdscript/folds.scm"] = "queries/gdscript/folds.scm",
+               ["queries/gdscript/highlights.scm"] = "queries/gdscript/highlights.scm",
+               ["queries/gdscript/indents.scm"] = "queries/gdscript/indents.scm",
+               ["queries/gdscript/injections.scm"] = "queries/gdscript/injections.scm",
+               ["queries/gdscript/locals.scm"] = "queries/gdscript/locals.scm",
+               ["queries/git_config/folds.scm"] = "queries/git_config/folds.scm",
+               ["queries/git_config/highlights.scm"] = "queries/git_config/highlights.scm",
+               ["queries/git_rebase/highlights.scm"] = "queries/git_rebase/highlights.scm",
+               ["queries/git_rebase/injections.scm"] = "queries/git_rebase/injections.scm",
+               ["queries/gitattributes/highlights.scm"] = "queries/gitattributes/highlights.scm",
+               ["queries/gitattributes/injections.scm"] = "queries/gitattributes/injections.scm",
+               ["queries/gitcommit/highlights.scm"] = "queries/gitcommit/highlights.scm",
+               ["queries/gitcommit/injections.scm"] = "queries/gitcommit/injections.scm",
+               ["queries/gitignore/highlights.scm"] = "queries/gitignore/highlights.scm",
+               ["queries/gleam/folds.scm"] = "queries/gleam/folds.scm",
+               ["queries/gleam/highlights.scm"] = "queries/gleam/highlights.scm",
+               ["queries/gleam/indents.scm"] = "queries/gleam/indents.scm",
+               ["queries/gleam/injections.scm"] = "queries/gleam/injections.scm",
+               ["queries/gleam/locals.scm"] = "queries/gleam/locals.scm",
+               ["queries/glimmer/highlights.scm"] = "queries/glimmer/highlights.scm",
+               ["queries/glsl/folds.scm"] = "queries/glsl/folds.scm",
+               ["queries/glsl/highlights.scm"] = "queries/glsl/highlights.scm",
+               ["queries/glsl/indents.scm"] = "queries/glsl/indents.scm",
+               ["queries/glsl/injections.scm"] = "queries/glsl/injections.scm",
+               ["queries/glsl/locals.scm"] = "queries/glsl/locals.scm",
+               ["queries/go/folds.scm"] = "queries/go/folds.scm",
+               ["queries/go/highlights.scm"] = "queries/go/highlights.scm",
+               ["queries/go/indents.scm"] = "queries/go/indents.scm",
+               ["queries/go/injections.scm"] = "queries/go/injections.scm",
+               ["queries/go/locals.scm"] = "queries/go/locals.scm",
+               ["queries/godot_resource/folds.scm"] = "queries/godot_resource/folds.scm",
+               ["queries/godot_resource/highlights.scm"] = "queries/godot_resource/highlights.scm",
+               ["queries/godot_resource/locals.scm"] = "queries/godot_resource/locals.scm",
+               ["queries/gomod/highlights.scm"] = "queries/gomod/highlights.scm",
+               ["queries/gomod/injections.scm"] = "queries/gomod/injections.scm",
+               ["queries/gosum/highlights.scm"] = "queries/gosum/highlights.scm",
+               ["queries/gowork/highlights.scm"] = "queries/gowork/highlights.scm",
+               ["queries/gowork/injections.scm"] = "queries/gowork/injections.scm",
+               ["queries/graphql/highlights.scm"] = "queries/graphql/highlights.scm",
+               ["queries/graphql/indents.scm"] = "queries/graphql/indents.scm",
+               ["queries/graphql/injections.scm"] = "queries/graphql/injections.scm",
+               ["queries/hack/highlights.scm"] = "queries/hack/highlights.scm",
+               ["queries/hare/folds.scm"] = "queries/hare/folds.scm",
+               ["queries/hare/highlights.scm"] = "queries/hare/highlights.scm",
+               ["queries/hare/indents.scm"] = "queries/hare/indents.scm",
+               ["queries/hare/injections.scm"] = "queries/hare/injections.scm",
+               ["queries/hare/locals.scm"] = "queries/hare/locals.scm",
+               ["queries/haskell/folds.scm"] = "queries/haskell/folds.scm",
+               ["queries/haskell/highlights.scm"] = "queries/haskell/highlights.scm",
+               ["queries/haskell/injections.scm"] = "queries/haskell/injections.scm",
+               ["queries/hcl/folds.scm"] = "queries/hcl/folds.scm",
+               ["queries/hcl/highlights.scm"] = "queries/hcl/highlights.scm",
+               ["queries/hcl/indents.scm"] = "queries/hcl/indents.scm",
+               ["queries/hcl/injections.scm"] = "queries/hcl/injections.scm",
+               ["queries/heex/folds.scm"] = "queries/heex/folds.scm",
+               ["queries/heex/highlights.scm"] = "queries/heex/highlights.scm",
+               ["queries/heex/indents.scm"] = "queries/heex/indents.scm",
+               ["queries/heex/injections.scm"] = "queries/heex/injections.scm",
+               ["queries/heex/locals.scm"] = "queries/heex/locals.scm",
+               ["queries/hjson/folds.scm"] = "queries/hjson/folds.scm",
+               ["queries/hjson/highlights.scm"] = "queries/hjson/highlights.scm",
+               ["queries/hjson/indents.scm"] = "queries/hjson/indents.scm",
+               ["queries/hjson/injections.scm"] = "queries/hjson/injections.scm",
+               ["queries/hjson/locals.scm"] = "queries/hjson/locals.scm",
+               ["queries/hlsl/folds.scm"] = "queries/hlsl/folds.scm",
+               ["queries/hlsl/highlights.scm"] = "queries/hlsl/highlights.scm",
+               ["queries/hlsl/indents.scm"] = "queries/hlsl/indents.scm",
+               ["queries/hlsl/injections.scm"] = "queries/hlsl/injections.scm",
+               ["queries/hlsl/locals.scm"] = "queries/hlsl/locals.scm",
+               ["queries/hocon/highlights.scm"] = "queries/hocon/highlights.scm",
+               ["queries/hocon/injections.scm"] = "queries/hocon/injections.scm",
+               ["queries/html/folds.scm"] = "queries/html/folds.scm",
+               ["queries/html/highlights.scm"] = "queries/html/highlights.scm",
+               ["queries/html/indents.scm"] = "queries/html/indents.scm",
+               ["queries/html/injections.scm"] = "queries/html/injections.scm",
+               ["queries/html/locals.scm"] = "queries/html/locals.scm",
+               ["queries/html_tags/highlights.scm"] = "queries/html_tags/highlights.scm",
+               ["queries/html_tags/indents.scm"] = "queries/html_tags/indents.scm",
+               ["queries/html_tags/injections.scm"] = "queries/html_tags/injections.scm",
+               ["queries/htmldjango/folds.scm"] = "queries/htmldjango/folds.scm",
+               ["queries/htmldjango/highlights.scm"] = "queries/htmldjango/highlights.scm",
+               ["queries/htmldjango/indents.scm"] = "queries/htmldjango/indents.scm",
+               ["queries/htmldjango/injections.scm"] = "queries/htmldjango/injections.scm",
+               ["queries/http/highlights.scm"] = "queries/http/highlights.scm",
+               ["queries/http/injections.scm"] = "queries/http/injections.scm",
+               ["queries/ini/folds.scm"] = "queries/ini/folds.scm",
+               ["queries/ini/highlights.scm"] = "queries/ini/highlights.scm",
+               ["queries/janet_simple/folds.scm"] = "queries/janet_simple/folds.scm",
+               ["queries/janet_simple/highlights.scm"] = "queries/janet_simple/highlights.scm",
+               ["queries/janet_simple/injections.scm"] = "queries/janet_simple/injections.scm",
+               ["queries/janet_simple/locals.scm"] = "queries/janet_simple/locals.scm",
+               ["queries/java/folds.scm"] = "queries/java/folds.scm",
+               ["queries/java/highlights.scm"] = "queries/java/highlights.scm",
+               ["queries/java/indents.scm"] = "queries/java/indents.scm",
+               ["queries/java/injections.scm"] = "queries/java/injections.scm",
+               ["queries/java/locals.scm"] = "queries/java/locals.scm",
+               ["queries/javascript/folds.scm"] = "queries/javascript/folds.scm",
+               ["queries/javascript/highlights.scm"] = "queries/javascript/highlights.scm",
+               ["queries/javascript/indents.scm"] = "queries/javascript/indents.scm",
+               ["queries/javascript/injections.scm"] = "queries/javascript/injections.scm",
+               ["queries/javascript/locals.scm"] = "queries/javascript/locals.scm",
+               ["queries/jq/highlights.scm"] = "queries/jq/highlights.scm",
+               ["queries/jq/injections.scm"] = "queries/jq/injections.scm",
+               ["queries/jsdoc/highlights.scm"] = "queries/jsdoc/highlights.scm",
+               ["queries/json/folds.scm"] = "queries/json/folds.scm",
+               ["queries/json/highlights.scm"] = "queries/json/highlights.scm",
+               ["queries/json/indents.scm"] = "queries/json/indents.scm",
+               ["queries/json/locals.scm"] = "queries/json/locals.scm",
+               ["queries/json5/highlights.scm"] = "queries/json5/highlights.scm",
+               ["queries/json5/injections.scm"] = "queries/json5/injections.scm",
+               ["queries/jsonc/folds.scm"] = "queries/jsonc/folds.scm",
+               ["queries/jsonc/highlights.scm"] = "queries/jsonc/highlights.scm",
+               ["queries/jsonc/indents.scm"] = "queries/jsonc/indents.scm",
+               ["queries/jsonc/injections.scm"] = "queries/jsonc/injections.scm",
+               ["queries/jsonc/locals.scm"] = "queries/jsonc/locals.scm",
+               ["queries/jsonnet/highlights.scm"] = "queries/jsonnet/highlights.scm",
+               ["queries/jsx/folds.scm"] = "queries/jsx/folds.scm",
+               ["queries/jsx/highlights.scm"] = "queries/jsx/highlights.scm",
+               ["queries/jsx/indents.scm"] = "queries/jsx/indents.scm",
+               ["queries/jsx/injections.scm"] = "queries/jsx/injections.scm",
+               ["queries/julia/folds.scm"] = "queries/julia/folds.scm",
+               ["queries/julia/highlights.scm"] = "queries/julia/highlights.scm",
+               ["queries/julia/indents.scm"] = "queries/julia/indents.scm",
+               ["queries/julia/injections.scm"] = "queries/julia/injections.scm",
+               ["queries/julia/locals.scm"] = "queries/julia/locals.scm",
+               ["queries/kdl/folds.scm"] = "queries/kdl/folds.scm",
+               ["queries/kdl/highlights.scm"] = "queries/kdl/highlights.scm",
+               ["queries/kdl/indents.scm"] = "queries/kdl/indents.scm",
+               ["queries/kdl/injections.scm"] = "queries/kdl/injections.scm",
+               ["queries/kdl/locals.scm"] = "queries/kdl/locals.scm",
+               ["queries/kotlin/folds.scm"] = "queries/kotlin/folds.scm",
+               ["queries/kotlin/highlights.scm"] = "queries/kotlin/highlights.scm",
+               ["queries/kotlin/injections.scm"] = "queries/kotlin/injections.scm",
+               ["queries/kotlin/locals.scm"] = "queries/kotlin/locals.scm",
+               ["queries/lalrpop/highlights.scm"] = "queries/lalrpop/highlights.scm",
+               ["queries/lalrpop/injections.scm"] = "queries/lalrpop/injections.scm",
+               ["queries/lalrpop/locals.scm"] = "queries/lalrpop/locals.scm",
+               ["queries/latex/folds.scm"] = "queries/latex/folds.scm",
+               ["queries/latex/highlights.scm"] = "queries/latex/highlights.scm",
+               ["queries/latex/injections.scm"] = "queries/latex/injections.scm",
+               ["queries/ledger/folds.scm"] = "queries/ledger/folds.scm",
+               ["queries/ledger/highlights.scm"] = "queries/ledger/highlights.scm",
+               ["queries/ledger/indents.scm"] = "queries/ledger/indents.scm",
+               ["queries/ledger/injections.scm"] = "queries/ledger/injections.scm",
+               ["queries/llvm/highlights.scm"] = "queries/llvm/highlights.scm",
+               ["queries/lua/folds.scm"] = "queries/lua/folds.scm",
+               ["queries/lua/highlights.scm"] = "queries/lua/highlights.scm",
+               ["queries/lua/indents.scm"] = "queries/lua/indents.scm",
+               ["queries/lua/injections.scm"] = "queries/lua/injections.scm",
+               ["queries/lua/locals.scm"] = "queries/lua/locals.scm",
+               ["queries/luadoc/highlights.scm"] = "queries/luadoc/highlights.scm",
+               ["queries/luap/highlights.scm"] = "queries/luap/highlights.scm",
+               ["queries/luau/folds.scm"] = "queries/luau/folds.scm",
+               ["queries/luau/highlights.scm"] = "queries/luau/highlights.scm",
+               ["queries/luau/indents.scm"] = "queries/luau/indents.scm",
+               ["queries/luau/injections.scm"] = "queries/luau/injections.scm",
+               ["queries/luau/locals.scm"] = "queries/luau/locals.scm",
+               ["queries/m68k/folds.scm"] = "queries/m68k/folds.scm",
+               ["queries/m68k/highlights.scm"] = "queries/m68k/highlights.scm",
+               ["queries/m68k/injections.scm"] = "queries/m68k/injections.scm",
+               ["queries/m68k/locals.scm"] = "queries/m68k/locals.scm",
+               ["queries/make/folds.scm"] = "queries/make/folds.scm",
+               ["queries/make/highlights.scm"] = "queries/make/highlights.scm",
+               ["queries/make/injections.scm"] = "queries/make/injections.scm",
+               ["queries/markdown/folds.scm"] = "queries/markdown/folds.scm",
+               ["queries/markdown/highlights.scm"] = "queries/markdown/highlights.scm",
+               ["queries/markdown/injections.scm"] = "queries/markdown/injections.scm",
+               ["queries/markdown_inline/highlights.scm"] = "queries/markdown_inline/highlights.scm",
+               ["queries/markdown_inline/injections.scm"] = "queries/markdown_inline/injections.scm",
+               ["queries/matlab/folds.scm"] = "queries/matlab/folds.scm",
+               ["queries/matlab/highlights.scm"] = "queries/matlab/highlights.scm",
+               ["queries/matlab/injections.scm"] = "queries/matlab/injections.scm",
+               ["queries/menhir/highlights.scm"] = "queries/menhir/highlights.scm",
+               ["queries/menhir/injections.scm"] = "queries/menhir/injections.scm",
+               ["queries/mermaid/highlights.scm"] = "queries/mermaid/highlights.scm",
+               ["queries/meson/folds.scm"] = "queries/meson/folds.scm",
+               ["queries/meson/highlights.scm"] = "queries/meson/highlights.scm",
+               ["queries/meson/injections.scm"] = "queries/meson/injections.scm",
+               ["queries/mlir/highlights.scm"] = "queries/mlir/highlights.scm",
+               ["queries/mlir/locals.scm"] = "queries/mlir/locals.scm",
+               ["queries/nickel/highlights.scm"] = "queries/nickel/highlights.scm",
+               ["queries/ninja/folds.scm"] = "queries/ninja/folds.scm",
+               ["queries/ninja/highlights.scm"] = "queries/ninja/highlights.scm",
+               ["queries/ninja/indents.scm"] = "queries/ninja/indents.scm",
+               ["queries/nix/folds.scm"] = "queries/nix/folds.scm",
+               ["queries/nix/highlights.scm"] = "queries/nix/highlights.scm",
+               ["queries/nix/injections.scm"] = "queries/nix/injections.scm",
+               ["queries/nix/locals.scm"] = "queries/nix/locals.scm",
+               ["queries/ocaml/folds.scm"] = "queries/ocaml/folds.scm",
+               ["queries/ocaml/highlights.scm"] = "queries/ocaml/highlights.scm",
+               ["queries/ocaml/indents.scm"] = "queries/ocaml/indents.scm",
+               ["queries/ocaml/injections.scm"] = "queries/ocaml/injections.scm",
+               ["queries/ocaml/locals.scm"] = "queries/ocaml/locals.scm",
+               ["queries/ocaml_interface/folds.scm"] = "queries/ocaml_interface/folds.scm",
+               ["queries/ocaml_interface/highlights.scm"] = "queries/ocaml_interface/highlights.scm",
+               ["queries/ocaml_interface/indents.scm"] = "queries/ocaml_interface/indents.scm",
+               ["queries/ocaml_interface/injections.scm"] = "queries/ocaml_interface/injections.scm",
+               ["queries/ocaml_interface/locals.scm"] = "queries/ocaml_interface/locals.scm",
+               ["queries/ocamllex/highlights.scm"] = "queries/ocamllex/highlights.scm",
+               ["queries/ocamllex/injections.scm"] = "queries/ocamllex/injections.scm",
+               ["queries/pascal/folds.scm"] = "queries/pascal/folds.scm",
+               ["queries/pascal/highlights.scm"] = "queries/pascal/highlights.scm",
+               ["queries/pascal/indents.scm"] = "queries/pascal/indents.scm",
+               ["queries/pascal/injections.scm"] = "queries/pascal/injections.scm",
+               ["queries/pascal/locals.scm"] = "queries/pascal/locals.scm",
+               ["queries/passwd/highlights.scm"] = "queries/passwd/highlights.scm",
+               ["queries/perl/folds.scm"] = "queries/perl/folds.scm",
+               ["queries/perl/highlights.scm"] = "queries/perl/highlights.scm",
+               ["queries/perl/injections.scm"] = "queries/perl/injections.scm",
+               ["queries/php/folds.scm"] = "queries/php/folds.scm",
+               ["queries/php/highlights.scm"] = "queries/php/highlights.scm",
+               ["queries/php/indents.scm"] = "queries/php/indents.scm",
+               ["queries/php/injections.scm"] = "queries/php/injections.scm",
+               ["queries/php/locals.scm"] = "queries/php/locals.scm",
+               ["queries/phpdoc/highlights.scm"] = "queries/phpdoc/highlights.scm",
+               ["queries/pioasm/highlights.scm"] = "queries/pioasm/highlights.scm",
+               ["queries/pioasm/injections.scm"] = "queries/pioasm/injections.scm",
+               ["queries/po/folds.scm"] = "queries/po/folds.scm",
+               ["queries/po/highlights.scm"] = "queries/po/highlights.scm",
+               ["queries/po/injections.scm"] = "queries/po/injections.scm",
+               ["queries/poe_filter/folds.scm"] = "queries/poe_filter/folds.scm",
+               ["queries/poe_filter/highlights.scm"] = "queries/poe_filter/highlights.scm",
+               ["queries/poe_filter/indents.scm"] = "queries/poe_filter/indents.scm",
+               ["queries/poe_filter/injections.scm"] = "queries/poe_filter/injections.scm",
+               ["queries/pony/folds.scm"] = "queries/pony/folds.scm",
+               ["queries/pony/highlights.scm"] = "queries/pony/highlights.scm",
+               ["queries/pony/indents.scm"] = "queries/pony/indents.scm",
+               ["queries/pony/injections.scm"] = "queries/pony/injections.scm",
+               ["queries/pony/locals.scm"] = "queries/pony/locals.scm",
+               ["queries/prisma/highlights.scm"] = "queries/prisma/highlights.scm",
+               ["queries/proto/folds.scm"] = "queries/proto/folds.scm",
+               ["queries/proto/highlights.scm"] = "queries/proto/highlights.scm",
+               ["queries/prql/highlights.scm"] = "queries/prql/highlights.scm",
+               ["queries/prql/injections.scm"] = "queries/prql/injections.scm",
+               ["queries/pug/highlights.scm"] = "queries/pug/highlights.scm",
+               ["queries/pug/injections.scm"] = "queries/pug/injections.scm",
+               ["queries/puppet/folds.scm"] = "queries/puppet/folds.scm",
+               ["queries/puppet/highlights.scm"] = "queries/puppet/highlights.scm",
+               ["queries/puppet/indents.scm"] = "queries/puppet/indents.scm",
+               ["queries/puppet/injections.scm"] = "queries/puppet/injections.scm",
+               ["queries/puppet/locals.scm"] = "queries/puppet/locals.scm",
+               ["queries/python/folds.scm"] = "queries/python/folds.scm",
+               ["queries/python/highlights.scm"] = "queries/python/highlights.scm",
+               ["queries/python/indents.scm"] = "queries/python/indents.scm",
+               ["queries/python/injections.scm"] = "queries/python/injections.scm",
+               ["queries/python/locals.scm"] = "queries/python/locals.scm",
+               ["queries/ql/folds.scm"] = "queries/ql/folds.scm",
+               ["queries/ql/highlights.scm"] = "queries/ql/highlights.scm",
+               ["queries/ql/indents.scm"] = "queries/ql/indents.scm",
+               ["queries/ql/injections.scm"] = "queries/ql/injections.scm",
+               ["queries/ql/locals.scm"] = "queries/ql/locals.scm",
+               ["queries/qmldir/highlights.scm"] = "queries/qmldir/highlights.scm",
+               ["queries/qmldir/injections.scm"] = "queries/qmldir/injections.scm",
+               ["queries/qmljs/folds.scm"] = "queries/qmljs/folds.scm",
+               ["queries/qmljs/highlights.scm"] = "queries/qmljs/highlights.scm",
+               ["queries/query/folds.scm"] = "queries/query/folds.scm",
+               ["queries/query/highlights.scm"] = "queries/query/highlights.scm",
+               ["queries/query/indents.scm"] = "queries/query/indents.scm",
+               ["queries/query/injections.scm"] = "queries/query/injections.scm",
+               ["queries/query/locals.scm"] = "queries/query/locals.scm",
+               ["queries/r/highlights.scm"] = "queries/r/highlights.scm",
+               ["queries/r/indents.scm"] = "queries/r/indents.scm",
+               ["queries/r/injections.scm"] = "queries/r/injections.scm",
+               ["queries/r/locals.scm"] = "queries/r/locals.scm",
+               ["queries/racket/folds.scm"] = "queries/racket/folds.scm",
+               ["queries/racket/highlights.scm"] = "queries/racket/highlights.scm",
+               ["queries/racket/injections.scm"] = "queries/racket/injections.scm",
+               ["queries/rasi/folds.scm"] = "queries/rasi/folds.scm",
+               ["queries/rasi/highlights.scm"] = "queries/rasi/highlights.scm",
+               ["queries/rasi/indents.scm"] = "queries/rasi/indents.scm",
+               ["queries/rasi/locals.scm"] = "queries/rasi/locals.scm",
+               ["queries/regex/highlights.scm"] = "queries/regex/highlights.scm",
+               ["queries/rego/highlights.scm"] = "queries/rego/highlights.scm",
+               ["queries/rego/injections.scm"] = "queries/rego/injections.scm",
+               ["queries/rnoweb/folds.scm"] = "queries/rnoweb/folds.scm",
+               ["queries/rnoweb/highlights.scm"] = "queries/rnoweb/highlights.scm",
+               ["queries/rnoweb/injections.scm"] = "queries/rnoweb/injections.scm",
+               ["queries/ron/folds.scm"] = "queries/ron/folds.scm",
+               ["queries/ron/highlights.scm"] = "queries/ron/highlights.scm",
+               ["queries/ron/indents.scm"] = "queries/ron/indents.scm",
+               ["queries/ron/injections.scm"] = "queries/ron/injections.scm",
+               ["queries/ron/locals.scm"] = "queries/ron/locals.scm",
+               ["queries/rst/highlights.scm"] = "queries/rst/highlights.scm",
+               ["queries/rst/injections.scm"] = "queries/rst/injections.scm",
+               ["queries/rst/locals.scm"] = "queries/rst/locals.scm",
+               ["queries/ruby/folds.scm"] = "queries/ruby/folds.scm",
+               ["queries/ruby/highlights.scm"] = "queries/ruby/highlights.scm",
+               ["queries/ruby/indents.scm"] = "queries/ruby/indents.scm",
+               ["queries/ruby/injections.scm"] = "queries/ruby/injections.scm",
+               ["queries/ruby/locals.scm"] = "queries/ruby/locals.scm",
+               ["queries/rust/folds.scm"] = "queries/rust/folds.scm",
+               ["queries/rust/highlights.scm"] = "queries/rust/highlights.scm",
+               ["queries/rust/indents.scm"] = "queries/rust/indents.scm",
+               ["queries/rust/injections.scm"] = "queries/rust/injections.scm",
+               ["queries/rust/locals.scm"] = "queries/rust/locals.scm",
+               ["queries/scala/folds.scm"] = "queries/scala/folds.scm",
+               ["queries/scala/highlights.scm"] = "queries/scala/highlights.scm",
+               ["queries/scala/injections.scm"] = "queries/scala/injections.scm",
+               ["queries/scala/locals.scm"] = "queries/scala/locals.scm",
+               ["queries/scheme/folds.scm"] = "queries/scheme/folds.scm",
+               ["queries/scheme/highlights.scm"] = "queries/scheme/highlights.scm",
+               ["queries/scheme/injections.scm"] = "queries/scheme/injections.scm",
+               ["queries/scss/folds.scm"] = "queries/scss/folds.scm",
+               ["queries/scss/highlights.scm"] = "queries/scss/highlights.scm",
+               ["queries/scss/indents.scm"] = "queries/scss/indents.scm",
+               ["queries/slint/highlights.scm"] = "queries/slint/highlights.scm",
+               ["queries/slint/indents.scm"] = "queries/slint/indents.scm",
+               ["queries/smali/folds.scm"] = "queries/smali/folds.scm",
+               ["queries/smali/highlights.scm"] = "queries/smali/highlights.scm",
+               ["queries/smali/indents.scm"] = "queries/smali/indents.scm",
+               ["queries/smali/injections.scm"] = "queries/smali/injections.scm",
+               ["queries/smali/locals.scm"] = "queries/smali/locals.scm",
+               ["queries/smithy/highlights.scm"] = "queries/smithy/highlights.scm",
+               ["queries/solidity/highlights.scm"] = "queries/solidity/highlights.scm",
+               ["queries/sparql/folds.scm"] = "queries/sparql/folds.scm",
+               ["queries/sparql/highlights.scm"] = "queries/sparql/highlights.scm",
+               ["queries/sparql/indents.scm"] = "queries/sparql/indents.scm",
+               ["queries/sparql/injections.scm"] = "queries/sparql/injections.scm",
+               ["queries/sparql/locals.scm"] = "queries/sparql/locals.scm",
+               ["queries/sql/highlights.scm"] = "queries/sql/highlights.scm",
+               ["queries/sql/injections.scm"] = "queries/sql/injections.scm",
+               ["queries/squirrel/folds.scm"] = "queries/squirrel/folds.scm",
+               ["queries/squirrel/highlights.scm"] = "queries/squirrel/highlights.scm",
+               ["queries/squirrel/indents.scm"] = "queries/squirrel/indents.scm",
+               ["queries/squirrel/injections.scm"] = "queries/squirrel/injections.scm",
+               ["queries/squirrel/locals.scm"] = "queries/squirrel/locals.scm",
+               ["queries/starlark/folds.scm"] = "queries/starlark/folds.scm",
+               ["queries/starlark/highlights.scm"] = "queries/starlark/highlights.scm",
+               ["queries/starlark/indents.scm"] = "queries/starlark/indents.scm",
+               ["queries/starlark/injections.scm"] = "queries/starlark/injections.scm",
+               ["queries/starlark/locals.scm"] = "queries/starlark/locals.scm",
+               ["queries/supercollider/folds.scm"] = "queries/supercollider/folds.scm",
+               ["queries/supercollider/highlights.scm"] = "queries/supercollider/highlights.scm",
+               ["queries/supercollider/indents.scm"] = "queries/supercollider/indents.scm",
+               ["queries/supercollider/injections.scm"] = "queries/supercollider/injections.scm",
+               ["queries/supercollider/locals.scm"] = "queries/supercollider/locals.scm",
+               ["queries/surface/folds.scm"] = "queries/surface/folds.scm",
+               ["queries/surface/highlights.scm"] = "queries/surface/highlights.scm",
+               ["queries/surface/indents.scm"] = "queries/surface/indents.scm",
+               ["queries/surface/injections.scm"] = "queries/surface/injections.scm",
+               ["queries/svelte/folds.scm"] = "queries/svelte/folds.scm",
+               ["queries/svelte/highlights.scm"] = "queries/svelte/highlights.scm",
+               ["queries/svelte/indents.scm"] = "queries/svelte/indents.scm",
+               ["queries/svelte/injections.scm"] = "queries/svelte/injections.scm",
+               ["queries/swift/highlights.scm"] = "queries/swift/highlights.scm",
+               ["queries/swift/indents.scm"] = "queries/swift/indents.scm",
+               ["queries/swift/locals.scm"] = "queries/swift/locals.scm",
+               ["queries/sxhkdrc/folds.scm"] = "queries/sxhkdrc/folds.scm",
+               ["queries/sxhkdrc/highlights.scm"] = "queries/sxhkdrc/highlights.scm",
+               ["queries/sxhkdrc/injections.scm"] = "queries/sxhkdrc/injections.scm",
+               ["queries/t32/folds.scm"] = "queries/t32/folds.scm",
+               ["queries/t32/highlights.scm"] = "queries/t32/highlights.scm",
+               ["queries/t32/injections.scm"] = "queries/t32/injections.scm",
+               ["queries/t32/locals.scm"] = "queries/t32/locals.scm",
+               ["queries/tablegen/folds.scm"] = "queries/tablegen/folds.scm",
+               ["queries/tablegen/highlights.scm"] = "queries/tablegen/highlights.scm",
+               ["queries/tablegen/indents.scm"] = "queries/tablegen/indents.scm",
+               ["queries/tablegen/injections.scm"] = "queries/tablegen/injections.scm",
+               ["queries/tablegen/locals.scm"] = "queries/tablegen/locals.scm",
+               ["queries/teal/folds.scm"] = "queries/teal/folds.scm",
+               ["queries/teal/highlights.scm"] = "queries/teal/highlights.scm",
+               ["queries/teal/indents.scm"] = "queries/teal/indents.scm",
+               ["queries/teal/injections.scm"] = "queries/teal/injections.scm",
+               ["queries/teal/locals.scm"] = "queries/teal/locals.scm",
+               ["queries/terraform/folds.scm"] = "queries/terraform/folds.scm",
+               ["queries/terraform/highlights.scm"] = "queries/terraform/highlights.scm",
+               ["queries/terraform/indents.scm"] = "queries/terraform/indents.scm",
+               ["queries/terraform/injections.scm"] = "queries/terraform/injections.scm",
+               ["queries/thrift/folds.scm"] = "queries/thrift/folds.scm",
+               ["queries/thrift/highlights.scm"] = "queries/thrift/highlights.scm",
+               ["queries/thrift/indents.scm"] = "queries/thrift/indents.scm",
+               ["queries/thrift/injections.scm"] = "queries/thrift/injections.scm",
+               ["queries/thrift/locals.scm"] = "queries/thrift/locals.scm",
+               ["queries/tiger/folds.scm"] = "queries/tiger/folds.scm",
+               ["queries/tiger/highlights.scm"] = "queries/tiger/highlights.scm",
+               ["queries/tiger/indents.scm"] = "queries/tiger/indents.scm",
+               ["queries/tiger/injections.scm"] = "queries/tiger/injections.scm",
+               ["queries/tiger/locals.scm"] = "queries/tiger/locals.scm",
+               ["queries/tlaplus/folds.scm"] = "queries/tlaplus/folds.scm",
+               ["queries/tlaplus/highlights.scm"] = "queries/tlaplus/highlights.scm",
+               ["queries/tlaplus/injections.scm"] = "queries/tlaplus/injections.scm",
+               ["queries/tlaplus/locals.scm"] = "queries/tlaplus/locals.scm",
+               ["queries/todotxt/highlights.scm"] = "queries/todotxt/highlights.scm",
+               ["queries/toml/folds.scm"] = "queries/toml/folds.scm",
+               ["queries/toml/highlights.scm"] = "queries/toml/highlights.scm",
+               ["queries/toml/indents.scm"] = "queries/toml/indents.scm",
+               ["queries/toml/injections.scm"] = "queries/toml/injections.scm",
+               ["queries/toml/locals.scm"] = "queries/toml/locals.scm",
+               ["queries/tsx/folds.scm"] = "queries/tsx/folds.scm",
+               ["queries/tsx/highlights.scm"] = "queries/tsx/highlights.scm",
+               ["queries/tsx/indents.scm"] = "queries/tsx/indents.scm",
+               ["queries/tsx/injections.scm"] = "queries/tsx/injections.scm",
+               ["queries/tsx/locals.scm"] = "queries/tsx/locals.scm",
+               ["queries/turtle/folds.scm"] = "queries/turtle/folds.scm",
+               ["queries/turtle/highlights.scm"] = "queries/turtle/highlights.scm",
+               ["queries/turtle/indents.scm"] = "queries/turtle/indents.scm",
+               ["queries/turtle/injections.scm"] = "queries/turtle/injections.scm",
+               ["queries/turtle/locals.scm"] = "queries/turtle/locals.scm",
+               ["queries/twig/highlights.scm"] = "queries/twig/highlights.scm",
+               ["queries/twig/injections.scm"] = "queries/twig/injections.scm",
+               ["queries/typescript/folds.scm"] = "queries/typescript/folds.scm",
+               ["queries/typescript/highlights.scm"] = "queries/typescript/highlights.scm",
+               ["queries/typescript/indents.scm"] = "queries/typescript/indents.scm",
+               ["queries/typescript/injections.scm"] = "queries/typescript/injections.scm",
+               ["queries/typescript/locals.scm"] = "queries/typescript/locals.scm",
+               ["queries/ungrammar/folds.scm"] = "queries/ungrammar/folds.scm",
+               ["queries/ungrammar/highlights.scm"] = "queries/ungrammar/highlights.scm",
+               ["queries/ungrammar/indents.scm"] = "queries/ungrammar/indents.scm",
+               ["queries/ungrammar/injections.scm"] = "queries/ungrammar/injections.scm",
+               ["queries/ungrammar/locals.scm"] = "queries/ungrammar/locals.scm",
+               ["queries/uxntal/folds.scm"] = "queries/uxntal/folds.scm",
+               ["queries/uxntal/highlights.scm"] = "queries/uxntal/highlights.scm",
+               ["queries/uxntal/indents.scm"] = "queries/uxntal/indents.scm",
+               ["queries/uxntal/injections.scm"] = "queries/uxntal/injections.scm",
+               ["queries/uxntal/locals.scm"] = "queries/uxntal/locals.scm",
+               ["queries/v/folds.scm"] = "queries/v/folds.scm",
+               ["queries/v/highlights.scm"] = "queries/v/highlights.scm",
+               ["queries/v/indents.scm"] = "queries/v/indents.scm",
+               ["queries/v/injections.scm"] = "queries/v/injections.scm",
+               ["queries/v/locals.scm"] = "queries/v/locals.scm",
+               ["queries/vala/folds.scm"] = "queries/vala/folds.scm",
+               ["queries/vala/highlights.scm"] = "queries/vala/highlights.scm",
+               ["queries/verilog/folds.scm"] = "queries/verilog/folds.scm",
+               ["queries/verilog/highlights.scm"] = "queries/verilog/highlights.scm",
+               ["queries/verilog/injections.scm"] = "queries/verilog/injections.scm",
+               ["queries/verilog/locals.scm"] = "queries/verilog/locals.scm",
+               ["queries/vhs/highlights.scm"] = "queries/vhs/highlights.scm",
+               ["queries/vim/folds.scm"] = "queries/vim/folds.scm",
+               ["queries/vim/highlights.scm"] = "queries/vim/highlights.scm",
+               ["queries/vim/injections.scm"] = "queries/vim/injections.scm",
+               ["queries/vim/locals.scm"] = "queries/vim/locals.scm",
+               ["queries/vimdoc/highlights.scm"] = "queries/vimdoc/highlights.scm",
+               ["queries/vimdoc/injections.scm"] = "queries/vimdoc/injections.scm",
+               ["queries/vue/folds.scm"] = "queries/vue/folds.scm",
+               ["queries/vue/highlights.scm"] = "queries/vue/highlights.scm",
+               ["queries/vue/indents.scm"] = "queries/vue/indents.scm",
+               ["queries/vue/injections.scm"] = "queries/vue/injections.scm",
+               ["queries/wgsl/folds.scm"] = "queries/wgsl/folds.scm",
+               ["queries/wgsl/highlights.scm"] = "queries/wgsl/highlights.scm",
+               ["queries/wgsl/indents.scm"] = "queries/wgsl/indents.scm",
+               ["queries/wgsl_bevy/folds.scm"] = "queries/wgsl_bevy/folds.scm",
+               ["queries/wgsl_bevy/highlights.scm"] = "queries/wgsl_bevy/highlights.scm",
+               ["queries/wgsl_bevy/indents.scm"] = "queries/wgsl_bevy/indents.scm",
+               ["queries/yaml/folds.scm"] = "queries/yaml/folds.scm",
+               ["queries/yaml/highlights.scm"] = "queries/yaml/highlights.scm",
+               ["queries/yaml/indents.scm"] = "queries/yaml/indents.scm",
+               ["queries/yaml/injections.scm"] = "queries/yaml/injections.scm",
+               ["queries/yaml/locals.scm"] = "queries/yaml/locals.scm",
+               ["queries/yang/folds.scm"] = "queries/yang/folds.scm",
+               ["queries/yang/highlights.scm"] = "queries/yang/highlights.scm",
+               ["queries/yang/indents.scm"] = "queries/yang/indents.scm",
+               ["queries/yang/injections.scm"] = "queries/yang/injections.scm",
+               ["queries/yuck/folds.scm"] = "queries/yuck/folds.scm",
+               ["queries/yuck/highlights.scm"] = "queries/yuck/highlights.scm",
+               ["queries/yuck/indents.scm"] = "queries/yuck/indents.scm",
+               ["queries/yuck/injections.scm"] = "queries/yuck/injections.scm",
+               ["queries/yuck/locals.scm"] = "queries/yuck/locals.scm",
+               ["queries/zig/folds.scm"] = "queries/zig/folds.scm",
+               ["queries/zig/highlights.scm"] = "queries/zig/highlights.scm",
+               ["queries/zig/indents.scm"] = "queries/zig/indents.scm",
+               ["queries/zig/injections.scm"] = "queries/zig/injections.scm",
+               ["queries/zig/locals.scm"] = "queries/zig/locals.scm"
+            }
+         }
+      }
+   }
+}

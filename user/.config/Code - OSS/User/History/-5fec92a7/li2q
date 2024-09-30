@@ -1,0 +1,4 @@
+URxvt.font: xft:MesloLGS NF:regular:size=10
+URxvt.boldFont: xft:MesloLGS NF:regular:size=10
+URxvt.italicFont: xft:MesloLGS NF:regular:size=10
+URxvt.boldItalicfont: xft:MesloLGS NF:regular:size=10

@@ -1,0 +1,2 @@
+# virOS repo
+Server = http://192.168.1.2/$repo/$arch/

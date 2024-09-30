@@ -1,0 +1,14 @@
+<effect id="eee" tag="volume" type="customAudio">
+ <name>eee</name>
+ <description>Dynamically normalise the audio volume</description>
+ <author>Dan Dennedy</author>
+ <parameter default="1" factor="400" max="1000" min="0" name="normalise" suffix="%" type="constant" value="0.0475">
+  <name>Gain</name>
+ </parameter>
+ <parameter default="8" factor="100" max="3000" min="0" name="max_gain" suffix="%" type="constant" value="3.15">
+  <name>Maximum gain</name>
+ </parameter>
+ <parameter default="75" max="300" min="0" name="window" suffix="frames" type="constant" value="75">
+  <name>Window</name>
+ </parameter>
+</effect>

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/usr/bin/code
+MimeType=text/plain;
+Name=code
+NoDisplay=true
+Type=Application

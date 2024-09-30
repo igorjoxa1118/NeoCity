@@ -1,0 +1,65 @@
+Height 1108=576
+Height 720=575
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAwAAAAAAAAC4AAACGvwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAoBAAAD+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAmAAACGgAAAFoBAAADAAAAAQAAAAAAAAAA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAACgEAAAMAAAADAAAAAAAAAAD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAA/////wAAAAoBAAADAAAFUgAAAhoAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
+Width 1280=750
+Width 1969=1547
+
+[CompactMode]
+FontWeight=50
+UseSystemFont=false
+
+[DetailsMode]
+FontWeight=50
+UseSystemFont=false
+
+[General]
+EditableUrl=true
+FilterBar=true
+ShowFullPath=true
+UseTabForSwitchingSplitView=true
+Version=200
+ViewPropsTimestamp=2017,10,22,15,36,42
+
+[IconsMode]
+FontWeight=50
+UseSystemFont=false
+
+[KPropertiesDialog]
+Height 1108=450
+Width 1969=511
+
+[MainWindow]
+Height 1029=742
+Height 1080=501
+Height 1108=585
+Height 1440=1386
+Height 720=575
+Height 771=742
+Height 831=585
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAwAAAAAAAACkAAAFTvwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAA/////wAAAAIA////+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAcAAAFTgAAAEYA////AAAAAQAAAAAAAAAA/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAD/////AAAAAgD///8AAAADAAAAAAAAAAD8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAAA/////wAAAAIA////AAAJUgAABU4AAAAEAAAABAAAAAgAAAAI/AAAAAEAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAQAAAAD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+Width 1280=750
+Width 1371=953
+Width 1477=950
+Width 1829=953
+Width 1920=956
+Width 1969=950
+Width 2560=2556
+
+[Open-with settings]
+CompletionMode=5
+History=inkscape,libreoffice --writer %U,gimp,qv4l2,inkscape %F,evince %U,dragon
+
+[PreviewSettings]
+Plugins=jpegthumbnail,directorythumbnail,imagethumbnail
+
+[Search]
+ShowFacetsWidget=true
+
+[SettingsDialog]
+Height 1108=493
+Height 1440=444
+Width 1969=520
+Width 2560=525

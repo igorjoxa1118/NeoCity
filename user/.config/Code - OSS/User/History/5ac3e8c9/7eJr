@@ -1,0 +1,14 @@
+#------------
+## Цвета окон 
+#------------
+    # Класс                 border  backgr. text    indicator
+    client.focused          #3EB7FF #1f222d #3EB7FF #81a1c1
+    client.unfocused        #2e3440 #16161E #8787ff #1f222d
+    client.focused_inactive #2e3440 #16161E #888888 #1f222d
+    client.placeholder      #2e3440 #16161E #888888 #1f222d
+    client.urgent           #900000 #900000 #ffffff #900000
+
+    client.background       #242424
+
+    
+#--------------

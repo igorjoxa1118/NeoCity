@@ -1,0 +1,128 @@
+>i686 archlinux32-keyring
+#>garuda garuda-release
+
+## base system
+filesystem
+gcc-libs
+glibc
+bash-completion
+coreutils
+file
+findutils
+gawk
+grep
+procps-ng
+sed
+tar
+gettext
+pciutils
+psmisc
+shadow
+util-linux
+bzip2
+gzip
+xz
+licenses
+pacman 
+systemd
+systemd-sysvcompat
+iputils
+iproute2
+sudo
+which
+
+KERNEL
+KERNEL-headers
+crda
+amd-ucode
+intel-ucode
+linux-firmware
+b43-fwcutter
+ipw2100-fw
+ipw2200-fw
+sof-firmware
+alsa-firmware
+
+## grub + efi
+grub
+efibootmgr
+os-prober
+grub-btrfs
+memtest86+
+
+## package management 
+pacman-contrib
+reflector
+
+## aur support
+>extra autoconf
+>extra automake
+>extra binutils
+>extra bison
+>extra fakeroot
+>extra flex
+>extra gcc
+>extra groff
+>extra libtool
+>extra m4
+>extra make
+>extra patch
+>extra pkgconf
+>extra texinfo
+>extra git
+>extra subversion
+>extra mercurial
+
+
+
+## filesystem needed
+btrfs-progs
+
+## extra things
+mkinitcpio-openswap
+mkinitcpio-nfs-utils
+mkinitcpio-systemd-tool
+
+
+bridge-utils
+usbutils
+inetutils
+lockdown-ms
+fscrypt
+cryptsetup
+dmraid
+lvm2
+mdadm
+man-db
+man-pages
+logrotate
+lsb-release
+rsync
+freetype2
+cronie
+micro
+xclip
+neofetch
+powertop
+htop
+inxi
+dmidecode
+mesa-demos
+vulkan-tools
+>extra libva-utils
+>extra vdpauinfo
+
+# chaotic repo
+chaotic-mirrorlist
+chaotic-keyring
+
+## mhwd
+
+mhwd-garuda
+mhwd-db-garuda
+
+plymouth-git
+grub-garuda
+garuda-zsh-config
+garuda-browser-settings
+#garuda-hooks

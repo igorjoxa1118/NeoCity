@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = nitrogen
+
+[Action]
+Description = Add user in nitrogen config.
+When = PostTransaction
+Exec = /bin/sh -c "sed -i -e 's\dirs=/home/vir0id/\dirs=/home/'$USER'/\g' /home/$USER/.config/nitrogen/nitrogen.cfg"

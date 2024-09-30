@@ -1,0 +1,866 @@
+;; Modules
+
+; Don't delete it, it's important
+[glyph]
+gleft = 
+gright = 
+
+[module/left1]
+type = custom/text
+content-background = ${color.alfa}
+content-foreground = ${color.background_alfa}
+content = ${glyph.gleft}
+content-font = 2
+
+[module/right1]
+type = custom/text
+content-background = ${color.alfa}
+content-foreground = ${color.background_alfa}
+content = ${glyph.gright}
+content-font = 2
+
+[module/left_orange]
+type = custom/text
+content-background = ${color.alfa}
+content-foreground = ${color.background_alfa}
+content = ${glyph.gleft}
+content-font = 2
+
+[module/right_orange]
+type = custom/text
+content-background = ${color.alfa}
+content-foreground = ${color.background_alfa}
+content = ${glyph.gright}
+content-font = 2
+
+[module/left_violet]
+type = custom/text
+content-background = ${color.alfa}
+content-foreground = ${color.background_alfa}
+content = ${glyph.gleft}
+content-font = 2
+
+[module/right_violet]
+type = custom/text
+content-background = ${color.alfa}
+content-foreground = ${color.background_alfa}
+content = ${glyph.gright}
+content-font = 2
+
+[module/sep]
+type = custom/text
+content = " "
+
+[module/sep2]
+type = custom/text
+content = " "
+
+content-foreground = ${color.foreground}
+content-background = ${color.background_alfa}
+
+[module/dot]
+type = custom/text
+;content = 
+content = ""
+
+content-font = 0
+content-background = ${color.alfa}
+content-foreground = ${color.dot}
+content-padding = 1
+
+[module/dot2]
+type = custom/text
+;content = 
+content = "·"
+
+content-font = 0
+content-background = ${color.alfa}
+content-foreground = ${color.dot}
+content-padding = 0
+;
+
+[module/app]
+type = custom/text
+content = " "
+content-foreground = ${color.neocity_blue}
+content-background = ${color.background_alfa}
+content-padding = 0
+content-font = 0
+click-left = "$HOME/.config/i3/polybar/NeoCity/rofi/launchers/type-3/launcher.sh"
+
+[module/xdomenu]
+type = custom/text
+interval = 1
+content = " "
+content-font = 3
+content-foreground = ${color.neocity_blue}
+content-padding = 0
+click-left = jgmenu_run
+
+#[module/alsa]
+#type = internal/alsa
+#interval = 5
+
+#master-soundcard = default
+#speaker-soundcard = default
+#headphone-soundcard = default
+#master-mixer = Master
+
+#format-volume = <ramp-volume> <label-volume>
+#format-volume-background = ${color.background_alfa}
+#format-volume-foreground = ${color.neocity_pink}
+#format-muted = <label-muted>
+#format-muted-background = ${color.background_alfa}
+
+#label-volume = %percentage%%
+#label-muted = 
+#label-muted-foreground =${color.red}
+#label-volume-foreground = ${color.neocity_blue}
+
+#ramp-volume-0 = 
+#ramp-volume-1 = 
+#ramp-volume-2 = 
+#ramp-headphones-0 = 
+#ramp-volume-foreground = ${color.neocity_blue}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+;format-volume = <label-volume> <bar-volume>
+format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${color.background_alfa}
+format-volume-foreground = ${color.neocity_pink}
+label-volume = %percentage%%
+label-volume-foreground = ${color.neocity_blue}
+
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-headphones-0 = 
+ramp-volume-foreground = ${color.neocity_pink}
+
+
+[module/backlight]
+type = internal/backlight
+
+; Change it for yourself
+; ls -1 /sys/class/backlight/
+
+card = nvidia_wmi_ec_backlight
+use-actual-brightness = true
+enable-scroll = true
+
+format = <ramp> <label>
+format-background = ${color.background_alfa}
+
+label =%percentage%%
+label-foreground = ${color.neocity_blue}
+
+ramp-0 =
+ramp-1 =
+ramp-foreground = ${color.neocity_pink}
+
+[module/battery]
+type = internal/battery
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 2
+
+; see "man date" for details on how to format the time string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+; Default: %H:%M:%S
+time-format = %H:%M
+
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <animation-charging> <label-charging>
+format-charging-prefix = "  "
+format-charging-prefix-font = 1
+format-charging-prefix-foreground = ${color.neocity_pink}
+format-charging-background = ${color.background_alfa}
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-prefix-foreground = ${color.neocity_blue}
+format-discharging-background = ${color.background_alfa}
+format-discharging-foreground = ${color.neocity_orange}
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;format-full = <ramp-capacity> <label-full>
+
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+
+label-charging = %percentage%%
+label-charging-foreground = ${color.neocity_orange}
+; Available tokens:
+;   %percentage% (default)
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+format-full = <label-full>
+format-full-prefix = "  "
+format-full-prefix-font = 2
+format-full-prefix-foreground = ${color.neocity_pink}
+format-full-background = ${color.background_alfa}
+label-full = %percentage%%
+label-full-foreground = ${color.neocity_blue}
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${color.neocity_blue}
+ramp-capacity-font = 2
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${color.neocity_orange}
+animation-charging-font = 2
+animation-charging-framerate = 700
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+
+format = <label>
+format-prefix = 
+format-prefix-foreground = ${color.neocity_pink}
+format-background = ${color.background_alfa}
+
+label = " %percentage%%"
+label-foreground = ${color.neocity_blue}
+
+[module/date]
+type = internal/date
+interval = 1
+
+; Change it for yourself
+; https://en.cppreference.com/w/cpp/io/manip/put_time
+
+date = %d-%m-%y
+time = %H:%M
+date-alt = %A %d %B %Y
+time-alt = %H:%M:%S
+
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${color.neocity_pink}
+format-background = ${color.background_alfa}
+
+label = %date% %time%
+label-foreground = ${color.neocity_blue}
+
+[module/filesystem]
+type = internal/fs
+interval = 30
+
+mount-0 = /
+fixed-values = true
+
+format-mounted = <label-mounted>
+format-mounted-prefix = 
+format-mounted-prefix-foreground = ${color.neocity_blue}
+format-mounted-background = ${color.neocity_blue}
+format-mounted-foreground = ${color.neocity_blue}
+
+format-unmounted = <label-unmounted>
+format-unmounted-prefix = 
+format-unmounted-prefix-foreground = ${color.neocity_pink}
+format-unmounted-background = ${color.background_alfa}
+
+label-mounted = " %free%"
+label-mounted-background = ${color.neocity_blue}
+label-mounted-foreground = ${color.neocity_blue}
+label-unmounted = " %mountpoint%: NA"
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+
+ws-icon-0 = 1;  Terminal
+ws-icon-1 = 2;  Firefox
+ws-icon-2 = 3;ﬥ  Code
+ws-icon-3 = 4;  File
+ws-icon-4 = 5;  Blend 
+ws-icon-5 = 6;  Telegram 
+ws-icon-6 = 7;  Video
+ws-icon-7 = 8;  Pictures
+ws-icon-8 = 9;  Virtual
+ws-icon-9 = 10;  Other
+ws-icon-default = 
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state><label-mode>
+
+label-mode = %mode%
+label-mode-background = ${color.background_alfa}
+label-mode-foreground = ${color.foreground}
+label-mode-padding = 1
+label-mode-font = 0
+
+label-focused = %icon%
+label-focused-foreground = ${color.neocity_pink}
+label-focused-background = ${color.background_alfa}
+label-focused-underline =  ${color.neocity_blue}
+label-focused-padding = 1
+label-focused-font = 0
+
+label-unfocused = %icon%
+label-unfocused-background = ${color.background_alfa}
+label-unfocused-foreground = ${color.neocity_blue}
+label-unfocused-padding = 1
+label-unfocused-font = 0
+
+label-visible = %icon%
+label-visible-underline = ${color.purple}
+label-visible-foreground = ${color.purple}
+label-visible-background = ${color.background_alfa}
+label-visible-padding = 1
+label-visible-font = 0
+
+label-urgent = %icon%
+label-urgent-foreground = ${color.red}
+label-urgent-background = ${color.background_alfa}
+label-urgent-padding = 1
+label-urgent-font = 0
+
+[module/keyboard]
+type = internal/xkeyboard
+
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+format = <label-layout> <label-indicator>
+format-prefix = 
+format-prefix-foreground = ${color.neocity_pink}
+format-foreground = ${color.neocity_blue}
+format-background = ${color.background_alfa}
+
+label-layout = " %layout%"
+
+label-indicator-on = "%name%"
+label-indicator-on-foreground = ${color.cyan}
+
+#[module/memory]
+#type = internal/memory
+#interval = 1
+
+#format = <label>
+#format-prefix = 
+#format-prefix-foreground = ${color.neocity_blue}
+#format-background = ${color.background_alfa}
+
+#label = " %gb_used%"
+#label-foreground = ${color.neocity_pink}
+
+[module/memory]
+type = custom/script
+exec = ~/.config/i3/scripts/memory.sh
+click-left = ~/.config/i3/scripts/memory.sh --popup
+format-prefix = " "
+format-prefix-foreground = ${color.neocity_pink}
+format-background = ${color.background_alfa}
+label-foreground = ${color.neocity_blue}
+
+[module/system-nvidia-smi]
+type = custom/script
+exec = ~/.config/i3/scripts/system-nvidia-smi.sh
+interval = 10
+format-prefix = " "
+format-prefix-foreground = ${color.neocity_pink}
+format-background = ${color.background_alfa}
+label-foreground = ${color.neocity_blue}
+
+[module/wireless-network]
+type = internal/network
+interface = wlp0s20f3
+
+[module/network]
+type = internal/network
+
+interface = wlp0s20f3
+
+format-connected = %{A1:~/.config/i3/polybar/NeoCity/rofi/bin/network:}<label-connected>%{A}
+format-connected-background = ${color.background_alfa}
+format-packetloss = <animation-packetloss>
+label-connected = %local_ip%
+label-connected-foreground = ${color.neocity_blue}
+label-connected-background = ${color.background_alfa}
+format-connected-font = 0
+
+format-disconnected = "  NoDetect"
+format-disconnected-background = ${color.background_alfa}
+#ramp-signal-0 = 
+#ramp-signal-1 = 
+#ramp-signal-2 = 
+#ramp-signal-3 = 
+#ramp-signal-4 = 
+#ramp-signal-5 = 
+#ramp-signal-foreground = ${color.neocity_pink}
+#ramp-signal-background = ${color.background_alfa}
+
+#format-connected-underline = ${color.neocity_orange}
+
+animation-packetloss-0 = ⚠
+animation-packetloss-0-foreground = #417099
+animation-packetloss-1 = 📶
+animation-packetloss-1-foreground = #000000
+animation-packetloss-framerate = 500
+
+; Change it for yourself
+; ls /sys/class/net
+
+[module/wired-network]
+type = internal/network
+interface = enp59s0
+interval = 1.0
+
+format-connected = <label-connected>
+format-connected-prefix = %{T10}%{T-}
+format-connected-prefix-background = ${color.background_alfa}
+format-connected-prefix-foreground = ${color.neocity_pink}
+format-connected-prefix-padding = 1
+label-connected = %{T10}%{T-} %{T1}%downspeed%%{T-}
+label-connected-background = ${color.background_alfa}
+label-connected-foreground = ${color.neocity_blue}
+label-connected-padding = 1
+
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = %{T10}%{T-}
+format-disconnected-prefix-background = ${color.background_alfa}
+format-disconnected-prefix-foreground = ${color.foreground_power_red}
+format-disconnected-prefix-padding = 1
+label-disconnected = %{T10}%{T-}
+label-disconnected-background = ${color.background_alfa}
+label-disconnected-foreground = ${color.neocity_blue}
+label-disconnected-padding = 1
+
+[module/wireless-network_stats]
+type = internal/network
+interface = wlp0s20f3
+
+[module/network_stats]
+type = internal/network
+interface = wlp0s20f3
+
+interval = 1.0
+
+accumulate-stats = true
+unknown-as-up = trueblack
+label-connected = "%{A1:networkmanager_dmenu &:} %{F#FF5FED}%{F-} %{F#3EB7FF}%downspeed%%{A} %{F#FF5FED}%{F-} %{F#3EB7FF}%upspeed%%{A}"
+label-connected-background = ${color.background_alfa}
+label-connected-foreground = ${color.red}
+
+label-disconnected = "%{A1:networkmanager_dmenu &:} Offline%{A}"
+label-disconnected-background = ${color.background_alfa}
+label-disconnected-foreground = ${color.red}
+
+[module/temperature]
+type = custom/script
+exec = nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits
+interval = 10
+
+label = %output%°C
+format-prefix = " "
+format-prefix-background = ${color.background_alfa}
+format-prefix-foreground = ${color.neocity_pink}
+label-foreground = ${color.neocity_blue}
+label-background = ${color.background_alfa}
+
+[module/title]
+type = internal/xwindow
+
+format = <label>
+format-prefix = 
+format-prefix-foreground = ${color.neocity_pink}
+format-foreground = ${color.foreground}
+format-background = ${color.background_alfa}
+
+label = " %title%"
+label-maxlen = 30
+
+label-empty = " Desktop"
+
+[module/uptime]
+type = custom/script
+exec = ~/.config/i3/uptime.sh
+interval = 1
+
+format-prefix = " "
+format-prefix-foreground = ${color.neocity_blue}
+format-foreground = ${color.foreground}
+format-background = ${color.background_alfa}
+
+[module/power]
+type = custom/text
+content = " "
+content-padding = 0
+content-font = 0
+content-foreground = ${color.foreground_power_red}
+content-background = ${color.background_alfa}
+click-left = "$HOME/.config/i3/polybar/NeoCity/rofi/powermenu/type-1/powermenu.sh"
+
+[module/pamac]
+type = custom/text
+content = " "
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_blue}
+click-left = /usr/bin/pamac-manager &
+
+[module/blueman-manager]
+type = custom/text
+content = " "
+content-font = 0
+content-prefix-padding = 1
+content-foreground = ${color.neocity_blue}
+content-background = ${color.background_alfa}
+click-left = /usr/bin/blueman-manager &
+
+[module/uparch]
+type = custom/script
+exec = ~/.config/i3/scripts/uparch.sh
+interval = 600
+format = <label>
+label-font = 0
+format-prefix = "ﮨ  "
+format-prefix-background = ${color.background_alfa}
+format-prefix-foreground = ${color.neocity_pink}
+format-foreground = ${color.neocity_blue}
+format-background = ${color.background_alfa}
+click-left = "urxvt -name Pacui -e ~/.bin/pacui &"
+
+
+[module/cava]
+type = custom/script
+tail = true
+exec = $HOME/.config/i3/bin/cava.sh
+format = <label>
+format-font = 5
+label = %output%
+label-background = ${color.background_alfa}
+label-foreground = ${color.neocity_orange}
+
+########################################
+## Media ###
+########################################
+
+[module/mpv-youtube-icon]
+type = custom/text
+content = " "
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.foreground_youtube_color}
+content-padding = 0
+click-left = "$HOME/.config/i3/scripts/mpv-youtube-playlist.sh" &
+click-middle = "$HOME/.config/i3/scripts/mpv-youtube-kill.sh" &
+
+[module/mpv]
+type = custom/script
+exec-if = pidof mpv 
+exec = "$HOME/.config/i3/scripts/mpv-zscroll.sh"
+tail = true
+click-left = echo 'cycle pause' | socat - /tmp/mpv_socket
+click-middle = "$HOME/.config/i3/scripts/mpv-youtube-kill.sh" &
+scroll-up = "$HOME/.config/i3/scripts/mpv.sh" --volume-up
+scroll-down = "$HOME/.config/i3/scripts/mpv.sh" --volume-down
+format-foreground = ${color.neocity_blue}
+format-background = ${color.background_alfa}
+format-underline = ${color.neocity_blue}
+
+[module/mpv-prev]
+type = custom/script
+exec-if = pidof mpv
+exec = echo " "
+click-left = echo 'playlist-prev' | socat - /tmp/mpv_socket
+format-foreground = ${color.neocity_blue}
+format-background = ${color.background_alfa}
+
+[module/mpv-next]
+type = custom/script
+exec-if = pidof mpv
+exec = echo " "
+click-left = echo 'playlist-next' | socat - /tmp/mpv_socket
+format-foreground = ${color.neocity_blue}
+format-background = ${color.background_alfa}
+
+[module/cmus]
+type = custom/script
+exec = "$HOME/.config/i3/scripts/cmus.sh"
+exec-if = pgrep -x cmus
+interval = 1
+tail = true
+
+click-left = cmus-remote --next
+click-right = cmus-remote --prev
+click-middle = cmus-remote --pause
+scroll-up = cmus-remote --volume +5%
+scroll-down = cmus-remote --volume -5%
+
+label-font = 0
+format = <label>
+format-prefix = " "
+format-underline = ${color.neocity_orange}
+format-foreground = ${color.neocity_blue}
+format-background = ${color.background_alfa}
+label = %output%
+label-maxlen = 50
+label-background = ${color.background_alfa}
+
+[module/mpd]
+type = internal/mpd
+
+interval = 2
+
+format-online = <icon-prev> <toggle> <icon-next>
+
+format-online-background = ${color.mb}
+format-offline-foreground = ${color.grey}
+
+format-playing = ${self.format-online}
+format-paused = ${self.format-online}
+format-stopped = ${self.format-online}
+
+format-offline = <label-offline>
+format-offline-prefix = " "
+format-offline-background = ${color.mb}
+
+label-song =  "%artist% - %title%"
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+label-offline = "Offline"
+
+icon-play = 
+icon-play-font = 2
+icon-play-foreground = ${color.lime}
+icon-pause = 
+icon-pause-font = 2
+icon-pause-foreground = ${color.lime}
+icon-stop = 
+icon-stop-foreground = ${color.lime}
+icon-prev = 玲
+icon-prev-font = 1
+icon-prev-foreground = ${color.blue}
+icon-next = 怜
+icon-next-font = 1
+icon-next-foreground = ${color.blue}
+
+;;-----------
+
+[module/song]
+type = internal/mpd
+
+interval = 2
+
+format-online = <icon-repeat> <label-song>
+format-online-foreground = ${color.pink}
+
+format-playing = ${self.format-online}
+format-paused = ${self.format-online}
+format-stopped = ${self.format-online}
+
+label-song =  " %title%"
+label-song-foreground = ${color.cyan}
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+icon-repeat = ""
+icon-repeat-foreground = #FF0677
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+#############################
+###  Tray  ###
+
+[module/systray]
+type=custom/ipc
+hook-0=echo "   "
+hook-1=echo "   "
+click-right= exec killall stalonetray
+click-left = "$HOME/.config/i3/scripts/stalonetray.sh"
+initial=2
+;;format-font=2
+format-foreground= ${color.neocity_blue}
+format-background = ${color.background_alfa} 
+
+[module/placeholder]
+type = custom/text
+content = "..."
+
+[module/keybinds]
+type = custom/text
+content = "  "
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.sky}
+content-padding = 0
+click-left = toggle-conkeww
+
+
+############################
+###  Apps  ###
+############################
+[module/terminal]
+type = custom/text
+content = "  Terminal"
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /usr/bin/kitty &
+click-right =
+
+[module/web]
+type = custom/text
+content = "  Firefox"
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /usr/bin/firefox &
+
+[module/thunar]
+type = custom/text
+content = "  Thunar"
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /usr/bin/thunar &
+
+[module/caja]
+type = custom/text
+content = "  Caja"
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /usr/bin/caja &
+
+[module/discord]
+type = custom/text
+content = "  Discord"
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /usr/bin/discord &
+
+[module/kdenlive]
+type = custom/text
+content = "洞  Kdenlive"
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /usr/bin/kdenlive &
+
+[module/gimp]
+type = custom/text
+content = "  Gimp"
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /usr/bin/gimp &
+
+[module/krita]
+type = custom/text
+content = "  Krita"
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /usr/bin/krita &
+
+[module/blender]
+type = custom/text
+content = "  Blender"
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /usr/bin/blender &
+
+[module/code]
+type = custom/text
+content = "ﬥ  Code"
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /usr/bin/code &
+
+[module/telegram]
+type = custom/text
+content = "  Telegram"
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /usr/bin/telegram-desktop &
+
+
+[module/kodi]
+type = custom/text
+content = "  Kodi"
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /usr/bin/kodi &
+
+[module/tor]
+type = custom/text
+content = "鷺  "
+content-font = 0
+content-background = ${color.background_alfa}
+content-foreground = ${color.neocity_orange}
+content-padding = 0
+click-left = /opt/tor-browser/Browser/firefox &

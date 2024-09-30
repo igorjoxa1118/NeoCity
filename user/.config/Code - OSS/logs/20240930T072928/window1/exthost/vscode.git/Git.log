@@ -1,0 +1,436 @@
+2024-09-30 07:29:31.527 [info] [основное] Уровень ведения журнала: Info
+2024-09-30 07:29:31.527 [info] [основное] Проверка найденного Git в: "git"
+2024-09-30 07:29:31.527 [info] [основное] Используется Git "2.46.2" из "git"
+2024-09-30 07:29:31.527 [info] [Model][doInitialScan] Initial repository scan started
+2024-09-30 07:29:31.527 [info] > git rev-parse --show-toplevel [11ms]
+2024-09-30 07:29:31.527 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-30 07:29:31.527 [info] > git rev-parse --show-toplevel [6ms]
+2024-09-30 07:29:31.527 [info] > git rev-parse --git-dir --git-common-dir [6ms]
+2024-09-30 07:29:31.527 [info] [Model][openRepository] Opened repository: /home/vir0id/Загрузки/repository/iso-profiles
+2024-09-30 07:29:31.550 [info] > git config --get commit.template [17ms]
+2024-09-30 07:29:31.552 [info] > git rev-parse --show-toplevel [3ms]
+2024-09-30 07:29:31.552 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-30 07:29:31.567 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [9ms]
+2024-09-30 07:29:31.572 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/Загрузки/repository/iso-profiles/.git/refs/remotes/origin/main'
+2024-09-30 07:29:31.573 [info] > git rev-parse --show-toplevel [8ms]
+2024-09-30 07:29:31.573 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-30 07:29:31.579 [info] > git rev-parse refs/remotes/origin/main [7ms]
+2024-09-30 07:29:31.587 [info] > git rev-parse --show-toplevel [9ms]
+2024-09-30 07:29:31.587 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-30 07:29:31.595 [info] > git rev-parse --show-toplevel [3ms]
+2024-09-30 07:29:31.595 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-30 07:29:31.602 [info] > git rev-parse --show-toplevel [2ms]
+2024-09-30 07:29:31.602 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-30 07:29:31.609 [info] > git rev-parse --show-toplevel [2ms]
+2024-09-30 07:29:31.610 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-30 07:29:31.610 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (3), parent repositories (0), unsafe repositories (0)
+2024-09-30 07:29:31.622 [info] > git status -z -uall [37ms]
+2024-09-30 07:29:31.648 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [17ms]
+2024-09-30 07:29:31.656 [info] > git config --get commit.template [9ms]
+2024-09-30 07:29:31.658 [info] > git config --local branch.main.vscode-merge-base [4ms]
+2024-09-30 07:29:31.673 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [4ms]
+2024-09-30 07:29:31.673 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [9ms]
+2024-09-30 07:29:31.685 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/Загрузки/repository/iso-profiles/.git/refs/remotes/origin/main'
+2024-09-30 07:29:31.687 [info] > git merge-base refs/heads/main refs/remotes/origin/main [7ms]
+2024-09-30 07:29:31.719 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [25ms]
+2024-09-30 07:29:31.725 [info] > git rev-parse refs/remotes/origin/main [40ms]
+2024-09-30 07:29:31.735 [info] > git diff --name-status -z --diff-filter=ADMR 33e95453a1f221836ffc66a766c9ff752b5d2723...refs/remotes/origin/main [10ms]
+2024-09-30 07:29:31.755 [info] > git status -z -uall [25ms]
+2024-09-30 07:29:31.766 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [4ms]
+2024-09-30 07:29:31.775 [info] > git config --local branch.main.vscode-merge-base [3ms]
+2024-09-30 07:29:31.783 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [3ms]
+2024-09-30 07:29:31.952 [info] > git show --textconv :garuda/i3/Packages-Desktop [7ms]
+2024-09-30 07:29:31.954 [info] > git ls-files --stage -- /home/vir0id/Загрузки/repository/iso-profiles/garuda/i3/Packages-Desktop [3ms]
+2024-09-30 07:29:31.962 [info] > git cat-file -s 32d8e1093324e99653af1a7cfc32ae5510421e59 [2ms]
+2024-09-30 07:29:32.051 [info] > git check-ignore -v -z --stdin [3ms]
+2024-09-30 07:29:32.710 [info] > git ls-files --stage -- /home/vir0id/Загрузки/repository/iso-profiles/garuda/i3/Packages-Desktop [3ms]
+2024-09-30 07:29:32.718 [info] > git cat-file -s 32d8e1093324e99653af1a7cfc32ae5510421e59 [3ms]
+2024-09-30 07:29:32.727 [info] > git show --textconv :garuda/i3/Packages-Desktop [3ms]
+2024-09-30 07:29:32.862 [info] > git rev-parse --show-toplevel [2ms]
+2024-09-30 07:29:32.862 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-30 07:29:32.883 [info] > git fetch [1375ms]
+2024-09-30 07:29:32.883 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-30 07:29:32.894 [info] > git config --get commit.template [5ms]
+2024-09-30 07:29:32.896 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [3ms]
+2024-09-30 07:29:32.901 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/Загрузки/repository/iso-profiles/.git/refs/remotes/origin/main'
+2024-09-30 07:29:32.902 [info] > git rev-parse refs/remotes/origin/main [1ms]
+2024-09-30 07:29:32.930 [info] > git status -z -uall [24ms]
+2024-09-30 07:29:32.937 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [3ms]
+2024-09-30 07:29:32.944 [info] > git config --local branch.main.vscode-merge-base [2ms]
+2024-09-30 07:29:32.956 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [5ms]
+2024-09-30 07:29:39.263 [info] > git rev-parse --show-toplevel [2ms]
+2024-09-30 07:29:39.270 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2024-09-30 07:29:39.284 [info] [Model][openRepository] Opened repository: /home/vir0id/archcraft
+2024-09-30 07:29:39.297 [info] > git config --get commit.template [7ms]
+2024-09-30 07:29:39.302 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [7ms]
+2024-09-30 07:29:39.307 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:29:39.310 [info] > git rev-parse refs/remotes/origin/master [4ms]
+2024-09-30 07:29:39.395 [info] > git status -z -uall [80ms]
+2024-09-30 07:29:39.416 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [13ms]
+2024-09-30 07:29:39.426 [info] > git config --local branch.master.vscode-merge-base [4ms]
+2024-09-30 07:29:39.432 [info] > git config --get commit.template [17ms]
+2024-09-30 07:29:39.435 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [3ms]
+2024-09-30 07:29:39.449 [info] > git merge-base refs/heads/master refs/remotes/origin/master [8ms]
+2024-09-30 07:29:39.455 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [8ms]
+2024-09-30 07:29:39.461 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:29:39.462 [info] > git rev-list --count --left-right refs/heads/master...refs/remotes/origin/master [8ms]
+2024-09-30 07:29:39.469 [info] > git rev-parse refs/remotes/origin/master [8ms]
+2024-09-30 07:29:39.475 [info] > git diff --name-status -z --diff-filter=ADMR 11d23c693a17c4fe216f8dfb19e0d3c4a8354e08...refs/remotes/origin/master [7ms]
+2024-09-30 07:29:39.528 [info] > git status -z -uall [54ms]
+2024-09-30 07:29:39.537 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:29:39.546 [info] > git config --local branch.master.vscode-merge-base [3ms]
+2024-09-30 07:29:39.554 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:29:39.715 [info] > git show --textconv :profile/packages.x86_64 [7ms]
+2024-09-30 07:29:39.717 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/packages.x86_64 [3ms]
+2024-09-30 07:29:39.724 [info] > git cat-file -s 8e8aa9bb2c7472b8b90a42b8c80cb30f3c4a8427 [3ms]
+2024-09-30 07:29:39.836 [info] > git check-ignore -v -z --stdin [9ms]
+2024-09-30 07:29:39.838 [info] > git check-ignore -v -z --stdin [3ms]
+2024-09-30 07:29:40.076 [info] > git fetch [793ms]
+2024-09-30 07:29:40.091 [info] > git config --get commit.template [7ms]
+2024-09-30 07:29:40.092 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:29:40.097 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:29:40.099 [info] > git rev-parse refs/remotes/origin/master [2ms]
+2024-09-30 07:29:40.159 [info] > git status -z -uall [54ms]
+2024-09-30 07:29:40.168 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:29:40.176 [info] > git config --local branch.master.vscode-merge-base [3ms]
+2024-09-30 07:29:40.183 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:29:41.267 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/packages.x86_64 [2ms]
+2024-09-30 07:29:41.276 [info] > git cat-file -s 8e8aa9bb2c7472b8b90a42b8c80cb30f3c4a8427 [3ms]
+2024-09-30 07:29:41.287 [info] > git show --textconv :profile/packages.x86_64 [3ms]
+2024-09-30 07:29:51.872 [info] > git config --get commit.template [10ms]
+2024-09-30 07:29:51.873 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:29:51.879 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:29:51.882 [info] > git rev-parse refs/remotes/origin/master [2ms]
+2024-09-30 07:29:51.942 [info] > git status -z -uall [55ms]
+2024-09-30 07:29:51.952 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:29:51.959 [info] > git config --local branch.master.vscode-merge-base [2ms]
+2024-09-30 07:29:51.967 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:30:24.689 [info] > git config --get commit.template [2ms]
+2024-09-30 07:30:24.700 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:30:24.707 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:30:24.709 [info] > git rev-parse refs/remotes/origin/master [2ms]
+2024-09-30 07:30:24.751 [info] > git status -z -uall [37ms]
+2024-09-30 07:30:24.761 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:30:24.770 [info] > git config --local branch.master.vscode-merge-base [3ms]
+2024-09-30 07:30:24.779 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:30:31.083 [info] > git config --get commit.template [6ms]
+2024-09-30 07:30:31.084 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:30:31.089 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:30:31.091 [info] > git rev-parse refs/remotes/origin/master [1ms]
+2024-09-30 07:30:31.141 [info] > git status -z -uall [46ms]
+2024-09-30 07:30:31.151 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:30:31.159 [info] > git config --local branch.master.vscode-merge-base [3ms]
+2024-09-30 07:30:31.167 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:32:34.996 [info] > git fetch [2049ms]
+2024-09-30 07:32:34.996 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-30 07:32:35.009 [info] > git config --get commit.template [7ms]
+2024-09-30 07:32:35.010 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-09-30 07:32:35.015 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/Загрузки/repository/iso-profiles/.git/refs/remotes/origin/main'
+2024-09-30 07:32:35.017 [info] > git rev-parse refs/remotes/origin/main [2ms]
+2024-09-30 07:32:35.046 [info] > git status -z -uall [25ms]
+2024-09-30 07:32:35.054 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-09-30 07:32:35.059 [info] > git config --local branch.main.vscode-merge-base [1ms]
+2024-09-30 07:32:35.067 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [3ms]
+2024-09-30 07:32:41.092 [info] > git fetch [913ms]
+2024-09-30 07:32:41.108 [info] > git config --get commit.template [8ms]
+2024-09-30 07:32:41.110 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:32:41.116 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:32:41.118 [info] > git rev-parse refs/remotes/origin/master [2ms]
+2024-09-30 07:32:41.179 [info] > git status -z -uall [55ms]
+2024-09-30 07:32:41.189 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [4ms]
+2024-09-30 07:32:41.197 [info] > git config --local branch.master.vscode-merge-base [2ms]
+2024-09-30 07:32:41.206 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [3ms]
+2024-09-30 07:32:42.277 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/packages.x86_64 [2ms]
+2024-09-30 07:32:42.285 [info] > git cat-file -s 8e8aa9bb2c7472b8b90a42b8c80cb30f3c4a8427 [2ms]
+2024-09-30 07:32:42.296 [info] > git show --textconv :profile/packages.x86_64 [3ms]
+2024-09-30 07:35:36.840 [info] > git fetch [1778ms]
+2024-09-30 07:35:36.840 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-30 07:35:36.852 [info] > git config --get commit.template [6ms]
+2024-09-30 07:35:36.853 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2024-09-30 07:35:36.858 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/Загрузки/repository/iso-profiles/.git/refs/remotes/origin/main'
+2024-09-30 07:35:36.860 [info] > git rev-parse refs/remotes/origin/main [1ms]
+2024-09-30 07:35:36.891 [info] > git status -z -uall [26ms]
+2024-09-30 07:35:36.901 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-09-30 07:35:36.909 [info] > git config --local branch.main.vscode-merge-base [1ms]
+2024-09-30 07:35:36.917 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [2ms]
+2024-09-30 07:35:42.110 [info] > git fetch [912ms]
+2024-09-30 07:35:42.125 [info] > git config --get commit.template [7ms]
+2024-09-30 07:35:42.127 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:35:42.133 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:35:42.135 [info] > git rev-parse refs/remotes/origin/master [2ms]
+2024-09-30 07:35:42.195 [info] > git status -z -uall [54ms]
+2024-09-30 07:35:42.203 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:35:42.209 [info] > git config --local branch.master.vscode-merge-base [1ms]
+2024-09-30 07:35:42.215 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:35:43.293 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/packages.x86_64 [2ms]
+2024-09-30 07:35:43.301 [info] > git cat-file -s 8e8aa9bb2c7472b8b90a42b8c80cb30f3c4a8427 [3ms]
+2024-09-30 07:35:43.312 [info] > git show --textconv :profile/packages.x86_64 [3ms]
+2024-09-30 07:37:05.335 [info] > git config --get commit.template [8ms]
+2024-09-30 07:37:05.336 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:37:05.342 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:37:05.343 [info] > git rev-parse refs/remotes/origin/master [1ms]
+2024-09-30 07:37:05.378 [info] > git status -z -uall [31ms]
+2024-09-30 07:37:05.386 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:37:05.392 [info] > git config --local branch.master.vscode-merge-base [2ms]
+2024-09-30 07:37:05.399 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:39:07.056 [info] > git config --get commit.template [1ms]
+2024-09-30 07:39:07.064 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:39:07.069 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:39:07.071 [info] > git rev-parse refs/remotes/origin/master [1ms]
+2024-09-30 07:39:07.129 [info] > git status -z -uall [54ms]
+2024-09-30 07:39:07.140 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [5ms]
+2024-09-30 07:39:07.147 [info] > git config --local branch.master.vscode-merge-base [1ms]
+2024-09-30 07:39:07.155 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:39:08.086 [info] > git fetch [1037ms]
+2024-09-30 07:39:08.100 [info] > git config --get commit.template [7ms]
+2024-09-30 07:39:08.101 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:39:08.106 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:39:08.108 [info] > git rev-parse refs/remotes/origin/master [2ms]
+2024-09-30 07:39:08.166 [info] > git status -z -uall [53ms]
+2024-09-30 07:39:08.176 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:39:08.184 [info] > git config --local branch.master.vscode-merge-base [3ms]
+2024-09-30 07:39:08.192 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:39:08.935 [info] > git fetch [1892ms]
+2024-09-30 07:39:08.935 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-30 07:39:08.949 [info] > git config --get commit.template [8ms]
+2024-09-30 07:39:08.951 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [3ms]
+2024-09-30 07:39:08.956 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/Загрузки/repository/iso-profiles/.git/refs/remotes/origin/main'
+2024-09-30 07:39:08.958 [info] > git rev-parse refs/remotes/origin/main [2ms]
+2024-09-30 07:39:08.987 [info] > git status -z -uall [24ms]
+2024-09-30 07:39:08.998 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [3ms]
+2024-09-30 07:39:09.006 [info] > git config --local branch.main.vscode-merge-base [2ms]
+2024-09-30 07:39:09.015 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [3ms]
+2024-09-30 07:39:17.378 [info] > git show --textconv :README.md [13ms]
+2024-09-30 07:39:17.379 [info] > git ls-files --stage -- /home/vir0id/archcraft/README.md [9ms]
+2024-09-30 07:39:17.386 [info] > git cat-file -s 68d66646b3a9a2fed983897cc1b889abcce83caf [2ms]
+2024-09-30 07:39:17.420 [info] > git check-ignore -v -z --stdin [2ms]
+2024-09-30 07:39:19.614 [info] > git show --textconv :profile/packages.x86_64 [7ms]
+2024-09-30 07:39:19.615 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/packages.x86_64 [2ms]
+2024-09-30 07:39:19.623 [info] > git cat-file -s 8e8aa9bb2c7472b8b90a42b8c80cb30f3c4a8427 [2ms]
+2024-09-30 07:39:22.565 [info] > git config --get commit.template [11ms]
+2024-09-30 07:39:22.579 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [8ms]
+2024-09-30 07:39:22.592 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:39:22.592 [info] > git show --textconv :LICENSE [14ms]
+2024-09-30 07:39:22.595 [info] > git rev-parse refs/remotes/origin/master [4ms]
+2024-09-30 07:39:22.601 [info] > git ls-files --stage -- /home/vir0id/archcraft/LICENSE [16ms]
+2024-09-30 07:39:22.608 [info] > git cat-file -s f288702d2fa16d3cdf0035b15a9fcbc552cd88e7 [2ms]
+2024-09-30 07:39:22.656 [info] > git status -z -uall [56ms]
+2024-09-30 07:39:22.671 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [4ms]
+2024-09-30 07:39:22.680 [info] > git config --local branch.master.vscode-merge-base [2ms]
+2024-09-30 07:39:22.688 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:39:29.437 [info] > git show --textconv :profile/packages.x86_64 [7ms]
+2024-09-30 07:39:29.438 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/packages.x86_64 [2ms]
+2024-09-30 07:39:29.447 [info] > git cat-file -s 8e8aa9bb2c7472b8b90a42b8c80cb30f3c4a8427 [2ms]
+2024-09-30 07:39:29.989 [info] > git show --textconv :changelog.md [6ms]
+2024-09-30 07:39:29.990 [info] > git ls-files --stage -- /home/vir0id/archcraft/changelog.md [2ms]
+2024-09-30 07:39:29.997 [info] > git cat-file -s 3fe7152538d40a148acb470295196ac4940778ce [2ms]
+2024-09-30 07:39:31.336 [info] > git show --textconv :profile/packages.x86_64 [7ms]
+2024-09-30 07:39:31.337 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/packages.x86_64 [2ms]
+2024-09-30 07:39:31.346 [info] > git cat-file -s 8e8aa9bb2c7472b8b90a42b8c80cb30f3c4a8427 [2ms]
+2024-09-30 07:39:31.856 [info] > git show --textconv :.gitignore [8ms]
+2024-09-30 07:39:31.859 [info] > git ls-files --stage -- /home/vir0id/archcraft/.gitignore [4ms]
+2024-09-30 07:39:31.868 [info] > git cat-file -s c5c0b58a62df8c00f6fa4d8c6905fded42bc1d19 [3ms]
+2024-09-30 07:39:33.080 [info] > git show --textconv :profile/packages.x86_64 [7ms]
+2024-09-30 07:39:33.081 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/packages.x86_64 [2ms]
+2024-09-30 07:39:33.090 [info] > git cat-file -s 8e8aa9bb2c7472b8b90a42b8c80cb30f3c4a8427 [3ms]
+2024-09-30 07:39:33.667 [info] > git show --textconv :README.md [8ms]
+2024-09-30 07:39:33.668 [info] > git ls-files --stage -- /home/vir0id/archcraft/README.md [2ms]
+2024-09-30 07:39:33.677 [info] > git cat-file -s 68d66646b3a9a2fed983897cc1b889abcce83caf [2ms]
+2024-09-30 07:39:35.610 [info] > git show --textconv :profile/packages.x86_64 [7ms]
+2024-09-30 07:39:35.612 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/packages.x86_64 [3ms]
+2024-09-30 07:39:35.620 [info] > git cat-file -s 8e8aa9bb2c7472b8b90a42b8c80cb30f3c4a8427 [2ms]
+2024-09-30 07:39:36.089 [info] > git show --textconv :garuda/i3/Packages-Desktop [8ms]
+2024-09-30 07:39:36.090 [info] > git ls-files --stage -- /home/vir0id/Загрузки/repository/iso-profiles/garuda/i3/Packages-Desktop [2ms]
+2024-09-30 07:39:36.099 [info] > git cat-file -s 32d8e1093324e99653af1a7cfc32ae5510421e59 [2ms]
+2024-09-30 07:39:36.400 [info] > git check-ignore -v -z --stdin [2ms]
+2024-09-30 07:39:37.423 [info] > git show --textconv :profile/packages.x86_64 [8ms]
+2024-09-30 07:39:37.425 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/packages.x86_64 [2ms]
+2024-09-30 07:39:37.433 [info] > git cat-file -s 8e8aa9bb2c7472b8b90a42b8c80cb30f3c4a8427 [2ms]
+2024-09-30 07:39:50.000 [info] > git config --get commit.template [3ms]
+2024-09-30 07:39:50.012 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:39:50.019 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:39:50.021 [info] > git rev-parse refs/remotes/origin/master [3ms]
+2024-09-30 07:39:50.082 [info] > git status -z -uall [55ms]
+2024-09-30 07:39:50.092 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:39:50.102 [info] > git config --local branch.master.vscode-merge-base [3ms]
+2024-09-30 07:39:50.111 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:40:42.555 [info] > git config --get commit.template [6ms]
+2024-09-30 07:40:42.556 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:40:42.561 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:40:42.563 [info] > git rev-parse refs/remotes/origin/master [2ms]
+2024-09-30 07:40:42.622 [info] > git status -z -uall [54ms]
+2024-09-30 07:40:42.630 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:40:42.637 [info] > git config --local branch.master.vscode-merge-base [2ms]
+2024-09-30 07:40:42.644 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:40:47.647 [info] > git config --get commit.template [8ms]
+2024-09-30 07:40:47.648 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:40:47.655 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:40:47.657 [info] > git rev-parse refs/remotes/origin/master [2ms]
+2024-09-30 07:40:47.718 [info] > git status -z -uall [55ms]
+2024-09-30 07:40:47.725 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2024-09-30 07:40:47.732 [info] > git config --local branch.master.vscode-merge-base [2ms]
+2024-09-30 07:40:47.739 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [3ms]
+2024-09-30 07:41:42.513 [info] > git config --get commit.template [6ms]
+2024-09-30 07:41:42.515 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:41:42.519 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:41:42.520 [info] > git rev-parse refs/remotes/origin/master [1ms]
+2024-09-30 07:41:42.579 [info] > git status -z -uall [54ms]
+2024-09-30 07:41:42.587 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:41:42.594 [info] > git config --local branch.master.vscode-merge-base [2ms]
+2024-09-30 07:41:42.601 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:41:47.603 [info] > git config --get commit.template [7ms]
+2024-09-30 07:41:47.605 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:41:47.610 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:41:47.612 [info] > git rev-parse refs/remotes/origin/master [2ms]
+2024-09-30 07:41:47.672 [info] > git status -z -uall [55ms]
+2024-09-30 07:41:47.679 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:41:47.686 [info] > git config --local branch.master.vscode-merge-base [2ms]
+2024-09-30 07:41:47.693 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:41:56.009 [info] > git show --textconv :profile/pacman.conf [8ms]
+2024-09-30 07:41:56.010 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/pacman.conf [2ms]
+2024-09-30 07:41:56.020 [info] > git cat-file -s 52c7ff0061d3f0a179044dadec2e93d60b32f112 [3ms]
+2024-09-30 07:41:56.235 [info] > git check-ignore -v -z --stdin [3ms]
+2024-09-30 07:42:05.064 [info] > git show --textconv :profile/mkarchcraftiso [8ms]
+2024-09-30 07:42:05.068 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/mkarchcraftiso [5ms]
+2024-09-30 07:42:05.075 [info] > git cat-file -s 3aef1de564c319625bb5a3a75620c948d078dd2c [2ms]
+2024-09-30 07:42:06.181 [info] > git show --textconv :profile/bootstrap_packages.x86_64 [9ms]
+2024-09-30 07:42:06.183 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/bootstrap_packages.x86_64 [2ms]
+2024-09-30 07:42:06.191 [info] > git cat-file -s 64966d076b784604303ed5b8346eb62185489a78 [3ms]
+2024-09-30 07:42:07.206 [info] > git show --textconv :profile/profiledef.sh [7ms]
+2024-09-30 07:42:07.208 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/profiledef.sh [2ms]
+2024-09-30 07:42:07.217 [info] > git cat-file -s abf4b2436751ee33aef2addc539354d6a3fe15ee [3ms]
+2024-09-30 07:42:08.111 [info] > git show --textconv :profile/create-signature.sh [9ms]
+2024-09-30 07:42:08.113 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/create-signature.sh [3ms]
+2024-09-30 07:42:08.123 [info] > git cat-file -s 34c7d07d86d25d1a7bbd09fc64957a53ab33277a [4ms]
+2024-09-30 07:42:09.072 [info] > git fetch [889ms]
+2024-09-30 07:42:09.091 [info] > git config --get commit.template [9ms]
+2024-09-30 07:42:09.092 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [4ms]
+2024-09-30 07:42:09.099 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:42:09.101 [info] > git rev-parse refs/remotes/origin/master [3ms]
+2024-09-30 07:42:09.161 [info] > git status -z -uall [54ms]
+2024-09-30 07:42:09.171 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:42:09.179 [info] > git config --local branch.master.vscode-merge-base [1ms]
+2024-09-30 07:42:09.189 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:42:10.214 [info] > git config --get commit.template [10ms]
+2024-09-30 07:42:10.216 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:42:10.223 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:42:10.225 [info] > git rev-parse refs/remotes/origin/master [2ms]
+2024-09-30 07:42:10.285 [info] > git status -z -uall [54ms]
+2024-09-30 07:42:10.296 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:42:10.304 [info] > git config --local branch.master.vscode-merge-base [1ms]
+2024-09-30 07:42:10.320 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [9ms]
+2024-09-30 07:42:10.321 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/create-signature.sh [2ms]
+2024-09-30 07:42:10.329 [info] > git cat-file -s 34c7d07d86d25d1a7bbd09fc64957a53ab33277a [2ms]
+2024-09-30 07:42:10.339 [info] > git show --textconv :profile/create-signature.sh [2ms]
+2024-09-30 07:42:10.846 [info] > git fetch [1839ms]
+2024-09-30 07:42:10.847 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-30 07:42:10.856 [info] > git config --get commit.template [2ms]
+2024-09-30 07:42:10.865 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-09-30 07:42:10.871 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/Загрузки/repository/iso-profiles/.git/refs/remotes/origin/main'
+2024-09-30 07:42:10.873 [info] > git rev-parse refs/remotes/origin/main [2ms]
+2024-09-30 07:42:10.893 [info] > git status -z -uall [14ms]
+2024-09-30 07:42:10.904 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [3ms]
+2024-09-30 07:42:10.912 [info] > git config --local branch.main.vscode-merge-base [1ms]
+2024-09-30 07:42:10.920 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [2ms]
+2024-09-30 07:42:11.126 [info] > git show --textconv :profile/mkarchcraftiso [8ms]
+2024-09-30 07:42:11.129 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/mkarchcraftiso [3ms]
+2024-09-30 07:42:11.136 [info] > git cat-file -s 3aef1de564c319625bb5a3a75620c948d078dd2c [2ms]
+2024-09-30 07:44:25.330 [info] > git show --textconv :profile/create-signature.sh [7ms]
+2024-09-30 07:44:25.332 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/create-signature.sh [2ms]
+2024-09-30 07:44:25.341 [info] > git cat-file -s 34c7d07d86d25d1a7bbd09fc64957a53ab33277a [3ms]
+2024-09-30 07:44:28.411 [info] > git show --textconv :profile/pacman.conf [8ms]
+2024-09-30 07:44:28.413 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/pacman.conf [1ms]
+2024-09-30 07:44:28.420 [info] > git cat-file -s 52c7ff0061d3f0a179044dadec2e93d60b32f112 [1ms]
+2024-09-30 07:44:29.015 [info] > git show --textconv :profile/packages.x86_64 [9ms]
+2024-09-30 07:44:29.016 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/packages.x86_64 [3ms]
+2024-09-30 07:44:29.025 [info] > git cat-file -s 8e8aa9bb2c7472b8b90a42b8c80cb30f3c4a8427 [2ms]
+2024-09-30 07:45:39.081 [info] > git fetch [827ms]
+2024-09-30 07:45:39.099 [info] > git config --get commit.template [8ms]
+2024-09-30 07:45:39.100 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:45:39.107 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:45:39.109 [info] > git rev-parse refs/remotes/origin/master [3ms]
+2024-09-30 07:45:39.168 [info] > git status -z -uall [53ms]
+2024-09-30 07:45:39.177 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:45:39.185 [info] > git config --local branch.master.vscode-merge-base [2ms]
+2024-09-30 07:45:39.194 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]
+2024-09-30 07:45:39.982 [info] > git fetch [1722ms]
+2024-09-30 07:45:39.982 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-30 07:45:39.995 [info] > git config --get commit.template [6ms]
+2024-09-30 07:45:39.997 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-09-30 07:45:40.002 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/Загрузки/repository/iso-profiles/.git/refs/remotes/origin/main'
+2024-09-30 07:45:40.003 [info] > git rev-parse refs/remotes/origin/main [1ms]
+2024-09-30 07:45:40.032 [info] > git status -z -uall [24ms]
+2024-09-30 07:45:40.039 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-09-30 07:45:40.045 [info] > git config --local branch.main.vscode-merge-base [1ms]
+2024-09-30 07:45:40.051 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [1ms]
+2024-09-30 07:45:40.267 [info] > git ls-files --stage -- /home/vir0id/archcraft/profile/packages.x86_64 [4ms]
+2024-09-30 07:45:40.278 [info] > git cat-file -s 8e8aa9bb2c7472b8b90a42b8c80cb30f3c4a8427 [4ms]
+2024-09-30 07:45:40.292 [info] > git show --textconv :profile/packages.x86_64 [3ms]
+2024-09-30 07:45:54.715 [info] > git config --get commit.template [8ms]
+2024-09-30 07:45:54.717 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:45:54.723 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:45:54.725 [info] > git rev-parse refs/remotes/origin/master [2ms]
+2024-09-30 07:45:54.784 [info] > git status -z -uall [54ms]
+2024-09-30 07:45:54.791 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [1ms]
+2024-09-30 07:45:54.798 [info] > git config --local branch.master.vscode-merge-base [2ms]
+2024-09-30 07:45:54.805 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [1ms]
+2024-09-30 07:46:20.340 [info] > git config --get commit.template [5ms]
+2024-09-30 07:46:20.342 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:46:20.346 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:46:20.347 [info] > git rev-parse refs/remotes/origin/master [1ms]
+2024-09-30 07:46:20.405 [info] > git status -z -uall [54ms]
+2024-09-30 07:46:20.413 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [3ms]
+2024-09-30 07:46:20.419 [info] > git config --local branch.master.vscode-merge-base [2ms]
+2024-09-30 07:46:20.425 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [1ms]
+2024-09-30 07:46:25.428 [info] > git config --get commit.template [8ms]
+2024-09-30 07:46:25.429 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:46:25.436 [warning] [Git][revParse] Unable to read file: ENOENT: no such file or directory, open '/home/vir0id/archcraft/.git/refs/remotes/origin/master'
+2024-09-30 07:46:25.438 [info] > git rev-parse refs/remotes/origin/master [2ms]
+2024-09-30 07:46:25.497 [info] > git status -z -uall [54ms]
+2024-09-30 07:46:25.505 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+2024-09-30 07:46:25.512 [info] > git config --local branch.master.vscode-merge-base [2ms]
+2024-09-30 07:46:25.519 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/master refs/remotes/origin/master [2ms]

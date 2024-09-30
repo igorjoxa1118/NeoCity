@@ -1,0 +1,23 @@
+# Maintainer: <dr460nf1r3 at garudalinux dot org>
+
+pkgname="calamares-branding-virOS"
+pkgdesc="virOS branding for the Calamares installer"
+pkgver=r1.f72ea0e
+pkgrel=1
+arch=("any")
+url="https://github.com/igorjoxa1118/calamares-branding-virOS"
+license=("GPL")
+makedepends=("git")
+source=("git+$url.git")
+sha256sums=("SKIP")
+
+pkgver() {
+	cd "$srcdir/$pkgname" || exit
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+
+	install -d "$pkgdir/usr/share/calamares/branding/virOS"
+	cp -rf "$srcdir/$pkgname/branding/usr" "$pkgdir"
+}

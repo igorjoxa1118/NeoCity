@@ -1,0 +1,17 @@
+mkdir -p ~/.mysp-data
+sudo chown -R 799:799 ~/.mysp-data
+mkdir -p ~/.mysp-logs
+sudo chown -R 799:799 ~/.mysp-logs
+
+sudo useradd -m msaiotsensingplatform
+sudo groupadd msaiotsensingplatform
+sudo usermod -aG msaiotsensingplatform msaiotsensingplatform
+sudo chown -R msaiotsensingplatform:msaiotsensingplatform ~/.mysp-data
+sudo chmod -R 777 ~/.mysp-data
+sudo chown -R msaiotsensingplatform:msaiotsensingplatform ~/.mysp-logs
+sudo chmod -R 777 ~/.mysp-logs
+
+docker load < ./msaiotsensingplatform.tar
+
+docker compose up -d
+docker compose logs -f mysp

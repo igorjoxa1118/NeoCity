@@ -1,0 +1,1234 @@
+{
+  "version": "1.5",
+  "default_core_path": "/usr/lib/libretro/ppsspp_libretro.so",
+  "default_core_name": "Sony - PlayStation Portable (PPSSPP)",
+  "label_display_mode": 0,
+  "right_thumbnail_mode": 4,
+  "left_thumbnail_mode": 2,
+  "sort_mode": 0,
+  "scan_content_dir": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp",
+  "scan_file_exts": "",
+  "scan_dat_file_path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/gamelist.xml",
+  "scan_search_recursively": true,
+  "scan_search_archives": true,
+  "scan_filter_dat_content": false,
+  "scan_overwrite_playlist": true,
+  "items": [
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/300 March To Glory.cso",
+      "label": "300 March To Glory",
+      "core_path": "/usr/lib/libretro/ppsspp_libretro.so",
+      "core_name": "PPSSPP",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/4x4 Jam.cso",
+      "label": "4x4 Jam",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/A Space Shooter for 2 Bucks.cso",
+      "label": "A Space Shooter for 2 Bucks",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Ace Armstrong vs. the Alien Scumbags!.cso",
+      "label": "Ace Armstrong vs. the Alien Scumbags!",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Adventures to Go.cso",
+      "label": "Adventures to Go",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Alien Havoc.cso",
+      "label": "Alien Havoc",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Aliens vs Predator - Requiem.cso",
+      "label": "Aliens vs Predator - Requiem",
+      "core_path": "/usr/lib/libretro/ppsspp_libretro.so",
+      "core_name": "Sony - PlayStation Portable (PPSSPP)",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Angry Birds.cso",
+      "label": "Angry Birds",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Angus Hates Aliens.cso",
+      "label": "Angus Hates Aliens",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Army of Two The 40th Day.cso",
+      "label": "Army of Two The 40th Day",
+      "core_path": "/usr/lib/libretro/ppsspp_libretro.so",
+      "core_name": "Sony - PlayStation Portable (PPSSPP)",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Asphalt Urban GT2.iso",
+      "label": "Asphalt Urban GT2",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Assassins Creed Bloodlines.cso",
+      "label": "Assassins Creed Bloodlines",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Asterix and Obelix XXL 2 Mission Wifix.cso",
+      "label": "Asterix and Obelix XXL 2 Mission Wifix",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Astonishia Story.cso",
+      "label": "Astonishia Story",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Astro Boy The Video Game.cso",
+      "label": "Astro Boy The Video Game",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Athena.cso",
+      "label": "Athena",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Beamem Up.cso",
+      "label": "Beamem Up",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Black Rock Shooter the Game.cso",
+      "label": "Black Rock Shooter the Game",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Blade Dancer Lineage of Light.cso",
+      "label": "Blade Dancer Lineage of Light",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Blast off.cso",
+      "label": "Blast off",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Brave Story New Traveler.cso",
+      "label": "Brave Story New Traveler",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Brothers in Arms - D-Day.cso",
+      "label": "Brothers in Arms - D-Day",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Burnout Dominator.cso",
+      "label": "Burnout Dominator",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Burnout Legends.cso",
+      "label": "Burnout Legends",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Call Of Duty Roads To Victory.cso",
+      "label": "Call Of Duty Roads To Victory",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Canabalt.cso",
+      "label": "Canabalt",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Carnivores - Dinosaur Hunter.cso",
+      "label": "Carnivores - Dinosaur Hunter",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Carnivores - Ice Age.cso",
+      "label": "Carnivores - Ice Age",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Castlevania Dracula X Chronicles.cso",
+      "label": "Castlevania Dracula X Chronicles",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Cladun.cso",
+      "label": "Cladun",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Cladun X2.cso",
+      "label": "Cladun X2",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Coded Arms.cso",
+      "label": "Coded Arms",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Coded Arms Contagion.cso",
+      "label": "Coded Arms Contagion",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Colin McRae Dirt 2.cso",
+      "label": "Colin McRae Dirt 2",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Colin McRae Rally 2005.cso",
+      "label": "Colin McRae Rally 2005",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Corpse Party Blood Covered Repeated Fear.cso",
+      "label": "Corpse Party Blood Covered Repeated Fear",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Corpse Party Book of Shadows.cso",
+      "label": "Corpse Party Book of Shadows",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Crash  Mind Over Mutant.cso",
+      "label": "Crash  Mind Over Mutant",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Crash of the Titans.cso",
+      "label": "Crash of the Titans",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Crash Tag Team Racing.cso",
+      "label": "Crash Tag Team Racing",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Creature Defense.cso",
+      "label": "Creature Defense",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/D-Cube Planet.cso",
+      "label": "D-Cube Planet",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Dantes Inferno.cso",
+      "label": "Dantes Inferno",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Darius Burst.cso",
+      "label": "Darius Burst",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Darkstalkers Chronicle The Chaos Tower.cso",
+      "label": "Darkstalkers Chronicle The Chaos Tower",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Daxter.cso",
+      "label": "Daxter",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Dead Or Alive  Paradise.cso",
+      "label": "Dead Or Alive  Paradise",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Dead to Rights Reckoning.cso",
+      "label": "Dead to Rights Reckoning",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Death Jr.cso",
+      "label": "Death Jr",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Death Jr. 2 Root of Evil.cso",
+      "label": "Death Jr. 2 Root of Evil",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Dr. Maybee and the Adventures of Scarygirl.cso",
+      "label": "Dr. Maybee and the Adventures of Scarygirl",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Dracula - Undead Awakening.cso",
+      "label": "Dracula - Undead Awakening",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Dragoneer's Aria.cso",
+      "label": "Dragoneer's Aria",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/DTM Race Driver 3 Challenge.cso",
+      "label": "DTM Race Driver 3 Challenge",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Duael Invaders.cso",
+      "label": "Duael Invaders",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Ducati Challenge.cso",
+      "label": "Ducati Challenge",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Dungeon Explorer - Warrior of The Ancient Arts.cso",
+      "label": "Dungeon Explorer - Warrior of The Ancient Arts",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Dungeon Siege.cso",
+      "label": "Dungeon Siege",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/FlatOut Head On.cso",
+      "label": "FlatOut Head On",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Flying Hamster.cso",
+      "label": "Flying Hamster",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Forest Puzzle.cso",
+      "label": "Forest Puzzle",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Freekscape - Escape From Hell.cso",
+      "label": "Freekscape - Escape From Hell",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/G.I. Joe  The Rise of Cobra.cso",
+      "label": "G.I. Joe  The Rise of Cobra",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Ghost in the Shell  Stand Alone Complex.cso",
+      "label": "Ghost in the Shell  Stand Alone Complex",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/GHOST RIDER.cso",
+      "label": "GHOST RIDER",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Ghostbusters.cso",
+      "label": "Ghostbusters",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/God of War  Ghost of Sparta.cso",
+      "label": "God of War  Ghost of Sparta",
+      "core_path": "/usr/lib/libretro/ppsspp_libretro.so",
+      "core_name": "Sony - PlayStation Portable (PPSSPP)",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/God of War Chains of Olympus.cso",
+      "label": "God of War Chains of Olympus",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Grand Theft Auto Chinatown Wars.cso",
+      "label": "Grand Theft Auto Chinatown Wars",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Grand Theft Auto Liberty City Stories.cso",
+      "label": "Grand Theft Auto Liberty City Stories",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Grand Theft Auto Vice City Stories.cso",
+      "label": "Grand Theft Auto Vice City Stories",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Guilty Gear Judgement.cso",
+      "label": "Guilty Gear Judgement",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Guilty Gear XX Accent Core Plus.cso",
+      "label": "Guilty Gear XX Accent Core Plus",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Guilty Gear XX Reload.cso",
+      "label": "Guilty Gear XX Reload",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/GUN  Showdown.cso",
+      "label": "GUN  Showdown",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Hatsune Miku Project Diva 2.cso",
+      "label": "Hatsune Miku Project Diva 2",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Hellboy - The Science of Evil.cso",
+      "label": "Hellboy - The Science of Evil",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Hero Of Sparta.cso",
+      "label": "Hero Of Sparta",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Hysteria Project.cso",
+      "label": "Hysteria Project",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Hysteria Project 2.cso",
+      "label": "Hysteria Project 2",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/I Must Run!.cso",
+      "label": "I Must Run!",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/James Bond 007 From Russia With Love.cso",
+      "label": "James Bond 007 From Russia With Love",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/James Cameron's Avatar The Game.cso",
+      "label": "James Cameron's Avatar The Game",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Juiced Eliminator.cso",
+      "label": "Juiced Eliminator",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Karoshi.cso",
+      "label": "Karoshi",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Left to Die in Zombhai.cso",
+      "label": "Left to Die in Zombhai",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Mahjong Artifacts.cso",
+      "label": "Mahjong Artifacts",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Mahjong Solitaire.cso",
+      "label": "Mahjong Solitaire",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Mahjongg Artifacts Chapter 2.cso",
+      "label": "Mahjongg Artifacts Chapter 2",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Medal of Honor Heroes.cso",
+      "label": "Medal of Honor Heroes",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Medal of Honor Heroes 2.cso",
+      "label": "Medal of Honor Heroes 2",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/MicroMachines V4.cso",
+      "label": "MicroMachines V4",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/MIDNIGHT CLUB 3 DUB EDITION.cso",
+      "label": "MIDNIGHT CLUB 3 DUB EDITION",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Midnight Club LA Remix.cso",
+      "label": "Midnight Club LA Remix",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Monsters (Probably) Stole My Princess.cso",
+      "label": "Monsters (Probably) Stole My Princess",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/mortal kombat unchained.cso",
+      "label": "mortal kombat unchained",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/MX vs. ATV Reflex.cso",
+      "label": "MX vs. ATV Reflex",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Need for Speed - ProStreet.cso",
+      "label": "Need for Speed - ProStreet",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Need for Speed Carbon Own The City.cso",
+      "label": "Need for Speed Carbon Own The City",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Need for Speed Most Wanted 5-1-0.cso",
+      "label": "Need for Speed Most Wanted 5-1-0",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Need For Speed Shift.cso",
+      "label": "Need For Speed Shift",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Need for Speed Undercover.cso",
+      "label": "Need for Speed Undercover",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Need for Speed Underground Rivals.cso",
+      "label": "Need for Speed Underground Rivals",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Normal Tanks.cso",
+      "label": "Normal Tanks",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Obscure The Aftermath.cso",
+      "label": "Obscure The Aftermath",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/One Epic Game.cso",
+      "label": "One Epic Game",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/OutRun 2006 Coast 2 Coast.cso",
+      "label": "OutRun 2006 Coast 2 Coast",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Patapon.cso",
+      "label": "Patapon",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Patapon 2.cso",
+      "label": "Patapon 2",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Patapon 3.cso",
+      "label": "Patapon 3",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Peter Jackson's King Kong.cso",
+      "label": "Peter Jackson's King Kong",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Phantom Brave The Hermuda Triangle.cso",
+      "label": "Phantom Brave The Hermuda Triangle",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Prince of Persia  Rival Swords.cso",
+      "label": "Prince of Persia  Rival Swords",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Prince of Persia Revelations.cso",
+      "label": "Prince of Persia Revelations",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/PRINCE OF PERSIA THE FORGOTTEN SANDS.cso",
+      "label": "PRINCE OF PERSIA THE FORGOTTEN SANDS",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Pursuit Force.cso",
+      "label": "Pursuit Force",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Ratchet and Clank Size Matters.cso",
+      "label": "Ratchet and Clank Size Matters",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Resistance Retribution.cso",
+      "label": "Resistance Retribution",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Rumble Trucks.cso",
+      "label": "Rumble Trucks",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Samurai Shodown Anthology.cso",
+      "label": "Samurai Shodown Anthology",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Sega Rally Revo.cso",
+      "label": "Sega Rally Revo",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Silent Hill Origins.cso",
+      "label": "Silent Hill Origins",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Silent Hill Shattered Memories.cso",
+      "label": "Silent Hill Shattered Memories",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Sonic rivals.cso",
+      "label": "Sonic rivals",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Sonic rivals 2.cso",
+      "label": "Sonic rivals 2",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Soul Eater Battle Resonance.cso",
+      "label": "Soul Eater Battle Resonance",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Space Invaders Extreme.cso",
+      "label": "Space Invaders Extreme",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Spectral Souls Resurrection of the Ethereal Empires.cso",
+      "label": "Spectral Souls Resurrection of the Ethereal Empires",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Split Second.cso",
+      "label": "Split Second",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Syphon Filter Dark Mirror.cso",
+      "label": "Syphon Filter Dark Mirror",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Syphon Filter Logans Shadow.CSO",
+      "label": "Syphon Filter Logans Shadow",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Tehra - Dark Warrior.cso",
+      "label": "Tehra - Dark Warrior",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Tekken 6.cso",
+      "label": "Tekken 6",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Tekken Dark Resurrection.cso",
+      "label": "Tekken Dark Resurrection",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Tenchu - Shadow Assasins.cso",
+      "label": "Tenchu - Shadow Assasins",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/The 3rd Birthday.cso",
+      "label": "The 3rd Birthday",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/The Fast and the Furious.cso",
+      "label": "The Fast and the Furious",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/The Godfather Mob Wars.cso",
+      "label": "The Godfather Mob Wars",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/The Treasures Of Montezuma.cso",
+      "label": "The Treasures Of Montezuma",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/TMNT.cso",
+      "label": "TMNT",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Tomb Raider Anniversary.cso",
+      "label": "Tomb Raider Anniversary",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Tomb Raider Legend.cso",
+      "label": "Tomb Raider Legend",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Twin Blades.cso",
+      "label": "Twin Blades",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Undead Knights.cso",
+      "label": "Undead Knights",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Untold Legends Brotherhood of the Blade.cso",
+      "label": "Untold Legends Brotherhood of the Blade",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Untold Legends Warriors Code.cso",
+      "label": "Untold Legends Warriors Code",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Up The Video Game.cso",
+      "label": "Up The Video Game",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Ys - Seven.cso",
+      "label": "Ys - Seven",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Ys - The Arc of Napishtim.cso",
+      "label": "Ys - The Arc of Napishtim",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Ys - The Oath In Felghana.cso",
+      "label": "Ys - The Oath In Felghana",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Ys I & II Chronicles.cso",
+      "label": "Ys I & II Chronicles",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    },
+    {
+      "path": "/home/vir0id/Загрузки/Games/Retroarch/retroarch/roms/PSP/psp/Zenonia.cso",
+      "label": "Zenonia",
+      "core_path": "DETECT",
+      "core_name": "DETECT",
+      "crc32": "00000000|crc",
+      "db_name": "Sony - PlayStation Portable.lpl"
+    }
+  ]
+}

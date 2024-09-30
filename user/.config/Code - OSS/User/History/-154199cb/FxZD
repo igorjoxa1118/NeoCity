@@ -1,0 +1,16 @@
+#------------
+## emilia
+#------------
+## Цвета окон 
+#------------
+    # Класс                 border  backgr. text    indicator
+    client.focused          #333f5e #333f5e #7aa2f7 #81a1c1
+    client.unfocused        #333f5e #1A1B26 #333f5e #81a1c1
+    client.focused_inactive #222330 #1A1B26 #242739 #81a1c1
+    client.placeholder      #222330 #1A1B26 #242739 #81a1c1
+    client.urgent           #222330 #1A1B26 #242739 #81a1c1
+
+    client.background       #1A1B26
+
+    
+#--------------

@@ -1,0 +1,8 @@
+include-file = $HOME/polybar-collection/themes/gruvbox/modules/round-left.ini
+
+
+include-file = $HOME/polybar-collection/themes/gruvbox/modules/round-left.ini
+include-file = $HOME/polybar-collection/themes/gruvbox/modules/round-right.ini
+
+include-file = $HOME/polybar-collection/themes/gruvbox/modules/round-left-blue.ini
+include-file = $HOME/polybar-collection/themes/gruvbox/modules/round-right-blue.ini

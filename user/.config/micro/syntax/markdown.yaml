@@ -1,0 +1,41 @@
+filetype: markdown
+
+detect:
+  filename: "\\.md$"
+
+rules:
+  - path: "https://.*/.*\\b"
+  - header:
+      start: "# "
+      end: "$"
+      rules:
+        - header1: ".*"
+  - header:
+      start: "## "
+      end: "$"
+      rules:
+        - header2: ".*"
+  - header:
+      start: "### "
+      end: "$"
+      rules:
+        - header3: ".*"
+  - header:
+      start: "#### "
+      end: "$"
+      rules:
+        - header4: ".*"
+  - header:
+      start: "##### "
+      end: "$"
+      rules:
+        - header5: ".*"
+  - header:
+      start: "###### "
+      end: "$"
+      rules:
+        - header6: ".*"
+  - comment:
+      start: "<!--"
+      end: "-->"
+      rules: []

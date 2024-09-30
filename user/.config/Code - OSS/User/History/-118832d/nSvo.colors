@@ -1,0 +1,32 @@
+
+
+[Colors:Button]
+BackgroundAlternate  = 22,22,30
+BackgroundNormal     = 22,22,30
+ForegroundNormal     = 191,187,169
+DecorationFocus =    159,71,104
+DecorationHover = 159,71,104
+
+
+
+
+[Colors:Selection]
+BackgroundNormal     = 42,195,222
+ForegroundNormal     = 187,154,247
+
+
+[Colors:View]
+BackgroundAlternate  = 22,22,30
+BackgroundNormal     = 22,22,30
+ForegroundNormal     = 191,187,169
+
+
+
+[Colors:Window]
+BackgroundNormal     = 22,22,30
+ForegroundNormal     = 191,187,169
+
+
+[General]
+Name                 = Purple Haze
+

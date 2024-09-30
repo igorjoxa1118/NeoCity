@@ -1,0 +1,6 @@
+# URxvt.font: xft:MesloLGS NF:regular:size=10
+# URxvt.boldFont: xft:MesloLGS NF:regular:size=10
+# URxvt.italicFont: xft:MesloLGS NF:regular:size=10
+# URxvt.boldItalicfont: xft:MesloLGS NF:regular:size=10
+# URxvt.font: xft:Consolas:pixelsize=10, xft:Segoe UI Symbol:style=Regular:pixelsize=10, xft:Unifont:pixelsize=10
+URxvt.font: xft:MesloLGS NF:regular:pixelsize=10, xft:Segoe UI Symbol:style=Regular:pixelsize=10, xft:Unifont:pixelsize=10

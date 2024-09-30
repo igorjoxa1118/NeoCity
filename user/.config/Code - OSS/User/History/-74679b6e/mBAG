@@ -1,0 +1,224 @@
+#-------------------------------------
+## Закрыть сфокусированное окно "kill"
+ Win+q
+#-------------------------------------
+
+#---------------------------------------------------
+## Если открыты несколько окон на одном пространстве,
+## то можно мереключаться мешду ними
+ Alt+Tab
+#  Win+Tab focus left
+#---------------------------------------------------
+
+#---------------------------------------------------------------------------------------
+## Переключение между открытыми окнами(на одном рабочем пространстве)
+## Альтернативное переключение мешду окнами, вы можете использовать стрелочки клавиатуры:
+ Win+Tab workspace back_and_forth
+ Win+j focus left
+ Win+k focus down
+ Win+l focus up
+ Win+semicolon focus right
+ Win+Left focus left
+ Win+Down focus down
+ Win+Up focus up
+ Win+Right focus right
+#---------------------------------------------------------------------------------------
+
+#---------------------------------------------------------
+## Перемещение на пространство влево/вправо (Ctrl+Alt-Влево/Вправо)
+ Ctrl+Alt+Right workspace next
+ Ctrl+Alt+Left workspace prev
+ Ctrl+control+Left exec i3-msg move container to workspace $ws-left; exec i3-msg workspace $ws-left
+ Ctrl+control+Right exec i3-msg move container to workspace $ws-right; exec i3-msg workspace $ws-right
+# Win+Ctrl+Left move left
+# Win+Ctrl+k move down
+# Win+Ctrl+l move up
+# Win+Ctrl+Right move right
+
+# move focused window to next/prev workspace
+# Win+Shift+Left move left
+# Win+Shift+Down move down
+# Win+Shift+Up move up
+# Win+Shift+Right move right
+
+# alternatively, you can use the cursor keys:
+# Win+Alt+Left move left
+# Win+Alt+Down move down
+# Win+Alt+Up move up
+# Win+Alt+Right move right
+#----------------------------------------------------------
+
+#-----------------------------------------------------------------------
+## Разрезать ориентацию по горизонтале(окно будет открыто по горизонтале)
+ Win+h split h
+#-----------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+## Разрезать ориентацию по вертикале(окно будет открыто по вертикале)
+ Win+v split v
+#-------------------------------------------------------------------
+
+#---------------------------
+## Октрыть окно на весь экран
+ Win+f fullscreen toggle
+#---------------------------
+
+#---------------------------------------------------------
+## Сгрупировать окна в закладки(Столбик, строку, разделить)
+ Win+y layout stacking
+ Win+t layout tabbed
+ Win+u layout toggle split
+#---------------------------------------------------------
+
+#---------------------
+## Плавающий режим окна
+ Win+c floating toggle
+#---------------------
+
+## change focus between tiling / floating windows
+ Win1+x focus mode_toggle
+
+## focus the parent container
+ Win+a focus parent
+
+## focus the child container
+ Win1+d focus child
+
+ Win+g sticky toggle
+
+#---------------------------------------------
+## Переключиться на другое рабочее пространство
+ Win+1 workspace $ws1
+ Win+2 workspace $ws2
+ Win+3 workspace $ws3
+ Win+4 workspace $ws4
+ Win+5 workspace $ws5
+ Win+6 workspace $ws6
+ Win+7 workspace $ws7
+ Win+8 workspace $ws8
+ Win+9 workspace $ws9
+ Win+0 workspace $ws10
+#---------------------------------------------
+
+#------------------------------------------------------------------
+## Перетащить сфокусированное окно на рабочее пространство от 1 до 9
+ Win+Shift+1 move container to workspace $ws1
+ Win+Shift+2 move container to workspace $ws2
+ Win+Shift+3 move container to workspace $ws3
+ Win+Shift+4 move container to workspace $ws4
+ Win+Shift+5 move container to workspace $ws5
+ Win+Shift+6 move container to workspace $ws6
+ Win+Shift+7 move container to workspace $ws7
+ Win+Shift+8 move container to workspace $ws8
+ Win+Shift+9 move container to workspace $ws9
+ Win+Shift+0 move container to workspace $ws10
+##------------------------------------------------------------------
+
+#---------------------------------------------
+## Перезагрузить, перезапустить, выйти из i3
+ Win+shift+c reload
+ Win+shift+r restart
+ Win+Alt+Delete exec "$HOME/.config/i3/bin/i3-logout"
+#  Win+shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#---------------------------------------------
+
+#-------------------------------------------------
+## Режим растягивания окон. Изменение размера окна.
+mode "resize" {
+         j resize shrink width 3 px or 3 ppt
+         k resize grow height 3 px or 3 ppt
+         l resize shrink height 3 px or 3 ppt
+         semicolon resize grow width 3 px or 3 ppt
+
+         Left resize shrink width 3 px or 3 ppt
+         Down resize grow height 3 px or 3 ppt
+         Up resize shrink height 3 px or 3 ppt
+         Right resize grow width 3 px or 3 ppt
+
+         Return mode "default"
+         Escape mode "default"
+         Win+r mode "default"
+}
+ Win+r mode "resize" # Войти в режим растягивания. Так же выключить режим.
+#-------------------------------------------------
+
+#-------------------------
+## Отправить окно в боакнот
+ Win1+v move scratchpad
+ Win+x scratchpad show
+ Win+n scratchpad toggle
+#-------------------------
+
+#---------------------------------------------
+## Клавиши для запуска приложений
+ Win+d exec --no-startup-id "$HOME/.config/i3/rofi/launchers/type-2/launcher.sh"
+# Win+Return exec --no-startup-id "xfce4-terminal --title term-tiling --hide-menubar"
+# Win1+t exec --no-startup-id "xfce4-terminal --title floating"
+# Win1+r exec --no-startup-id "xfce4-terminal --title float -e ranger"
+# Win1+m exec --no-startup-id "xfce4-terminal -e ncmpcpp"
+# Win1+h exec --no-startup-id "xfce4-terminal --title float -e htop"
+ Win+Return exec --no-startup-id "kitty"
+ Win1+t exec --no-startup-id "kitty --title floating"
+ Win1+Return exec --no-startup-id "kitty --title float -e ranger"
+ Win1+m exec --no-startup-id "kitty -e ncmpcpp"
+# Win1+h exec --no-startup-id "kitty --title float -e htop"
+ Win1+f exec --no-startup-id "firefox"
+ Win1+l exec --no-startup-id "$HOME/.config/i3/bin/multilock.sh"
+ Win1+space exec --no-startup-id "skippy-xd"
+ Win1+q exec --no-startup-id "$HOME/.config/i3/bin/findapp thunar"
+ Win1+e exec --no-startup-id "leafpad"
+ Win1+w exec --no-startup-id "$HOME/.config/i3/bin/i3_switch_workspace.sh"
+ Ctrl+space exec --no-startup-id "rofi -show window"
+ Print exec --no-startup-id "kazam -f"
+# Win1+s exec --no-startup-id "subl3"
+# Print exec --no-startup-id "$HOME/.config/i3/bin/flameshot.sh -c"
+# Win1+Print exec --no-startup-id "flameshot gui"
+
+# Win+Ctrl+Up exec mpc volume +2
+# Win+Ctrl+Down exec mpc volume -2
+# Win+Ctrl+Left exec mpc prev
+# Win+Ctrl+Right exec mpc next
+# Win+Ctrl+d exec mpc del 0
+#---------------------------------------------
+
+
+#-------------------------------
+## Режим редактирование отступов
+ Win+Alt+g mode "Wine_gaps" # Войти в режим отступов.
+
+mode "Wine_gaps" {
+         o      mode "Wine_gaps_outer"
+         i      mode "Wine_gaps_inner"
+         Return mode "default"
+         Escape mode "default"
+}
+
+mode "Wine_gaps_inner" {
+         plus  gaps inner current plus 5
+         minus gaps inner current minus 5
+         0     gaps inner current set 0
+
+         Alt+plus  gaps inner all plus 5
+         Alt+minus gaps inner all minus 5
+         Alt+0     gaps inner all set 0
+
+         Return mode "default"
+         Escape mode "default"
+}
+mode "Wine_gaps_outer" {
+         plus  gaps outer current plus 5
+         minus gaps outer current minus 5
+         0     gaps outer current set 0
+
+         Alt+plus  gaps outer all plus 5
+         Alt+minus gaps outer all minus 5
+         Alt+0     gaps outer all set 0
+
+         Return mode "default"
+         Escape mode "default"
+}
+#-------------------------------
+
+#--------eww--------#
+
+

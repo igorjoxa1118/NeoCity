@@ -1,0 +1,59 @@
+#!/bin/bash
+
+function start_settings() {
+en_int=$(ip -o link show | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
+et_int=$(ip -o link show | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
+wl_int=$(ip -o link show | sed -rn '/^[0-9]+: wl/{s/.: ([^:]*):.*/\1/p}')
+ad=$(ls /sys/class/power_supply/ | awk "NR==1 { print $2 }" | grep A)
+bat=$(ls /sys/class/power_supply/ | awk "NR==2 { print $2 }" | grep B)
+blacklight=$(ls -1 /sys/class/backlight/)
+
+### --- Проверка проводных сетевых интерфейсов. Добавляем интерфейсы в конфиги. --- ###
+if [ ! -z "$en_int" ]; then
+  sed -i "s/enp1s0/${en_int}/g" "$HOME"/.config/i3/scripts/system.ini
+sleep 2
+  echo "Wired connection settings in system.ini, Done!"
+sleep 2
+fi
+
+### --- Проверка безпроводных сетевых интерфейсов. Добавляем интерфейсы в конфиги. --- ###
+if [ ! -z "$wl_int" ]; then
+  sed -i "s/wlp0s20f3/${wl_int}/g" "$HOME"/.config/i3/scripts/system.ini
+sleep 2
+  echo "Wireless connection settings in system.ini, Done!"
+sleep 2
+fi
+
+sed -i "s/AC/${ad}/g" "$HOME"/.config/i3/scripts/system.ini
+  echo "Power Adapter settings in system.ini, Done!"
+sleep 2
+sed -i "s/BAT0/${bat}/g" "$HOME"/.config/i3/scripts/system.ini
+  echo "Battery settings in system.ini, Done!"
+sleep 2
+
+### -- Подсветка
+if [ $(lspci -k | grep -A 2 -E "(VGA|3D)" | grep -i nvidia | wc -l) -gt 0 ]; then
+          sed -i "s/intel_backlight/${blacklight}/g" "$HOME"/.config/i3/scripts/system.ini
+        echo "Nvidia blacklight settings in system.ini, Done!"
+    sleep 2
+else
+          sed -i "s/intel_backlight/${blacklight}/g" "$HOME"/.config/i3/scripts/system.ini
+        echo "Your blacklight settings in system.ini, Done!"
+    sleep 2
+fi
+
+##-- Установка пользователя в конфиги
+tmpuser=$(whoami)
+sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.config/blender/4.1/config/bookmarks.txt
+  sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.gtkrc-2.0
+    sed -i "s/vir0id/${tmpuser}/g" "$HOME/.config/nitrogen/bg-saved.cfg"
+      sed -i "s/vir0id/${tmpuser}/g" "$HOME/.config/nitrogen/nitrogen.cfg"
+        sed -i "s/vir0id/${tmpuser}/g" "$HOME/.zshrc"
+          sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.config/gtk-3.0/bookmarks
+  echo ""$(whoami)" settings in system.ini, Done!"
+sleep 2
+echo "Finished!"
+}
+
+start_settings | yad --text-info
+exit 0;

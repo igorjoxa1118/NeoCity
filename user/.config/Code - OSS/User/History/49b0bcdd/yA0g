@@ -1,0 +1,23 @@
+# Contributor: Chocopwowwa <chocopowwwa@gmail.com>
+# Contributor: Rafed Ramzi <rafedramzi@gmail.com>
+
+pkgname=Tokio_night
+_pkgname=Tokio_night
+pkgver=1.0
+pkgrel=0
+pkgdesc="Polybar theme for i3-gaps"
+arch=('any')
+url='https://github.com/igorjoxa1118/Tokio_night'
+license=('LGPL')
+conflicts=('i3wm')
+makedepends=('git')
+source=(git+https://github.com/igorjoxa1118/Tokio_night)
+md5sums=('SKIP')
+
+package() {
+  cd ${srcdir}/$_pkgname
+
+  # Generic assets
+  install -Dm644 -t "/.config/i3/"
+  cp -r ${srcdir}/$_pkgname/i3/* ${pkgdir}/.config/i3/
+}

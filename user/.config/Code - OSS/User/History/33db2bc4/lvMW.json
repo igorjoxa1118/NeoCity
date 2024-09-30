@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "/home/vir0id/.config/i3/polybar"
+		},
+		{
+			"path": "/home/vir0id/.config/rofi"
+		},
+		{
+			"path": "../../../blender/3.4/config/colorshemas"
+		},
+		{
+			"path": "../../../../.themes/Cyberpunk"
+		},
+		{
+			"path": "../../../../Документы/exodia-bspwm"
+		},
+		{
+			"path": "../../../../Загрузки/fullbackup/backup/root/usr/share/cmus"
+		},
+		{
+			"path": "../../../i3"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,6 @@
+(deflisten workspaces "./scripts/i3tmsg  s a") 
+;; Workspaces Widgets ;;
+(defwidget workspaces []
+	(literal :content workspaces
+  )
+)

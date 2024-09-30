@@ -1,0 +1,515 @@
+2024-09-07 16:21:07.772 [info] [main] Log level: Info
+2024-09-07 16:21:07.772 [info] [main] Validating found git in: "git"
+2024-09-07 16:21:07.772 [info] [main] Using git "2.46.0" from "git"
+2024-09-07 16:21:07.772 [info] [Model][doInitialScan] Initial repository scan started
+2024-09-07 16:21:07.772 [info] > git rev-parse --show-toplevel [25ms]
+2024-09-07 16:21:07.772 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:07.772 [info] > git rev-parse --show-toplevel [8ms]
+2024-09-07 16:21:07.772 [info] fatal: not a git repository (or any parent up to mount point /home/vir0id)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:07.774 [info] > git rev-parse --show-toplevel [2ms]
+2024-09-07 16:21:07.774 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:07.785 [info] > git rev-parse --show-toplevel [6ms]
+2024-09-07 16:21:07.785 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:07.802 [info] > git rev-parse --show-toplevel [2ms]
+2024-09-07 16:21:07.802 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:07.808 [info] > git rev-parse --show-toplevel [2ms]
+2024-09-07 16:21:07.808 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:07.814 [info] > git rev-parse --show-toplevel [2ms]
+2024-09-07 16:21:07.814 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:07.819 [info] > git rev-parse --show-toplevel [1ms]
+2024-09-07 16:21:07.820 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:07.827 [info] > git rev-parse --show-toplevel [3ms]
+2024-09-07 16:21:07.833 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2024-09-07 16:21:07.842 [info] [Model][openRepository] Opened repository: /home/vir0id/Загрузки/repository/BackUpMenu
+2024-09-07 16:21:07.852 [info] > git config --get commit.template [5ms]
+2024-09-07 16:21:07.853 [info] > git rev-parse --show-toplevel [2ms]
+2024-09-07 16:21:07.862 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [5ms]
+2024-09-07 16:21:07.863 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2024-09-07 16:21:07.870 [info] [Model][openRepository] Opened repository: /home/vir0id/Загрузки/repository/NeoCity
+2024-09-07 16:21:07.880 [info] > git config --get commit.template [5ms]
+2024-09-07 16:21:07.891 [info] > git rev-parse --show-toplevel [12ms]
+2024-09-07 16:21:07.897 [info] > git status -z -uall [11ms]
+2024-09-07 16:21:07.909 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [7ms]
+2024-09-07 16:21:07.915 [info] > git config --local branch.main.vscode-merge-base [2ms]
+2024-09-07 16:21:07.915 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:07.919 [info] > git config --get commit.template [10ms]
+2024-09-07 16:21:07.919 [info] > git rev-parse --show-toplevel [23ms]
+2024-09-07 16:21:07.923 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [33ms]
+2024-09-07 16:21:07.928 [info] > git rev-parse --git-dir --git-common-dir [5ms]
+2024-09-07 16:21:07.936 [info] [Model][openRepository] Opened repository: /home/vir0id/Загрузки/repository/garuda-bspwm-settings
+2024-09-07 16:21:07.945 [info] > git reflog main --grep-reflog=branch: Created from *. [25ms]
+2024-09-07 16:21:07.948 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [20ms]
+2024-09-07 16:21:07.954 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [6ms]
+2024-09-07 16:21:07.954 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:07.959 [info] > git rev-parse --show-toplevel [15ms]
+2024-09-07 16:21:07.959 [info] fatal: not a git repository (or any parent up to mount point /home/vir0id)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:07.959 [info] > git config --get commit.template [18ms]
+2024-09-07 16:21:07.969 [info] > git merge-base refs/heads/main refs/remotes/origin/main [9ms]
+2024-09-07 16:21:07.978 [info] > git rev-parse --show-toplevel [12ms]
+2024-09-07 16:21:07.978 [info] fatal: not a git repository (or any parent up to mount point /home/vir0id)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:07.989 [info] > git status -z -uall [5ms]
+2024-09-07 16:21:07.990 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [15ms]
+2024-09-07 16:21:07.997 [info] > git rev-parse --show-toplevel [8ms]
+2024-09-07 16:21:08.008 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [30ms]
+2024-09-07 16:21:08.020 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [15ms]
+2024-09-07 16:21:08.027 [info] > git diff --name-status -z --diff-filter=ADMR 2ce9ff85c1b70ceb8b7a9c79c3568e982d461365...refs/remotes/origin/main [31ms]
+2024-09-07 16:21:08.030 [info] > git config --local branch.main.vscode-merge-base [3ms]
+2024-09-07 16:21:08.030 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:08.036 [info] > git rev-parse --git-dir --git-common-dir [17ms]
+2024-09-07 16:21:08.049 [info] [Model][openRepository] Opened repository: /home/vir0id/Загрузки/repository/i3-skel
+2024-09-07 16:21:08.067 [info] > git reflog main --grep-reflog=branch: Created from *. [31ms]
+2024-09-07 16:21:08.081 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [9ms]
+2024-09-07 16:21:08.081 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:08.081 [info] > git rev-parse --show-toplevel [14ms]
+2024-09-07 16:21:08.081 [info] fatal: not a git repository (or any parent up to mount point /home/vir0id)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:08.082 [info] > git config --get commit.template [21ms]
+2024-09-07 16:21:08.143 [info] > git rev-parse --show-toplevel [8ms]
+2024-09-07 16:21:08.151 [info] > git rev-parse --git-dir --git-common-dir [3ms]
+2024-09-07 16:21:08.160 [info] [Model][openRepository] Opened repository: /home/vir0id/Загрузки/repository/iso-profiles
+2024-09-07 16:21:08.172 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [31ms]
+2024-09-07 16:21:08.173 [info] > git config --get commit.template [7ms]
+2024-09-07 16:21:08.191 [info] > git rev-parse --show-toplevel [20ms]
+2024-09-07 16:21:08.197 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [18ms]
+2024-09-07 16:21:08.198 [info] > git rev-parse --git-dir --git-common-dir [3ms]
+2024-09-07 16:21:08.206 [info] [Model][openRepository] Opened repository: /home/vir0id/Загрузки/repository/lightdm-tty
+2024-09-07 16:21:08.217 [info] > git config --get commit.template [5ms]
+2024-09-07 16:21:08.239 [info] > git rev-parse --show-toplevel [23ms]
+2024-09-07 16:21:08.244 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [18ms]
+2024-09-07 16:21:08.250 [info] > git rev-parse --git-dir --git-common-dir [7ms]
+2024-09-07 16:21:08.257 [info] [Model][openRepository] Opened repository: /home/vir0id/Загрузки/repository/packstraps
+2024-09-07 16:21:08.267 [info] > git rev-parse --show-toplevel [2ms]
+2024-09-07 16:21:08.267 [info] fatal: not a git repository (or any parent up to mount point /home/vir0id)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:08.267 [info] > git config --get commit.template [5ms]
+2024-09-07 16:21:08.276 [info] > git rev-parse --show-toplevel [5ms]
+2024-09-07 16:21:08.284 [info] > git rev-parse --show-toplevel [4ms]
+2024-09-07 16:21:08.290 [info] > git rev-parse --git-dir --git-common-dir [2ms]
+2024-09-07 16:21:08.297 [info] [Model][openRepository] Opened repository: /home/vir0id/Загрузки/repository/vir-rofi-themes
+2024-09-07 16:21:08.307 [info] > git rev-parse --show-toplevel [1ms]
+2024-09-07 16:21:08.307 [info] fatal: not a git repository (or any parent up to mount point /home/vir0id)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:08.307 [info] > git config --get commit.template [4ms]
+2024-09-07 16:21:08.315 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [40ms]
+2024-09-07 16:21:08.320 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [5ms]
+2024-09-07 16:21:08.332 [info] > git rev-parse --show-toplevel [21ms]
+2024-09-07 16:21:08.339 [info] > git status -z -uall [19ms]
+2024-09-07 16:21:08.377 [info] > git status -z -uall [127ms]
+2024-09-07 16:21:08.377 [info] > git status -z -uall [52ms]
+2024-09-07 16:21:08.377 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [32ms]
+2024-09-07 16:21:08.404 [info] > git rev-parse --git-dir --git-common-dir [66ms]
+2024-09-07 16:21:08.415 [info] [Model][openRepository] Opened repository: /home/vir0id/Загрузки/repository/virOS-calamares
+2024-09-07 16:21:08.435 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [35ms]
+2024-09-07 16:21:08.440 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [50ms]
+2024-09-07 16:21:08.444 [info] > git config --local branch.main.vscode-merge-base [61ms]
+2024-09-07 16:21:08.444 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:08.448 [info] > git config --get commit.template [73ms]
+2024-09-07 16:21:08.456 [info] > git config --local branch.main.vscode-merge-base [12ms]
+2024-09-07 16:21:08.462 [info] > git config --local branch.main.vscode-merge-base [22ms]
+2024-09-07 16:21:08.463 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:08.468 [info] > git rev-parse --show-toplevel [33ms]
+2024-09-07 16:21:08.469 [info] > git config --get commit.template [37ms]
+2024-09-07 16:21:08.469 [info] > git config --get commit.template [42ms]
+2024-09-07 16:21:08.469 [info] > git config --get commit.template [47ms]
+2024-09-07 16:21:08.481 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [19ms]
+2024-09-07 16:21:08.486 [info] > git reflog main --grep-reflog=branch: Created from *. [38ms]
+2024-09-07 16:21:08.502 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [13ms]
+2024-09-07 16:21:08.502 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:08.506 [info] > git merge-base refs/heads/main refs/remotes/origin/main [21ms]
+2024-09-07 16:21:08.510 [info] > git rev-parse --git-dir --git-common-dir [30ms]
+2024-09-07 16:21:08.517 [info] [Model][openRepository] Opened repository: /home/vir0id/Загрузки/repository/virOS-calamares-branding-garuda
+2024-09-07 16:21:08.517 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [41ms]
+2024-09-07 16:21:08.518 [info] > git reflog main --grep-reflog=branch: Created from *. [50ms]
+2024-09-07 16:21:08.537 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [16ms]
+2024-09-07 16:21:08.537 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:08.543 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [33ms]
+2024-09-07 16:21:08.549 [info] > git merge-base refs/heads/main refs/remotes/origin/main [43ms]
+2024-09-07 16:21:08.555 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/calamares refs/remotes/calamares [54ms]
+2024-09-07 16:21:08.556 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [58ms]
+2024-09-07 16:21:08.556 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [63ms]
+2024-09-07 16:21:08.562 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [7ms]
+2024-09-07 16:21:08.568 [info] > git diff --name-status -z --diff-filter=ADMR f4b898f30125c427604547e3ddf3adcb0a26e3ec...refs/remotes/origin/main [19ms]
+2024-09-07 16:21:08.569 [info] > git merge-base refs/heads/main refs/remotes/origin/main [26ms]
+2024-09-07 16:21:08.575 [info] > git rev-parse --show-toplevel [42ms]
+2024-09-07 16:21:08.575 [info] > git config --get commit.template [47ms]
+2024-09-07 16:21:08.587 [info] > git status -z -uall [365ms]
+2024-09-07 16:21:08.587 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [12ms]
+2024-09-07 16:21:08.594 [info] > git diff --name-status -z --diff-filter=ADMR a00496b6da94187b4de8e2b820f4eab2bfb0a5d6...refs/remotes/origin/main [26ms]
+2024-09-07 16:21:08.626 [info] > git status -z -uall [7ms]
+2024-09-07 16:21:08.626 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [24ms]
+2024-09-07 16:21:08.632 [info] > git diff --name-status -z --diff-filter=ADMR b36d33f68591f14b5766870db5be80bdbceef28c...refs/remotes/origin/main [38ms]
+2024-09-07 16:21:08.633 [info] > git rev-parse --git-dir --git-common-dir [47ms]
+2024-09-07 16:21:08.645 [info] [Model][openRepository] Opened repository: /home/vir0id/Загрузки/repository/virOS-eww
+2024-09-07 16:21:08.677 [info] > git status -z -uall [17ms]
+2024-09-07 16:21:08.677 [info] > git status -z -uall [12ms]
+2024-09-07 16:21:08.677 [info] > git config --local branch.main.vscode-merge-base [45ms]
+2024-09-07 16:21:08.677 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:08.683 [info] > git config --get commit.template [59ms]
+2024-09-07 16:21:08.692 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [78ms]
+2024-09-07 16:21:08.701 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [10ms]
+2024-09-07 16:21:08.707 [info] > git reflog main --grep-reflog=branch: Created from *. [24ms]
+2024-09-07 16:21:08.712 [info] > git rev-parse --show-toplevel [36ms]
+2024-09-07 16:21:08.712 [info] > git config --get commit.template [41ms]
+2024-09-07 16:21:08.745 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [19ms]
+2024-09-07 16:21:08.751 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [33ms]
+2024-09-07 16:21:08.757 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [46ms]
+2024-09-07 16:21:08.758 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:08.763 [info] > git config --local branch.main.vscode-merge-base [56ms]
+2024-09-07 16:21:08.763 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:08.780 [info] > git reflog main --grep-reflog=branch: Created from *. [11ms]
+2024-09-07 16:21:08.785 [info] > git merge-base refs/heads/main refs/remotes/origin/main [22ms]
+2024-09-07 16:21:08.791 [info] > git config --local branch.main.vscode-merge-base [34ms]
+2024-09-07 16:21:08.791 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:08.797 [info] > git config --local branch.main.vscode-merge-base [46ms]
+2024-09-07 16:21:08.803 [info] > git rev-parse --git-dir --git-common-dir [60ms]
+2024-09-07 16:21:08.814 [info] [Model][openRepository] Opened repository: /home/vir0id/Загрузки/repository/virOS-fonts
+2024-09-07 16:21:08.815 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [77ms]
+2024-09-07 16:21:08.836 [info] > git status -z -uall [651ms]
+2024-09-07 16:21:08.837 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [34ms]
+2024-09-07 16:21:08.837 [info] > git reflog main --grep-reflog=branch: Created from *. [41ms]
+2024-09-07 16:21:08.842 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [51ms]
+2024-09-07 16:21:08.848 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [63ms]
+2024-09-07 16:21:08.848 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:08.849 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [71ms]
+2024-09-07 16:21:08.875 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [20ms]
+2024-09-07 16:21:08.882 [info] > git diff --name-status -z --diff-filter=ADMR 428d4ad2bbe45a09ca4b302aeb2c40197e194194...refs/remotes/origin/main [34ms]
+2024-09-07 16:21:08.883 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [41ms]
+2024-09-07 16:21:08.883 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:08.883 [info] > git rev-parse --show-toplevel [49ms]
+2024-09-07 16:21:08.883 [info] fatal: not a git repository (or any parent up to mount point /home/vir0id)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:08.883 [info] > git config --get commit.template [54ms]
+2024-09-07 16:21:08.892 [info] > git status -z -uall [68ms]
+2024-09-07 16:21:08.893 [info] > git config --local branch.main.vscode-merge-base [11ms]
+2024-09-07 16:21:08.893 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:08.899 [info] > git config --get commit.template [25ms]
+2024-09-07 16:21:08.912 [info] > git rev-parse --show-toplevel [20ms]
+2024-09-07 16:21:08.913 [info] fatal: not a git repository (or any parent up to mount point /home/vir0id)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:08.913 [info] [Model][doInitialScan] Initial repository scan completed - repositories (12), closed repositories (3), parent repositories (0), unsafe repositories (0)
+2024-09-07 16:21:08.968 [info] > git status -z -uall [58ms]
+2024-09-07 16:21:08.969 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [49ms]
+2024-09-07 16:21:08.980 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [75ms]
+2024-09-07 16:21:08.983 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [4ms]
+2024-09-07 16:21:08.988 [info] > git config --local branch.main.vscode-merge-base [13ms]
+2024-09-07 16:21:08.988 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:08.992 [info] > git rev-parse --show-toplevel [27ms]
+2024-09-07 16:21:08.992 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:08.992 [info] > git config --get commit.template [32ms]
+2024-09-07 16:21:08.992 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [37ms]
+2024-09-07 16:21:08.992 [info] > git reflog main --grep-reflog=branch: Created from *. [94ms]
+2024-09-07 16:21:09.006 [info] > git status -z -uall [1053ms] (cancelled)
+2024-09-07 16:21:09.006 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [10ms]
+2024-09-07 16:21:09.006 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:09.011 [info] > git reflog main --grep-reflog=branch: Created from *. [19ms]
+2024-09-07 16:21:09.014 [info] > git config --local branch.main.vscode-merge-base [27ms]
+2024-09-07 16:21:09.014 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:09.025 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [11ms]
+2024-09-07 16:21:09.025 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:09.030 [info] > git merge-base refs/heads/main refs/remotes/origin/main [19ms]
+2024-09-07 16:21:09.037 [info] > git rev-parse --show-toplevel [35ms]
+2024-09-07 16:21:09.037 [info] fatal: not a git repository (or any parent up to mount point /home/vir0id)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:09.044 [info] > git status -z -uall [94ms]
+2024-09-07 16:21:09.044 [info] > git merge-base refs/heads/main refs/remotes/origin/main [14ms]
+2024-09-07 16:21:09.050 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [27ms]
+2024-09-07 16:21:09.061 [info] > git reflog main --grep-reflog=branch: Created from *. [43ms]
+2024-09-07 16:21:09.090 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [25ms]
+2024-09-07 16:21:09.090 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:09.090 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [33ms]
+2024-09-07 16:21:09.095 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [45ms]
+2024-09-07 16:21:09.100 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [64ms]
+2024-09-07 16:21:09.111 [info] > git diff --name-status -z --diff-filter=ADMR 315a677ddfc98935bb284e0b206d852fd3e7c5c0...refs/remotes/origin/main [6ms]
+2024-09-07 16:21:09.112 [info] > git diff --name-status -z --diff-filter=ADMR 70034a98c174c577b37b4116c9fe8206dac24f4c...refs/remotes/origin/main [12ms]
+2024-09-07 16:21:09.114 [info] > git config --local branch.main.vscode-merge-base [19ms]
+2024-09-07 16:21:09.114 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:09.121 [info] > git config --get commit.template [32ms]
+2024-09-07 16:21:09.132 [info] > git reflog main --grep-reflog=branch: Created from *. [11ms]
+2024-09-07 16:21:09.138 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [7ms]
+2024-09-07 16:21:09.144 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [7ms]
+2024-09-07 16:21:09.144 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:09.158 [info] > git status -z -uall [32ms]
+2024-09-07 16:21:09.158 [info] > git status -z -uall [15ms]
+2024-09-07 16:21:09.165 [info] > git merge-base refs/heads/main refs/remotes/origin/main [16ms]
+2024-09-07 16:21:09.171 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [7ms]
+2024-09-07 16:21:09.181 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-09-07 16:21:09.186 [info] > git config --local branch.main.vscode-merge-base [11ms]
+2024-09-07 16:21:09.186 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:09.190 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [20ms]
+2024-09-07 16:21:09.195 [info] > git reflog main --grep-reflog=branch: Created from *. [5ms]
+2024-09-07 16:21:09.199 [info] > git config --local branch.main.vscode-merge-base [14ms]
+2024-09-07 16:21:09.199 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:09.206 [info] > git reflog main --grep-reflog=branch: Created from *. [3ms]
+2024-09-07 16:21:09.211 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [12ms]
+2024-09-07 16:21:09.211 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:09.211 [info] > git diff --name-status -z --diff-filter=ADMR a46e27d4bb7a1f640709f58d854bd480d4d211a2...refs/remotes/origin/main [17ms]
+2024-09-07 16:21:09.213 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [2ms]
+2024-09-07 16:21:09.213 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:09.323 [info] > git status -z -uall [238ms]
+2024-09-07 16:21:09.331 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [3ms]
+2024-09-07 16:21:09.337 [info] > git config --local branch.main.vscode-merge-base [2ms]
+2024-09-07 16:21:09.337 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:09.344 [info] > git reflog main --grep-reflog=branch: Created from *. [3ms]
+2024-09-07 16:21:09.350 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [1ms]
+2024-09-07 16:21:09.350 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:09.430 [info] > git status -z -uall [775ms]
+2024-09-07 16:21:09.442 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/calamares refs/remotes/calamares [7ms]
+2024-09-07 16:21:09.448 [info] > git config --get commit.template [6ms]
+2024-09-07 16:21:09.453 [info] > git config --local branch.calamares.vscode-merge-base [7ms]
+2024-09-07 16:21:09.458 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/calamares refs/remotes/calamares [5ms]
+2024-09-07 16:21:09.463 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/calamares refs/remotes/origin/calamares [5ms]
+2024-09-07 16:21:09.469 [info] > git merge-base refs/heads/calamares refs/remotes/origin/calamares [1ms]
+2024-09-07 16:21:09.506 [info] > git rev-list --count --left-right refs/heads/calamares...refs/remotes/origin/calamares [33ms]
+2024-09-07 16:21:09.511 [info] > git diff --name-status -z --diff-filter=ADMR ad63d4f66f13ce9b533f0d214ba194cb0313fb55...refs/remotes/origin/calamares [1ms]
+2024-09-07 16:21:09.636 [info] > git fetch [1221ms]
+2024-09-07 16:21:09.636 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-07 16:21:09.642 [info] > git status -z -uall [179ms] (cancelled)
+2024-09-07 16:21:09.647 [info] > git config --get commit.template [6ms]
+2024-09-07 16:21:09.648 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/calamares refs/remotes/calamares [2ms]
+2024-09-07 16:21:09.677 [info] > git fetch [1807ms]
+2024-09-07 16:21:09.677 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-07 16:21:09.687 [info] > git config --get commit.template [5ms]
+2024-09-07 16:21:09.688 [info] > git fetch [1846ms]
+2024-09-07 16:21:09.688 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-07 16:21:09.688 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-09-07 16:21:09.692 [info] > git fetch [1532ms]
+2024-09-07 16:21:09.692 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-07 16:21:09.696 [info] > git config --get commit.template [4ms]
+2024-09-07 16:21:09.706 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [6ms]
+2024-09-07 16:21:09.706 [info] > git config --get commit.template [10ms]
+2024-09-07 16:21:09.719 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [8ms]
+2024-09-07 16:21:09.722 [info] > git status -z -uall [3ms]
+2024-09-07 16:21:09.739 [info] > git fetch [1533ms]
+2024-09-07 16:21:09.739 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-07 16:21:09.747 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [13ms]
+2024-09-07 16:21:09.752 [info] > git fetch [1816ms]
+2024-09-07 16:21:09.752 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-07 16:21:09.770 [info] > git status -z -uall [1690ms] (cancelled)
+2024-09-07 16:21:09.770 [info] > git config --local branch.main.vscode-merge-base [18ms]
+2024-09-07 16:21:09.770 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:09.775 [info] > git config --get commit.template [29ms]
+2024-09-07 16:21:09.775 [info] > git fetch [1478ms]
+2024-09-07 16:21:09.775 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-07 16:21:09.783 [info] > git status -z -uall [24ms]
+2024-09-07 16:21:09.784 [info] > git reflog main --grep-reflog=branch: Created from *. [8ms]
+2024-09-07 16:21:09.788 [info] > git config --get commit.template [20ms]
+2024-09-07 16:21:09.788 [info] > git config --get commit.template [24ms]
+2024-09-07 16:21:09.807 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [13ms]
+2024-09-07 16:21:09.813 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [25ms]
+2024-09-07 16:21:09.813 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:09.813 [info] > git config --get commit.template [31ms]
+2024-09-07 16:21:09.813 [info] > git fetch [1556ms]
+2024-09-07 16:21:09.813 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-07 16:21:09.814 [info] > git fetch [1766ms]
+2024-09-07 16:21:09.814 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-07 16:21:09.838 [info] > git config --local branch.main.vscode-merge-base [26ms]
+2024-09-07 16:21:09.838 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:09.843 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [41ms]
+2024-09-07 16:21:09.850 [info] > git status -z -uall [197ms]
+2024-09-07 16:21:09.851 [info] > git config --get commit.template [14ms]
+2024-09-07 16:21:09.851 [info] > git config --get commit.template [19ms]
+2024-09-07 16:21:09.851 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [25ms]
+2024-09-07 16:21:09.851 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [29ms]
+2024-09-07 16:21:09.853 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [4ms]
+2024-09-07 16:21:09.861 [info] > git reflog main --grep-reflog=branch: Created from *. [18ms]
+2024-09-07 16:21:09.876 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/calamares refs/remotes/calamares [17ms]
+2024-09-07 16:21:09.890 [info] > git config --local branch.calamares.vscode-merge-base [8ms]
+2024-09-07 16:21:09.896 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [21ms]
+2024-09-07 16:21:09.897 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [26ms]
+2024-09-07 16:21:09.897 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [31ms]
+2024-09-07 16:21:09.897 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:09.906 [info] > git status -z -uall [17ms]
+2024-09-07 16:21:09.906 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/calamares refs/remotes/origin/calamares [10ms]
+2024-09-07 16:21:09.923 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [9ms]
+2024-09-07 16:21:09.932 [info] > git status -z -uall [10ms]
+2024-09-07 16:21:09.932 [info] > git config --local branch.main.vscode-merge-base [3ms]
+2024-09-07 16:21:09.958 [info] > git status -z -uall [1ms]
+2024-09-07 16:21:09.958 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [14ms]
+2024-09-07 16:21:09.965 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [27ms]
+2024-09-07 16:21:09.970 [info] > git config --local branch.main.vscode-merge-base [6ms]
+2024-09-07 16:21:09.970 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:09.990 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [6ms]
+2024-09-07 16:21:09.994 [info] > git reflog main --grep-reflog=branch: Created from *. [17ms]
+2024-09-07 16:21:09.999 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [1ms]
+2024-09-07 16:21:09.999 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:09.999 [info] > git config --local branch.main.vscode-merge-base [5ms]
+2024-09-07 16:21:09.999 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:10.006 [info] > git reflog main --grep-reflog=branch: Created from *. [3ms]
+2024-09-07 16:21:10.011 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [2ms]
+2024-09-07 16:21:10.011 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:10.133 [info] > git status -z -uall [428ms] (cancelled)
+2024-09-07 16:21:10.361 [info] > git status -z -uall [409ms]
+2024-09-07 16:21:10.361 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [184ms]
+2024-09-07 16:21:11.103 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [732ms]
+2024-09-07 16:21:11.109 [info] > git config --local branch.main.vscode-merge-base [743ms]
+2024-09-07 16:21:11.115 [info] > git config --get commit.template [754ms]
+2024-09-07 16:21:11.115 [info] > git fetch [2301ms]
+2024-09-07 16:21:11.115 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-07 16:21:11.117 [info] > git fetch [2600ms]
+2024-09-07 16:21:11.117 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-07 16:21:11.117 [info] > git fetch [2472ms]
+2024-09-07 16:21:11.117 [info] Missing or invalid credentials.
+Skip silent fetch commands
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2024-09-07 16:21:11.145 [info] > git status -z -uall [2102ms] (cancelled)
+2024-09-07 16:21:11.146 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [31ms]
+2024-09-07 16:21:11.151 [info] > git config --local branch.main.vscode-merge-base [43ms]
+2024-09-07 16:21:11.151 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:11.162 [info] > git merge-base refs/heads/main refs/remotes/origin/main [11ms]
+2024-09-07 16:21:11.167 [info] > git config --get commit.template [22ms]
+2024-09-07 16:21:11.168 [info] > git config --get commit.template [29ms]
+2024-09-07 16:21:11.168 [info] > git config --get commit.template [34ms]
+2024-09-07 16:21:11.168 [info] > git config --get commit.template [40ms]
+2024-09-07 16:21:11.168 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [8ms]
+2024-09-07 16:21:11.168 [info] > git reflog main --grep-reflog=branch: Created from *. [12ms]
+2024-09-07 16:21:11.192 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [4ms]
+2024-09-07 16:21:11.192 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [10ms]
+2024-09-07 16:21:11.192 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [14ms]
+2024-09-07 16:21:11.192 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [25ms]
+2024-09-07 16:21:11.198 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [25ms]
+2024-09-07 16:21:11.198 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:11.198 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [7ms]
+2024-09-07 16:21:11.204 [info] > git diff --name-status -z --diff-filter=ADMR e9f91353a8a07fed4228a3fc98bb6c0f7ae512b4...refs/remotes/origin/main [7ms]
+2024-09-07 16:21:11.241 [info] > git status -z -uall [21ms]
+2024-09-07 16:21:11.250 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [2ms]
+2024-09-07 16:21:11.256 [info] > git config --local branch.main.vscode-merge-base [2ms]
+2024-09-07 16:21:11.256 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:11.262 [info] > git status -z -uall [53ms]
+2024-09-07 16:21:11.269 [info] > git reflog main --grep-reflog=branch: Created from *. [7ms]
+2024-09-07 16:21:11.274 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [6ms]
+2024-09-07 16:21:11.280 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [6ms]
+2024-09-07 16:21:11.280 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:11.281 [info] > git config --local branch.main.vscode-merge-base [1ms]
+2024-09-07 16:21:11.281 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:11.287 [info] > git reflog main --grep-reflog=branch: Created from *. [2ms]
+2024-09-07 16:21:11.293 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [2ms]
+2024-09-07 16:21:11.293 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:11.604 [info] > git status -z -uall [1701ms]
+2024-09-07 16:21:11.613 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [3ms]
+2024-09-07 16:21:11.889 [info] > git status -z -uall [686ms] (cancelled)
+2024-09-07 16:21:11.889 [info] > git config --local branch.main.vscode-merge-base [271ms]
+2024-09-07 16:21:11.889 [warning] [Git][config] git config failed: Failed to execute git
+2024-09-07 16:21:13.467 [info] > git reflog main --grep-reflog=branch: Created from *. [1572ms]
+2024-09-07 16:21:13.472 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1820ms]
+2024-09-07 16:21:13.708 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [186ms]
+2024-09-07 16:21:13.714 [info] > git config --local branch.main.vscode-merge-base [238ms]
+2024-09-07 16:21:13.718 [info] > git symbolic-ref --short refs/remotes/origin/HEAD [246ms]
+2024-09-07 16:21:13.718 [info] fatal: ref refs/remotes/origin/HEAD is not a symbolic ref
+2024-09-07 16:21:14.471 [info] > git merge-base refs/heads/main refs/remotes/origin/main [748ms]
+2024-09-07 16:21:14.476 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [758ms]
+2024-09-07 16:21:14.476 [info] > git config --local branch.main.vscode-merge-base [762ms]
+2024-09-07 16:21:14.486 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [4ms]
+2024-09-07 16:21:14.486 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [10ms]
+2024-09-07 16:21:14.493 [info] > git diff --name-status -z --diff-filter=ADMR 4677f807302f4fc773ee90f0101ef8d43d571c90...refs/remotes/origin/main [2ms]
+2024-09-07 16:21:14.540 [info] > git rev-parse --show-toplevel [16ms]
+2024-09-07 16:21:14.540 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:14.548 [info] > git rev-parse --show-toplevel [2ms]
+2024-09-07 16:21:14.549 [info] fatal: not a git repository (or any parent up to mount point /home/vir0id)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:21:22.465 [info] > git status -z -uall [11251ms]
+2024-09-07 16:21:22.476 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [4ms]
+2024-09-07 16:21:22.484 [info] > git config --local branch.main.vscode-merge-base [2ms]
+2024-09-07 16:21:22.493 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [3ms]
+2024-09-07 16:21:22.501 [info] > git merge-base refs/heads/main refs/remotes/origin/main [2ms]
+2024-09-07 16:21:22.513 [info] > git rev-list --count --left-right refs/heads/main...refs/remotes/origin/main [5ms]
+2024-09-07 16:21:22.522 [info] > git diff --name-status -z --diff-filter=ADMR f26295207775f381576a6ed7360f99a7d37b5330...refs/remotes/origin/main [3ms]
+2024-09-07 16:21:56.076 [info] > git rev-parse --show-toplevel [2ms]
+2024-09-07 16:21:56.076 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:22:03.590 [info] > git rev-parse --show-toplevel [1ms]
+2024-09-07 16:22:03.590 [info] fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+2024-09-07 16:23:43.796 [info] > git check-ignore -v -z --stdin [69ms]
+2024-09-07 16:23:43.796 [info] > git check-ignore -v -z --stdin [61ms]
+2024-09-07 16:23:43.797 [info] > git check-ignore -v -z --stdin [55ms]
+2024-09-07 16:23:43.797 [info] > git check-ignore -v -z --stdin [49ms]
+2024-09-07 16:23:43.797 [info] > git check-ignore -v -z --stdin [42ms]
+2024-09-07 16:23:43.797 [info] > git check-ignore -v -z --stdin [37ms]
+2024-09-07 16:23:43.797 [info] > git check-ignore -v -z --stdin [25ms]
+2024-09-07 16:23:43.797 [info] > git check-ignore -v -z --stdin [19ms]
+2024-09-07 16:23:43.797 [info] > git check-ignore -v -z --stdin [9ms]
+2024-09-07 16:23:43.797 [info] > git check-ignore -v -z --stdin [4ms]
+2024-09-07 16:23:43.802 [info] > git check-ignore -v -z --stdin [36ms]
+2024-09-07 16:23:43.811 [info] > git check-ignore -v -z --stdin [28ms]

@@ -1,0 +1,12 @@
+.body {
+    background: url('/img/343A48.png');
+}
+
+.block {
+
+    
+
+    height: 50%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #000;
+}

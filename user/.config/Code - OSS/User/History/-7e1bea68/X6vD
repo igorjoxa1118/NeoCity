@@ -1,0 +1,24 @@
+#!/bin/bash
+#set -x
+
+yad \
+  --title "NeoCity settings" \
+  --form \
+  --columns=3 \
+  --width=640 \
+  --height=480 \
+  --borders=40 \
+  --wrap \
+  --tail \
+  --editable \
+  --monitor \
+  --justify="center" \
+  --text="Settings for NeoCity system.
+          First one you need run step 1. Next run step 2...." \
+  --image=./img/NeoCity.png \
+  --field="<b>1.Start Firefox</b>":fbtn "bash -c firefox" \
+  --field="<b>2.Kill Firefox</b>":fbtn "bash -c killall firefox" \
+  --field="<b>3.Setting NeoCity System Now</b>":fbtn "bash -c './scripts/settings_init'" \
+  --field="<b>4.Install Firefox Theme</b>":fbtn "bash -c './scripts/install_FF_theme'" \
+  --button=Exit:1 \
+  --separator="\t"

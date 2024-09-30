@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Blue-Dark-ZorinGTK
+Comment=The dark desktop theme with blue highlights for Zorin OS
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Blue-Dark-ZorinGTK
+MetacityTheme=Blue-Dark-ZorinGTK
+CursorTheme=Adwaita
+ButtonLayout=:minimize,maximize,close

@@ -1,0 +1,157 @@
+## Base system
+KERNEL
+KERNEL-headers
+alsa-firmware
+amd-ucode
+b43-fwcutter
+base
+bash-completion
+bzip2
+coreutils
+file
+filesystem
+findutils
+gawk
+gcc-libs
+gettext
+glibc
+grep
+gzip
+inetutils
+intel-ucode
+iproute2
+iputils
+ipw2100-fw
+ipw2200-fw
+licenses
+linux-firmware
+pacman 
+pciutils
+procps-ng
+psmisc
+sed
+shadow
+sof-firmware
+sudo
+systemd
+systemd-sysvcompat
+tar
+usbutils
+util-linux
+which
+wireless-regdb
+xz
+
+
+## GRUB + EFI
+grub-garuda
+efibootmgr
+grub
+#grub-btrfs
+memtest86+
+os-prober-btrfs
+update-grub
+
+
+## Package management 
+pacman-contrib
+rate-mirrors
+
+
+## AUR support
+>extra autoconf
+>extra automake
+>extra binutils
+>extra bison
+>extra fakeroot
+>extra flex
+>extra gcc
+>extra git
+>extra groff
+>extra libtool
+>extra m4
+>extra make
+>extra mercurial
+>extra patch
+>extra pkgconf
+>extra subversion
+>extra texinfo
+
+
+## Filesystem essentials
+btrfs-progs
+>extra curlftpfs
+dosfstools
+e2fsprogs
+ecryptfs-utils
+exfatprogs
+f2fs-tools
+fatresize
+>extra jfsutils
+mtools
+>extra nfs-utils
+>extra nilfs-utils
+ntfsprogs-ntfs3
+>extra reiserfsprogs
+>extra sshfs
+>extra xfsprogs
+
+## Zfs-stuff
+zfs-dkms
+zfs-utils
+
+## Network essentials
+bind
+bridge-utils
+ethtool
+gnu-netcat
+iptables-nft
+net-tools
+nss-mdns
+wget
+wireless_tools
+
+
+## Monitoring
+htop
+inxi
+neofetch-git
+>extra powertop
+
+
+## Utilities
+cryptsetup
+dialog
+dmidecode
+dmraid
+freetype2
+fscrypt
+logrotate
+lsb-release
+lvm2
+man-db
+man-pages
+mdadm
+mkinitcpio-nfs-utils
+mkinitcpio-openswap
+mkinitcpio-systemd-tool
+mlocate
+>extra rsync
+xsel
+
+
+## Text editors
+micro
+>extra nano
+>extra vi
+>extra vim
+
+
+## Chaotic repo
+chaotic-mirrorlist
+chaotic-keyring
+
+
+## Garuda core system stuff
+#garuda-hooks
+garuda-hotfixes

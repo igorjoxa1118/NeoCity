@@ -1,0 +1,27 @@
+user: 167 # orange
+group: 38 # cyan
+permission:
+  read: 167 # orange
+  write: 38 # cyan
+  exec: 213 # vialet
+  exec-sticky: 38 # cyan
+  no-access: 38 # cyan
+  octal: 6
+  acl: 213 # vialet
+  context: 213 # vialet
+date:
+  hour-old: 167 # orange
+  day-old: 38 # cyan
+  older: 213 # vialet
+size:
+  none: 60 #current line
+  small: 60 #green
+  medium: 222 #orange
+  large: 210 #red
+inode:
+  valid: white #foreground
+  invalid: 210 #red
+links:
+  valid: white #cyan
+  invalid: 210 #red
+tree-edge: 213 #purple

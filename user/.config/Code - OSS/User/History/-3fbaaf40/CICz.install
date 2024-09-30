@@ -1,0 +1,27 @@
+_conf() {
+  tmpuser=$(whoami)
+  en_int=$(ip -o link show | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
+  et_int=$(ip -o link show | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
+  wl_int=$(ip -o link show | sed -rn '/^[0-9]+: wl/{s/.: ([^:]*):.*/\1/p}')
+      sed -i "s/enp1s0/${en_int}/g" "$HOME"/.config/i3/scripts/system.ini
+      sed -i "s/wlp0s20f3/${wl_int}/g" "$HOME"/.config/i3/scripts/system.ini
+      sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.config/blender/4.1/config/bookmarks.txt
+      sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.gtkrc-2.0
+      sed -i "s/vir0id/${tmpuser}/g" "$HOME/.config/nitrogen/bg-saved.cfg"
+      sed -i "s/vir0id/${tmpuser}/g" "$HOME/.config/nitrogen/nitrogen.cfg"
+      sed -i "s/vir0id/${tmpuser}/g" "$HOME/.zshrc"
+      sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.config/gtk-3.0/bookmarks
+}
+
+_sett() {
+   echo "QT_QPA_PLATFORMTHEME=qt5ct" > /etc/environment
+}
+
+post_install() {
+  _conf
+  _sett
+}
+
+post_upgrade() {
+  _conf
+}

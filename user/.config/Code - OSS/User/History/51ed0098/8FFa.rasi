@@ -1,0 +1,16 @@
+/**
+ *
+ * Author : Levi Lacoss (fishyfishfish55)
+ * Github : @fishyfishfish55
+ *
+ * Colors
+ **/
+
+* {
+    background:     #16161EFF;
+    background-alt: #2ac3deFF;
+    foreground:     #2ac3deFF;
+    selected:       #2ac3deFF;
+    active:         #2ac3deFF;
+    urgent:         #2ac3deFF;
+}

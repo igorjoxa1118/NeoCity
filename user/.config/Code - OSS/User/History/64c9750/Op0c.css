@@ -1,0 +1,9 @@
+@define-color bg-color #171d20;
+@define-color fg-color #1e2529;
+@define-color sel-color #bde6fb;
+
+@define-color bg-color_0.3 shade (@bg-color, 0.3);
+@define-color bg-color_0.45 shade (@bg-color, 0.45);
+@define-color bg-color_0.5 shade (@bg-color, 0.5);
+@define-color bg-color_0.7 shade (@bg-color, 0.7); 
+@define-color bg-color_0.075 shade (@bg-color, 0.075);

@@ -1,0 +1,19 @@
+## Network
+>extra broadcom-wl-dkms
+
+## Nonfree Nvidia
+>extra >nonfree_x86_64 garuda-nvidia-config
+>extra >nonfree_x86_64 garuda-nvidia-prime-config
+
+## Free Drivers
+xf86-video-sisusb
+xf86-video-vesa
+xf86-video-voodoo
+garuda-video-linux-config
+xf86-video-amdgpu
+xf86-video-intel
+xf86-video-fbdev
+xf86-input-libinput
+
+## Virtualization
+garuda-virtualmachine-guest-config

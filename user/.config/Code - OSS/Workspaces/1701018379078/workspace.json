@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../i3"
+		}
+	],
+	"settings": {
+		"ocaml.sandbox": {
+			"kind": "global"
+		},
+		"git.ignoreLimitWarning": true
+	}
+}
