@@ -116,6 +116,7 @@ pipewire_pkg_yay=(pipewire-support)
 
 if [ ! -f /usr/bin/firefox ]; then 
  sudo pacman -S firefox --noconfirm
+ printf "%s%sStart Firefox manualy!...%s\n" "${BLD}" "${CBL}" "${CNC}" 
  exit;
 fi
 
