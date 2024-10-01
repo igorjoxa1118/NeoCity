@@ -4,7 +4,6 @@
 ##----------------
 #--Colors
 ##----------------
-
 CRE=$(tput setaf 1)
 CYE=$(tput setaf 3)
 CGR=$(tput setaf 2)
@@ -269,13 +268,10 @@ sleep 2
   else
     cd $current_dir
     if [ ! -d $current_dir/pkgs_virOS ]; then
-    break;;
-    else
-      gdown --folder 19SlCmblUJts_I5dlAwd2C3tq7q2-wLbS
-      echo -e "${GRE}Packages in system!"
-      sleep 2
-      sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
-    fi
+    gdown --folder 19SlCmblUJts_I5dlAwd2C3tq7q2-wLbS
+    echo -e "${GRE}Packages in system!"
+    sleep 2
+    sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
   fi
 
 sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
