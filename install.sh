@@ -374,7 +374,6 @@ if [ -d /etc/sddm.conf.d/ ]; then
    sudo cp -rf $current_dir/sddm/catppuccin-mocha /usr/share/sddm/themes
    sudo systemctl enable sddm.service
    echo -e "${LIGHTCYAN}Done!"
- fi
 fi
 
 if [ -d /etc/lightdm ]; then
