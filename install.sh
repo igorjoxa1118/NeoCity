@@ -4,6 +4,7 @@
 ##----------------
 #--Colors
 ##----------------
+
 CRE=$(tput setaf 1)
 CYE=$(tput setaf 3)
 CGR=$(tput setaf 2)
