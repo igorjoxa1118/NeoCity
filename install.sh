@@ -287,6 +287,10 @@ sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/
       echo "GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"" >> /etc/default/grub
     fi
 
+##-------------------
+#--Install bin files
+##-------------------
+
 if [[ ! -f "/usr/local/bin/toggle-conkeww" ]]; then
   sudo mkdir -p /usr/share/garuda/jgmenu/
   sudo cp -r "$home_dir"/.config/i3/bin/toggle-conkeww /usr/local/bin
