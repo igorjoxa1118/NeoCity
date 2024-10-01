@@ -274,7 +274,18 @@ sleep 2
   fi
 
 sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
-sudo sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"|" /etc/default/grub
+
+##-------------------
+#--Grub themes apply
+##-------------------
+
+    if grep "GRUB_THEME=" /etc/default/grub 2>&1 >/dev/null; then
+      #Replace GRUB_THEME
+      sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"|" /etc/default/grub
+    else
+      #Append GRUB_THEME
+      echo "GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"" >> /etc/default/grub
+    fi
 
 if [[ ! -f "/usr/local/bin/toggle-conkeww" ]]; then
   sudo mkdir -p /usr/share/garuda/jgmenu/
