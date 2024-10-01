@@ -3,7 +3,7 @@
 <img src="https://github.com/igorjoxa1118/NeoCity/blob/main/screenshots/Screen.png?raw=true" alt="Rice Showcase" align="right" width="400px">
 
 - **OS:** [Garuda Linux](https://garudalinux.org/)
-- **WM:** [i3-gaps](https://github.com/Airblader/i3)
+- **WM:** [i3-wm](https://github.com/Airblader/i3)
 - **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **Text Editor:** [Visual-code](https://code.visualstudio.com/) [Micro](https://micro-editor.github.io/)
 - **File Manager:** [Thunar](https://github.com/neilbrown/thunar) [Ranger](https://github.com/ranger/ranger)
