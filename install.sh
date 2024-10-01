@@ -284,9 +284,11 @@ sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/
     if grep "GRUB_THEME=" /etc/default/grub 2>&1 >/dev/null; then
       #Replace GRUB_THEME
       sudo sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"|" /etc/default/grub
+      sudo grub-mkconfig -o /boot/grub/grub.cfg
     else
       #Append GRUB_THEME
       sudo echo "GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"" >> /etc/default/grub
+      sudo grub-mkconfig -o /boot/grub/grub.cfg
     fi
 
 ##-------------------
