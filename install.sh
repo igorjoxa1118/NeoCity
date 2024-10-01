@@ -1,6 +1,9 @@
 #!/bin/bash
 #set -x
 
+##----------------
+#--Colors
+##----------------
 CRE=$(tput setaf 1)
 CYE=$(tput setaf 3)
 CGR=$(tput setaf 2)
@@ -23,11 +26,22 @@ YELLOW='\033[1;33m'
 LIGHTBLUE='\033[1;34m'
 LIGHTPURPLE='\033[1;35m'
 LIGHTCYAN='\033[1;36m'
+
+##-----------------
+#---Vars
+##-----------------
+
 WHITE='\033[1;37m'
-work_dir=$(pwd)
 backup_folder=~/.Backup_files
 date=$(date +%Y%m%d-%H%M%S)
 repo_url="https://github.com/igorjoxa1118/NeoCity"
+paru_url="https://aur.archlinux.org/paru-bin.git"
+home_dir=$HOME
+current_dir=$(pwd)
+
+##-----------------
+#--Logo
+##-----------------
 
 logo () {
 	
@@ -48,10 +62,15 @@ ____   ____.__        _______  .__    .___     .___      __    _____.__.__
     printf ' %s [%s%s %s%s %s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${text}" "${CNC}" "${CRE}" "${CNC}"
 }
 
-########## ---------- Скрипт НЕ должен быть запущен от sudo ---------- ##########
+########## ---------- Скрипт должен быть запущен от sudo ---------- ##########
 
 if [ "$(id -u)" = 0 ]; then
     echo -e "${LIGHTBLUE}This script MUST NOT be run as root user."
+    exit 1
+fi
+
+if [ "$current_dir" != "$home_dir" ]; then
+    printf "%s%sThe script must be executed from the HOME directory.%s\n" "${BLD}" "${CYE}" "${CNC}"
     exit 1
 fi
 
@@ -140,7 +159,7 @@ clear
 ########## ---------- Проверка существование домашних каталогов ---------- ##########
 
 # Проверка того, что архив user-dirs.dirs не существует в ~/.config
-	if [ ! -e "$HOME/.config/user-dirs.dirs" ]; then
+	if [ ! -e "$home_dir/.config/user-dirs.dirs" ]; then
 		xdg-user-dirs-update
 		echo -e "${LIGHTBLUE}Creating xdg-user-dirs"
 	fi
@@ -157,8 +176,8 @@ if command -v paru >/dev/null 2>&1; then
 else
     printf "%s%sInstalling paru%s\n" "${BLD}" "${CBL}" "${CNC}"
     {
-        cd "$HOME" || exit
-        git clone https://aur.archlinux.org/paru-bin.git
+        cd "$home_dir" || exit
+        git clone $paru_url
         cd paru-bin || exit
         makepkg -si --noconfirm
         } || {
@@ -240,32 +259,32 @@ clear
 logo "Install dotfiles"
 sleep 2
 func_install_dots() {
-cp -rf "$work_dir"/user/.* "$HOME"
-cp -rf "$work_dir"/user/Test_Musik "$HOME"
+cp -rf "$current_dir"/user/.* "$home_dir"
+cp -rf "$current_dir"/user/Test_Musik "$home_dir"
 clear
 echo -e "${GRE}Copy dots succesfully!"
 sleep 2
-  if [ -d $work_dir/pkgs_virOS ]; then
-    sudo pacman -U $work_dir/pkgs_virOS/*.zst --noconfirm
+  if [ -d $current_dir/pkgs_virOS ]; then
+    sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
   else
-    cd $work_dir
+    cd $current_dir
     gdown --folder 19SlCmblUJts_I5dlAwd2C3tq7q2-wLbS
     echo -e "${GRE}Packages in system!"
     sleep 2
-    sudo pacman -U $work_dir/pkgs_virOS/*.zst --noconfirm
+    sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
   fi
 
 if [[ ! -f "/usr/local/bin/toggle-conkeww" ]]; then
   sudo mkdir -p /usr/share/garuda/jgmenu/
-  sudo cp -r "$HOME"/.config/i3/bin/toggle-conkeww /usr/local/bin
-  sudo cp -r "$HOME"/.config/i3/bin/i3-new-workspace /usr/local/bin
+  sudo cp -r "$home_dir"/.config/i3/bin/toggle-conkeww /usr/local/bin
+  sudo cp -r "$home_dir"/.config/i3/bin/i3-new-workspace /usr/local/bin
   sudo chmod 755 /usr/local/bin/i3-new-workspace
-  sudo cp -r "$HOME"/.config/i3/bin/colors /usr/local/bin
-  sudo cp -r "$HOME"/.config/i3/bin/def-dmenu /usr/local/bin
-  sudo cp -r "$HOME"/.config/i3/bin/def-nmdmenu /usr/local/bin
-  sudo cp -r "$HOME"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/ 
+  sudo cp -r "$home_dir"/.config/i3/bin/colors /usr/local/bin
+  sudo cp -r "$home_dir"/.config/i3/bin/def-dmenu /usr/local/bin
+  sudo cp -r "$home_dir"/.config/i3/bin/def-nmdmenu /usr/local/bin
+  sudo cp -r "$home_dir"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/ 
 else
-sudo cp -r "$HOME"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/
+sudo cp -r "$home_dir"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/
 fi
 }
 
@@ -280,8 +299,8 @@ sleep 2
 ad=$(ls /sys/class/power_supply/ | awk "NR==1 { print $2 }" | grep A)
 bat=$(ls /sys/class/power_supply/ | awk "NR==2 { print $2 }" | grep B)
 
-sed -i "s/AC/${ad}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
-sed -i "s/BAT0/${bat}/g" "$HOME"/.config/i3/rices/emilia/modules.ini
+sed -i "s/AC/${ad}/g" "$home_dir"/.config/i3/rices/emilia/modules.ini
+sed -i "s/BAT0/${bat}/g" "$home_dir"/.config/i3/rices/emilia/modules.ini
 echo -e "${PURPLE}Power supply install done!"
 sleep 2
 clear
@@ -295,22 +314,22 @@ wl_int=$(ip -o link show | sed -rn '/^[0-9]+: wl/{s/.: ([^:]*):.*/\1/p}')
 
 ### --- Проверка проводных сетевых интерфейсов. Добавляем интерфейсы в конфиги. --- ###
 if [ ! -z "$en_int" ]; then
-sed -i "s/enp1s0/${en_int}/g" "$HOME"/.config/i3/scripts/system.ini
+sed -i "s/enp1s0/${en_int}/g" "$home_dir"/.config/i3/scripts/system.ini
 else
   if [ ! -z "$et_int" ]; then
-  sed -i "s/enp1s0/${et_int}/g" "$HOME"/.config/i3/scripts/system.ini
+  sed -i "s/enp1s0/${et_int}/g" "$home_dir"/.config/i3/scripts/system.ini
   else
   read -p "What is you Wired connection interface?(Example: eth0, enp59s0): " et_int_custom
-  sed -i "s/enp1s0/${et_int_custom}/g" "$HOME"/.config/i3/scripts/system.ini
+  sed -i "s/enp1s0/${et_int_custom}/g" "$home_dir"/.config/i3/scripts/system.ini
   fi
 fi
 
 ### --- Проверка безпроводных сетевых интерфейсов. Добавляем интерфейсы в конфиги. --- ###
 if [ ! -z "$wl_int" ]; then
-sed -i "s/wlp0s20f3/${wl_int}/g" "$HOME"/.config/i3/scripts/system.ini
+sed -i "s/wlp0s20f3/${wl_int}/g" "$home_dir"/.config/i3/scripts/system.ini
 else
 read -p "What is you Wireless connection interface?(Example: wlp0s20f3, wlp0s20f3): " wl_int_custom
-sed -i "s/wlp0s20f3/${wl_int_custom}/g" "$HOME"/.config/i3/scripts/system.ini
+sed -i "s/wlp0s20f3/${wl_int_custom}/g" "$home_dir"/.config/i3/scripts/system.ini
 fi
 
 echo -e "${LIGHTCYAN}Connection interfaces install done!"
@@ -323,14 +342,14 @@ sleep 2
 if [ -f /usr/bin/lightdm ]; then
   sudo pacman -Rdd lightdm lightdm-gtk-greeter --noconfirm
  if [ -d /usr/bin/sddm ]; then
-   sudo cp -rf $work_dir/sddm/sddm.conf.d /etc/
-   sudo cp -rf $work_dir/sddm/catppuccin-mocha /usr/share/sddm/themes
+   sudo cp -rf $current_dir/sddm/sddm.conf.d /etc/
+   sudo cp -rf $current_dir/sddm/catppuccin-mocha /usr/share/sddm/themes
    sudo systemctl enable sddm
    echo -e "${LIGHTCYAN}Done!"
  else 
    sudo pacman -S sddm --noconfirm
-   sudo cp -rf $work_dir/sddm/sddm.conf.d /etc/
-   sudo cp -rf $work_dir/sddm/catppuccin-mocha /usr/share/sddm/themes
+   sudo cp -rf $current_dir/sddm/sddm.conf.d /etc/
+   sudo cp -rf $current_dir/sddm/catppuccin-mocha /usr/share/sddm/themes
    sudo systemctl enable sddm
    echo -e "${LIGHTCYAN}Done!"
  fi
@@ -347,15 +366,15 @@ clear
 logo "Add user configs"
 sleep 2
 tmpuser=$(whoami)
-sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.config/blender/4.1/config/bookmarks.txt
-sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.gtkrc-2.0
-sed -i "s/vir0id/${tmpuser}/g" "$HOME/.config/nitrogen/bg-saved.cfg"
-sed -i "s/vir0id/${tmpuser}/g" "$HOME/.config/nitrogen/nitrogen.cfg"
-sed -i "s/vir0id/${tmpuser}/g" "$HOME/.zshrc"
-sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.config/gtk-3.0/bookmarks
-sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.local/share/applications/nvim.desktop
-sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.local/share/applications/ranger.desktop
-sed -i "s/vir0id/${tmpuser}/g" "$HOME"/.local/share/applications/zfetch.desktop
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/blender/4.1/config/bookmarks.txt
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.gtkrc-2.0
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir/.config/nitrogen/bg-saved.cfg"
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir/.config/nitrogen/nitrogen.cfg"
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir/.zshrc"
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/gtk-3.0/bookmarks
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/nvim.desktop
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/ranger.desktop
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/zfetch.desktop
 sleep 2
 clear
 
@@ -366,7 +385,7 @@ grep_ff=$(ls ~/.mozilla/firefox | grep default-release)
 
 copy_ff_func() {
 if [ ! -z "$grep_ff" ]; then
-for ff_themes in "$work_dir"/firefox/*; do
+for ff_themes in "$current_dir"/firefox/*; do
   cp -R "${ff_themes}" ~/.mozilla/firefox/"$grep_ff"
   if [ $? -eq 0 ]; then
 	echo -e "${LIGHTBLUE}$ff_themes install done!"
@@ -396,16 +415,16 @@ nvidia_detect() {
   blacklight=$(ls -1 /sys/class/backlight/)
 
     if [ $(lspci -k | grep -A 2 -E "(VGA|3D)" | grep -i nvidia | wc -l) -gt 0 ]; then
-        rm -rf "$HOME/.config/i3/rices/tealize/config.ini"
-        cd "$work_dir"/polybar_rices/nvidia || exit
-        cp -R config.ini "$HOME/.config/i3/rices/tealize/"
-        sed -i "s/intel_backlight/${blacklight}/g" "$HOME"/.config/i3/scripts/system.ini
+        rm -rf "$home_dir/.config/i3/rices/tealize/config.ini"
+        cd "$current_dir"/polybar_rices/nvidia || exit
+        cp -R config.ini "$home_dir/.config/i3/rices/tealize/"
+        sed -i "s/intel_backlight/${blacklight}/g" "$home_dir"/.config/i3/scripts/system.ini
         echo -e "${ORANGE}Nvidia found!"
     else
-        rm -rf "$HOME/.config/i3/rices/tealize/config.ini"
-        cd "$work_dir"/polybar_rices/not_nvidia || exit
-        cp -R config.ini "$HOME/.config/i3/rices/tealize/"
-        sed -i "s/intel_backlight/${blacklight}/g" "$HOME"/.config/i3/scripts/system.ini
+        rm -rf "$home_dir/.config/i3/rices/tealize/config.ini"
+        cd "$current_dir"/polybar_rices/not_nvidia || exit
+        cp -R config.ini "$home_dir/.config/i3/rices/tealize/"
+        sed -i "s/intel_backlight/${blacklight}/g" "$home_dir"/.config/i3/scripts/system.ini
         echo -e "${CYAN}Nvidia card no found!"
     fi
 }
