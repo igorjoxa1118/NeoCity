@@ -7,7 +7,7 @@
 - **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **Text Editor:** [Visual-code](https://code.visualstudio.com/) [Micro](https://micro-editor.github.io/)
 - **File Manager:** [Thunar](https://github.com/neilbrown/thunar) [Ranger](https://github.com/ranger/ranger)
-- **Fonts:** [JetBrainsMono](https://www.jetbrains.com/ru-ru/lp/mono/) [Iosevka Term](https://github.com/be5invis/Iosevka)
+- **Fonts:** [MesloLGS NF](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) [Iosevka Term](https://github.com/be5invis/Iosevka)
 - **Bar:** [Polybar](https://github.com/polybar/polybar)
 - **Shell:** [Ohmyzsh](https://ohmyz.sh/)
 - **Compositor:** [Picom](https://github.com/yshui/picom)
