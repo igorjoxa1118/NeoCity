@@ -238,7 +238,6 @@ clear
 
 ########## ---------- Резервная копия файлов и каталогов ---------- ##########
 logo "Backup files"
-sleep 2
 echo -e "${CYAN}Backup files will be stored in .Backup_files"
 
 rsync -aAEHSXxr --exclude=".cache/mozilla/*" ~/.[^.]* $backup_folder
@@ -253,9 +252,8 @@ for del in polybar rofi picom.conf; do
 done
 clear
 
-########## ---------- Установка dot-файлов и темы для Firefox ---------- ##########
+########## ---------- Установка dot-файлов ---------- ##########
 logo "Install dotfiles"
-sleep 2
 func_install_dots() {
 cp -rf "$current_dir"/user/.* "$home_dir"
 sudo cp -rf "$current_dir"/grub_themes/catppuccin-mocha-grub-theme /usr/share/grub/themes/
@@ -272,23 +270,7 @@ sleep 2
     sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
     fi
   fi
-
-sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
-sed -i "s/vir0id/${USER}/g" ~/.config/kitty/kitty.conf
 clear
-##-------------------
-#--Grub themes apply
-##-------------------
-
-    if grep "GRUB_THEME=" /etc/default/grub 2>&1 >/dev/null; then
-      #Replace GRUB_THEME
-      sudo sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"|" /etc/default/grub
-      sudo grub-mkconfig -o /boot/grub/grub.cfg
-    else
-      #Append GRUB_THEME
-      sudo echo "GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"" >> /etc/default/grub
-      sudo grub-mkconfig -o /boot/grub/grub.cfg
-    fi
 
 ##-------------------
 #--Install bin files
@@ -304,7 +286,7 @@ if [[ ! -f "/usr/local/bin/toggle-conkeww" ]]; then
   sudo cp -r "$home_dir"/.config/i3/bin/def-nmdmenu /usr/local/bin
   sudo cp -r "$home_dir"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/ 
 else
-sudo cp -r "$home_dir"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/
+  sudo cp -r "$home_dir"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/
 fi
 }
 
@@ -315,7 +297,6 @@ clear
 
 ########## ---------- Установка сведений о батареи ---------- ##########
 logo "Power supply install"
-sleep 2
 ad=$(ls /sys/class/power_supply/ | awk "NR==1 { print $2 }" | grep A)
 bat=$(ls /sys/class/power_supply/ | awk "NR==2 { print $2 }" | grep B)
 
@@ -327,7 +308,6 @@ clear
 
 ### -- Переменные для сетевых интерфейсов -- ###
 logo "Connection interfaces install"
-sleep 2
 en_int=$(ip -o link show | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
 et_int=$(ip -o link show | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
 wl_int=$(ip -o link show | sed -rn '/^[0-9]+: wl/{s/.: ([^:]*):.*/\1/p}')
@@ -385,7 +365,6 @@ clear
 
 ##-- Установка пользователя в конфиги
 logo "Add user configs"
-sleep 2
 tmpuser=$(whoami)
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/blender/4.1/config/bookmarks.txt
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.gtkrc-2.0
@@ -396,16 +375,31 @@ sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/gtk-3.0/bookmarks
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/nvim.desktop
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/ranger.desktop
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/zfetch.desktop
+sed -i "s/vir0id/${USER}/g" ~/.config/kitty/kitty.conf
+sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
 sleep 2
 clear
 
+##-------------------
+#--Grub themes apply
+##-------------------
+
+    if grep "GRUB_THEME=" /etc/default/grub 2>&1 >/dev/null; then
+      #Replace GRUB_THEME
+      sudo sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"|" /etc/default/grub
+      sudo grub-mkconfig -o /boot/grub/grub.cfg
+    else
+      #Append GRUB_THEME
+      sudo echo "GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"" >> /etc/default/grub
+      sudo grub-mkconfig -o /boot/grub/grub.cfg
+    fi
+
 ### --- Установка темы и конфигов Firefox --- ###
 logo "Firefox theme install"
-sleep 2
 
 copy_ff_func() {
   cp -R $current_dir/firefox/FoxThemes/ ~/.mozilla/
-  echo "${ORANGE}Firefox theme installed"
+  echo -e "${ORANGE}Firefox theme installed"
   sleep 2
 }
 grep_ff=$(ls ~/.mozilla/firefox | grep default-release)
@@ -416,11 +410,11 @@ else
    sleep 2
    exit 1
 fi
+sleep 2
 clear
 
 #### ------- Проверка видеокарты. Если карта отсутствует, то модули на polybar будут другие --- ###
 logo "Check nvidia driver"
-sleep 2
 nvidia_detect() {
   blacklight=$(ls -1 /sys/class/backlight/)
 
@@ -447,7 +441,6 @@ clear
 
 ### --- Проверка, включена ли служб на глобальном (системном) уровне. --- ###
 logo "Enabling MPD services"
-sleep 2
 
 if systemctl is-enabled --quiet mpd.service; then
     printf "\n%s%sDisabling and stopping the global mpd service%s\n" "${BLD}" "${CBL}" "${CNC}"
@@ -457,15 +450,13 @@ if systemctl is-enabled --quiet mpd.service; then
       printf "\n%s%sEnabling and starting the user-level mpd service%s\n" "${BLD}" "${CYE}" "${CNC}"
       systemctl --user enable --now mpd.service
       printf "%s%sDone!!%s\n\n" "${BLD}" "${CGR}" "${CNC}"
-    sleep 2
-    clear
 fi
+sleep 2
+clear
 
 ### --- Добавление пользователя в группы вирутальных машин. --- ###
 logo "Add libvirt Group"
-sleep 2
 echo -e "${ORANGE}Enabling Groups"
-sleep 2
     sudo usermod -a -G libvirt $(whoami)
     newgrp libvirt
 echo -e "${ORANGE}Done!"
@@ -474,7 +465,6 @@ clear
 
 ########## --------- Замена шелла на zsh ---------- ##########
 logo "Changing default shell to zsh"
-sleep 2
 	if [[ $SHELL != "/usr/bin/zsh" ]]; then
     printf "\n%s%sChanging your shell to zsh. Your root password is needed.%s\n\n" "${BLD}" "${CYE}" "${CNC}"
     # Cambia la shell a zsh
