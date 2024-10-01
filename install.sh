@@ -357,10 +357,10 @@ clear
 logo "Install SDDM"
 sleep 2
 
-if [ -f /usr/bin/lightdm ]; them
+if [ -f /usr/bin/lightdm ]; then
    sudo systemctl disable lightdm.service
    sudo pacman -Rdd lightdm lightdm-gtk-greeter --noconfirm
-   fi
+fi
 
 if [ -d /etc/sddm.conf.d/ ]; then
    sudo cp -rf $current_dir/sddm/sddm.conf.d /etc/
