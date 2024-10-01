@@ -404,12 +404,11 @@ logo "Firefox theme install"
 sleep 2
 
 copy_ff_func() {
-  grep_ff=$(ls ~/.mozilla/firefox | grep default-release)
-  cp -R $current_dir/firefox/FoxThemes ~/.mozilla/
+  cp -R $current_dir/firefox/FoxThemes/ ~/.mozilla/
   echo "${ORANGE}Firefox theme installed"
   sleep 2
 }
-
+grep_ff=$(ls ~/.mozilla/firefox | grep default-release)
 if [ ! -z "$grep_ff" ]; then
    copy_ff_func
 else
