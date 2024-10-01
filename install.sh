@@ -26,18 +26,20 @@ YELLOW='\033[1;33m'
 LIGHTBLUE='\033[1;34m'
 LIGHTPURPLE='\033[1;35m'
 LIGHTCYAN='\033[1;36m'
+WHITE='\033[1;37m'
 
 ##-----------------
 #---Vars
 ##-----------------
 
-WHITE='\033[1;37m'
 backup_folder=~/.Backup_files
 date=$(date +%Y%m%d-%H%M%S)
 repo_url="https://github.com/igorjoxa1118/NeoCity"
 paru_url="https://aur.archlinux.org/paru-bin.git"
 home_dir=$HOME
 current_dir=$(pwd)
+GRUB_THEME_DIR="/usr/share/grub/themes"
+grub_theme="catppuccin-mocha-grub-theme"
 
 ##-----------------
 #--Logo
@@ -257,6 +259,7 @@ sleep 2
 func_install_dots() {
 cp -rf "$current_dir"/user/.* "$home_dir"
 cp -rf "$current_dir"/user/Test_Musik "$home_dir"
+sud cp -rf "$current_dir"/grub_themes/catppuccin-mocha-grub-theme /usr/share/grub/themes/
 clear
 echo -e "${GRE}Copy dots succesfully!"
 sleep 2
@@ -268,8 +271,10 @@ sleep 2
     echo -e "${GRE}Packages in system!"
     sleep 2
     sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
-    sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
   fi
+
+sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
+sudo sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"|" /etc/default/grub
 
 if [[ ! -f "/usr/local/bin/toggle-conkeww" ]]; then
   sudo mkdir -p /usr/share/garuda/jgmenu/
