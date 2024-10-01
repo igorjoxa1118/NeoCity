@@ -403,31 +403,21 @@ clear
 ### --- Установка темы и конфигов Firefox --- ###
 logo "Firefox theme install"
 sleep 2
-grep_ff=$(ls ~/.mozilla/firefox | grep default-release)
 
 copy_ff_func() {
-if [ ! -z "$grep_ff" ]; then
-for ff_themes in "$current_dir"/firefox/*; do
-  cp -R "${ff_themes}" ~/.mozilla/firefox/"$grep_ff"
-  if [ $? -eq 0 ]; then
-	echo -e "${LIGHTBLUE}$ff_themes install done!"
-	sleep 1
-  else
-	echo -e "${BLUE}Failed to been copied, you must copy it manually"
-	sleep 1
-  fi
-done
-fi
+  grep_ff=$(ls ~/.mozilla/firefox | grep default-release)
+  cp -R $current_dir/firefox/FoxThemes ~/.mozilla/
+  echo "${ORANGE}Firefox theme installed"
+  sleep 2
 }
 
 if [ ! -z "$grep_ff" ]; then
    copy_ff_func
 else
-   echo -e "${ORANGE}Please start FF befor run this script"
+   echo -e "${RED}Firefox themes not installed"
+   sleep 2
    exit 1
 fi
-
-sleep 2
 clear
 
 #### ------- Проверка видеокарты. Если карта отсутствует, то модули на polybar будут другие --- ###

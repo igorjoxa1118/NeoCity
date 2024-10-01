@@ -294,6 +294,20 @@ notify_user() {
 	dunstify -u normal -h string:x-dunst-stack-tag:applytheme -i /usr/share/archcraft/icons/dunst/themes.png "Applying Style : $THEME"
 }
 
+# Firefox theme
+set_firefox_theme() {
+grep_ff=$(ls "$HOME"/.mozilla/firefox | grep default-release)
+path_to_ff=""$HOME"/.mozilla/firefox/"$grep_ff"/chrome"
+path_to_ff_themes=""$HOME"/.mozilla/FoxThemes"
+theme_name="userChrome.css"
+
+    if [ -d "$path_to_ff" ]; then
+        cp -rf "$path_to_ff_themes"/"$RICETHEME"/chrome/"$theme_name" "$path_to_ff"
+    else
+        echo "Somthing wrong"
+    fi
+}
+
 ## Execute Script ---------------------------
 notify_user
 create_file
@@ -307,3 +321,4 @@ apply_appearance
 apply_dunst
 apply_compositor
 apply_i3wm
+set_firefox_theme

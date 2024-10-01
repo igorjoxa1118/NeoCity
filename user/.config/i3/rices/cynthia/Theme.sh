@@ -36,6 +36,7 @@ set_icons() {
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Gruvbox/g" "$HOME"/.config/gtk-4.0/settings.ini	
 }
 
+# Firefox theme
 set_firefox_theme() {
 grep_ff=$(ls "$HOME"/.mozilla/firefox | grep default-release)
 path_to_ff=""$HOME"/.mozilla/firefox/"$grep_ff"/chrome"
@@ -43,7 +44,7 @@ path_to_ff_themes=""$HOME"/.mozilla/FoxThemes"
 theme_name="userChrome.css"
 
     if [ -d "$path_to_ff" ]; then
-        cp -rf "$path_to_ff_themes"/"$RICETHEME"/"$theme_name" "$path_to_ff"
+        cp -rf "$path_to_ff_themes"/"$RICETHEME"/chrome/"$theme_name" "$path_to_ff"
     else
         echo "Somthing wrong"
     fi

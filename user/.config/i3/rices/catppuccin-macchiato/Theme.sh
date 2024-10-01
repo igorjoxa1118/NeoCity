@@ -42,4 +42,20 @@ launch_bar() {
 # 	fix_modules
 # 	touch "$RFILE"
 # fi	
+
+# Firefox theme
+set_firefox_theme() {
+grep_ff=$(ls "$HOME"/.mozilla/firefox | grep default-release)
+path_to_ff=""$HOME"/.mozilla/firefox/"$grep_ff"/chrome"
+path_to_ff_themes=""$HOME"/.mozilla/FoxThemes"
+theme_name="userChrome.css"
+
+    if [ -d "$path_to_ff" ]; then
+        cp -rf "$path_to_ff_themes"/"$RICETHEME"/chrome/"$theme_name" "$path_to_ff"
+    else
+        echo "Somthing wrong"
+    fi
+}
+
+set_firefox_theme
 launch_bar
