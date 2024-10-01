@@ -69,11 +69,6 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
-if [ "$current_dir" != "$home_dir" ]; then
-    printf "%s%sThe script must be executed from the HOME directory.%s\n" "${BLD}" "${CYE}" "${CNC}"
-    exit 1
-fi
-
 ########## ---------- Приветики пистолетики =) ---------- ##########
 
 logo "Welcome!"
