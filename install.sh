@@ -380,8 +380,6 @@ fi
 if [ -d /etc/lightdm ]; then
   sudo rm -rf /etc/lightdm
 fi
-
-sleep 2
 clear
 
 ##-- Установка пользователя в конфиги
