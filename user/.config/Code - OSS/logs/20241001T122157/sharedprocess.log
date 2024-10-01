@@ -1,0 +1,33 @@
+2024-10-01 12:22:05.607 [info] Getting Manifest... enkia.tokyo-night
+2024-10-01 12:22:06.004 [info] Installing extension: enkia.tokyo-night {"productVersion":{"version":"1.93.1","date":"2024-09-13T07:34:01.258Z"},"pinned":false,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/igorjoxa/.vscode-oss/extensions/extensions.json","path":"/home/igorjoxa/.vscode-oss/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true}
+2024-10-01 12:22:06.446 [error] Could not load vsce-sign module Cannot find module '@vscode/vsce-sign'
+Require stack:
+- /usr/lib/code/out/bootstrap-fork.js
+2024-10-01 12:22:06.447 [info] Extension signature verification is not done: enkia.tokyo-night
+2024-10-01 12:22:06.478 [info] Extracted extension to file:///home/igorjoxa/.vscode-oss/extensions/enkia.tokyo-night-1.0.9-universal: enkia.tokyo-night
+2024-10-01 12:22:06.485 [info] Renamed to /home/igorjoxa/.vscode-oss/extensions/enkia.tokyo-night-1.0.9-universal
+2024-10-01 12:22:06.501 [info] Marked extension as uninstalled enkia.tokyo-night-1.0.6-universal
+2024-10-01 12:22:06.505 [info] Extension installed successfully: enkia.tokyo-night vscode-userdata:/home/igorjoxa/.vscode-oss/extensions/extensions.json
+2024-10-01 12:22:06.576 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/igorjoxa/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/igorjoxa/.vscode-oss/extensions/extensions.json.vsctmp'
+    at o.create (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:54:19406)
+    at u (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:54:19517)
+    at $.hb (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:36674)
+    at $.stat (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:29001)
+    at async c.stat (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:14931)
+    at async W.ub (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:105:120356)
+2024-10-01 12:24:47.434 [info] Getting Manifest... whizkydee.material-palenight-theme
+2024-10-01 12:24:47.586 [info] Installing extension: whizkydee.material-palenight-theme {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/igorjoxa/.vscode-oss/extensions/extensions.json","path":"/home/igorjoxa/.vscode-oss/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.93.1","date":"2024-09-13T07:34:01.258Z"}}
+2024-10-01 12:24:47.894 [error] Could not load vsce-sign module Cannot find module '@vscode/vsce-sign'
+Require stack:
+- /usr/lib/code/out/bootstrap-fork.js
+2024-10-01 12:24:47.894 [info] Extension signature verification is not done: whizkydee.material-palenight-theme
+2024-10-01 12:24:47.924 [info] Extracted extension to file:///home/igorjoxa/.vscode-oss/extensions/whizkydee.material-palenight-theme-2.0.2-universal: whizkydee.material-palenight-theme
+2024-10-01 12:24:47.931 [info] Renamed to /home/igorjoxa/.vscode-oss/extensions/whizkydee.material-palenight-theme-2.0.2-universal
+2024-10-01 12:24:47.953 [info] Extension installed successfully: whizkydee.material-palenight-theme vscode-userdata:/home/igorjoxa/.vscode-oss/extensions/extensions.json
+2024-10-01 12:24:48.019 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/igorjoxa/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/igorjoxa/.vscode-oss/extensions/extensions.json.vsctmp'
+    at o.create (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:54:19406)
+    at u (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:54:19517)
+    at $.hb (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:36674)
+    at $.stat (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:29001)
+    at async c.stat (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:14931)
+    at async W.ub (/usr/lib/code/out/vs/code/node/sharedProcess/sharedProcessMain.js:105:120356)
