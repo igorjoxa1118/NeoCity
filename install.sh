@@ -259,12 +259,12 @@ sleep 2
 func_install_dots() {
 cp -rf "$current_dir"/user/.* "$home_dir"
 cp -rf "$current_dir"/user/Test_Musik "$home_dir"
-sud cp -rf "$current_dir"/grub_themes/catppuccin-mocha-grub-theme /usr/share/grub/themes/
+sudo cp -rf "$current_dir"/grub_themes/catppuccin-mocha-grub-theme /usr/share/grub/themes/
 clear
 echo -e "${GRE}Copy dots succesfully!"
 sleep 2
   if [ -d $current_dir/pkgs_virOS ]; then
-    sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
+    echo "${CYAN}Folder exist"
   else
     cd $current_dir
     if [ ! -d $current_dir/pkgs_virOS ]; then
