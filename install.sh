@@ -267,10 +267,14 @@ sleep 2
     sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
   else
     cd $current_dir
-    gdown --folder 19SlCmblUJts_I5dlAwd2C3tq7q2-wLbS
-    echo -e "${GRE}Packages in system!"
-    sleep 2
-    sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
+    if [ ! -d $current_dir/pkgs_virOS ]; then
+    break;;
+    else
+      gdown --folder 19SlCmblUJts_I5dlAwd2C3tq7q2-wLbS
+      echo -e "${GRE}Packages in system!"
+      sleep 2
+      sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
+    fi
   fi
 
 sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
