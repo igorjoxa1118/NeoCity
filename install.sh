@@ -272,8 +272,6 @@ sleep 2
     echo -e "${GRE}Packages in system!"
     sleep 2
     sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
-    else
-    break;;
     fi
   fi
 
