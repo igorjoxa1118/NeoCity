@@ -16,7 +16,7 @@
 - **Splitt terminal:** [Autotiling](https://github.com/nwg-piotr/autotiling)
 - **Video Card:** [Nvidia](https://developer.nvidia.com/nvidia-system-management-interface)
 - **Backlight:** [Nvidia-smi](https://developer.nvidia.com/nvidia-system-management-interface)
-- **Music Player:** [Musikcube](https://github.com/clangen/musikcube)
+- **Music Player:** [Mpd](https://www.musicpd.org/) [ncmpcpp](https://wiki.archlinux.org/title/Ncmpcpp)
 - **Music Player Youtube Playlists:** [Mpv](https://mpv.io/)
 - **Multimedia framework:** [PipeWire](https://pipewire.org/)
 
