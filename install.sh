@@ -276,6 +276,7 @@ sleep 2
   fi
 
 sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
+sed -i "s/vir0id/${USER}/g" ~/.config/kitty/kitty.conf
 
 ##-------------------
 #--Grub themes apply
