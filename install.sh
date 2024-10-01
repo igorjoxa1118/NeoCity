@@ -341,9 +341,9 @@ clear
 ### --- Установка SDDM --- ###
 logo "Install SDDM"
 sleep 2
-if [ -f /usr/bin/lightdm ]; then
+if [ -f /etc/sddm.conf.d/sddm.conf ]; then
   sudo pacman -Rdd lightdm lightdm-gtk-greeter --noconfirm
- if [ -d /usr/bin/sddm ]; then
+ if [ -f /usr/bin/sddm ]; then
    sudo cp -rf $current_dir/sddm/sddm.conf.d /etc/
    sudo cp -rf $current_dir/sddm/catppuccin-mocha /usr/share/sddm/themes
    sudo systemctl enable sddm
