@@ -443,14 +443,13 @@ if systemctl is-enabled --quiet mpd.service; then
     printf "\n%s%sDisabling and stopping the global mpd service%s\n" "${BLD}" "${CBL}" "${CNC}"
     sudo systemctl stop mpd.service
     sudo systemctl disable mpd.service
+  else
+      printf "\n%s%sEnabling and starting the user-level mpd service%s\n" "${BLD}" "${CYE}" "${CNC}"
+      systemctl --user enable --now mpd.service
+      printf "%s%sDone!!%s\n\n" "${BLD}" "${CGR}" "${CNC}"
+    sleep 2
+    clear
 fi
-
-printf "\n%s%sEnabling and starting the user-level mpd service%s\n" "${BLD}" "${CYE}" "${CNC}"
-systemctl --user enable --now mpd.service
-
-printf "%s%sDone!!%s\n\n" "${BLD}" "${CGR}" "${CNC}"
-sleep 2
-clear
 
 ### --- Добавление пользователя в группы вирутальных машин. --- ###
 logo "Add libvirt Group"
