@@ -258,7 +258,6 @@ logo "Install dotfiles"
 sleep 2
 func_install_dots() {
 cp -rf "$current_dir"/user/.* "$home_dir"
-cp -rf "$current_dir"/user/Test_Musik "$home_dir"
 sudo cp -rf "$current_dir"/grub_themes/catppuccin-mocha-grub-theme /usr/share/grub/themes/
 echo -e "${GRE}Copy dots succesfully!"
 sleep 2
