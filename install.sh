@@ -268,6 +268,7 @@ sleep 2
     echo -e "${GRE}Packages in system!"
     sleep 2
     sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
+    sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
   fi
 
 if [[ ! -f "/usr/local/bin/toggle-conkeww" ]]; then
