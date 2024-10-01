@@ -260,7 +260,6 @@ func_install_dots() {
 cp -rf "$current_dir"/user/.* "$home_dir"
 cp -rf "$current_dir"/user/Test_Musik "$home_dir"
 sudo cp -rf "$current_dir"/grub_themes/catppuccin-mocha-grub-theme /usr/share/grub/themes/
-clear
 echo -e "${GRE}Copy dots succesfully!"
 sleep 2
   if [ -d $current_dir/pkgs_virOS ]; then
@@ -277,7 +276,7 @@ sleep 2
 
 sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
 sed -i "s/vir0id/${USER}/g" ~/.config/kitty/kitty.conf
-
+clear
 ##-------------------
 #--Grub themes apply
 ##-------------------
