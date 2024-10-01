@@ -89,30 +89,30 @@ clear
 ######### -------------- Зависимости ------------------########
 
 dependencias=(base-devel alacritty brightnessctl dunst imagemagick \
-libwebp maim mpc neovim ncmpcpp npm pamixer neovim\
-papirus-icon-theme pacman-contrib physlock playerctl python-gobject \
-redshift rustup ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
-ttf-joypixels ttf-terminus-nerd ueberzug webp-pixbuf-loader xclip \
-xdo ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common \
-ttf-nerd-fonts-symbols-mono yad cmus jgmenu rsync mpv jq git socat mpd polkit-gnome \
-stalonetray kitty lsd ranger micro blueman mousepad ristretto firefox thunar thunar-volman \
-thunar-media-tags-plugin thunar-archive-plugin polybar rofi xdg-user-dirs engrampa bc \
-nitrogen feh picom yt-dlp fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-autosuggestions \
-zsh-history-substring-search starship bluez-utils bluez-tools bluez-plugins bluez-libs bluez \
-zziplib zip xarchiver unzip unarj unarchiver p7zip libzip karchive gnome-autoar file-roller \
-cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenlive kodi \
-kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2 xorg-xdpyinfo xorg-xwininfo \
-xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot xdotool)
+              libwebp maim mpc neovim ncmpcpp npm pamixer neovim\
+              papirus-icon-theme pacman-contrib physlock playerctl python-gobject \
+              redshift rustup ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
+              ttf-joypixels ttf-terminus-nerd ueberzug webp-pixbuf-loader xclip \
+              xdo ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common \
+              ttf-nerd-fonts-symbols-mono yad cmus jgmenu rsync mpv jq git socat mpd polkit-gnome \
+              stalonetray kitty lsd ranger micro blueman mousepad ristretto firefox thunar thunar-volman \
+              thunar-media-tags-plugin thunar-archive-plugin polybar rofi xdg-user-dirs engrampa bc \
+              nitrogen feh picom yt-dlp fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-autosuggestions \
+              zsh-history-substring-search starship bluez-utils bluez-tools bluez-plugins bluez-libs bluez \
+              zziplib unarj libzip karchive gnome-autoar file-roller \
+              cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenlive kodi \
+              kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2 xorg-xdpyinfo xorg-xwininfo \
+              xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot xdotool bzip2 gzip lrzip lz4 lzip lzop xz zstd p7zip zip unzip unrar unarchiver xarchiver)
 
 
 
 dependencias_paru=(cava zscroll-git eww-git gnome-icon-theme catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
-zenity-gtk3 i3lock-color gdown pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
+              zenity-gtk3 i3lock-color gdown pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
 
 pipewire_pkg=(gst-plugin-pipewire libpipewire libwireplumber pipewire pipewire-alsa \
-pipewire-audio pipewire-jack pipewire-pulse pipewire-v4l2 pipewire-x11-bell \
-pipewire-zeroconf qemu-audio-pipewire wireplumber lib32-libpipewire \
-multilib/lib32-pipewire lib32-pipewire-jack)
+              pipewire-audio pipewire-jack pipewire-pulse pipewire-v4l2 pipewire-x11-bell \
+              pipewire-zeroconf qemu-audio-pipewire wireplumber lib32-libpipewire \
+              multilib/lib32-pipewire lib32-pipewire-jack)
 
 pipewire_pkg_yay=(pipewire-support)
 
