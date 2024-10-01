@@ -281,10 +281,10 @@ sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/
 
     if grep "GRUB_THEME=" /etc/default/grub 2>&1 >/dev/null; then
       #Replace GRUB_THEME
-      sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"|" /etc/default/grub
+      sudo sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"|" /etc/default/grub
     else
       #Append GRUB_THEME
-      echo "GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"" >> /etc/default/grub
+      sudo echo "GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"" >> /etc/default/grub
     fi
 
 ##-------------------
@@ -356,18 +356,22 @@ clear
 ### --- Установка SDDM --- ###
 logo "Install SDDM"
 sleep 2
-if [ -f /etc/sddm.conf.d/sddm.conf ]; then
-  sudo pacman -Rdd lightdm lightdm-gtk-greeter --noconfirm
- if [ -f /usr/bin/sddm ]; then
+
+if [ -f /usr/bin/lightdm ]; them
+   sudo systemctl disable lightdm.service
+   sudo pacman -Rdd lightdm lightdm-gtk-greeter --noconfirm
+   fi
+
+if [ -d /etc/sddm.conf.d/ ]; then
    sudo cp -rf $current_dir/sddm/sddm.conf.d /etc/
    sudo cp -rf $current_dir/sddm/catppuccin-mocha /usr/share/sddm/themes
-   sudo systemctl enable sddm
+   sudo systemctl enable sddm.service
    echo -e "${LIGHTCYAN}Done!"
  else 
    sudo pacman -S sddm --noconfirm
    sudo cp -rf $current_dir/sddm/sddm.conf.d /etc/
    sudo cp -rf $current_dir/sddm/catppuccin-mocha /usr/share/sddm/themes
-   sudo systemctl enable sddm
+   sudo systemctl enable sddm.service
    echo -e "${LIGHTCYAN}Done!"
  fi
 fi
