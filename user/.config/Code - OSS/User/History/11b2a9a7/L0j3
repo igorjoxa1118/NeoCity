@@ -1,8 +1,0 @@
-include-file = $HOME/.config/i3/polybar/Tokio_night/modules/modules
-
-
-include-file = $HOME/.config/i3/polybar/Tokio_night/modules/round-left.ini
-include-file = $HOME/.config/i3/polybar/Tokio_night/modules/round-right.ini
-include-file = $HOME/.config/i3/polybar/Tokio_night/modules/margin.ini
-include-file = $HOME/.config/i3/polybar/Tokio_night/modules/round-left-blue.ini
-include-file = $HOME/.config/i3/polybar/Tokio_night/modules/round-right-blue.ini

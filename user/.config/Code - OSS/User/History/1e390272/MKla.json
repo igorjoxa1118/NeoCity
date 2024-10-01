@@ -1,9 +1,0 @@
-{
-	"folders": [],
-	"settings": {
-		"ocaml.sandbox": {
-			"kind": "global"
-		},
-		"git.ignoreLimitWarning": true
-	}
-}

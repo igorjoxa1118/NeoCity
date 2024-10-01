@@ -1,7 +1,0 @@
-[Bookmarks]
-[Recent]
-/home/vir0id/.config/blender/colorshemas/emilia/
-/home/vir0id/.config/blender/colorshemas/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Clock/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/PUPUPUP/
