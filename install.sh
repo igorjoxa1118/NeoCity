@@ -99,14 +99,14 @@ dependencias=(base-devel alacritty brightnessctl dunst imagemagick \
               thunar-media-tags-plugin thunar-archive-plugin polybar rofi xdg-user-dirs engrampa bc \
               nitrogen feh picom yt-dlp fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-autosuggestions \
               zsh-history-substring-search starship bluez-utils bluez-tools bluez-plugins bluez-libs bluez \
-              zziplib unarj libzip karchive gnome-autoar file-roller mpd-notification tor-browser-bin \
+              zziplib unarj libzip karchive gnome-autoar file-roller mpd-notification \
               cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenlive kodi \
               kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2 xorg-xdpyinfo xorg-xwininfo \
               xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot xdotool bzip2 gzip lrzip lz4 lzip lzop xz zstd p7zip zip unzip unrar unarchiver xarchiver)
 
 
 
-dependencias_paru=(cava ymuse-git zscroll-git eww-git musnify-mpd gnome-icon-theme catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
+dependencias_paru=(cava tor-browser-bin ymuse-git zscroll-git eww-git musnify-mpd gnome-icon-theme catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
                   zenity-gtk3 i3lock-color gdown pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
 
 pipewire_pkg=(gst-plugin-pipewire libpipewire libwireplumber pipewire pipewire-alsa \
@@ -268,7 +268,6 @@ sleep 2
     echo -e "${GRE}Packages in system!"
     sleep 2
     sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
-    fc-cache -fv
     fi
   fi
 clear
@@ -294,6 +293,10 @@ fi
 ### --- Завершение копирования dot-файлов --- ###
 func_install_dots
 sleep 2
+clear
+
+fc-cache -fv
+
 clear
 
 ########## ---------- Установка сведений о батареи ---------- ##########
