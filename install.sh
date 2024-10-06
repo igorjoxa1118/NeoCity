@@ -99,7 +99,7 @@ dependencias=(base-devel alacritty brightnessctl dunst imagemagick \
               thunar-media-tags-plugin thunar-archive-plugin polybar rofi xdg-user-dirs engrampa bc \
               nitrogen feh picom yt-dlp fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-autosuggestions \
               zsh-history-substring-search starship bluez-utils bluez-tools bluez-plugins bluez-libs bluez \
-              zziplib unarj libzip karchive gnome-autoar file-roller mpd-notification\
+              zziplib unarj libzip karchive gnome-autoar file-roller mpd-notification tor-browser-bin \
               cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenlive kodi \
               kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2 xorg-xdpyinfo xorg-xwininfo \
               xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot xdotool bzip2 gzip lrzip lz4 lzip lzop xz zstd p7zip zip unzip unrar unarchiver xarchiver)
