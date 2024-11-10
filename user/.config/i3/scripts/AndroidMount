@@ -14,7 +14,7 @@
 #  ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝
 
 BASE_MOUNT_POINT="$HOME/Android_Mount"
-ROFI_THEME="$HOME/.config/bspwm/src/rofi-themes/Android.rasi"
+ROFI_THEME="$HOME/.config/i3/scripts/rofi-themes/Android.rasi"
 
 list_devices() {
 	simple-mtpfs -l | awk -F': ' '{print $1 " " $2}' | rofi -dmenu -p "Select device" -theme "$ROFI_THEME"

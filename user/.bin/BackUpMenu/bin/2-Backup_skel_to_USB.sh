@@ -56,26 +56,29 @@ size=$(du -hSc /home/"$username"/.[^.]* | tail -n1 | awk '{print $1}')
 
 if [ -d ""$backup_drive"/.config" ]; then
     echo -e "${Purple}Удаление файлов из USB накопителя."
-    rm -rf "$backup_drive"/.*
-    clear
+    sudo rm -rf "$backup_drive"/.*
+    sync
+    sleep 2
 
     echo -e "${Cyan}Копирование файлов в USB накопитель. Необходимо скопировать примерно "$size""
-    rsync -aAEHSXxr --stats -h --info=progress2 --info=name0 /home/"$username"/.[^.]* "$backup_drive"
+    sudo rsync -aAEHSXxr --stats -h --info=progress2 --info=name0 --exclude=".cache/*" /home/"$username"/.[^.]* "$backup_drive"
+    sync
     sleep 2
 
     echo -e "${Blue}Синхронизация! Подождите!"
     sync
-    clear
+    sleep 2
     echo -e "${Yellow}Синхронизация завершена!"
     sleep 2
 elif [ ! -d ""$backup_drive"/.config" ]; then
     echo -e "${Green}Копирование файлов в USB накопитель. Необходимо скопировать примерно "$size""
-    rsync -aAEHSXxr --stats -h --info=progress2 --info=name0 /home/"$username"/.[^.]* "$backup_drive"
+    sudo rsync -aAEHSXxr --stats -h --info=progress2 --info=name0 --exclude=".cache/*" /home/"$username"/.[^.]* "$backup_drive"
+    sync
     sleep 2
 
     echo -e "${Red}Синхронизация! Подождите!"
     sync
-    clear
+
     echo -e "${Purple}Синхронизация завершена!"
     sleep 2
 else

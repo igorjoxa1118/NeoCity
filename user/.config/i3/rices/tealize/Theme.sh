@@ -140,7 +140,7 @@ path_to_ff_themes=""$HOME"/.mozilla/FoxThemes"
 theme_name="userChrome.css"
 
     if [ -d "$path_to_ff" ]; then
-        cp -rf "$path_to_ff_themes"/"$RICETHEME"/chrome/"$theme_name" "$path_to_ff"
+        cp -rf "$path_to_ff_themes"/"$RICETHEME"/"$theme_name" "$path_to_ff"
     else
         echo "Somthing wrong"
     fi

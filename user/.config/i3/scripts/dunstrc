@@ -1,0 +1,14 @@
+[urgency_low]
+timeout = 3
+background = ""
+foreground = ""
+
+[urgency_normal]
+timeout = 5
+background = ""
+foreground = ""
+
+[urgency_critical]
+timeout = 0
+background = ""
+foreground = ""

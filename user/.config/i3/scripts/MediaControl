@@ -21,7 +21,7 @@ Cover=/tmp/cover.png
 # if cover not found in metadata use this instead
 bkpCover=~/.config/i3/assets/fallback.webp
 # mpd music directory for mpd clients.
-mpddir=~/Music
+mpddir=~/Загрузки/Music
 
 case $Control in
     MPD)

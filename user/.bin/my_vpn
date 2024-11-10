@@ -1,0 +1,86 @@
+#!/bin/bash
+
+pkg_yay=(nordvpn-bin)
+pkg_pac=(git curl wget)
+
+clone_paru() {
+# Installing Paru
+if command -v paru >/dev/null 2>&1; then
+    printf "%s%sParu is already installed%s\n" "${BLD}" "${CGR}" "${CNC}"
+else
+    printf "%s%sInstalling paru%s\n" "${BLD}" "${CBL}" "${CNC}"
+    {
+        cd "$HOME" || exit
+        git clone https://aur.archlinux.org/paru-bin.git
+        cd paru-bin || exit
+        sudo makepkg -si --noconfirm
+        } || {
+        printf "\n%s%sFailed to install Paru. You may need to install it manually%s\n" "${BLD}" "${CRE}" "${CNC}"
+    }
+fi
+}
+
+
+if [ ! -f /usr/bin/yay ]; then
+clone_paru
+fi
+
+is_installed_paru() {
+  paru -Qi "$1" &> /dev/null
+  return $?
+}
+
+########## ---------- Установка пакетов из стандартных репозиториев pacman ---------- ##########
+is_installed() {
+  pacman -Qi "$1" &> /dev/null
+  return $?
+}
+
+printf "%s%sChecking for required packages...%s\n" "${BLD}" "${CBL}" "${CNC}"
+sleep 2
+for pkges in "${pkg_pac[@]}"
+do
+  if ! is_installed "$pkges"; then
+    pacman -S "$pkges" --noconfirm
+    printf "\n"
+  else
+    printf '%s%s is already installed on your system!%s\n' "${CGR}" "$pkges" "${CNC}"
+    sleep 2
+  fi
+done
+clear
+
+printf "%s%sChecking for required packages...%s\n" "${BLD}" "${CBL}" "${CNC}"
+sleep 2
+for pkges in "${pkg_yay[@]}"
+do
+  if ! is_installed "$pkges"; then
+    yay -S "$pkges" --noconfirm
+    printf "\n"
+  else
+    printf '%s%s is already installed on your system!%s\n' "${CGR}" "$pkges" "${CNC}"
+    sleep 2
+  fi
+done
+clear
+
+if systemctl is-enabled --quiet nordvpnd; then
+    printf "\n%s%sDisabling and stopping the global NordVPN service%s\n" "${BLD}" "${CBL}" "${CNC}"
+    systemctl restart nordvpnd
+  else
+      printf "\n%s%sEnabling NordVPN service%s\n" "${BLD}" "${CYE}" "${CNC}"
+      systemctl enable --now nordvpnd
+      printf "%s%sDone!!%s\n\n" "${BLD}" "${CGR}" "${CNC}"
+fi
+
+printf '%slogin to NordVPN!%s\n' "${CGR}" "$pkges" "${CNC}"
+sleep 2
+
+sudo groupadd nordvpn
+sudo usermod -aG nordvpn $USER
+
+if nordvpn login; then
+   nordvpn connect
+   else
+   printf "\n%s%sPlease login NordVPN service manualy%s\n" "${BLD}" "${CYE}" "${CNC}"
+fi

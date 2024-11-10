@@ -1,14 +1,19 @@
+[global]
+frame_width= 1
+frame_color = "#cba6f7"
+font = MesloLGS NF 10
+
 [urgency_low]
 timeout = 3
-background = "#1a1b26"
-foreground = "#9ece6a"
+background = "#1e1e2e"
+foreground = "#a6adc8"
 
 [urgency_normal]
 timeout = 5
-background = "#1a1b26"
-foreground = "#a9b1d6"
+background = "#1e1e2e"
+foreground = "#cdd6f4"
 
 [urgency_critical]
 timeout = 0
-background = "#1a1b26"
-foreground = "#f7768e"
+background = "#1e1e2e"
+foreground = "#bac2de"

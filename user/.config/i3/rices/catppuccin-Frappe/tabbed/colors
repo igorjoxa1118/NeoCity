@@ -1,0 +1,16 @@
+#------------
+## catppuccin-Frappe
+#------------
+## Цвета окон 
+#------------
+    # Класс                 border  backgr. text    indicator
+    client.focused          #323649 #81c8be #303446 #81a1c1
+    client.unfocused        #323649 #303446 #81c8be #81a1c1
+    client.focused_inactive #323649 #303446 #242739 #81a1c1
+    client.placeholder      #323649 #303446 #242739 #81a1c1
+    client.urgent           #323649 #303446 #242739 #81a1c1
+
+    client.background       #303446
+
+    
+#--------------

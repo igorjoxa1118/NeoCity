@@ -19,11 +19,11 @@ exec --no-startup-id "gnome-keyring-daemon --start --components=pkcs11"
 ##### Start bar
 
 ###-- Start themes
-exec_always --no-startup-id $HOME/.config/i3/rices/tealize/Theme.sh
+exec_always --no-startup-id $HOME/.config/i3/rices/catppuccin-mocha/Theme.sh
 ###-- Wallpaper
-exec_always --no-startup-id "feh -z --no-fehbg --bg-fill $HOME/.config/i3/rices/tealize/walls/"
+exec_always --no-startup-id "feh -z --no-fehbg --bg-fill $HOME/.config/i3/rices/catppuccin-mocha/walls/"
 ###-- Dunst notification themes
-exec_always --no-startup-id "dunst -config $HOME/.config/dunst/tealize/dunstrc"
+exec_always --no-startup-id "dunst -config $HOME/.config/i3/dunstrc"
 ####################
 
 exec --no-startup-id nm-applet
@@ -36,6 +36,7 @@ exec --no-startup-id "udiskie -t"
 
 #exec --no-startup-id caffeine
 exec_always --no-startup-id "autotiling"
+
 exec --no-startup-id "musnify-mpd"
 
 # Launch Conkeww

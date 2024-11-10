@@ -9,16 +9,113 @@
 #  Url     :  https://github.com/gh0stzk/dotfiles
 #  About   :  This file will configure and launch the rice.
 #
-read -r RICETHEME < "$HOME"/.config/i3/.rice
-rice_dir="$HOME/.config/i3/rices/$RICETHEME"
-i3_dir="$HOME/.config/i3"
 
-# Terminate already running bar instances
-killall -q polybar
-killall -q eww
+# Current Rice
+read -r RICE < "$HOME"/.config/i3/.rice
 
-# Wait until the processes have been shut down
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+# Terminate or reload existing processes if necessary.
+. "${HOME}"/.config/i3/scripts/Process.bash
+
+# Terminal colors
+set_term_config() {
+	cat >"$HOME"/.config/alacritty/rice-colors.toml <<EOF
+# Default colors
+[colors.primary]
+background = "${bg}"
+foreground = "${fg}"
+
+# Cursor colors
+[colors.cursor]
+cursor = "${fg}"
+text = "${bg}"
+
+# Normal colors
+[colors.normal]
+black = "${black}"
+red = "${red}"
+green = "${green}"
+yellow = "${yellow}"
+blue = "${blue}"
+magenta = "${magenta}"
+cyan = "${cyan}"
+white = "${white}"
+
+# Bright colors
+[colors.bright]
+black = "${blackb}"
+red = "${redb}"
+green = "${greenb}"
+yellow = "${yellowb}"
+blue = "${blueb}"
+magenta = "${magentab}"
+cyan = "${cyanb}"
+white = "${whiteb}"
+EOF
+
+  # Set kitty colorscheme
+  cat >"$HOME"/.config/kitty/current-theme.conf <<EOF
+# The basic colors
+foreground              ${fg}
+background              ${bg}
+selection_foreground    ${bg}
+selection_background    ${magenta}
+
+# Cursor colors
+cursor                  ${fg}
+cursor_text_color       ${bg}
+
+# URL underline color when hovering with mouse
+url_color               ${blue}
+
+# Kitty window border colors
+active_border_color     ${magenta}
+inactive_border_color   ${blackb}
+bell_border_color       ${yellow}
+
+# Tab bar colors
+active_tab_foreground   ${bg}
+active_tab_background   ${magenta}
+inactive_tab_foreground ${white}
+inactive_tab_background ${black}
+tab_bar_background      ${bg}
+
+# The 16 terminal colors
+
+# black
+color0 ${black}
+color8 ${blackb}
+
+# red
+color1 ${red}
+color9 ${redb}
+
+# green
+color2  ${green}
+color10 ${greenb}
+
+# yellow
+color3  ${yellow}
+color11 ${yellowb}
+
+# blue
+color4  ${blue}
+color12 ${blueb}
+
+# magenta
+color5  ${magenta}
+color13 ${magentab}
+
+# cyan
+color6  ${cyan}
+color14 ${cyanb}
+
+# white
+color7  ${white}
+color15 ${whiteb}
+EOF
+
+pidof -q kitty && killall -USR1 kitty
+}
 
 ###--Start rice
 
@@ -30,11 +127,11 @@ set_gtk_theme() {
 
 set_icons() {
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"TokyoNight-SE"\"/g" "$HOME"/.gtkrc-2.0
+	sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name="\"catppuccin-mocha-teal-cursors"\"/g" "$HOME"/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=TokyoNight-SE/g" "$HOME"/.config/gtk-3.0/settings.ini
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=TokyoNight-SE/g" "$HOME"/.config/gtk-4.0/settings.ini	
 }
 
-# Firefox theme
 set_firefox_theme() {
 grep_ff=$(ls "$HOME"/.mozilla/firefox | grep default-release)
 path_to_ff=""$HOME"/.mozilla/firefox/"$grep_ff"/chrome"
@@ -42,158 +139,152 @@ path_to_ff_themes=""$HOME"/.mozilla/FoxThemes"
 theme_name="userChrome.css"
 
     if [ -d "$path_to_ff" ]; then
-        cp -rf "$path_to_ff_themes"/"$RICETHEME"/chrome/"$theme_name" "$path_to_ff"
+        cp -rf "$path_to_ff_themes"/"$RICETHEME"/"$theme_name" "$path_to_ff"
     else
         echo "Somthing wrong"
     fi
 }
 
-# Blender themes
+# Set dunst config
+set_dunst_config() {
+	dunst_config_file="$HOME/.config/i3/scripts/dunstrc"
 
-# blender_themes() {
-# 	sed -i "s/colorshemas/.*/colorshemas/"$RICETHEME"/g" "$HOME"/.config/blender/4.1/config/bookmarks.txt
-# }
+	sed -i "$dunst_config_file" \
+		-e "s/transparency = .*/transparency = 0/g" \
+		-e "s/icon_theme = .*/icon_theme = \"${gtk_icons}, Adwaita\"/g" \
+		-e "s/frame_color = .*/frame_color = \"${bg}\"/g" \
+		-e "s/separator_color = .*/separator_color = \"${magenta}\"/g" \
+		-e "s/font = .*/font = JetBrainsMono NF Medium 9/g" \
+		-e "s/foreground='.*'/foreground='${blue}'/g"
 
-# Reload terminal colors
-set_term_config() {
-	cat >"$HOME"/.config/alacritty/rice-colors.toml <<EOF
-# (Tokyo Night) color scheme for Emilia Rice
+	sed -i '/urgency_low/Q' "$dunst_config_file"
+	cat >>"$dunst_config_file" <<-_EOF_
+		[urgency_low]
+		timeout = 3
+		background = "${bg}"
+		foreground = "${green}"
 
-# Default colors
-[colors.primary]
-background = "#171924"
-foreground = "#7aa2f7"
+		[urgency_normal]
+		timeout = 5
+		background = "${bg}"
+		foreground = "${white}"
 
-# Cursor colors
-[colors.cursor]
-cursor = "#7aa2f7"
-text = "#171924"
-
-# Normal colors
-[colors.normal]
-black = "#15161e"
-blue = "#7aa2f7"
-cyan = "#7dcfff"
-green = "#9ece6a"
-magenta = "#bb9af7"
-red = "#f7768e"
-white = "#a9b1d6"
-yellow = "#e0af68"
-
-# Bright colors
-[colors.bright]
-black = "#414868"
-blue = "#7aa2f7"
-cyan = "#7dcfff"
-green = "#9ece6a"
-magenta = "#bb9af7"
-red = "#f7768e"
-white = "#7aa2f7"
-yellow = "#e0af68"
-EOF
-}
-
-# Set compositor configuration
-set_picom_config() {
-	sed -i "$HOME"/.config/i3/picom.conf \
-		-e "s/normal = .*/normal =  { fade = true; shadow = true; }/g" \
-		-e "s/shadow-color = .*/shadow-color = \"#000000\"/g" \
-		-e "s/corner-radius = .*/corner-radius = 6/g" \
-		-e "s/\".*:class_g = 'Xfce4-terminal'\"/\"80:class_g = 'Xfce4-terminal'\"/g" \
-		-e "s/\".*:class_g = 'Deadbeef'\"/\"80:class_g = 'Deadbeef'\"/g" \
-		-e "s/\".*:class_g = 'XTerm'\"/\"80:class_g = 'XTerm'\"/g" \
-		-e "s/\".*:class_g = 'kitty'\"/\"80:class_g = 'kitty'\"/g" \
-		-e "s/\".*:class_g = 'TelegramDesktop'\"/\"80:class_g = 'TelegramDesktop'\"/g" \
-		-e "s/\".*:class_g *= 'Thunar'\"/\"80:class_g = 'Thunar'\"/g" \
-		-e "s/\".*:class_g *= 'Caja'\"/\"80:class_g = 'Caja'\"/g" \
-		-e "s/\".*:class_g *= 'Rofi'\"/\"80:class_g = 'Rofi'\"/g" \
-		-e "s/\".*:class_g *= 'Conky'\"/\"80:class_g = 'Deadbeef'\"/g" \
-		-e "s/\".*:class_g *= 'Nm-applet'\"/\"80:class_g = 'Nm-applet'\"/g" \
-		-e "s/\".*:class_g *= 'NetworkManager'\"/\"80:class_g = 'NetworkManager'\"/g" \
-		-e "s/\".*:class_g *= 'qBittorrent'\"/\"80:class_g = 'qBittorrent'\"/g" \
-		-e "s/\".*:class_g *= 'transmission-gtk'\"/\"80:class_g = 'transmission-gtk'\"/g" \
-		-e "s/\".*:class_g *= 'Polybar'\"/\"80:class_g = 'Polybar'\"/g" \
-		-e "s/\".*:class_g *= 'jgmenu_run'\"/\"80:class_g = 'jgmenu_run'\"/g" \
-		-e "s/\".*:class_g *= 'code-oss'\"/\"80:class_g = 'code-oss'\"/g"
+		[urgency_critical]
+		timeout = 0
+		background = "${bg}"
+		foreground = "${red}"
+	_EOF_
 }
 
 # Set eww colors
 set_eww_colors() {
 	cat >"$HOME"/.config/i3/eww/colors.scss <<EOF
-// Eww colors for Emilia rice
-\$bg: #171924;
+\$bg: ${bg};
 \$bg-alt: #222330;
-\$fg: #7aa2f7;
-\$black: #414868;
-\$lightblack: #262831;
-\$red: #f7768e;
-\$blue: #7aa2f7;
-\$cyan: #7dcfff;
-\$magenta: #bb9af7;
-\$green: #9ece6a;
-\$yellow: #e0af68;
+\$fg: ${fg};
+\$black: ${blackb};
+\$red: ${red};
+\$green: ${green};
+\$yellow: ${yellow};
+\$blue: ${blue};
+\$magenta: ${magenta};
+\$cyan: ${cyan};
 \$archicon: #0f94d2;
 EOF
 }
 
-# Set jgmenu colors for Emilia
-set_jgmenu_colors() {
+set_launchers() {
+	# Jgmenu
 	sed -i "$HOME"/.config/i3/jgmenurc \
-		-e 's/color_menu_bg = .*/color_menu_bg = #171924/' \
-		-e 's/color_norm_fg = .*/color_norm_fg = #7aa2f7/' \
-		-e 's/color_sel_bg = .*/color_sel_bg = #222330/' \
-		-e 's/color_sel_fg = .*/color_sel_fg = #7aa2f7/' \
-		-e 's/color_sep_fg = .*/color_sep_fg = #414868/'
+		-e "s/color_menu_bg = .*/color_menu_bg = ${bg}/" \
+		-e "s/color_norm_fg = .*/color_norm_fg = ${fg}/" \
+		-e "s/color_sel_bg = .*/color_sel_bg = #222330/" \
+		-e "s/color_sel_fg = .*/color_sel_fg = ${fg}/" \
+		-e "s/color_sep_fg = .*/color_sep_fg = ${blackb}/"
+
+	# Rofi launchers
+	cat >"$HOME"/.config/i3/src/rofi-themes/shared.rasi <<EOF
+// Rofi colors for Emilia
+
+* {
+    font: "JetBrainsMono NF Bold 9";
+    background: ${bg};
+    bg-alt: #222330;
+    background-alt: ${bg}E0;
+    foreground: ${fg};
+    selected: ${blue};
+    active: ${green};
+    urgent: ${red};
+
+    img-background: url("~/.config/i3/rices/${RICE}/rofi.webp", width);
+}
+EOF
+
+	# Screenlock colors
+	sed -i "$HOME"/.config/i3/scripts/ScreenLocker \
+		-e "s/bg=.*/bg=${bg:1}/" \
+		-e "s/fg=.*/fg=${fg:1}/" \
+		-e "s/ring=.*/ring=${black:1}/" \
+		-e "s/wrong=.*/wrong=${red:1}/" \
+		-e "s/date=.*/date=${fg:1}/" \
+		-e "s/verify=.*/verify=${green:1}/"
 }
 
-# Set Rofi launcher config
-set_launcher_config() {
-	sed -i "$HOME/.config/i3/scripts/Launcher.rasi" \
-		-e '22s/\(font: \).*/\1"MesloLGS NF Regular 10";/' \
-		-e 's/\(background: \).*/\1#171924;/' \
-		-e 's/\(background-alt: \).*/\1#171924E0;/' \
-		-e 's/\(foreground: \).*/\1#7aa2f7;/' \
-		-e 's/\(foreground-alt: \).*/\1#7aa2f7;/' \
-		-e 's/\(selected: \).*/\1#333f5e;/' \
-		-e "s/rices\/[[:alnum:]\-]*/rices\/${RICETHEME}/g"
+set_appearance() {
+	# Set the gtk theme corresponding to rice
+	if pidof -q xsettingsd; then
+		sed -i "$HOME"/.config/i3/xsettingsd \
+			-e "s|Net/ThemeName .*|Net/ThemeName \"$gtk_theme\"|" \
+			-e "s|Net/IconThemeName .*|Net/IconThemeName \"$gtk_icons\"|" \
+			-e "s|Gtk/CursorThemeName .*|Gtk/CursorThemeName \"$gtk_cursor\"|"
+	else
+		sed -i "$HOME"/.config/gtk-3.0/settings.ini \
+			-e "s/gtk-theme-name=.*/gtk-theme-name=$gtk_theme/" \
+			-e "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=$gtk_icons/" \
+			-e "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=$gtk_cursor/"
 
-	# NetworkManager launcher
-	sed -i "$HOME/.config/i3/scripts/NetManagerDM.rasi" \
-		-e '12s/\(background: \).*/\1#171924;/' \
-		-e '13s/\(background-alt: \).*/\1#222330;/' \
-		-e '14s/\(foreground: \).*/\1#7aa2f7;/' \
-		-e '15s/\(selected: \).*/\1#7aa2f7;/' \
-		-e '16s/\(active: \).*/\1#9ece6a;/' \
-		-e '17s/\(urgent: \).*/\1#f7768e;/'
+		sed -i "$HOME"/.gtkrc-2.0 \
+			-e "s/gtk-theme-name=.*/gtk-theme-name=\"$gtk_theme\"/" \
+			-e "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=\"$gtk_icons\"/" \
+			-e "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=\"$gtk_cursor\"/"
+	fi
 
-	# WallSelect menu colors
-	sed -i "$HOME/.config/i3/scripts/WallSelect.rasi" \
-		-e 's/\(main-bg: \).*/\1#171924E6;/' \
-		-e 's/\(main-fg: \).*/\1#7aa2f7;/' \
-		-e 's/\(select-bg: \).*/\1#7aa2f7;/' \
-		-e 's/\(select-fg: \).*/\1#171924;/'
+	sed -i -e "s/Inherits=.*/Inherits=$gtk_cursor/" "$HOME"/.icons/default/index.theme
+
+	# Reload daemon and apply gtk theme
+	pidof -q xsettingsd && killall -HUP xsettingsd
+	xsetroot -cursor_name left_ptr
 }
 
-DPI=$(xrdb -query | sed -nE 's/^Xft\.dpi:\s*//p')
-# HEIGHT=$((26 * DPI / 96))
+# Apply Geany Theme
+set_geany(){
+	sed -i ${HOME}/.config/geany/geany.conf \
+	-e "s/color_scheme=.*/color_scheme=$geany_theme.conf/g"
+}
 
-# Launch the bar
-launch_bars() {
+# Launch theme
+launch_theme() {
 
+	# Launch dunst notification daemon
+	dunst -config "${HOME}"/.config/i3/scripts/dunstrc &
+
+	# Launch polybar
+	sleep 0.1
 	for mon in $(polybar --list-monitors | cut -d":" -f1); do
-		MONITOR=$mon polybar emi-bar -c "${rice_dir}"/config.ini &
-		MONITOR=$mon polybar emi-bar2 -c "${rice_dir}"/config.ini &
+		MONITOR=$mon polybar -q emi-bar -c "${HOME}"/.config/i3/rices/"${RICE}"/config.ini &
+		MONITOR=$mon polybar -q emi-bar2 -c "${HOME}"/.config/i3/rices/"${RICE}"/config.ini &
 	done
 }
 
-### ---------- Apply Configurations ---------- ###
+### Apply Configurations
+
+set_term_config
+set_dunst_config
+set_eww_colors
+set_launchers
+set_appearance
+set_geany
+launch_theme
 set_gtk_theme
 set_icons
 set_firefox_theme
-
-set_term_config
-set_picom_config
-launch_bars
-set_eww_colors
-set_jgmenu_colors
-set_launcher_config
