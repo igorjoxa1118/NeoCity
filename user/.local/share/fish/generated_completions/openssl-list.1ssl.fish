@@ -20,6 +20,7 @@ complete -c 'openssl-list.1ssl' -o key-managers -d 'X Item "-key-managers" Displ
 complete -c 'openssl-list.1ssl' -o key-exchange-algorithms -d 'X Item "-key-exchange-algorithms" Display a list of key exchange algorithms'
 complete -c 'openssl-list.1ssl' -o kem-algorithms -d 'X Item "-kem-algorithms" Display a list of key encapsulation algorithms'
 complete -c 'openssl-list.1ssl' -o signature-algorithms -d 'X Item "-signature-algorithms" Display a list of signature algorithms'
+complete -c 'openssl-list.1ssl' -o tls-signature-algorithms -d 'X Item "-tls-signature-algorithms" Display the list of signature algorithms a…'
 complete -c 'openssl-list.1ssl' -o asymcipher-algorithms -d 'X Item "-asymcipher-algorithms" Display a list of asymmetric cipher algorithms'
 complete -c 'openssl-list.1ssl' -o store-loaders -d 'X Item "-store-loaders" Display a list of store loaders'
 complete -c 'openssl-list.1ssl' -o providers -d 'X Item "-providers" Display a list of all loaded providers with their names, …'

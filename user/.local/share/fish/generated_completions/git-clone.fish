@@ -38,4 +38,5 @@ complete -c git-clone -l reference-if-able
 complete -c git-clone -l no-single-branch -d 'is given to fetch the histories near the tips of all branches'
 complete -c git-clone -l no-checkout/-n
 complete -c git-clone -l remote -d 'to git submodule update'
+complete -c git-clone -l object-format -d 'in git-init(1)'
 

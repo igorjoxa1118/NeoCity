@@ -178,7 +178,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 DPI=$(xrdb -query | sed -nE 's/^Xft\.dpi:\s*//p')
 # HEIGHT=$((26 * DPI / 96))
-
+#xrdb -merge $HOME/.Xresources.d/themes/mocha.Xresources
 # Launch the bar
 launch_bars() {
 

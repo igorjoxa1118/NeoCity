@@ -13,6 +13,7 @@ complete -c hblock -s C -l comment -d 'Character used for comments.  (default: #
 complete -c hblock -s l -l lenient -d 'Match all entries from sources regardless of their IP, instead of 0. 0. 0'
 complete -c hblock -s r -l regex -d 'Use POSIX BREs in the allowlist instead of fixed strings.  (default: false)'
 complete -c hblock -s f -l filter-subdomains -d 'Do not include subdomains when the parent domain is also blocked'
+complete -c hblock -s n -l retry -d 'Number of times to retry a failed download.  (default: 0)'
 complete -c hblock -s c -l continue -d 'Do not abort if a download error occurs.  (default: false)'
 complete -c hblock -s p -l parallel -d 'Maximum concurrency for parallel downloads.  (default: 4)'
 complete -c hblock -s q -l quiet -d 'Suppress non-error messages.  (default: false)'

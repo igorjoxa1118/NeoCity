@@ -4,6 +4,7 @@ complete -c bwrap -l help -d 'Print help and exit'
 complete -c bwrap -l version -d 'Print version'
 complete -c bwrap -l args -d 'Parse nul-separated arguments from the given file descriptor'
 complete -c bwrap -l argv0 -d 'Set argv[0] to the value VALUE before running the program'
+complete -c bwrap -l level-prefix -d 'Prefix each line of diagnostic output with a numeric severity level enclosed …'
 complete -c bwrap -l unshare-user -d 'Create a new user namespace'
 complete -c bwrap -l unshare-user-try -d 'Create a new user namespace if possible else skip it'
 complete -c bwrap -l unshare-ipc -d 'Create a new ipc namespace'
@@ -37,6 +38,10 @@ complete -c bwrap -l dev-bind-try -d 'Equal to --dev-bind but ignores non-existe
 complete -c bwrap -l ro-bind -d 'Bind mount the host path SRC readonly on DEST'
 complete -c bwrap -l ro-bind-try -d 'Equal to --ro-bind but ignores non-existent SRC'
 complete -c bwrap -l remount-ro -d 'Remount the path DEST as readonly'
+complete -c bwrap -l overlay-src -d 'This option does nothing on its own, and must be followed by one of the other…'
+complete -c bwrap -l overlay
+complete -c bwrap -l tmp-overlay
+complete -c bwrap -l ro-overlay -d 'Use overlayfs to mount the host paths specified by RWSRC and all immediately …'
 complete -c bwrap -l proc -d 'Mount procfs on DEST'
 complete -c bwrap -l dev -d 'Mount new devtmpfs on DEST'
 complete -c bwrap -l tmpfs -d 'Mount new tmpfs on DEST'

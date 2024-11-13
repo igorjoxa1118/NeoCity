@@ -1,0 +1,32 @@
+! xterm.vt100.faceName:           MesloLGS NF:style=Regular:size=10
+! xterm.vt100.faceNameDoublesize: MesloLGS NF:style=Regular:size=10
+
+XTerm.vt100.bellIsUrgent:          true
+XTerm.vt100.alternateScroll: true
+XTerm.vt100.selectToClipboard: true
+
+URxvt.scrollBar: false
+URxvt.perl-ext-common: default,selection-to-clipboard
+URxvt.clipboard.autocopy: true  ! sync primary and clipboard buffers
+URxvt.secondaryScreen:  1
+URxvt.secondaryScroll:  0
+URxvt.secondaryWheel:   1
+URxvt*urgentOnBell: true
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+URxvt.letterSpace : -2 ! Put characters slightly closer together
+URxvt.termName : rxvt-unicode-256color
+!Urxvt*termName:  screen-256color
+URxvt.iso14755 : false
+URxvt.iso14755_52: false
+
+! transparency in i3
+!URxvt.transparent: true
+!URxvt.shading:20
+
+Xft.dpi: 96
+Xft.Hinting: 1
+Xft.RGBA: rgb
+Xft.HintStyle: hintslight
+Xft.Antialias: 1

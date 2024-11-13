@@ -139,11 +139,9 @@ bindsym $mod+n scratchpad toggle
 bindsym $mod+d exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --menu"
 bindsym $mod+Return exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --terminal"
 bindsym $mod1+t exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --floating"
-bindsym $mod1+k exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --music"
-bindsym $mod1+u exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --update-pacman"
-bindsym $mod1+j exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --update-paru"
-bindsym $mod1+n exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --update-garuda"
-bindsym $mod1+m exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --checkupdates"
+bindsym $mod1+p exec --no-startup-id /usr/bin/ymuse &
+bindsym $mod1+u exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --update"
+bindsym $mod1+j exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --checkupdates"
 bindsym $mod1+Return exec --no-startup-id "$HOME/.config/i3/scripts/OpenApps --ranger"
 bindsym $mod1+space exec --no-startup-id "$HOME/.config/i3/scripts/RiceSelector"
 bindsym $mod+$mod1+t exec --no-startup-id "$HOME/.config/i3/scripts/Term --selecterm"
@@ -158,6 +156,7 @@ bindsym Ctrl+space exec --no-startup-id "rofi -show window"
 bindsym Print exec --no-startup-id "kazam -f"
 bindsym $mod1+c  exec --no-startup-id "thunar"
 bindsym $mod+Tab exec --no-startup-id "$HOME/.config/i3/scripts/kill_eww.sh"
+bindsym $mod1+Ctrl+k exec "$HOME/.config/i3/bin/toggle-conkeww"
 #bindsym $mod1+c  exec --no-startup-id "caja"
 #bindsym $mod1+s exec --no-startup-id "subl3"
 #bindsym Print exec --no-startup-id "$HOME/.config/i3/bin/flameshot.sh -c"
@@ -168,7 +167,6 @@ bindsym $mod+Tab exec --no-startup-id "$HOME/.config/i3/scripts/kill_eww.sh"
 #bindsym $mod+Ctrl+Left exec mpc prev
 #bindsym $mod+Ctrl+Right exec mpc next
 #bindsym $mod+Ctrl+d exec mpc del 0
-bindsym $mod1+Ctrl+k exec toggle-conkeww
 #---------------------------------------------
 
 

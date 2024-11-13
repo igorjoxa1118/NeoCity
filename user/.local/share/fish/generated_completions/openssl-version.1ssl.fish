@@ -11,5 +11,6 @@ complete -c 'openssl-version.1ssl' -s d -d 'X Item "-d" OPENSSLDIR setting'
 complete -c 'openssl-version.1ssl' -s e -d 'X Item "-e" ENGINESDIR settings'
 complete -c 'openssl-version.1ssl' -s m -d 'X Item "-m" MODULESDIR settings'
 complete -c 'openssl-version.1ssl' -s r -d 'X Item "-r" The random number generator source settings'
-complete -c 'openssl-version.1ssl' -s c
+complete -c 'openssl-version.1ssl' -s c -d 'X Item "-c" The OpenSSL CPU settings info'
+complete -c 'openssl-version.1ssl' -s w
 

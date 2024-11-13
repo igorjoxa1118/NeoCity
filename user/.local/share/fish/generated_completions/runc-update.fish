@@ -4,6 +4,7 @@ complete -c runc-update -l resources -s r -d 'Read the new resource limits from 
 complete -c runc-update -l blkio-weight -d 'Set a new io weight'
 complete -c runc-update -l cpu-period -d 'Set CPU CFS period to be used for hardcapping (in microseconds)'
 complete -c runc-update -l cpu-quota -d 'Set CPU usage limit within a given period (in microseconds)'
+complete -c runc-update -l cpu-burst -d 'Set CPU burst limit within a given period (in microseconds)'
 complete -c runc-update -l cpu-rt-period -d 'Set CPU realtime period to be used for hardcapping (in microseconds)'
 complete -c runc-update -l cpu-rt-runtime -d 'Set CPU realtime hardcap limit (in usecs)'
 complete -c runc-update -l cpu-share -d 'Set CPU shares (relative weight vs.  other containers)'

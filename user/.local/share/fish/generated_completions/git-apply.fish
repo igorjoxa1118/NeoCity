@@ -8,6 +8,7 @@ complete -c git-apply -l index -d 'Apply the patch to both the index and the wor
 complete -c git-apply -l cached -d 'Apply the patch to just the index, without touching the working tree'
 complete -c git-apply -l intent-to-add -d 'When applying the patch only to the working tree, mark new files to be added …'
 complete -c git-apply -s 3 -l 3way -d 'Attempt 3-way merge if the patch records the identity of blobs it is supposed…'
+complete -c git-apply -l ours -l theirs -l union -d 'Instead of leaving conflicts in the file, resolve conflicts favouring our (or…'
 complete -c git-apply -l build-fake-ancestor -d 'Newer git diff output has embedded index information for each blob to help id…'
 complete -c git-apply -s R -l reverse -d 'Apply the patch in reverse'
 complete -c git-apply -l reject -d 'For atomicity, git apply by default fails the whole patch and does not touch …'

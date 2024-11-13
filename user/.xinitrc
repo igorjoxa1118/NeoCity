@@ -10,6 +10,7 @@ sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
 DEFAULT_SESSION='i3 --shmlog-size 0'
+# systemctl --user import-environment DISPLAY
 
 # merge in defaults and keymaps
 

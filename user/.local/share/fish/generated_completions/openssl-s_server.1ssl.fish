@@ -66,7 +66,7 @@ complete -c 'openssl-s_server.1ssl' -o no_ems -d 'X Item "-no_ems" Disable Exten
 complete -c 'openssl-s_server.1ssl' -o status -d 'X Item "-status" Enables certificate status request support (aka OCSP staplin…'
 complete -c 'openssl-s_server.1ssl' -o status_verbose -d 'X Item "-status_verbose" Enables certificate status request support (aka OCSP…'
 complete -c 'openssl-s_server.1ssl' -o status_timeout -d 'X Item "-status_timeout int" Sets the timeout for OCSP response to int seconds'
-complete -c 'openssl-s_server.1ssl' -o proxy -d 'X Item "-proxy [http[s]://][userinfo@]host[:port][/path]" The HTTP(S) proxy s…'
+complete -c 'openssl-s_server.1ssl' -o proxy -d 'X Item "-proxy [http[s]://][userinfo@]host[:port][/path][?query][#fragment]" …'
 complete -c 'openssl-s_server.1ssl' -o no_proxy -d 'X Item "-no_proxy addresses" List of IP addresses and/or DNS names of servers…'
 complete -c 'openssl-s_server.1ssl' -o status_url -d 'X Item "-status_url val" Sets a fallback responder URL to use if no responder…'
 complete -c 'openssl-s_server.1ssl' -o status_file -d 'X Item "-status_file infile" Overrides any OCSP responder URLs from the certi…'

@@ -6,13 +6,13 @@
   </property>
   <property name="window" type="empty">
     <property name="maximized" type="bool" value="false"/>
-    <property name="width" type="int" value="1900"/>
-    <property name="height" type="int" value="988"/>
+    <property name="width" type="int" value="1808"/>
+    <property name="height" type="int" value="968"/>
   </property>
   <property name="audio" type="empty">
     <property name="volume" type="int" value="100"/>
   </property>
   <property name="folders" type="empty">
-    <property name="last-used-media" type="string" value="/home/vir0id/Видео/Slug_GreasePencil/scen_stop"/>
+    <property name="last-used-media" type="string" value="/home/vir0id/Видео"/>
   </property>
 </channel>

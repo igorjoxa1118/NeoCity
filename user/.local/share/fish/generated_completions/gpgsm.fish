@@ -47,6 +47,7 @@ complete -c gpgsm -l extra-digest-algo -d 'Sometimes signatures are broken in th
 complete -c gpgsm -l compliance -d 'Set the compliance mode'
 complete -c gpgsm -l min-rsa-length -d 'This option adjusts the compliance mode "de-vs" for stricter key size require…'
 complete -c gpgsm -l require-compliance -d 'To check that data has been encrypted according to the rules of the current c…'
+complete -c gpgsm -l assert-signer -d 'This option checks whether at least one valid signature on a file has been ma…'
 complete -c gpgsm -l always-trust -d 'Force encryption to the specified certificates without any validation of the …'
 complete -c gpgsm -l ignore-cert-with-oid -d 'Add oid to the list of OIDs to be checked while reading certificates from sma…'
 complete -c gpgsm -l faked-system-time -d 'This option is only useful for testing; it sets the system time back or forth…'

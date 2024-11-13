@@ -22,6 +22,7 @@ complete -c git-submodule -l depth -d 'This option is valid for add and update c
 complete -c git-submodule -l recommend-shallow -d 'This option is only valid for the update command'
 complete -c git-submodule -s j -l jobs -d 'This option is only valid for the update command'
 complete -c git-submodule -l single-branch -d 'This option is only valid for the update command'
+complete -c git-submodule -l ref-format -d 'is specified, the ref storage format of newly cloned submodules will be set a…'
 complete -c git-submodule -l filter -d 'is specified, the given partial clone filter will be applied to the submodule'
 complete -c git-submodule -l default -d 'option removes the submodule. <name>'
 complete -c git-submodule -l submodule -d 'option with git-diff(1) will provide that information too'

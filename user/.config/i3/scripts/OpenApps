@@ -33,8 +33,8 @@ case "$1" in
     --update-pacman)
         ~/.config/i3/scripts/Term --update-pacman
         ;;
-    --update-garuda)
-        ~/.config/i3/scripts/Term --update-garuda
+    --update)
+        ~/.config/i3/scripts/Term --update
         ;;
     --checkupdates)
         ~/.config/i3/scripts/Term --checkupdates

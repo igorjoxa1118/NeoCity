@@ -8,7 +8,7 @@ complete -c dnssec-cds -s f -d 'This option specifies the file containing the ch
 complete -c dnssec-cds -s i -d 'This option updates the dsset- file in place, instead of writing DS records t…'
 complete -c dnssec-cds -s s -d 'This option specifies the date and time after which RRSIG records become acce…'
 complete -c dnssec-cds -s T -d 'This option specifies a TTL to be used for new DS records'
-complete -c dnssec-cds -s u -d 'This option writes an \\X\'tty: link #std-iscman-nsupdate\'\\%nsupdate\\X\'tty: lin…'
+complete -c dnssec-cds -s u -d 'This option writes an \\%nsupdate script to the standard output, instead of pr…'
 complete -c dnssec-cds -s V -d 'This option prints version information'
 complete -c dnssec-cds -s v -d 'This option sets the debugging level'
 

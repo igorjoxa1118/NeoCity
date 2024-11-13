@@ -7,4 +7,6 @@ complete -c scalar -s b -l branch
 complete -c scalar -l single-branch
 complete -c scalar -l src
 complete -c scalar -l no-src -d 'to place the cloned repository directly in the <enlistment> directory'
+complete -c scalar -l tags
+complete -c scalar -l no-tags -d 'to avoid fetching tags in scalar clone and to configure the repository to avo…'
 

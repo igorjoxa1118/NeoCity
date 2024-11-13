@@ -6,5 +6,6 @@ complete -c git-multi-pack-index -l preferred-pack -d 'Optionally specify the ti
 complete -c git-multi-pack-index -l bitmap -d 'Control whether or not a multi-pack bitmap is written'
 complete -c git-multi-pack-index -l stdin-packs -d 'Write a multi-pack index containing only the set of line-delimited pack index…'
 complete -c git-multi-pack-index -l refs-snapshot -d 'With --bitmap, optionally specify a file which contains a "refs snapshot" tak…'
+complete -c git-multi-pack-index -l incremental -d 'Write an incremental MIDX file containing only objects and packs not present …'
 complete -c git-multi-pack-index -l batch-size -d 'argument is zero, then create a pack containing all objects referenced by the…'
 

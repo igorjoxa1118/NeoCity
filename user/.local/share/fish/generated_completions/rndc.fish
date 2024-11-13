@@ -8,7 +8,7 @@ complete -c rndc -s k -d 'This option indicates key-file as the key file instead
 complete -c rndc -s s -d 'server is the name or address of the server which matches a server statement …'
 complete -c rndc -s p -d 'This option instructs BIND 9 to send commands to TCP port port instead of its…'
 complete -c rndc -s q -d 'This option sets quiet mode, where message text returned by the server is not…'
-complete -c rndc -s r -d 'This option instructs rndc to print the result code returned by \\X\'tty: link …'
+complete -c rndc -s r -d 'This option instructs rndc to print the result code returned by \\%named after…'
 complete -c rndc -s t -d 'This option sets the idle timeout period for rndc to timeout seconds'
 complete -c rndc -s V -d 'This option enables verbose logging'
 complete -c rndc -s y -d 'This option indicates use of the key server_key from the configuration file'

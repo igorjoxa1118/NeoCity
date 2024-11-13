@@ -7,10 +7,6 @@ complete -c ffmpeg-formats -o no_resync_search
 complete -c ffmpeg-formats -o flv_metadata
 complete -c ffmpeg-formats -o flv_ignore_prevtag
 complete -c ffmpeg-formats -o flv_full_metadata
-complete -c ffmpeg-formats -o hls_enc
-complete -c ffmpeg-formats -o hls_enc_key
-complete -c ffmpeg-formats -o hls_enc_key_url
-complete -c ffmpeg-formats -o hls_enc_iv
 complete -c ffmpeg-formats -s 1 -d '20 ms is used for CBR streams, the highest multiple of the frame duration whi…'
 complete -c ffmpeg-formats -o syncpoints
 complete -c ffmpeg-formats -o write_index

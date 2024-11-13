@@ -33,26 +33,24 @@ Time:      === ${date}"
                   :text
 "
 Win+Enter       === Terminal
-Win+Alt+T       === Select Terminal
-Alt+T           === Float Terminal
-Alt+U           === Pacman Update
-Alt+J           === Paru Update
-Alt+N           === Garuda Update
-Alt+Space       === Themes Selector
-Win+Alt+W       === Select Wallpapers
 Win+D           === Rofi AppMenu
-Alt+F           === Firefox
+Win+Z           === Split Window Tabs
+Win+Alt+Z       === Join Wandow Tabs
+Win+Alt+T       === Select Terminal
+Win+Alt+W       === Select Wallpapers
 Alt+C           === Thunar
-Alt+Enter       === Ranger
-Alt+P           === MusikPlayer
-Wni+Z           === Tabbed Off
-Win+Alt+Z       === Tabbed on
-Win+Alt+X       === Tabbed Column
-Alt+Ctrl+K      === Keybinds
-Print           === Screenshot
+Alt+F           === Firefox
+Alt+J           === Check Updates
 Alt+L           === Lock Screen
+Alt+P           === MPD Player
 Alt+Q           === Kill Window
+Alt+T           === Float Terminal
+Alt+U           === Update System
+Alt+Enter       === Ranger
+Alt+Space       === Themes Selector
+Alt+Ctrl+K      === Keybinds
 Ctrl+Shft+R     === Restart WM
+Print           === Screenshot
 "
       )
     )

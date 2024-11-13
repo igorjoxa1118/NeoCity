@@ -1,0 +1,15 @@
+[mc.esc.timeout]
+0=1000000
+
+[cmdline]
+0=q
+1=
+
+[Dir Hist New Right Panel]
+0=/home/vir0id
+1=/home/vir0id/.local/share/mc/skins/mc
+2=/home/vir0id/.local/share/mc/skins
+
+[Dir Hist New Left Panel]
+0=/home/vir0id
+1=/home/vir0id/.local/share/mc/skins/mc

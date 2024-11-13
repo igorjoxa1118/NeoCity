@@ -38,11 +38,11 @@ update_paru() {
 }
 
 update_garuda() {
-    sudo garuda-update
+    garuda-update
 }
 
 update_pacman() {
-    sudo pacman -Syu
+    pacman -Syu
 }
 
 case "$1" in

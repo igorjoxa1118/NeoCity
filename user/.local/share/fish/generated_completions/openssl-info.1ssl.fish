@@ -8,5 +8,6 @@ complete -c 'openssl-info.1ssl' -o dsoext -d 'X Item "-dsoext" Outputs the DSO e
 complete -c 'openssl-info.1ssl' -o dirnamesep -d 'X Item "-dirnamesep" Outputs the separator character between a directory spec…'
 complete -c 'openssl-info.1ssl' -o listsep -d 'X Item "-listsep" Outputs the OpenSSL list separator character'
 complete -c 'openssl-info.1ssl' -o seeds -d 'X Item "-seeds" Outputs the randomness seed sources'
-complete -c 'openssl-info.1ssl' -o cpusettings
+complete -c 'openssl-info.1ssl' -o cpusettings -d 'X Item "-cpusettings" Outputs the OpenSSL CPU settings info'
+complete -c 'openssl-info.1ssl' -o windowscontext
 

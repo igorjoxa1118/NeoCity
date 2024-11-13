@@ -1,89 +1,97 @@
 #!/usr/bin/env bash
 
-#	Script to open with selected terminal
-# Author: z0mbi3
-#	url: https://github.com/gh0stzk/dotfiles
+#  ████████╗███████╗██████╗ ███╗   ███╗██╗███╗   ██╗ █████╗ ██╗
+#  ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║████╗  ██║██╔══██╗██║
+#     ██║   █████╗  ██████╔╝██╔████╔██║██║██╔██╗ ██║███████║██║
+#     ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║██║██║╚██╗██║██╔══██║██║
+#     ██║   ███████╗██║  ██║██║ ╚═╝ ██║██║██║ ╚████║██║  ██║███████╗
+#     ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝
+#   Script to open with selected terminal
+#   Author: z0mbi3
+#   url: https://github.com/gh0stzk/dotfiles
 
-cfg_term="$HOME/.config/i3/scripts/.term"
+CFG_TERM="$HOME/.config/i3/scripts/.term"
+DEFAULT_TERM="kitty"
+ROFI_THEME="$HOME/.config/i3/scripts/rofi-themes/TermSelector.rasi"
 
-if [ ! -e "$cfg_term" ]; then
-    touch "$cfg_term"
-    echo alacritty >"$cfg_term"
-fi
+# Creating config file if not exists.
+[ ! -f "$CFG_TERM" ] && echo "$DEFAULT_TERM" > "$CFG_TERM"
 
-MY_TERM=$(<"$cfg_term")
-export MY_TERM
+# Main var
+MY_TERM=$(< "$CFG_TERM")
 
+# Function to choose the terminal using rofi
+choose_terminal() {
+    local options=("Alacritty" "Kitty")
+    local current_term=$(tr '[:upper:]' '[:lower:]' < "$CFG_TERM")
 
+    local selected_index=$(printf '%s\n' "${options[@],,}" | awk -v cur="$current_term" '$0==cur {print NR-1; exit}')
 
-CHOOSE_TERMINAL() {
+    local chosen
+    chosen=$(printf '%s\n' "${options[@]}" | rofi -theme "$ROFI_THEME" -mesg "[ Your current terminal is $MY_TERM ]" -dmenu -selected-row "$selected_index")
 
-ALACRITTY="Alacritty"
-KITTY="Kitty"
-
-options="$ALACRITTY\n$KITTY"
-chosen="$(echo -e "$options" | rofi -theme "$HOME"/.config/i3/scripts/TermSelector.rasi -dmenu)"
-	case $chosen in
-
-			"$ALACRITTY")
-				echo alacritty >"${cfg_term}"
-				;;
-			"$KITTY")
-				echo kitty >"${cfg_term}"
-				;;
-	esac
+    [[ -n "$chosen" ]] && echo "${chosen,,}" > "$CFG_TERM"
 }
 
-if [[ "$1" == "--selecterm" ]]; then
-  CHOOSE_TERMINAL
-fi
+# Terminal selector
+[ "$1" = "--selecterm" ] && choose_terminal
 
-if [[ "$MY_TERM" == "alacritty" ]]; then
-
-	if [[ "$1" == "--terminal" ]]; then
-		alacritty
-	elif [[ "$1" == "--floating" ]]; then
-		alacritty --title floating
-	elif [[ "$1" == "--update-paru" ]]; then
-		alacritty  --title floating -e ~/.config/i3/scripts/Updates --update-paru
-	elif [[ "$1" == "--update-pacman" ]]; then
-		alacritty --title floating -e ~/.config/i3/scripts/Updates --update-pacman
-	elif [[ "$1" == "--update-garuda" ]]; then
-		alacritty  --title floating -e ~/.config/i3/scripts/Updates --update-garuda
-	elif [[ "$1" == "--checkupdates" ]]; then
-		alacritty --title floating -e ~/.config/i3/scripts/Updates --print-updates
-	elif [[ "$1" == "--ranger" ]]; then
-		alacritty --title floating -e ranger
-	elif [[ "$1" == "--nvim" ]]; then
-		alacritty -e nvim
-	elif [[ "$1" == "--music" ]]; then
-		alacritty --title floating -e ncmpcpp
-	elif [[ "$1" == "--fetch" ]]; then
-		alacritty --title floating -e ~/.local/bin/sysfetch
-	fi
-	
-elif [[ "$MY_TERM" == "kitty" ]]; then
-
-	if [[ "$1" == "--terminal" ]]; then
-		kitty 
-	elif [[ "$1" == "--floating" ]]; then
-		kitty --title floating
-	elif [[ "$1" == "--update-paru" ]]; then
-		kitty --title floating -e ~/.config/i3/scripts/Updates --update-paru
-	elif [[ "$1" == "--update-pacman" ]]; then
-		kitty  --title floating -e ~/.config/i3/scripts/Updates --update-pacman
-	elif [[ "$1" == "--update-garuda" ]]; then
-		kitty  --title floating -e ~/.config/i3/scripts/Updates --update-garuda
-	elif [[ "$1" == "--checkupdates" ]]; then
-		kitty --title floating -e ~/.config/i3/scripts/Updates --print-updates
-	elif [[ "$1" == "--ranger" ]]; then
-		kitty --title floating -e ranger
-	elif [[ "$1" == "--nvim" ]]; then
-		kitty -e nvim
-	elif [[ "$1" == "--music" ]]; then
-		kitty --title floating -e ncmpcpp
-	elif [[ "$1" == "--fetch" ]]; then
-		kitty --title floating -e ~/.local/bin/sysfetch
-	fi
-	
-fi
+# Launch the terminal with appropriate options
+case $MY_TERM in
+    "alacritty")
+        case $1 in
+            "--terminal")
+                alacritty
+                ;;
+            "--floating")
+                alacritty --title floating
+                ;;
+            "--update")
+                alacritty --hold --title floating -e ~/.config/i3/scripts/Updates --update-garuda
+                ;;
+            "--checkupdates")
+                alacritty --hold -e ~/.config/i3/scripts/Updates --print-updates
+                ;;
+            "--ranger")
+                alacritty --title floating -e ranger
+                ;;
+            "--nvim")
+                alacritty -e nvim
+                ;;
+            "--music")
+                alacritty --title floating -e ncmpcpp
+                ;;
+            "--fetch")
+                alacritty -e ~/.local/bin/sysfetch
+                ;;
+        esac
+        ;;
+    "kitty")
+        case $1 in
+            "--terminal")
+                kitty
+                ;;
+            "--floating")
+                kitty  --title floating
+                ;;
+            "--update")
+                kitty --title floating --hold -e ~/.config/i3/scripts/Updates --update-garuda
+                ;;
+            "--checkupdates")
+                kitty --title floating --hold -e ~/.config/i3/scripts/Updates --print-updates
+                ;;
+            "--ranger")
+                kitty --title floating --hold -e ranger
+                ;;
+            "--nvim")
+                kitty -e nvim
+                ;;
+            "--music")
+                kitty --title floating -e ncmpcpp
+                ;;
+            "--fetch")
+                kitty -e ~/.local/bin/sysfetch
+                ;;
+        esac
+        ;;
+esac

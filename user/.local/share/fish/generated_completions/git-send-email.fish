@@ -43,6 +43,7 @@ complete -c git-send-email -l to-cover -d 'If this is set, emails found in To: h
 complete -c git-send-email -l suppress-cc -d 'Specify an additional category of recipients to suppress the auto-cc of: . sp'
 complete -c git-send-email -l suppress-from -d 'If this is set, do not add the From: address to the cc: list'
 complete -c git-send-email -l thread -d 'If this is set, the In-Reply-To and References headers will be added to each …'
+complete -c git-send-email -l mailmap -d 'Use the mailmap file (see gitmailmap(5)) to map all addresses to their canoni…'
 complete -c git-send-email -l confirm -d 'Confirm just before sending: . sp'
 complete -c git-send-email -l dry-run -d 'Do everything except actually send the emails'
 complete -c git-send-email -l format-patch -d 'When an argument may be understood either as a reference or as a file name, c…'
@@ -50,7 +51,9 @@ complete -c git-send-email -l quiet -d 'Make git-send-email less verbose'
 complete -c git-send-email -l validate -d 'Perform sanity checks on patches'
 complete -c git-send-email -l force -d 'Send emails even if safety checks would prevent it'
 complete -c git-send-email -l dump-aliases -d 'Instead of the normal operation, dump the shorthand alias names from the conf…'
+complete -c git-send-email -l translate-aliases -d 'Instead of the normal operation, read from standard input and interpret each …'
 complete -c git-send-email -l no-thread
 complete -c git-send-email -l no-chain-reply-to -d 'are specified, the second and subsequent patches will be replies to the first…'
 complete -c git-send-email -s i -d 'option.  The command will be executed in the shell if necessary'
+complete -c git-send-email -l no-mailmap -d 'sendemail. mailmap. file'
 

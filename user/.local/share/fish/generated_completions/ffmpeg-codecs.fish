@@ -44,6 +44,7 @@ complete -c ffmpeg-codecs -l nores -d 'joint_stereo (-m j) 4'
 complete -c ffmpeg-codecs -l abr -d 'tells FFmpeg to use ABR still relies on b to set bitrate.  copyright (-c) 4'
 complete -c ffmpeg-codecs -o '15.0' -d 'to the crispness of transients in the encoded audio'
 complete -c ffmpeg-codecs -l enable-libkvazaar
+complete -c ffmpeg-codecs -l enable-libvvenc
 complete -c ffmpeg-codecs -o lossless
 complete -c ffmpeg-codecs -o compression_level
 complete -c ffmpeg-codecs -o quality

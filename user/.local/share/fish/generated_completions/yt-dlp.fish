@@ -16,6 +16,7 @@ complete -c yt-dlp -l default-search -d 'Use this prefix for unqualified URLs.  
 complete -c yt-dlp -l ignore-config -d 'Don\\[aq]t load any more configuration files except those given to --config-lo…'
 complete -c yt-dlp -l no-config-locations -d 'Do not load any custom configuration files (default)'
 complete -c yt-dlp -l config-locations -d 'Location of the main configuration file; either the path to the config or its…'
+complete -c yt-dlp -l plugin-dirs -d 'Path to an additional directory to search for plugins'
 complete -c yt-dlp -l flat-playlist -d 'Do not extract the videos of a playlist, only list them'
 complete -c yt-dlp -l no-flat-playlist -d 'Fully extract the videos of a playlist (default)'
 complete -c yt-dlp -l live-from-start -d 'Download livestreams from the start'
@@ -53,7 +54,7 @@ complete -c yt-dlp -l age-limit -d 'Download only videos suitable for the given 
 complete -c yt-dlp -l download-archive -d 'Download only videos not listed in the archive file'
 complete -c yt-dlp -l no-download-archive -d 'Do not use archive file (default)'
 complete -c yt-dlp -l max-downloads -d 'Abort after downloading NUMBER files'
-complete -c yt-dlp -l break-on-existing -d 'Stop the download process when encountering a file that is in the archive'
+complete -c yt-dlp -l break-on-existing -d 'Stop the download process when encountering a file that is in the archive sup…'
 complete -c yt-dlp -l no-break-on-existing -d 'Do not stop the download process when encountering a file that is in the arch…'
 complete -c yt-dlp -l break-per-input -d 'Alters --max-downloads, --break-on-existing, --break-match-filters, and auton…'
 complete -c yt-dlp -l no-break-per-input -d '--break-on-existing and similar options terminates the entire download queue'
@@ -138,7 +139,7 @@ complete -c yt-dlp -l skip-download -d 'Do not download the video but write all 
 complete -c yt-dlp -s O -l print -d 'Field name or output template to print to screen, optionally prefixed with wh…'
 complete -c yt-dlp -l print-to-file -d 'Append given template to the file'
 complete -c yt-dlp -s j -l dump-json -d 'Quiet, but print JSON information for each video'
-complete -c yt-dlp -s J -l dump-single-json -d 'Quiet, but print JSON information for each url or infojson passed'
+complete -c yt-dlp -s J -l dump-single-json -d 'Quiet, but print JSON information for each URL or infojson passed'
 complete -c yt-dlp -l force-write-archive -d 'Force download archive entries to be written as far as no errors occur, even …'
 complete -c yt-dlp -l newline -d 'Output progress bar as new lines'
 complete -c yt-dlp -l no-progress -d 'Do not print progress bar'
@@ -168,7 +169,7 @@ complete -c yt-dlp -l video-multistreams -d 'Allow multiple video streams to be 
 complete -c yt-dlp -l no-video-multistreams -d 'Only one video stream is downloaded for each output file (default)'
 complete -c yt-dlp -l audio-multistreams -d 'Allow multiple audio streams to be merged into a single file'
 complete -c yt-dlp -l no-audio-multistreams -d 'Only one audio stream is downloaded for each output file (default)'
-complete -c yt-dlp -l prefer-free-formats -d 'Prefer video formats with free containers over non-free ones of same quality'
+complete -c yt-dlp -l prefer-free-formats -d 'Prefer video formats with free containers over non-free ones of the same qual…'
 complete -c yt-dlp -l no-prefer-free-formats -d 'Don\\[aq]t give any special preference to free containers (default)'
 complete -c yt-dlp -l check-formats -d 'Make sure formats are selected only from those that are actually downloadable'
 complete -c yt-dlp -l check-all-formats -d 'Check all formats for whether they are actually downloadable'
@@ -180,7 +181,7 @@ complete -c yt-dlp -l no-write-subs -d 'Do not write subtitle file (default)'
 complete -c yt-dlp -l write-auto-subs -d 'Write automatically generated subtitle file (Alias: --write-automatic-subs)'
 complete -c yt-dlp -l no-write-auto-subs -d 'Do not write auto-generated subtitles (default) (Alias: --no-write-automatic-…'
 complete -c yt-dlp -l list-subs -d 'List available subtitles of each video'
-complete -c yt-dlp -l sub-format -d 'Subtitle format; accepts formats preference, e. g'
+complete -c yt-dlp -l sub-format -d 'Subtitle format; accepts formats preference separated by \\[dq]/\\[dq], e. g'
 complete -c yt-dlp -l sub-langs -d 'Languages of the subtitles to download (can be regex) or \\[dq]all\\[dq] separa…'
 complete -c yt-dlp -s u -l username -d 'Login with this account ID'
 complete -c yt-dlp -s p -l password -d 'Account password.  If this option is left out, yt-dlp will ask interactively'
@@ -218,7 +219,7 @@ complete -c yt-dlp -l embed-info-json -d 'Embed the infojson as an attachment to
 complete -c yt-dlp -l no-embed-info-json -d 'Do not embed the infojson as an attachment to the video file'
 complete -c yt-dlp -l parse-metadata -d 'Parse additional metadata like title/artist from other fields; see \\[dq]MODIF…'
 complete -c yt-dlp -l replace-in-metadata -d 'Replace text in a metadata field using the given regex'
-complete -c yt-dlp -l xattrs -d 'Write metadata to the video file\\[aq]s xattrs (using dublin core and xdg stan…'
+complete -c yt-dlp -l xattrs -d 'Write metadata to the video file\\[aq]s xattrs (using Dublin Core and XDG stan…'
 complete -c yt-dlp -l concat-playlist -d 'Concatenate videos in a playlist'
 complete -c yt-dlp -l fixup -d 'Automatically correct known faults of the file'
 complete -c yt-dlp -l ffmpeg-location -d 'Location of the ffmpeg binary; either the path to the binary or its containin…'
@@ -232,7 +233,7 @@ complete -c yt-dlp -l remove-chapters -d 'Remove chapters whose title matches th
 complete -c yt-dlp -l no-remove-chapters -d 'Do not remove any chapters from the file (default)'
 complete -c yt-dlp -l force-keyframes-at-cuts -d 'Force keyframes at cuts when downloading/splitting/removing sections'
 complete -c yt-dlp -l no-force-keyframes-at-cuts -d 'Do not force keyframes around the chapters when cutting/splitting (default)'
-complete -c yt-dlp -l use-postprocessor -d 'The (case sensitive) name of plugin postprocessors to be enabled, and (option…'
+complete -c yt-dlp -l use-postprocessor -d 'The (case-sensitive) name of plugin postprocessors to be enabled, and (option…'
 complete -c yt-dlp -l sponsorblock-mark -d 'SponsorBlock categories to create chapters for, separated by commas'
 complete -c yt-dlp -l sponsorblock-remove -d 'SponsorBlock categories to be removed from the video file, separated by commas'
 complete -c yt-dlp -l sponsorblock-chapter-title -d 'An output template for the title of the SponsorBlock chapters created by --sp…'
@@ -242,7 +243,7 @@ complete -c yt-dlp -l extractor-retries -d 'Number of retries for known extracto
 complete -c yt-dlp -l allow-dynamic-mpd -d 'Process dynamic DASH manifests (default) (Alias: --no-ignore-dynamic-mpd)'
 complete -c yt-dlp -l ignore-dynamic-mpd -d 'Do not process dynamic DASH manifests (Alias: --no-allow-dynamic-mpd)'
 complete -c yt-dlp -l hls-split-discontinuity -d 'Split HLS playlists to different formats at discontinuities such as ad breaks'
-complete -c yt-dlp -l no-hls-split-discontinuity -d 'Do not split HLS playlists to different formats at discontinuities such as ad…'
+complete -c yt-dlp -l no-hls-split-discontinuity -d 'Do not split HLS playlists into different formats at discontinuities such as …'
 complete -c yt-dlp -l no-ignore-errors
 complete -c yt-dlp -l ies -d 'Prefix the name with a [dq]-[dq] to exclude it, e. g'
 complete -c yt-dlp -o generic -d 'Use --list-extractors for a list of extractor names.  (Alias: --ies)'
@@ -253,7 +254,7 @@ complete -c yt-dlp -l force-download-archive
 complete -c yt-dlp -l min-sleep-interval
 complete -c yt-dlp -l write-automatic-subs
 complete -c yt-dlp -l no-write-automatic-subs
-complete -c yt-dlp -o live_chat -d 'Use --list-subs for a list of available language tags Authentication Options:'
+complete -c yt-dlp -l sub- -o live_chat -d 'Use --list-subs for a list of available language tags Authentication Options:'
 complete -c yt-dlp -l ppa -d 'You can use this option multiple times to give different arguments to differe…'
 complete -c yt-dlp -l no-embed-chapters/--no-embed-info-json
 complete -c yt-dlp -l add-metadata
@@ -264,7 +265,7 @@ complete -c yt-dlp -l config-location -d '[bu] 2 If unset, ${XDG_CONFIG_HOME} de
 complete -c yt-dlp -l onedir/-D -d 'here (https://pyinstaller. org/en/stable/usage. html#what-to-generate)'
 complete -c yt-dlp -l format/--match-filters
 complete -c yt-dlp -l playlist-reverse -d 'See #302 (https://github. com/yt-dlp/yt-dlp/issues/302) for details'
-complete -c yt-dlp -o multistreams -o playlist-match-filter -o manifest-filesize-approx -o allow-unsafe-ext -d '[bu] 2'
+complete -c yt-dlp -o multistreams -o playlist-match-filter -o manifest-filesize-approx -o allow-unsafe-ext -o prefer-vp9-sort -d '[bu] 2'
 complete -c yt-dlp -o no-live-chat -o no-youtube-channel-redirect -d '[bu] 2'
 complete -c yt-dlp -l get-description
 complete -c yt-dlp -l get-duration
@@ -279,7 +280,7 @@ complete -c yt-dlp -l reject-title
 complete -c yt-dlp -l min-views
 complete -c yt-dlp -l max-views
 complete -c yt-dlp -l break-on-reject
-complete -c yt-dlp -l user-agent -l add-header
+complete -c yt-dlp -l user-agent
 complete -c yt-dlp -l referer
 complete -c yt-dlp -l playlist-start
 complete -c yt-dlp -l playlist-end

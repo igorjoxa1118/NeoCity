@@ -14,7 +14,7 @@ complete -c 'openssl-ocsp.1ssl' -o reqout -o respout -d 'X Item "-reqout file, -
 complete -c 'openssl-ocsp.1ssl' -o reqin -o respin -d 'X Item "-reqin file, -respin file" Read OCSP request or response file from fi…'
 complete -c 'openssl-ocsp.1ssl' -o url -d 'X Item "-url responder_url" Specify the responder host and optionally port an…'
 complete -c 'openssl-ocsp.1ssl' -o host -o path -d 'X Item "-host host:port, -path pathname" If the -host option is present then …'
-complete -c 'openssl-ocsp.1ssl' -o proxy -d 'X Item "-proxy [http[s]://][userinfo@]host[:port][/path]" The HTTP(S) proxy s…'
+complete -c 'openssl-ocsp.1ssl' -o proxy -d 'X Item "-proxy [http[s]://][userinfo@]host[:port][/path][?query][#fragment]" …'
 complete -c 'openssl-ocsp.1ssl' -o no_proxy -d 'X Item "-no_proxy addresses" List of IP addresses and/or DNS names of servers…'
 complete -c 'openssl-ocsp.1ssl' -o header -d 'X Item "-header name=value" Adds the header name with the specified value to …'
 complete -c 'openssl-ocsp.1ssl' -o timeout -d 'X Item "-timeout seconds" Connection timeout to the OCSP responder in seconds'

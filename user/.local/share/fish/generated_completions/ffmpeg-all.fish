@@ -48,7 +48,7 @@ complete -c ffmpeg-all -o timestamp -d 'X Item "-timestamp date (output)" Set th
 complete -c ffmpeg-all -o metadata -d 'X Item "-metadata[:metadata_specifier] key=value (output,per-metadata)" Set a…'
 complete -c ffmpeg-all -o disposition -d 'X Item "-disposition[:stream_specifier] value (output,per-stream)" Sets the d…'
 complete -c ffmpeg-all -o program -d 'X Item "-program [title=title:][program_num=program_num:]st=stream[:st=stream'
-complete -c ffmpeg-all -o stream_group -d 'X Item "-stream_group type=type:st=stream[:st=stream][:stg=stream_group][:id=…'
+complete -c ffmpeg-all -o stream_group -d 'X Item "-stream_group [map=input_file_id=stream_group][type=type:]st=stream[:…'
 complete -c ffmpeg-all -o target -d 'X Item "-target type (output)" Specify target file type (\\f(CW\\*(C`vcd\\*(C\', …'
 complete -c ffmpeg-all -o dn -d 'X Item "-dn (input/output)" As an input option, blocks all data streams of a …'
 complete -c ffmpeg-all -o dframes -d 'X Item "-dframes number (output)" Set the number of data frames to output'
@@ -89,6 +89,7 @@ complete -c ffmpeg-all -o vstats_file -d 'X Item "-vstats_file file" Dump video 
 complete -c ffmpeg-all -o vstats_version -d 'X Item "-vstats_version file" Specify which version of the vstats format to u…'
 complete -c ffmpeg-all -o vtag -d 'X Item "-vtag fourcc/tag (output)" Force video tag/fourcc'
 complete -c ffmpeg-all -o force_key_frames -d 'X Item "-force_key_frames[:stream_specifier] time[,time'
+complete -c ffmpeg-all -o apply_cropping -d 'X Item "-apply_cropping[:stream_specifier] source (input,per-stream)" Automat…'
 complete -c ffmpeg-all -o copyinkf -d 'X Item "-copyinkf[:stream_specifier] (output,per-stream)" When doing stream c…'
 complete -c ffmpeg-all -o init_hw_device -d 'X Item "-init_hw_device type[=name][:device[,key=value'
 complete -c ffmpeg-all -o filter_hw_device -d 'X Item "-filter_hw_device name" Pass the hardware device called name to all f…'
@@ -105,12 +106,14 @@ complete -c ffmpeg-all -o acodec -d 'X Item "-acodec codec (input/output)" Set t
 complete -c ffmpeg-all -o sample_fmt -d 'X Item "-sample_fmt[:stream_specifier] sample_fmt (output,per-stream)" Set th…'
 complete -c ffmpeg-all -o af -d 'X Item "-af filtergraph (output)" Create the filtergraph specified by filterg…'
 complete -c ffmpeg-all -o atag -d 'X Item "-atag fourcc/tag (output)" Force audio tag/fourcc'
+complete -c ffmpeg-all -o ch_layout -d 'X Item "-ch_layout[:stream_specifier] layout (input/output,per-stream)" Alias…'
+complete -c ffmpeg-all -o channel_layout -d 'X Item "-channel_layout[:stream_specifier] layout (input/output,per-stream)" …'
 complete -c ffmpeg-all -o guess_layout_max -d 'X Item "-guess_layout_max channels (input,per-stream)" If some input channel …'
 complete -c ffmpeg-all -o scodec -d 'X Item "-scodec codec (input/output)" Set the subtitle codec'
 complete -c ffmpeg-all -o sn -d 'X Item "-sn (input/output)" As an input option, blocks all subtitle streams o…'
 complete -c ffmpeg-all -o fix_sub_duration -d 'X Item "-fix_sub_duration" Fix subtitles durations'
 complete -c ffmpeg-all -o canvas_size -d 'X Item "-canvas_size size" Set the size of the canvas used to render subtitles'
-complete -c ffmpeg-all -o map -d 'X Item "-map [-]input_file_id[:stream_specifier][?] | [linklabel] (output)" C…'
+complete -c ffmpeg-all -o map -d 'X Item "-map [-]input_file_id[:stream_specifier][:view_specifier][?] | [linkl…'
 complete -c ffmpeg-all -o ignore_unknown -d 'X Item "-ignore_unknown" Ignore input streams with unknown type instead of fa…'
 complete -c ffmpeg-all -o copy_unknown -d 'X Item "-copy_unknown" Allow input streams with unknown type to be copied ins…'
 complete -c ffmpeg-all -o map_metadata -d 'X Item "-map_metadata[:metadata_spec_out] infile[:metadata_spec_in] (output,p…'
@@ -206,6 +209,7 @@ complete -c ffmpeg-all -l nores -d 'joint_stereo (-m j) 4'
 complete -c ffmpeg-all -l abr -d 'tells FFmpeg to use ABR still relies on b to set bitrate.  copyright (-c) 4'
 complete -c ffmpeg-all -o '15.0' -d 'to the crispness of transients in the encoded audio'
 complete -c ffmpeg-all -l enable-libkvazaar
+complete -c ffmpeg-all -l enable-libvvenc
 complete -c ffmpeg-all -o lossless
 complete -c ffmpeg-all -o compression_level
 complete -c ffmpeg-all -o quality
@@ -224,10 +228,6 @@ complete -c ffmpeg-all -o no_resync_search
 complete -c ffmpeg-all -o flv_metadata
 complete -c ffmpeg-all -o flv_ignore_prevtag
 complete -c ffmpeg-all -o flv_full_metadata
-complete -c ffmpeg-all -o hls_enc
-complete -c ffmpeg-all -o hls_enc_key
-complete -c ffmpeg-all -o hls_enc_key_url
-complete -c ffmpeg-all -o hls_enc_iv
 complete -c ffmpeg-all -o syncpoints
 complete -c ffmpeg-all -o write_index
 complete -c ffmpeg-all -o page_duration

@@ -9,6 +9,9 @@ complete -c downgrade -l ala-url -d 'Location of an ALA server, default is https
 complete -c downgrade -l ala-only -d 'Search ALA only'
 complete -c downgrade -l cached-only -d 'Search local cache only'
 complete -c downgrade -l ignore -d 'Whether to add packages to IgnorePkg, default is prompt'
+complete -c downgrade -l unignore -d 'Remove packages from IgnorePkg.  This is a pass-through to pacignore(8)'
+complete -c downgrade -l latest -l oldest -d 'Never prompt for version or location, automatically pick the most up to date/…'
+complete -c downgrade -l prefer-cache -d 'If a package matching the version filter is found in the cache, skip querying…'
 complete -c downgrade -l version -d 'Show downgrade version'
 complete -c downgrade -s h -l help -d 'Show help script'
 

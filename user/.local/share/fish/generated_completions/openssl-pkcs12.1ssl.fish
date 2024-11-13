@@ -43,6 +43,8 @@ complete -c 'openssl-pkcs12.1ssl' -o keyex -o keysig -d 'X Item "-keyex|-keysig"
 complete -c 'openssl-pkcs12.1ssl' -o keypbe -o certpbe -d 'X Item "-keypbe alg, -certpbe alg" These options allow the algorithm used to …'
 complete -c 'openssl-pkcs12.1ssl' -o descert -d 'X Item "-descert" Encrypt the certificates using triple DES'
 complete -c 'openssl-pkcs12.1ssl' -o macalg -d 'X Item "-macalg digest" Specify the MAC digest algorithm'
+complete -c 'openssl-pkcs12.1ssl' -o pbmac1_pbkdf2 -d 'X Item "-pbmac1_pbkdf2" Use PBMAC1 with PBKDF2 for MAC protection of the PKCS…'
+complete -c 'openssl-pkcs12.1ssl' -o pbmac1_pbkdf2_md -d 'X Item "-pbmac1_pbkdf2_md digest" Specify the PBKDF2 KDF digest algorithm'
 complete -c 'openssl-pkcs12.1ssl' -o iter -d 'X Item "-iter count" This option specifies the iteration count for the encryp…'
 complete -c 'openssl-pkcs12.1ssl' -o noiter -o nomaciter -d 'X Item "-noiter, -nomaciter" By default both encryption and MAC iteration cou…'
 complete -c 'openssl-pkcs12.1ssl' -o maciter -d 'X Item "-maciter" This option is included for compatibility with previous ver…'

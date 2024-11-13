@@ -19,6 +19,7 @@ complete -c 'openssl-speed.1ssl' -o seconds -d 'X Item "-seconds num" Run benchm
 complete -c 'openssl-speed.1ssl' -o bytes -d 'X Item "-bytes num" Run benchmarks on num-byte buffers'
 complete -c 'openssl-speed.1ssl' -o mr -d 'X Item "-mr" Produce the summary in a mechanical, machine-readable, format'
 complete -c 'openssl-speed.1ssl' -o mlock -d 'X Item "-mlock" Lock memory into RAM for more deterministic measurements'
+complete -c 'openssl-speed.1ssl' -o testmode -d 'X Item "-testmode" Runs the speed command in testmode'
 complete -c 'openssl-speed.1ssl' -o rand -o writerand -d 'X Item "-rand files, -writerand file" See "Random State Options" in openssl\\|…'
 complete -c 'openssl-speed.1ssl' -o engine -d 'X Item "-engine id" See "Engine Options" in openssl\\|(1)'
 complete -c 'openssl-speed.1ssl' -o provider -d 'X Item "-provider name"'
