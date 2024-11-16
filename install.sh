@@ -294,9 +294,10 @@ fi
 func_install_dots
 sleep 2
 clear
-
+### --- Сканирование шрифтов
 fc-cache -fv
-
+### --- Делает Thunar двухпанельным
+xfconf-query -c thunar -p /misc-open-new-windows-in-split-view -n -t bool -s true
 clear
 
 ########## ---------- Установка сведений о батареи ---------- ##########
