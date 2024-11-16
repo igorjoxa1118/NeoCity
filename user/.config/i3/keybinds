@@ -167,6 +167,7 @@ bindsym $mod1+Ctrl+k exec "$HOME/.config/i3/bin/toggle-conkeww"
 #bindsym $mod+Ctrl+Left exec mpc prev
 #bindsym $mod+Ctrl+Right exec mpc next
 #bindsym $mod+Ctrl+d exec mpc del 0
+bindsym button3 exec --no-startup-id jgmenu --at-pointer
 #---------------------------------------------
 
 

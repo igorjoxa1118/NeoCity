@@ -9,7 +9,7 @@
       (button :tooltip "Shutdown your PC." :class "icon shutdown" :onclick "shutdown now" "󰐥")
       (button :tooltip "Reboot your PC." :class "icon reboot" :onclick "reboot" "󰜉")
       (button :tooltip "Lock" :class "icon lock" :onclick "scripts/power-manager --lock" "󰌾")
-      (button :tooltip "Suspend" :class "icon suspend" :onclick "killall eww" "󰅙")
+      (button :tooltip "Close" :class "icon close" :onclick "killall eww" "󰅙")
       )
     )
   )

@@ -10,20 +10,20 @@ fetch() {
   quote=$(echo "$response" | jq -r '.content')
   author=$(echo "$response" | jq -r '.author')
 
-  echo "$quote" > Main/tmp-quote.txt
-  echo "$author" >> Main/tmp-quote.txt
+  echo "$quote" > $HOME/.config/i3/eww/Main/tmp-quote.txt
+  echo "$author" >> $HOME/.config/i3/eww/Main/tmp-quote.txt
 }
 
-if [ $1 == "--fetch" ]; then
+if [[ $1 == "--fetch" ]]; then
   (fetch)&
 fi
 
-if [ $1 == "--author" ]; then
-  author=$(sed -n '2p' Main/tmp-quote.txt)
+if [[ $1 == "--author" ]]; then
+  author=$(sed -n '2p' $HOME/.config/i3/eww/Main/tmp-quote.txt)
   echo "$author"
 fi
 
-if [ $1 == "--quote" ]; then
-  quote=$(sed -n '1p' Main/tmp-quote.txt)
+if [[ $1 == "--quote" ]]; then
+  quote=$(sed -n '1p' $HOME/.config/i3/eww/Main/tmp-quote.txt)
   echo "$quote"
 fi

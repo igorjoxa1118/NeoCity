@@ -138,7 +138,7 @@
     (button :class "shutdown" :tooltip "Shutdown" :onclick  "shutdown -h now" "󰐥")
     (button :class "reboot" :tooltip "Reboot" :onclick  "reboot" "󰜉")
     (button :class "lock" :tooltip "Lock" :onclick "scripts/power-manger --lock" "󰌾")
-    (button :class "suspend" :tooltip "suspend" :onclick "killall eww" "󰅙")
+    (button :class "close" :tooltip "close" :onclick "killall eww" "󰅙")
     )
   )
 
