@@ -305,8 +305,8 @@ logo "Power supply install"
 ad=$(ls /sys/class/power_supply/ | awk "NR==1 { print $2 }" | grep A)
 bat=$(ls /sys/class/power_supply/ | awk "NR==2 { print $2 }" | grep B)
 
-sed -i "s/AC/${ad}/g" "$home_dir"/.config/i3/rices/emilia/modules.ini
-sed -i "s/BAT0/${bat}/g" "$home_dir"/.config/i3/rices/emilia/modules.ini
+sed -i "s/AC/${ad}/g" "$home_dir"/.config/i3/rices/catppuccin-mocha/modules.ini
+sed -i "s/BAT0/${bat}/g" "$home_dir"/.config/i3/rices/catppuccin-mocha/modules.ini
 echo -e "${PURPLE}Power supply install done!"
 sleep 2
 clear
@@ -373,14 +373,14 @@ logo "Add user configs"
 tmpuser=$(whoami)
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/blender/4.1/config/bookmarks.txt
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.gtkrc-2.0
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir/.config/nitrogen/bg-saved.cfg"
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir/.config/nitrogen/nitrogen.cfg"
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir/.zshrc"
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/nitrogen/bg-saved.cfg
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/nitrogen/nitrogen.cfg
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.zshrc
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/gtk-3.0/bookmarks
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/nvim.desktop
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/ranger.desktop
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/zfetch.desktop
-sed -i "s/vir0id/${USER}/g" ~/.config/kitty/kitty.conf
+sed -i "s/vir0id/${USER}/g" "$home_dir"/.config/kitty/kitty.conf
 sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
 sleep 2
 clear
@@ -403,11 +403,11 @@ clear
 logo "Firefox theme install"
 
 copy_ff_func() {
-  cp -R $current_dir/firefox/FoxThemes/ ~/.mozilla/
+  cp -R $current_dir/firefox/FoxThemes/* ~/.mozilla/firefox/"$grep_ff"
   echo -e "${ORANGE}Firefox theme installed"
   sleep 2
 }
-grep_ff=$(ls ~/.mozilla/firefox | grep default-release)
+grep_ff=$(ls ~/.mozilla/firefox | grep "default-release")
 if [ ! -z "$grep_ff" ]; then
    copy_ff_func
 else
