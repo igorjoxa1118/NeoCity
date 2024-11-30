@@ -403,12 +403,19 @@ clear
 logo "Firefox theme install"
 
 copy_ff_func() {
-  cp -R $current_dir/firefox/FoxThemes/* ~/.mozilla/firefox/"$grep_ff"
-  echo -e "${ORANGE}Firefox theme installed"
+  cp -R $current_dir/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH"
+  echo -e "${GREEN}Firefox theme installed"
   sleep 2
 }
-grep_ff=$(ls ~/.mozilla/firefox | grep "default-release")
-if [ ! -z "$grep_ff" ]; then
+
+firefox_profiles() {
+if [[ $(grep '\[Profile[^0]\]' "$HOME"/.mozilla/firefox/profiles.ini) ]]
+then PROFPATH=$(grep -E '^\[Profile|^Path|^Default' "$HOME"/.mozilla/firefox/profiles.ini | grep -1 '^Default=1' | grep '^Path' | cut -c6-)
+else PROFPATH=$(grep 'Path=' "$HOME"/.mozilla/firefox/profiles.ini | sed 's/^Path=//')
+fi
+}
+
+if [ -z "$PROFPATH" ]; then
    copy_ff_func
 else
    echo -e "${RED}Firefox themes not installed"
