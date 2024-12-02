@@ -4,8 +4,8 @@
 
 # Import Current Theme
 DIR="$HOME/.config/i3"
-STYLE="tealize"
-RASI="$DIR/themes/$STYLE/rofi/windows.rasi"
+STYLE="catppuccin-mocha"
+RASI="$DIR/rices/$STYLE/rofi/windows.rasi"
 
 # Run
 rofi \

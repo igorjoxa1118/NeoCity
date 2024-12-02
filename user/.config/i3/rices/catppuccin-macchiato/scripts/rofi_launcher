@@ -4,8 +4,8 @@
 
 # Import Current Theme
 DIR="$HOME/.config/i3/rices/"
-STYLE="catppuccin-macchiato"
-RASI="$DIR/$STYLE/rofi/launcher.rasi"
+STYLE="catppuccin-mocha"
+RASI="$DIR/$STYLE/rofi/rofi_launchers/launchpad_v4.rasi"
 
 # Run
 rofi \

@@ -5,7 +5,7 @@
 # Colors
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 CDIR=`cd "$DIR" && cd .. && pwd`
-POWER_ON=`cat $CDIR/colors.ini | grep 'yellow' | head -n1 | cut -d '=' -f2 | tr -d ' '`
+POWER_ON=`cat $CDIR/colors.ini | grep 'mauve' | head -n1 | cut -d '=' -f2 | tr -d ' '`
 POWER_OFF=`cat $CDIR/colors.ini | grep 'red' | head -n1 | cut -d '=' -f2 | tr -d ' '`
 
 # Checks if bluetooth controller is powered on

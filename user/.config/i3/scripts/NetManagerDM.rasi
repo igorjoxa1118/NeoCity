@@ -7,40 +7,33 @@ configuration {
     show-icons:                 false;
 }
 
-* {
-font: "JetBrainsMono Nerd Font Bold 9";
-background: #1e1e2e;
-background-alt: #2d3245;
-foreground: #94e2d5;
-selected: #565e82;
-active: #89dceb;
-urgent: #89dceb;
-}
+@import                          "~/.config/i3/rices/catppuccin-mocha/rofi/shared/colors.rasi"
+@import                          "~/.config/i3/rices/catppuccin-mocha/rofi/shared/fonts.rasi"
 
 * {
-    border-colour:               var(selected);
-    handle-colour:               var(selected);
-    background-colour:           var(background);
-    foreground-colour:           var(foreground);
-    alternate-background:        var(background-alt);
-    normal-background:           var(background);
-    normal-foreground:           var(foreground);
-    urgent-background:           var(urgent);
-    urgent-foreground:           var(background);
-    active-background:           var(active);
-    active-foreground:           var(background);
-    selected-normal-background:  var(selected);
-    selected-normal-foreground:  var(background);
-    selected-urgent-background:  var(active);
-    selected-urgent-foreground:  var(background);
-    selected-active-background:  var(urgent);
-    selected-active-foreground:  var(background);
-    alternate-normal-background: var(background);
-    alternate-normal-foreground: var(foreground);
-    alternate-urgent-background: var(urgent);
-    alternate-urgent-foreground: var(background);
-    alternate-active-background: var(active);
-    alternate-active-foreground: var(background);
+    border-colour:               @selected;
+    handle-colour:               @selected;
+    background-colour:           @background;
+    foreground-colour:           @foreground;
+    alternate-background:        @background-alt;
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+    urgent-background:           @urgent;
+    urgent-foreground:           @background;
+    active-background:           @active;
+    active-foreground:           @background;
+    selected-normal-background:  @selected;
+    selected-normal-foreground:  @background;
+    selected-urgent-background:  @active;
+    selected-urgent-foreground:  @background;
+    selected-active-background:  @urgent;
+    selected-active-foreground:  @background;
+    alternate-normal-background: @background;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @urgent;
+    alternate-urgent-foreground: @background;
+    alternate-active-background: @active;
+    alternate-active-foreground: @background;
 }
 
 /*****----- Main Window -----*****/

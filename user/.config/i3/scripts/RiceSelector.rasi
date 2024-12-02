@@ -1,5 +1,6 @@
 // # z0mbi3 -  https://github.com/gh0stzk/dotfiles
-
+@import                          "~/.config/i3/rices/catppuccin-mocha/rofi/shared/colors.rasi"
+@import                          "~/.config/i3/rices/catppuccin-mocha/rofi/shared/fonts.rasi"
 // Config //
 configuration {
     modi:                        "drun";
@@ -11,14 +12,6 @@ configuration {
 	//me-select-entry:			 "";
 	//me-accept-entry:			 "MousePrimary";
 }
-
-* {
-main-bg: #232735;
-main-fg: #7C84A8;
-select-bg: #7560d3;
-select-fg: #14171c;
-}
-
 
 // Main //
 window {
@@ -37,7 +30,7 @@ window {
 mainbox {
     enabled:                     true;
     children:                    [ "listview" ];
-    background-color:            @main-bg;
+    background-color:            @background;
 }
 
 
@@ -57,7 +50,7 @@ listview {
     fixed-columns:               true;
     cursor:                      "default";
     background-color:            transparent;
-    text-color:                  @main-fg;
+    text-color:                  @foreground;
 }
 
 
@@ -70,7 +63,7 @@ element {
     border-radius:               20px;
     cursor:                      pointer;
     background-color:            transparent;
-    text-color:                  @main-fg;
+    text-color:                  @foreground;
 }
 @media(max-aspect-ratio: 1.8) {
     element {
@@ -78,8 +71,8 @@ element {
     }
 }
 element selected.normal {
-    background-color:            @select-bg;
-    text-color:                  @select-fg;
+    background-color:            @selected;
+    text-color:                  @background-alt;
 }
 element-icon {
     size:                        33%;

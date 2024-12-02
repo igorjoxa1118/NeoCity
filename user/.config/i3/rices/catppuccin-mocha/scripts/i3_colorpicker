@@ -5,7 +5,7 @@
 ## Simple script to pick color quickly.
 
 color=$(xcolor --format hex --preview-size 255 --scale 10)
-image=/tmp/${color}.png
+image="$HOME"/Изображения/${color}.png
 
 main() {
 	if [[ "$color" ]]; then

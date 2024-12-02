@@ -4,15 +4,15 @@
 
 # Import Current Theme
 DIR="$HOME/.config/i3"
-STYLE="tealize"
-RASI="$DIR/themes/$STYLE/rofi/themes.rasi"
+STYLE="catppuccin-mocha"
+RASI="$DIR/rices/$STYLE/rofi/themes.rasi"
 
 # List Available Themes
-THEMES=(`cd $DIR/themes && ls -d */ | cut -d '/' -f1`)
+THEMES=(`cd $DIR/rices && ls -d */ | cut -d '/' -f1`)
 
 # Theme Elements
 prompt="Themes"
-mesg="<b>Available Themes</b> : `cd $DIR/themes && ls -d */ | cut -d '/' -f1 | wc -l`"
+mesg="<b>Available Themes</b> : `cd $DIR/rices && ls -d */ | cut -d '/' -f1 | wc -l`"
 
 # Rofi CMD
 rofi_cmd() {
@@ -32,7 +32,7 @@ run_rofi() {
 # Apply Theme
 apply_theme() {
 	selected="`run_rofi`"
-	current="`cat $DIR/themes/.current`"
+	current="`cat $DIR/rices/.current`"
 
 	for theme in "${THEMES[@]}"; do
 		if [[ -z "$selected" ]]; then

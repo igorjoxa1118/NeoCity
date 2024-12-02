@@ -64,17 +64,7 @@ feh_walls_list=$(ls "$HOME"/.config/i3/rices/$selected/walls | grep "png" | head
 wall_old="catppuccin_triangle.webp"
 
 sed -i "s/"$i3_rice_in_config"/"$selected"/g" "$HOME"/.config/i3/autostart
-sed -i "s/"$i3_rice_in_config"/"$selected"/g" "$HOME"/.config/kitty/kitty.conf
 sed -i "s/"$wall_old"/"$feh_walls_list"/g" "$HOME"/.config/i3/autostart
-
-
-###---Global. Change colors for Tabbed
-tabbed_path=""$HOME"/.config/i3/rices/"$selected"/tabbed"
-       if [ -f "$tabbed_path"/colors ]; then
-         cp -rf "$tabbed_path"/colors "$i3_dir"
-       else
-         echo "Color file not exist!"
-       fi
 
 ###---Global. Change colors for Eww
 eww_path=""$HOME"/.config/i3/eww/powermenu/rice_colors/"$selected""
@@ -95,22 +85,6 @@ eww_player_path=""$HOME"/.config/i3/eww/player/colors/"$selected""
 launcher_path=""$HOME"/.config/i3/eww/launcher_colors/"$selected""
        if [ -f "$launcher_path"/Launcher.rasi ]; then
          cp -rf "$launcher_path"/Launcher.rasi "$HOME"/.config/i3/scripts/
-       else
-         echo "Color file not exist!"
-       fi
-
-###---Global. Change colors for Launcher
-NM_path=""$HOME"/.config/i3/eww/NetworkManager_colors/"$selected""
-       if [ -f "$NM_path"/NetManagerDM.rasi ]; then
-         cp -rf "$NM_path"/NetManagerDM.rasi "$HOME"/.config/i3/scripts/
-       else
-         echo "Color file not exist!"
-       fi
-
-###---Global. Change colors for Keybinds
-keybinds_path=""$HOME"/.config/conkeww/colors/"$selected""
-       if [ -f "$keybinds_path"/color-main.yuck ]; then
-         cp -rf "$keybinds_path"/color-main.yuck "$HOME"/.config/conkeww/colors/
        else
          echo "Color file not exist!"
        fi

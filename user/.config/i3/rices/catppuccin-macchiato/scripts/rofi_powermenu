@@ -4,7 +4,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/i3"
-STYLE="tealize"
+STYLE="catppuccin-macchiato"
 RASI="$DIR/rices/$STYLE/rofi/powermenu.rasi"
 CNFR="$DIR/rices/$STYLE/rofi/confirm.rasi"
 

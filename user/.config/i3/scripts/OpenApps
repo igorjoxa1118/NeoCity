@@ -16,7 +16,7 @@ WIDGET_DIR="$HOME/.config/i3/eww"
 case "$1" in
     --menu)
         # rofi -show drun -theme "$HOME"/.config/i3/scripts/Launcher.rasi 
-        rofi -show drun -theme "$HOME"/.config/i3/rices/$RICETHEME/rofi/launcher.rasi
+        rofi -show drun -theme "$HOME"/.config/i3/rices/$RICETHEME/rofi/rofi_launchers/launchpad_v3.rasi
         ;;
     --rice)
         ~/.config/i3/scripts/RiceSelector

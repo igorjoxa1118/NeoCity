@@ -25,9 +25,9 @@ set_icons() {
 }
 
 set_cursor() {
-	sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name="\"catppuccin-mocha-teal-cursors"\"/g" "$HOME"/.gtkrc-2.0
-	sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-teal-cursors/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-teal-cursors/g" "$HOME"/.config/gtk-4.0/settings.ini
+	sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name="\"catppuccin-mocha-mauve-cursors"\"/g" "$HOME"/.gtkrc-2.0
+	sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-mauve-cursors/g" "$HOME"/.config/gtk-3.0/settings.ini
+    sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-mauve-cursors/g" "$HOME"/.config/gtk-4.0/settings.ini
 }
 
 # NetworkManager launcher
@@ -43,107 +43,53 @@ set_network_manager() {
 
 set_picom_config() {
 	sed -i "$HOME"/.config/i3/picom.conf \
-		-e "s/\".*:class_g = 'Xfce4-terminal'\"/\"90:class_g = 'Xfce4-terminal'\"/g" \
-		-e "s/\".*:class_g = 'Deadbeef'\"/\"90:class_g = 'Deadbeef'\"/g" \
-		-e "s/\".*:class_g = 'XTerm'\"/\"90:class_g = 'XTerm'\"/g" \
-		-e "s/\".*:class_g = 'kitty'\"/\"90:class_g = 'kitty'\"/g" \
-		-e "s/\".*:class_g = 'TelegramDesktop'\"/\"90:class_g = 'TelegramDesktop'\"/g" \
-		-e "s/\".*:class_g =  'discord'\"/\"90:class_g = 'discord'\"/g" \
-		-e "s/\".*:class_g *= 'Thunar'\"/\"90:class_g = 'Thunar'\"/g" \
-		-e "s/\".*:class_g *= 'Caja'\"/\"90:class_g = 'Caja'\"/g" \
-		-e "s/\".*:class_g *= 'Rofi'\"/\"90:class_g = 'Rofi'\"/g" \
-		-e "s/\".*:class_g *= 'Conky'\"/\"90:class_g = 'Deadbeef'\"/g" \
-		-e "s/\".*:class_g *= 'Nm-applet'\"/\"90:class_g = 'Nm-applet'\"/g" \
-		-e "s/\".*:class_g *= 'NetworkManager'\"/\"90:class_g = 'NetworkManager'\"/g" \
-		-e "s/\".*:class_g *= 'qBittorrent'\"/\"90:class_g = 'qBittorrent'\"/g" \
-		-e "s/\".*:class_g *= 'transmission-gtk'\"/\"90:class_g = 'transmission-gtk'\"/g" \
-		-e "s/\".*:class_g *= 'Polybar'\"/\"90:class_g = 'Polybar'\"/g" \
-		-e "s/\".*:class_g *= 'jgmenu_run'\"/\"90:class_g = 'jgmenu_run'\"/g" \
-		-e "s/\".*:class_g *= 'code-oss'\"/\"90:class_g = 'code-oss'\"/g"
+		-e "s/\".*:class_g = 'Xfce4-terminal'\"/\"98:class_g = 'Xfce4-terminal'\"/g" \
+		-e "s/\".*:class_g = 'Deadbeef'\"/\"98:class_g = 'Deadbeef'\"/g" \
+		-e "s/\".*:class_g = 'XTerm'\"/\"98:class_g = 'XTerm'\"/g" \
+		-e "s/\".*:class_g = 'kitty'\"/\"98:class_g = 'kitty'\"/g" \
+		-e "s/\".*:class_g = 'TelegramDesktop'\"/\"98:class_g = 'TelegramDesktop'\"/g" \
+		-e "s/\".*:class_g =  'discord'\"/\"98:class_g = 'discord'\"/g" \
+		-e "s/\".*:class_g *= 'Thunar'\"/\"98:class_g = 'Thunar'\"/g" \
+		-e "s/\".*:class_g *= 'Caja'\"/\"98:class_g = 'Caja'\"/g" \
+		-e "s/\".*:class_g *= 'Rofi'\"/\"98:class_g = 'Rofi'\"/g" \
+		-e "s/\".*:class_g *= 'Conky'\"/\"98:class_g = 'Deadbeef'\"/g" \
+		-e "s/\".*:class_g *= 'Nm-applet'\"/\"98:class_g = 'Nm-applet'\"/g" \
+		-e "s/\".*:class_g *= 'NetworkManager'\"/\"98:class_g = 'NetworkManager'\"/g" \
+		-e "s/\".*:class_g *= 'qBittorrent'\"/\"98:class_g = 'qBittorrent'\"/g" \
+		-e "s/\".*:class_g *= 'transmission-gtk'\"/\"98:class_g = 'transmission-gtk'\"/g" \
+		-e "s/\".*:class_g *= 'Polybar'\"/\"100:class_g = 'Polybar'\"/g" \
+		-e "s/\".*:class_g *= 'jgmenu_run'\"/\"98:class_g = 'jgmenu_run'\"/g" \
+		-e "s/\".*:class_g *= 'code-oss'\"/\"98:class_g = 'code-oss'\"/g"
 }
 
 # Reload terminal colors
 set_term_config() {
-	cat >"$HOME"/.config/alacritty/rice-colors.toml <<EOF
-# (Tokyo Night) color scheme for Emilia Rice
-
-# Default colors
-[colors.primary]
-background = "#1e1e2e"
-foreground = "#94e2d5"
-
-# Cursor colors
-[colors.cursor]
-cursor = "#94e2d5"
-text = "#1e1e2e"
-
-# Normal colors
-[colors.normal]
-black = "#15161e"
-blue = "#94e2d5"
-cyan = "#7dcfff"
-green = "#9ece6a"
-magenta = "#bb9af7"
-red = "#f7768e"
-white = "#a9b1d6"
-yellow = "#e0af68"
-
-# Bright colors
-[colors.bright]
-black = "#414868"
-blue = "#94e2d5"
-cyan = "#7dcfff"
-green = "#9ece6a"
-magenta = "#bb9af7"
-red = "#f7768e"
-white = "#94e2d5"
-yellow = "#e0af68"
-EOF
-}
-
-# Set eww colors
-set_eww_colors() {
-	cat >"$HOME"/.config/i3/eww/colors.scss <<EOF
-// Eww colors for Emilia rice
-\$bg: #303446;
-\$bg-alt: #222330;
-\$fg: #a5adce;
-\$black: #414868;
-\$lightblack: #262831;
-\$red: #f7768e;
-\$blue: #94e2d5;
-\$cyan: #7dcfff;
-\$magenta: #bb9af7;
-\$green: #9ece6a;
-\$yellow: #e0af68;
-\$archicon: #0f94d2;
-EOF
-}
-
-# Set Rofi launcher config
-set_launcher_config() {
-	sed -i "$HOME/.config/i3/scripts/Launcher.rasi" \
-		-e '22s/\(font: \).*/\1"MesloLGS NF Regular 10";/' \
-		-e 's/\(background: \).*/\1#303446;/' \
-		-e 's/\(background-alt: \).*/\1#2d3245E0;/' \
-		-e 's/\(foreground: \).*/\1#a5adce;/' \
-		-e 's/\(foreground-alt: \).*/\1#1e1e2e;/' \
-		-e 's/\(selected: \).*/\1#81c8be;/' \
-		-e "s/rices\/[[:alnum:]\-]*/rices\/${RICETHEME}/g"
+	AL_CONFIG_DIR="$HOME/.config/alacritty"
+	AL_RICE_DIR="$HOME/.config/i3/rices/catppuccin-frappe/alacritty"
+		if [ -f $AL_CONFIG_DIR/colors.toml ]; then
+			cp -rf $AL_RICE_DIR/* $AL_CONFIG_DIR
+		fi
+	KI_CONFIG_DIR="$HOME/.config/kitty"
+	KI_RICE_DIR="$HOME/.config/i3/rices/$RICETHEME/kitty"
+		if [ -f $KI_CONFIG_DIR/kitty.conf ]; then
+			cp -rf $KI_RICE_DIR/kitty.conf $KI_CONFIG_DIR
+		else
+			cp -rf $HOME/.config/i3/rices/$RICETHEME/kitty/kitty.conf $HOME/.config/kitty/
+		fi
 }
 
 # Firefox theme
-set_firefox_theme() {
-grep_ff=$(ls "$HOME"/.mozilla/firefox | grep default-release)
-path_to_ff=""$HOME"/.mozilla/firefox/"$grep_ff"/chrome"
-path_to_ff_themes=""$HOME"/.mozilla/FoxThemes"
-theme_name="userChrome.css"
+firefox_profiles() {
+	THEME_DIR="$HOME/.mozilla/FoxThemes"
+	DEST_DIR="$HOME/.mozilla/firefox/"
 
-    if [ -d "$path_to_ff" ]; then
-        cp -rf "$path_to_ff_themes"/"$RICETHEME"/"$theme_name" "$path_to_ff"
-    else
-        echo "Somthing wrong"
-    fi
+if [[ $(grep '\[Profile[^0]\]' "$HOME"/.mozilla/firefox/profiles.ini) ]]; then 
+	PROFPATH=$(grep -E '^\[Profile|^Path|^Default' "$HOME"/.mozilla/firefox/profiles.ini | grep -1 '^Default=1' | grep '^Path' | cut -c6-)
+	cp -rf "$THEME_DIR"/* "$DEST_DIR"/"$PROFPATH"
+else 
+	PROFPATH=$(grep 'Path=' "$HOME"/.mozilla/firefox/profiles.ini | sed 's/^Path=//')
+	cp -rf "$THEME_DIR"/* "$DEST_DIR"/"$PROFPATH"
+fi
 }
 
 # Set dunst config
@@ -151,6 +97,8 @@ set_dunst_config() {
 	dunst_config_file="$HOME/.config/i3/dunstrc"
 	echo -n "" > "$dunst_config_file"
 	cat >>"$dunst_config_file" <<-_EOF_
+###--- Catppuccin-mocha
+
 [global]
 frame_width= 1
 frame_color = "#cba6f7"
@@ -159,18 +107,28 @@ font = MesloLGS NF 10
 [urgency_low]
 timeout = 3
 background = "#1e1e2e"
-foreground = "#a6adc8"
+foreground = "#cdd6f4"
 
 [urgency_normal]
 timeout = 5
 background = "#1e1e2e"
-foreground = "#cdd6f4"
+foreground = "#bac2de"
 
 [urgency_critical]
 timeout = 0
 background = "#1e1e2e"
-foreground = "#bac2de"
+foreground = "#a6adc8"
 	_EOF_
+}
+
+###---Global. Change colors for Tabbed
+tabbed_settings() {
+tabbed_path=""$HOME"/.config/i3/rices/$RICETHEME/tabbed"
+       if [ -f "$tabbed_path"/colors ]; then
+         cp -rf "$tabbed_path"/colors "$i3_dir"
+       else
+         echo "Color file not exist!"
+       fi
 }
 
 # Wait until the processes have been shut down
@@ -198,6 +156,7 @@ set_icons
 set_cursor
 set_network_manager
 set_picom_config
-set_launcher_config
-set_firefox_theme
+firefox_profiles
 set_dunst_config
+tabbed_settings
+set_term_config

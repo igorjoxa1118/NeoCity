@@ -23,7 +23,7 @@ font: "MesloLGS NF Regular 10";
 background: #303446;
 background-alt: #2d3245E0;
 foreground: #a5adce;
-foreground-alt: #1e1e2e;
+foreground-alt: #4c4f69;
 selected: #81c8be;
 }
 
@@ -71,7 +71,7 @@ inputbar {
     spacing:                     10px;
     padding:                     50px 100px;
     background-color:            transparent;
-    background-image:            url("~/.config/i3/rices/catppuccin-mocha/rofi.webp", width);
+    background-image:            url("~/.config/i3/rices/catppuccin-latte/rofi.webp", width);
     text-color:                  @foreground;
     orientation:                 horizontal;
     children:                    [ "textbox-prompt-colon", "entry" ];

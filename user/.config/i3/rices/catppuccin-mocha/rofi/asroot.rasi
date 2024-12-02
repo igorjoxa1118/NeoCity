@@ -8,8 +8,8 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "shared/colors.rasi"
-@import                          "shared/fonts.rasi"
+@import                          "~/.config/i3/rices/catppuccin-mocha/rofi/shared/colors.rasi"
+@import                          "~/.config/i3/rices/catppuccin-mocha/rofi/shared/fonts.rasi"
 
 /*
 USE_ICON=YES

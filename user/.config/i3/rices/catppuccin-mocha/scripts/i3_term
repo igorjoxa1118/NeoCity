@@ -6,7 +6,7 @@
 
 # i3 directory
 DIR="$HOME/.config/i3"
-CONFIG="$DIR/alacritty/alacritty.toml"
+CONFIG="$DIR/rices/catppuccin-mocha/alacritty/alacritty.toml"
 
 if [ "$1" == "--float" ]; then
 	alacritty --class 'alacritty-float,alacritty-float' --config-file "$CONFIG"

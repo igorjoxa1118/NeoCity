@@ -11,7 +11,7 @@ for_window [class="(?i)ymuse"] focus
 for_window [class="(?i)nitrogen|engrampa|flameshot|file-roller|fsearch|qt5ct|PureRef-2.0.3_x64.Appimage"] floating enable, resize set 600 500, move position center 
 for_window [class="(?i)atril|pavucontrol|lxappearance|viewnior|keepassxc|veracrypt"] floating enable
 for_window [class="(?i)mpv"] floating enable, resize set 350 250, sticky enable, move window to position 1000 85
-for_window [class="(?i)firefox|kitty|thunar|caja|code|mousepad|mupdf|blender|gimp|krita|telegram-desktop|kodi"] border pixel 1, focus
+for_window [class="(?i)firefox|vivaldi-stable|kitty|thunar|caja|code|mousepad|mupdf|blender|gimp|krita|telegram-desktop|kodi"] border pixel 1, focus
 for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 350, move absolute position 0 418
 #for_window [class="(?i)thunar"] move window to scratchpad, scratchpad show, floating enable, resize set 800 400, move position center
 for_window [title="float"] move window to scratchpad, scratchpad show, floating enable, resize set 1280 600, move position center, focus
@@ -35,7 +35,7 @@ for_window [workspace=$ws9] layout tabbed
 #---------------------------------------------
 ## Приложения/программы которые будут открываться на заданном рабочем пространстве
 assign [class="(?i)xfce4-terminal|kitty|xterm|htop"] $ws1
-assign [class="(?i)firefox|chromium"] $ws2
+assign [class="(?i)firefox|chromium|vivaldi-stable"] $ws2
 assign [class="(?i)mousepad|leafpad|code"] $ws3
 assign [class="(?i)thunar|caja"] $ws4
 assign [class="(?i)blender|PureRef-2.0.3_x64.Appimage|krita|gimp|untitled - ArmorPaint|untitled - ArmorLab"] $ws5

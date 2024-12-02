@@ -18,7 +18,7 @@
 
 # Import Current Theme
 DIR="$HOME/.config/i3"
-STYLE="tealize"
+STYLE="catppuccin-mocha"
 RASI="$DIR/rices/$STYLE/rofi/bluetooth.rasi"
 
 # Constants
