@@ -380,7 +380,15 @@ sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/gtk-3.0/bookmarks
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/nvim.desktop
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/ranger.desktop
 sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/zfetch.desktop
-sed -i "s/vir0id/${USER}/g" "$home_dir"/.config/kitty/kitty.conf
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/kitty/kitty.conf
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/i3/rices/catppuccin-macchiato/rofi/rofi_launchers/launcher.rasi
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/i3/rices/catppuccin-mocha/rofi/launcher.rasi
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/i3/rices/catppuccin-mocha/rofi/launcher.rasi
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/i3/rices/catppuccin-frappe/rofi/rofi_launchers/launcher.rasi
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/i3/rices/catppuccin-latte/rofi/rofi_launchers/launcher.rasi
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/i3/scripts/mpv-youtube-playlist.sh
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/qt5ct/qt5ct.conf
+sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/qBittorrent/qBittorrent.conf
 sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
 sleep 2
 clear
