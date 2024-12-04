@@ -1,6 +1,8 @@
 #!/bin/bash
 
-tmp_dir="$HOME/.config/i3/eww/Main/images"
+read -r RICETHEME < "$HOME"/.config/i3/.rice
+
+tmp_dir="$HOME/.config/i3/rices/$RICETHEME/eww/Main/images"
 tmp_cover_path=$tmp_dir/cover.png
 tmp_temp_path=$tmp_dir/temp.png
 
@@ -13,5 +15,5 @@ if [ $(playerctl -p spotify metadata mpris:artUrl) ]; then
 	curl -s "$artlink" --output $tmp_temp_path
 	echo $tmp_temp_path
 else
-	echo $HOME/.config/i3/eww/Main/images/default-music.svg
+	echo $HOME/.config/i3/rices/$RICETHEME/eww/Main/images/default-music.svg
 fi

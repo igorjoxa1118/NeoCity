@@ -66,28 +66,5 @@ wall_old="catppuccin_triangle.webp"
 sed -i "s/"$i3_rice_in_config"/"$selected"/g" "$HOME"/.config/i3/autostart
 sed -i "s/"$wall_old"/"$feh_walls_list"/g" "$HOME"/.config/i3/autostart
 
-###---Global. Change colors for Eww
-eww_path=""$HOME"/.config/i3/eww/powermenu/rice_colors/"$selected""
-       if [ -f "$eww_path"/colors.scss ]; then
-         cp -rf "$eww_path"/colors.scss "$HOME"/.config/i3/eww/
-       else
-         echo "Color file not exist!"
-       fi
-
-eww_player_path=""$HOME"/.config/i3/eww/player/colors/"$selected""
-       if [ -f "$eww_player_path"/player.scss ]; then
-         cp -rf "$eww_player_path"/player.scss "$HOME"/.config/i3/eww/player/
-       else
-         echo "Color file not exist!"
-       fi
-
-###---Global. Change colors for Launcher
-launcher_path=""$HOME"/.config/i3/eww/launcher_colors/"$selected""
-       if [ -f "$launcher_path"/Launcher.rasi ]; then
-         cp -rf "$launcher_path"/Launcher.rasi "$HOME"/.config/i3/scripts/
-       else
-         echo "Color file not exist!"
-       fi
-
 i3-msg restart
 exit 0

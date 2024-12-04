@@ -2,7 +2,7 @@
 (defpoll username :interval "100h" "whoami")
 (defpoll host :interval "100h" "Main/scripts/whoami --host")
 (defpoll spacing :interval "100h" "Main/scripts/whoami --spacing")
-(defpoll time :interval "1s" "date '+%I: %M'")
+(defpoll time :interval "1s" "date '+%H: %M'")
 (defpoll word-date :interval "1s" "date '+%A, %B'")
 (defpoll date :interval "1s" "date '+%d, %m, %Y'")
 (defpoll music-length :interval "1s" "Main/scripts/music-length")

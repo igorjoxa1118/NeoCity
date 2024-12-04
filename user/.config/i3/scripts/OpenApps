@@ -11,7 +11,7 @@
 
 read -r RICETHEME < "$HOME"/.config/i3/.rice
 
-WIDGET_DIR="$HOME/.config/i3/eww"
+WIDGET_DIR="$HOME/.config/i3/rices/$RICETHEME/eww"
 
 case "$1" in
     --menu)

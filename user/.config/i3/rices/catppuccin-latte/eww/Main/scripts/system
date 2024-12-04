@@ -5,6 +5,8 @@ PREV_TOTAL=0
 PREV_IDLE=0
 cpuFile="/tmp/.cpu_usage"
 
+export LC_NUMERIC="en_US.UTF-8"
+
 ## Get CPU usage
 get_cpu() {
 	if [[ -f "${cpuFile}" ]]; then
