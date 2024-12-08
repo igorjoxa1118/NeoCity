@@ -1,14 +1,16 @@
 [SddmGreeterTheme]
-Name=Catppuccin mocha
-Description=Soothing pastel theme for SDDM
+Name=Sugar Candy
+Description=Premium Sugar for SDDM
+Author=Marian Arlt
+Copyright=Copyright (C) 2018 Marian Arlt
+License=GPL-3.0-or-later
 Type=sddm-theme
-Version=2.1
-Website=https://github.com/catppuccin/sddm
-Screenshot=preview.png
+Version=1.5
+Website=https://framagit.org/MarianArlt/sddm-sugar-candy
+Screenshot=Previews/PartialBlur.png
 MainScript=Main.qml
 ConfigFile=theme.conf
 TranslationsDirectory=translations
-Theme-Id=Catppuccin
-Theme-API=2.0
-License=MIT
-QtVersion=6
+Email=marianarlt@icloud.com
+Theme-Id=sugar-candy
+Theme-API=2.11
