@@ -1,11 +1,11 @@
 #---------------------------------------------
 ## Подключение отдельных файлов конфигураций i3
 #---------------------------------------------
-include "$HOME/.config/i3/keybinds"
-include "$HOME/.config/i3/rules"
 include "$HOME/.config/i3/autostart"
 include "$HOME/.config/i3/colors"
 include "$HOME/.config/i3/fonts"
+include "$HOME/.config/i3/keybinds"
+include "$HOME/.config/i3/rules"
 
 set $mod Mod4
 set $mod1 Mod1

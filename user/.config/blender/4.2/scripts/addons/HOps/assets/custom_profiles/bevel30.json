@@ -1,0 +1,169 @@
+{
+    "segments": 20,
+    "profile": {
+        "use_sample_straight_edges": false,
+        "use_sample_even_lengths": false,
+        "points": [
+            {
+                "handle_type_1": "AUTO",
+                "handle_type_2": "AUTO",
+                "location": [
+                    1.0,
+                    0.0
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    1.0,
+                    0.020582737401127815
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.7625899910926819,
+                    0.021000001579523087
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.6366904377937317,
+                    0.2589927017688751
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.7625901103019714,
+                    0.4964030086994171
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.5935251116752625,
+                    0.4964025020599365
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.4856113791465759,
+                    0.26259008049964905
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.3597121834754944,
+                    0.4964030086994171
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.20863308012485504,
+                    0.4964030086994171
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.3633091449737549,
+                    0.2374100685119629
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.20863300561904907,
+                    0.032373830676078796
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.35971200466156006,
+                    0.03237399831414223
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.4928056001663208,
+                    0.2050362378358841
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.5935249924659729,
+                    0.0359710156917572
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.6223022937774658,
+                    0.010791366919875145
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.1618705540895462,
+                    0.007194128818809986
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.16187100112438202,
+                    0.8633089661598206
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.2517986297607422,
+                    0.8597123622894287
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.25179898738861084,
+                    1.0
+                ]
+            },
+            {
+                "handle_type_1": "AUTO",
+                "handle_type_2": "AUTO",
+                "location": [
+                    0.0,
+                    1.0
+                ]
+            }
+        ]
+    }
+}

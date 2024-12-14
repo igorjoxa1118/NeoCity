@@ -1,0 +1,145 @@
+{
+    "segments": 23,
+    "profile": {
+        "use_sample_straight_edges": false,
+        "use_sample_even_lengths": false,
+        "points": [
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    1.0,
+                    0.0
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.875,
+                    0.0
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.875,
+                    0.125
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.75,
+                    0.125
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.75,
+                    0.25
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.625,
+                    0.25
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.625,
+                    0.375
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.5,
+                    0.375
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.5,
+                    0.5
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.375,
+                    0.5
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.375,
+                    0.625
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.25,
+                    0.625
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.25,
+                    0.75
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.125,
+                    0.75
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.125,
+                    0.875
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.0,
+                    0.875
+                ]
+            },
+            {
+                "handle_type_1": "VECTOR",
+                "handle_type_2": "VECTOR",
+                "location": [
+                    0.0,
+                    1.0
+                ]
+            }
+        ]
+    }
+}

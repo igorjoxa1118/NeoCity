@@ -54,6 +54,9 @@ case "$1" in
     --fetch)
         ~/.config/i3/scripts/Term --fetch
         ;;
+    --ssh)
+        ~/.bin/ssh_connect/start
+        ;;
         # Apps
     --filemanager)
         thunar

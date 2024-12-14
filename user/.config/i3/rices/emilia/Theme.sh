@@ -147,7 +147,7 @@ theme_name="userChrome.css"
 
 # Set dunst config
 set_dunst_config() {
-	dunst_config_file="$HOME/.config/i3/scripts/dunstrc"
+	dunst_config_file="$HOME/.config/i3/dunstrc"
 
 	sed -i "$dunst_config_file" \
 		-e "s/transparency = .*/transparency = 0/g" \
@@ -266,7 +266,7 @@ set_geany(){
 launch_theme() {
 
 	# Launch dunst notification daemon
-	dunst -config "${HOME}"/.config/i3/scripts/dunstrc &
+	dunst -config "${HOME}"/.config/i3/dunstrc &
 
 	# Launch polybar
 	sleep 0.1

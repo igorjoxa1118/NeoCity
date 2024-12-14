@@ -1,5 +1,5 @@
 #### Exports PATH
-exec --no-startup-id "$HOME/.config/i3/scripts/ExportsVars.sh" 
+exec --no-startup-id "$HOME/.config/i3/scripts/SetSysVars" 
 
 ##### autostart app
 exec_always --no-startup-id "xrdb -load $HOME/.Xresources"

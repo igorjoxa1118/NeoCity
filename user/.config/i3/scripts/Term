@@ -64,6 +64,9 @@ case $MY_TERM in
             "--fetch")
                 alacritty -e ~/.local/bin/sysfetch
                 ;;
+            "--ssh")
+                alacritty -e ~/.bin/ssh_connect/start
+                ;;
         esac
         ;;
     "kitty")
@@ -91,6 +94,9 @@ case $MY_TERM in
                 ;;
             "--fetch")
                 kitty -e ~/.local/bin/sysfetch
+                ;;
+            "--ssh")
+                kitty -e ~/.bin/ssh_connect/start
                 ;;
         esac
         ;;

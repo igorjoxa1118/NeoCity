@@ -1,3 +1,12 @@
 [Bookmarks]
 [Recent]
-/home/vir0id/.config/blender/colorshemas/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Turel/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/addons/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Turel/Render/eevee/video/viewport/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Turel/Render/eevee/video/viewport/transparent/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Turel/Render/eevee/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Turel/Render/eevee/video/logo/No_background/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Turel/Render/eevee/video/logo/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Fonts/
+/home/vir0id/.config/GIMP/2.10/fonts/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Turel/Render/eevee/video/

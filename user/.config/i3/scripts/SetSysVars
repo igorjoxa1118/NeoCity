@@ -5,6 +5,7 @@ SFILE="$HOME/.config/i3/scripts/.sys"
 function get_values() {
 
     DEFNETWORK=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
+    DEFNETWORK_ETH=$(ip -o link show | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
     CARD=$(ls -1 /sys/class/backlight/)
     power_supply_files=$(ls /sys/class/power_supply/)
 
@@ -27,6 +28,9 @@ function get_values() {
 function set_values() {
 
     if [[ "$DEFNETWORK" ]]; then
+        sed -i -e "s/sys_wireless_interface = .*/sys_wireless_interface = $DEFNETWORK/g" "$HOME"/.config/i3/scripts/system.ini
+    fi
+    if [[ "$DEFNETWORK_ETH" ]]; then
         sed -i -e "s/sys_network_interface = .*/sys_network_interface = $DEFNETWORK/g" "$HOME"/.config/i3/scripts/system.ini
     fi
     if [[ "$ADAPTER" ]]; then
