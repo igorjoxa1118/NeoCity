@@ -64,8 +64,11 @@ case $MY_TERM in
             "--fetch")
                 alacritty -e ~/.local/bin/sysfetch
                 ;;
-            "--ssh")
-                alacritty -e ~/.bin/ssh_connect/start
+            "--connect")
+                alacritty --title floating --hold -e ~/.bin/ssh_connect/start
+                ;;
+            "--process")
+                alacritty --title floating --hold -e ~/.bin/bottom_themes/bottom-themes
                 ;;
         esac
         ;;
@@ -95,8 +98,11 @@ case $MY_TERM in
             "--fetch")
                 kitty -e ~/.local/bin/sysfetch
                 ;;
-            "--ssh")
-                kitty -e ~/.bin/ssh_connect/start
+            "--connect")
+                kitty --title floating --hold -e ~/.bin/ssh_connect/start
+                ;;
+            "--process")
+                kitty --title floating --hold -e ~/.bin/bottom_themes/bottom-themes
                 ;;
         esac
         ;;

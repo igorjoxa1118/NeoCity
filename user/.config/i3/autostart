@@ -37,7 +37,7 @@ exec --no-startup-id "udiskie -t"
 #exec --no-startup-id caffeine
 exec_always --no-startup-id "autotiling"
 
-exec --no-startup-id "musnify-mpd"
+exec_always --no-startup-id "musnify-mpd"
 
 # Launch Conkeww
 #sed -i "s/colors\/color-.*/colors\/color-tokyo.yuck\")/g" $HOME/.config/conkeww/eww.yuck

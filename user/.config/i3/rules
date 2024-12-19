@@ -1,6 +1,11 @@
 #------------------------------------
 ## Специальные окна. Правила для окон
 #------------------------------------
+
+### ------- Правила для плавающих окон --------- ###
+### ------- Floating эллемент связан с настройками(например), заданными в ~/.config/i3/scripts/OpenApps и ~/.config/i3/scripts/Term ---- ###
+for_window [title="floating"] move window to scratchpad, scratchpad show, floating enable, resize set 800 640, move position center, focus
+
 # for_window [window_role="stalonetray"] floating enable
 for_window [window_role="pop-up|bubble|task_dialog|Preferences|setup"] floating enable
 for_window [window_type="dialog|menu"] floating enable
@@ -15,7 +20,6 @@ for_window [class="(?i)firefox|vivaldi-stable|kitty|thunar|caja|code|mousepad|mu
 for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 350, move absolute position 0 418
 #for_window [class="(?i)thunar"] move window to scratchpad, scratchpad show, floating enable, resize set 800 400, move position center
 for_window [title="float"] move window to scratchpad, scratchpad show, floating enable, resize set 1280 600, move position center, focus
-for_window [title="floating"] move window to scratchpad, scratchpad show, floating enable, resize set 720 400, move position center, focus
 # for_window [title="(?i)htop"] floating enable, resize set 1280 600, move position center, focus
 for_window [window_role="demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
 

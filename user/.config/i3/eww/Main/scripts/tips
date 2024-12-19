@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# Use shuf to output a random line from the file
-random_line=$(shuf -n 1 "$HOME/.config/i3/eww/Main/scripts/tips.lst")
-echo "$random_line"

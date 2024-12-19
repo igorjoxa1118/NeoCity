@@ -32,14 +32,11 @@ WHITE='\033[1;37m'
 #---Vars
 ##-----------------
 
-backup_folder=~/.Backup_files
 date=$(date +%Y%m%d-%H%M%S)
 repo_url="https://github.com/igorjoxa1118/NeoCity"
 paru_url="https://aur.archlinux.org/paru-bin.git"
 home_dir=$HOME
 current_dir=$(pwd)
-GRUB_THEME_DIR="/usr/share/grub/themes"
-grub_theme="catppuccin-mocha-grub-theme"
 
 ##-----------------
 #--Logo
@@ -88,8 +85,8 @@ clear
 
 ######### -------------- Зависимости ------------------########
 
-dependencias=(base-devel alacritty brightnessctl dunst imagemagick \
-              libwebp maim mpc neovim ncmpcpp npm pamixer neovim\
+dependencias=(base-devel alacritty brightnessctl dunst bottom imagemagick \
+              libwebp maim mpc neovim ncmpcpp npm pamixer neovim \
               papirus-icon-theme pacman-contrib physlock playerctl python-gobject \
               redshift rustup ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
               ttf-joypixels ttf-terminus-nerd ueberzug webp-pixbuf-loader xclip \
@@ -237,12 +234,11 @@ while true; do
 clear
 
 ########## ---------- Резервная копия файлов и каталогов ---------- ##########
+backup_folder=~/.Backup_files
 logo "Backup files"
-echo -e "${CYAN}Backup files will be stored in .Backup_files"
-
-rsync -aAEHSXxr --exclude=".cache/mozilla/*" ~/.[^.]* $backup_folder
-
-echo -e "${ORANGE}Done!!"
+  echo -e "${CYAN}Backup files will be stored in .Backup_files"
+  rsync -aAEHSXxr --exclude=".cache/mozilla/*" ~/.[^.]* $backup_folder
+  echo -e "${ORANGE}Done!!"
 sleep 2
 
 
@@ -300,47 +296,6 @@ fc-cache -fv
 xfconf-query -c thunar -p /misc-open-new-windows-in-split-view -n -t bool -s true
 clear
 
-########## ---------- Установка сведений о батареи ---------- ##########
-logo "Power supply install"
-ad=$(ls /sys/class/power_supply/ | awk "NR==1 { print $2 }" | grep A)
-bat=$(ls /sys/class/power_supply/ | awk "NR==2 { print $2 }" | grep B)
-
-sed -i "s/AC/${ad}/g" "$home_dir"/.config/i3/rices/catppuccin-mocha/modules.ini
-sed -i "s/BAT0/${bat}/g" "$home_dir"/.config/i3/rices/catppuccin-mocha/modules.ini
-echo -e "${PURPLE}Power supply install done!"
-sleep 2
-clear
-
-### -- Переменные для сетевых интерфейсов -- ###
-logo "Connection interfaces install"
-en_int=$(ip -o link show | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
-et_int=$(ip -o link show | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
-wl_int=$(ip -o link show | sed -rn '/^[0-9]+: wl/{s/.: ([^:]*):.*/\1/p}')
-
-### --- Проверка проводных сетевых интерфейсов. Добавляем интерфейсы в конфиги. --- ###
-if [ ! -z "$en_int" ]; then
-sed -i "s/enp1s0/${en_int}/g" "$home_dir"/.config/i3/scripts/system.ini
-else
-  if [ ! -z "$et_int" ]; then
-  sed -i "s/enp1s0/${et_int}/g" "$home_dir"/.config/i3/scripts/system.ini
-  else
-  read -p "What is you Wired connection interface?(Example: eth0, enp59s0): " et_int_custom
-  sed -i "s/enp1s0/${et_int_custom}/g" "$home_dir"/.config/i3/scripts/system.ini
-  fi
-fi
-
-### --- Проверка безпроводных сетевых интерфейсов. Добавляем интерфейсы в конфиги. --- ###
-if [ ! -z "$wl_int" ]; then
-sed -i "s/wlp0s20f3/${wl_int}/g" "$home_dir"/.config/i3/scripts/system.ini
-else
-read -p "What is you Wireless connection interface?(Example: wlp0s20f3, wlp0s20f3): " wl_int_custom
-sed -i "s/wlp0s20f3/${wl_int_custom}/g" "$home_dir"/.config/i3/scripts/system.ini
-fi
-
-echo -e "${LIGHTCYAN}Connection interfaces install done!"
-sleep 2
-clear
-
 ### --- Установка SDDM --- ###
 logo "Install SDDM"
 sleep 2
@@ -396,7 +351,8 @@ clear
 ##-------------------
 #--Grub themes apply
 ##-------------------
-
+GRUB_THEME_DIR="/usr/share/grub/themes"
+grub_theme="catppuccin-mocha-grub-theme"
     if grep "GRUB_THEME=" /etc/default/grub 2>&1 >/dev/null; then
       #Replace GRUB_THEME
       sudo sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"|" /etc/default/grub

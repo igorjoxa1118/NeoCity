@@ -1,3 +1,0 @@
-#!/bin/bash
-
-echo "$(uptime | awk -F'[ ,]+' '{print $4 " "}')"

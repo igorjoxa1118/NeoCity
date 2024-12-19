@@ -33,7 +33,7 @@ fi
 # Set some variables
 wall_dir="${HOME}/.config/i3/rices/${i3_rice_in_config}/walls"
 cacheDir="${HOME}/.cache/$(whoami)/${i3_rice_in_config}"
-rofi_command="rofi -dmenu -theme ${HOME}/.config/i3/scripts/WallSelect.rasi -theme-str ${rofi_override}"
+rofi_command="rofi -dmenu -theme ${HOME}/.config/i3/scripts/rofi-themes/WallSelect.rasi -theme-str ${rofi_override}"
 
 monitor_res=$(xdpyinfo | awk '/dimensions/{print $2}' | cut -d 'x' -f1)
 monitor_scale=$(xdpyinfo | awk '/resolution/{print $2}' | cut -d 'x' -f1)

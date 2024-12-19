@@ -55,7 +55,10 @@ case "$1" in
         ~/.config/i3/scripts/Term --fetch
         ;;
     --ssh)
-        ~/.bin/ssh_connect/start
+        ~/.config/i3/scripts/Term --connect
+        ;;
+    "--monitor")
+        ~/.config/i3/scripts/Term --process
         ;;
         # Apps
     --filemanager)

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+SFILE="$HOME/.config/i3/scripts/.sys"
+
+    power_supply_files=$(ls /sys/class/power_supply/)
+
+    for file in $power_supply_files
+    do
+        if [ -e "/sys/class/power_supply/$file/capacity" ]; then
+            battery_file=$file
+        fi
+
+        if [ -e "/sys/class/power_supply/$file/online" ]; then
+            adapter_file=$file
+        fi
+    done
+
+    BATTERY="$battery_file"
+    ADAPTER="$adapter_file"
+
+echo "$BATTERY"
+echo "$ADAPTER"
