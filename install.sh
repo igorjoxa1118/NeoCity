@@ -263,6 +263,7 @@ sleep 2
     gdown --folder 19SlCmblUJts_I5dlAwd2C3tq7q2-wLbS
     echo -e "${GRE}Packages in system!"
     sleep 2
+    sudo rm -rf /usr/share/icons/*
     sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
     fi
   fi
