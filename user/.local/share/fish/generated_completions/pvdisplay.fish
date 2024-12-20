@@ -13,6 +13,7 @@ complete -c pvdisplay -l devices
 complete -c pvdisplay -l devicesfile
 complete -c pvdisplay -l driverloaded
 complete -c pvdisplay -l foreign
+complete -c pvdisplay -l headings
 complete -c pvdisplay -s h -l help
 complete -c pvdisplay -l ignorelockingfailure
 complete -c pvdisplay -l journal
@@ -20,6 +21,7 @@ complete -c pvdisplay -l lockopt
 complete -c pvdisplay -l logonly
 complete -c pvdisplay -l longhelp
 complete -c pvdisplay -s m -l maps
+complete -c pvdisplay -l nameprefixes
 complete -c pvdisplay -l noheadings
 complete -c pvdisplay -l nohints
 complete -c pvdisplay -l nolocking
@@ -30,6 +32,8 @@ complete -c pvdisplay -l profile
 complete -c pvdisplay -s q -l quiet
 complete -c pvdisplay -l readonly
 complete -c pvdisplay -l reportformat
+complete -c pvdisplay -l rows
+complete -c pvdisplay -l segments
 complete -c pvdisplay -s S -l select
 complete -c pvdisplay -l separator
 complete -c pvdisplay -l shared
@@ -38,6 +42,7 @@ complete -c pvdisplay -s O -l sort
 complete -c pvdisplay -s t -l test
 complete -c pvdisplay -l unbuffered
 complete -c pvdisplay -l units
+complete -c pvdisplay -l unquoted
 complete -c pvdisplay -s v -l verbose
 complete -c pvdisplay -l version
 complete -c pvdisplay -s y -l yes

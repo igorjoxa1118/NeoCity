@@ -17,7 +17,7 @@ complete -c yt-dlp -l ignore-config -d 'Don\\[aq]t load any more configuration f
 complete -c yt-dlp -l no-config-locations -d 'Do not load any custom configuration files (default)'
 complete -c yt-dlp -l config-locations -d 'Location of the main configuration file; either the path to the config or its…'
 complete -c yt-dlp -l plugin-dirs -d 'Path to an additional directory to search for plugins'
-complete -c yt-dlp -l flat-playlist -d 'Do not extract the videos of a playlist, only list them'
+complete -c yt-dlp -l flat-playlist -d 'Do not extract a playlist\\[aq]s URL result entries; some entry metadata may b…'
 complete -c yt-dlp -l no-flat-playlist -d 'Fully extract the videos of a playlist (default)'
 complete -c yt-dlp -l live-from-start -d 'Download livestreams from the start'
 complete -c yt-dlp -l no-live-from-start -d 'Download livestreams from the current time (default)'

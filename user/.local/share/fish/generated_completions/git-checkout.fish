@@ -16,7 +16,7 @@ complete -c git-checkout -l ignore-skip-worktree-bits -d 'In sparse checkout mod
 complete -c git-checkout -s m -l merge -d 'When switching branches, if you have local modifications to one or more files…'
 complete -c git-checkout -l conflict -d 'The same as --merge option above, but changes the way the conflicting hunks a…'
 complete -c git-checkout -s p -l patch -d 'Interactively select hunks in the difference between the <tree-ish> (or the i…'
-complete -c git-checkout -l ignore-other-worktrees -d 'git checkout refuses when the wanted ref is already checked out by another wo…'
+complete -c git-checkout -l ignore-other-worktrees -d 'git checkout refuses when the wanted branch is already checked out or otherwi…'
 complete -c git-checkout -l overwrite-ignore -l no-overwrite-ignore -d 'Silently overwrite ignored files when switching branches'
 complete -c git-checkout -l recurse-submodules -l no-recurse-submodules -d 'Using --recurse-submodules will update the content of all active submodules a…'
 complete -c git-checkout -l overlay -l no-overlay -d 'In the default overlay mode, git checkout never removes files from the index …'

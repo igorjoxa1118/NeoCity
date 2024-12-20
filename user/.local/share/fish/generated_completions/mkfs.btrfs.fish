@@ -10,6 +10,7 @@ complete -c 'mkfs.btrfs' -s s -l sectorsize -d 'Specify the sectorsize, the mini
 complete -c 'mkfs.btrfs' -s L -l label -d 'Specify a label for the filesystem'
 complete -c 'mkfs.btrfs' -s K -l nodiscard -d 'Do not perform whole device TRIM operation on devices that are capable of that'
 complete -c 'mkfs.btrfs' -s r -l rootdir -d 'Populate the toplevel subvolume with files from rootdir'
+complete -c 'mkfs.btrfs' -s u -l subvol -d 'Specify that subdir is to be created as a subvolume rather than a regular dir…'
 complete -c 'mkfs.btrfs' -l shrink -d 'Shrink the filesystem to its minimal size, only works with --rootdir option'
 complete -c 'mkfs.btrfs' -s O -l features -d 'A list of filesystem features turned on at mkfs time'
 complete -c 'mkfs.btrfs' -s f -l force -d 'Forcibly overwrite the block devices when an existing filesystem is detected'

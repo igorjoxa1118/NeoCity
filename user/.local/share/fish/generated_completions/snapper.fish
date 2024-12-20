@@ -32,6 +32,7 @@ complete -c snapper -l command
 complete -c snapper -l read-only
 complete -c snapper -l read-write
 complete -c snapper -l from
+complete -c snapper -l empty
 complete -c snapper -l default
 complete -c snapper -s s -l sync
 complete -c snapper -s o -l output

@@ -7,6 +7,8 @@ complete -c networkctl -s n -l lines -d 'When used with status, controls the num
 complete -c networkctl -l drop-in -d 'When used with edit, edit the drop-in file NAME instead of the main configura…'
 complete -c networkctl -l no-reload -d 'When used with edit, mask, or unmask, systemd-networkd'
 complete -c networkctl -l runtime -d 'When used with edit or mask, operate on the file under /run/ instead of /etc/'
+complete -c networkctl -l stdin -d 'When used with edit, the contents of the file will be read from standard inpu…'
+complete -c networkctl -l no-ask-password -d 'Do not query the user for authentication for privileged operations'
 complete -c networkctl -l json -d 'Shows output formatted as JSON'
 complete -c networkctl -s h -l help -d 'Print a short help text and exit'
 complete -c networkctl -l version -d 'Print a short version string and exit'

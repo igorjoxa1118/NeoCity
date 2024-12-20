@@ -1,14 +1,12 @@
 [Bookmarks]
 [Recent]
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/RER/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/TV/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/CHALLENGE_Snow_Ball/render/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/CHALLENGE_Snow_Ball/
-!Videos
-/home/vir0id/Видео/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/RER/render/
-!Pictures
-/home/vir0id/Изображения/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/RER/textures/svg/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Lizzard/
-/home/vir0id/.config/blender/colorshemas/catppuccin-mocha/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/gimp/projects/mini_house/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/textures/pictures/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/render/video/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/render/Home/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/render/TV/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/render/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/textures/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/addons/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/addons/RyanMaterials/Ultimate Blender Procedural Material Pack-0.0.11/

@@ -122,3 +122,60 @@ Krita Version: 5.2.3, Qt version compiled: 5.15.14, loaded: 5.15.15. Process ID:
 14 Sep 2024 19:54:54 +0300: Style: fusion. Available styles: chameleon, qt5ct-style, Windows, Fusion
 14 Sep 2024 19:54:55 +0300: Database is up to date. Version: 0.0.17, created by Krita 5.2.2, at ceturtd. apr. 25 09:06:23 2024
 14 Sep 2024 19:55:05 +0300: CLOSING SESSION
+================================================================================
+SESSION: 26 Oct 2024 23:02:06 +0300. Executing /usr/bin/krita /home/vir0id/Документы/frappe/Catppuccin_Icons/Catppuccin Icon Theme/Catppuccin_Icons/Catppuccin-Frappe/folder-oomox.ico
+
+Krita Version: 5.2.6, Qt version compiled: 5.15.15, loaded: 5.15.15. Process ID: 1772787
+-- -- -- -- -- -- -- --
+26 Oct 2024 23:02:06 +0300: Style: fusion. Available styles: chameleon, qt5ct-style, Windows, Fusion
+
+KRITA DID NOT CLOSE CORRECTLY
+================================================================================
+SESSION: 26 Oct 2024 23:02:07 +0300. Executing /usr/bin/krita /home/vir0id/Документы/frappe/Catppuccin_Icons/Catppuccin Icon Theme/Catppuccin_Icons/Catppuccin-Frappe/folder-oomox.ico
+
+Krita Version: 5.2.6, Qt version compiled: 5.15.15, loaded: 5.15.15. Process ID: 1772889
+-- -- -- -- -- -- -- --
+26 Oct 2024 23:02:07 +0300: Style: fusion. Available styles: chameleon, qt5ct-style, Windows, Fusion
+26 Oct 2024 23:02:07 +0300: Database is up to date. Version: 0.0.17, created by Krita 5.2.2, at ceturtd. apr. 25 09:06:23 2024
++0300: CLOSING SESSION
+26 Oct 2024 23:02:10 +0300: Importing image/vnd.microsoft.icon to application/x-krita. Location: /home/vir0id/Документы/frappe/Catppuccin_Icons/Catppuccin Icon Theme/Catppuccin_Icons/Catppuccin-Frappe/folder-oomox.ico. Real location: /home/vir0id/Документы/frappe/Catppuccin_Icons/Catppuccin Icon Theme/Catppuccin_Icons/Catppuccin-Frappe/folder-oomox.ico. Batchmode: 0
+26 Oct 2024 23:02:10 +0300: Loaded image from image/vnd.microsoft.icon. Size: 256 * 256 pixels, 1 dpi. Color model: 8-бит/канал RGB/альфа-канал (sRGB-elle-V2-srgbtrc.icc). Layers: 2
+26 Oct 2024 23:02:11 +0300: Importing image/vnd.microsoft.icon to application/x-krita. Location: /home/vir0id/Документы/frappe/Catppuccin_Icons/Catppuccin Icon Theme/Catppuccin_Icons/Catppuccin-Frappe/folder-oomox.ico. Real location: /home/vir0id/Документы/frappe/Catppuccin_Icons/Catppuccin Icon Theme/Catppuccin_Icons/Catppuccin-Frappe/folder-oomox.ico. Batchmode: 0
+26 Oct 2024 23:02:11 +0300: Loaded image from image/vnd.microsoft.icon. Size: 256 * 256 pixels, 1 dpi. Color model: 8-бит/канал RGB/альфа-канал (sRGB-elle-V2-srgbtrc.icc). Layers: 2
+26 Oct 2024 23:02:15 +0300: CLOSING SESSION
+================================================================================
+SESSION: 13 Nov 2024 12:27:51 +0200. Executing /usr/bin/krita /home/vir0id/.config/jgmenu/prepend.csv
+
+Krita Version: 5.2.6, Qt version compiled: 5.15.15, loaded: 5.15.15. Process ID: 235708
+-- -- -- -- -- -- -- --
+13 Nov 2024 12:27:51 +0200: Style: fusion. Available styles: qt5ct-style, Windows, Fusion
+13 Nov 2024 12:27:52 +0200: Database is up to date. Version: 0.0.17, created by Krita 5.2.2, at ceturtd. apr. 25 09:06:23 2024
+13 Nov 2024 12:27:55 +0200: Importing text/csv to application/x-krita. Location: /home/vir0id/.config/jgmenu/prepend.csv. Real location: /home/vir0id/.config/jgmenu/prepend.csv. Batchmode: 0
+13 Nov 2024 12:27:56 +0200: Failed to load image from text/csv
+13 Nov 2024 12:27:56 +0200: Loading /home/vir0id/.config/jgmenu/prepend.csv failed: Неизвестная ошибка.
+13 Nov 2024 12:27:58 +0200: Loading canceled: .
+13 Nov 2024 12:28:02 +0200: CLOSING SESSION
+================================================================================
+SESSION: 17 Nov 2024 10:39:36 +0200. Executing krita
+
+Krita Version: 5.2.6, Qt version compiled: 5.15.15, loaded: 5.15.15. Process ID: 3156456
+-- -- -- -- -- -- -- --
+17 Nov 2024 10:39:36 +0200: Style: fusion. Available styles: qt5ct-style, Windows, Fusion
+17 Nov 2024 10:39:37 +0200: Database is up to date. Version: 0.0.17, created by Krita 5.2.2, at ceturtd. apr. 25 09:06:23 2024
+17 Nov 2024 10:41:16 +0200: CLOSING SESSION
+================================================================================
+SESSION: 17 Nov 2024 10:41:22 +0200. Executing krita
+
+Krita Version: 5.2.6, Qt version compiled: 5.15.15, loaded: 5.15.15. Process ID: 3173436
+-- -- -- -- -- -- -- --
+17 Nov 2024 10:41:22 +0200: Style: fusion. Available styles: qt5ct-style, Windows, Fusion
+17 Nov 2024 10:41:24 +0200: Database is up to date. Version: 0.0.17, created by Krita 5.2.2, at ceturtd. apr. 25 09:06:23 2024
+17 Nov 2024 10:41:50 +0200: CLOSING SESSION
+================================================================================
+SESSION: 16 Dec 2024 21:08:59 +0200. Executing krita
+
+Krita Version: 5.2.6, Qt version compiled: 5.15.15, loaded: 5.15.16. Process ID: 112214
+-- -- -- -- -- -- -- --
+16 Dec 2024 21:08:59 +0200: Style: fusion. Available styles: qt5ct-style, Windows, Fusion
+16 Dec 2024 21:09:01 +0200: Database is up to date. Version: 0.0.17, created by Krita 5.2.2, at ceturtd. apr. 25 09:06:23 2024
+16 Dec 2024 21:09:09 +0200: CLOSING SESSION

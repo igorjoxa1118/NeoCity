@@ -44,12 +44,12 @@ icon_theme = Elena-dark-icons
 arrow_string         = 
 
 ;; colors ;;
-color_menu_bg = #16161e 100
-color_menu_border = #24283b
-color_norm_bg = #16161e 0
-color_norm_fg = #3EB7FF 100
-color_sel_bg = #FF5FED 50
-color_sel_fg = #16161e 100
-color_sep_fg = #3EB7FF 40
+color_menu_bg = #1e1e2e 100
+color_menu_border = #eba0ac
+color_norm_bg = #313244 0
+color_norm_fg = #a6adc8 100
+color_sel_bg = #fab387 50
+color_sel_fg = #f2cdcd 100
+color_sep_fg = #f5e0dc 40
 
 

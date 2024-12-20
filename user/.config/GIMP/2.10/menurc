@@ -594,7 +594,6 @@
 ; (gtk_accel_path "<Actions>/dynamics/dynamics-show-in-file-manager" "")
 ; (gtk_accel_path "<Actions>/dockable/dialogs-dynamics-editor" "")
 ; (gtk_accel_path "<Actions>/vectors/vectors-selection-intersect" "")
-; (gtk_accel_path "<Actions>/plug-in/plug-in-gmic-qt" "")
 ; (gtk_accel_path "<Actions>/vectors/vectors-stroke" "")
 ; (gtk_accel_path "<Actions>/filters/filters-little-planet" "")
 ; (gtk_accel_path "<Actions>/context/context-pattern-menu" "")

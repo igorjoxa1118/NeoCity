@@ -1,9 +1,10 @@
 # GIMP gimp-text-tool options
 
-(foreground (color-rgb 0.18431372549019609 0.20392156862745098 0.27843137254901962))
+(foreground (color-rgb 0.92156862745098034 0.62745098039215685 0.67450980392156867))
 (palette "Предыдущие цвета")
-(font "FantasqueSansM Nerd Font")
-(font-size 160)
+(font "MesloLGS NF")
+(font-size 72)
+(language "en-us")
 (box-mode fixed)
 
 # end of gimp-text-tool options

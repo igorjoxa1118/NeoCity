@@ -5,6 +5,7 @@ complete -c systemd-mount -s l -l full -d 'Do not ellipsize the output when --li
 complete -c systemd-mount -l no-pager -d 'Do not pipe output into a pager'
 complete -c systemd-mount -l no-legend -d 'Do not print the legend, i. e.  column headers and the footer with hints'
 complete -c systemd-mount -l no-ask-password -d 'Do not query the user for authentication for privileged operations'
+complete -c systemd-mount -l json -d 'Shows output formatted as JSON'
 complete -c systemd-mount -l quiet -s q -d 'Suppresses additional informational output while running'
 complete -c systemd-mount -l discover -d 'Enable probing of the mount source'
 complete -c systemd-mount -l type -s t -d 'Specifies the file system type to mount (e. g.  "vfat" or "ext4")'

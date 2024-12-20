@@ -13,5 +13,6 @@ complete -c systemd-ask-password -l accept-cached -d 'If passed, accept cached p
 complete -c systemd-ask-password -l multiple -d 'When used in conjunction with --accept-cached accept multiple passwords'
 complete -c systemd-ask-password -l no-output -d 'Do not print passwords to standard output'
 complete -c systemd-ask-password -s n -d 'By default, when the acquired password is written to standard output it is su…'
+complete -c systemd-ask-password -l user -l system -d 'Controls whether to query the system-wide or the per-user password agents'
 complete -c systemd-ask-password -s h -l help -d 'Print a short help text and exit'
 

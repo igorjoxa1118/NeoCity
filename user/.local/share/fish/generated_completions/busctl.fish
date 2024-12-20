@@ -17,6 +17,7 @@ complete -c busctl -l expect-reply -d 'When used with the call command, specifie
 complete -c busctl -l auto-start -d 'When used with the call or emit command, specifies whether the method call sh…'
 complete -c busctl -l allow-interactive-authorization -d 'When used with the call command, specifies whether the services may enforce i…'
 complete -c busctl -l timeout -d 'When used with the call command, specifies the maximum time to wait for metho…'
+complete -c busctl -l limit-messages -s N -d 'When used with the monitor command, if enabled will make busctl exit when the…'
 complete -c busctl -l augment-creds -d 'Controls whether credential data reported by list or status shall be augmente…'
 complete -c busctl -l watch-bind -d 'Controls whether to wait for the specified AF_UNIX bus socket to appear in th…'
 complete -c busctl -l destination -d 'Takes a service name'

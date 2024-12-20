@@ -5,7 +5,7 @@ complete -c curl -l expand-url -d 'When expanding variables, curl supports a set
 complete -c curl -l expand-variable
 complete -c curl -l expand-data -d 'https://example. com/ Command line variables and expansions were added in 8'
 complete -c curl -s O -l remote-name -d 'command line, it similarly needs multiple options for where to save them'
-complete -c curl -s s -l silent -d 'VERSION This man page describes curl 8. 11. 0'
+complete -c curl -s s -l silent -d 'VERSION This man page describes curl 8. 11. 1'
 complete -c curl -l option
 complete -c curl -l abstract-unix-socket -d '(HTTP) Connect through an abstract Unix domain socket, instead of using the n…'
 complete -c curl -l alt-svc -d '(HTTPS) Enable the alt-svc parser'

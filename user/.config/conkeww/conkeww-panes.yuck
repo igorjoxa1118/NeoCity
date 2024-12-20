@@ -35,6 +35,7 @@ Time:      === ${date}"
 Win+Enter       === Terminal
 Win+D           === Rofi AppMenu
 Win+Z           === Split Window Tabs
+Win+Q           === Kill Window
 Win+Alt+Z       === Join Wandow Tabs
 Win+Alt+T       === Select Terminal
 Win+Alt+W       === Select Wallpapers
@@ -43,7 +44,6 @@ Alt+F           === Firefox
 Alt+J           === Check Updates
 Alt+L           === Lock Screen
 Alt+P           === MPD Player
-Alt+Q           === Kill Window
 Alt+T           === Float Terminal
 Alt+U           === Update System
 Alt+Enter       === Ranger

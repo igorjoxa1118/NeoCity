@@ -63,6 +63,7 @@ complete -c udevadm -l backing -d 'If a path to a device node is specified, iden
 complete -c udevadm -l print -d 'Instead of locking the specified devices and executing a command, just print …'
 complete -c udevadm -o x/--export -d or
 complete -c udevadm -o P/--export-prefix
+complete -c udevadm -l seq -d 'switch. )'
 complete -c udevadm -l load-credentials
 complete -c udevadm -o reload -d 'to make the copied udev rules files used by systemd-udevd'
 complete -c udevadm -l lock -d switch

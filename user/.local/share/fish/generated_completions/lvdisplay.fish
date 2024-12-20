@@ -13,6 +13,7 @@ complete -c lvdisplay -l devices
 complete -c lvdisplay -l devicesfile
 complete -c lvdisplay -l driverloaded
 complete -c lvdisplay -l foreign
+complete -c lvdisplay -l headings
 complete -c lvdisplay -s h -l help
 complete -c lvdisplay -s H -l history
 complete -c lvdisplay -l ignorelockingfailure
@@ -21,6 +22,7 @@ complete -c lvdisplay -l lockopt
 complete -c lvdisplay -l logonly
 complete -c lvdisplay -l longhelp
 complete -c lvdisplay -s m -l maps
+complete -c lvdisplay -l nameprefixes
 complete -c lvdisplay -l noheadings
 complete -c lvdisplay -l nohints
 complete -c lvdisplay -l nolocking
@@ -30,6 +32,8 @@ complete -c lvdisplay -o o+field1 -o o-field3 -o 'o#field5' -d 'These lists are 
 complete -c lvdisplay -l profile
 complete -c lvdisplay -s q -l quiet
 complete -c lvdisplay -l readonly
+complete -c lvdisplay -l reportformat
+complete -c lvdisplay -l rows
 complete -c lvdisplay -l segments
 complete -c lvdisplay -s S -l select
 complete -c lvdisplay -l separator
@@ -38,6 +42,7 @@ complete -c lvdisplay -s O -l sort
 complete -c lvdisplay -s t -l test
 complete -c lvdisplay -l unbuffered
 complete -c lvdisplay -l units
+complete -c lvdisplay -l unquoted
 complete -c lvdisplay -s v -l verbose
 complete -c lvdisplay -l version
 complete -c lvdisplay -s y -l yes

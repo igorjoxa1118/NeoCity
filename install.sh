@@ -323,31 +323,6 @@ if [ -d /etc/lightdm ]; then
 fi
 clear
 
-##-- Установка пользователя в конфиги
-logo "Add user configs"
-tmpuser=$(whoami)
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/blender/4.1/config/bookmarks.txt
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.gtkrc-2.0
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/nitrogen/bg-saved.cfg
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/nitrogen/nitrogen.cfg
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.zshrc
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/gtk-3.0/bookmarks
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/nvim.desktop
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/ranger.desktop
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.local/share/applications/zfetch.desktop
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/kitty/kitty.conf
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/i3/rices/catppuccin-macchiato/rofi/rofi_launchers/launcher.rasi
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/i3/rices/catppuccin-mocha/rofi/launcher.rasi
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/i3/rices/catppuccin-mocha/rofi/launcher.rasi
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/i3/rices/catppuccin-frappe/rofi/rofi_launchers/launcher.rasi
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/i3/rices/catppuccin-latte/rofi/rofi_launchers/launcher.rasi
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/i3/scripts/mpv-youtube-playlist.sh
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/qt5ct/qt5ct.conf
-sed -i "s/vir0id/${tmpuser}/g" "$home_dir"/.config/qBittorrent/qBittorrent.conf
-sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
-sleep 2
-clear
-
 ##-------------------
 #--Grub themes apply
 ##-------------------
@@ -392,20 +367,29 @@ clear
 #### ------- Проверка видеокарты. Если карта отсутствует, то модули на polybar будут другие --- ###
 logo "Check nvidia driver"
 nvidia_detect() {
-  blacklight=$(ls -1 /sys/class/backlight/)
-
-    if [ $(lspci -k | grep -A 2 -E "(VGA|3D)" | grep -i nvidia | wc -l) -gt 0 ]; then
-        rm -rf "$home_dir/.config/i3/rices/tealize/config.ini"
+    readarray -t dGPU < <(lspci -k | grep -E "(VGA|3D)" | awk -F ': ' '{print $NF}')
+    if [ "${1}" == "--verbose" ]; then
+        for indx in "${!dGPU[@]}"; do
+            echo -e "\033[0;32m[gpu$indx]\033[0m detected // ${dGPU[indx]}"
+        done
+        return 0
+    fi
+    if [ "${1}" == "--drivers" ]; then
+        while read -r -d ' ' nvcode ; do
+            awk -F '|' -v nvc="${nvcode}" 'substr(nvc,1,length($3)) == $3 {split(FILENAME,driver,"/"); print driver[length(driver)],"\nnvidia-utils"}' "${scrDir}"/.nvidia/nvidia*dkms
+        done <<< "${dGPU[@]}"
+        return 0
+    fi
+    if grep -iq nvidia <<< "${dGPU[@]}"; then
+        rm -rf "$home_dir/.config/i3/rices/catppuccin-mocha/config.ini"
         cd "$current_dir"/polybar_rices/nvidia || exit
-        cp -R config.ini "$home_dir/.config/i3/rices/tealize/"
-        sed -i "s/intel_backlight/${blacklight}/g" "$home_dir"/.config/i3/scripts/system.ini
-        echo -e "${ORANGE}Nvidia found!"
+        cp -R config.ini "$home_dir/.config/i3/rices/catppuccin-mocha/"
+        echo -e "${ORANGE}Nvidia card found!"
     else
-        rm -rf "$home_dir/.config/i3/rices/tealize/config.ini"
+        rm -rf "$home_dir/.config/i3/rices/catppuccin-mocha/config.ini"
         cd "$current_dir"/polybar_rices/not_nvidia || exit
-        cp -R config.ini "$home_dir/.config/i3/rices/tealize/"
-        sed -i "s/intel_backlight/${blacklight}/g" "$home_dir"/.config/i3/scripts/system.ini
-        echo -e "${CYAN}Nvidia card no found!"
+        cp -R config.ini "$home_dir/.config/i3/rices/catppuccin-mocha/"
+        echo -e "${CYAN}Nvidia card NOT found!"
     fi
 }
 

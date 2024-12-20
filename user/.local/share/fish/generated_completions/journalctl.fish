@@ -28,6 +28,9 @@ complete -c journalctl -s 0 -d 'is the last boot,'
 complete -c journalctl -s 1 -d 'the boot before last, and so on.  An empty offset is equivalent to specifying'
 complete -c journalctl -s u
 complete -c journalctl -l user-unit
+complete -c journalctl -s I -l invocation
+complete -c journalctl -o u/--unit -d or
+complete -c journalctl -o b/--boot
 complete -c journalctl -s t -l identifier
 complete -c journalctl -s T -l exclude-identifier
 complete -c journalctl -s p -l priority
@@ -66,6 +69,8 @@ complete -c journalctl -s F -l field
 complete -c journalctl -l list-boots
 complete -c journalctl -o n/--lines -d 'option, only the first (when the number prefixed with "+") or the last (witho…'
 complete -c journalctl -o r/--reverse
+complete -c journalctl -l list-invocations
+complete -c journalctl -o b/-boot -d 'is specified, invocations in the boot will be shown.  When specified with'
 complete -c journalctl -l disk-usage
 complete -c journalctl -l vacuum-size -l vacuum-time -l vacuum-files
 complete -c journalctl -l rotate -d 'into one command'
@@ -78,5 +83,4 @@ complete -c journalctl -l list-catalog
 complete -c journalctl -l dump-catalog
 complete -c journalctl -s h -l help
 complete -c journalctl -l version
-complete -c journalctl -o u/--unit -d 'should be used'
 

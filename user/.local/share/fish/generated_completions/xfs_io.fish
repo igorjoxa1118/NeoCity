@@ -37,6 +37,6 @@ complete -c xfs_io -s h -d 'Display the hole segment starting at the specified o
 complete -c xfs_io -s 1 -d 'Use only the old ioctl to get the encryption policy'
 complete -c xfs_io -s m -d 'Set the field mask for the statx call to STATX_BASIC_STATS'
 complete -c xfs_io -s z -d 'Print only the first path from the root'
-complete -c xfs_io -s e -d 'Stop displaying records when this inode number is reached'
+complete -c xfs_io -s e -d 'option creates an empty staging file'
 complete -c xfs_io -s g -d 'Display XFS_IOC_FSGEOMETRY filesystem geometry data'
 

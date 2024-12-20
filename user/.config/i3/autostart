@@ -1,5 +1,6 @@
-#### Exports PATH
-exec --no-startup-id "$HOME/.config/i3/scripts/SetSysVars" 
+#### Exports system settings
+exec --no-startup-id "$HOME/.config/i3/scripts/SetSysVars"
+exec --no-startup-id "$HOME/.config/i3/scripts/SetUser"
 
 ##### autostart app
 exec_always --no-startup-id "xrdb -load $HOME/.Xresources"
@@ -19,7 +20,7 @@ exec --no-startup-id "gnome-keyring-daemon --start --components=pkcs11"
 ##### Start bar
 
 ###-- Start themes
-exec_always --no-startup-id $HOME/.config/i3/rices/catppuccin-mocha/Theme.sh
+exec_always --no-startup-id "$HOME/.config/i3/rices/catppuccin-mocha/Theme.sh"
 ###-- Wallpaper
 exec_always --no-startup-id "feh -z --no-fehbg --bg-fill $HOME/.config/i3/rices/catppuccin-mocha/walls/"
 ###-- Dunst notification themes
@@ -38,8 +39,3 @@ exec --no-startup-id "udiskie -t"
 exec_always --no-startup-id "autotiling"
 
 exec_always --no-startup-id "musnify-mpd"
-
-# Launch Conkeww
-#sed -i "s/colors\/color-.*/colors\/color-tokyo.yuck\")/g" $HOME/.config/conkeww/eww.yuck
-#exec_always eww --config $HOME/.config/conkeww/ open conkeww-main
-#
