@@ -1,5 +1,6 @@
 [Bookmarks]
 [Recent]
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/gimp/projects/mini_house/New Folder/
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/gimp/projects/mini_house/
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/textures/pictures/
@@ -9,4 +10,3 @@
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/render/
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/textures/
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/addons/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/addons/RyanMaterials/Ultimate Blender Procedural Material Pack-0.0.11/

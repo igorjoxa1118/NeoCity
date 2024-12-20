@@ -46,6 +46,8 @@ Shader ▸ Translucent BSDF
 ViewLayer
 Input ▸ Scene ▸ Render Layers
 ViewLayer_001
-   DuckTales - Theme Song .mp4
 Color ▸ Brightness/Contrast
    Ru4ka_dveri.002
+   kartinkin-com-p-tekstura-uzor-krasivo-15.jpg
+   DuckTales - Theme Song .mp4
+Color ▸ Adjust ▸ Hue Correct
