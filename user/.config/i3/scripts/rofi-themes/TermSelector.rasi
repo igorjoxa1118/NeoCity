@@ -6,7 +6,7 @@ configuration {
 	me-accept-entry:			"MousePrimary";
 }
 
-@import "shared.rasi"
+@import "colors/catppuccin-mocha.rasi"
 
 window {
     transparency:                "real";
@@ -20,9 +20,10 @@ window {
     padding:                     0px;
     border:                      1px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @blue;
     cursor:                      "default";
-    background-color:            @background;
+    background-color:            @base;
+    font:                        "MesloLGS NF Regular 10";
 }
 
 mainbox {
@@ -40,9 +41,9 @@ message {
     padding:                     10px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
+    border-color:                @blue;
+    background-color:            @mantle;
+    text-color:                  @subtext1;
 }
 
 textbox {
@@ -70,9 +71,9 @@ element {
     padding:                     22px 22px 22px 10px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @blue;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @subtext1;
     cursor:                      pointer;
 }
 
@@ -89,26 +90,26 @@ element normal.normal,
 element alternate.normal {
     border:                      1px solid;
     border-radius:               0px;
-    border-color:                @selected;
-    background-color:            @background;
-    text-color:                  @foreground;
+    border-color:                @blue;
+    background-color:            @base;
+    text-color:                  @subtext1;
 }
 
 element normal.urgent,
 element alternate.urgent,
 element selected.active {
-    background-color:            @urgent;
-    text-color:                  @background;
+    background-color:            @maroon;
+    text-color:                  @base;
 }
 
 element normal.active,
 element alternate.active,
 element selected.urgent {
-    background-color:            @active;
-    text-color:                  @background;
+    background-color:            @green;
+    text-color:                  @base;
 }
 
 element selected.normal {
-    background-color:            @selected;
-    text-color:                  @background;
+    background-color:            @blue;
+    text-color:                  @base;
 }

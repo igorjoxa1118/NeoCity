@@ -1,6 +1,6 @@
 # GIMP gimp-text-tool options
 
-(foreground (color-rgb 1 1 1))
+(foreground (color-rgb 0.53725490196078429 0.70588235294117652 0.98039215686274506))
 (palette "Предыдущие цвета")
 (font "MesloLGS NF")
 (font-size 72)

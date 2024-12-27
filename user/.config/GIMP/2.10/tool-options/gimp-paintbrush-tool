@@ -1,10 +1,9 @@
 # GIMP gimp-paintbrush-tool options
 
-(foreground (color-rgb 1 1 1))
-(background (color-rgb 0.92156862745098034 0.62745098039215685 0.67450980392156867))
+(foreground (color-rgb 0.53725490196078429 0.70588235294117652 0.98039215686274506))
 (brush "2. Hardness 075")
 (dynamics "Dynamics Off")
-(gradient "Пользовательский")
+(gradient "Основной в прозрачный")
 (palette "Предыдущие цвета")
 (brush-size 63)
 (brush-hardness 0.75)

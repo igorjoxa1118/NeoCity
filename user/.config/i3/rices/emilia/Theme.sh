@@ -11,7 +11,7 @@
 #
 
 # Current Rice
-read -r RICE < "$HOME"/.config/i3/.rice
+read -r RICE < "$HOME"/.config/i3/config.d/.rice
 
 # Terminate or reload existing processes if necessary.
 . "${HOME}"/.config/i3/scripts/Process.bash

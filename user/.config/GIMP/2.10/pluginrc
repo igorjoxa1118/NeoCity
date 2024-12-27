@@ -4528,6 +4528,29 @@
         (proc-arg 16 "drawable" "Input drawable (not used)")
         (proc-arg 0 "link-after-alignment" "Link the visible layers after alignment { TRUE, FALSE }")
         (proc-arg 0 "use-bottom" "use the bottom layer as the base of alignment { TRUE, FALSE }")))
+(plug-in-def "${gimp_plug_in_dir}/plug-ins/gutenprint" 1696101929
+    (proc-def "file_print_gutenprint" 1
+         "This plug-in prints images from The GIMP using Gutenprint directly."
+         "Prints images to many printers."
+         "Michael Sweet <mike@easysw.com> and Robert Krawitz <rlk@alum.mit.edu>"
+         "Copyright 1997-2006 by Michael Sweet and Robert Krawitz"
+         "5.3.4 - 06 Dec 2020"
+         "_Print with Gutenprint..."
+         1
+        (menu-path "<Image>/File/Send")
+        (icon icon-name -1 "gtk-print")
+         "RGB*,GRAY*,INDEXED*"
+         9 0
+        (proc-arg 0 "run-mode" "Interactive, non-interactive")
+        (proc-arg 13 "image" "Input image")
+        (proc-arg 16 "drawable" "Input drawable")
+        (proc-arg 4 "driver" "Printer driver short name")
+        (proc-arg 4 "printer-queue" "CUPS Printer Queue")
+        (proc-arg 3 "left" "Left offset (points, -1 = centered)")
+        (proc-arg 3 "top" "Top offset (points, -1 = centered)")
+        (proc-arg 0 "length-key-value-array" "Length of the key-value array")
+        (proc-arg 9 "keys" "Key-value pairs for Gutenprint Settings"))
+    (locale-def "gutenprint" "${gimp_installation_dir}/share/locale"))
 (plug-in-def "${gimp_plug_in_dir}/plug-ins/file-jxl/file-jxl" 1732674260
     (proc-def "file-jxl-load" 1
          "Loads JPEG XL image files"

@@ -1,5 +1,5 @@
 To open a terminal, press Mod (Super key) + Enter.
-To close the focused window, press Mod + Shift + q.
+To close the focused window, press Mod + q.
 Open the program launcher (dmenu) with Mod + d.
 Change focus between windows: Left - Mod + h or left arrow key, Down - Mod + j or down arrow key, Up - Mod + k or up arrow key, Right - Mod + l or right arrow key.
 Move the focused window: Left - Mod + Shift + h, Down - Mod + Shift + j, Up - Mod + Shift + k, Right - Mod + Shift + l.

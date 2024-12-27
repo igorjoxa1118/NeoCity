@@ -1,53 +1,67 @@
 Shader ▸ Diffuse BSDF
-Converter ▸ Separate XYZ
 Converter ▸ Separate Color
    snow
-Converter ▸ Shader to RGB
 Vector ▸ Bump
    Snezinka
    Colision_obj
-
 Grease Pencil ▸ Object Line Art
-Input ▸ Object Info
-Color ▸ Adjust ▸ Hue/Saturation/Value
 Converter ▸ Mix
-Color ▸ Mix Color
 Texture ▸ Wave Texture
 Shader ▸ Emission
-   Material.002
    Material.001
-Shader ▸ Glossy BSDF
-Shader ▸ Transparent BSDF
-Input ▸ Fresnel
-Shader ▸ Mix Shader
-Shader ▸ Principled Volume
-Texture ▸ Noise Texture
-Converter ▸ Math
    Ru4ki_wkafa
    Ru4ka_dveri
-Output ▸ Viewer
-Filter ▸ Glare
-Color ▸ Mix ▸ Mix Color
-Color ▸ Adjust ▸ Color Balance
-Transform ▸ Lens Distortion
    photo_2024-12-14_19-44-44.jpg
-Color ▸ Hue/Saturation/Value
    glass
    1625929779_51-kartinkin-com-p-tekstura-uzor-krasivo-56.jpg
    Render Result
    Viewer Node
    WhatsApp Video 2024-12-14 at 19.22.20.mp4
 Input ▸ Value
-Converter ▸ Color Ramp
 Shader ▸ Translucent BSDF
    Leavs_gorshok
    Branches_gorshok
    plastik
 ViewLayer
-Input ▸ Scene ▸ Render Layers
 ViewLayer_001
 Color ▸ Brightness/Contrast
    Ru4ka_dveri.002
    kartinkin-com-p-tekstura-uzor-krasivo-15.jpg
    DuckTales - Theme Song .mp4
+ 0 Material.001
+Converter ▸ Shader to RGB
+Texture ▸ Voronoi Texture
+   snow 1
+Shader ▸ Glossy BSDF
+Shader ▸ Transparent BSDF
+Input ▸ Fresnel
+Shader ▸ Mix Shader
+   Material.002
+Output ▸ Viewer
+Transform ▸ Lens Distortion
+Input ▸ Object Info
+
 Color ▸ Adjust ▸ Hue Correct
+Color ▸ Adjust ▸ Hue/Saturation/Value
+Shader ▸ Principled Volume
+Texture ▸ Noise Texture
+   volume
+   Material.003
+Shader ▸ Principled BSDF
+Converter ▸ Separate XYZ
+Color ▸ Mix Color
+Converter ▸ Color Ramp
+Color ▸ Adjust ▸ Color Balance
+Converter ▸ Math
+Color ▸ Hue/Saturation/Value
+Texture ▸ Image Texture
+   snowflake.svg
+Layer
+   Black
+Input ▸ Scene ▸ Render Layers
+  Icosphere
+Color ▸ Adjust ▸ Color Correction
+Filter ▸ Glare
+Input ▸ Image
+Color ▸ Mix ▸ Mix Color
+Utilities ▸ Normalize

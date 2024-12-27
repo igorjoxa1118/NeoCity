@@ -1,6 +1,4 @@
-#------------
-## catppuccin-frappe
-#------------
+### --- catppuccin-frappe
 
 # target                 title     bg    text   indicator  border
 client.focused           #babbf1 #5c5f77 #c6d0f5  #f2d5cf  #babbf1

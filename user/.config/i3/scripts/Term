@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #  ████████╗███████╗██████╗ ███╗   ███╗██╗███╗   ██╗ █████╗ ██╗
 #  ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║████╗  ██║██╔══██╗██║
 #     ██║   █████╗  ██████╔╝██╔████╔██║██║██╔██╗ ██║███████║██║
@@ -10,7 +9,7 @@
 #   Author: z0mbi3
 #   url: https://github.com/gh0stzk/dotfiles
 
-CFG_TERM="$HOME/.config/i3/scripts/.term"
+CFG_TERM="$HOME/.config/i3/config.d/.term"
 DEFAULT_TERM="kitty"
 ROFI_THEME="$HOME/.config/i3/scripts/rofi-themes/TermSelector.rasi"
 
@@ -55,6 +54,9 @@ case $MY_TERM in
             "--ranger")
                 alacritty --title floating -e ranger
                 ;;
+            "--yazi")
+                kitty --title floating --hold -e yazi
+                ;;
             "--nvim")
                 alacritty -e nvim
                 ;;
@@ -88,6 +90,9 @@ case $MY_TERM in
                 ;;
             "--ranger")
                 kitty --title floating --hold -e ranger
+                ;;
+            "--yazi")
+                kitty --title floating --hold -e yazi
                 ;;
             "--nvim")
                 kitty -e nvim

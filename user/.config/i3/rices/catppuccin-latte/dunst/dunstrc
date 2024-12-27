@@ -1,0 +1,21 @@
+### --- Catppuccin-latte
+
+[global]
+frame_width= 1
+frame_color = "#89b4fa"
+font = MesloLGS NF 10
+
+[urgency_low]
+timeout = 3
+background = "#eff1f5"
+foreground = "#4c4f69"
+
+[urgency_normal]
+timeout = 5
+background = "#eff1f5"
+foreground = "#5c5f77"
+
+[urgency_critical]
+timeout = 0
+background = "#eff1f5"
+foreground = "#6c6f85"

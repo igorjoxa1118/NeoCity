@@ -14,9 +14,9 @@
 . "${HOME}"/.config/i3/src/Process.bash
 
 # Current Rice
-read -r RICETHEME < "$HOME"/.config/i3/.rice
+read -r RICETHEME < "$HOME"/.config/i3/config.d/.rice
 rice_dir="$HOME/.config/i3/rices/$RICETHEME"
-i3_dir="$HOME/.config/i3"
+i3_dir="$HOME/.config/i3/config/d"
 
 # Vars config for Yael Rice
 # i3 border		# Fade true|false	# Shadows true|false	# Corner radius		# Shadow color

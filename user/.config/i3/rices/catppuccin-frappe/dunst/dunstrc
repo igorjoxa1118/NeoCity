@@ -1,0 +1,21 @@
+### --- Catppuccin-frappe
+
+[global]
+frame_width= 1
+frame_color = "#a6e3a1"
+font = MesloLGS NF 10
+
+[urgency_low]
+timeout = 3
+background = "#303446"
+foreground = "#c6d0f5"
+
+[urgency_normal]
+timeout = 5
+background = "#303446"
+foreground = "#b5bfe2"
+
+[urgency_critical]
+timeout = 0
+background = "#303446"
+foreground = "#a5adce"

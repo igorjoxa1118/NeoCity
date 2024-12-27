@@ -1,6 +1,4 @@
-#------------
-## catppuccin-macchiato
-#------------
+### --- catppuccin-macchiato
 
 # target                 title     bg    text   indicator  border
 client.focused           #b7bdf8 #f5a97f #24273a  #f4dbd6  #b7bdf8

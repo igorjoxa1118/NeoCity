@@ -9,9 +9,9 @@
 #  Url     :  https://github.com/gh0stzk/dotfiles
 #  About   :  This file will configure and launch the rice.
 #
-read -r RICETHEME < "$HOME"/.config/i3/.rice
+read -r RICETHEME < "$HOME"/.config/i3/config.d/.rice
 rice_dir="$HOME/.config/i3/rices/$RICETHEME"
-i3_dir="$HOME/.config/i3"
+i3_dir="$HOME/.config/i3/config.d"
 
 # Terminate already running bar instances
 killall -q polybar

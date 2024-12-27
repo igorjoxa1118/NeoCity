@@ -1,24 +1,28 @@
-#---------------------------------------------
-## Подключение отдельных файлов конфигураций i3
-#---------------------------------------------
-include "$HOME/.config/i3/autostart"
-include "$HOME/.config/i3/colors"
-include "$HOME/.config/i3/fonts"
-include "$HOME/.config/i3/keybinds"
-include "$HOME/.config/i3/rules"
+### --- Подключение отдельных файлов конфигураций i3
+
+include "$HOME/.config/i3/config.d/autostart"
+include "$HOME/.config/i3/config.d/colors"
+include "$HOME/.config/i3/config.d/fonts"
+include "$HOME/.config/i3/config.d/keybinds"
+include "$HOME/.config/i3/config.d/rules"
 
 set $mod Mod4
 set $mod1 Mod1
+set $i3_scripts ~/.config/i3/scripts
+set $i3_configd ~/.config/i3/config.d
 
-hide_edge_borders smart
-new_window pixel 1
-new_float pixel 1
+#hide_edge_borders smart
 
-#---------
-## Отступы
-#---------
+# new_window pixel 1
+new_window normal
+# new_window none
+
+# new_float pixel 1
+new_float normal
+# new_float none
 
 #smart_gaps on
+#hide_edge_borders both
 smart_borders on
 
 set $default_gaps_inner 28
@@ -26,19 +30,13 @@ set $default_gaps_outer 28
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), mod1 + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), mod1 + +|-|0 (global)
-
 set $ws-right "$(( $( i3-msg -t get_workspaces | jq '.[] | select(.focused).num' ) + 1))";
 set $ws-left "$(( $( i3-msg -t get_workspaces | jq '.[] | select(.focused).num' ) - 1))";
 
 floating_modifier $mod
 
-#----------------------------------------------------------------------------
-## Определение имен, для рабочих пространств по умолчанию/
-## Для которых существуют привязки клавиш в файле "$HOME/.config/i3/keybinds".
-#----------------------------------------------------------------------------
+### --- Определение имен, для рабочих пространств по умолчанию/
+### --- Для которых существуют привязки клавиш в файле "$HOME/.config/i3/keybinds".
 
 set $ws1 1
 set $ws2 2

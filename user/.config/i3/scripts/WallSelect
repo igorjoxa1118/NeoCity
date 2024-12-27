@@ -18,7 +18,7 @@
 #			  08.12.2023 08:37:20
 
 i3_dir="$HOME/.config/i3"
-current_rice_file="$i3_dir/.rice"
+current_rice_file="$i3_dir/config.d/.rice"
 i3_rice_in_config=$(< "$current_rice_file")
 
 # Verifies if xdpyinfo and imagemagick are installed

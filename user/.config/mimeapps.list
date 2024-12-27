@@ -5,7 +5,7 @@ application/octet-stream=code-oss.desktop;
 application/pdf=qpdfview.desktop;libreoffice-writer.desktop;libreoffice-draw.desktop;okularApplication_pdf.desktop;
 application/x-alpm-package=xarchiver.desktop;
 application/x-bittorrent=kodi.desktop;org.qbittorrent.qBittorrent.desktop;
-application/x-shellscript=org.xfce.mousepad.desktop;code-oss.desktop;code.desktop;
+application/x-shellscript=code-oss.desktop;org.xfce.mousepad.desktop;code.desktop;
 application/x-tar=engrampa.desktop;xarchiver.desktop;
 application/x-zerosize=code-oss.desktop;
 application/xml=code.desktop;code-oss.desktop;
@@ -21,7 +21,7 @@ text/x-csrc=code.desktop;code-oss.desktop;
 text/x-devicetree-source=code.desktop;code-oss.desktop;
 text/x-python=code.desktop;code-oss.desktop;
 text/x-python3=code.desktop;code-oss.desktop;
-video/mp4=vlc.desktop;mpv.desktop;org.xfce.Parole.desktop;
+video/mp4=mpv.desktop;vlc.desktop;org.xfce.Parole.desktop;
 video/vnd.avi=vlc.desktop;
 video/x-matroska=org.xfce.Parole.desktop;
 x-scheme-handler/http=firefox.desktop;
@@ -37,6 +37,7 @@ application/vnd.ms-publisher=code-oss.desktop;
 text/x-lua=code-oss.desktop;
 text/csv=code-oss.desktop;
 application/x-executable=code-oss.desktop;
+text/x-log=code-oss.desktop;
 
 [Default Applications]
 application/json=code-oss.desktop

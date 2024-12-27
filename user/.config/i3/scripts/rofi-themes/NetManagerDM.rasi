@@ -4,8 +4,19 @@ configuration {
     show-icons:                 false;
 }
 
-@import "shared.rasi"
+@import "colors/catppuccin-mocha.rasi"
 
+* {
+    font: "MesloLGS NF Regular 10";
+    background:       @base;
+    background-alt:   @mantle;
+    foreground:       @text;
+    selected:         @blue;
+    active:           @green;
+    urgent:           @maroon;
+    
+    img-background: url("~/.config/i3/scripts/rofi-themes/img/rofi.webp", width);
+}
 
 window {
     transparency:                "real";

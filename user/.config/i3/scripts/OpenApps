@@ -9,7 +9,7 @@
 # Author: z0mbi3
 # url:    https://github.com/gh0stzk
 
-read -r RICETHEME < "$HOME"/.config/i3/.rice
+read -r RICETHEME < "$HOME"/.config/i3/config.d/.rice
 
 WIDGET_DIR="$HOME/.config/i3/rices/$RICETHEME/eww"
 
@@ -44,6 +44,9 @@ case "$1" in
 		;;
     --ranger)
         ~/.config/i3/scripts/Term --ranger
+        ;;
+    --yazi)
+        ~/.config/i3/scripts/Term --yazi
         ;;
     --nvim)
         ~/.config/i3/scripts/Term --nvim

@@ -31,7 +31,6 @@
 (layer-new-name "textur")
 (layer-add-mask-type black)
 (selection-feather-radius 2)
-(selection-shrink-radius 2)
 (fill-options
     (style solid)
     (antialias yes)

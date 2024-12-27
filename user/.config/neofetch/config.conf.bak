@@ -1,15 +1,15 @@
 # https://github.com/chick2d/neofetch-themes
 
 print_info() {
-    #info "\e[31m " users
-    info "\e[32m " kernel
+    info "\e[32m " distro
+    info "\e[35m " wm
+    info "\e[34m󰍹 " gpu
+    info "\e[32m󰍹 " cpu
+    info "\e[33m󰑭 " memory
+    info "\e[31m " kernel
     info "\e[33m " uptime
     info "\e[34m " packages
-    info "\e[35m " wm
     info "\e[32m " shell
-    info "\e[32m󰍹 " cpu
-    info "\e[34m󰍹 " gpu
-    info "\e[33m󰑭 " memory
     #info "GPU Driver" gpu_driver  # Linux/macOS only
 }
 

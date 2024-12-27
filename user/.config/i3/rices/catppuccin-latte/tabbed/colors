@@ -1,6 +1,4 @@
-#------------
-## catppuccin-latte
-#------------
+### --- catppuccin-latte
 
 # target                 title     bg    text   indicator  border
 client.focused           #7287fd #ea76cb #eff1f5  #dc8a78  #7287fd

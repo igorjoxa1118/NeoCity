@@ -2,7 +2,7 @@
 
 ## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
 
-read -r RICETHEME < "$HOME"/.config/i3/.rice
+read -r RICETHEME < "$HOME"/.config/i3/config.d/.rice
 rice_dir="$HOME/.config/i3/rices/$RICETHEME"
 i3_dir="$HOME/.config/i3"
 
@@ -11,24 +11,40 @@ killall -q polybar
 killall -q eww
 
 ###--Start rice
+theme_rofi_color() {
+	sed -i "s|@import .*|@import \""colors/$RICETHEME.rasi"\"|g" "$HOME"/.config/i3/scripts/rofi-themes/RiceSelector.rasi
+	sed -i "s|@import .*|@import \""colors/$RICETHEME.rasi"\"|g" "$HOME"/.config/i3/scripts/rofi-themes/NetManagerDM.rasi
+}
+theme_rofi_color
+
+rofi_launcher_img() {
+	if [ -f "$HOME/.config/i3/scripts/rofi-themes/launchpad_v4.rasi" ]; then
+	 echo '' >  "$HOME/.config/i3/scripts/rofi-themes/launchpad_v4.rasi"
+	 cat "$HOME/.config/i3/scripts/rofi-themes/img/$RICETHEME.rasi" > "$HOME/.config/i3/scripts/rofi-themes/launchpad_v4.rasi"
+	fi
+}
+rofi_launcher_img
 
 set_gtk_theme() {
 	sed -i "s/gtk-theme-name=.*/gtk-theme-name="$RICETHEME"/g" "$HOME"/.config/gtk-3.0/settings.ini
     sed -i "s/gtk-theme-name=.*/gtk-theme-name="$RICETHEME"/g" "$HOME"/.config/gtk-4.0/settings.ini
     sed -i "s/gtk-theme-name=.*/gtk-theme-name="\"""$RICETHEME"""\"/g" "$HOME"/.gtkrc-2.0
 }
+set_gtk_theme
 
 set_icons() {
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Catppuccin-Macchiato"\"/g" "$HOME"/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Catppuccin-Macchiato/g" "$HOME"/.config/gtk-3.0/settings.ini
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Catppuccin-Macchiato/g" "$HOME"/.config/gtk-4.0/settings.ini	
 }
+set_icons
 
 set_cursor() {
 	sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name="\"catppuccin-mocha-teal-cursors"\"/g" "$HOME"/.gtkrc-2.0
 	sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-teal-cursors/g" "$HOME"/.config/gtk-3.0/settings.ini
     sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-teal-cursors/g" "$HOME"/.config/gtk-4.0/settings.ini
 }
+set_cursor
 
 # NetworkManager launcher
 set_network_manager() {
@@ -40,33 +56,14 @@ set_network_manager() {
 		-e '16s/\(active: \).*/\1#89dceb;/' \
 		-e '17s/\(urgent: \).*/\1#89dceb;/'
 }
-
-set_picom_config() {
-	sed -i "$HOME"/.config/i3/picom.conf \
-		-e "s/\".*:class_g = 'Xfce4-terminal'\"/\"98:class_g = 'Xfce4-terminal'\"/g" \
-		-e "s/\".*:class_g = 'Deadbeef'\"/\"98:class_g = 'Deadbeef'\"/g" \
-		-e "s/\".*:class_g = 'XTerm'\"/\"98:class_g = 'XTerm'\"/g" \
-		-e "s/\".*:class_g = 'kitty'\"/\"98:class_g = 'kitty'\"/g" \
-		-e "s/\".*:class_g = 'TelegramDesktop'\"/\"98:class_g = 'TelegramDesktop'\"/g" \
-		-e "s/\".*:class_g =  'discord'\"/\"98:class_g = 'discord'\"/g" \
-		-e "s/\".*:class_g *= 'Thunar'\"/\"98:class_g = 'Thunar'\"/g" \
-		-e "s/\".*:class_g *= 'Caja'\"/\"98:class_g = 'Caja'\"/g" \
-		-e "s/\".*:class_g *= 'Rofi'\"/\"98:class_g = 'Rofi'\"/g" \
-		-e "s/\".*:class_g *= 'Conky'\"/\"98:class_g = 'Deadbeef'\"/g" \
-		-e "s/\".*:class_g *= 'Nm-applet'\"/\"98:class_g = 'Nm-applet'\"/g" \
-		-e "s/\".*:class_g *= 'NetworkManager'\"/\"98:class_g = 'NetworkManager'\"/g" \
-		-e "s/\".*:class_g *= 'qBittorrent'\"/\"98:class_g = 'qBittorrent'\"/g" \
-		-e "s/\".*:class_g *= 'transmission-gtk'\"/\"98:class_g = 'transmission-gtk'\"/g" \
-		-e "s/\".*:class_g *= 'Polybar'\"/\"100:class_g = 'Polybar'\"/g" \
-		-e "s/\".*:class_g *= 'jgmenu_run'\"/\"98:class_g = 'jgmenu_run'\"/g" \
-		-e "s/\".*:class_g *= 'code-oss'\"/\"98:class_g = 'code-oss'\"/g"
-}
+set_network_manager
 
 # Reload terminal colors
 set_term_config() {
 	AL_CONFIG_DIR="$HOME/.config/alacritty"
-	AL_RICE_DIR="$HOME/.config/i3/rices/catppuccin-frappe/alacritty"
-		if [ -f $AL_CONFIG_DIR/colors.toml ]; then
+	AL_RICE_DIR="$HOME/.config/i3/rices/$RICETHEME/alacritty"
+		if [ -f $AL_CONFIG_DIR/alacritty.toml ]; then
+			rm -rf $AL_CONFIG_DIR/*
 			cp -rf $AL_RICE_DIR/* $AL_CONFIG_DIR
 		fi
 	KI_CONFIG_DIR="$HOME/.config/kitty"
@@ -77,6 +74,8 @@ set_term_config() {
 			cp -rf $HOME/.config/i3/rices/$RICETHEME/kitty/kitty.conf $HOME/.config/kitty/
 		fi
 }
+set_term_config
+
 
 # Firefox theme
 firefox_profiles() {
@@ -91,35 +90,18 @@ else
 	cp -rf "$THEME_DIR"/* "$DEST_DIR"/"$PROFPATH"
 fi
 }
+firefox_profiles
 
 # Set dunst config
 set_dunst_config() {
-	dunst_config_file="$HOME/.config/i3/dunstrc"
-	echo -n "" > "$dunst_config_file"
-	cat >>"$dunst_config_file" <<-_EOF_
-###--- Catppuccin-macchiato
-
-[global]
-frame_width= 1
-frame_color = "#f5a97f"
-font = MesloLGS NF 10
-
-[urgency_low]
-timeout = 3
-background = "#24273a"
-foreground = "#cad3f5"
-
-[urgency_normal]
-timeout = 5
-background = "#24273a"
-foreground = "#b8c0e0"
-
-[urgency_critical]
-timeout = 0
-background = "#24273a"
-foreground = "#a5adcb"
-	_EOF_
+dunst_path=""$HOME"/.config/i3/rices/$RICETHEME/dunst/dunstrc"
+       if [ -f "$dunst_path" ]; then
+         cp -rf "$dunst_path" "$i3_dir"
+       else
+         echo "Color file not exist!"
+       fi
 }
+set_dunst_config
 
 ###---Global. Change colors for Tabbed
 tabbed_settings() {
@@ -130,6 +112,7 @@ tabbed_path=""$HOME"/.config/i3/rices/$RICETHEME/tabbed"
          echo "Color file not exist!"
        fi
 }
+tabbed_settings
 
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
@@ -149,14 +132,4 @@ launch_bars() {
 		MONITOR=$mon polybar -q bottom-3 -c "${rice_dir}"/config.ini &
 	done
 }
-
 launch_bars
-set_gtk_theme
-set_icons
-set_cursor
-set_network_manager
-set_picom_config
-firefox_profiles
-set_dunst_config
-tabbed_settings
-set_term_config

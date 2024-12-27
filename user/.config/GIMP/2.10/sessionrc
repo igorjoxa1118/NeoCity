@@ -116,22 +116,22 @@
     (size 1515 569))
 (session-info "toplevel"
     (factory-entry "gimp-operation-tool-dialog")
-    (position 654 323))
+    (position 650 319))
 (session-info "toplevel"
     (factory-entry "gimp-file-save-dialog")
     (position 474 177)
     (size 950 782))
 (session-info "toplevel"
     (factory-entry "gimp-file-export-dialog")
-    (position 401 84)
+    (position 396 79)
     (size 950 782))
 (session-info "toplevel"
     (factory-entry "gimp-file-open-dialog")
-    (position 308 0)
+    (position 296 0)
     (size 950 782))
 (session-info "toplevel"
     (factory-entry "gimp-image-new-dialog")
-    (position 704 380))
+    (position 699 375))
 (session-info "toplevel"
     (factory-entry "gimp-levels-tool-dialog")
     (position 168 0)
