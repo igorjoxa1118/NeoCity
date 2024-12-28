@@ -1,15 +1,16 @@
-### --- Подключение отдельных файлов конфигураций i3
-
-include "$HOME/.config/i3/config.d/autostart"
-include "$HOME/.config/i3/config.d/colors"
-include "$HOME/.config/i3/config.d/fonts"
-include "$HOME/.config/i3/config.d/keybinds"
-include "$HOME/.config/i3/config.d/rules"
-
+### --- Переменные
 set $mod Mod4
 set $mod1 Mod1
 set $i3_scripts ~/.config/i3/src
 set $i3_configd ~/.config/i3/config.d
+
+### --- Подключение отдельных файлов конфигураций i3
+include $i3_configd/autostart
+include $i3_configd/colors
+include $i3_configd/fonts
+include $i3_configd/keybinds
+include $i3_configd/rules
+
 
 # или new_window normal или new_window none
 new_window pixel 1
