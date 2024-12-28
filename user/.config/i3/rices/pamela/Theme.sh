@@ -14,7 +14,7 @@
 read -r RICE < "$HOME"/.config/i3/config.d/.rice
 
 # Terminate or reload existing processes if necessary.
-. "${HOME}"/.config/i3/scripts/Process.bash
+. "${HOME}"/.config/i3/src/Process.bash
 
 # Terminal colors
 set_term_config() {
@@ -175,7 +175,7 @@ set_launchers() {
 		-e "s/color_sep_fg = .*/color_sep_fg = ${blueb}/"
 
 	# Rofi launchers
-	cat >"$HOME"/.config/i3/scripts/rofi-themes/shared.rasi <<EOF
+	cat >"$HOME"/.config/i3/src/rofi-themes/shared.rasi <<EOF
 // Rofi colors for Pamela
 
 * {
@@ -193,7 +193,7 @@ set_launchers() {
 EOF
 
 	# Screenlock colors
-	sed -i "$HOME"/.config/i3/scripts/ScreenLocker \
+	sed -i "$HOME"/.config/i3/src/ScreenLocker \
 		-e "s/bg=.*/bg=${bg:1}/" \
 		-e "s/fg=.*/fg=${blue:1}/" \
 		-e "s/ring=.*/ring=${bg:1}/" \
@@ -238,7 +238,7 @@ set_geany(){
 launch_theme() {
 
 	# Launch dunst notification daemon
-	dunst -config "${HOME}"/.config/i3/scripts/config/dunstrc &
+	dunst -config "${HOME}"/.config/i3/src/config/dunstrc &
 
 	# Launch polybar
 	sleep 0.1

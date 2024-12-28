@@ -14,7 +14,7 @@
 read -r RICE < "$HOME"/.config/i3/config.d/.rice
 
 # Terminate or reload existing processes if necessary.
-. "${HOME}"/.config/i3/scripts/Process.bash
+. "${HOME}"/.config/i3/src/Process.bash
 
 # Terminal colors
 set_term_config() {
@@ -221,7 +221,7 @@ set_launchers() {
 EOF
 
 	# Screenlock colors
-	sed -i "$HOME"/.config/i3/scripts/ScreenLocker \
+	sed -i "$HOME"/.config/i3/src/ScreenLocker \
 		-e "s/bg=.*/bg=${bg:1}/" \
 		-e "s/fg=.*/fg=${fg:1}/" \
 		-e "s/ring=.*/ring=${black:1}/" \

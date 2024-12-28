@@ -141,7 +141,7 @@ set_jgmenu_colors() {
 
 # Set Rofi launcher config
 set_launcher_config() {
-	sed -i "$HOME/.config/i3/scripts/Launcher.rasi" \
+	sed -i "$HOME/.config/i3/src/Launcher.rasi" \
 		-e '22s/\(font: \).*/\1"JetBrainsMono NF Bold 9";/' \
 		-e 's/\(background: \).*/\1#2d353b;/' \
 		-e 's/\(background-alt: \).*/\1#2d353bE0;/' \
@@ -150,7 +150,7 @@ set_launcher_config() {
 		-e "s/rices\/[[:alnum:]\-]*/rices\/${RICETHEME}/g"
 
 	# NetworkManager launcher
-	sed -i "$HOME/.config/i3/scripts/NetManagerDM.rasi" \
+	sed -i "$HOME/.config/i3/src/NetManagerDM.rasi" \
 		-e '12s/\(background: \).*/\1#2d353b;/' \
 		-e '13s/\(background-alt: \).*/\1#272e33;/' \
 		-e '14s/\(foreground: \).*/\1#d3c6aa;/' \
@@ -159,7 +159,7 @@ set_launcher_config() {
 		-e '17s/\(urgent: \).*/\1#e67e80;/'
 
 	# WallSelect menu colors
-	sed -i "$HOME/.config/i3/scripts/WallSelect.rasi" \
+	sed -i "$HOME/.config/i3/src/WallSelect.rasi" \
 		-e 's/\(main-bg: \).*/\1#2d353bE6;/' \
 		-e 's/\(main-fg: \).*/\1#d3c6aa;/' \
 		-e 's/\(select-bg: \).*/\1#475258;/' \

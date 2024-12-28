@@ -8,21 +8,18 @@ include "$HOME/.config/i3/config.d/rules"
 
 set $mod Mod4
 set $mod1 Mod1
-set $i3_scripts ~/.config/i3/scripts
+set $i3_scripts ~/.config/i3/src
 set $i3_configd ~/.config/i3/config.d
 
-#hide_edge_borders smart
+# или new_window normal или new_window none
+new_window pixel 1
+# или new_float normal new_float none
+new_float pixel 1
 
-# new_window pixel 1
-new_window normal
-# new_window none
+### --- Этот параметр реагирует на рамки всех окон. Так же есть параметр hide_edge_borders both
+hide_edge_borders smart
 
-# new_float pixel 1
-new_float normal
-# new_float none
-
-#smart_gaps on
-#hide_edge_borders both
+# smart_gaps on
 smart_borders on
 
 set $default_gaps_inner 28

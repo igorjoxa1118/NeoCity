@@ -32,7 +32,7 @@ set_cursor() {
 
 # NetworkManager launcher
 set_network_manager() {
-	sed -i "$HOME/.config/i3/scripts/NetManagerDM.rasi" \
+	sed -i "$HOME/.config/i3/src/NetManagerDM.rasi" \
 		-e '12s/\(background: \).*/\1#232735;/' \
 		-e '13s/\(background-alt: \).*/\1#2d3245;/' \
 		-e '14s/\(foreground: \).*/\1#7C84A8;/' \
@@ -122,7 +122,7 @@ EOF
 
 # Set Rofi launcher config
 set_launcher_config() {
-	sed -i "$HOME/.config/i3/scripts/Launcher.rasi" \
+	sed -i "$HOME/.config/i3/src/Launcher.rasi" \
 		-e '22s/\(font: \).*/\1"MesloLGS NF Regular 10";/' \
 		-e 's/\(background: \).*/\1#232735;/' \
 		-e 's/\(background-alt: \).*/\1#2d3245E0;/' \

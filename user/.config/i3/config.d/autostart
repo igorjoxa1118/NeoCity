@@ -30,7 +30,7 @@ exec --no-startup-id parcellite
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id "udiskie -t"
 
-#exec --no-startup-id $HOME/.config/i3/scripts/conky/config_i3/start.sh
+#exec --no-startup-id $HOME/.config/i3/src/conky/config_i3/start.sh
 
 #exec --no-startup-id caffeine
 exec_always --no-startup-id "autotiling"

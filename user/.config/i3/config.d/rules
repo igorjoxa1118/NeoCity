@@ -1,15 +1,21 @@
 ### --- Специальные окна. Правила для окон
 
 ### --- Правила для плавающих окон
-### --- Эллемент floating связан с настройками в ~/.config/i3/scripts/OpenApps и ~/.config/i3/scripts/Term
+### --- Эллемент floating связан с настройками в ~/.config/i3/src/OpenApps и ~/.config/i3/src/Term
 for_window [title="floating"] move window to scratchpad, scratchpad show, floating enable, resize set 1280 600, move position center, focus
 for_window [window_role="pop-up|bubble|task_dialog|Preferences|setup"] floating enable
+for_window [window_type="dialog|menu"] floating enable
 for_window [window_role="browser|GtkFileChooserDialog"] resize set 800 600, move position center
-for_window [window_type = "menu"] floating enable
-for_window [class="(?i)simplescreenrecorder"] floating enable, move position 5 30, focus
+for_window [window_role="demo"] resize set 800 600, move position center
+for_window [class="(?i)simplescreenrecorder"] floating enable, move position 5 30 
+for_window [class="(?i)ymuse"] focus 
 for_window [class="(?i)nitrogen|engrampa|flameshot|file-roller|fsearch|qt5ct|PureRef-2.0.3_x64.Appimage"] floating enable, resize set 600 500, move position center 
 for_window [class="(?i)atril|pavucontrol|lxappearance|viewnior|keepassxc|veracrypt"] floating enable
-for_window [class="(?i)kitty|firefox|ymuse"] border pixel 1, focus
+for_window [class="(?i)mpv"] floating enable, resize set 350 250, sticky enable, move window to position 1000 85
+for_window [class="(?i)firefox|vivaldi-stable|kitty|alacritty|thunar|caja|code|mousepad|mupdf|blender|gimp|krita|telegram-desktop|kodi"] border pixel 1, focus
+for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 350, move absolute position 0 418
+for_window [window_role="demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 250, move absolute position 0 518
+
 
 ### --- Правила для вкладок/закладок окон. 
 ### --- Групируются в закладки на рабочих пространствах со 2-го по 9-ое.
