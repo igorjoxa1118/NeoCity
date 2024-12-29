@@ -11,14 +11,14 @@ include $i3_configd/fonts
 include $i3_configd/keybinds
 include $i3_configd/rules
 
-
-# или new_window normal или new_window none
-new_window pixel 1
-# или new_float normal new_float none
-new_float pixel 1
+#default_border normal|none|pixel <px>
+default_border pixel 1
+#default_floating_border normal|none|pixel <px>
+default_floating_border pixel 1
 
 ### --- Этот параметр реагирует на рамки всех окон. Так же есть параметр hide_edge_borders both
 hide_edge_borders smart
+
 
 # smart_gaps on
 smart_borders on

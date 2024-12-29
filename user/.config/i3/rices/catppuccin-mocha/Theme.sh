@@ -114,6 +114,15 @@ tabbed_path=""$HOME"/.config/i3/rices/$RICETHEME/tabbed/colors"
 }
 tabbed_settings
 
+xresources_color() {
+	if [ -f "$HOME/.Xresources.d/colors" ]; then
+	 echo '' >  "$HOME/.Xresources.d/colors"
+	 cat "$HOME/.Xresources.d/themes/$RICETHEME" > "$HOME/.Xresources.d/colors"
+	 xrdb  ~/.Xresources
+	fi
+}
+xresources_color
+
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
