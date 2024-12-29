@@ -33,7 +33,7 @@ WHITE='\033[1;37m'
 ##-----------------
 
 date=$(date +%Y%m%d-%H%M%S)
-repo_url="https://github.com/igorjoxa1118/NeoCity"
+repo_url="https://github.com/igorjoxa1118/NeoCity.git"
 paru_url="https://aur.archlinux.org/paru-bin.git"
 home_dir=$HOME
 current_dir=$(pwd)
@@ -42,22 +42,16 @@ current_dir=$(pwd)
 #--Logo
 ##-----------------
 
-logo () {
-	
-	local text="${1:?}"
-	echo -en "                                  
-____   ____.__        _______  .__    .___     .___      __    _____.__.__                  
-\   \ /   /|__|______ \   _  \ |__| __| _/   __| _/_____/  |__/ ____\__|  |   ____   ______ 
- \   Y   / |  \_  __ \/  /_\  \|  |/ __ |   / __ |/  _ \   __\   __\|  |  | _/ __ \ /  ___/ 
-  \     /  |  ||  | \/\  \_/   \  / /_/ |  / /_/ (  <_> )  |  |  |  |  |  |_\  ___/ \___ \  
-   \___/   |__||__|    \_____  /__\____ |  \____ |\____/|__|  |__|  |__|____/\___  >____  > 
-                             \/        \/       \/                               \/     \/  
-                  _____              .__________                                            
-                _/ ____\___________  |__\_____  \_  _  _______                              
-                \   __\/  _ \_  __ \ |  | _(__  < \/ \/ /     \                             
-                 |  | (  <_> )  | \/ |  |/       \     /  Y Y  \                            
-                 |__|  \____/|__|    |__/______  /\/\_/|__|_|  /                            
-                                               \/            \/                             \n"
+logo_install () {
+	echo -en "${PURPLE}                                  
+ __ __  ____  ____   ___   _____     ____   ____    __  __  _   ____   ____    ___  _____     ____  ____   _____ ______   ____  _      _     
+|  |  ||    ||    \ /   \ / ___/    |    \ /    |  /  ]|  |/ ] /    | /    |  /  _]/ ___/    |    ||    \ / ___/|      | /    || |    | |    
+|  |  | |  | |  D  )     (   \_     |  o  )  o  | /  / |  ' / |  o  ||   __| /  [_(   \_      |  | |  _  (   \_ |      ||  o  || |    | |    
+|  |  | |  | |    /|  O  |\__  |    |   _/|     |/  /  |    \ |     ||  |  ||    _]\__  |     |  | |  |  |\__  ||_|  |_||     || |___ | |___ 
+|  :  | |  | |    \|     |/  \ |    |  |  |  _  /   \_ |     \|  _  ||  |_ ||   [_ /  \ |     |  | |  |  |/  \ |  |  |  |  _  ||     ||     |
+ \   /  |  | |  .  \     |\    |    |  |  |  |  \     ||  .  ||  |  ||     ||     |\    |     |  | |  |  |\    |  |  |  |  |  ||     ||     |
+  \_/  |____||__|\_|\___/  \___|    |__|  |__|__|\____||__|\_||__|__||___,_||_____| \___|    |____||__|__| \___|  |__|  |__|__||_____||_____|
+                                                                                                                                             \n"
     printf ' %s [%s%s %s%s %s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${text}" "${CNC}" "${CRE}" "${CNC}"
 }
 
@@ -70,8 +64,8 @@ fi
 
 ########## ---------- Приветики пистолетики =) ---------- ##########
 
-logo "Welcome!"
-printf '%s%s Please launch and close Firefox if you have it. Otherwise, the Firefox theme wont install the first time.\nThis script checks to see if you have the necessary requirements, and if not, it will install them.%s\n\n' "${BLD}" "${CRE}" "${CNC}"
+logo_install
+printf '%s%s This script checks to see if you have the necessary requirements, and if not, it will install them.%s\n\n' "${BLD}" "${CRE}" "${CNC}"
 
 while true; do
 	read -rp "Do you wish to continue? [y/N]: " yn
@@ -103,32 +97,9 @@ dependencias=(base-devel alacritty brightnessctl dunst bottom imagemagick \
               yazi unarchiver xarchiver ffmpeg poppler fd ripgrep zoxide)
 
 
+
 dependencias_paru=(cava tor-browser-bin ymuse-git zscroll-git eww-git musnify-mpd gnome-icon-theme catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
                   zenity-gtk3 i3lock-color gdown pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
-
-pipewire_pkg=(gst-plugin-pipewire libpipewire libwireplumber pipewire pipewire-alsa \
-              pipewire-audio pipewire-jack pipewire-pulse pipewire-v4l2 pipewire-x11-bell \
-              pipewire-zeroconf qemu-audio-pipewire wireplumber lib32-libpipewire \
-              multilib/lib32-pipewire lib32-pipewire-jack)
-
-pipewire_pkg_yay=(pipewire-support)
-
-if [ ! -f /usr/bin/firefox ]; then 
- sudo pacman -S firefox --noconfirm
- printf "%s%sStart Firefox manualy!...%s\n" "${BLD}" "${CBL}" "${CNC}" 
- exit;
-fi
-
-if [ -f /usr/bin/zenity ]; then
-  sudo pacman -Rdd zenity --noconfirm
-elif [ -f /usr/bin/i3lock ]; then
-  sudo pacman -Rdd i3lock --noconfirm
-fi
-
-if [ -f /usr/bin/lxappearance ]; then
-  sudo pacman -R lxappearance --noconfirm
-  sudo pacman -S lxappearance-gtk3 --noconfirm
-fi
 
 is_installed() {
   pacman -Qi "$1" &> /dev/null
@@ -151,18 +122,20 @@ done
 sleep 2
 clear
 
-########## ---------- Проверка существование домашних каталогов ---------- ##########
-
-# Проверка того, что архив user-dirs.dirs не существует в ~/.config
-	if [ ! -e "$home_dir/.config/user-dirs.dirs" ]; then
-		xdg-user-dirs-update
-		echo -e "${LIGHTBLUE}Creating xdg-user-dirs"
-	fi
-sleep 2 
-clear
-
 ########## ---------- Установка paru---------- ##########
-logo "Do you have paru? Install it?"
+logo_paru () {
+	echo -en "${ORANGE}                                  
+ ____   ____  ____  __ __      ____  ____   _____ ______   ____  _      _     
+|    \ /    ||    \|  |  |    |    ||    \ / ___/|      | /    || |    | |    
+|  o  )  o  ||  D  )  |  |     |  | |  _  (   \_ |      ||  o  || |    | |    
+|   _/|     ||    /|  |  |     |  | |  |  |\__  ||_|  |_||     || |___ | |___ 
+|  |  |  _  ||    \|  :  |     |  | |  |  |/  \ |  |  |  |  _  ||     ||     |
+|  |  |  |  ||  .  \     |     |  | |  |  |\    |  |  |  |  |  ||     ||     |
+|__|  |__|__||__|\_|\__,_|    |____||__|__| \___|  |__|  |__|__||_____||_____|
+                                                                              \n"
+    printf ' %s [%s%s %s%s %s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${text}" "${CNC}" "${CRE}" "${CNC}"
+}
+logo_paru
 
 clone_paru() {
 # Installing Paru
@@ -171,9 +144,9 @@ if command -v paru >/dev/null 2>&1; then
 else
     printf "%s%sInstalling paru%s\n" "${BLD}" "${CBL}" "${CNC}"
     {
-        cd "$home_dir" || exit
+        cd "$HOME" || exit
         git clone $paru_url
-        cd paru-bin || exit
+        cd $HOME/paru || exit
         makepkg -si --noconfirm
         } || {
         printf "\n%s%sFailed to install Paru. You may need to install it manually%s\n" "${BLD}" "${CRE}" "${CNC}"
@@ -212,25 +185,20 @@ done
 sleep 2
 clear
 
-function pipewire_func() {
- if [ -f /usr/bin/pulseaudio ]; then
-  sudo pacman -Rdd pulseaudio pulseaudio-bluetooth pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack pulseaudio-lirc pulseaudio-zeroconf --noconfirm
- elif [ ! -f /usr/bin/pipewire ]; then
-  sudo pacman -S "${pipewire_pkg[@]}" --noconfirm
-  paru -S "${pipewire_pkg_yay[@]}" --noconfirm
- else 
-  echo -e "${ORANGE}Somthing wrong!!"
- fi
+logo_all_done () {
+	echo -en "${GREEN}                                  
+  ____  _      _          ____ _____     ___     ___   ____     ___  __ 
+ /    || |    | |        |    / ___/    |   \   /   \ |    \   /  _]|  |
+|  o  || |    | |         |  (   \_     |    \ |     ||  _  | /  [_ |  |
+|     || |___ | |___      |  |\__  |    |  D  ||  O  ||  |  ||    _]|__|
+|  _  ||     ||     |     |  |/  \ |    |     ||     ||  |  ||   [_  __ 
+|  |  ||     ||     |     |  |\    |    |     ||     ||  |  ||     ||  |
+|__|__||_____||_____|    |____|\___|    |_____| \___/ |__|__||_____||__|
+                                                                        \n"
+    printf ' %s [%s%s %s%s %s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${text}" "${CNC}" "${CRE}" "${CNC}"
 }
-
-while true; do
-	read -rp "Do you want Pipewire? [y/N]: " yn
-		case $yn in
-			[Yy]* ) pipewire_func && break;;
-			[Nn]* ) break;;
-			* ) printf " Error: just write 'y' or 'n'\n\n";;
-		esac
-    done
+logo_all_done
+sleep 2
 clear
 
 ########## ---------- Резервная копия файлов и каталогов ---------- ##########
@@ -239,13 +207,13 @@ logo "Backup files"
   echo -e "${CYAN}Backup files will be stored in .Backup_files"
   rsync -aAEHSXxr --exclude=".cache/mozilla/*" ~/.[^.]* $backup_folder
   echo -e "${ORANGE}Done!!"
-sleep 2
 
 
 for del in polybar rofi picom.conf; do
    rm -rf ~/.config/$del
    echo -e "${YELLOW}$del deleted"
 done
+sleep 2
 clear
 
 ########## ---------- Установка dot-файлов ---------- ##########
@@ -254,7 +222,6 @@ func_install_dots() {
 cp -rf "$current_dir"/user/.* "$home_dir"
 sudo cp -rf "$current_dir"/grub_themes/catppuccin-mocha-grub-theme /usr/share/grub/themes/
 echo -e "${GRE}Copy dots succesfully!"
-sleep 2
   if [ -d $current_dir/pkgs_virOS ]; then
     echo "${CYAN}Folder exist"
   else
@@ -262,11 +229,11 @@ sleep 2
     if [ ! -d $current_dir/pkgs_virOS ]; then
     gdown --folder 19SlCmblUJts_I5dlAwd2C3tq7q2-wLbS
     echo -e "${GRE}Packages in system!"
-    sleep 2
     sudo rm -rf /usr/share/icons/*
     sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
     fi
   fi
+sleep 2
 clear
 
 ##-------------------
@@ -291,6 +258,7 @@ fi
 func_install_dots
 sleep 2
 clear
+
 ### --- Сканирование шрифтов
 fc-cache -fv
 ### --- Делает Thunar двухпанельным
@@ -299,7 +267,6 @@ clear
 
 ### --- Установка SDDM --- ###
 logo "Install SDDM"
-sleep 2
 
 if [ -f /usr/bin/lightdm ]; then
    sudo systemctl disable lightdm.service
@@ -322,6 +289,7 @@ fi
 if [ -d /etc/lightdm ]; then
   sudo rm -rf /etc/lightdm
 fi
+sleep 2
 clear
 
 ##-------------------
