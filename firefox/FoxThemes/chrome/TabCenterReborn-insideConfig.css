@@ -1,30 +1,30 @@
 :root {
     --tab-separator: transparent;
     --tab-selected-line: transparent;
-    --tablist-separator: #cccccc;
-    --overflow-indicator-border: #333333; }
+    --tablist-separator: #bac2de;
+    --overflow-indicator-border: #11111B; }
 
 @media (prefers-color-scheme: dark) { :root {
-        --background: #ff0000 !important;
-        --toolbar-bgcolor: #252836;
+        --background: #181825 !important;
+        --toolbar-bgcolor: #1E1E2E;
         --icons: rgb(251,251,254);
         --tab-separator: transparent;
-        --tab-active-background: rgb(66,65,77);
+        --tab-active-background: rgb(24,24,37);
         --tab-active-text: rgb(251,251,254);
         --tab-text: #fbfbfe;
-        --toolbar-background: rgb(43,42,51);
+        --toolbar-background: rgb(30,30,46);
         --toolbar-text: rgb(251, 251, 254);
         --input-background: rgb(28,27,34);
         --input-border: transparent;
-        --input-background-focus: rgb(66,65,77);
+        --input-background-focus: rgb(24,24,37);
         --input-selected-text: rgb(251,251,254);
         --input-text: rgb(251,251,254);
         --input-text-focus: rgb(251,251,254);
         --identity-color-toolbar: rgb(251,251,254);
-        --tablist-separator: #333333;
-        --overflow-indicator-border: #cccccc;
+        --tablist-separator: #11111B;
+        --overflow-indicator-border: #bac2de;
     }}
-@media (prefers-color-scheme: light) { :root { --lwt-frame-personal:  #ffffff; --toolbar-bgcolor: #ffffff; }}
+@media (prefers-color-scheme: light) { :root { --lwt-frame-personal:  #cdd6f4; --toolbar-bgcolor: #cdd6f4; }}
 
 /* fix autoscrolling bug when middle clicking */
 :root,
