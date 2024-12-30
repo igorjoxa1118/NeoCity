@@ -42,7 +42,7 @@ update_garuda() {
 }
 
 update_pacman() {
-    pacman -Syu
+    sudo pacman -Syu
 }
 
 case "$1" in

@@ -30,9 +30,6 @@ case "$1" in
     --update-paru)
         ~/.config/i3/src/Term --update-paru
         ;;
-    --update-pacman)
-        ~/.config/i3/src/Term --update-pacman
-        ;;
     --update)
         ~/.config/i3/src/Term --update
         ;;

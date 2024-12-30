@@ -23,6 +23,28 @@ raw_target = /dev/stdout
 data_format = ascii
 ascii_max_range = 7
 
+[input]
+
+ method = pulse
+ source = auto
+
+; method = pipewire
+; source = auto
+
+; method = alsa
+; source = hw:Loopback,1
+
+; method = fifo
+; source = /tmp/mpd.fifo
+; sample_rate = 44100
+; sample_bits = 16
+
+; method = shmem
+; source = /squeezelite-AA:BB:CC:DD:EE:FF
+
+; method = portaudio
+; source = auto
+
 [color]
 background = '#1e1e2e'
 

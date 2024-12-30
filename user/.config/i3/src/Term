@@ -46,7 +46,7 @@ case $MY_TERM in
                 alacritty --title floating
                 ;;
             "--update")
-                alacritty --hold --title floating -e ~/.config/i3/src/Updates --update-garuda
+                alacritty --hold --title floating -e ~/.config/i3/src/Updates --update-pacman
                 ;;
             "--checkupdates")
                 alacritty --hold -e ~/.config/i3/src/Updates --print-updates
@@ -83,7 +83,7 @@ case $MY_TERM in
                 kitty  --title floating
                 ;;
             "--update")
-                kitty --title floating --hold -e ~/.config/i3/src/Updates --update-garuda
+                kitty --title floating --hold -e ~/.config/i3/src/Updates --update-pacman
                 ;;
             "--checkupdates")
                 kitty --title floating --hold -e ~/.config/i3/src/Updates --print-updates
