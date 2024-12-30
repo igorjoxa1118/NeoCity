@@ -131,7 +131,7 @@ EOF
 
 # Set jgmenu colors for Melissa
 set_jgmenu_colors() {
-	sed -i "$HOME"/.config/i3/jgmenurc \
+	sed -i "$HOME"/.config/i3/config.d/jgmenurc \
 		-e 's/color_menu_bg = .*/color_menu_bg = #3b4252/' \
 		-e 's/color_norm_fg = .*/color_norm_fg = #d8dee9/' \
 		-e 's/color_sel_bg = .*/color_sel_bg = #353C4A/' \

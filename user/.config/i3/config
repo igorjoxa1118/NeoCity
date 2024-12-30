@@ -1,41 +1,25 @@
+# ____   ____                         #
+# \   \ /   /_____   _______   ______ #
+#  \   Y   / \__  \  \_  __ \ /  ___/ #
+#   \     /   / __ \_ |  | \/ \___ \  #
+#    \___/   (____  / |__|   /____  > #
+#                 \/              \/  #
+
 ### --- Переменные
 set $mod Mod4
 set $mod1 Mod1
 set $i3_scripts ~/.config/i3/src
 set $i3_configd ~/.config/i3/config.d
-
-### --- Подключение отдельных файлов конфигураций i3
-include $i3_configd/autostart
-include $i3_configd/colors
-include $i3_configd/fonts
-include $i3_configd/keybinds
-include $i3_configd/rules
-
-#default_border normal|none|pixel <px>
-default_border pixel 1
-#default_floating_border normal|none|pixel <px>
-default_floating_border pixel 1
-
-### --- Этот параметр реагирует на рамки всех окон. Так же есть параметр hide_edge_borders both
-hide_edge_borders smart
-
-
-# smart_gaps on
-smart_borders on
-
+set $bins ~/.bin
 set $default_gaps_inner 28
 set $default_gaps_outer 28
-gaps inner $default_gaps_inner
-gaps outer $default_gaps_outer
-
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $ws-right "$(( $( i3-msg -t get_workspaces | jq '.[] | select(.focused).num' ) + 1))";
 set $ws-left "$(( $( i3-msg -t get_workspaces | jq '.[] | select(.focused).num' ) - 1))";
-
-floating_modifier $mod
-
 ### --- Определение имен, для рабочих пространств по умолчанию/
-### --- Для которых существуют привязки клавиш в файле "$HOME/.config/i3/keybinds".
-
+### --- Для которых существуют привязки клавиш в файле "$HOME/.config/i3/config.d/keybinds".
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -46,3 +30,88 @@ set $ws7 7
 set $ws8 8
 set $ws9 9
 set $ws10 10
+### --- END
+
+# .___                 .__              .___         #
+# |   |  ____    ____  |  |   __ __   __| _/  ____   #
+# |   | /    \ _/ ___\ |  |  |  |  \ / __ | _/ __ \  #
+# |   ||   |  \\  \___ |  |__|  |  // /_/ | \  ___/  #
+# |___||___|  / \___  >|____/|____/ \____ |  \___  > #
+#           \/      \/                   \/      \/  #
+### --- Подключение отдельных файлов конфигураций i3
+include $i3_configd/autostart
+include $i3_configd/colors
+include $i3_configd/fonts
+include $i3_configd/keybinds
+include $i3_configd/rules
+### --- END
+
+# _________                    _____ .__                   #
+# \_   ___ \   ____    ____  _/ ____\|__|   ____    ______ #
+# /    \  \/  /  _ \  /    \ \   __\ |  |  / ___\  /  ___/ #
+# \     \____(  <_> )|   |  \ |  |   |  | / /_/  > \___ \  #
+#  \______  / \____/ |___|  / |__|   |__| \___  / /____  > #
+#         \/              \/             /_____/       \/  #
+
+#default_border normal|none|pixel <px>
+default_border pixel 1
+#default_floating_border normal|none|pixel <px>
+default_floating_border pixel 1
+
+### --- Этот параметр реагирует на рамки всех окон. Так же есть параметр hide_edge_borders both
+hide_edge_borders smart
+
+# smart_gaps on
+smart_borders on
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
+floating_modifier $mod
+
+### --- «Режим редактирование отступов»
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+### --- «Режим растягивания окон. «Изменение размера окна».
+mode "resize" {
+	# Эти привязки срабатывают, как только вы входите в режим «Изменение размера окна».
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
+	
+	# back to normal: Enter or Escape or $MOD+r
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+Ctrl+r mode "default"
+}
+
+### --- END

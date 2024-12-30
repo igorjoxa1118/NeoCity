@@ -131,7 +131,7 @@ EOF
 
 # Set jgmenu colors for Jan
 set_jgmenu_colors() {
-	sed -i "$HOME"/.config/i3/jgmenurc \
+	sed -i "$HOME"/.config/i3/config.d/jgmenurc \
 		-e 's/color_menu_bg = .*/color_menu_bg = #212a4c/' \
 		-e 's/color_norm_fg = .*/color_norm_fg = #4DD0E1/' \
 		-e 's/color_sel_bg = .*/color_sel_bg = #09021f/' \

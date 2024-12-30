@@ -130,7 +130,7 @@ EOF
 
 # Set jgmenu colors for Aline
 set_jgmenu_colors() {
-	sed -i "$HOME"/.config/i3/jgmenurc \
+	sed -i "$HOME"/.config/i3/config.d/jgmenurc \
 		-e 's/color_menu_bg = .*/color_menu_bg = #faf4ed/' \
 		-e 's/color_norm_fg = .*/color_norm_fg = #575279/' \
 		-e 's/color_sel_bg = .*/color_sel_bg = #f2e9e1/' \

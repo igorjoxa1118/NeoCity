@@ -131,7 +131,7 @@ EOF
 
 # Set jgmenu colors for Brenda
 set_jgmenu_colors() {
-	sed -i "$HOME"/.config/i3/jgmenurc \
+	sed -i "$HOME"/.config/i3/config.d/jgmenurc \
 		-e 's/color_menu_bg = .*/color_menu_bg = #2d353b/' \
 		-e 's/color_norm_fg = .*/color_norm_fg = #d3c6aa/' \
 		-e 's/color_sel_bg = .*/color_sel_bg = #475258/' \

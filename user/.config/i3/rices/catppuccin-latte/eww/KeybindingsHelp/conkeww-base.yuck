@@ -3,15 +3,15 @@
        :orientation 'v'
        :space-evenly false
        :spacing 0
-       :style "background-color: ${bg};
-               color: ${fg};
-               border-color: ${bg_borders}"
+       :style "background-color: ${base};
+               color: ${subtext1};
+               border-color: ${crust}"
 
     (label :class "title"
            :halign "center"
            :style "
                   background-color: ${color};
-                  color: ${bg};
+                  color: ${base};
 
                   ${ title != ''
                   ? 
@@ -37,10 +37,10 @@
        :space-evenly false
        :spacing spacing
     (conkeww-pane__text__entry :text {replace(text, "( )+===( )+.+", "")}
-                               :color color
+                               :color pink
                                :css key-css)
     (conkeww-pane__text__entry :text {replace(text, ".+( )+===( )+", "")}
-                               :color color
+                               :color mauve
                                :css value-css)
     )
   )

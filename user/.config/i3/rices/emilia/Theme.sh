@@ -195,7 +195,7 @@ EOF
 
 set_launchers() {
 	# Jgmenu
-	sed -i "$HOME"/.config/i3/jgmenurc \
+	sed -i "$HOME"/.config/i3/config.d/jgmenurc \
 		-e "s/color_menu_bg = .*/color_menu_bg = ${bg}/" \
 		-e "s/color_norm_fg = .*/color_norm_fg = ${fg}/" \
 		-e "s/color_sel_bg = .*/color_sel_bg = #222330/" \

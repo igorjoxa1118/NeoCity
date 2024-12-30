@@ -1,3 +1,10 @@
+# _________          .__                            #
+# \_   ___ \   ____  |  |    ____  _______   ______ #
+# /    \  \/  /  _ \ |  |   /  _ \ \_  __ \ /  ___/ #
+# \     \____(  <_> )|  |__(  <_> ) |  | \/ \___ \  #
+#  \______  / \____/ |____/ \____/  |__|   /____  > #
+#         \/                                    \/  #
+
 ### --- catppuccin-mocha
 
 # target                 title     bg    text   indicator  border
@@ -7,3 +14,5 @@ client.unfocused         #6c7086 #1e1e2e #cdd6f4  #f5e0dc  #6c7086
 client.urgent            #fab387 #1e1e2e #fab387  #6c7086  #fab387
 client.placeholder       #6c7086 #1e1e2e #cdd6f4  #6c7086  #6c7086
 client.background        #1e1e2e
+
+### --- END

@@ -17,7 +17,7 @@ s/, / /g'`)
        :spacing 10
 
     (conkeww-pane :title "Welcome"
-                  :color magenta
+                  :color maroon
                   :spacing 69 
                   :value-css "font-weight: 700; color: ==color=="
                   :text 
@@ -40,9 +40,9 @@ Win+Alt+Z       === Join Wandow Tabs
 Win+Alt+T       === Select Terminal
 Win+Alt+W       === Select Wallpapers
 Win+Alt+P       === Toggle Picom
+Win+Alt+U       === Check Updates
 Alt+C           === Thunar
 Alt+F           === Firefox
-Alt+J           === Check Updates
 Alt+L           === Lock Screen
 Alt+P           === MPD Player
 Alt+T           === Float Terminal

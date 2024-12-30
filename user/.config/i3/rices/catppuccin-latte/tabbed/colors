@@ -1,3 +1,10 @@
+# _________          .__                            #
+# \_   ___ \   ____  |  |    ____  _______   ______ #
+# /    \  \/  /  _ \ |  |   /  _ \ \_  __ \ /  ___/ #
+# \     \____(  <_> )|  |__(  <_> ) |  | \/ \___ \  #
+#  \______  / \____/ |____/ \____/  |__|   /____  > #
+#         \/                                    \/  #
+
 ### --- catppuccin-latte
 
 # target                 title     bg    text   indicator  border
@@ -7,3 +14,5 @@ client.unfocused         #9ca0b0 #eff1f5 #4c4f69  #dc8a78  #9ca0b0
 client.urgent            #fe640b #eff1f5 #fe640b  #9ca0b0  #fe640b
 client.placeholder       #9ca0b0 #eff1f5 #4c4f69  #9ca0b0  #9ca0b0
 client.background        #eff1f5
+
+### --- END

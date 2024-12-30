@@ -131,7 +131,7 @@ EOF
 
 # Set jgmenu colors for Marisol
 set_jgmenu_colors() {
-	sed -i "$HOME"/.config/i3/jgmenurc \
+	sed -i "$HOME"/.config/i3/config.d/jgmenurc \
 		-e 's/color_menu_bg = .*/color_menu_bg = #4c566a/' \
 		-e 's/color_norm_fg = .*/color_norm_fg = #f8f8f2/' \
 		-e 's/color_sel_bg = .*/color_sel_bg = #4c566a/' \
