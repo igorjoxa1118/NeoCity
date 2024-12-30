@@ -11,29 +11,19 @@ CBL=$(tput setaf 4)
 BLD=$(tput bold)
 CNC=$(tput sgr0)
 
-NOCOLOR='\033[0m'
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 ORANGE='\033[0;33m'
-BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
-LIGHTGRAY='\033[0;37m'
-DARKGRAY='\033[1;30m'
-LIGHTRED='\033[1;31m'
-LIGHTGREEN='\033[1;32m'
 YELLOW='\033[1;33m'
 LIGHTBLUE='\033[1;34m'
-LIGHTPURPLE='\033[1;35m'
 LIGHTCYAN='\033[1;36m'
-WHITE='\033[1;37m'
 
 ##-----------------
 #---Vars
 ##-----------------
 
-date=$(date +%Y%m%d-%H%M%S)
-repo_url="https://github.com/igorjoxa1118/NeoCity.git"
 paru_url="https://aur.archlinux.org/paru-bin.git"
 home_dir=$HOME
 current_dir=$(pwd)
@@ -53,7 +43,7 @@ logo_install () {
  \   /  |  | |  .  \     |\    |    |  |  |  |  \     ||  .  ||  |  ||     ||     |\    |     |  | |  |  |\    |  |  |  |  |  ||     ||     |
   \_/  |____||__|\_|\___/  \___|    |__|  |__|__|\____||__|\_||__|__||___,_||_____| \___|    |____||__|__| \___|  |__|  |__|__||_____||_____|
                                                                                                                                              \n"
-    printf ' %s [%s%s %s%s %s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${text}" "${CNC}" "${CRE}" "${CNC}"
+    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
 }
 
 ########## ---------- Скрипт должен быть запущен от sudo ---------- ##########
@@ -134,7 +124,7 @@ logo_paru () {
 |  |  |  |  ||  .  \     |     |  | |  |  |\    |  |  |  |  |  ||     ||     |
 |__|  |__|__||__|\_|\__,_|    |____||__|__| \___|  |__|  |__|__||_____||_____|
                                                                               \n"
-    printf ' %s [%s%s %s%s %s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${text}" "${CNC}" "${CRE}" "${CNC}"
+    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
 }
 logo_paru
 
@@ -147,7 +137,7 @@ else
     {
         cd "$HOME" || exit
         git clone $paru_url
-        cd $HOME/paru-bin || exit
+        cd "$HOME"/paru-bin || exit
         makepkg -si --noconfirm
         } || {
         printf "\n%s%sFailed to install Paru. You may need to install it manually%s\n" "${BLD}" "${CRE}" "${CNC}"
@@ -196,7 +186,7 @@ logo_all_done () {
 |  |  ||     ||     |     |  |\    |    |     ||     ||  |  ||     ||  |
 |__|__||_____||_____|    |____|\___|    |_____| \___/ |__|__||_____||__|
                                                                         \n"
-    printf ' %s [%s%s %s%s %s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${text}" "${CNC}" "${CRE}" "${CNC}"
+    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
 }
 logo_all_done
 sleep 2
@@ -218,20 +208,24 @@ sleep 2
 ########## ---------- Установка dot-файлов ---------- ##########
 func_install_dots() {
 cp -rf "$current_dir"/user/.* "$home_dir"
+if [ ! -d /usr/share/grub/themes/catppuccin-mocha-grub-theme ]; then
 sudo cp -rf "$current_dir"/grub_themes/catppuccin-mocha-grub-theme /usr/share/grub/themes/
+fi
 echo -e "${GRE}Copy dots succesfully!"
-  if [ -d $current_dir/pkgs_virOS ]; then
+
+  if [ -d "$current_dir"/pkgs_virOS ]; then
     echo "${CYAN}Folder exist"
   else
-    cd $current_dir
-    if [ ! -d $current_dir/pkgs_virOS ]; then
+    cd "$current_dir || exit" || exit
+    if [ ! -d "$current_dir/pkgs_virOS" ]; then
     gdown --folder 19SlCmblUJts_I5dlAwd2C3tq7q2-wLbS
     echo -e "${GRE}Packages in system!"
     sudo rm -rf /usr/share/icons/*
-    sudo pacman -U $current_dir/pkgs_virOS/*.zst --noconfirm
+    sudo pacman -U "$current_dir"/pkgs_virOS/*.zst --noconfirm
     fi
   fi
 sleep 2
+}
 
 ##-------------------
 #--Install bin files
@@ -256,14 +250,14 @@ if [ -f /usr/bin/lightdm ]; then
 fi
 
 if [ -d /etc/sddm.conf.d/ ]; then
-   sudo cp -rf $current_dir/sddm/sddm.conf.d /etc/
-   sudo cp -rf $current_dir/sddm/catppuccin-mocha /usr/share/sddm/themes
+   sudo cp -rf "$current_dir"/sddm/sddm.conf.d /etc/
+   sudo cp -rf "$current_dir"/sddm/catppuccin-mocha /usr/share/sddm/themes
    sudo systemctl enable sddm.service
    echo -e "${LIGHTCYAN}Done!"
  else 
    sudo pacman -S sddm --noconfirm
-   sudo cp -rf $current_dir/sddm/sddm.conf.d /etc/
-   sudo cp -rf $current_dir/sddm/catppuccin-mocha /usr/share/sddm/themes
+   sudo cp -rf "$current_dir"/sddm/sddm.conf.d /etc/
+   sudo cp -rf "$current_dir"/sddm/catppuccin-mocha /usr/share/sddm/themes
    sudo systemctl enable sddm.service
    echo -e "${LIGHTCYAN}Done!"
 fi
@@ -278,19 +272,19 @@ sleep 2
 ##-------------------
 GRUB_THEME_DIR="/usr/share/grub/themes"
 grub_theme="catppuccin-mocha-grub-theme"
-    if grep "GRUB_THEME=" /etc/default/grub 2>&1 >/dev/null; then
+    if grep "GRUB_THEME=" /etc/default/grub cmd >/dev/null; then
       #Replace GRUB_THEME
       sudo sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"|" /etc/default/grub
       sudo grub-mkconfig -o /boot/grub/grub.cfg
     else
       #Append GRUB_THEME
-      sudo echo "GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"" >> /etc/default/grub
+      echo "GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"" | sudo tee /etc/default/grub
       sudo grub-mkconfig -o /boot/grub/grub.cfg
     fi
 
 ### --- Установка темы и конфигов Firefox --- ###
 copy_ff_func() {
-  cp -R $current_dir/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH"
+  cp -R "$current_dir"/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH"
   echo -e "${GREEN}Firefox theme installed"
   sleep 2
 }
@@ -312,7 +306,7 @@ fi
 sleep 2
 
 #### ------- Проверка видеокарты. Если карта отсутствует, то модули на polybar будут другие --- ###
-nvidia_detect() {
+  scrDir="$(dirname "$(realpath "$0")")"
     readarray -t dGPU < <(lspci -k | grep -E "(VGA|3D)" | awk -F ': ' '{print $NF}')
     if [ "${1}" == "--verbose" ]; then
         for indx in "${!dGPU[@]}"; do
@@ -337,14 +331,11 @@ nvidia_detect() {
         cp -R config.ini "$home_dir/.config/i3/rices/catppuccin-mocha/"
         echo -e "${CYAN}Nvidia card NOT found!"
     fi
-}
-
-nvidia_detect
 sleep 2
 
 ### --- Добавление пользователя в группы вирутальных машин. --- ###
 echo -e "${ORANGE}Enabling Groups"
-    sudo usermod -a -G libvirt $(whoami)
+    sudo usermod -a -G libvirt "$(whoami)"
     newgrp libvirt
 echo -e "${ORANGE}Done!"
 sleep 2
