@@ -375,6 +375,39 @@ echo -e "${ORANGE}Done!"
 sleep 2
 clear
 
+
+logo "Enabling mpd service"
+
+	if systemctl is-enabled --quiet mpd.service; then
+        printf "%s%sDisabling and stopping the global mpd service%s\n" "${BLD}" "${CBL}" "${CNC}"
+
+        if sudo systemctl disable --now mpd.service >/dev/null 2> >(tee -a "$ERROR_LOG"); then
+            sleep 1
+            printf "\n%s[%sOK%s%s]%s Global MPD service disabled successfully\n\n" \
+                   "${BLD}" "${CGR}" "${CNC}" "${BLD}" "${CNC}"
+        else
+            sleep 1
+            printf "%s[%sError%s%s] Please check %sRiceError.log%s for details\n\n" \
+               "${BLD}" "${CRE}" "${CNC}" "${BLD}" "${CYE}" "${CNC}"
+            log_error "Failed to disable global MPD service"
+		fi
+	fi
+
+    printf "%s%sEnabling and starting the user-level mpd service%s\n\n" "${BLD}" "${CBL}" "${CNC}"
+
+    if systemctl --user enable --now mpd.service >/dev/null 2> >(tee -a "$ERROR_LOG"); then
+        sleep 1
+        printf "%s[%sOK%s%s]%s User-level MPD service enabled successfully\n\n" \
+               "${BLD}" "${CGR}" "${CNC}" "${BLD}" "${CNC}"
+    else
+        sleep 1
+        printf "%s[%sError%s%s] Please check %sRiceError.log%s for details\n\n" \
+               "${BLD}" "${CRE}" "${CNC}" "${BLD}" "${CYE}" "${CNC}"
+        log_error "Failed to enable user-level MPD service"
+    fi
+sleep 3
+clear
+
 ########## --------- Замена шелла на zsh ---------- ##########
 logo "Changing default shell to zsh"
 	if [[ $SHELL != "/usr/bin/zsh" ]]; then
