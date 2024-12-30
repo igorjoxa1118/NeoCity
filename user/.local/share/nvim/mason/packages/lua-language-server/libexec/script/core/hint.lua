@@ -59,7 +59,7 @@ local function typeHint(uri, results, start, finish)
         end
         mark[src] = true
         results[#results+1] = {
-            text   = ':' .. view,
+            text   = ': ' .. view,
             offset = src.finish,
             kind   = define.InlayHintKind.Type,
             where  = 'right',
@@ -274,7 +274,7 @@ local blockTypes = {
 }
 
 ---@async
-local function semicolonHint(uri, results, start, finish)
+local function semicolonHint(uri, results, _start, _finish)
     local state = files.getState(uri)
     if not state then
         return
@@ -287,6 +287,8 @@ local function semicolonHint(uri, results, start, finish)
     ---@async
     guide.eachSourceTypes(state.ast, blockTypes, function (src)
         await.delay()
+        if #src < 1 then return end
+
         for i = 1, #src - 1 do
             local current = src[i]
             local next    = src[i+1]
@@ -313,6 +315,7 @@ local function semicolonHint(uri, results, start, finish)
                 end
             end
         end
+
         if mode == 'All' then
             local last = src[#src]
             results[#results+1] = {

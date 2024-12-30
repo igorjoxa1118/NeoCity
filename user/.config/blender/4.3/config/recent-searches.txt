@@ -5,20 +5,16 @@ Vector ▸ Bump
    Snezinka
    Colision_obj
 Grease Pencil ▸ Object Line Art
-Converter ▸ Mix
-Texture ▸ Wave Texture
 Shader ▸ Emission
    Material.001
    Ru4ki_wkafa
    Ru4ka_dveri
    photo_2024-12-14_19-44-44.jpg
-   glass
    1625929779_51-kartinkin-com-p-tekstura-uzor-krasivo-56.jpg
    Render Result
    Viewer Node
    WhatsApp Video 2024-12-14 at 19.22.20.mp4
 Input ▸ Value
-Shader ▸ Translucent BSDF
    Leavs_gorshok
    Branches_gorshok
    plastik
@@ -32,27 +28,15 @@ Color ▸ Brightness/Contrast
 Converter ▸ Shader to RGB
 Texture ▸ Voronoi Texture
    snow 1
-Shader ▸ Glossy BSDF
-Shader ▸ Transparent BSDF
-Input ▸ Fresnel
-Shader ▸ Mix Shader
    Material.002
-Output ▸ Viewer
-Transform ▸ Lens Distortion
 Input ▸ Object Info
 
 Color ▸ Adjust ▸ Hue Correct
 Color ▸ Adjust ▸ Hue/Saturation/Value
 Shader ▸ Principled Volume
-Texture ▸ Noise Texture
    volume
    Material.003
-Shader ▸ Principled BSDF
-Converter ▸ Separate XYZ
-Color ▸ Mix Color
-Converter ▸ Color Ramp
 Color ▸ Adjust ▸ Color Balance
-Converter ▸ Math
 Color ▸ Hue/Saturation/Value
 Texture ▸ Image Texture
    snowflake.svg
@@ -61,7 +45,37 @@ Layer
 Input ▸ Scene ▸ Render Layers
   Icosphere
 Color ▸ Adjust ▸ Color Correction
-Filter ▸ Glare
 Input ▸ Image
-Color ▸ Mix ▸ Mix Color
 Utilities ▸ Normalize
+ 0 SVGMat.001
+   Material
+Output ▸ Viewer
+Glare ▸ Image
+Color ▸ Mix ▸ Mix Color
+Shader ▸ Principled BSDF
+Converter ▸ Mix
+Transform ▸ Lens Distortion
+   SVGMat.002
+   SVGMat.011
+   SVGMat.012
+Converter ▸ Separate XYZ
+   Polosi
+Texture ▸ Noise Texture
+Converter ▸ Vector Math
+Converter ▸ Math
+Texture ▸ Wave Texture
+Color ▸ Mix Color
+   SVGMat.003
+   SVGMat.006
+   SVGMat.005
+   SVGMat.008
+   SVGMat.007
+   SVGMat.004
+Shader ▸ Translucent BSDF
+Shader ▸ Glossy BSDF
+Shader ▸ Transparent BSDF
+Shader ▸ Mix Shader
+Converter ▸ Color Ramp
+Input ▸ Fresnel
+Filter ▸ Glare
+   glass

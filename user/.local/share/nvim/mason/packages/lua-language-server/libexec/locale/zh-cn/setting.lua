@@ -2,6 +2,10 @@
 
 config.addonManager.enable        =
 "是否启用扩展的附加插件管理器(Addon Manager)"
+config.addonManager.repositoryBranch =
+"指定插件管理器(Addon Manager)使用的git仓库分支"
+config.addonManager.repositoryPath =
+"指定插件管理器(Addon Manager)使用的git仓库路径"
 config.runtime.version            =
 "Lua运行版本。"
 config.runtime.path               =
@@ -28,8 +32,8 @@ config.runtime.nonstandardSymbol  =
 "支持非标准的符号。请务必确认你的运行环境支持这些符号。"
 config.runtime.plugin             =
 "插件路径，请查阅[文档](https://luals.github.io/wiki/plugins)了解用法。"
-config.runtime.pluginArgs         = -- TODO: need translate!
-"Additional arguments for the plugin."
+config.runtime.pluginArgs         =
+"插件的额外参数。"
 config.runtime.fileEncoding       =
 "文件编码，`ansi` 选项只在 `Windows` 平台下有效。"
 config.runtime.builtin            =
@@ -48,8 +52,8 @@ config.diagnostics.disable        =
 "禁用的诊断（使用浮框括号内的代码）。"
 config.diagnostics.globals        =
 "已定义的全局变量。"
-config.diagnostics.globalsRegex   = -- TODO: need translate!
-"Find defined global variables using regex."
+config.diagnostics.globalsRegex   =
+"启用诊断以检测尝试关闭非对象的变量。"
 config.diagnostics.severity       =
 [[
 修改诊断等级。
@@ -251,6 +255,8 @@ config.hint.arrayIndex.Disable           =
 '禁用数组索引提示。'
 config.hint.await                        =
 '如果调用的函数被标记为了 `---@async` ，则在调用处提示 `await` 。'
+config.hint.awaitPropagate               =
+'启用 `await` 的传播, 当一个函数调用了一个`---@async`标记的函数时，会自动标记为`---@async`。'
 config.hint.semicolon                    =
 '若语句尾部没有分号，则显示虚拟分号。'
 config.hint.semicolon.All                =
@@ -280,6 +286,10 @@ config.misc.parameters                   =
 'VSCode中启动语言服务时的[命令行参数](https://luals.github.io/wiki/usage#arguments)。'
 config.misc.executablePath               =
 'VSCode中指定可执行文件路径。'
+config.language.fixIndent                =
+'(仅VSCode) 修复错误的自动缩进，例如在包含单词 "function" 的字符串中换行时出现的错误缩进。'
+config.language.completeAnnotation       =
+'(仅VSCode) 在注解后换行时自动插入 "---@ "。'
 config.type.castNumberToInteger          =
 '允许将 `number` 类型赋给 `integer` 类型。'
 config.type.weakUnionCheck               =
@@ -299,6 +309,10 @@ config.type.inferParamType               =
 未注释参数类型时，参数类型由函数传入参数推断。
 
 如果设置为 "false"，则在未注释时，参数类型为 "any"。
+]]
+config.type.checkTableShape              =
+[[
+对表的形状进行严格检查。
 ]]
 config.doc.privateName                   =
 '将特定名称的字段视为私有，例如 `m_*` 意味着 `XXX.m_id` 与 `XXX.m_type` 是私有字段，只能在定义所在的类中访问。'
@@ -350,12 +364,12 @@ config.diagnostics['cast-type-mismatch']    =
 '变量被转换为与其初始类型不匹配的类型'
 config.diagnostics['circular-doc-class']    =
 '两个类相互继承并互相循环'
-config.diagnostics['close-non-object']      = -- TODO: need translate!
-'Enable diagnostics for attempts to close a variable with a non-object.'
+config.diagnostics['close-non-object']      =
+'尝试关闭非对象变量的诊断'
 config.diagnostics['code-after-break']      =
 '放在循环中break语句后面的代码'
-config.diagnostics['codestyle-check']       = -- TODO: need translate!
-'Enable diagnostics for incorrectly styled lines.'
+config.diagnostics['codestyle-check']       =
+'启用对不正确样式行的诊断'
 config.diagnostics['count-down-loop']       =
 'for循环永远无法达到最大/极限值(在递减时递增)'
 config.diagnostics['deprecated']            =
@@ -402,9 +416,9 @@ config.diagnostics['redundant-return-value']=
 '返回`@return`注释未指定的额外值'
 config.diagnostics['return-type-mismatch']  =
 '返回值的类型与`@return`中声明的类型不匹配'
-config.diagnostics['spell-check']           = -- TODO: need translate!
-'Enable diagnostics for typos in strings.'
-config.diagnostics['name-style-check']      = -- TODO: need translate!
+config.diagnostics['spell-check']           =
+'启用字符串拼写检查的诊断。'
+config.diagnostics['name-style-check']      =
 '变量的名称样式检查'
 config.diagnostics['unbalanced-assignments']=
 '多重赋值时没有赋值所有变量(如`local x,y = 1`)'
@@ -424,8 +438,8 @@ config.diagnostics['unknown-operator']      =
 '未知的运算符'
 config.diagnostics['unreachable-code']      =
 '不可达的代码'
-config.diagnostics['global-element']       = -- TODO: need translate!
-'Enable diagnostics to warn about global elements.'
+config.diagnostics['global-element']       =
+'启用诊断以警告全局元素。'
 config.typeFormat.config                    =
 '配置输入Lua代码时的格式化行为'
 config.typeFormat.config.auto_complete_end  =

@@ -19,16 +19,16 @@ local function collectRequire(mode, literal, uri)
     end
     if result and #result > 0 then
         local shows = {}
-        for i, uri in ipairs(result) do
-            local searcher = searchers and searchers[uri]
-            local path = ws.getRelativePath(uri)
-            if vm.isMetaFile(uri) then
-                shows[i] = ('* [[meta]](%s)'):format(uri)
+        for i, uri0 in ipairs(result) do
+            local searcher = searchers and searchers[uri0]
+            local path = ws.getRelativePath(uri0)
+            if vm.isMetaFile(uri0) then
+                shows[i] = ('* [[meta]](%s)'):format(uri0)
             elseif searcher then
                 searcher = searcher:gsub('^[/\\]+', '')
-                shows[i] = ('* [%s](%s) %s'):format(path, uri, lang.script('HOVER_USE_LUA_PATH', searcher))
+                shows[i] = ('* [%s](%s) %s'):format(path, uri0, lang.script('HOVER_USE_LUA_PATH', searcher))
             else
-                shows[i] = ('* [%s](%s)'):format(path, uri)
+                shows[i] = ('* [%s](%s)'):format(path, uri0)
             end
         end
         table.sort(shows)
@@ -336,7 +336,7 @@ local function tryDocFieldComment(source)
     end
 end
 
-local function getFunctionComment(source, raw)
+local function getFunctionCommentMarkdown(source, raw)
     local docGroup = source.bindDocs
     if not docGroup then
         return
@@ -393,11 +393,7 @@ local function getFunctionComment(source, raw)
     local enums = getBindEnums(source, docGroup)
     md:add('lua', enums)
 
-    local comment = md:string()
-    if comment == '' then
-        return nil
-    end
-    return comment
+    return md
 end
 
 ---@async
@@ -407,8 +403,7 @@ local function tryDocComment(source, raw)
         source = source.value
     end
     if source.type == 'function' then
-        local comment = getFunctionComment(source, raw)
-        md:add('md', comment)
+        md:add('md', getFunctionCommentMarkdown(source, raw))
         source = source.parent
     end
     local comment = lookUpDocComments(source)

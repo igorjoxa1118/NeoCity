@@ -42,31 +42,6 @@ function love.math.colorFromBytes(rb, gb, bb, ab) end
 function love.math.colorToBytes(r, g, b, a) end
 
 ---
----Compresses a string or data using a specific compression algorithm.
----
----
----[Open in Browser](https://love2d.org/wiki/love.math.compress)
----
----@overload fun(data: love.Data, format?: love.CompressedDataFormat, level?: number):love.CompressedData
----@param rawstring string # The raw (un-compressed) string to compress.
----@param format? love.CompressedDataFormat # The format to use when compressing the string.
----@param level? number # The level of compression to use, between 0 and 9. -1 indicates the default level. The meaning of this argument depends on the compression format being used.
----@return love.CompressedData compressedData # A new Data object containing the compressed version of the string.
-function love.math.compress(rawstring, format, level) end
-
----
----Decompresses a CompressedData or previously compressed string or Data object.
----
----
----[Open in Browser](https://love2d.org/wiki/love.math.decompress)
----
----@overload fun(compressedstring: string, format: love.CompressedDataFormat):string
----@overload fun(data: love.Data, format: love.CompressedDataFormat):string
----@param compressedData love.CompressedData # The compressed data to decompress.
----@return string rawstring # A string containing the raw decompressed data.
-function love.math.decompress(compressedData) end
-
----
 ---Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful when doing gamma-correct rendering and you need to do math in linear RGB in the few cases where LÖVE doesn't handle conversions automatically.
 ---
 ---Read more about gamma-correct rendering here, here, and here.
@@ -532,6 +507,19 @@ function Transform:clone() end
 ---
 ---@return number e1_1 # The first column of the first row of the matrix.
 ---@return number e1_2 # The second column of the first row of the matrix.
+---@return number e1_3 # The third column of the first row of the matrix.
+---@return number e1_4 # The fourth column of the first row of the matrix.
+---@return number e2_1 # The first column of the second row of the matrix.
+---@return number e2_2 # The second column of the second row of the matrix.
+---@return number e2_3 # The third column of the second row of the matrix.
+---@return number e2_4 # The fourth column of the second row of the matrix.
+---@return number e3_1 # The first column of the third row of the matrix.
+---@return number e3_2 # The second column of the third row of the matrix.
+---@return number e3_3 # The third column of the third row of the matrix.
+---@return number e3_4 # The fourth column of the third row of the matrix.
+---@return number e4_1 # The first column of the fourth row of the matrix.
+---@return number e4_2 # The second column of the fourth row of the matrix.
+---@return number e4_3 # The third column of the fourth row of the matrix.
 ---@return number e4_4 # The fourth column of the fourth row of the matrix.
 function Transform:getMatrix() end
 
@@ -605,7 +593,7 @@ function Transform:scale(sx, sy) end
 ---
 ---[Open in Browser](https://love2d.org/wiki/Transform:setMatrix)
 ---
----@overload fun(self: love.Transform, layout: love.MatrixLayout, e1_1: number, e1_2: number, ..., e4_4: number):love.Transform
+---@overload fun(self: love.Transform, layout: love.MatrixLayout, e1_1: number, e1_2: number, e1_3: number, e1_4: number, e2_1: number, e2_2: number, e2_3: number, e2_4: number, e3_1: number, e3_2: number, e3_3: number, e3_4: number, e4_1: number, e4_2: number, e4_3: number, e4_4: number):love.Transform
 ---@overload fun(self: love.Transform, layout: love.MatrixLayout, matrix: table):love.Transform
 ---@overload fun(self: love.Transform, layout: love.MatrixLayout, matrix: table):love.Transform
 ---@param e1_1 number # The first column of the first row of the matrix.

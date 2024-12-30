@@ -656,10 +656,10 @@ CLI_DOC_INITING   =
 'Loading documents ...'
 CLI_DOC_DONE      =
 [[
-Document exporting completed!
-Raw data: {}
-Markdown(example): {}
+Documentation exported:
 ]]
+CLI_DOC_WORKING   =
+'Building docs...'
 
 TYPE_ERROR_ENUM_GLOBAL_DISMATCH =
 'Type `{child}` cannot match enumeration type of `{parent}`'
@@ -1167,7 +1167,7 @@ Provide type declaration for [operator metamethods](http://lua-users.org/wiki/Me
 ### Vector Add Metamethod
 ```
 ---@class Vector
----@operation add(Vector):Vector
+---@operator add(Vector):Vector
 
 vA = Vector.new(1, 2, 3)
 vB = Vector.new(10, 20, 30)
@@ -1178,7 +1178,7 @@ vC = vA + vB
 ### Unary Minus
 ```
 ---@class Passcode
----@operation unm:integer
+---@operator unm:integer
 
 pA = Passcode.new(1234)
 pB = -pA

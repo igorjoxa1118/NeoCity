@@ -2,6 +2,10 @@
 
 config.addonManager.enable        = -- TODO: need translate!
 "Whether the addon manager is enabled or not."
+config.addonManager.repositoryBranch = -- TODO: need translate!
+"Specifies the git branch used by the addon manager."
+config.addonManager.repositoryPath = -- TODO: need translate!
+"Specifies the git path used by the addon manager."
 config.runtime.version            =
 "Lua執行版本。"
 config.runtime.path               =
@@ -251,6 +255,8 @@ config.hint.arrayIndex.Disable           =
 '停用陣列索引提示。'
 config.hint.await                        =
 '如果呼叫的函數被標記為了 `---@async`，則在呼叫處提示 `await`。'
+config.hint.awaitPropagate               =
+'啟用 `await` 的傳播，當一個函數呼叫了一個 `---@async` 標記的函數時，會自動標記為 `---@async`。'
 config.hint.semicolon                    =
 '若陳述式尾部沒有分號，則顯示虛擬分號。'
 config.hint.semicolon.All                =
@@ -280,6 +286,10 @@ config.misc.parameters                   =
 'VSCode中啟動語言伺服時的[命令列參數](https://luals.github.io/wiki/usage#arguments)。'
 config.misc.executablePath               = -- TODO: need translate!
 'Specify the executable path in VSCode.'
+config.language.fixIndent                = -- TODO: need translate!
+'(VSCode only) Fix incorrect auto-indentation, such as incorrect indentation when line breaks occur within a string containing the word "function."'
+config.language.completeAnnotation       = -- TODO: need translate!
+'(VSCode only) Automatically insert "---@ " after a line break following a annotation.'
 config.type.castNumberToInteger          =
 '允許將 `number` 類型賦值給 `integer` 類型。'
 config.type.weakUnionCheck               =
@@ -299,6 +309,10 @@ config.type.inferParamType               = -- TODO: need translate!
 未注释参数类型时，参数类型由函数传入参数推断。
 
 如果设置为 "false"，则在未注释时，参数类型为 "any"。
+]]
+config.type.checkTableShape              = -- TODO: need translate!
+[[
+对表的形状进行严格检查。
 ]]
 config.doc.privateName                   = -- TODO: need translate!
 'Treat specific field names as private, e.g. `m_*` means `XXX.m_id` and `XXX.m_type` are private, witch can only be accessed in the class where the definition is located.'

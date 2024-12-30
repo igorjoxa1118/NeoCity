@@ -220,6 +220,24 @@ register 'pairs' {
     end
 }
 
+register 'unpack' {
+    function (state, source, callback)
+        if  source.type ~= 'getglobal'
+        and source.type ~= 'getfield'
+        and source.type ~= 'getmethod'
+        and source.type ~= 'getindex'
+        and source.type ~= 'getlocal'
+        and source.type ~= 'call'
+        and source.type ~= 'table' then
+            return
+        end
+        local subber = subString(state)
+        callback(string.format('unpack(%s)'
+            , subber(source.start + 1, source.finish)
+        ))
+    end
+}
+
 register 'insert' {
     function (state, source, callback)
         if  source.type ~= 'getglobal'
@@ -335,7 +353,7 @@ local function checkPostFix(state, word, wordPosition, position, symbol, results
                 end):gsub('%$%{?%d+%}?', '')
                 results[#results+1] = {
                     label       = action.key,
-                    kind        = define.CompletionItemKind.Event,
+                    kind        = define.CompletionItemKind.Snippet,
                     description = markdown()
                                     : add('lua', descText)
                                     : string(),

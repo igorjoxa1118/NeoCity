@@ -204,7 +204,6 @@ clear
 
 ########## ---------- Резервная копия файлов и каталогов ---------- ##########
 backup_folder=~/.Backup_files
-logo "Backup files"
   echo -e "${CYAN}Backup files will be stored in .Backup_files"
   rsync -aAEHSXxr --exclude=".cache/mozilla/*" ~/.[^.]* $backup_folder
   echo -e "${ORANGE}Done!!"
@@ -218,7 +217,6 @@ sleep 2
 clear
 
 ########## ---------- Установка dot-файлов ---------- ##########
-logo "Install dotfiles"
 func_install_dots() {
 cp -rf "$current_dir"/user/.* "$home_dir"
 sudo cp -rf "$current_dir"/grub_themes/catppuccin-mocha-grub-theme /usr/share/grub/themes/
@@ -309,8 +307,6 @@ grub_theme="catppuccin-mocha-grub-theme"
     fi
 
 ### --- Установка темы и конфигов Firefox --- ###
-logo "Firefox theme install"
-
 copy_ff_func() {
   cp -R $current_dir/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH"
   echo -e "${GREEN}Firefox theme installed"
@@ -335,7 +331,6 @@ sleep 2
 clear
 
 #### ------- Проверка видеокарты. Если карта отсутствует, то модули на polybar будут другие --- ###
-logo "Check nvidia driver"
 nvidia_detect() {
     readarray -t dGPU < <(lspci -k | grep -E "(VGA|3D)" | awk -F ': ' '{print $NF}')
     if [ "${1}" == "--verbose" ]; then
@@ -368,7 +363,6 @@ sleep 2
 clear
 
 ### --- Добавление пользователя в группы вирутальных машин. --- ###
-logo "Add libvirt Group"
 echo -e "${ORANGE}Enabling Groups"
     sudo usermod -a -G libvirt $(whoami)
     newgrp libvirt
@@ -410,7 +404,6 @@ sleep 3
 clear
 
 ########## --------- Замена шелла на zsh ---------- ##########
-logo "Changing default shell to zsh"
 
 	if [[ $SHELL != "/usr/bin/zsh" ]]; then
         printf "%s%sChanging your shell to zsh...%s\n\n" "${BLD}" "${CYE}" "${CNC}"
@@ -428,7 +421,7 @@ logo "Changing default shell to zsh"
 sleep 3
 clear
 
-logo "Installation is compñete"
+########## --------- Выход ---------- ##########
 
 printf "%sThe installation is complete, you %sneed%s to restart your machine.%s\n\n" "${BLD}" "${CBL}" "${CNC}" "${CNC}"
 

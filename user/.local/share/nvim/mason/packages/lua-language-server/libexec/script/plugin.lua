@@ -7,15 +7,6 @@ local scope  = require 'workspace.scope'
 local ws     = require 'workspace'
 local fs = require 'bee.filesystem'
 
----@class pluginInterfaces
-local pluginConfigs = {
-    -- create plugin for vm module
-    VM = {
-        OnCompileFunctionParam = function (next, func, source)
-        end
-    }
-}
-
 ---@class plugin
 local m = {}
 
@@ -38,7 +29,7 @@ function m.dispatch(event, uri, ...)
     end
     local failed = 0
     local res1, res2
-    for i, interface in ipairs(interfaces) do
+    for _, interface in ipairs(interfaces) do
         local method = interface[event]
         if type(method) ~= 'function' then
             return false
@@ -60,14 +51,13 @@ function m.dispatch(event, uri, ...)
     return failed == 0, res1, res2
 end
 
-function m.getVmPlugin(uri)
+function m.getPluginInterfaces(uri)
     local scp = scope.getScope(uri)
-    ---@type pluginInterfaces
     local interfaces = scp:get('pluginInterfaces')
     if not interfaces then
         return
     end
-    return interfaces.VM
+    return interfaces
 end
 
 ---@async
@@ -100,40 +90,6 @@ local function checkTrustLoad(scp)
     return true
 end
 
-local function createMethodGroup(interfaces, key, methods)
-    local methodGroup = {}
-
-    for method in pairs(methods) do
-        local funcs = setmetatable({}, {
-            __call = function (t, next, ...)
-                if #t == 0 then
-                    return next(...)
-                else
-                    local result
-                    for _, fn in ipairs(t) do
-                        result = fn(next, ...)
-                    end
-                    return result
-                end
-            end
-        })
-        for _, interface in ipairs(interfaces) do
-            local func = interface[method]
-            if not func then
-                local namespace = interface[key]
-                if namespace then
-                    func = namespace[method]
-                end
-            end
-            if func then
-                funcs[#funcs+1] = func
-            end
-        end
-        methodGroup[method] = funcs
-    end
-    return #methodGroup>0 and methodGroup or nil
-end
-
 ---@param uri uri
 local function initPlugin(uri)
     await.call(function () ---@async
@@ -154,9 +110,9 @@ local function initPlugin(uri)
         if type(pluginConfigPaths) == 'string' then
             pluginConfigPaths = { pluginConfigPaths }
         end
-        for i, pluginConfigPath in ipairs(pluginConfigPaths) do
+        for _, pluginConfigPath in ipairs(pluginConfigPaths) do
             local myArgs = args
-            if args then
+            if args and not args[1] then
                 for k, v in pairs(args) do
                     if pluginConfigPath:find(k, 1, true) then
                         myArgs = v
@@ -195,7 +151,7 @@ local function initPlugin(uri)
                 m.showError(scp, err)
                 return
             end
-            if not client.isVSCode() and not checkTrustLoad(scp) then
+            if not client.getOption('trustByClient') and not checkTrustLoad(scp) then
                 return
             end
             local suc, err = xpcall(f, log.error, f, uri, myArgs)
@@ -204,10 +160,6 @@ local function initPlugin(uri)
                 return
             end
             interfaces[#interfaces+1] = interface
-        end
-
-        for key, config in pairs(pluginConfigs) do
-            interfaces[key] = createMethodGroup(interfaces, key, config)
         end
 
         ws.resetFiles(scp)

@@ -112,15 +112,6 @@ function love.audio.getPosition() end
 function love.audio.getRecordingDevices() end
 
 ---
----Gets the current number of simultaneously playing sources.
----
----
----[Open in Browser](https://love2d.org/wiki/love.audio.getSourceCount)
----
----@return number numSources # The current number of simultaneously playing sources.
-function love.audio.getSourceCount() end
-
----
 ---Returns the velocity of the listener.
 ---
 ---

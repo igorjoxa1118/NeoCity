@@ -794,6 +794,7 @@ function love.graphics.newParticleSystem(image, buffer) end
 ---
 ---[Open in Browser](https://love2d.org/wiki/love.graphics.newQuad)
 ---
+---@overload fun(x: number, y: number, width: number, height: number, texture: love.Texture):love.Quad
 ---@param x number # The top-left position in the Image along the x-axis.
 ---@param y number # The top-left position in the Image along the y-axis.
 ---@param width number # The width of the Quad in the Image. (Must be greater than 0.)
@@ -835,6 +836,7 @@ function love.graphics.newSpriteBatch(image, maxsprites) end
 ---
 ---[Open in Browser](https://love2d.org/wiki/love.graphics.newText)
 ---
+---@overload fun(font: love.Font, coloredtext: table):love.Text
 ---@param font love.Font # The font to use for the text.
 ---@param textstring? string # The initial string of text that the new Text object will contain. May be nil.
 ---@return love.Text text # The new drawable Text object.
@@ -943,12 +945,14 @@ function love.graphics.present() end
 ---
 ---[Open in Browser](https://love2d.org/wiki/love.graphics.print)
 ---
----@overload fun(coloredtext: table, x?: number, y?: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number)
 ---@overload fun(text: string, transform: love.Transform)
----@overload fun(coloredtext: table, transform: love.Transform)
 ---@overload fun(text: string, font: love.Font, transform: love.Transform)
+---@overload fun(text: number, transform: love.Transform)
+---@overload fun(test: number, font: love.Font, transform: love.Transform)
+---@overload fun(coloredtext: table, x?: number, y?: number, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number)
+---@overload fun(coloredtext: table, transform: love.Transform)
 ---@overload fun(coloredtext: table, font: love.Font, transform: love.Transform)
----@param text string # The text to draw.
+---@param text string|number # The text to draw.
 ---@param x? number # The position to draw the object (x-axis).
 ---@param y? number # The position to draw the object (y-axis).
 ---@param r? number # Orientation (radians).
@@ -977,11 +981,14 @@ function love.graphics.print(text, x, y, r, sx, sy, ox, oy, kx, ky) end
 ---@overload fun(text: string, font: love.Font, x: number, y: number, limit: number, align?: love.AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number)
 ---@overload fun(text: string, transform: love.Transform, limit: number, align?: love.AlignMode)
 ---@overload fun(text: string, font: love.Font, transform: love.Transform, limit: number, align?: love.AlignMode)
+---@overload fun(text: number, font: love.Font, x: number, y: number, limit: number, align?: love.AlignMode, r?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number)
+---@overload fun(text: number, transform: love.Transform, limit: number, align?: love.AlignMode)
+---@overload fun(text: number, font: love.Font, transform: love.Transform, limit: number, align?: love.AlignMode)
 ---@overload fun(coloredtext: table, x: number, y: number, limit: number, align: love.AlignMode, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number)
 ---@overload fun(coloredtext: table, font: love.Font, x: number, y: number, limit: number, align?: love.AlignMode, angle?: number, sx?: number, sy?: number, ox?: number, oy?: number, kx?: number, ky?: number)
 ---@overload fun(coloredtext: table, transform: love.Transform, limit: number, align?: love.AlignMode)
 ---@overload fun(coloredtext: table, font: love.Font, transform: love.Transform, limit: number, align?: love.AlignMode)
----@param text string # A text string.
+---@param text string|number # A text string.
 ---@param x number # The position on the x-axis.
 ---@param y number # The position on the y-axis.
 ---@param limit number # Wrap the line after this many horizontal pixels.
@@ -1140,7 +1147,7 @@ function love.graphics.setColorMask(red, green, blue, alpha) end
 ---[Open in Browser](https://love2d.org/wiki/love.graphics.setDefaultFilter)
 ---
 ---@param min love.FilterMode # Filter mode used when scaling the image down.
----@param mag love.FilterMode # Filter mode used when scaling the image up.
+---@param mag? love.FilterMode # Filter mode used when scaling the image up.
 ---@param anisotropy? number # Maximum amount of Anisotropic Filtering used.
 function love.graphics.setDefaultFilter(min, mag, anisotropy) end
 
@@ -1555,7 +1562,7 @@ function Font:getLineHeight() end
 ---
 ---[Open in Browser](https://love2d.org/wiki/Font:getWidth)
 ---
----@param text string # A string.
+---@param text string|number # A string or number.
 ---@return number width # The width of the text.
 function Font:getWidth(text) end
 
@@ -1627,15 +1634,6 @@ function Font:setLineHeight(height) end
 local Image = {}
 
 ---
----Gets the flags used when the image was created.
----
----
----[Open in Browser](https://love2d.org/wiki/Image:getFlags)
----
----@return table flags # A table with ImageFlag keys.
-function Image:getFlags() end
-
----
 ---Gets whether the Image was created from CompressedData.
 ---
 ---Compressed images take up less space in VRAM, and drawing a compressed image will generally be more efficient than drawing one created from raw pixel data.
@@ -1647,17 +1645,28 @@ function Image:getFlags() end
 function Image:isCompressed() end
 
 ---
+---Gets whether the Image was created with the linear (non-gamma corrected) flag set to true.
+---
+---This method always returns false when gamma-correct rendering is not enabled.
+---
+---
+---[Open in Browser](https://love2d.org/wiki/Image:isFormatLinear)
+---
+---@return boolean linear # Whether the Image's internal pixel format is linear (not gamma corrected), when gamma-correct rendering is enabled.
+function Image:isFormatLinear() end
+
+---
 ---Replace the contents of an Image.
 ---
 ---
 ---[Open in Browser](https://love2d.org/wiki/Image:replacePixels)
 ---
 ---@param data love.ImageData # The new ImageData to replace the contents with.
----@param slice number # Which cubemap face, array index, or volume layer to replace, if applicable.
+---@param slice? number # Which cubemap face, array index, or volume layer to replace, if applicable.
 ---@param mipmap? number # The mimap level to replace, if the Image has mipmaps.
 ---@param x? number # The x-offset in pixels from the top-left of the image to replace. The given ImageData's width plus this value must not be greater than the pixel width of the Image's specified mipmap level.
 ---@param y? number # The y-offset in pixels from the top-left of the image to replace. The given ImageData's height plus this value must not be greater than the pixel height of the Image's specified mipmap level.
----@param reloadmipmaps boolean # Whether to generate new mipmaps after replacing the Image's pixels. True by default if the Image was created with automatically generated mipmaps, false by default otherwise.
+---@param reloadmipmaps? boolean # Whether to generate new mipmaps after replacing the Image's pixels. True by default if the Image was created with automatically generated mipmaps, false by default otherwise.
 function Image:replacePixels(data, slice, mipmap, x, y, reloadmipmaps) end
 
 ---
@@ -1689,6 +1698,18 @@ function Mesh:attachAttribute(name, mesh) end
 ---@param name string # The name of the attached vertex attribute to detach.
 ---@return boolean success # Whether the attribute was successfully detached.
 function Mesh:detachAttribute(name) end
+
+---
+---Immediately sends all modified vertex data in the Mesh to the graphics card.
+---
+---Normally it isn't necessary to call this method as love.graphics.draw(mesh, ...) will do it automatically if needed, but explicitly using **Mesh:flush** gives more control over when the work happens.
+---
+---If this method is used, it generally shouldn't be called more than once (at most) between love.graphics.draw(mesh, ...) calls.
+---
+---
+---[Open in Browser](https://love2d.org/wiki/Mesh:flush)
+---
+function Mesh:flush() end
 
 ---
 ---Gets the mode used when drawing the Mesh.
@@ -1878,7 +1899,8 @@ function Mesh:setVertexMap(map) end
 ---@overload fun(self: love.Mesh, vertices: table)
 ---@param vertices {attributecomponent: number} # The table filled with vertex information tables for each vertex, in the form of {vertex, ...} where each vertex is a table in the form of {attributecomponent, ...}.
 ---@param startvertex? number # The index of the first vertex to replace.
-function Mesh:setVertices(vertices, startvertex) end
+---@param count? number # Amount of vertices to replace.
+function Mesh:setVertices(vertices, startvertex, count) end
 
 ---
 ---A ParticleSystem can be used to create particle effects like fire or smoke.
@@ -3189,7 +3211,7 @@ function Texture:setDepthSampleMode(compare) end
 ---[Open in Browser](https://love2d.org/wiki/Texture:setFilter)
 ---
 ---@param min love.FilterMode # Filter mode to use when minifying the texture (rendering it at a smaller size on-screen than its size in pixels).
----@param mag love.FilterMode # Filter mode to use when magnifying the texture (rendering it at a larger size on-screen than its size in pixels).
+---@param mag? love.FilterMode # Filter mode to use when magnifying the texture (rendering it at a larger size on-screen than its size in pixels).
 ---@param anisotropy? number # Maximum amount of anisotropic filtering to use.
 function Texture:setFilter(min, mag, anisotropy) end
 

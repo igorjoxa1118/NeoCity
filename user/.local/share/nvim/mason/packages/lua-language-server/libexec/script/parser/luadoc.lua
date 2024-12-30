@@ -298,6 +298,30 @@ local function parseIndexField(parent)
     return field
 end
 
+local function slideToNextLine()
+    if peekToken() then
+        return
+    end
+    local nextComment = NextComment(0, true)
+    if not nextComment then
+        return
+    end
+    local currentComment = NextComment(-1, true)
+    local currentLine = guide.rowColOf(currentComment.start)
+    local nextLine = guide.rowColOf(nextComment.start)
+    if currentLine + 1 ~= nextLine then
+        return
+    end
+    if nextComment.text:sub(1, 1) ~= '-' then
+        return
+    end
+    if nextComment.text:match '^%-%s*%@' then
+        return
+    end
+    NextComment()
+    parseTokens(nextComment.text:sub(2), nextComment.start + 2)
+end
+
 local function parseTable(parent)
     if not checkToken('symbol', '{', 1) then
         return nil
@@ -311,6 +335,7 @@ local function parseTable(parent)
     }
 
     while true do
+        slideToNextLine()
         if checkToken('symbol', '}', 1) then
             nextToken()
             break
@@ -385,6 +410,7 @@ local function parseTuple(parent)
 
     local index = 1
     while true do
+        slideToNextLine()
         if checkToken('symbol', ']', 1) then
             nextToken()
             break
@@ -500,6 +526,7 @@ local function  parseTypeUnitFunction(parent)
         return nil
     end
     while true do
+        slideToNextLine()
         if checkToken('symbol', ')', 1) then
             nextToken()
             break
@@ -539,14 +566,17 @@ local function  parseTypeUnitFunction(parent)
             break
         end
     end
+    slideToNextLine()
     if checkToken('symbol', ':', 1) then
         nextToken()
+        slideToNextLine()
         local needCloseParen
         if checkToken('symbol', '(', 1) then
             nextToken()
             needCloseParen = true
         end
         while true do
+            slideToNextLine()
             local name
             try(function ()
                 local returnName = parseName('doc.return.name', typeUnit)
@@ -674,7 +704,7 @@ local function parseString(parent)
     -- compatibility
     if content:sub(1, 1) == '"'
     or content:sub(1, 1) == "'" then
-        if content:sub(1, 1) == content:sub(-1, -1) then
+        if #content > 1 and content:sub(1, 1) == content:sub(-1, -1) then
             mark = content:sub(1, 1)
             content = content:sub(2, -2)
         end
@@ -739,7 +769,7 @@ local function parseCodePattern(parent)
         end
     end
     local start = getStart()
-    for i = 2 , finishOffset do
+    for _ = 2, finishOffset do
         nextToken()
     end
     local code = {
@@ -1988,7 +2018,9 @@ local function bindDocsBetween(sources, binded, start, finish)
                 or src.type == 'setmethod'
                 or src.type == 'function'
                 or src.type == 'return'
-                or src.type == '...' then
+                or src.type == '...'
+                or src.type == 'call'   -- for `rawset`
+                then
                     if bindDoc(src, binded) then
                         ok = true
                     end
@@ -2088,7 +2120,7 @@ local function bindDocWithSources(sources, binded)
     bindGeneric(binded)
     bindCommentsAndFields(binded)
     bindReturnIndex(binded)
-    
+
     -- doc is special node
     if lastDoc.special then
         if bindDoc(lastDoc.special, binded) then
@@ -2108,12 +2140,23 @@ local bindDocAccept = {
     'setfield'  , 'setmethod' , 'setindex' ,
     'tablefield', 'tableindex', 'self'     ,
     'function'  , 'return'     , '...'      ,
+    'call',
 }
 
 local function bindDocs(state)
     local text = state.lua
     local sources = {}
     guide.eachSourceTypes(state.ast, bindDocAccept, function (src)
+        -- allow binding docs with rawset(_G, "key", value)
+        if src.type == 'call' then
+            if src.node.special ~= 'rawset' or not src.args then
+                return
+            end
+            local g, key = src.args[1], src.args[2]
+            if not g or not key or g.special ~= '_G' then
+                return
+            end
+        end
         sources[#sources+1] = src
     end)
     table.sort(sources, function (a, b)
@@ -2126,10 +2169,10 @@ local function bindDocs(state)
             state.ast.docs.groups[#state.ast.docs.groups+1] = binded
         end
         binded[#binded+1] = doc
-		if doc.specialBindGroup then
-			bindDocWithSources(sources, doc.specialBindGroup)
-			binded = nil
-		elseif isTailComment(text, doc) and doc.type ~= "doc.class" and doc.type ~= "doc.field" then
+        if doc.specialBindGroup then
+            bindDocWithSources(sources, doc.specialBindGroup)
+            binded = nil
+        elseif isTailComment(text, doc) and doc.type ~= "doc.class" and doc.type ~= "doc.field" then
             bindDocWithSources(sources, binded)
             binded = nil
         else
@@ -2235,7 +2278,7 @@ local function luadoc(state)
     end
 
     if ast.state.pluginDocs then
-        for i, doc in ipairs(ast.state.pluginDocs) do
+        for _, doc in ipairs(ast.state.pluginDocs) do
             insertDoc(doc, doc.originalComment)
         end
         ---@param a unknown
@@ -2265,7 +2308,7 @@ return {
             doc.special = src
             doc.originalComment = comment
             doc.virtual = true
-			doc.specialBindGroup = group
+            doc.specialBindGroup = group
             ast.state.pluginDocs = pluginDocs
             return doc
         end

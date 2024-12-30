@@ -42,20 +42,27 @@ local viewNodeSwitch;viewNodeSwitch = util.switch()
     : case 'boolean'
     : case 'string'
     : case 'integer'
-    : call(function (source, infer)
+    : call(function (source, _infer)
         return source.type
     end)
     : case 'number'
-    : call(function (source, infer)
+    : call(function (source, _infer)
         return source.type
     end)
     : case 'table'
     : call(function (source, infer, uri)
-        if source.type == 'table' then
-            if #source == 1 and source[1].type == 'varargs' then
-                local node = vm.getInfer(source[1]):view(uri)
-                return ('%s[]'):format(node)
+        local docs = source.bindDocs
+        if docs then
+            for _, doc in ipairs(docs) do
+                if doc.type == 'doc.enum' then
+                    return 'enum ' .. doc.enum[1]
+                end
             end
+        end
+
+        if #source == 1 and source[1].type == 'varargs' then
+            local node = vm.getInfer(source[1]):view(uri)
+            return ('%s[]'):format(node)
         end
 
         infer._hasTable = true
@@ -94,7 +101,7 @@ local viewNodeSwitch;viewNodeSwitch = util.switch()
         return table.concat(buf, '|')
     end)
     : case 'doc.type.name'
-    : call(function (source, infer, uri)
+    : call(function (source, _infer, uri)
         if source.signs then
             local buf = {}
             for i, sign in ipairs(source.signs) do
@@ -106,11 +113,11 @@ local viewNodeSwitch;viewNodeSwitch = util.switch()
         end
     end)
     : case 'generic'
-    : call(function (source, infer, uri)
+    : call(function (source, _infer, uri)
         return vm.getInfer(source.proto):view(uri)
     end)
     : case 'doc.generic.name'
-    : call(function (source, infer, uri)
+    : call(function (source, _infer, uri)
         local resolved = vm.getGenericResolved(source)
         if resolved then
             return vm.getInfer(resolved):view(uri)
@@ -178,16 +185,16 @@ local viewNodeSwitch;viewNodeSwitch = util.switch()
         return table.concat(buf)
     end)
     : case 'doc.type.string'
-    : call(function (source, infer)
+    : call(function (source, _infer)
         return util.viewString(source[1], source[2])
     end)
     : case 'doc.type.integer'
     : case 'doc.type.boolean'
-    : call(function (source, infer)
+    : call(function (source, _infer)
         return ('%q'):format(source[1])
     end)
     : case 'doc.type.code'
-    : call(function (source, infer)
+    : call(function (source, _infer)
         return ('`%s`'):format(source[1])
     end)
     : case 'doc.type.function'
@@ -238,7 +245,7 @@ local viewNodeSwitch;viewNodeSwitch = util.switch()
         return ('fun(%s)%s'):format(argView, regView)
     end)
     : case 'doc.field.name'
-    : call(function (source, infer, uri)
+    : call(function (source, _infer, uri)
         return vm.viewKey(source, uri)
     end)
 

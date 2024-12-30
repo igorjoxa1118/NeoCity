@@ -2,6 +2,10 @@
 
 config.addonManager.enable        = -- TODO: need translate!
 "Whether the addon manager is enabled or not."
+config.addonManager.repositoryBranch = -- TODO: need translate!
+"Specifies the git branch used by the addon manager."
+config.addonManager.repositoryPath = -- TODO: need translate!
+"Specifies the git path used by the addon manager."
 config.runtime.version            = -- TODO: need translate!
 "Lua runtime version."
 config.runtime.path               = -- TODO: need translate!
@@ -252,6 +256,9 @@ config.hint.arrayIndex.Disable           = -- TODO: need translate!
 'Disable hints of array index.'
 config.hint.await                        = -- TODO: need translate!
 'If the called function is marked `---@async`, prompt `await` at the call.'
+config.hint.awaitPropagate               = -- TODO: need translate!
+'Enable the propagation of `await`. When a function calls a function marked `---@async`,\z
+it will be automatically marked as `---@async`.'
 config.hint.semicolon                    = -- TODO: need translate!
 'If there is no semicolon at the end of the statement, display a virtual semicolon.'
 config.hint.semicolon.All                = -- TODO: need translate!
@@ -281,6 +288,10 @@ config.misc.parameters                   = -- TODO: need translate!
 '[Command line parameters](https://github.com/LuaLS/lua-telemetry-server/tree/master/method) when starting the language service in VSCode.'
 config.misc.executablePath               = -- TODO: need translate!
 'Specify the executable path in VSCode.'
+config.language.fixIndent                = -- TODO: need translate!
+'(VSCode only) Fix incorrect auto-indentation, such as incorrect indentation when line breaks occur within a string containing the word "function."'
+config.language.completeAnnotation       = -- TODO: need translate!
+'(VSCode only) Automatically insert "---@ " after a line break following a annotation.'
 config.type.castNumberToInteger          = -- TODO: need translate!
 'Allowed to assign the `number` type to the `integer` type.'
 config.type.weakUnionCheck               = -- TODO: need translate!
@@ -300,6 +311,10 @@ config.type.inferParamType               = -- TODO: need translate!
 When the parameter type is not annotated, the parameter type is inferred from the function's incoming parameters.
 
 When this setting is `false`, the type of the parameter is `any` when it is not annotated.
+]]
+config.type.checkTableShape              = -- TODO: need translate!
+[[
+对表的形状进行严格检查。
 ]]
 config.doc.privateName                   = -- TODO: need translate!
 'Treat specific field names as private, e.g. `m_*` means `XXX.m_id` and `XXX.m_type` are private, witch can only be accessed in the class where the definition is located.'

@@ -4,9 +4,9 @@ local diag   = require 'proto.diagnostic'
 
 ---@class config.unit
 ---@field caller function
+---@field loader function
 ---@field _checker fun(self: config.unit, value: any): boolean
 ---@field name     string
----@field [string] config.unit
 ---@operator shl:  config.unit
 ---@operator shr:  config.unit
 ---@operator call: config.unit
@@ -57,7 +57,8 @@ local function register(name, default, checker, loader, caller)
     }
 end
 
----@type config.unit
+---@class config.master
+---@field [string] config.unit
 local Type = setmetatable({}, { __index = function (_, name)
     local unit = {}
     for k, v in pairs(units[name]) do
@@ -352,7 +353,7 @@ local template = {
     ['Lua.hover.viewString']                = Type.Boolean >> true,
     ['Lua.hover.viewStringMax']             = Type.Integer >> 1000,
     ['Lua.hover.viewNumber']                = Type.Boolean >> true,
-    ['Lua.hover.previewFields']             = Type.Integer >> 50,
+    ['Lua.hover.previewFields']             = Type.Integer >> 10,
     ['Lua.hover.enumsLimit']                = Type.Integer >> 5,
     ['Lua.hover.expandAlias']               = Type.Boolean >> true,
     ['Lua.semantic.enable']                 = Type.Boolean >> true,
@@ -368,6 +369,7 @@ local template = {
                                                 'Disable',
                                             },
     ['Lua.hint.await']                      = Type.Boolean >> true,
+    ['Lua.hint.awaitPropagate']             = Type.Boolean >> false,
     ['Lua.hint.arrayIndex']                 = Type.String >> 'Auto' << {
                                                 'Enable',
                                                 'Auto',
@@ -395,16 +397,27 @@ local template = {
                                             >> {},
     ['Lua.misc.parameters']                 = Type.Array(Type.String),
     ['Lua.misc.executablePath']             = Type.String,
+    ['Lua.language.fixIndent']              = Type.Boolean >> true,
+    ['Lua.language.completeAnnotation']     = Type.Boolean >> true,
     ['Lua.type.castNumberToInteger']        = Type.Boolean >> true,
     ['Lua.type.weakUnionCheck']             = Type.Boolean >> false,
     ['Lua.type.weakNilCheck']               = Type.Boolean >> false,
-    ['Lua.type.inferParamType']            = Type.Boolean >> false,
+    ['Lua.type.inferParamType']             = Type.Boolean >> false,
+    ['Lua.type.checkTableShape']            = Type.Boolean >> false,
+    ['Lua.type.inferTableSize']             = Type.Integer >> 10,
     ['Lua.doc.privateName']                 = Type.Array(Type.String),
     ['Lua.doc.protectedName']               = Type.Array(Type.String),
     ['Lua.doc.packageName']                 = Type.Array(Type.String),
-
+    ['Lua.doc.regengine']                   = Type.String >> 'glob' << {
+                                                'glob',
+                                                'lua',
+                                            },
+    --testma
+    ["Lua.docScriptPath"]                   = Type.String,
     -- VSCode
     ["Lua.addonManager.enable"]             = Type.Boolean >> true,
+    ["Lua.addonManager.repositoryPath"]     = Type.String,
+    ["Lua.addonManager.repositoryBranch"]   = Type.String,
     ['files.associations']                  = Type.Hash(Type.String, Type.String),
                                             -- copy from VSCode default
     ['files.exclude']                       = Type.Hash(Type.String, Type.Boolean) >> {

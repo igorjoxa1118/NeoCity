@@ -5,6 +5,7 @@ local await   = require 'await'
 local timer   = require 'timer'
 local pub     = require 'pub'
 local json    = require 'json'
+local define  = require 'proto.define'
 
 require 'provider'
 
@@ -61,9 +62,36 @@ function mt:_localLoadFile()
     end)
 end
 
+local defaultClientOptions = {
+    initializationOptions = {
+        changeConfiguration = true,
+        viewDocument = true,
+        trustByClient = true,
+        useSemanticByRange = true,
+    },
+    capabilities = {
+        textDocument = {
+            completion = {
+                completionItem = {
+                    tagSupport = {
+                        valueSet = {
+                            define.DiagnosticTag.Unnecessary,
+                            define.DiagnosticTag.Deprecated,
+                         },
+                    },
+                },
+            },
+        },
+        workspace = {
+            configuration = true,
+        },
+    },
+}
+
 ---@async
 function mt:initialize(params)
-    self:awaitRequest('initialize', params or {})
+    local initParams = util.tableMerge(params or {}, defaultClientOptions)
+    self:awaitRequest('initialize', initParams)
     self:notify('initialized')
 end
 
@@ -136,13 +164,16 @@ function mt:remove()
     self._gc:remove()
 end
 
+---@async
 function mt:notify(method, params)
     proto.doMethod {
         method = method,
         params = params,
     }
+    await.sleep(0.1)
 end
 
+---@async
 function mt:request(method, params, callback)
     local id = counter()
     self._waiting[id] = {
@@ -155,16 +186,20 @@ function mt:request(method, params, callback)
         method = method,
         params = params,
     }
+    await.sleep(0.1)
 end
 
 ---@async
 function mt:awaitRequest(method, params)
     return await.wait(function (waker)
-        self:request(method, params, function (result)
-            if result == json.null then
-                result = nil
-            end
-            waker(result)
+        ---@async
+        await.call(function ()
+            self:request(method, params, function (result)
+                if result == json.null then
+                    result = nil
+                end
+                waker(result)
+            end)
         end)
     end)
 end

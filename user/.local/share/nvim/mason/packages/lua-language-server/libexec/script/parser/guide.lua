@@ -22,6 +22,7 @@ local type         = type
 ---@field range                 integer
 ---@field effect                integer
 ---@field bstart                integer
+---@field bfinish               integer
 ---@field attrs                 string[]
 ---@field specials              parser.object[]
 ---@field labels                parser.object[]
@@ -104,6 +105,8 @@ local blockTypes = {
     ['elseifblock'] = true,
     ['main']        = true,
 }
+
+m.blockTypes = blockTypes
 
 local topBlockTypes = {
     ['while']       = true,
@@ -587,6 +590,9 @@ end
 function m.getStartFinish(source)
     local start  = source.start
     local finish = source.finish
+    if source.bfinish and source.bfinish > finish then
+        finish = source.bfinish
+    end
     if not start then
         local first = source[1]
         if not first then
@@ -602,6 +608,9 @@ end
 function m.getRange(source)
     local start  = source.vstart or source.start
     local finish = source.range  or source.finish
+    if source.bfinish and source.bfinish > finish then
+        finish = source.bfinish
+    end
     if not start then
         local first = source[1]
         if not first then
@@ -741,12 +750,12 @@ end
 
 --- 遍历所有指定类型的source
 ---@param ast parser.object
----@param type string
+---@param ty string
 ---@param callback fun(src: parser.object): any
 ---@return any
-function m.eachSourceType(ast, type, callback)
+function m.eachSourceType(ast, ty, callback)
     local cache = getSourceTypeCache(ast)
-    local myCache = cache[type]
+    local myCache = cache[ty]
     if not myCache then
         return
     end
@@ -931,6 +940,7 @@ local assignTypeMap = {
     ['setindex']          = true,
     ['tablefield']        = true,
     ['tableindex']        = true,
+    ['tableexp']          = true,
     ['label']             = true,
     ['doc.class']         = true,
     ['doc.alias']         = true,

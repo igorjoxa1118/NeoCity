@@ -655,7 +655,7 @@ local Care = util.switch()
         }
     end)
     : case 'nonstandardSymbol.comment'
-    : call(function (source, options, results)
+    : call(function (source, _options, results)
         results[#results+1] = {
             start  = source.start,
             finish = source.finish,
@@ -663,7 +663,7 @@ local Care = util.switch()
         }
     end)
     : case 'nonstandardSymbol.continue'
-    : call(function (source, options, results)
+    : call(function (source, _options, results)
         results[#results+1] = {
             start  = source.start,
             finish = source.finish,
@@ -671,7 +671,7 @@ local Care = util.switch()
         }
     end)
     : case 'doc.cast.block'
-    : call(function (source, options, results)
+    : call(function (source, _options, results)
         results[#results+1] = {
             start      = source.start,
             finish     = source.finish,
@@ -679,7 +679,7 @@ local Care = util.switch()
         }
     end)
     : case 'doc.cast.name'
-    : call(function (source, options, results)
+    : call(function (source, _options, results)
         results[#results+1] = {
             start      = source.start,
             finish     = source.finish,
@@ -687,7 +687,7 @@ local Care = util.switch()
         }
     end)
     : case 'doc.type.code'
-    : call(function (source, options, results)
+    : call(function (source, _options, results)
         results[#results+1] = {
             start      = source.start,
             finish     = source.finish,
@@ -696,7 +696,7 @@ local Care = util.switch()
         }
     end)
     : case 'doc.operator.name'
-    : call(function (source, options, results)
+    : call(function (source, _options, results)
         results[#results+1] = {
             start      = source.start,
             finish     = source.finish,
@@ -704,7 +704,7 @@ local Care = util.switch()
         }
     end)
     : case 'doc.meta.name'
-    : call(function (source, options, results)
+    : call(function (source, _options, results)
         results[#results+1] = {
             start      = source.start,
             finish     = source.finish,
@@ -712,7 +712,7 @@ local Care = util.switch()
         }
     end)
     : case 'doc.attr'
-    : call(function (source, options, results)
+    : call(function (source, _options, results)
         results[#results+1] = {
             start      = source.start,
             finish     = source.finish,
@@ -720,9 +720,8 @@ local Care = util.switch()
         }
     end)
 
----@param state table
 ---@param results table
-local function buildTokens(state, results)
+local function buildTokens(results)
     local tokens = {}
     local lastLine = 0
     local lastStartChar = 0
@@ -830,6 +829,10 @@ local function solveMultilineAndOverlapping(state, results)
                 modifieres = token.modifieres,
             }
         else
+            --LSP规范说客户端不支持token跨行的话，
+            --token长度可以超出行的范围，客户端应该
+            --将其视为在行的末尾结束。
+            --正好可以测试（拷打）一下客户端的实现。
             new[#new+1] = {
                 start      = startPos,
                 finish     = converter.position(startPos.line, 9999),
@@ -935,7 +938,7 @@ return function (uri, start, finish)
 
     results = solveMultilineAndOverlapping(state, results)
 
-    local tokens = buildTokens(state, results)
+    local tokens = buildTokens(results)
 
     return tokens
 end

@@ -1,13 +1,11 @@
 local files     = require 'files'
 local lang      = require 'language'
 local util      = require 'utility'
-local sp        = require 'bee.subprocess'
 local guide     = require "parser.guide"
 local converter = require 'proto.converter'
 local autoreq   = require 'core.completion.auto-require'
 local rpath     = require 'workspace.require-path'
 local furi      = require 'file-uri'
-local undefined = require 'core.diagnostics.undefined-global'
 local vm        = require 'vm'
 
 ---@param uri  uri
@@ -51,7 +49,7 @@ local function checkDisableByLuaDocExits(uri, row, mode, code)
     return nil
 end
 
-local function checkDisableByLuaDocInsert(uri, row, mode, code)
+local function checkDisableByLuaDocInsert(_uri, row, mode, code)
     return {
         start   = guide.positionOf(row, 0),
         finish  = guide.positionOf(row, 0),
@@ -242,7 +240,7 @@ local function solveSyntaxByFix(uri, err, results)
     }
 end
 
-local function solveSyntaxUnicodeName(uri, err, results)
+local function solveSyntaxUnicodeName(uri, _err, results)
     results[#results+1] = {
         title   = lang.script('ACTION_RUNTIME_UNICODE_NAME'),
         kind    = 'quickfix',
@@ -321,7 +319,7 @@ local function solveAmbiguity1(uri, diag, results)
     }
 end
 
-local function solveTrailingSpace(uri, diag, results)
+local function solveTrailingSpace(uri, _diag, results)
     results[#results+1] = {
         title = lang.script.ACTION_REMOVE_SPACE,
         kind = 'quickfix',
@@ -697,13 +695,16 @@ local function checkMissingRequire(results, uri, start, finish)
     end
 
     local function addRequires(global, endpos)
-        autoreq.check(state, global, endpos, function(moduleFile, stemname, targetSource)
+        if not global then
+            return
+        end
+        autoreq.check(state, global, endpos, function (moduleFile, _stemname, _targetSource, fullKeyPath)
             local visiblePaths = rpath.getVisiblePath(uri, furi.decode(moduleFile))
             if not visiblePaths or #visiblePaths == 0 then return end
 
             for _, target in ipairs(findRequireTargets(visiblePaths)) do
                 results[#results+1] = {
-                    title = lang.script('ACTION_AUTOREQUIRE', target, global),
+                    title = lang.script('ACTION_AUTOREQUIRE', target .. (fullKeyPath or ''), global),
                     kind = 'refactor.rewrite',
                     command = {
                         title     = 'autoRequire',
@@ -713,7 +714,8 @@ local function checkMissingRequire(results, uri, start, finish)
                                 uri         = guide.getUri(state.ast),
                                 target      = moduleFile,
                                 name        = global,
-                                requireName = target
+                                requireName = target,
+                                fullKeyPath = fullKeyPath,
                             },
                         },
                     }

@@ -56,8 +56,8 @@ function love.window.getDPIScale() end
 ---[Open in Browser](https://love2d.org/wiki/love.window.getDesktopDimensions)
 ---
 ---@param displayindex? number # The index of the display, if multiple monitors are available.
----@return string width # The width of the desktop.
----@return string height # The height of the desktop.
+---@return number width # The width of the desktop.
+---@return number height # The height of the desktop.
 function love.window.getDesktopDimensions(displayindex) end
 
 ---

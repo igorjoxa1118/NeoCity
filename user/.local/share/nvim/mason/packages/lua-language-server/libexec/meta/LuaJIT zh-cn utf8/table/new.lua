@@ -2,7 +2,8 @@
 
 ---@version JIT
 ---
----This creates a pre-sized table, just like the C API equivalent `lua_createtable()`. This is useful for big tables if the final table size is known and automatic table resizing is too expensive. `narray` parameter specifies the number of array-like items, and `nhash` parameter specifies the number of hash-like items. The function needs to be required before use.
+---创建一个有初始容量的表，就像 C API 等价于 `lua_createtable()`。对于数据量庞大的表，如果最终的容量是已知的，这将十分有用，因为动态对表进行扩容是十分昂贵的。`narray` 参数指定类数组成员的数量，`nhash` 参数指定类哈希成员的数量。在使用前需要先引入。
+---
 ---```lua
 ---    require("table.new")
 ---```

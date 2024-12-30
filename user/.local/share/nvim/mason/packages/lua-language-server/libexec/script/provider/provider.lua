@@ -7,7 +7,6 @@ local define     = require 'proto.define'
 local workspace  = require 'workspace'
 local config     = require 'config'
 local client     = require 'client'
-local pub        = require 'pub'
 local lang       = require 'language'
 local progress   = require 'progress'
 local tm         = require 'text-merger'
@@ -20,6 +19,7 @@ local furi       = require 'file-uri'
 local inspect    = require 'inspect'
 local guide      = require 'parser.guide'
 local fs         = require 'bee.filesystem'
+local version    = require 'version'
 
 require 'library'
 
@@ -41,7 +41,10 @@ function m.updateConfig(uri)
     end
 
     for _, folder in ipairs(scope.folders) do
-        local clientConfig = cfgLoader.loadClientConfig(folder.uri)
+        local clientConfig = nil
+        if client.getAbility('workspace.configuration') then
+            clientConfig = cfgLoader.loadClientConfig(folder.uri)
+        end
         if clientConfig then
             log.info('Load config from client', folder.uri)
             log.info(inspect(clientConfig))
@@ -57,10 +60,12 @@ function m.updateConfig(uri)
         config.update(folder, clientConfig, rc)
     end
 
-    local global = cfgLoader.loadClientConfig()
-    log.info('Load config from client', 'fallback')
-    log.info(inspect(global))
-    config.update(scope.fallback, global)
+    if client.getAbility('workspace.configuration') then
+        local global = cfgLoader.loadClientConfig()
+        log.info('Load config from client', 'fallback')
+        log.info(inspect(global))
+        config.update(scope.fallback, global)
+    end
 end
 
 function m.register(method)
@@ -76,7 +81,7 @@ function m.register(method)
     end
 end
 
-filewatch.event(function (ev, path) ---@async
+filewatch.event(function (_ev, path) ---@async
     if (CONFIGPATH and util.stringEndWith(path, CONFIGPATH)) then
         for _, scp in ipairs(workspace.folders) do
             local configPath = workspace.getAbsolutePath(scp.uri, CONFIGPATH)
@@ -124,6 +129,7 @@ m.register 'initialize' {
             capabilities = cap.getProvider(),
             serverInfo   = {
                 name    = 'sumneko.lua',
+                version = version.getVersion(),
             },
         }
         log.debug('Server init', inspect(response))
@@ -133,7 +139,7 @@ m.register 'initialize' {
 
 m.register 'initialized'{
     ---@async
-    function (params)
+    function (_params)
         local _ <close> = progress.create(workspace.getFirstScope().uri, lang.script.WINDOW_INITIALIZING, 0.5)
         m.updateConfig()
         local registrations = {}
@@ -222,7 +228,7 @@ m.register 'workspace/didRenameFiles' {
             for _, uri in ipairs(childs) do
                 if files.exists(uri) then
                     local ouri = uri
-                    local tail = ouri:sub(#oldUri)
+                    local tail = ouri:sub(#oldUri + 1)
                     local nuri = file.newUri .. tail
                     renames[#renames+1] = {
                         oldUri = ouri,
@@ -292,6 +298,7 @@ m.register 'textDocument/didClose' {
 m.register 'textDocument/didChange' {
     ---@async
     function (params)
+        local fixIndent = require 'core.fix-indent'
         local doc     = params.textDocument
         local changes = params.contentChanges
         local uri     = files.getRealUri(doc.uri)
@@ -299,6 +306,7 @@ m.register 'textDocument/didChange' {
         if not text then
             text = util.loadFile(furi.decode(uri))
             files.setText(uri, text, false)
+            fixIndent(uri, changes)
             return
         end
         local rows = files.getCachedRows(uri)
@@ -307,6 +315,8 @@ m.register 'textDocument/didChange' {
             file.version = doc.version
         end)
         files.setCachedRows(uri, rows)
+
+        fixIndent(uri, changes)
     end
 }
 
@@ -354,7 +364,7 @@ m.register 'textDocument/hover' {
             return nil
         end
         local pos = converter.unpackPosition(state, params.position)
-        local hover, source = core.byUri(uri, pos)
+        local hover, source, maxLevel = core.byUri(uri, pos, params.level or 1)
         if not hover or not source then
             return nil
         end
@@ -364,6 +374,7 @@ m.register 'textDocument/hover' {
                 kind  = 'markdown',
             },
             range = converter.packRange(state, source.start, source.finish),
+            maxLevel = maxLevel,
         }
     end
 }
@@ -497,7 +508,7 @@ m.register 'textDocument/references' {
             return nil
         end
         local response = {}
-        for i, info in ipairs(result) do
+        for _, info in ipairs(result) do
             ---@type uri
             local targetUri = info.uri
             local targetState = files.getState(targetUri)
@@ -1059,7 +1070,7 @@ end
 
 client.event(function (ev)
     if ev == 'init' then
-        if not client.isVSCode() then
+        if not client.getOption('useSemanticByRange') then
             m.register 'textDocument/semanticTokens/full' {
                 capability = {
                     semanticTokensProvider = {
@@ -1407,7 +1418,7 @@ m.register 'textDocument/inlayHint' {
         local results = core(uri, start, finish)
         local hintResults = {}
         for i, res in ipairs(results) do
-            local luri = res.source and guide.getUri(res.source) 
+            local luri = res.source and guide.getUri(res.source)
             local lstate = files.getState(luri)
             hintResults[i] = {
                 label        = {
@@ -1426,8 +1437,8 @@ m.register 'textDocument/inlayHint' {
                 },
                 position     = converter.packPosition(state, res.offset),
                 kind         = res.kind,
-                paddingLeft  = res.kind == 1,
-                paddingRight = res.kind == 2,
+                paddingLeft  = false,
+                paddingRight = res.kind == define.InlayHintKind.Parameter,
             }
         end
         return hintResults
@@ -1593,8 +1604,24 @@ m.register '$/psi/select' {
     end
 }
 
+local function refreshLanguageConfiguration()
+    if not client.getOption('languageConfiguration') then
+        return
+    end
+    local lc = require 'provider.language-configuration'
+    proto.notify('$/languageConfiguration', lc.make())
+end
+
+config.watch(function (_uri, key, _value)
+    if key == '' then
+        refreshLanguageConfiguration()
+    end
+end)
 
 local function refreshStatusBar()
+    if not client.getOption('statusBar') then
+        return
+    end
     local valid = config.get(nil, 'Lua.window.statusBar')
     for _, scp in ipairs(workspace.folders) do
         if not config.get(scp.uri, 'Lua.window.statusBar') then
@@ -1609,7 +1636,7 @@ local function refreshStatusBar()
     end
 end
 
-config.watch(function (uri, key, value)
+config.watch(function (_uri, key, _value)
     if key == 'Lua.window.statusBar'
     or key == '' then
         refreshStatusBar()

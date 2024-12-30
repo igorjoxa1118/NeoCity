@@ -1,1 +1,0 @@
-{"lua": {"name": "Lua", "source": "release", "version": "5.1.5", "target": "linux", "compat": "default", "c flags": "", "location": "/home/vir0id/.local/share/nvim/lazy-rocks/hererocks", "major version": "5.1", "readline": "true", "patched": "false"}, "version": 3, "luarocks": {"name": "LuaRocks", "source": "release", "version": "3.11.1"}}

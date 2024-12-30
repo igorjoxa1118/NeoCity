@@ -1572,8 +1572,6 @@ function Fixture:getBoundingBox(index) end
 ---
 ---[Open in Browser](https://love2d.org/wiki/Fixture:getCategory)
 ---
----@return number category1 # The first category.
----@return number category2 # The second category.
 function Fixture:getCategory() end
 
 ---
@@ -1624,8 +1622,6 @@ function Fixture:getGroupIndex() end
 ---
 ---[Open in Browser](https://love2d.org/wiki/Fixture:getMask)
 ---
----@return number mask1 # The first category selected by the mask.
----@return number mask2 # The second category selected by the mask.
 function Fixture:getMask() end
 
 ---
@@ -1718,9 +1714,8 @@ function Fixture:rayCast(x1, y1, x2, y2, maxFraction, childIndex) end
 ---
 ---[Open in Browser](https://love2d.org/wiki/Fixture:setCategory)
 ---
----@param category1 number # The first category.
----@param category2 number # The second category.
-function Fixture:setCategory(category1, category2) end
+---@vararg number # The categories.
+function Fixture:setCategory(...) end
 
 ---
 ---Sets the density of the fixture. Call Body:resetMassData if this needs to take effect immediately.
@@ -1782,9 +1777,8 @@ function Fixture:setGroupIndex(group) end
 ---
 ---[Open in Browser](https://love2d.org/wiki/Fixture:setMask)
 ---
----@param mask1 number # The first category.
----@param mask2 number # The second category.
-function Fixture:setMask(mask1, mask2) end
+---@vararg number # The masks.
+function Fixture:setMask(...) end
 
 ---
 ---Sets the restitution of the fixture.
@@ -3122,14 +3116,12 @@ function World:queryBoundingBox(topLeftX, topLeftY, bottomRightX, bottomRightY, 
 ---
 ---[Open in Browser](https://love2d.org/wiki/World:rayCast)
 ---
----@param fixture love.Fixture # The fixture intersecting the ray.
----@param x number # The x position of the intersection point.
----@param y number # The y position of the intersection point.
----@param xn number # The x value of the surface normal vector of the shape edge.
----@param yn number # The y value of the surface normal vector of the shape edge.
----@param fraction number # The position of the intersection on the ray as a number from 0 to 1 (or even higher if the ray length was changed with the return value).
----@return number control # The ray can be controlled with the return value. A positive value sets a new ray length where 1 is the default value. A value of 0 terminates the ray. If the callback function returns -1, the intersection gets ignored as if it didn't happen.
-function World:rayCast(fixture, x, y, xn, yn, fraction) end
+---@param x1 number # The x position of the starting point of the ray.
+---@param y1 number # The x position of the starting point of the ray.
+---@param x2 number # The x position of the end point of the ray.
+---@param y2 number # The x value of the surface normal vector of the shape edge.
+---@param callback function # A function called for each fixture intersected by the ray. The function gets six arguments and should return a number as a control value. The intersection points fed into the function will be in an arbitrary order. If you wish to find the closest point of intersection, you'll need to do that yourself within the function. The easiest way to do that is by using the fraction value.
+function World:rayCast(x1, y1, x2, y2, callback) end
 
 ---
 ---Sets functions for the collision callbacks during the world update.
