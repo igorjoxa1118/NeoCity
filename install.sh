@@ -85,7 +85,7 @@ dependencias=(base-devel alacritty brightnessctl dunst bottom imagemagick \
               cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenlive kodi \
               kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2 xorg-xdpyinfo xorg-xwininfo \
               xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot xdotool bzip2 gzip lrzip lz4 lzip lzop xz zstd p7zip zip unzip unrar \
-              yazi unarchiver xarchiver ffmpeg poppler fd ripgrep zoxide)
+              yazi unarchiver xarchiver qt6-svg qt6-declarative qt5-quickcontrols2 ffmpeg poppler fd ripgrep zoxide)
 
 
 
