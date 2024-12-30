@@ -12,7 +12,7 @@ configuration {
 	//me-accept-entry:			 "MousePrimary";
 }
 
-@import "colors/catppuccin-mocha.rasi"
+@import "colors/catppuccin-macchiato.rasi"
 
 // Main //
 window {

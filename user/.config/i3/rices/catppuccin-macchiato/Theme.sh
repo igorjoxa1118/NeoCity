@@ -4,7 +4,7 @@
 
 read -r RICETHEME < "$HOME"/.config/i3/config.d/.rice
 rice_dir="$HOME/.config/i3/rices/$RICETHEME"
-i3_dir="$HOME/.config/i3"
+i3_configd="$HOME/.config/i3/config.d"
 
 # Terminate already running bar instances
 killall -q polybar
@@ -94,9 +94,9 @@ firefox_profiles
 
 # Set dunst config
 set_dunst_config() {
-dunst_path=""$HOME"/.config/i3/rices/$RICETHEME/dunst/dunstrc"
+dunst_path="$HOME"/.config/i3/rices/$RICETHEME/dunst/dunstrc
        if [ -f "$dunst_path" ]; then
-         cp -rf "$dunst_path" "$i3_dir"
+         cp -rf "$dunst_path" "$i3_configd"
        else
          echo "Color file not exist!"
        fi
@@ -105,9 +105,9 @@ set_dunst_config
 
 ###---Global. Change colors for Tabbed
 tabbed_settings() {
-tabbed_path=""$HOME"/.config/i3/rices/$RICETHEME/tabbed"
-       if [ -f "$tabbed_path"/colors ]; then
-         cp -rf "$tabbed_path"/colors "$i3_dir"
+tabbed_path="$HOME"/.config/i3/rices/$RICETHEME/tabbed/colors
+       if [ -f "$tabbed_path" ]; then
+         cp -rf "$tabbed_path" "$i3_configd"
        else
          echo "Color file not exist!"
        fi

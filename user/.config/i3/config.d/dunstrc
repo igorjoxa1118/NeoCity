@@ -5,24 +5,24 @@
 #  \______  / \____/ |____/ \____/  |__|   /____  > #
 #         \/                                    \/  #
 
-### --- Catppuccin-mocha
+### --- Catppuccin-macchiato
 
 [global]
 frame_width= 1
-frame_color = "#cba6f7"
+frame_color = "#f5a97f"
 font = MesloLGS NF 10
 
 [urgency_low]
 timeout = 3
-background = "#1e1e2e"
-foreground = "#cdd6f4"
+background = "#24273a"
+foreground = "#cad3f5"
 
 [urgency_normal]
 timeout = 5
-background = "#1e1e2e"
-foreground = "#bac2de"
+background = "#24273a"
+foreground = "#b8c0e0"
 
 [urgency_critical]
 timeout = 0
-background = "#1e1e2e"
-foreground = "#a6adc8"
+background = "#24273a"
+foreground = "#a5adcb"

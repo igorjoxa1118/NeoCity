@@ -3,7 +3,7 @@
 ## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
 
 # i3 directory
-DIR="$HOME/.config/i3"
+DIR="$HOME/.config/i3/config.d"
 
 # Launch dunst daemon
 if [[ `pidof dunst` ]]; then

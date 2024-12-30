@@ -28,9 +28,9 @@ exec --no-startup-id "dunst -config $i3_configd/dunstrc"
 exec_always --no-startup-id "xrdb -load $HOME/.Xresources"
 exec_always --no-startup-id "xsetroot -cursor_name left_ptr"
 ### --- Start themes
-exec_always --no-startup-id "$HOME/.config/i3/rices/catppuccin-mocha/Theme.sh"
+exec_always --no-startup-id "$HOME/.config/i3/rices/catppuccin-macchiato/Theme.sh"
 ### --- Wallpaper
-exec_always --no-startup-id "feh -z --no-fehbg --bg-fill $HOME/.config/i3/rices/catppuccin-mocha/walls/"
+exec_always --no-startup-id "feh -z --no-fehbg --bg-fill $HOME/.config/i3/rices/catppuccin-macchiato/walls/"
 exec_always --no-startup-id "autotiling"
 exec_always --no-startup-id flashfocus
 exec_always --no-startup-id xss-lock --ignore-sleep "/usr/bin/virlock"
