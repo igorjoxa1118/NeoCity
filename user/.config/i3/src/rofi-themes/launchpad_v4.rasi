@@ -7,7 +7,7 @@
  * Rofi Version: 1.7.3
  **/
 
-@import "colors/catppuccin-macchiato.rasi"
+@import "colors/catppuccin-mocha.rasi"
 
 /*****----- Configuration -----*****/
 configuration {
@@ -62,7 +62,7 @@ mainbox {
 imagebox {
     padding:                     20px;
     background-color:            transparent;
-    background-image:            url("~/.config/i3/src/rofi-themes/img/catppuccin-macchiato.png", height);
+    background-image:            url("~/.config/i3/src/rofi-themes/img/catppuccin-mocha.png", height);
     orientation:                 vertical;
     children:                    [ "inputbar", "dummy", "mode-switcher" ];
 }

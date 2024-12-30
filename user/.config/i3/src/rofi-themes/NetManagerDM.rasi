@@ -4,7 +4,7 @@ configuration {
     show-icons:                 false;
 }
 
-@import "colors/catppuccin-macchiato.rasi"
+@import "colors/catppuccin-mocha.rasi"
 
 * {
     font: "MesloLGS NF Regular 10";
