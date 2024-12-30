@@ -411,13 +411,42 @@ clear
 
 ########## --------- Замена шелла на zsh ---------- ##########
 logo "Changing default shell to zsh"
+
 	if [[ $SHELL != "/usr/bin/zsh" ]]; then
-    printf "\n%s%sChanging your shell to zsh. Your root password is needed.%s\n\n" "${BLD}" "${CYE}" "${CNC}"
-    # Cambia la shell a zsh
-    chsh -s $(which zsh)
-    printf "%s%sShell changed to zsh. Please reboot.%s\n\n" "${BLD}" "${CGR}" "${CNC}"
-  else
-    printf "%s%sYour shell is already zsh\nGood bye! installation finished, now reboot%s\n" "${BLD}" "${CGR}" "${CNC}"
-  fi
-sleep 2
-zsh
+        printf "%s%sChanging your shell to zsh...%s\n\n" "${BLD}" "${CYE}" "${CNC}"
+
+        if chsh -s /usr/bin/zsh 2> >(tee -a "$ERROR_LOG"); then
+            printf "\n%s[%sOK%s%s] Shell changed to zsh successfully!%s\n\n" "${BLD}" "${CGR}" "${CNC}" "${BLD}" "${CNC}"
+        else
+            printf "%s%sError changing your shell to zsh. Please check %sRiceError.log%s for details%s\n\n" \
+                   "${BLD}" "${CRE}" "${CYE}" "${CRE}" "${CNC}"
+            log_error "Failed to change shell to zsh"
+        fi
+    else
+        printf "%s%sYour shell is already zsh%s\n\n" "${BLD}" "${CGR}" "${CNC}"
+    fi
+sleep 3
+clear
+
+logo "Installation is compñete"
+
+printf "%sThe installation is complete, you %sneed%s to restart your machine.%s\n\n" "${BLD}" "${CBL}" "${CNC}" "${CNC}"
+
+	while true; do
+		read -rp " Reboot now? [y/N]: " yn
+		case $yn in
+			[Yy]* )
+				printf "\n%s%sRebooting now...%s\n" "${BLD}" "${CGR}" "${CNC}"
+				sleep 3
+				reboot
+				break
+				;;
+			[Nn]* )
+				printf "\n%s%sOK, remember to restart later!%s\n\n" "${BLD}" "${CYE}" "${CNC}"
+				break
+				;;
+			* )
+				printf "\n%s%sPlease answer yes or no.%s\n\n" "${BLD}" "${CRE}" "${CNC}"
+				;;
+		esac
+	done
