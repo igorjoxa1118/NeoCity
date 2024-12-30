@@ -37,6 +37,7 @@ repo_url="https://github.com/igorjoxa1118/NeoCity.git"
 paru_url="https://aur.archlinux.org/paru-bin.git"
 home_dir=$HOME
 current_dir=$(pwd)
+ERROR_LOG="$HOME/RiceError.log"
 
 ##-----------------
 #--Logo
