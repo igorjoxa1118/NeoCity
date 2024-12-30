@@ -146,7 +146,7 @@ else
     {
         cd "$HOME" || exit
         git clone $paru_url
-        cd $HOME/paru || exit
+        cd $HOME/paru-bin || exit
         makepkg -si --noconfirm
         } || {
         printf "\n%s%sFailed to install Paru. You may need to install it manually%s\n" "${BLD}" "${CRE}" "${CNC}"
