@@ -214,7 +214,6 @@ for del in polybar rofi picom.conf; do
    echo -e "${YELLOW}$del deleted"
 done
 sleep 2
-clear
 
 ########## ---------- Установка dot-файлов ---------- ##########
 func_install_dots() {
@@ -233,7 +232,6 @@ echo -e "${GRE}Copy dots succesfully!"
     fi
   fi
 sleep 2
-clear
 
 ##-------------------
 #--Install bin files
@@ -242,7 +240,6 @@ clear
 ### --- Завершение копирования dot-файлов --- ###
 func_install_dots
 sleep 2
-clear
 
 ### --- Сканирование шрифтов
 fc-cache -fv
@@ -275,7 +272,6 @@ if [ -d /etc/lightdm ]; then
   sudo rm -rf /etc/lightdm
 fi
 sleep 2
-clear
 
 ##-------------------
 #--Grub themes apply
@@ -314,7 +310,6 @@ else
    exit 1
 fi
 sleep 2
-clear
 
 #### ------- Проверка видеокарты. Если карта отсутствует, то модули на polybar будут другие --- ###
 nvidia_detect() {
@@ -346,7 +341,6 @@ nvidia_detect() {
 
 nvidia_detect
 sleep 2
-clear
 
 ### --- Добавление пользователя в группы вирутальных машин. --- ###
 echo -e "${ORANGE}Enabling Groups"
@@ -354,10 +348,6 @@ echo -e "${ORANGE}Enabling Groups"
     newgrp libvirt
 echo -e "${ORANGE}Done!"
 sleep 2
-clear
-
-
-logo "Enabling mpd service"
 
 	if systemctl is-enabled --quiet mpd.service; then
         printf "%s%sDisabling and stopping the global mpd service%s\n" "${BLD}" "${CBL}" "${CNC}"
@@ -386,8 +376,7 @@ logo "Enabling mpd service"
                "${BLD}" "${CRE}" "${CNC}" "${BLD}" "${CYE}" "${CNC}"
         log_error "Failed to enable user-level MPD service"
     fi
-sleep 3
-clear
+sleep 2
 
 ########## --------- Замена шелла на zsh ---------- ##########
 
@@ -404,8 +393,7 @@ clear
     else
         printf "%s%sYour shell is already zsh%s\n\n" "${BLD}" "${CGR}" "${CNC}"
     fi
-sleep 3
-clear
+sleep 2
 
 ########## --------- Выход ---------- ##########
 
