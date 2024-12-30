@@ -14,11 +14,10 @@
 - **Application Launcher:** [Rofi](https://github.com/davatorium/rofi)
 - **Notification Deamon:** [Dunst](https://github.com/dunst-project/dunst)
 - **Splitt terminal:** [Autotiling](https://github.com/nwg-piotr/autotiling)
-- **Video Card:** [Nvidia](https://developer.nvidia.com/nvidia-system-management-interface)
+- **Video Card:** [Nvidia](https://developer.nvidia.com/nvidia-system-management-interface) [Intel](https://www.intel.com/content/www/us/en/support/articles/000005520/graphics.html)
 - **Backlight:** [Nvidia-smi](https://developer.nvidia.com/nvidia-system-management-interface)
 - **Music Player:** [Mpd](https://www.musicpd.org/) [ncmpcpp](https://wiki.archlinux.org/title/Ncmpcpp) [Ymuse](https://github.com/yktoo/ymuse)
 - **Music Player Youtube Playlists:** [Mpv](https://mpv.io/)
-- **Multimedia framework:** [PipeWire](https://pipewire.org/)
 
 
 Установочный скрипт тестировался на чистом Arch Linux в виртуальной машине. 
