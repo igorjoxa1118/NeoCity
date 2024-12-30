@@ -2,7 +2,7 @@
 
 <img src="https://github.com/igorjoxa1118/NeoCity/blob/main/screenshots/Screen.png?raw=true" alt="Rice Showcase" align="right" width="400px">
 
-- **OS:** [Garuda Linux](https://garudalinux.org/)
+- **OS:** [Any Arch Based Distro](https://en.wikipedia.org/wiki/Arch_Linux)
 - **WM:** [i3-wm](https://github.com/Airblader/i3)
 - **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **Text Editor:** [Visual-code](https://code.visualstudio.com/) [Micro](https://micro-editor.github.io/)
@@ -16,7 +16,7 @@
 - **Splitt terminal:** [Autotiling](https://github.com/nwg-piotr/autotiling)
 - **Video Card:** [Nvidia](https://developer.nvidia.com/nvidia-system-management-interface)
 - **Backlight:** [Nvidia-smi](https://developer.nvidia.com/nvidia-system-management-interface)
-- **Music Player:** [Mpd](https://www.musicpd.org/) [ncmpcpp](https://wiki.archlinux.org/title/Ncmpcpp)
+- **Music Player:** [Mpd](https://www.musicpd.org/) [ncmpcpp](https://wiki.archlinux.org/title/Ncmpcpp) [Ymuse](https://github.com/yktoo/ymuse)
 - **Music Player Youtube Playlists:** [Mpv](https://mpv.io/)
 - **Multimedia framework:** [PipeWire](https://pipewire.org/)
 
