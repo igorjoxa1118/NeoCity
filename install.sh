@@ -239,20 +239,6 @@ clear
 #--Install bin files
 ##-------------------
 
-if [[ ! -f "/usr/local/bin/toggle-conkeww" ]]; then
-  sudo mkdir -p /usr/share/garuda/jgmenu/
-  sudo cp -r "$home_dir"/.config/i3/bin/toggle-conkeww /usr/local/bin
-  sudo cp -r "$home_dir"/.config/i3/bin/i3-new-workspace /usr/local/bin
-  sudo chmod 755 /usr/local/bin/i3-new-workspace
-  sudo cp -r "$home_dir"/.config/i3/bin/colors /usr/local/bin
-  sudo cp -r "$home_dir"/.config/i3/bin/def-dmenu /usr/local/bin
-  sudo cp -r "$home_dir"/.config/i3/bin/def-nmdmenu /usr/local/bin
-  sudo cp -r "$home_dir"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/ 
-else
-  sudo cp -r "$home_dir"/.config/jgmenu/MenuIcons /usr/share/garuda/jgmenu/
-fi
-}
-
 ### --- Завершение копирования dot-файлов --- ###
 func_install_dots
 sleep 2
