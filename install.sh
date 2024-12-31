@@ -216,7 +216,7 @@ echo -e "${GRE}Copy dots succesfully!"
   if [ -d "$current_dir"/pkgs_virOS ]; then
     echo "${CYAN}Folder exist"
   else
-    cd "$current_dir || exit" || exit
+    cd "$current_dir" || exit
     if [ ! -d "$current_dir/pkgs_virOS" ]; then
     gdown --folder 19SlCmblUJts_I5dlAwd2C3tq7q2-wLbS
     echo -e "${GRE}Packages in system!"
