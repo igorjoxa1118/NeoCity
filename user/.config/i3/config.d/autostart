@@ -21,10 +21,10 @@ exec --no-startup-id "thunar --daemon"
 ### --- keyring for storing saved passwords
 exec --no-startup-id "gnome-keyring-daemon --start --components=pkcs11"
 exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-exec --no-startup-id "musnify-mpd"
 ### --- Dunst notification themes
 exec --no-startup-id "dunst -config $i3_configd/dunstrc"
 
+exec_always --no-startup-id "/usr/bin/musnify-mpd"
 exec_always --no-startup-id "xrdb -load $HOME/.Xresources"
 exec_always --no-startup-id "xsetroot -cursor_name left_ptr"
 ### --- Start themes
