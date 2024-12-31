@@ -224,13 +224,12 @@ echo -e "${GRE}Copy dots succesfully!"
     sudo pacman -U "$current_dir"/pkgs_virOS/*.zst --noconfirm
     fi
   fi
-sleep 2
 }
 
 ##-------------------
 #--Install bin files
 ##-------------------
-
+sudo cp "$current_dir"/.bin/virlock /usr/bin
 ### --- Завершение копирования dot-файлов --- ###
 func_install_dots
 sleep 2
