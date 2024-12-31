@@ -35,14 +35,13 @@ ERROR_LOG="$HOME/RiceError.log"
 
 logo_install () {
 	echo -en "${PURPLE}                                  
- __ __  ____  ____   ___   _____     ____   ____    __  __  _   ____   ____    ___  _____     ____  ____   _____ ______   ____  _      _     
-|  |  ||    ||    \ /   \ / ___/    |    \ /    |  /  ]|  |/ ] /    | /    |  /  _]/ ___/    |    ||    \ / ___/|      | /    || |    | |    
-|  |  | |  | |  D  )     (   \_     |  o  )  o  | /  / |  ' / |  o  ||   __| /  [_(   \_      |  | |  _  (   \_ |      ||  o  || |    | |    
-|  |  | |  | |    /|  O  |\__  |    |   _/|     |/  /  |    \ |     ||  |  ||    _]\__  |     |  | |  |  |\__  ||_|  |_||     || |___ | |___ 
-|  :  | |  | |    \|     |/  \ |    |  |  |  _  /   \_ |     \|  _  ||  |_ ||   [_ /  \ |     |  | |  |  |/  \ |  |  |  |  _  ||     ||     |
- \   /  |  | |  .  \     |\    |    |  |  |  |  \     ||  .  ||  |  ||     ||     |\    |     |  | |  |  |\    |  |  |  |  |  ||     ||     |
-  \_/  |____||__|\_|\___/  \___|    |__|  |__|__|\____||__|\_||__|__||___,_||_____| \___|    |____||__|__| \___|  |__|  |__|__||_____||_____|
-                                                                                                                                             \n"
+██████   ██████  ████████ ███████ ██ ██      ███████ ███████     ██████  ██   ██  ██████  ███████     ██ ███    ██ ███████ ████████  █████  ██      ██      
+██   ██ ██    ██    ██    ██      ██ ██      ██      ██          ██   ██ ██  ██  ██       ██          ██ ████   ██ ██         ██    ██   ██ ██      ██      
+██   ██ ██    ██    ██    █████   ██ ██      █████   ███████     ██████  █████   ██   ███ ███████     ██ ██ ██  ██ ███████    ██    ███████ ██      ██      
+██   ██ ██    ██    ██    ██      ██ ██      ██           ██     ██      ██  ██  ██    ██      ██     ██ ██  ██ ██      ██    ██    ██   ██ ██      ██      
+██████   ██████     ██    ██      ██ ███████ ███████ ███████     ██      ██   ██  ██████  ███████     ██ ██   ████ ███████    ██    ██   ██ ███████ ███████ 
+                                                                                                                                                            
+                                                                                                                                                            \n"
     printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
 }
 
@@ -116,14 +115,13 @@ clear
 ########## ---------- Установка paru---------- ##########
 logo_paru () {
 	echo -en "${ORANGE}                                  
- ____   ____  ____  __ __      ____  ____   _____ ______   ____  _      _     
-|    \ /    ||    \|  |  |    |    ||    \ / ___/|      | /    || |    | |    
-|  o  )  o  ||  D  )  |  |     |  | |  _  (   \_ |      ||  o  || |    | |    
-|   _/|     ||    /|  |  |     |  | |  |  |\__  ||_|  |_||     || |___ | |___ 
-|  |  |  _  ||    \|  :  |     |  | |  |  |/  \ |  |  |  |  _  ||     ||     |
-|  |  |  |  ||  .  \     |     |  | |  |  |\    |  |  |  |  |  ||     ||     |
-|__|  |__|__||__|\_|\__,_|    |____||__|__| \___|  |__|  |__|__||_____||_____|
-                                                                              \n"
+██████   █████  ██████  ██    ██     ██ ███    ██ ███████ ████████  █████  ██      ██      
+██   ██ ██   ██ ██   ██ ██    ██     ██ ████   ██ ██         ██    ██   ██ ██      ██      
+██████  ███████ ██████  ██    ██     ██ ██ ██  ██ ███████    ██    ███████ ██      ██      
+██      ██   ██ ██   ██ ██    ██     ██ ██  ██ ██      ██    ██    ██   ██ ██      ██      
+██      ██   ██ ██   ██  ██████      ██ ██   ████ ███████    ██    ██   ██ ███████ ███████ 
+                                                                                           
+                                                                                           \n"
     printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
 }
 logo_paru
@@ -155,8 +153,8 @@ while true; do
     done
 clear
 
-########## ---------- Установка пакетов AUR---------- ##########
 
+########## ---------- Установка пакетов AUR---------- ##########
 is_installed_paru() {
   paru -Qi "$1" &> /dev/null
   return $?
@@ -178,14 +176,13 @@ clear
 
 logo_all_done () {
 	echo -en "${GREEN}                                  
-  ____  _      _          ____ _____     ___     ___   ____     ___  __ 
- /    || |    | |        |    / ___/    |   \   /   \ |    \   /  _]|  |
-|  o  || |    | |         |  (   \_     |    \ |     ||  _  | /  [_ |  |
-|     || |___ | |___      |  |\__  |    |  D  ||  O  ||  |  ||    _]|__|
-|  _  ||     ||     |     |  |/  \ |    |     ||     ||  |  ||   [_  __ 
-|  |  ||     ||     |     |  |\    |    |     ||     ||  |  ||     ||  |
-|__|__||_____||_____|    |____|\___|    |_____| \___/ |__|__||_____||__|
-                                                                        \n"
+ █████  ██      ██          ██ ███████     ██████   ██████  ███    ██ ███████ ██ 
+██   ██ ██      ██          ██ ██          ██   ██ ██    ██ ████   ██ ██      ██ 
+███████ ██      ██          ██ ███████     ██   ██ ██    ██ ██ ██  ██ █████   ██ 
+██   ██ ██      ██          ██      ██     ██   ██ ██    ██ ██  ██ ██ ██         
+██   ██ ███████ ███████     ██ ███████     ██████   ██████  ██   ████ ███████ ██ 
+                                                                                 
+                                                                                 \n"
     printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
 }
 logo_all_done
@@ -193,6 +190,19 @@ sleep 2
 clear
 
 ########## ---------- Резервная копия файлов и каталогов ---------- ##########
+logo_backup_files () {
+	echo -en "${GREEN}                                  
+██████   █████   ██████ ██   ██ ██    ██ ██████  
+██   ██ ██   ██ ██      ██  ██  ██    ██ ██   ██ 
+██████  ███████ ██      █████   ██    ██ ██████  
+██   ██ ██   ██ ██      ██  ██  ██    ██ ██      
+██████  ██   ██  ██████ ██   ██  ██████  ██      
+                                                 
+                                                 \n"
+    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+}
+logo_backup_files
+
 backup_folder=~/.Backup_files
   echo -e "${CYAN}Backup files will be stored in .Backup_files"
   rsync -aAEHSXxr --exclude=".cache/mozilla/*" ~/.[^.]* $backup_folder
@@ -204,8 +214,22 @@ for del in polybar rofi picom.conf; do
    echo -e "${YELLOW}$del deleted"
 done
 sleep 2
+clear
 
 ########## ---------- Установка dot-файлов ---------- ##########
+logo_install_dots () {
+	echo -en "${GREEN}                                  
+██ ███    ██ ███████ ████████  █████  ██      ██          ██████   ██████  ████████ ███████ ██ ██      ███████ ███████ 
+██ ████   ██ ██         ██    ██   ██ ██      ██          ██   ██ ██    ██    ██    ██      ██ ██      ██      ██      
+██ ██ ██  ██ ███████    ██    ███████ ██      ██          ██   ██ ██    ██    ██    █████   ██ ██      █████   ███████ 
+██ ██  ██ ██      ██    ██    ██   ██ ██      ██          ██   ██ ██    ██    ██    ██      ██ ██      ██           ██ 
+██ ██   ████ ███████    ██    ██   ██ ███████ ███████     ██████   ██████     ██    ██      ██ ███████ ███████ ███████ 
+                                                                                                                       
+                                                                                                                       \n"
+    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+}
+logo_install_dots
+
 func_install_dots() {
 cp -rf "$current_dir"/user/.* "$home_dir"
 if [ ! -d /usr/share/grub/themes/catppuccin-mocha-grub-theme ]; then
@@ -238,10 +262,20 @@ sleep 2
 fc-cache -fv
 ### --- Делает Thunar двухпанельным
 xfconf-query -c thunar -p /misc-open-new-windows-in-split-view -n -t bool -s true
-clear
 
 ### --- Установка SDDM --- ###
-logo "Install SDDM"
+logo_install_sddm () {
+	echo -en "${GREEN}                                  
+███████ ██████  ██████  ███    ███ 
+██      ██   ██ ██   ██ ████  ████ 
+███████ ██   ██ ██   ██ ██ ████ ██ 
+     ██ ██   ██ ██   ██ ██  ██  ██ 
+███████ ██████  ██████  ██      ██ 
+                                   
+                                   \n"
+    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+}
+logo_install_sddm
 
 if [ -f /usr/bin/lightdm ]; then
    sudo systemctl disable lightdm.service
@@ -265,10 +299,24 @@ if [ -d /etc/lightdm ]; then
   sudo rm -rf /etc/lightdm
 fi
 sleep 2
+clear
 
 ##-------------------
 #--Grub themes apply
 ##-------------------
+logo_install_grub () {
+	echo -en "${GREEN}                                  
+ ██████  ██████  ██    ██ ██████  
+██       ██   ██ ██    ██ ██   ██ 
+██   ███ ██████  ██    ██ ██████  
+██    ██ ██   ██ ██    ██ ██   ██ 
+ ██████  ██   ██  ██████  ██████  
+                                  
+                                  \n"
+    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+}
+logo_install_grub
+
 GRUB_THEME_DIR="/usr/share/grub/themes"
 grub_theme="catppuccin-mocha-grub-theme"
     if grep "GRUB_THEME=" /etc/default/grub cmd >/dev/null; then
@@ -280,8 +328,23 @@ grub_theme="catppuccin-mocha-grub-theme"
       echo "GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"" | sudo tee /etc/default/grub
       sudo grub-mkconfig -o /boot/grub/grub.cfg
     fi
+sleep 2
+clear
 
 ### --- Установка темы и конфигов Firefox --- ###
+logo_install_firefox () {
+	echo -en "${GREEN}                                  
+███████ ██ ██████  ███████ ███████  ██████  ██   ██ 
+██      ██ ██   ██ ██      ██      ██    ██  ██ ██  
+█████   ██ ██████  █████   █████   ██    ██   ███   
+██      ██ ██   ██ ██      ██      ██    ██  ██ ██  
+██      ██ ██   ██ ███████ ██       ██████  ██   ██ 
+                                                    
+                                                    \n"
+    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+}
+logo_install_firefox
+
 copy_ff_func() {
   cp -R "$current_dir"/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH"
   echo -e "${GREEN}Firefox theme installed"
@@ -303,8 +366,22 @@ else
    exit 1
 fi
 sleep 2
+clear
 
 #### ------- Проверка видеокарты. Если карта отсутствует, то модули на polybar будут другие --- ###
+logo_install_nvidia () {
+	echo -en "${GREEN}                                  
+███    ██ ██    ██ ██ ██████  ██  █████  
+████   ██ ██    ██ ██ ██   ██ ██ ██   ██ 
+██ ██  ██ ██    ██ ██ ██   ██ ██ ███████ 
+██  ██ ██  ██  ██  ██ ██   ██ ██ ██   ██ 
+██   ████   ████   ██ ██████  ██ ██   ██ 
+                                         
+                                         \n"
+    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+}
+logo_install_nvidia
+
   scrDir="$(dirname "$(realpath "$0")")"
     readarray -t dGPU < <(lspci -k | grep -E "(VGA|3D)" | awk -F ': ' '{print $NF}')
     if [ "${1}" == "--verbose" ]; then
@@ -331,8 +408,21 @@ sleep 2
         echo -e "${CYAN}Nvidia card NOT found!"
     fi
 sleep 2
+clear
 
 ### --- Добавление пользователя в группы вирутальных машин. --- ###
+logo_install_mdp_libvirt () {
+	echo -en "${GREEN}                                  
+███    ███ ██████  ██████         ██        ██      ██ ██████  ██    ██ ██ ██████  ████████ 
+████  ████ ██   ██ ██   ██        ██        ██      ██ ██   ██ ██    ██ ██ ██   ██    ██    
+██ ████ ██ ██████  ██   ██     ████████     ██      ██ ██████  ██    ██ ██ ██████     ██    
+██  ██  ██ ██      ██   ██     ██  ██       ██      ██ ██   ██  ██  ██  ██ ██   ██    ██    
+██      ██ ██      ██████      ██████       ███████ ██ ██████    ████   ██ ██   ██    ██    
+                                                                                            
+                                                                                            \n"
+    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+}
+logo_install_mdp_libvirt
 echo -e "${ORANGE}Enabling Groups"
     sudo usermod -a -G libvirt "$(whoami)"
     newgrp libvirt
@@ -367,8 +457,21 @@ sleep 2
         log_error "Failed to enable user-level MPD service"
     fi
 sleep 2
+clear
 
 ########## --------- Замена шелла на zsh ---------- ##########
+logo_install_zsh () {
+	echo -en "${GREEN}                                  
+███████ ███████ ██   ██ 
+   ███  ██      ██   ██ 
+  ███   ███████ ███████ 
+ ███         ██ ██   ██ 
+███████ ███████ ██   ██ 
+                        
+                        \n"
+    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+}
+logo_install_zsh
 
 	if [[ $SHELL != "/usr/bin/zsh" ]]; then
         printf "%s%sChanging your shell to zsh...%s\n\n" "${BLD}" "${CYE}" "${CNC}"
@@ -384,8 +487,21 @@ sleep 2
         printf "%s%sYour shell is already zsh%s\n\n" "${BLD}" "${CGR}" "${CNC}"
     fi
 sleep 2
+clear
 
 ########## --------- Выход ---------- ##########
+logo_install_reboot () {
+	echo -en "${GREEN}                                  
+██████  ███████ ██████   ██████   ██████  ████████ 
+██   ██ ██      ██   ██ ██    ██ ██    ██    ██    
+██████  █████   ██████  ██    ██ ██    ██    ██    
+██   ██ ██      ██   ██ ██    ██ ██    ██    ██    
+██   ██ ███████ ██████   ██████   ██████     ██    
+                                                   
+                                                   \n"
+    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+}
+logo_install_reboot
 
 printf "%sThe installation is complete, you %sneed%s to restart your machine.%s\n\n" "${BLD}" "${CBL}" "${CNC}" "${CNC}"
 
