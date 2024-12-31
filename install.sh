@@ -229,7 +229,7 @@ echo -e "${GRE}Copy dots succesfully!"
 ##-------------------
 #--Install bin files
 ##-------------------
-sudo cp rf "$current_dir"/user/.bin/virlock /usr/bin
+sudo cp -rf "$current_dir"/user/.bin/virlock /usr/bin
 ### --- Завершение копирования dot-файлов --- ###
 func_install_dots
 sleep 2
