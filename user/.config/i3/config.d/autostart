@@ -22,16 +22,16 @@ exec --no-startup-id "thunar --daemon"
 exec --no-startup-id "gnome-keyring-daemon --start --components=pkcs11"
 exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 ### --- Dunst notification themes
-exec --no-startup-id "dunst -config $i3_configd/dunstrc"
+exec_always --no-startup-id "dunst -config $i3_configd/dunstrc"
 
-exec_always --no-startup-id "/usr/bin/musnify-mpd"
+exec_always --no-startup-id musnify-mpd
 exec_always --no-startup-id "xrdb -load $HOME/.Xresources"
 exec_always --no-startup-id "xsetroot -cursor_name left_ptr"
 ### --- Start themes
 exec_always --no-startup-id "$HOME/.config/i3/rices/catppuccin-mocha/Theme.sh"
 ### --- Wallpaper
 exec_always --no-startup-id "feh -z --no-fehbg --bg-fill $HOME/.config/i3/rices/catppuccin-mocha/walls/"
-exec_always --no-startup-id "autotiling"
+exec_always --no-startup-id autotiling
 exec_always --no-startup-id flashfocus
 exec_always --no-startup-id xss-lock --ignore-sleep "/usr/bin/virlock"
 

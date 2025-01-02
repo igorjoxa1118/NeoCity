@@ -5,6 +5,7 @@
 read -r RICETHEME < "$HOME"/.config/i3/config.d/.rice
 rice_dir="$HOME/.config/i3/rices/$RICETHEME"
 i3_configd="$HOME/.config/i3/config.d"
+i3_scr="$HOME/.config/i3/src"
 
 # Terminate already running bar instances
 killall -q polybar
@@ -24,6 +25,14 @@ rofi_launcher_img() {
 	fi
 }
 rofi_launcher_img
+
+rofi_calendar_color() {
+	if [ -f "$i3_scr/rofi-calendar/themes/colors.rasi" ]; then
+	 echo '' >  "$i3_scr/rofi-calendar/themes/colors.rasi"
+	 cat "$HOME/.config/i3/src/rofi-themes/colors/$RICETHEME.rasi" > "$i3_scr/rofi-calendar/themes/colors.rasi"
+	fi
+}
+rofi_calendar_color
 
 set_gtk_theme() {
 	sed -i "s/gtk-theme-name=.*/gtk-theme-name="$RICETHEME"/g" "$HOME"/.config/gtk-3.0/settings.ini

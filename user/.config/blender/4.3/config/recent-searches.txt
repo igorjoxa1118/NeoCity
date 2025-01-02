@@ -14,7 +14,6 @@ Shader ▸ Emission
    Render Result
    Viewer Node
    WhatsApp Video 2024-12-14 at 19.22.20.mp4
-Input ▸ Value
    Leavs_gorshok
    Branches_gorshok
    plastik
@@ -32,13 +31,10 @@ Texture ▸ Voronoi Texture
 Input ▸ Object Info
 
 Color ▸ Adjust ▸ Hue Correct
-Color ▸ Adjust ▸ Hue/Saturation/Value
 Shader ▸ Principled Volume
    volume
    Material.003
-Color ▸ Adjust ▸ Color Balance
 Color ▸ Hue/Saturation/Value
-Texture ▸ Image Texture
    snowflake.svg
 Layer
    Black
@@ -49,7 +45,6 @@ Input ▸ Image
 Utilities ▸ Normalize
  0 SVGMat.001
    Material
-Output ▸ Viewer
 Glare ▸ Image
 Color ▸ Mix ▸ Mix Color
 Shader ▸ Principled BSDF
@@ -60,11 +55,7 @@ Transform ▸ Lens Distortion
    SVGMat.012
 Converter ▸ Separate XYZ
    Polosi
-Texture ▸ Noise Texture
 Converter ▸ Vector Math
-Converter ▸ Math
-Texture ▸ Wave Texture
-Color ▸ Mix Color
    SVGMat.003
    SVGMat.006
    SVGMat.005
@@ -75,7 +66,27 @@ Shader ▸ Translucent BSDF
 Shader ▸ Glossy BSDF
 Shader ▸ Transparent BSDF
 Shader ▸ Mix Shader
-Converter ▸ Color Ramp
 Input ▸ Fresnel
-Filter ▸ Glare
    glass
+Glaz
+   Worti
+   per4atki
+ 0 Material
+Output ▸ Viewer
+Filter ▸ Glare
+Color ▸ Adjust ▸ Color Balance
+Color ▸ Adjust ▸ Hue/Saturation/Value
+Color ▸ Adjust ▸ Brightness/Contrast
+Texture ▸ Wave Texture
+Texture ▸ Noise Texture
+Input ▸ Value
+Converter ▸ Color Ramp
+Converter ▸ Math
+   pngwing.com.png
+   1625877787_36-kartinkin-com-p-tekstura-glaza-krasivo-38.jpg
+   Arcolinux.svg.png
+ 0 Woven Fabric.003
+Texture ▸ Magic Texture
+Texture ▸ Image Texture
+Color ▸ Mix Color
+ 0 Scratched Plastic.001
