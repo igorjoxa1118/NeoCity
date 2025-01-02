@@ -347,6 +347,7 @@ logo_install_firefox
 
 copy_ff_func() {
   cp -R "$current_dir"/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH"
+  cp -R "$current_dir"/firefox/extensions/* ~/.mozilla/firefox/"$PROFPATH"/extensions
   echo -e "${GREEN}Firefox theme installed"
   sleep 2
 }

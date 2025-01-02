@@ -3,38 +3,6 @@
       xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
       xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
 >
-  <bookmark href="file:///home/vir0id/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/-364841252-%20CV_igor_LAT2_v2" added="2024-12-10T14:50:05.281519Z" modified="2024-12-10T14:50:05.281528Z" visited="2024-12-10T14:50:05.281521Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/octet-stream"/>
-        <bookmark:applications>
-          <bookmark:application name="LibreOffice 24.8" exec="&apos;soffice %u&apos;" modified="2024-12-10T14:50:05.281524Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/vir0id/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/-364841252-%20CV_igor_LAT2_v2.pdf" added="2024-12-10T14:50:37.762056Z" modified="2024-12-12T15:17:59.173305Z" visited="2024-12-10T14:50:37.762057Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/pdf"/>
-        <bookmark:applications>
-          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2024-12-10T15:04:04.098300Z" count="2"/>
-          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2024-12-12T15:17:59.173303Z" count="3"/>
-          <bookmark:application name="LibreOffice 24.8" exec="&apos;soffice %u&apos;" modified="2024-12-10T15:13:13.681524Z" count="8"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///tmp/mozilla_vir0id0/-364841252-%20CV_igor_LAT2_v2.pdf" added="2024-12-10T14:57:15.025970Z" modified="2024-12-10T14:57:15.026053Z" visited="2024-12-10T14:57:15.026043Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/pdf"/>
-        <bookmark:applications>
-          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2024-12-10T14:57:15.026049Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
   <bookmark href="file:///home/vir0id/%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B/test_ssh2.sh" added="2024-12-10T17:42:41.971565Z" modified="2024-12-10T19:00:51.762791Z" visited="2024-12-10T17:42:41.971566Z">
     <info>
       <metadata owner="http://freedesktop.org">
@@ -870,12 +838,12 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/vir0id/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/repository/NeoCity/polybar_rices/not_nvidia/config.ini" added="2024-12-20T13:14:02.281362Z" modified="2024-12-30T15:24:04.402717Z" visited="2024-12-20T13:14:02.281363Z">
+  <bookmark href="file:///home/vir0id/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/repository/NeoCity/polybar_rices/not_nvidia/config.ini" added="2024-12-20T13:14:02.281362Z" modified="2025-01-02T06:04:25.005534Z" visited="2024-12-20T13:14:02.281363Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/octet-stream"/>
         <bookmark:applications>
-          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2024-12-30T15:24:04.402713Z" count="4"/>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2025-01-02T06:04:25.005528Z" count="6"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -10579,12 +10547,12 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/vir0id/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/repository/NeoCity/polybar_rices/nvidia/config.ini" added="2024-12-30T13:27:49.141710Z" modified="2024-12-30T13:27:49.141719Z" visited="2024-12-30T13:27:49.141711Z">
+  <bookmark href="file:///home/vir0id/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/repository/NeoCity/polybar_rices/nvidia/config.ini" added="2024-12-30T13:27:49.141710Z" modified="2025-01-02T05:58:44.452031Z" visited="2024-12-30T13:27:49.141711Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/octet-stream"/>
         <bookmark:applications>
-          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2024-12-30T13:27:49.141714Z" count="1"/>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2025-01-02T05:58:44.452030Z" count="2"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -11015,6 +10983,36 @@
         <mime:mime-type type="application/xml"/>
         <bookmark:applications>
           <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2025-01-01T18:06:49.393885Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/vir0id/.mozilla/firefox/6217hasp.default-release/extensions.json" added="2025-01-02T06:07:42.553949Z" modified="2025-01-02T06:07:42.553957Z" visited="2025-01-02T06:07:42.553950Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/json"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2025-01-02T06:07:42.553953Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/vir0id/.mozilla/firefox/6217hasp.default-release/extension-preferences.json" added="2025-01-02T06:07:42.553977Z" modified="2025-01-02T06:07:42.553981Z" visited="2025-01-02T06:07:42.553978Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/json"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2025-01-02T06:07:42.553979Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/vir0id/.mozilla/firefox/6217hasp.default-release/extension-settings.json" added="2025-01-02T06:07:42.553999Z" modified="2025-01-02T06:07:42.554002Z" visited="2025-01-02T06:07:42.553999Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/json"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;thunar %u&apos;" modified="2025-01-02T06:07:42.554000Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
