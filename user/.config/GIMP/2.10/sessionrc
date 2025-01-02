@@ -116,7 +116,7 @@
     (size 1515 569))
 (session-info "toplevel"
     (factory-entry "gimp-operation-tool-dialog")
-    (position 650 319))
+    (position 648 317))
 (session-info "toplevel"
     (factory-entry "gimp-file-save-dialog")
     (position 473 176)
@@ -127,11 +127,11 @@
     (size 950 782))
 (session-info "toplevel"
     (factory-entry "gimp-file-open-dialog")
-    (position 290 0)
+    (position 286 0)
     (size 950 782))
 (session-info "toplevel"
     (factory-entry "gimp-image-new-dialog")
-    (position 698 374))
+    (position 697 373))
 (session-info "toplevel"
     (factory-entry "gimp-levels-tool-dialog")
     (position 168 0)
@@ -141,7 +141,7 @@
     (position 338 113))
 (session-info "toplevel"
     (factory-entry "gimp-threshold-tool-dialog")
-    (position 333 342))
+    (position 331 340))
 (session-info "toplevel"
     (factory-entry "gimp-curves-tool-dialog")
     (position 259 16)

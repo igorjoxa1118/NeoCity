@@ -29,7 +29,7 @@
     (padding-in-show-all no))
 (theme "System")
 (layer-new-name "textur")
-(layer-add-mask-type black)
+(layer-add-mask-type selection)
 (selection-feather-radius 2)
 (fill-options
     (style solid)
