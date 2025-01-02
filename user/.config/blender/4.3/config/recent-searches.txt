@@ -1,7 +1,6 @@
 Shader ▸ Diffuse BSDF
 Converter ▸ Separate Color
    snow
-Vector ▸ Bump
    Snezinka
    Colision_obj
 Grease Pencil ▸ Object Line Art
@@ -25,7 +24,6 @@ Color ▸ Brightness/Contrast
    DuckTales - Theme Song .mp4
  0 Material.001
 Converter ▸ Shader to RGB
-Texture ▸ Voronoi Texture
    snow 1
    Material.002
 Input ▸ Object Info
@@ -49,11 +47,9 @@ Glare ▸ Image
 Color ▸ Mix ▸ Mix Color
 Shader ▸ Principled BSDF
 Converter ▸ Mix
-Transform ▸ Lens Distortion
    SVGMat.002
    SVGMat.011
    SVGMat.012
-Converter ▸ Separate XYZ
    Polosi
 Converter ▸ Vector Math
    SVGMat.003
@@ -63,9 +59,6 @@ Converter ▸ Vector Math
    SVGMat.007
    SVGMat.004
 Shader ▸ Translucent BSDF
-Shader ▸ Glossy BSDF
-Shader ▸ Transparent BSDF
-Shader ▸ Mix Shader
 Input ▸ Fresnel
    glass
 Glaz
@@ -73,20 +66,30 @@ Glaz
    per4atki
  0 Material
 Output ▸ Viewer
-Filter ▸ Glare
 Color ▸ Adjust ▸ Color Balance
 Color ▸ Adjust ▸ Hue/Saturation/Value
-Color ▸ Adjust ▸ Brightness/Contrast
-Texture ▸ Wave Texture
 Texture ▸ Noise Texture
 Input ▸ Value
-Converter ▸ Color Ramp
-Converter ▸ Math
    pngwing.com.png
    1625877787_36-kartinkin-com-p-tekstura-glaza-krasivo-38.jpg
    Arcolinux.svg.png
  0 Woven Fabric.003
 Texture ▸ Magic Texture
 Texture ▸ Image Texture
-Color ▸ Mix Color
  0 Scratched Plastic.001
+   Fabric
+Texture ▸ Voronoi Texture
+Color ▸ Mix Color
+Vector ▸ Bump
+Converter ▸ Separate XYZ
+Shader ▸ Transparent BSDF
+Shader ▸ Glossy BSDF
+Shader ▸ Mix Shader
+Transform ▸ Lens Distortion
+Filter ▸ Glare
+Color ▸ Adjust ▸ Brightness/Contrast
+Texture ▸ Wave Texture
+Converter ▸ Color Ramp
+Color Ramp ▸ Fac
+Bump ▸ Height
+Converter ▸ Math

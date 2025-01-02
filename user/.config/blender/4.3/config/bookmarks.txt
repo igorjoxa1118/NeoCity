@@ -1,9 +1,9 @@
 [Bookmarks]
 [Recent]
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Minijon/
 /home/vir0id/.config/blender/colorshemas/catppuccin-mocha/
 !Pictures
 /home/vir0id/Изображения/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Minijon/
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LiveWallpapers/arcolinux/
 !Videos
 /home/vir0id/Видео/
