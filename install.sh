@@ -160,7 +160,7 @@ else
         cd "$HOME" || exit
         git clone https://aur.archlinux.org/paru-bin.git
         cd paru-bin || exit
-        makepkg -si --noconfirm
+        makepkg -si --noconfirm 
         } || {
         echo -e "${RED}Failed to install Paru. You may need to install it manually!${ENDCOLOR}"
     }
@@ -168,11 +168,16 @@ fi
 sleep 3
 clear
 
+if [ ! -f /usr/bin/paru ]; then
+echo -e "${RED}Paru not installed! Exit script!${ENDCOLOR}" 
+exit 1
+fi
 
 ########## ---------- Установка пакетов AUR---------- ##########
 
-dependencias_paru=(cava tor-browser-bin ymuse-git zscroll-git eww-git musnify-mpd gnome-icon-theme catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
-                  zenity-gtk3 i3lock-color gdown kazam kodi-addon-pvr-iptvsimple hypnotix)
+dependencias_paru=(cava tor-browser-bin ymuse-git zscroll-git eww-git musnify-mpd gnome-icon-theme \
+                   catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
+                   zenity-gtk3 i3lock-color gdown kazam kodi-addon-pvr-iptvsimple hypnotix)
 
 echo -e "${YELLOW}Checking for required custom packages...!${ENDCOLOR}"
 for aur_package in "${dependencias_paru[@]}"; do
@@ -227,7 +232,6 @@ logo_backup_files
 
 for del in polybar rofi picom.conf; do
    rm -rf ~/.config/$del
-   echo -e "${YELLOW}$del deleted${ENDCOLOR}"
 done
 sleep 2
 clear
@@ -246,23 +250,23 @@ logo_install_dots () {
 logo_install_dots
 
 func_install_dots() {
-cp -rf "$current_dir"/user/.* "$home_dir"
+    cp -rf "$current_dir"/user/.* "$home_dir"
 if [ ! -d /usr/share/grub/themes/catppuccin-mocha-grub-theme ]; then
-sudo cp -rf "$current_dir"/grub_themes/catppuccin-mocha-grub-theme /usr/share/grub/themes/
+    sudo cp -rf "$current_dir"/grub_themes/catppuccin-mocha-grub-theme /usr/share/grub/themes/ >/dev/null 2> >(tee -a "$ERROR_LOG")
 fi
-echo -e "${GRE}Copy dots succesfully!${ENDCOLOR}"
 
-  if [ -d "$current_dir"/pkgs_virOS ]; then
-    echo "${CYAN}Folder exist"
-  else
+if [ -d "$current_dir"/pkgs_virOS ]; then
+    echo -e "${CYAN}Folder exist${ENDCOLOR}"
+else
     cd "$current_dir" || exit
-    if [ ! -d "$current_dir/pkgs_virOS" ]; then
+  if [ ! -d "$current_dir/pkgs_virOS" ]; then
     gdown --folder 19SlCmblUJts_I5dlAwd2C3tq7q2-wLbS
-    echo -e "${GRE}Packages in system!${ENDCOLOR}"
+    echo -e "${GRE}Install pkgs in system!${ENDCOLOR}"
     sudo rm -rf /usr/share/icons/* 
     sudo pacman -U "$current_dir"/pkgs_virOS/*.zst --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG")
-    fi
   fi
+fi
+echo -e "${GRE}Copy dots succesfully!${ENDCOLOR}"
 }
 
 ##-------------------
@@ -298,16 +302,16 @@ if [ -f /usr/bin/lightdm ]; then
 fi
 
 if [ -d /etc/sddm.conf.d/ ]; then
-   sudo cp -rf "$current_dir"/sddm/sddm.conf.d /etc/
-   sudo cp -rf "$current_dir"/sddm/catppuccin-mocha /usr/share/sddm/themes
-   sudo systemctl enable sddm.service
-   echo -e "${LIGHTCYAN}Done!${ENDCOLOR}"
+    sudo cp -rf "$current_dir"/sddm/sddm.conf.d /etc/
+    sudo cp -rf "$current_dir"/sddm/catppuccin-mocha /usr/share/sddm/themes
+    sudo systemctl enable sddm.service
+    echo -e "${LIGHTCYAN}Done!${ENDCOLOR}"
  else 
-   sudo pacman -S sddm --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG")
-   sudo cp -rf "$current_dir"/sddm/sddm.conf.d /etc/
-   sudo cp -rf "$current_dir"/sddm/catppuccin-mocha /usr/share/sddm/themes
-   sudo systemctl enable sddm.service
-   echo -e "${LIGHTCYAN}Done!${ENDCOLOR}"
+    sudo pacman -S sddm --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG")
+    sudo cp -rf "$current_dir"/sddm/sddm.conf.d /etc/ >/dev/null 2> >(tee -a "$ERROR_LOG")
+    sudo cp -rf "$current_dir"/sddm/catppuccin-mocha /usr/share/sddm/themes >/dev/null 2> >(tee -a "$ERROR_LOG")
+    sudo systemctl enable sddm.service >/dev/null 2> >(tee -a "$ERROR_LOG")
+    echo -e "${LIGHTCYAN}Done!${ENDCOLOR}"
 fi
 
 if [ -d /etc/lightdm ]; then
@@ -333,14 +337,16 @@ logo_install_grub
 
 GRUB_THEME_DIR="/usr/share/grub/themes"
 grub_theme="catppuccin-mocha-grub-theme"
-    if grep "GRUB_THEME=" /etc/default/grub cmd >/dev/null; then
+    if grep "GRUB_THEME=" /etc/default/grub; then
       #Replace GRUB_THEME
-      sudo sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"|" /etc/default/grub
-      sudo grub-mkconfig -o /boot/grub/grub.cfg
+      sudo sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"|" /etc/default/grub >/dev/null 2> >(tee -a "$ERROR_LOG")
+      sudo grub-mkconfig -o /boot/grub/grub.cfg >/dev/null 2> >(tee -a "$ERROR_LOG")
+      echo -e "${LIGHTCYAN}Done!${ENDCOLOR}"
     else
       #Append GRUB_THEME
       echo "GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"" | sudo tee /etc/default/grub
-      sudo grub-mkconfig -o /boot/grub/grub.cfg
+      sudo grub-mkconfig -o /boot/grub/grub.cfg >/dev/null 2> >(tee -a "$ERROR_LOG")
+      echo -e "${LIGHTCYAN}Done!${ENDCOLOR}"
     fi
 sleep 2
 clear
@@ -359,15 +365,17 @@ logo_install_firefox () {
 logo_install_firefox
 
 firefox_profiles() {
-if [[ $(grep '\[Profile[^0]\]' "$HOME"/.mozilla/firefox/profiles.ini) ]]
-then PROFPATH=$(grep -E '^\[Profile|^Path|^Default' "$HOME"/.mozilla/firefox/profiles.ini | grep -1 '^Default=1' | grep '^Path' | cut -c6-)
-else PROFPATH=$(grep 'Path=' "$HOME"/.mozilla/firefox/profiles.ini | sed 's/^Path=//')
+if [ -d "$HOME"/.mozilla/firefox ]; then
+  cd "$HOME"/.mozilla/firefox 
+  PROFPATH=$(grep -A 10 "\[Profile0\]" profiles.ini | sed '1d'| grep -m 1 -B 10 "\["| grep "Path=" | sed -e 's/Path=//')
+  cd "$current_dir"
 fi
 }
+irefox_profiles
 
 copy_ff_func() {
   if [ -d ~/.mozilla/firefox/"$PROFPATH"]; then
-    cp -R "$current_dir"/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH"
+    cp -R "$current_dir"/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH" >/dev/null 2> >(tee -a "$ERROR_LOG")
     echo -e "${GREEN}Firefox theme installed!${ENDCOLOR}"
   else
     echo -e "${YELLOW}Firefox theme${ENDCOLOR}${RED} has NOT been installed! Install manualy!${ENDCOLOR}"
@@ -375,7 +383,7 @@ copy_ff_func() {
 
   if [ ! -d ~/.mozilla/firefox/"$PROFPATH"/extensions ]; then
     mkdir ~/.mozilla/firefox/"$PROFPATH"/extensions
-    cp -R "$current_dir"/firefox/extensions/* ~/.mozilla/firefox/"$PROFPATH"/extensions
+    cp -R "$current_dir"/firefox/extensions/* ~/.mozilla/firefox/"$PROFPATH"/extensions >/dev/null 2> >(tee -a "$ERROR_LOG")
     echo -e "${GREEN}Firefox extentions installed!${ENDCOLOR}"
   else
     echo -e "${YELLOW}Firefox extentions${ENDCOLOR}${RED} has NOT been installed! Install manualy!${ENDCOLOR}"
@@ -446,11 +454,10 @@ logo_install_mdp_libvirt
 echo -e "${ORANGE}Groups!${ENDCOLOR}"
 
 if [ $(getent group libvirt) ]; then
-  echo "group exists."
+  echo "${GREEN}libvirt group exist!${ENDCOLOR}"
 else
   sudo groupadd libvirt
-  sudo usermod -a -G libvirt "$(whoami)" >/dev/null 2> >(tee -a "$ERROR_LOG")
-  newgrp libvirt >/dev/null 2> >(tee -a "$ERROR_LOG")
+  sudo usermod -a -G libvirt "$(whoami)"
   echo -e "${ORANGE}Done!${ENDCOLOR}"
 fi
 sleep 2
