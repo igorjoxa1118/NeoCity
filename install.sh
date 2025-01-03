@@ -19,14 +19,13 @@ CYAN='\033[0;36m'
 YELLOW='\033[1;33m'
 LIGHTBLUE='\033[1;34m'
 LIGHTCYAN='\033[1;36m'
+ENDCOLOR="\e[0m"
 
 ##-----------------
 #---Vars
 ##-----------------
 
-paru_url="https://aur.archlinux.org/paru-bin.git"
-home_dir=$HOME
-current_dir=$(pwd)
+backup_folder=~/.Backup_files
 ERROR_LOG="$HOME/RiceError.log"
 
 ##-----------------
@@ -41,31 +40,56 @@ logo_install () {
  ██  ██  ██ ██   ██ ████  ██ ██ ██   ██     ██   ██ ██    ██    ██         ██ 
   ████   ██ ██   ██  ██████  ██ ██████      ██████   ██████     ██    ███████ 
                                                                               
-                                                                              \n"
-    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+                                                                              ${ENDCOLOR}\n"
 }
 
 ########## ---------- Скрипт должен быть запущен от sudo ---------- ##########
 
 if [ "$(id -u)" = 0 ]; then
-    echo -e "${LIGHTBLUE}This script MUST NOT be run as root user."
+    echo -e "${LIGHTBLUE}This script MUST NOT be run as root user.${ENDCOLOR}"
     exit 1
 fi
+
+home_dir=$HOME
+current_dir=$(pwd)
+
+if [ ! -f /usr/bin/firefox ]; then
+     sudo pacman -S firefox --noconfirm &> /dev/null
+     echo -e "${GREEN}Start Firefox manualy! Its important!${ENDCOLOR}"
+     exit 1
+fi
+
+log_error() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$ERROR_LOG"
+}
+
+is_installed() {
+    pacman -Qq "$1" &> /dev/null
+}
 
 ########## ---------- Приветики пистолетики =) ---------- ##########
 
 logo_install
-printf '%s%s This script checks to see if you have the necessary requirements, and if not, it will install them.%s\n\n' "${BLD}" "${CRE}" "${CNC}"
+echo -e "${YELLOW}This script checks to see if you have the necessary requirements, and if not, it will install them.!${ENDCOLOR}"
 
 while true; do
 	read -rp "Do you wish to continue? [y/N]: " yn
 		case $yn in
 			[Yy]* ) break;;
 			[Nn]* ) exit;;
-			* ) printf " Error: just write 'y' or 'n'\n\n";;
+			* ) echo " Error: just write 'y' or 'n'\n\n";;
 		esac
     done
 clear
+
+
+if [ -f /usr/bin/i3lock ]; then 
+  sudo pacman -R i3lock --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG")
+fi
+
+if [ -f /usr/bin/zenity ]; then
+  sudo pacman -R zenity --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG")
+fi
 
 ######### -------------- Зависимости ------------------########
 
@@ -75,7 +99,7 @@ dependencias=(base-devel alacritty brightnessctl dunst bottom imagemagick \
               redshift rust ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
               ttf-joypixels ttf-terminus-nerd ueberzug webp-pixbuf-loader xclip \
               xdo ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common \
-              ttf-nerd-fonts-symbols-mono yad cmus jgmenu rsync mpv jq git socat mpd polkit-gnome \
+              ttf-nerd-fonts-symbols-mono yad cmus rsync mpv jq git socat mpd polkit-gnome \
               stalonetray kitty lsd ranger micro blueman mousepad ristretto firefox thunar thunar-volman \
               thunar-media-tags-plugin thunar-archive-plugin polybar rofi xdg-user-dirs engrampa bc \
               nitrogen feh picom yt-dlp fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-autosuggestions \
@@ -88,29 +112,32 @@ dependencias=(base-devel alacritty brightnessctl dunst bottom imagemagick \
 
 
 
-dependencias_paru=(cava tor-browser-bin ymuse-git zscroll-git eww-git musnify-mpd gnome-icon-theme catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
-                  zenity-gtk3 i3lock-color gdown pamac-aur kazam kodi-addon-pvr-iptvsimple hypnotix)
-
-is_installed() {
-  pacman -Qi "$1" &> /dev/null
-  return $?
-}
 
 ########## ---------- Установка пакетов из стандартных репозиториев pacman ---------- ##########
-
-printf "%s%sChecking for required packages...%s\n" "${BLD}" "${CBL}" "${CNC}"
+echo -e "${YELLOW}Checking for required packages...!${ENDCOLOR}"
 for pkges in "${dependencias[@]}"
 do
   if ! is_installed "$pkges"; then
-    sudo pacman -S "$pkges" --noconfirm
-    printf "\n"
+    if sudo pacman -S "$pkges" --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG"); then
+    echo -e "${YELLOW}$pkges${ENDCOLOR}${LIGHTBLUE} has been installed succesfully.${ENDCOLOR}"
   else
-    printf '%s%s is already installed on your system!%s\n' "${CGR}" "$pkges" "${CNC}"
-    sleep 1
-  fi
-done
-sleep 2
+                echo -e "${YELLOW}$pkges${ENDCOLOR}${RED} has NOT been installed. See ${YELLOW}RiceError.log${ENDCOLOR}" \
+                       "${BLD}" "${CYE}" "$paquete" "${CRE}" "${CBL}" "${CRE}" "${CNC}"
+                log_error "Failed to install package: $paquete"
+            fi
+            sleep 1
+        else
+            echo -e "${YELLOW}$pkges${GREEN} is already installed on your system!${ENDCOLOR}"
+            sleep 1
+        fi
+    done
+sleep 3
 clear
+
+# Verifies if the archive user-dirs.dirs doesn't exist in ~/.config
+if [ ! -e "$HOME/.config/user-dirs.dirs" ]; then
+    xdg-user-dirs-update
+fi
 
 ########## ---------- Установка paru---------- ##########
 logo_paru () {
@@ -121,58 +148,50 @@ logo_paru () {
 ██      ██   ██ ██   ██ ██    ██     ██ ██  ██ ██      ██    ██    ██   ██ ██      ██      
 ██      ██   ██ ██   ██  ██████      ██ ██   ████ ███████    ██    ██   ██ ███████ ███████ 
                                                                                            
-                                                                                           \n"
-    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+                                                                                           ${ENDCOLOR}\n"
 }
 logo_paru
 
-clone_paru() {
-# Installing Paru
 if command -v paru >/dev/null 2>&1; then
-    printf "%s%sParu is already installed%s\n" "${BLD}" "${CGR}" "${CNC}"
+    echo -e "${YELLOW}Paru is already installed!${ENDCOLOR}"
 else
-    printf "%s%sInstalling paru%s\n" "${BLD}" "${CBL}" "${CNC}"
+    echo -e "${YELLOW}Installing paru!${ENDCOLOR}"
     {
         cd "$HOME" || exit
-        git clone $paru_url
-        cd "$HOME"/paru-bin || exit
+        git clone https://aur.archlinux.org/paru-bin.git
+        cd paru-bin || exit
         makepkg -si --noconfirm
         } || {
-        printf "\n%s%sFailed to install Paru. You may need to install it manually%s\n" "${BLD}" "${CRE}" "${CNC}"
+        echo -e "${RED}Failed to install Paru. You may need to install it manually!${ENDCOLOR}"
     }
 fi
-}
-
-while true; do
-	read -rp "Do you want paru? [y/N]: " yn
-		case $yn in
-			[Yy]* ) clone_paru && break;;
-			[Nn]* ) break;;
-			* ) printf " Error: just write 'y' or 'n'\n\n";;
-		esac
-    done
+sleep 3
 clear
 
 
 ########## ---------- Установка пакетов AUR---------- ##########
-is_installed_paru() {
-  paru -Qi "$1" &> /dev/null
-  return $?
-}
 
-printf "%s%sChecking for required packages...%s\n" "${BLD}" "${CBL}" "${CNC}"
-for pkges_paru in "${dependencias_paru[@]}"
-do
-  if ! is_installed_paru "$pkges_paru"; then
-    paru -S "$pkges_paru" --noconfirm
-    printf "\n"
-  else
-    printf '%s%s is already installed on your system!%s\n' "${CGR}" "$pkges_paru" "${CNC}"
-    sleep 1
-  fi
+dependencias_paru=(cava tor-browser-bin ymuse-git zscroll-git eww-git musnify-mpd gnome-icon-theme catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
+                  zenity-gtk3 i3lock-color gdown kazam kodi-addon-pvr-iptvsimple hypnotix)
+
+echo -e "${YELLOW}Checking for required custom packages...!${ENDCOLOR}"
+for aur_package in "${dependencias_paru[@]}"; do
+    if ! is_installed "$aur_package"; then
+        if paru -S --skipreview --noconfirm "$aur_package" 2> >(tee -a "$ERROR_LOG"); then
+            echo -e "${YELLOW}$aur_package${ENDCOLOR}${LIGHTBLUE} has been installed succesfully.${ENDCOLOR}"
+        else
+            echo -e "${YELLOW}$aur_package${ENDCOLOR}${RED} has NOT been installed. See ${YELLOW}RiceError.log${ENDCOLOR}"
+            log_error "Failed to install package: $aur_package"
+        fi
+        sleep 1
+    else
+        echo -e "${YELLOW} $aur_package ${GREEN} is already installed on your system!${ENDCOLOR}"
+        sleep 1
+    fi
 done
-sleep 2
+sleep 3
 clear
+
 
 logo_all_done () {
 	echo -en "${GREEN}                                  
@@ -182,8 +201,7 @@ logo_all_done () {
 ██   ██ ██      ██          ██      ██     ██   ██ ██    ██ ██  ██ ██ ██         
 ██   ██ ███████ ███████     ██ ███████     ██████   ██████  ██   ████ ███████ ██ 
                                                                                  
-                                                                                 \n"
-    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+                                                                                 ${ENDCOLOR}\n"
 }
 logo_all_done
 sleep 2
@@ -198,20 +216,18 @@ logo_backup_files () {
 ██   ██ ██   ██ ██      ██  ██  ██    ██ ██      
 ██████  ██   ██  ██████ ██   ██  ██████  ██      
                                                  
-                                                 \n"
-    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+                                                 ${ENDCOLOR}\n"
 }
 logo_backup_files
 
-backup_folder=~/.Backup_files
-  echo -e "${CYAN}Backup files will be stored in .Backup_files"
-  rsync -aAEHSXxr --exclude=".cache/mozilla/*" ~/.[^.]* $backup_folder
-  echo -e "${ORANGE}Done!!"
+  echo -e "${CYAN}Backup files will be stored in .Backup_files${ENDCOLOR}"
+  sudo rsync -aAEHSXxr --delete --exclude=".cache/mozilla/*" ~/.[^.]* $backup_folder
+  echo -e "${ORANGE}Done!!${ENDCOLOR}"
 
 
 for del in polybar rofi picom.conf; do
    rm -rf ~/.config/$del
-   echo -e "${YELLOW}$del deleted"
+   echo -e "${YELLOW}$del deleted${ENDCOLOR}"
 done
 sleep 2
 clear
@@ -225,8 +241,7 @@ logo_install_dots () {
 ██ ██  ██ ██      ██    ██    ██   ██ ██      ██          ██   ██ ██    ██    ██    ██      ██ ██      ██           ██ 
 ██ ██   ████ ███████    ██    ██   ██ ███████ ███████     ██████   ██████     ██    ██      ██ ███████ ███████ ███████ 
                                                                                                                        
-                                                                                                                       \n"
-    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+                                                                                                                       ${ENDCOLOR}\n"
 }
 logo_install_dots
 
@@ -235,7 +250,7 @@ cp -rf "$current_dir"/user/.* "$home_dir"
 if [ ! -d /usr/share/grub/themes/catppuccin-mocha-grub-theme ]; then
 sudo cp -rf "$current_dir"/grub_themes/catppuccin-mocha-grub-theme /usr/share/grub/themes/
 fi
-echo -e "${GRE}Copy dots succesfully!"
+echo -e "${GRE}Copy dots succesfully!${ENDCOLOR}"
 
   if [ -d "$current_dir"/pkgs_virOS ]; then
     echo "${CYAN}Folder exist"
@@ -243,9 +258,9 @@ echo -e "${GRE}Copy dots succesfully!"
     cd "$current_dir" || exit
     if [ ! -d "$current_dir/pkgs_virOS" ]; then
     gdown --folder 19SlCmblUJts_I5dlAwd2C3tq7q2-wLbS
-    echo -e "${GRE}Packages in system!"
-    sudo rm -rf /usr/share/icons/*
-    sudo pacman -U "$current_dir"/pkgs_virOS/*.zst --noconfirm
+    echo -e "${GRE}Packages in system!${ENDCOLOR}"
+    sudo rm -rf /usr/share/icons/* 
+    sudo pacman -U "$current_dir"/pkgs_virOS/*.zst --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG")
     fi
   fi
 }
@@ -259,9 +274,10 @@ func_install_dots
 sleep 2
 
 ### --- Сканирование шрифтов
-fc-cache -fv
+fc-cache -rv >/dev/null 2>&1
 ### --- Делает Thunar двухпанельным
 xfconf-query -c thunar -p /misc-open-new-windows-in-split-view -n -t bool -s true
+clear
 
 ### --- Установка SDDM --- ###
 logo_install_sddm () {
@@ -272,27 +288,26 @@ logo_install_sddm () {
      ██ ██   ██ ██   ██ ██  ██  ██ 
 ███████ ██████  ██████  ██      ██ 
                                    
-                                   \n"
-    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+                                   ${ENDCOLOR}\n"
 }
 logo_install_sddm
 
 if [ -f /usr/bin/lightdm ]; then
    sudo systemctl disable lightdm.service
-   sudo pacman -Rdd lightdm lightdm-gtk-greeter --noconfirm
+   sudo pacman -Rdd lightdm lightdm-gtk-greeter --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG")
 fi
 
 if [ -d /etc/sddm.conf.d/ ]; then
    sudo cp -rf "$current_dir"/sddm/sddm.conf.d /etc/
    sudo cp -rf "$current_dir"/sddm/catppuccin-mocha /usr/share/sddm/themes
    sudo systemctl enable sddm.service
-   echo -e "${LIGHTCYAN}Done!"
+   echo -e "${LIGHTCYAN}Done!${ENDCOLOR}"
  else 
-   sudo pacman -S sddm --noconfirm
+   sudo pacman -S sddm --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG")
    sudo cp -rf "$current_dir"/sddm/sddm.conf.d /etc/
    sudo cp -rf "$current_dir"/sddm/catppuccin-mocha /usr/share/sddm/themes
    sudo systemctl enable sddm.service
-   echo -e "${LIGHTCYAN}Done!"
+   echo -e "${LIGHTCYAN}Done!${ENDCOLOR}"
 fi
 
 if [ -d /etc/lightdm ]; then
@@ -312,8 +327,7 @@ logo_install_grub () {
 ██    ██ ██   ██ ██    ██ ██   ██ 
  ██████  ██   ██  ██████  ██████  
                                   
-                                  \n"
-    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+                                  ${ENDCOLOR}\n"
 }
 logo_install_grub
 
@@ -340,17 +354,9 @@ logo_install_firefox () {
 ██      ██ ██   ██ ██      ██      ██    ██  ██ ██  
 ██      ██ ██   ██ ███████ ██       ██████  ██   ██ 
                                                     
-                                                    \n"
-    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+                                                    ${ENDCOLOR}\n"
 }
 logo_install_firefox
-
-copy_ff_func() {
-  cp -R "$current_dir"/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH"
-  cp -R "$current_dir"/firefox/extensions/* ~/.mozilla/firefox/"$PROFPATH"/extensions
-  echo -e "${GREEN}Firefox theme installed"
-  sleep 2
-}
 
 firefox_profiles() {
 if [[ $(grep '\[Profile[^0]\]' "$HOME"/.mozilla/firefox/profiles.ini) ]]
@@ -359,12 +365,26 @@ else PROFPATH=$(grep 'Path=' "$HOME"/.mozilla/firefox/profiles.ini | sed 's/^Pat
 fi
 }
 
+copy_ff_func() {
+  if [ -d ~/.mozilla/firefox/"$PROFPATH"]; then
+    cp -R "$current_dir"/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH"
+    echo -e "${GREEN}Firefox theme installed!${ENDCOLOR}"
+  else
+    echo -e "${YELLOW}Firefox theme${ENDCOLOR}${RED} has NOT been installed! Install manualy!${ENDCOLOR}"
+  fi
+
+  if [ ! -d ~/.mozilla/firefox/"$PROFPATH"/extensions ]; then
+    mkdir ~/.mozilla/firefox/"$PROFPATH"/extensions
+    cp -R "$current_dir"/firefox/extensions/* ~/.mozilla/firefox/"$PROFPATH"/extensions
+    echo -e "${GREEN}Firefox extentions installed!${ENDCOLOR}"
+  else
+    echo -e "${YELLOW}Firefox extentions${ENDCOLOR}${RED} has NOT been installed! Install manualy!${ENDCOLOR}"
+  fi
+}
+
+
 if [ -z "$PROFPATH" ]; then
    copy_ff_func
-else
-   echo -e "${RED}Firefox themes not installed"
-   sleep 2
-   exit 1
 fi
 sleep 2
 clear
@@ -378,8 +398,7 @@ logo_install_nvidia () {
 ██  ██ ██  ██  ██  ██ ██   ██ ██ ██   ██ 
 ██   ████   ████   ██ ██████  ██ ██   ██ 
                                          
-                                         \n"
-    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+                                         ${ENDCOLOR}\n"
 }
 logo_install_nvidia
 
@@ -387,7 +406,7 @@ logo_install_nvidia
     readarray -t dGPU < <(lspci -k | grep -E "(VGA|3D)" | awk -F ': ' '{print $NF}')
     if [ "${1}" == "--verbose" ]; then
         for indx in "${!dGPU[@]}"; do
-            echo -e "\033[0;32m[gpu$indx]\033[0m detected // ${dGPU[indx]}"
+            echo "[gpu$indx]detected // ${dGPU[indx]}"
         done
         return 0
     fi
@@ -401,12 +420,12 @@ logo_install_nvidia
         rm -rf "$home_dir/.config/i3/rices/catppuccin-mocha/config.ini"
         cd "$current_dir"/polybar_rices/nvidia || exit
         cp -R config.ini "$home_dir/.config/i3/rices/catppuccin-mocha/"
-        echo -e "${ORANGE}Nvidia card found!"
+        echo -e "${ORANGE}Nvidia card found!${ENDCOLOR}"
     else
         rm -rf "$home_dir/.config/i3/rices/catppuccin-mocha/config.ini"
         cd "$current_dir"/polybar_rices/not_nvidia || exit
         cp -R config.ini "$home_dir/.config/i3/rices/catppuccin-mocha/"
-        echo -e "${CYAN}Nvidia card NOT found!"
+        echo -e "${CYAN}Nvidia card NOT found!${ENDCOLOR}"
     fi
 sleep 2
 clear
@@ -420,44 +439,47 @@ logo_install_mdp_libvirt () {
 ██  ██  ██ ██      ██   ██     ██  ██       ██      ██ ██   ██  ██  ██  ██ ██   ██    ██    
 ██      ██ ██      ██████      ██████       ███████ ██ ██████    ████   ██ ██   ██    ██    
                                                                                             
-                                                                                            \n"
-    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+                                                                                            ${ENDCOLOR}\n"
 }
 logo_install_mdp_libvirt
-echo -e "${ORANGE}Enabling Groups"
-    sudo usermod -a -G libvirt "$(whoami)"
-    newgrp libvirt
-echo -e "${ORANGE}Done!"
+
+echo -e "${ORANGE}Groups!${ENDCOLOR}"
+
+if [ $(getent group libvirt) ]; then
+  echo "group exists."
+else
+  sudo groupadd libvirt
+  sudo usermod -a -G libvirt "$(whoami)" >/dev/null 2> >(tee -a "$ERROR_LOG")
+  newgrp libvirt >/dev/null 2> >(tee -a "$ERROR_LOG")
+  echo -e "${ORANGE}Done!${ENDCOLOR}"
+fi
 sleep 2
+clear
 
+echo -e "${ORANGE}Mpd!${ENDCOLOR}"
 	if systemctl is-enabled --quiet mpd.service; then
-        printf "%s%sDisabling and stopping the global mpd service%s\n" "${BLD}" "${CBL}" "${CNC}"
-
+        echo -e "${RED}Disabling${ENDCOLOR} ${GREEN} and stopping the global mpd service!${ENDCOLOR}"
         if sudo systemctl disable --now mpd.service >/dev/null 2> >(tee -a "$ERROR_LOG"); then
             sleep 1
-            printf "\n%s[%sOK%s%s]%s Global MPD service disabled successfully\n\n" \
-                   "${BLD}" "${CGR}" "${CNC}" "${BLD}" "${CNC}"
+            echo -e "${GREEN}Global MPD service ${RED}disabled${ENDCOLOR} ${GREEN}successfully!${ENDCOLOR}"
         else
             sleep 1
-            printf "%s[%sError%s%s] Please check %sRiceError.log%s for details\n\n" \
-               "${BLD}" "${CRE}" "${CNC}" "${BLD}" "${CYE}" "${CNC}"
+            echo -e "${RED}Global MPD service disabled successfully!${ENDCOLOR}"
             log_error "Failed to disable global MPD service"
 		fi
 	fi
 
-    printf "%s%sEnabling and starting the user-level mpd service%s\n\n" "${BLD}" "${CBL}" "${CNC}"
+    echo -e "${ORANGE}Enabling and starting the user-level mpd service!${ENDCOLOR}"
 
     if systemctl --user enable --now mpd.service >/dev/null 2> >(tee -a "$ERROR_LOG"); then
         sleep 1
-        printf "%s[%sOK%s%s]%s User-level MPD service enabled successfully\n\n" \
-               "${BLD}" "${CGR}" "${CNC}" "${BLD}" "${CNC}"
+        echo -e "${GREEN}User-level MPD service enabled successfully!${ENDCOLOR}"
     else
         sleep 1
-        printf "%s[%sError%s%s] Please check %sRiceError.log%s for details\n\n" \
-               "${BLD}" "${CRE}" "${CNC}" "${BLD}" "${CYE}" "${CNC}"
+        echo -e "${RED}Please check %sRiceError.log!${ENDCOLOR}"
         log_error "Failed to enable user-level MPD service"
     fi
-sleep 2
+sleep 3
 clear
 
 ########## --------- Замена шелла на zsh ---------- ##########
@@ -469,25 +491,23 @@ logo_install_zsh () {
  ███         ██ ██   ██ 
 ███████ ███████ ██   ██ 
                         
-                        \n"
-    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+                        ${ENDCOLOR}\n"
 }
 logo_install_zsh
 
 	if [[ $SHELL != "/usr/bin/zsh" ]]; then
-        printf "%s%sChanging your shell to zsh...%s\n\n" "${BLD}" "${CYE}" "${CNC}"
+        echo -e "${YELLOW}Changing your shell to zsh...${ENDCOLOR}"
 
         if chsh -s /usr/bin/zsh 2> >(tee -a "$ERROR_LOG"); then
-            printf "\n%s[%sOK%s%s] Shell changed to zsh successfully!%s\n\n" "${BLD}" "${CGR}" "${CNC}" "${BLD}" "${CNC}"
+            echo -e "${GREEN}Shell changed to zsh successfully!${ENDCOLOR}"
         else
-            printf "%s%sError changing your shell to zsh. Please check %sRiceError.log%s for details%s\n\n" \
-                   "${BLD}" "${CRE}" "${CYE}" "${CRE}" "${CNC}"
+            echo -e "${RED}Error changing your shell to zsh. Please check %sRiceError.log${ENDCOLOR}"
             log_error "Failed to change shell to zsh"
         fi
     else
-        printf "%s%sYour shell is already zsh%s\n\n" "${BLD}" "${CGR}" "${CNC}"
+        echo -e "${GREEN}Your shell is already zsh!${ENDCOLOR}"
     fi
-sleep 2
+sleep 3
 clear
 
 ########## --------- Выход ---------- ##########
@@ -499,28 +519,27 @@ logo_install_reboot () {
 ██   ██ ██      ██   ██ ██    ██ ██    ██    ██    
 ██   ██ ███████ ██████   ██████   ██████     ██    
                                                    
-                                                   \n"
-    printf ' %s [%s%s %s%s]%s\n\n' "${CRE}" "${CNC}" "${CYE}" "${CNC}" "${CRE}" "${CNC}"
+                                                   ${ENDCOLOR}\n"
 }
 logo_install_reboot
 
-printf "%sThe installation is complete, you %sneed%s to restart your machine.%s\n\n" "${BLD}" "${CBL}" "${CNC}" "${CNC}"
+echo -e "${YELLOW}The installation is complete, you ${GREEN}need${ENDCOLOR}${YELLOW} to restart your machine.${ENDCOLOR}"
 
 	while true; do
 		read -rp " Reboot now? [y/N]: " yn
 		case $yn in
 			[Yy]* )
-				printf "\n%s%sRebooting now...%s\n" "${BLD}" "${CGR}" "${CNC}"
+        echo -e "${YELLOW}Rebooting now...${ENDCOLOR}"
 				sleep 3
 				reboot
 				break
 				;;
 			[Nn]* )
-				printf "\n%s%sOK, remember to restart later!%s\n\n" "${BLD}" "${CYE}" "${CNC}"
+        echo -e "${GREEN}OK, remember to restart later!${ENDCOLOR}"
 				break
 				;;
 			* )
-				printf "\n%s%sPlease answer yes or no.%s\n\n" "${BLD}" "${CRE}" "${CNC}"
+        echo -e "${YELLOW}Please answer yes or no!${ENDCOLOR}"
 				;;
 		esac
 	done

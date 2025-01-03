@@ -58,7 +58,6 @@ set_picom_config() {
 		-e "s/\".*:class_g *= 'qBittorrent'\"/\"90:class_g = 'qBittorrent'\"/g" \
 		-e "s/\".*:class_g *= 'transmission-gtk'\"/\"90:class_g = 'transmission-gtk'\"/g" \
 		-e "s/\".*:class_g *= 'Polybar'\"/\"90:class_g = 'Polybar'\"/g" \
-		-e "s/\".*:class_g *= 'jgmenu_run'\"/\"90:class_g = 'jgmenu_run'\"/g" \
 		-e "s/\".*:class_g *= 'code-oss'\"/\"90:class_g = 'code-oss'\"/g"
 }
 

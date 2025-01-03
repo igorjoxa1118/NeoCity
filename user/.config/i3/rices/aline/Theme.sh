@@ -105,7 +105,6 @@ set_picom_config() {
 		-e "s/\".*:class_g *= 'qBittorrent'\"/\"100:class_g = 'qBittorrent'\"/g" \
 		-e "s/\".*:class_g *= 'transmission-gtk'\"/\"100:class_g = 'transmission-gtk'\"/g" \
 		-e "s/\".*:class_g *= 'Polybar'\"/\"100:class_g = 'Polybar'\"/g" \
-		-e "s/\".*:class_g *= 'jgmenu_run'\"/\"100:class_g = 'jgmenu_run'\"/g" \
 		-e "s/\".*:class_g *= 'code-oss'\"/\"100:class_g = 'code-oss'\"/g"
 }
 
@@ -126,16 +125,6 @@ set_eww_colors() {
 \$yellow: #ea9d34;
 \$archicon: #0f94d2;
 EOF
-}
-
-# Set jgmenu colors for Aline
-set_jgmenu_colors() {
-	sed -i "$HOME"/.config/i3/config.d/jgmenurc \
-		-e 's/color_menu_bg = .*/color_menu_bg = #faf4ed/' \
-		-e 's/color_norm_fg = .*/color_norm_fg = #575279/' \
-		-e 's/color_sel_bg = .*/color_sel_bg = #f2e9e1/' \
-		-e 's/color_sel_fg = .*/color_sel_fg = #575279/' \
-		-e 's/color_sep_fg = .*/color_sep_fg = #907aa9/'
 }
 
 # Set Rofi launcher config
@@ -185,5 +174,4 @@ set_term_config
 set_picom_config
 launch_bars
 set_eww_colors
-set_jgmenu_colors
 set_launcher_config

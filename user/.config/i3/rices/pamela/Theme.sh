@@ -166,14 +166,6 @@ EOF
 }
 
 set_launchers() {
-	# Jgmenu
-	sed -i "$HOME"/.config/i3/config.d/jgmenurc \
-		-e "s/color_menu_bg = .*/color_menu_bg = ${bg}/" \
-		-e "s/color_norm_fg = .*/color_norm_fg = ${fg}/" \
-		-e "s/color_sel_bg = .*/color_sel_bg = #1F222B/" \
-		-e "s/color_sel_fg = .*/color_sel_fg = ${fg}/" \
-		-e "s/color_sep_fg = .*/color_sep_fg = ${blueb}/"
-
 	# Rofi launchers
 	cat >"$HOME"/.config/i3/src/rofi-themes/shared.rasi <<EOF
 // Rofi colors for Pamela
