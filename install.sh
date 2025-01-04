@@ -386,7 +386,7 @@ copy_firefox_theme() {
     echo -e "${GREEN}Firefox theme installed in ${ENDCOLOR}${YELLOW}""$PROFPATH_0""${ENDCOLOR}"
   elif [ -d ~/.mozilla/firefox/"$PROFPATH_1" ]; then
     cp -R "$current_dir"/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH_1"
-    echo -e "${GREEN}Firefox theme installed in ${ENDCOLOR}${YELLOW}""$PROFPATH_0""${ENDCOLOR}" 
+    echo -e "${GREEN}Firefox theme installed in ${ENDCOLOR}${YELLOW}""$PROFPATH_1""${ENDCOLOR}" 
   else
     echo -e "${YELLOW}Firefox theme${ENDCOLOR}${RED} has NOT been installed! Install manualy!${ENDCOLOR}"
   fi
@@ -396,7 +396,7 @@ copy_firefox_theme() {
     echo -e "${GREEN}Firefox extentions installed in ${ENDCOLOR}${YELLOW}""$PROFPATH_0""${ENDCOLOR}"
   elif [ -d ~/.mozilla/firefox/"$PROFPATH_1"/extensions ]; then
     cp -R "$current_dir"/firefox/extensions/* ~/.mozilla/firefox/"$PROFPATH_1"/extensions
-    echo -e "${GREEN}Firefox extentions installed in ${ENDCOLOR}${YELLOW}""$PROFPATH_0""${ENDCOLOR}"
+    echo -e "${GREEN}Firefox extentions installed in ${ENDCOLOR}${YELLOW}""$PROFPATH_1""${ENDCOLOR}"
   else
     echo -e "${YELLOW}Firefox extentions${ENDCOLOR}${RED} has NOT been installed! Install manualy!${ENDCOLOR}"
   fi
