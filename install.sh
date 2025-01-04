@@ -381,6 +381,9 @@ fi
 firefox_profiles
 
 copy_firefox_theme() {
+  
+  cp -rf "$current_dir"/firefox/userstyles ~/.mozilla/firefox/
+
   if [ -d ~/.mozilla/firefox/"$PROFPATH_0" ]; then
     cp -R "$current_dir"/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH_0"
     echo -e "${GREEN}Firefox theme installed in ${ENDCOLOR}${YELLOW}""$PROFPATH_0""${ENDCOLOR}"
