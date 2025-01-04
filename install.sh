@@ -105,8 +105,7 @@ dependencias=(base-devel alacritty brightnessctl dunst bottom imagemagick \
               nitrogen feh picom yt-dlp fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-autosuggestions \
               zsh-history-substring-search starship bluez-utils bluez-tools bluez-plugins bluez-libs bluez \
               zziplib unarj libzip karchive gnome-autoar file-roller \
-              cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenlive kodi \
-              kodi-addon-inputstream-adaptive kodi-dev kodi-eventclients kodi-platform p8-platform vde2 xorg-xdpyinfo xorg-xwininfo \
+              cpio arj perl libarchive telegram-desktop code discord gimp blender krita kdenlive vde2 xorg-xdpyinfo xorg-xwininfo \
               xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot xdotool bzip2 gzip lrzip lz4 lzip lzop xz zstd p7zip zip unzip unrar \
               yazi unarchiver xarchiver qt6-svg qt6-declarative qt5-quickcontrols2 qt5-graphicaleffects ffmpeg poppler fd ripgrep zoxide)
 
@@ -176,7 +175,7 @@ fi
 
 dependencias_paru=(cava tor-browser-bin ymuse-git zscroll-git eww-git musnify-mpd gnome-icon-theme \
                    catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
-                   i3lock-color gdown kazam kodi-addon-pvr-iptvsimple hypnotix)
+                   i3lock-color gdown kazam hypnotix)
 
 echo -e "${YELLOW}Checking for required custom packages...!${ENDCOLOR}"
 for aur_package in "${dependencias_paru[@]}"; do
@@ -381,7 +380,7 @@ fi
 firefox_profiles
 
 copy_firefox_theme() {
-  
+
   cp -rf "$current_dir"/firefox/userstyles ~/.mozilla/firefox/
 
   if [ -d ~/.mozilla/firefox/"$PROFPATH_0" ]; then
