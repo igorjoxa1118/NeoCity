@@ -4,12 +4,12 @@
 ##----------------
 #--Colors
 ##----------------
-CRE=$(tput setaf 1)
-CYE=$(tput setaf 3)
-CGR=$(tput setaf 2)
-CBL=$(tput setaf 4)
-BLD=$(tput bold)
-CNC=$(tput sgr0)
+# CRE=$(tput setaf 1)
+# CYE=$(tput setaf 3)
+# CGR=$(tput setaf 2)
+# CBL=$(tput setaf 4)
+# BLD=$(tput bold)
+# CNC=$(tput sgr0)
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -77,7 +77,7 @@ while true; do
 		case $yn in
 			[Yy]* ) break;;
 			[Nn]* ) exit;;
-			* ) echo " Error: just write 'y' or 'n'\n\n";;
+			* ) echo "Please answer yes or no.";;
 		esac
     done
 clear
@@ -121,9 +121,8 @@ do
     if sudo pacman -S "$pkges" --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG"); then
     echo -e "${YELLOW}$pkges${ENDCOLOR}${LIGHTBLUE} has been installed succesfully.${ENDCOLOR}"
   else
-                echo -e "${YELLOW}$pkges${ENDCOLOR}${RED} has NOT been installed. See ${YELLOW}RiceError.log${ENDCOLOR}" \
-                       "${BLD}" "${CYE}" "$paquete" "${CRE}" "${CBL}" "${CRE}" "${CNC}"
-                log_error "Failed to install package: $paquete"
+                echo -e "${YELLOW}$pkges${ENDCOLOR}${RED} has NOT been installed. See ${YELLOW}RiceError.log${ENDCOLOR}"
+                log_error "Failed to install package: $pkges"
             fi
             sleep 1
         else
@@ -177,7 +176,7 @@ fi
 
 dependencias_paru=(cava tor-browser-bin ymuse-git zscroll-git eww-git musnify-mpd gnome-icon-theme \
                    catppuccin-cursors-mocha ytdlp-gui oh-my-zsh-git oh-my-posh-bin autotiling gtkhash-thunar \
-                   zenity-gtk3 i3lock-color gdown kazam kodi-addon-pvr-iptvsimple hypnotix)
+                   i3lock-color gdown kazam kodi-addon-pvr-iptvsimple hypnotix)
 
 echo -e "${YELLOW}Checking for required custom packages...!${ENDCOLOR}"
 for aur_package in "${dependencias_paru[@]}"; do
@@ -297,14 +296,14 @@ logo_install_sddm () {
 logo_install_sddm
 
 if [ -f /usr/bin/lightdm ]; then
-   sudo systemctl disable lightdm.service
+   sudo systemctl disable lightdm.service >/dev/null 2> >(tee -a "$ERROR_LOG")
    sudo pacman -Rdd lightdm lightdm-gtk-greeter --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG")
 fi
 
 if [ -d /etc/sddm.conf.d/ ]; then
     sudo cp -rf "$current_dir"/sddm/sddm.conf.d /etc/
     sudo cp -rf "$current_dir"/sddm/catppuccin-mocha /usr/share/sddm/themes
-    sudo systemctl enable sddm.service
+    sudo systemctl enable sddm.service >/dev/null 2> >(tee -a "$ERROR_LOG")
     echo -e "${LIGHTCYAN}Done!${ENDCOLOR}"
  else 
     sudo pacman -S sddm --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG")
@@ -317,7 +316,7 @@ fi
 if [ -d /etc/lightdm ]; then
   sudo rm -rf /etc/lightdm
 fi
-sleep 2
+sleep 3
 clear
 
 ##-------------------
@@ -335,20 +334,28 @@ logo_install_grub () {
 }
 logo_install_grub
 
+install_grub_theme() {
 GRUB_THEME_DIR="/usr/share/grub/themes"
 grub_theme="catppuccin-mocha-grub-theme"
-    if grep "GRUB_THEME=" /etc/default/grub; then
+
+if [ ! -d "$GRUB_THEME_DIR"/"$grub_theme" ]; then
+    sudo cp -rf "$current_dir"/grub_themes/"$grub_theme" /usr/share/grub/themes/
+fi
+
+  if [ -f /etc/default/grub ]; then
       #Replace GRUB_THEME
       sudo sed -i "s|.*GRUB_THEME=.*|GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"|" /etc/default/grub >/dev/null 2> >(tee -a "$ERROR_LOG")
       sudo grub-mkconfig -o /boot/grub/grub.cfg >/dev/null 2> >(tee -a "$ERROR_LOG")
       echo -e "${LIGHTCYAN}Done!${ENDCOLOR}"
-    else
+  else
       #Append GRUB_THEME
       echo "GRUB_THEME=\"${GRUB_THEME_DIR}/${grub_theme}/theme.txt\"" | sudo tee /etc/default/grub
       sudo grub-mkconfig -o /boot/grub/grub.cfg >/dev/null 2> >(tee -a "$ERROR_LOG")
       echo -e "${LIGHTCYAN}Done!${ENDCOLOR}"
-    fi
-sleep 2
+  fi
+}
+install_grub_theme
+sleep 3
 clear
 
 ### --- Установка темы и конфигов Firefox --- ###
@@ -365,26 +372,31 @@ logo_install_firefox () {
 logo_install_firefox
 
 firefox_profiles() {
-if [ -d "$HOME"/.mozilla/firefox ]; then
-  cd "$HOME"/.mozilla/firefox 
-  PROFPATH=$(grep -A 10 "\[Profile0\]" profiles.ini | sed '1d'| grep -m 1 -B 10 "\["| grep "Path=" | sed -e 's/Path=//')
-  cd "$current_dir"
+if [[ $(grep '\[Profile[^0]\]' ~/.mozilla/firefox/profiles.ini) ]]; then 
+    PROFPATH_0=$(grep -A 10 "\[Profile0\]" ~/.mozilla/firefox/profiles.ini | sed '1d'| grep -m 1 -B 10 "\["| grep "Path=" | sed -e 's/Path=//')
+elif [[ $(grep '\[Profile[^1]\]' ~/.mozilla/firefox/profiles.ini) ]]; then 
+    PROFPATH_1=$(grep -A 10 "\[Profile1\]" ~/.mozilla/firefox/profiles.ini | sed '1d'| grep -m 1 -B 10 "\["| grep "Path=" | sed -e 's/Path=//')
 fi
 }
-irefox_profiles
+firefox_profiles
 
-copy_ff_func() {
-  if [ -d ~/.mozilla/firefox/"$PROFPATH"]; then
-    cp -R "$current_dir"/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH" >/dev/null 2> >(tee -a "$ERROR_LOG")
-    echo -e "${GREEN}Firefox theme installed!${ENDCOLOR}"
+copy_firefox_theme() {
+  if [ -d ~/.mozilla/firefox/"$PROFPATH_0" ]; then
+    cp -R "$current_dir"/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH_0"
+    echo -e "${GREEN}Firefox theme installed in ${ENDCOLOR}${YELLOW}""$PROFPATH_0""${ENDCOLOR}"
+  elif [ -d ~/.mozilla/firefox/"$PROFPATH_1" ]; then
+    cp -R "$current_dir"/firefox/FoxThemes/* ~/.mozilla/firefox/"$PROFPATH_1"
+    echo -e "${GREEN}Firefox theme installed in ${ENDCOLOR}${YELLOW}""$PROFPATH_0""${ENDCOLOR}" 
   else
     echo -e "${YELLOW}Firefox theme${ENDCOLOR}${RED} has NOT been installed! Install manualy!${ENDCOLOR}"
   fi
 
-  if [ ! -d ~/.mozilla/firefox/"$PROFPATH"/extensions ]; then
-    mkdir ~/.mozilla/firefox/"$PROFPATH"/extensions
-    cp -R "$current_dir"/firefox/extensions/* ~/.mozilla/firefox/"$PROFPATH"/extensions >/dev/null 2> >(tee -a "$ERROR_LOG")
-    echo -e "${GREEN}Firefox extentions installed!${ENDCOLOR}"
+  if [ -d ~/.mozilla/firefox/"$PROFPATH_0"/extensions ]; then
+    cp -R "$current_dir"/firefox/extensions/* ~/.mozilla/firefox/"$PROFPATH_0"/extensions
+    echo -e "${GREEN}Firefox extentions installed in ${ENDCOLOR}${YELLOW}""$PROFPATH_0""${ENDCOLOR}"
+  elif [ -d ~/.mozilla/firefox/"$PROFPATH_1"/extensions ]; then
+    cp -R "$current_dir"/firefox/extensions/* ~/.mozilla/firefox/"$PROFPATH_1"/extensions
+    echo -e "${GREEN}Firefox extentions installed in ${ENDCOLOR}${YELLOW}""$PROFPATH_0""${ENDCOLOR}"
   else
     echo -e "${YELLOW}Firefox extentions${ENDCOLOR}${RED} has NOT been installed! Install manualy!${ENDCOLOR}"
   fi
@@ -392,9 +404,9 @@ copy_ff_func() {
 
 
 if [ -z "$PROFPATH" ]; then
-   copy_ff_func
+   copy_firefox_theme
 fi
-sleep 2
+sleep 3
 clear
 
 #### ------- Проверка видеокарты. Если карта отсутствует, то модули на polybar будут другие --- ###
@@ -435,7 +447,7 @@ logo_install_nvidia
         cp -R config.ini "$home_dir/.config/i3/rices/catppuccin-mocha/"
         echo -e "${CYAN}Nvidia card NOT found!${ENDCOLOR}"
     fi
-sleep 2
+sleep 3
 clear
 
 ### --- Добавление пользователя в группы вирутальных машин. --- ###
@@ -452,16 +464,15 @@ logo_install_mdp_libvirt () {
 logo_install_mdp_libvirt
 
 echo -e "${ORANGE}Groups!${ENDCOLOR}"
-
-if [ $(getent group libvirt) ]; then
-  echo "${GREEN}libvirt group exist!${ENDCOLOR}"
+VIRTGROUP="libvirt"
+if grep -q $VIRTGROUP /etc/group; then
+  echo -e "${GREEN}libvirt group exist!${ENDCOLOR}"
 else
   sudo groupadd libvirt
   sudo usermod -a -G libvirt "$(whoami)"
   echo -e "${ORANGE}Done!${ENDCOLOR}"
 fi
-sleep 2
-clear
+sleep 3
 
 echo -e "${ORANGE}Mpd!${ENDCOLOR}"
 	if systemctl is-enabled --quiet mpd.service; then
