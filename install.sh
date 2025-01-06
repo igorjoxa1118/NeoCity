@@ -54,8 +54,8 @@ home_dir=$HOME
 current_dir=$(pwd)
 
 if [ ! -f /usr/bin/firefox ]; then
-     sudo pacman -S firefox --noconfirm &> /dev/null
-     echo -e "${GREEN}Start Firefox manualy! Its important!${ENDCOLOR}"
+     sudo pacman -S firefox-ublock-origin --noconfirm &> /dev/null
+     echo -e "${GREEN}Start Firefox! Its important!${ENDCOLOR}"
      exit 1
 fi
 
