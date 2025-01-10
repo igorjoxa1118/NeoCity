@@ -16,6 +16,6 @@
   <property name="misc-open-new-windows-in-split-view" type="bool" value="true"/>
   <property name="misc-horizontal-wheel-navigates" type="bool" value="true"/>
   <property name="last-image-preview-visible" type="bool" value="true"/>
-  <property name="last-splitview-separator-position" type="int" value="798"/>
+  <property name="last-splitview-separator-position" type="int" value="822"/>
   <property name="misc-always-enable-split-view" type="bool" value="true"/>
 </channel>

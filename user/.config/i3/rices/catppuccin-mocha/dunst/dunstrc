@@ -8,7 +8,7 @@
 
 [global]
 frame_width= 1
-frame_color = "#cba6f7"
+frame_color = "#11111b"
 font = MesloLGS NF 9
 monitor = 0
 follow = mouse
@@ -84,14 +84,14 @@ class = Dunst
 [urgency_low]
 timeout = 3
 background = "#1e1e2e"
-foreground = "#cdd6f4"
+foreground = "#a6adc8"
 
 [urgency_normal]
 timeout = 5
 background = "#1e1e2e"
-foreground = "#bac2de"
+foreground = "#cdd6f4"
 
 [urgency_critical]
 timeout = 0
 background = "#1e1e2e"
-foreground = "#a6adc8"
+foreground = "#f38ba8"

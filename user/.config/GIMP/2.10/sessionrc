@@ -11,8 +11,8 @@
     (size 640 480))
 (session-info "toplevel"
     (factory-entry "gimp-single-image-window")
-    (position 56 56)
-    (size 1808 968)
+    (position 30 68)
+    (size 1860 944)
     (open-on-exit)
     (aux-info
         (left-docks-width "44")
@@ -53,6 +53,10 @@
                     (show-button-bar "true")))
             (dockable "gimp-image-list"
                 (locked)
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-brush-grid"
                 (tab-style automatic)
                 (aux-info
                     (show-button-bar "true"))))
@@ -127,11 +131,11 @@
     (size 950 782))
 (session-info "toplevel"
     (factory-entry "gimp-file-open-dialog")
-    (position 286 0)
+    (position 277 0)
     (size 950 782))
 (session-info "toplevel"
     (factory-entry "gimp-image-new-dialog")
-    (position 697 373))
+    (position 696 372))
 (session-info "toplevel"
     (factory-entry "gimp-levels-tool-dialog")
     (position 168 0)

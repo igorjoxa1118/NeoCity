@@ -130,12 +130,8 @@ DPI=$(xrdb -query | sed -nE 's/^Xft\.dpi:\s*//p')
 launch_bars() {
 
 	for mon in $(polybar --list-monitors | cut -d":" -f1); do
-		MONITOR=$mon polybar -q top-1 -c "${rice_dir}"/config.ini &
-		MONITOR=$mon polybar -q top-2 -c "${rice_dir}"/config.ini &
-		MONITOR=$mon polybar -q top-3 -c "${rice_dir}"/config.ini &
-		MONITOR=$mon polybar -q bottom-1 -c "${rice_dir}"/config.ini &
-		MONITOR=$mon polybar -q bottom-2 -c "${rice_dir}"/config.ini &
-		MONITOR=$mon polybar -q bottom-3 -c "${rice_dir}"/config.ini &
+		MONITOR=$mon polybar -q main -c "${rice_dir}"/config.ini &
+		MONITOR=$mon polybar -q secondary -c "${rice_dir}"/config.ini &
 	done
 }
 launch_bars

@@ -1,0 +1,13 @@
+// Rofi colors for Emilia
+
+* {
+    font: "FiraMono Nerd Font Bold 10";
+    background: #1e1e2e;
+
+    background-alt: #1A1B26E0;
+    
+    foreground: #c0caf5;
+    selected: #89b4fa;
+    active: #a6e3a1;
+    urgent: #f38ba8;
+}

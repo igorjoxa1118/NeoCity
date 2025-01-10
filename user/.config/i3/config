@@ -10,8 +10,8 @@ set $mod1 Mod1
 set $i3_scripts ~/.config/i3/src
 set $i3_configd ~/.config/i3/config.d
 set $bins ~/.bin
-set $default_gaps_inner 28
-set $default_gaps_outer 28
+set $default_gaps_inner 15
+set $default_gaps_outer 15
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -61,9 +61,10 @@ hide_edge_borders smart
 
 # smart_gaps on
 smart_borders on
+floating_modifier $mod
+
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
-floating_modifier $mod
 
 ### --- «Режим редактирование отступов».
 mode "$mode_gaps" {
