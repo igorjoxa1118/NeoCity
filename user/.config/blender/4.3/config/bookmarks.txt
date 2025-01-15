@@ -1,13 +1,12 @@
 [Bookmarks]
 [Recent]
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/
-/home/vir0id/.config/blender/4.3/config/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/ChainsawMan/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/ChainsawMan/obj/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/ServissN1/textures/road/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/ServissN1/textures/ENV/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/textures/Textures.com/Архитектура и интерьер часть 3/Дороги #/Дороги с обочиной или разметкой/
+/usr/share/fonts/adobe-source-code-pro/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/ServissN1/
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/addons/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/alexander-kolyasa/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Granata_Jinks/render/video/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Granata_Jinks/render/cycles/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Granata_Jinks/
-!Pictures
-/home/vir0id/Изображения/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Granata_Jinks/render/
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Granata_Jinks/textures/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/ServissN1/logo/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LiveWallpapers/arcolinux/render/video/

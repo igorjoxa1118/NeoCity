@@ -95,6 +95,9 @@ case "$1" in
     --calendar)
         eww -c "$WIDGET_DIR" open --toggle date
         ;;
+    --KeyHelp)
+		eww -c "$WIDGET_DIR" open --toggle csheet
+		;;
     *)
         echo "Invalid Option"
         ;;

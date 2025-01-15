@@ -1,3 +1,5 @@
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/ChainsawMan/untitled.blend
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/ServissN1/untitled.blend
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/untitled.blend
 /home/vir0id/.config/blender/4.3/config/userpref.blend
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/alexander-kolyasa/untitled.blend

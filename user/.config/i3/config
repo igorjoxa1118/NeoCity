@@ -57,7 +57,7 @@ default_border pixel 1
 default_floating_border pixel 1
 
 ### --- Этот параметр реагирует на рамки всех окон. Так же есть параметр hide_edge_borders both.
-hide_edge_borders smart
+#hide_edge_borders smart
 
 # smart_gaps on
 smart_borders on

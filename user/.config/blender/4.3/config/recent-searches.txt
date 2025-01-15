@@ -23,7 +23,6 @@ Color ▸ Brightness/Contrast
    DuckTales - Theme Song .mp4
  0 Material.001
    snow 1
-   Material.002
 Input ▸ Object Info
 
 Color ▸ Adjust ▸ Hue Correct
@@ -41,7 +40,6 @@ Utilities ▸ Normalize
  0 SVGMat.001
 Glare ▸ Image
 Color ▸ Mix ▸ Mix Color
-Shader ▸ Principled BSDF
    SVGMat.002
    SVGMat.011
    SVGMat.012
@@ -62,7 +60,6 @@ Glaz
  0 Material
 Color ▸ Adjust ▸ Color Balance
 Color ▸ Adjust ▸ Hue/Saturation/Value
-Input ▸ Value
    pngwing.com.png
    1625877787_36-kartinkin-com-p-tekstura-glaza-krasivo-38.jpg
    Arcolinux.svg.png
@@ -81,16 +78,12 @@ Color Ramp ▸ Fac
 Bump ▸ Height
    Cartoon
 Converter ▸ Math
-Color ▸ Hue/Saturation/Value
    Material
-Vector ▸ Bump
 Converter ▸ Shader to RGB
 Texture ▸ Noise Texture
 Converter ▸ Map Range
 Converter ▸ Combine Color
-Texture ▸ Image Texture
 Converter ▸ Mix
-Color ▸ Mix Color
    1677860922_happyhouse-guru-p-tekstura-okna-besshovnaya-okna-pin
  0 Untitled.001
  0 black
@@ -108,5 +101,16 @@ L  Texture|[essentials_brushes-mesh_texture.blend]
 Output ▸ Viewer
 Filter ▸ Glare
 Transform ▸ Lens Distortion
-Converter ▸ Color Ramp
    Ru4ki
+   RoadMarkings (14).jpg
+Input ▸ Value
+Vector ▸ Normal Map
+Vector ▸ Bump
+Vector ▸ Displacement
+Color ▸ Mix Color
+   Material.002
+Texture ▸ Image Texture
+Converter ▸ Color Ramp
+Shader ▸ Principled BSDF
+   glowing-spaceship-orbits-planet-starry-galaxy-generated-by-ai.j
+Color ▸ Hue/Saturation/Value

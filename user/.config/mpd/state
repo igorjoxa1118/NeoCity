@@ -2,8 +2,8 @@ sw_volume: 96
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: pause
-current: 203
-time: 137.577000
+current: 3
+time: 68.857000
 random: 0
 repeat: 0
 single: 0
@@ -280,4 +280,22 @@ playlist_begin
 265:Games/Darkman007/Singles/Darkman007 - Ready to Die.mp3
 266:Games/Darkman007/Singles/Darkman007 - Rodents Extermination.mp3
 267:Games/Darkman007/Singles/Darkman007 - Your Breathing.mp3
+268:Games/Zubareus/2010 - From 8 to infinity/01. Contra Force.flac
+269:Games/Zubareus/2010 - From 8 to infinity/02. Silver Surfer.flac
+270:Games/Zubareus/2010 - From 8 to infinity/03. Journey to silius.flac
+271:Games/Zubareus/2010 - From 8 to infinity/04. TMNT 3.flac
+272:Games/Zubareus/2010 - From 8 to infinity/05. Alien 3 intro.flac
+273:Games/Zubareus/2010 - From 8 to infinity/06. Robocop 3.flac
+274:Games/Zubareus/2010 - From 8 to infinity/07. Alien 3 level.flac
+275:Games/Zubareus/2010 - From 8 to infinity/08. Batman ROTJ.flac
+276:Games/Zubareus/2010 - From 8 to infinity/09. Dr Mario.flac
+277:Games/Zubareus/2010 - From 8 to infinity/10. Final mission.flac
+278:Games/Zubareus/2014 - Singles Collection (2011-2013)/01. Jurassic Park.flac
+279:Games/Zubareus/2014 - Singles Collection (2011-2013)/02. Road Rash 3.flac
+280:Games/Zubareus/2014 - Singles Collection (2011-2013)/03. Mr Gimmick feat. Harmsing.flac
+281:Games/Zubareus/2014 - Singles Collection (2011-2013)/04. Duck Tales 2.flac
+282:Games/Zubareus/2014 - Singles Collection (2011-2013)/05. Man of Steel.flac
+283:Games/Zubareus/2014 - Singles Collection (2011-2013)/06. Solbrain (Shatterhand).flac
+284:Games/Zubareus/2014 - Singles Collection (2011-2013)/07. Crisis Force.flac
+285:Games/Zubareus/2014 - Singles Collection (2011-2013)/08. Tiny Toon Adventures.flac
 playlist_end

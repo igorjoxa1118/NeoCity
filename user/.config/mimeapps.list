@@ -10,13 +10,13 @@ application/x-tar=engrampa.desktop;xarchiver.desktop;
 application/x-zerosize=code-oss.desktop;
 application/xml=code.desktop;code-oss.desktop;
 image/gif=gimp.desktop;
-image/jpeg=org.xfce.ristretto.desktop;gimp.desktop;userapp-ristretto-YN5RU2.desktop;
+image/jpeg=gimp.desktop;org.xfce.ristretto.desktop;userapp-ristretto-YN5RU2.desktop;
 image/png=gimp.desktop;org.inkscape.Inkscape.desktop;org.xfce.ristretto.desktop;
 image/svg+xml=org.inkscape.Inkscape.desktop;gimp.desktop;org.xfce.ristretto.desktop;
 image/webp=gimp.desktop;userapp-ristretto-YN5RU2.desktop;
 text/css=code-oss.desktop;
 text/html=code-oss.desktop;firefox.desktop;
-text/plain=code-oss.desktop;code.desktop;
+text/plain=geany.desktop;code-oss.desktop;code.desktop;
 text/x-csrc=code.desktop;code-oss.desktop;
 text/x-devicetree-source=code-oss.desktop;code.desktop;
 text/x-python=code.desktop;code-oss.desktop;
@@ -39,6 +39,7 @@ text/csv=code-oss.desktop;
 application/x-executable=code-oss.desktop;
 text/x-log=code-oss.desktop;
 video/quicktime=vlc.desktop;
+application/vnd.microsoft.portable-executable=wine.desktop;
 
 [Default Applications]
 application/json=code-oss.desktop

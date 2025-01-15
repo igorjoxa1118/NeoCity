@@ -1,6 +1,7 @@
 (include "./System-Menu/eww.yuck")
 (include "./Misc/eww.yuck")
 (include "./Main/eww.yuck")
+(include "./cheatsheet/cheatsheet.yuck")
 
 (defwidget closer []
     (eventbox :onclick "eww close-all"))

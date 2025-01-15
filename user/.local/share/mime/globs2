@@ -9,6 +9,7 @@
 50:application/x-extension-htm:*.htm
 50:video/mpeg:[0-9][0-9][0-9].vdr
 50:video/mpeg:[0-9][0-9][0-9].vdr
+50:application/x-wine-extension-msp:*.msp
 50:application/x-extension-xht:*.xht
 50:video/mpeg:*.ts
 50:application/x-extension-shtml:*.shtml

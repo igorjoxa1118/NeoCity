@@ -9,6 +9,7 @@ video/mpeg:*.mpe
 application/x-extension-htm:*.htm
 video/mpeg:[0-9][0-9][0-9].vdr
 video/mpeg:[0-9][0-9][0-9].vdr
+application/x-wine-extension-msp:*.msp
 application/x-extension-xht:*.xht
 video/mpeg:*.ts
 application/x-extension-shtml:*.shtml
