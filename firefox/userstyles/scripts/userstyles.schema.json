@@ -1,0 +1,236 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "userstyles": {
+      "$id": "#userstyles",
+      "title": "Userstyles",
+      "type": "object",
+      "description": "All userstyles in the Catppuccin org.",
+      "patternProperties": {
+        "[A-Za-z0-9_\\-]": {
+          "$id": "#userstyles/userstyle",
+          "title": "Userstyle",
+          "type": "object",
+          "description": "The directory of the userstyle.",
+          "examples": ["youtube"],
+          "required": ["name", "categories", "readme", "color", "current-maintainers"],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "$id": "#userstyles/userstyle/name",
+              "title": "Name",
+              "description": "The name of the userstyle(s).",
+              "oneOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 2,
+                  "examples": [["AniList", "AniChart"]]
+                },
+                {
+                  "type": "string",
+                  "examples": ["YouTube"]
+                }
+              ]
+            },
+            "categories": {
+              "$id": "#userstyles/userstyle/categories",
+              "title": "Categories",
+              "description": "The categories that fit the userstyle the most, the first category is the primary category which the userstyle will be listed under on the README.",
+              "$ref": "#/$defs/categories"
+            },
+            "color": {
+              "$id": "#userstyles/userstyle/color",
+              "title": "Color",
+              "description": "The fill color for the icon on the Catppuccin website, which should match the color used by Simple Icons. If the icon does not exist in Simple Icons, choose the most suitable color from the branding.",
+              "type": "string",
+              "enum": [
+                "rosewater",
+                "flamingo",
+                "pink",
+                "mauve",
+                "red",
+                "maroon",
+                "peach",
+                "yellow",
+                "green",
+                "teal",
+                "sky",
+                "sapphire",
+                "blue",
+                "lavender",
+                "text"
+              ],
+              "examples": ["pink"]
+            },
+            "icon": {
+              "$id": "#userstyles/userstyle/icon",
+              "title": "Icon",
+              "description": "The icon to use on the website. This should be the same name as the SVG file on https://simpleicons.org/. If a `.svg` suffix is present, it's taken from the local website repository resources.",
+              "type": "string",
+              "examples": ["twitch", "twitch.svg"]
+            },
+            "readme": {
+              "$id": "#userstyles/userstyle/readme",
+              "title": "README",
+              "description": "Options to help in the auto-generation of the userstyle README.",
+              "type": "object",
+              "required": ["app-link"],
+              "properties": {
+                "app-link": {
+                  "$id": "#userstyles/userstyle/readme/app-link",
+                  "title": "Application Link",
+                  "description": "The hyperlink of the app that is being themed.",
+                  "oneOf": [
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 2,
+                      "examples": [
+                        ["https://anilist.co", "https://anichart.net"]
+                      ]
+                    },
+                    {
+                      "type": "string",
+                      "examples": ["https://github.com"]
+                    }
+                  ]
+                },
+                "usage": {
+                  "$id": "#userstyles/userstyle/readme/usage",
+                  "title": "Usage",
+                  "description": "The Usage section of the userstyle README.",
+                  "type": "string"
+                },
+                "faq": {
+                  "$id": "#userstyles/userstyle/readme/faq",
+                  "title": "FAQ",
+                  "description": "The FAQ section of the userstyle README.",
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "question": {
+                        "type": "string",
+                        "title": "Question",
+                        "description": "A question that a user may have about the userstyle."
+                      },
+                      "answer": {
+                        "type": "string",
+                        "title": "Answer",
+                        "description": "An answer to the question about the userstyle."
+                      }
+                    },
+                    "required": ["question", "answer"]
+                  }
+                }
+              }
+            },
+            "current-maintainers": {
+              "$id": "#userstyles/userstyle/current-maintainers",
+              "title": "Current Maintainers",
+              "description": "List of all active maintainers for this userstyle.",
+              "type": "array",
+              "$ref": "#/$defs/collaborators"
+            },
+            "past-maintainers": {
+              "$id": "#userstyles/userstyle/past-maintainers",
+              "title": "Past Maintainers",
+              "type": "array",
+              "minItems": 1,
+              "description": "List of all users that have maintained this userstyle in the past.",
+              "$ref": "#/$defs/collaborators"
+            }
+          }
+        }
+      }
+    },
+    "collaborators": {
+      "$id": "#all-collaborators",
+      "title": "All Collaborators",
+      "description": "Represents all maintainers and contributors to all userstyles.",
+      "type": "array",
+      "minItems": 1,
+      "$ref": "#/$defs/collaborators"
+    }
+  },
+  "$defs": {
+    "collaborators": {
+      "$id": "#collaborators",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Display Name",
+            "description": "The display name of the collaborator to show in the userstyle README."
+          },
+          "url": {
+            "type": "string",
+            "title": "GitHub Profile",
+            "description": "The GitHub profile link of the collaborator to show in the userstyle README."
+          }
+        },
+        "required": ["url"]
+      }
+    },
+    "categories": {
+      "$id": "#categories",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "$ref": "#/$defs/category"
+      }
+    },
+    "category": {
+      "$id": "#category",
+      "type": "string",
+      "enum": [
+        "3d_modelling",
+        "analytics",
+        "application_launcher",
+        "artificial_intelligence",
+        "boot_loader",
+        "browser",
+        "browser_extension",
+        "cli",
+        "code_editor",
+        "desktop_environment",
+        "development",
+        "discussion_forum",
+        "document_viewer",
+        "education",
+        "email_client",
+        "entertainment",
+        "file_manager",
+        "game",
+        "game_development",
+        "health_and_fitness",
+        "library",
+        "music",
+        "note_taking",
+        "notification_daemon",
+        "photo_and_video",
+        "productivity",
+        "search_engine",
+        "self_hosted",
+        "social_networking",
+        "system",
+        "terminal",
+        "translation_tool",
+        "userstyle",
+        "wiki",
+        "window_manager"
+      ]
+    }
+  }
+}

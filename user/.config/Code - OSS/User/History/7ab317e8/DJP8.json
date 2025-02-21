@@ -1,0 +1,17 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editorAssociations": {
+        "*.sqlite": "default",
+        "*.qbtheme": "default",
+        "*.xbt": "default"
+    },
+    "git.openRepositoryInParentFolders": "always",
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "editor.fontFamily": "MesloLGS NF Regular",
+    "workbench.settings.applyToAllProfiles": [
+        "editor.fontFamily"
+    ],
+    "editor.fontLigatures": false,
+    "workbench.colorTheme": "Catppuccin Mocha"
+}

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=tpPLC
+Exec=env WINEPREFIX="/home/vir0id/.wine" wine C:\\\\users\\\\vir0id\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\TP-Link\\\\PowerLine\\ Utility\\\\tpPLC.lnk
+Type=Application
+StartupNotify=true
+Path=/home/vir0id/.wine/dosdevices/c:/Program Files (x86)/TP-Link/TP-Link PLC Utility/
+Icon=A9C0_NewShortcut2_27B333EAA8224A628743441473A7B84A.0
+StartupWMClass=tpplc.exe

@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+
+UFILE="$HOME/.config/i3/config.d/.usr"
+
+# Check if the .sys file already exists
+[[ -f "$UFILE" ]] && exit 0 # The file exists, exit without doing anything
+
+sed -i "s/vir0id/${USER}/g" "$HOME"/.config/blender/4.1/config/bookmarks.txt
+sed -i "s/vir0id/${USER}/g" "$HOME"/.gtkrc-2.0
+sed -i "s/vir0id/${USER}/g" "$HOME"/.config/nitrogen/bg-saved.cfg
+sed -i "s/vir0id/${USER}/g" "$HOME"/.config/nitrogen/nitrogen.cfg
+sed -i "s/vir0id/${USER}/g" "$HOME"/.zshrc
+sed -i "s/vir0id/${USER}/g" "$HOME"/.config/gtk-3.0/bookmarks
+sed -i "s/vir0id/${USER}/g" "$HOME"/.local/share/applications/nvim.desktop
+sed -i "s/vir0id/${USER}/g" "$HOME"/.local/share/applications/ranger.desktop
+sed -i "s/vir0id/${USER}/g" "$HOME"/.local/share/applications/zfetch.desktop
+sed -i "s/vir0id/${USER}/g" "$HOME"/.config/kitty/kitty.conf
+sed -i "s/vir0id/${USER}/g" "$HOME"/.config/i3/rices/catppuccin-macchiato/rofi/rofi_launchers/launcher.rasi
+sed -i "s/vir0id/${USER}/g" "$HOME"/.config/i3/rices/catppuccin-mocha/rofi/rofi_launchers/launcher.rasi
+sed -i "s/vir0id/${USER}/g" "$HOME"/.config/i3/rices/catppuccin-frappe/rofi/rofi_launchers/launcher.rasi
+sed -i "s/vir0id/${USER}/g" "$HOME"/.config/i3/rices/catppuccin-latte/rofi/rofi_launchers/launcher.rasi
+sed -i "s/vir0id/${USER}/g" "$HOME"/.config/qt5ct/qt5ct.conf
+sed -i "s/vir0id/${USER}/g" "$HOME"/.config/qBittorrent/qBittorrent.conf
+#sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
+
+# Crear el archivo .sys para indicar que la configuración ya se ha realizado
+touch "$UFILE"

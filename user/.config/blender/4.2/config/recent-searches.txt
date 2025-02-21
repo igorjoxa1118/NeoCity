@@ -1,0 +1,202 @@
+  Cylinder
+Generate ▸ Decimate
+   default_anouncement1
+   material_1
+   skull
+   SKY
+ 0 Galvanized Steel
+   Galvanized Steel
+ 0 Damaged Metal
+   black_metall.002
+   black_metall
+   Galvanized Steel.001
+   black_metall.004
+Color ▸ Adjust ▸ Hue/Saturation/Value
+   Dirty Metal
+Input ▸ Movie Clip
+Transform ▸ Lens Distortion
+Input ▸ Image
+Utilities ▸ Math
+Color ▸ Mix ▸ Mix Color
+Filter ▸ Sun Beams
+   Asphalt
+   Galvanized Steel.002
+   Damaged Metal
+ 0 black_metall.005
+   black_metall.005
+   black_metall.001
+   Rusty Metal
+   Rusty Metal.001
+   black_metall.006
+Deform ▸ Shrinkwrap
+Shader ▸ Background
+Converter ▸ RGB to BW
+Color ▸ RGB Curves
+   Sci-Fi Metal Greeble
+   Antena
+Tank
+   Collection
+ 0 Material.001
+   Material.001
+   Rust
+   Korpus
+   Gusenici
+   floor
+Send_palm
+   Black.002
+   send
+   Palm
+   world
+   glass
+   Wood Plank
+   Trubi_pushki
+   Build
+   Krest
+   Desert Sand
+   Material.top
+   Material.botom
+   Metal Slug
+   Collection 2
+Vector ▸ Mapping
+Input ▸ Object Info
+ 0 planet
+   Map.svg
+map
+   map
+Filter ▸ Denoise
+Input ▸ Geometry
+Shader ▸ Emission
+   build_inst
+Color Ramp ▸ Color
+   buildings.001
+Converter ▸ Mix
+ship
+   ship
+   ship.001
+   road
+road
+   road.001
+   ring
+   windows
+  Circle.007
+   musor 1
+musor_box
+   musor_box
+   Musor_inst
+trash
+   trash.001
+Texture ▸ Brick Texture
+Geometry ▸ Join Geometry
+Instances ▸ Instance on Points
+Point ▸ Distribute Points on Faces
+Utilities ▸ Random Value
+Attribute ▸ Attribute Statistic
+world
+Output ▸ File Output
+Input ▸ Scene ▸ Render Layers
+Color ▸ Mix ▸ Alpha Over
+Color ▸ Alpha Convert
+Color ▸ Set Alpha
+volume
+Meshs
+Texture ▸ Checker Texture
+Group
+Vector ▸ Vector Rotate
+Color ▸ Invert Color
+Bump ▸ Height
+ 0 rock.001
+   rock.001
+   Okruzenie
+okruzenie
+   okruzenie
+gora
+gorka
+   rock 1
+   Black.001
+   gora
+   Material
+ 0 gora2
+gora2
+   gora2
+   window
+rock
+   rock
+   build
+build
+   guild
+Texture ▸ Wave Texture
+Converter ▸ Vector Math
+grass
+   grass
+grass1
+   grass 1
+   grass 2
+grass2
+   grass2
+Input ▸ RGB
+   NLO_col
+NLO
+   NLO
+Color ▸ Adjust ▸ Brightness/Contrast
+ukazatelj
+   ukazatelj
+   trubi.001
+   trubi
+Elektro_jawik
+   Elektro_jawik
+text
+   text.001
+Converter ▸ Shader to RGB
+GP_Layer
+   Black
+Input ▸ UV Map
+Input ▸ Attributes ▸ UVMap
+Input ▸ Value
+   chip.png
+Vector ▸ Normal
+Vector ▸ Normal Map
+Vector ▸ Displacement
+UVMap
+   Desktop_Terminal.png
+   keyboard.png
+Shader ▸ Principled BSDF
+ 0 Desktop_Terminal.png
+   Desktop_Swed_###.png
+Texture ▸ Image Sequence
+Texture ▸ Image Texture
+Shader ▸ Glossy BSDF
+   Metall_Connector_card
+   Palm_Leaves_1_Mat
+   medjaxa
+Color ▸ Hue/Saturation/Value
+Noise Texture ▸ Vector
+Math ▸ Power
+Transparent BSDF ▸ Color
+Color Ramp ▸ Fac
+Texture ▸ Voronoi Texture
+Converter ▸ Combine Color
+   Hack.mp4
+Converter ▸ Separate XYZ
+Input ▸ Ambient Occlusion
+Color ▸ Brightness/Contrast
+Color ▸ Mix Color
+Output ▸ Viewer
+Input ▸ Image Sequence
+Viewer ▸ Image
+Color ▸ Adjust ▸ Gamma
+   Bool_Objects
+
+   Bool_Objects 1
+Bump ▸ Strength
+Shader ▸ Transparent BSDF
+Shader ▸ Mix Shader
+Vector ▸ Bump
+Shader ▸ Principled Volume
+Texture ▸ Noise Texture
+Converter ▸ Math
+Converter ▸ Color Ramp
+   por6e_dark
+Filter ▸ Glare
+Color ▸ Adjust ▸ Color Balance
+Color ▸ Adjust ▸ Hue Correct
+Color ▸ Adjust ▸ RGB Curves

@@ -1,0 +1,1 @@
+exec xrandr --output HDMI-0 --off --output DP-0 --mode 1920x1080 --rate 165.00 --pos 0x0 --rotate normal --output DP-1-1 --off --output DP-1-2 --off

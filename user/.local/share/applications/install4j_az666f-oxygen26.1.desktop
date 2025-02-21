@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Oxygen XML Editor 26.1
+Exec="/home/vir0id/Oxygen XML Editor 26/oxygen26.1" %U
+Icon=/home/vir0id/Oxygen XML Editor 26/.install4j/oxygen26.1.png
+Categories=Application;
+StartupWMClass=install4j-ro-sync-exml-Oxygen724916557

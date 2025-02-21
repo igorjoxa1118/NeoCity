@@ -1,0 +1,16 @@
+#------------
+## tealize
+#------------
+## Цвета окон 
+#------------
+    # Класс                 border  backgr. text    indicator
+    client.focused          #2d3245 #00A9A5 #232735 #81a1c1
+    client.unfocused        #2d3245 #232735 #00A9A5 #81a1c1
+    client.focused_inactive #2d3245 #232735 #242739 #81a1c1
+    client.placeholder      #2d3245 #232735 #242739 #81a1c1
+    client.urgent           #2d3245 #232735 #242739 #81a1c1
+
+    client.background       #232735
+
+    
+#--------------

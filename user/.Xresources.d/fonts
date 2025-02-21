@@ -1,0 +1,12 @@
+! Font preference
+! Default mono font can be found with "fc-match mono"
+! Use a custom family alias that is defined in ~/.config/fontconfig/fonts.conf
+URxvt.font: xft:MesloLGS NF:pixelsize=14
+! Alternative fonts:
+!URxvt.font: xft:Cascadia Code:size=12
+!URxvt.font: xft:Fantasque Sans Mono:pixelsize=18
+!URxvt.font: xft:Source Code Pro:size=12
+!URxvt.font: xft:Droid Sans Mono:style=Book:pixelsize=15
+!URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=13:antialias=false
+xterm*faceName: Liberation Mono:size=12:antialias=true
+Xft.dpi: 96

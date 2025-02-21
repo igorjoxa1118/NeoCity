@@ -1,0 +1,10 @@
+filetype: gitignore
+
+detect:
+  filename: "gitignore"
+
+rules:
+  - comment:
+      start: "#"
+      end: "$"
+      rules: []

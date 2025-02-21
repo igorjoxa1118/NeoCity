@@ -1,0 +1,107 @@
+! X resources configuration file
+! Load it with "xrdb ~/.Xresources"
+! Query current configuration with "xrdb -query -all"
+! Arch Linux documentation: https://wiki.archlinux.org/title/X_resources
+!
+! uxrvt documentations:
+! * Arch Linux https://wiki.archlinux.org/title/Rxvt-unicode
+! * Gentoo https://wiki.gentoo.org/wiki/Rxvt-unicode
+
+#include ".Xresources.d/colors"
+#include ".Xresources.d/fonts"
+
+! Start in Unicode
+XTerm*utf8: 1
+UXTerm*utf8: 1
+
+! Terminal colors for xterm and urxvt.
+! Initially a mix of Tango and White-on-Black themes.
+! xfce-terminal color themes can be found on:
+! http://git.xfce.org/apps/xfce4-terminal/tree/colorschemes
+! ... which is installed to /usr/share/xfce4/terminal/colorschemes/
+
+! rxvt-unicode (urxvt) configuration
+! See "urxvt --help"
+
+! Look like xterm for compatibility
+URxvt.termName: xterm-256color
+URxvt.loginShell: true
+xterm.termName: xterm-256color
+
+! Initial size
+URxvt.geometry: 85x32
+
+! Add a terminal window icon (needs rxvt-unicode-pixbuf on Arch Linux)
+URxvt.iconFile: /usr/share/icons/gnome/32x32/apps/utilities-terminal.png
+
+! Fade text n% upon unfocus
+URxvt.fading: 20
+
+! No transparency (requires compositing)
+URxvt.tintColor: black
+URxvt.depth: 24
+
+! Scrolling and scrollbar (styles rxvt, plain, next or xterm)
+URxvt.scrollstyle: plain
+URxvt.scrollBar: true
+URxvt.scrollBar_right: true
+URxvt.scrollTtyKeypress: true
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.secondaryScreen: true
+URxvt.secondaryScroll: false
+
+! De-iconify (map) on receipt of a bell character
+URxvt.mapAlert: true
+! Blink the window too
+! It is possible to combine it on XFCE configuration (xfconf) with:
+! * "/general/urgent_blink=true" in xfwm4 channel
+! * "/plugins/plugin-42/include-all-blinking=true" in xfce4-panel channel,
+!   where "/plugins/plugin-42" is tasklist plugin
+URxvt.urgentOnBell: true
+
+! Inhibit writing record into the system log file utmp
+URxvt.utmpInhibit: false
+
+! Disable Ctrl+Shift default binding
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! Misc options
+URxvt.saveLines: 5000
+URxvt.visualBell: true
+URxvt.cutchars: "()*,<>[]{}|'"
+
+! Make the Ctrl-Arrow keys work like XTerm instead of \eOc, \eOd...
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Left: \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+
+! Same thing for home, end and Fn keys
+*URxvt*keysym.Home: \033OH
+*URxvt*keysym.End: \033OF
+*URxvt*keysym.F1: \033OP
+*URxvt*keysym.F2: \033OQ
+*URxvt*keysym.F3: \033OR
+*URxvt*keysym.F4: \033OS
+
+! Fix backspace key according to https://www.hypexr.org/linux_ruboff.php
+XTerm*ttyModes: erase ^?
+XTerm*VT100.Translations: \
+        #override <Key>BackSpace: string(0x7f) \n\
+          <Key>Delete:    string(0x1b) string("[3~")
+
+! Perl extensions:
+! * Make URL clickable, open with xdg-open, which can be configured to be
+!   the default browser (eg. /usr/bin/chromium -incognito)
+! * Copy-paste using Ctrl-Shift-C/V
+! * Toggle fullscreen with F11
+! * Open a new terminal window with Ctrl-Shift-N
+URxvt.perl-ext-common: default,clipboard,keycmd,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.F11: perl:keycmd:togglefull
+URxvt.keysym.Shift-Control-N: perl:keycmd:newwindow

@@ -1,0 +1,341 @@
+/* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. 
+   https://github.com/Godiesc/firefox-one */
+
+/* Borde menús desplegables */
+
+slot {
+    --panel-shadow-margin: 2px !important;
+    margin-inline: 3px !important;
+    margin-block-end: 4px !important;
+    border-color: var(--border-contrast-color) !important;
+    /* Borde para anuncios emergentes, por ejemplo al instalar un complemento */
+    box-shadow: inset 0px 0 0 1px var(--arrowpanel-border-color) !important;
+    margin-top: 1px !important;
+}
+
+/* Remove unwanted styles applied to the tab bar and contextual menu */
+
+:is(scrollbox[part="scrollbox"]) slot{
+    margin-inline: initial !important;
+    margin-block-end: initial !important;
+    box-shadow: none !important;
+    margin-top: initial !important;
+}
+
+panelview {    
+    background-image: var(--noise-urlbar-personal) !important;
+    border: 1px solid var(--arrowpanel-border-color) !important;
+    border-radius: var(--arrowpanel-border-radius) !important;
+}
+
+/* Margen de varios arrowpanels [Open] */
+
+#downloadsPanel, #widget-overflow, #customizationui-widget-panel, #unified-extensions-panel, #notification-popup {
+    margin-top: -1px !important;
+    margin-inline: -6px !important;
+}
+
+#identity-popup, #permission-popup, #appMenu-popup {
+    margin-top: -1px !important;
+    margin-inline: -4px !important;
+}
+
+#protections-popup, #editBookmarkPanel, #translations-panel {
+    margin-top: -1px !important;
+    margin-inline: -6px !important;
+}
+
+addon-install-confirmation-notification {
+    margin-inline: 1px !important;
+}
+
+/* Color fondo :hover por los diferentes items de menús principales */
+
+.protections-popup-category:not(#appMenu-popup toolbarbutton, [disabled]):hover, 
+.protections-popup-footer-button:not(#appMenu-popup toolbarbutton):hover, 
+#protections-popup-show-report-stack:not(#appMenu-popup toolbarbutton):hover > .protections-popup-footer-button:not(#appMenu-popup toolbarbutton), 
+panelview .toolbarbutton-1:not([disabled], [open]:not(#appMenu-popup toolbarbutton)):is(:hover), 
+toolbarbutton.subviewbutton:not([disabled], [open], .subviewbutton-back):is(:hover), 
+.navigable.subviewbutton:not([disabled], [open]):is(:hover), 
+menu.subviewbutton:not([disabled])[_moz-menuhover], 
+menuitem.subviewbutton:not([disabled])[_moz-menuhover], 
+.widget-overflow-list .toolbarbutton-1:not([disabled], [open]):is(:hover), 
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), 
+[overflowedItem="true"]) > toolbarbutton:not([disabled], [open]):is(:hover) {
+    background: var(--button-active-bgcolor) !important;
+    color: #bac2de !important;
+    fill: #bac2de !important;
+}
+
+/* Color fondo clic por los diferentes items de menús principales */
+
+.protections-popup-category:active, .protections-popup-footer-button:active, 
+#protections-popup-show-report-stack:active > .protections-popup-footer-button, 
+panelview .toolbarbutton-1:not([disabled]):is(:active, [open]), toolbarbutton.subviewbutton:not([disabled], 
+.subviewbutton-back):is(:active, [open]), .navigable.subviewbutton:not([disabled]):is(:active, [open]), 
+menu.subviewbutton:not([disabled])[_moz-menuactive], .panel-banner-item:hover, 
+menuitem.subviewbutton:not([disabled])[_moz-menuactive], 
+.widget-overflow-list .toolbarbutton-1:not([disabled]):is(:active, [open]), 
+.toolbaritem-combined-buttons:is(:not([cui-areatype="toolbar"]), 
+[overflowedItem="true"]) > toolbarbutton:not([disabled]):is(:active, [open]) {
+    background: var(--button-hover-bgcolor) !important;
+    color: #bac2de !important;
+    fill: #bac2de !important;
+}
+
+/* Colores en items deshabilitados*/
+
+.subviewbutton:is([disabled]), .subviewbutton:where([disabled="true"]):hover {       
+    -moz-context-properties: fill;
+    color: #1E1E2E90 !important;
+    fill:  #1E1E2E90 !important;
+    }
+
+/* Linea separadora en los menús principales */
+
+toolbarseparator {
+    border-color: var(--panel-separator-color) !important;
+}
+
+#PlacesToolbarItems toolbarseparator {
+    border-image: none !important;
+    color: var(--toolbarbutton-active-background) !important;
+}
+
+/* Color label deshabilitado y elementos de: "protección contra rastreo" */
+
+.protections-popup-category.notFound {
+    color: #1E1E2E !important;
+}
+
+.panel-info-button:not([disabled]):is([checked], :hover, :active) {
+    background-color: var(--button-hover-bgcolor) !important;
+}
+
+.panel-info-button:not([disabled]):is(:hover) {
+    background-color: var(--button-active-bgcolor) !important;
+}
+
+/* Márgenes protección antirastreo */
+
+#protections-popup-tp-switch-section>hbox:not(#protections-popup-tp-switch-section-footer), 
+#protections-popup-tp-switch-section-footer>toolbarbutton, #protections-popup-blocking-section-header, 
+#protections-popup-not-blocking-section-header, #protections-popup-not-found-section-header,
+.protections-popup-category, .protections-popup-footer-button, #protections-popup-trackers-blocked-counter-box{
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+
+/* Color Label "No funciona el sitio " */
+
+toolbar .text-link:-moz-lwtheme, panel .text-link:-moz-lwtheme {
+    color: var(--general-color) !important;
+}
+
+toolbar .text-link:-moz-lwtheme:hover, panel .text-link:-moz-lwtheme:hover {
+    color: var(--blue) !important;
+}
+
+/* Panel de descargas */
+
+#downloadsListBox > richlistitem {
+    border-radius: 0px !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    padding-inline-start: 4px !important;
+    color: var(--arrowpanel-color, var(--lwt-tab-text)) !important;
+}
+
+#downloadsListBox > richlistitem.download-state.hoveringMainArea:is(:hover) {
+    background: var(--button-active-bgcolor) !important;
+    color: #bac2de !important;
+    fill: #bac2de !important;
+}
+
+.downloadButton{
+    margin-right: 10px !important;
+}
+
+.downloadButton:hover{
+    background: var(--button-active-bgcolor) !important;
+    border: none !important;
+    border-radius: 6px !important;
+    color: #bac2de !important;
+}
+
+#downloadsPanel-blockedSubview, #downloadsPanel-mainView {
+    padding: 0.62em 0.0em 0.62em 0em !important;
+}
+
+/* Linea Separadora */
+
+treechildren::-moz-tree-separator {
+    border-block-end: none !important;
+}
+
+/* Separador menús dentro de las carpetas de marcadores */
+
+#PlacesToolbar menupopup[placespopup="true"] menuseparator {
+    margin-left: -4px !important;
+    margin-right: 0px !important;
+}
+
+/* 'Monitor' and 'Relay' items from account dropdown menu */
+
+#PanelUI-fxa-cta-menu .fxa-cta-button {
+    margin: var(--space-xsmall) 0px var(--space-xsmall) 0px !important;
+    padding-inline-start: 4px !important;
+}
+
+/* Botón flecha atrás */
+
+.panel-header > .subviewbutton-back image{
+    margin-right: 2px !important;
+}
+
+.panel-header > .subviewbutton-back {
+    border-radius: 5px !important;
+}
+
+.panel-header > .subviewbutton-back:hover {
+    background: var(--button-active-bgcolor) !important;
+    color: #bac2de !important;
+}
+
+.panel-header > .subviewbutton-back:active {
+    background: var(--button-hover-bgcolor) !important;
+}
+
+/* Fondo :hover botones de zoom */
+
+.PanelUI-subView .toolbaritem-combined-buttons > .subviewbutton:is(:hover, :hover:active) {
+    background: transparent !important;
+}
+
+#appMenu-zoomReduce-button2 > .toolbarbutton-icon, #appMenu-zoomEnlarge-button2 > .toolbarbutton-icon{
+    -moz-context-properties: fill, stroke !important;
+    stroke: #1E1E2E80 !important;
+}
+#appMenu-fullscreen-button2 >.toolbarbutton-icon{
+    -moz-context-properties: fill, stroke !important;
+    background-color: #1E1E2E80 !important;
+}
+
+#appMenu-zoomReduce-button2:hover > .toolbarbutton-icon, 
+#appMenu-zoomEnlarge-button2:hover > .toolbarbutton-icon{
+    -moz-context-properties: fill, stroke !important;
+    stroke: var(--general-color) !important;
+}
+
+#appMenu-fullscreen-button2:hover >.toolbarbutton-icon{
+    -moz-context-properties: fill, stroke !important;
+    background-color: var(--general-color) !important;
+}
+
+#appMenu-zoomReset-button2[disabled] .toolbarbutton-text, #zoom-reset-button[disabled] .toolbarbutton-text ,
+#appMenu-zoomReset-button2[disabled]:hover .toolbarbutton-text, #zoom-reset-button[disabled]:hover .toolbarbutton-text {
+    color: initial !important;
+}
+
+/*  _______________________________________________________ Rounded corner in pages _______________________________________________________ */
+
+/* Nuevo espacio alrededor del contenido web */
+
+:root:not([sizemode="fullscreen"]) .browserContainer {
+    padding: 1px 4px 4px 4px !important;
+}
+
+/* Color tras toda la página web */
+
+.browserContainer, .browserStack, #browser{
+    background-color: var(--lwt-frame) !important;
+}   
+
+:root:not([sizemode="fullscreen"]) .browserStack>browser{
+    background-color: var(--lwt-frame) !important;
+    border-radius: 8px !important;
+    outline: 1px solid var(--content-border-color) !important;
+    outline-offset: -1px !important;
+    clip-path: xywh(0 0 100% 100% round 9px);
+}
+
+:root:not([sizemode="fullscreen"]) findbar{ 
+    border-radius: 8px !important; 
+    margin-block-start: 4px !important; 
+}
+
+/* Corners en ventanas emergentes */
+
+:root:is([chromehidden~="toolbar"]) #nav-bar{
+    margin-block-start: 4px !important;
+    margin-inline-end: 4px !important;
+    border-radius: 8px 8px 0 0  !important;
+}
+
+:root:is([chromehidden~="toolbar"]) .browserStack>browser{
+    margin-block-start: -2px !important; 
+    outline: 1px solid var(--content-border-color) !important;
+    outline-offset: -1px !important;
+    border-radius: 0 0 8px 8px !important;
+    clip-path: none !important;
+}
+
+/* ________________________________________________ Firefox Sidebar and (Rounded corners) ________________________________________________ */
+
+:root:not([sizemode="fullscreen"]) {
+    
+    /* Tamaño, margen y color de borde */
+    #sidebar-box {
+        max-width: none !important;
+        min-width: 0px !important;
+        margin-block: 1px 4px !important;
+        margin-inline: 4px 0px !important;
+        outline: 1px solid var(--content-border-color) !important;
+        outline-offset: -1px !important;
+        clip-path: xywh(0 0 100% 100% round 9px);
+    }
+    
+    /* Border redondeado */
+    #sidebar-box box { border-radius: 10px 10px 0 0 !important; }
+    #sidebar-box browser { border-radius: 0 0 8px 8px !important; }
+    #sidebar-box { border-radius: 8px !important; }
+}
+
+/* Header sidebar */
+
+#sidebar-header, #bookmarksPanel{
+    background-color: var(--lwt-sidebar-background-color) !important;
+    padding-block: 3px !important;
+    font-size: small !important;
+}
+
+#browser {
+  --sidebar-border-color: var(--content-border-color) !important;
+}
+
+/* splitter - Borde para redimensionar la sidebar */
+
+:root:not([sizemode="fullscreen"]) .sidebar-splitter {
+    border-color: transparent !important;
+    border-width: 4px !important;
+}
+
+/* Espacios de la sidebar[open] y más espacio para el splitter - <left> <right> side */
+
+:root:not([sizemode="fullscreen"]) #sidebar-box[checked="true"] + #sidebar-splitter + #tabbrowser-tabbox .browserContainer {
+    padding: 1px 4px 4px 0px !important;
+}
+
+:root:not([sizemode="fullscreen"]) #sidebar-box[checked="true"][positionend] + #sidebar-splitter + #tabbrowser-tabbox .browserContainer {
+    padding: 1px 0px 4px 4px !important;
+}
+
+:root:not([sizemode="fullscreen"]) #sidebar-box[positionend]{
+    margin-inline: 0px 4px !important;
+}
+
+@media (-moz-platform: linux) {
+#sidebar-splitter{
+    background-color: transparent !important;
+    margin-right: -4px !important;
+    }}

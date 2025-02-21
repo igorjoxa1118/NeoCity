@@ -1,0 +1,15 @@
+---
+av.level_in: 1
+av.level_out: 0.707946
+av.side_gain: 1
+av.middle_source: mid
+av.middle_phase: 0
+av.left_delay: 0
+av.left_balance: 1
+av.left_gain: 1
+av.left_phase: 1
+av.right_delay: 10
+av.right_balance: -1
+av.right_gain: 1
+av.right_phase: 1
+...

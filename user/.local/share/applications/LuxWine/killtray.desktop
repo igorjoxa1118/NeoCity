@@ -1,0 +1,12 @@
+[Desktop Entry]
+Categories=Lux Wine
+Exec="/home/vir0id/.local/share/LuxWine/bin/lwrun" -killtray
+Icon=lw_default_icon
+Name=Kill tray
+Name[ru_RU]=Убить трей
+NoDisplay=true
+StartupNotify=true
+Terminal=0
+TerminalOptions=--hold
+Type=Application
+X-KDE-SubstituteUID=false

@@ -1,0 +1,17 @@
+#   ██████  ██████  ██       ██████  ██████  ███████  #
+#  ██      ██    ██ ██      ██    ██ ██   ██ ██       #
+#  ██      ██    ██ ██      ██    ██ ██████  ███████  #
+#  ██      ██    ██ ██      ██    ██ ██   ██      ██  #
+#   ██████  ██████  ███████  ██████  ██   ██ ███████  #
+                                                  
+### --- catppuccin-frappe
+
+# target                 title     bg    text   indicator  border
+client.focused           #babbf1 #5c5f77 #c6d0f5  #f2d5cf  #babbf1
+client.focused_inactive  #737994 #303446 #c6d0f5  #f2d5cf  #737994
+client.unfocused         #737994 #303446 #c6d0f5  #f2d5cf  #737994
+client.urgent            #ef9f76 #303446 #ef9f76  #737994  #ef9f76
+client.placeholder       #737994 #303446 #c6d0f5  #737994  #737994
+client.background        #303446
+
+### --- END

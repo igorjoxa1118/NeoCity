@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+# A dmenu binary prompt script
+# Gives a dmenu prompt labeled with $1 to perform $2
+# Example :
+# ./prompt "Do you want to shutdown ?" "shutdown -h now"
+
+[ "$(printf "No\nYes" | dmenu -i -p "$1" -h 35)" = "Yes" ] && $2

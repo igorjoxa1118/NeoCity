@@ -1,0 +1,17 @@
+#!/bin/bash
+
+read -r RICETHEME < "$HOME"/.config/i3/config.d/.rice
+
+if [[ $1 == "picker" ]]; then
+    cd $HOME
+    eww close-all
+    $HOME/.config/i3/rices/$RICETHEME/scripts/i3_colorpicker
+elif [[ $1 == "volume" ]]; then
+    cd $HOME
+    eww close-all
+    pavucontrol
+elif [[ $1 == "exit" ]]; then
+    cd $HOME
+    eww close-all
+    eww open-many --toggle background-closer powermenu 
+fi 

@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+#  ██████╗ ██╗ ██████╗███████╗
+#  ██╔══██╗██║██╔════╝██╔════╝        gh0stzk
+#  ██████╔╝██║██║     █████╗          https://github.com/gh0stzk/dotfiles
+#  ██╔══██╗██║██║     ██╔══╝          08.12.2023 08:48:08
+#  ██║  ██║██║╚██████╗███████╗
+#  ╚═╝  ╚═╝╚═╝ ╚═════╝╚══════╝
+#
+#            ███████╗███████╗██╗     ███████╗ ██████╗████████╗ ██████╗ ██████╗
+#            ██╔════╝██╔════╝██║     ██╔════╝██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗
+#            ███████╗█████╗  ██║     █████╗  ██║        ██║   ██║   ██║██████╔╝
+#            ╚════██║██╔══╝  ██║     ██╔══╝  ██║        ██║   ██║   ██║██╔══██╗
+#            ███████║███████╗███████╗███████╗╚██████╗   ██║   ╚██████╔╝██║  ██║
+#            ╚══════╝╚══════╝╚══════╝╚══════╝ ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
+#
+#set -x
+# Some vars
+i3_dir="$HOME/.config/i3"
+current_rice_file="$i3_dir/config.d/.rice"
+preview_dir="$i3_dir/rices/${options[*]}"
+rofi_command="rofi -dmenu -theme $i3_dir/src/rofi-themes/RiceSelector.rasi"
+i3_rice_in_config=$(< "$current_rice_file")
+
+
+# Variables to try to define the correct size of the images for your resolution
+monitor_res=$(xdpyinfo | awk '/dimensions/{print $2}' | cut -d 'x' -f1)
+monitor_scale=$(xdpyinfo | awk '/resolution/{print $2}' | cut -d 'x' -f1)
+monitor_res=$(( monitor_res * 17 / monitor_scale ))
+rofi_override="element-icon{size:${monitor_res}px;}"
+
+# Verificar si xdpyinfo e imagemagick están instalados
+if ! command -v xdpyinfo > /dev/null 2>&1; then
+    dunstify "Missing package" "Please install the xorg-xdpyinfo package to continue" -u critical
+    exit 1
+fi
+
+# List rices
+options=()
+index=0
+selected_index=0
+current_rice=$(< "$current_rice_file")
+
+for rice_dir in "$i3_dir"/rices/*/; do
+    rice_name=$(basename "$rice_dir")
+    options+=("$rice_name")
+
+    # Check if the current rice matches the current iteration rice
+    if [[ "$current_rice" == "$rice_name" ]]; then
+        selected_index=$index
+    fi
+
+    ((index++))
+done
+
+# Show the rofi selection menu with the starting point set to the current rice and store the result in a variable.
+selected=$(printf "%s\n" "${options[@]}" | while read -r A ; do  echo -en "$A\x00icon\x1f${preview_dir}$A/preview.webp\n" ; done | $rofi_command -theme-str "$rofi_override" -selected-row "$selected_index")
+
+# If a valid option was selected, write the value to the configuration file and restart BSPWM.
+[[ -n "$selected" && "$selected" != "$current_rice" ]] || exit 1
+echo "$selected" > "$current_rice_file"
+
+###---Global set wallpapers
+feh_walls_list=$(ls "$HOME"/.config/i3/rices/$selected/walls | grep "png" | head -1)
+wall_old="catppuccin_triangle.webp"
+
+sed -i "s/"$i3_rice_in_config"/"$selected"/g" "$HOME"/.config/i3/config.d/autostart
+sed -i "s/"$wall_old"/"$feh_walls_list"/g" "$HOME"/.config/i3/config.d/autostart
+
+i3-msg restart
+exit 0

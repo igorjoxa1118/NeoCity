@@ -1,0 +1,108 @@
+#  ██████  ██    ██ ██      ███████ ███████  #
+#  ██   ██ ██    ██ ██      ██      ██       #
+#  ██████  ██    ██ ██      █████   ███████  #
+#  ██   ██ ██    ██ ██      ██           ██  #
+#  ██   ██  ██████  ███████ ███████ ███████  #
+##############################################
+##############################################
+
+#  ████████  █████  ██████  ███████  #
+#     ██    ██   ██ ██   ██ ██       #
+#     ██    ███████ ██████  ███████  #
+#     ██    ██   ██ ██   ██      ██  #
+#     ██    ██   ██ ██████  ███████  #
+                                 
+### --- Групируются в закладки на рабочих пространствах со 2-го по 9-ое.
+for_window [workspace=$ws2] layout tabbed
+for_window [workspace=$ws3] layout tabbed
+for_window [workspace=$ws4] layout tabbed
+for_window [workspace=$ws5] layout tabbed
+for_window [workspace=$ws6] layout tabbed
+for_window [workspace=$ws7] layout tabbed
+for_window [workspace=$ws8] layout tabbed
+for_window [workspace=$ws9] layout tabbed
+### ---------------------------------------------------------END------------------------------------------------------------- ###
+
+#   █████  ██████  ██████  ███████     ██ ███    ██     ██     ██  ██████  ██████  ██   ██ ██████  ██       █████   ██████ ███████ ███████  #
+#  ██   ██ ██   ██ ██   ██ ██          ██ ████   ██     ██     ██ ██    ██ ██   ██ ██  ██  ██   ██ ██      ██   ██ ██      ██      ██       #
+#  ███████ ██████  ██████  ███████     ██ ██ ██  ██     ██  █  ██ ██    ██ ██████  █████   ██████  ██      ███████ ██      █████   ███████  #
+#  ██   ██ ██      ██           ██     ██ ██  ██ ██     ██ ███ ██ ██    ██ ██   ██ ██  ██  ██      ██      ██   ██ ██      ██           ██  #
+#  ██   ██ ██      ██      ███████     ██ ██   ████      ███ ███   ██████  ██   ██ ██   ██ ██      ███████ ██   ██  ██████ ███████ ███████  #
+                                                                                                                                        
+
+### --- Приложения/программы которые будут открываться на заданном рабочем пространстве $ws(номер экрана)
+assign [class="(?i)xfce4-terminal|alacritty|kitty|xterm|htop"] $ws1
+assign [class="(?i)firefox|chromium|vivaldi-stable"] $ws2
+assign [class="(?i)mousepad|leafpad|code"] $ws3
+assign [class="(?i)thunar|caja"] $ws4
+assign [class="(?i)blender|PureRef|krita|gimp|untitled - ArmorPaint|untitled - ArmorLab"] $ws5
+assign [class="(?i)fractal|telegram|discord"] $ws6
+assign [class="(?i)smplayer|vlc|kodi|retroarch|parole|Spacefm|yad|ymuse|mpv|Hypnotix.py|Steam"] $ws7
+assign [class="(?i)ristretto|simplescreenrecorder|qpdfview"] $ws8
+assign [class="(?i)virtualbox|Virt-manager"] $ws9
+assign [class="(?i)qBittorrent|simplescreenrecorder|transmission-gtk"] $ws10
+### ---------------------------------------------------------END------------------------------------------------------------- ###
+
+#  ███████  ██████  ██████      ██     ██ ██ ███    ██ ██████   ██████  ██     ██ ███████  #
+#  ██      ██    ██ ██   ██     ██     ██ ██ ████   ██ ██   ██ ██    ██ ██     ██ ██       #
+#  █████   ██    ██ ██████      ██  █  ██ ██ ██ ██  ██ ██   ██ ██    ██ ██  █  ██ ███████  #
+#  ██      ██    ██ ██   ██     ██ ███ ██ ██ ██  ██ ██ ██   ██ ██    ██ ██ ███ ██      ██  #
+#  ██       ██████  ██   ██      ███ ███  ██ ██   ████ ██████   ██████   ███ ███  ███████  #
+
+### --- Правила для окон
+### --- Эллемент floating связан с настройками в ~/.config/i3/src/OpenApps и ~/.config/i3/src/Term
+for_window [title="floating"] move window to scratchpad, scratchpad show, floating enable, resize set 1280 600, move position center, focus
+for_window [window_role="pop-up|bubble|task_dialog|Preferences|setup"] floating enable
+for_window [window_role="browser|GtkFileChooserDialog"] resize set 800 600, move position center
+for_window [window_role="demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 800 600, move absolute position 0 518
+for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floating enable, border pixel 0, resize set 1366 350, move absolute position 0 418
+
+
+#   █████  ██████  ██████  ███████  #
+#  ██   ██ ██   ██ ██   ██ ██       #
+#  ███████ ██████  ██████  ███████  #
+#  ██   ██ ██      ██           ██  #
+#  ██   ██ ██      ██      ███████  #
+                                
+### --- Правила для разных приложений. Ничего особенного... Просто рамки в 1 пиксель и авто-переключение на прогу при ее открытии.
+for_window [class="(?i)firefox|vivaldi-stable|kitty|alacritty|code|mousepad|mupdf|blender|gimp|krita|telegram-desktop|kodi"] border pixel 1, focus
+### ---------------------------------------------------------END------------------------------------------------------------- ###
+### --- Правила для разных приложений. Слеоать их плавающими, уменьшить в размере и центрировать.
+for_window [class="(?i)nitrogen|engrampa|flameshot|file-roller|fsearch|qt5ct|PureRef"] floating enable, resize set 600 500, move position center
+for_window [class="(?i)lxappearance|pavucontrol"] floating enable, resize set 900 500, move position center 
+### ---------------------------------------------------------END------------------------------------------------------------- ###
+
+### --- Правила для разных приложений. Слеоать их плавающими и центрировать.
+for_window [class="(?i)simplescreenrecorder"] floating enable, move position center, focus
+### ---------------------------------------------------------END------------------------------------------------------------- ###
+
+### --- Правила для разных приложений. Сделать плавающими.
+for_window [class="(?i)atril|viewnior|keepassxc|veracrypt"] floating enable
+### ---------------------------------------------------------END------------------------------------------------------------- ###
+
+### --- Правила для разных приложений. Авто-переключение на прогу при ее открытии.
+for_window [class="(?i)ymuse|vlc"] focus
+### ---------------------------------------------------------END------------------------------------------------------------- ###
+
+
+#  ████████ ███████ ██████  ███    ███ ██ ███    ██  █████  ██      ███████  #
+#     ██    ██      ██   ██ ████  ████ ██ ████   ██ ██   ██ ██      ██       #
+#     ██    █████   ██████  ██ ████ ██ ██ ██ ██  ██ ███████ ██      ███████  #
+#     ██    ██      ██   ██ ██  ██  ██ ██ ██  ██ ██ ██   ██ ██           ██  #
+#     ██    ███████ ██   ██ ██      ██ ██ ██   ████ ██   ██ ███████ ███████  #
+                                                                         
+### --- Правила для терминалов. Что бы сделать растягиваемое, просто хакоментируй первую строку и раскоментируй вторую.
+for_window [class="(?i)kitty|alacritty"] border pixel 1, focus
+#for_window [class="(?i)kitty|alacritty"] floating enable, border pixel 1, resize set 1200 800, move position center, focus
+### ---------------------------------------------------------END------------------------------------------------------------- ###
+
+#  ███████ ██ ██      ███████     ███    ███  █████  ███    ██  █████   ██████  ███████ ██████  ███████  #
+#  ██      ██ ██      ██          ████  ████ ██   ██ ████   ██ ██   ██ ██       ██      ██   ██ ██       #
+#  █████   ██ ██      █████       ██ ████ ██ ███████ ██ ██  ██ ███████ ██   ███ █████   ██████  ███████  #
+#  ██      ██ ██      ██          ██  ██  ██ ██   ██ ██  ██ ██ ██   ██ ██    ██ ██      ██   ██      ██  #
+#  ██      ██ ███████ ███████     ██      ██ ██   ██ ██   ████ ██   ██  ██████  ███████ ██   ██ ███████  #
+                                                                                                     
+### --- Правила для файловых менеджеров. Что бы сделать плавающими, просто хакоментируй первую строку и раскоментируй вторую.
+for_window [class="(?i)thunar|caja"] border pixel 0, focus
+#for_window [class="(?i)thunar|caja"] floating enable, border pixel 0, resize set 1200 800, move position center, focus
+### ---------------------------------------------------------END------------------------------------------------------------- ###
