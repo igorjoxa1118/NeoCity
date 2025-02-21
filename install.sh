@@ -98,7 +98,7 @@ dependencias=(base base-devel sof-firmware alacritty brightnessctl dunst bottom 
               papirus-icon-theme pacman-contrib physlock playerctl python-gobject \
               redshift rust ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
               ttf-joypixels ttf-terminus-nerd ueberzug webp-pixbuf-loader xclip \
-              xdo ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common \
+              xdo ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common easyeffects \
               ttf-nerd-fonts-symbols-mono yad cmus rsync mpv jq git socat mpd polkit-gnome \
               amd-ucode arch-install-scripts bind-tools broadcom-wl btrfs-progs busybox clonezilla crda curl \
               darkhttpd ddrescue dhclient dhcpcd diffutils dmraid dosfstools edk2-shell efibootmgr ethtool \
@@ -107,7 +107,8 @@ dependencias=(base base-devel sof-firmware alacritty brightnessctl dunst bottom 
               mkinitcpio-nfs-utils nano nano-syntax-highlighting nbd ndisc6 nfs-utils nilfs-utils \
               nmap ntfs-3g nvme-cli openconnect openssh openvpn partclone parted partimage ppp pptpclient reflector \
               reiserfsprogs rp-pppoe rxvt-unicode-terminfo sdparm sg3_utils smartmontools tree wget \
-              xsel awesome-terminal-fonts zsh-completions zshdb \
+              xsel awesome-terminal-fonts zsh-completions zshdb qpwgraph lsp-plugins lsp-plugins-clap lsp-plugins-docs lsp-plugins-gst \
+              lsp-plugins-ladspa lsp-plugins-lv2 lsp-plugins-standalone lsp-plugins-vst lsp-plugins-vst3 \
               adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts \
               dex dmenu eog gnome-backgrounds gnome-keyring gnome-themes-extra gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 \
               gvfs-mtp gvfs-nfs gvfs-smb kvantum-qt5 lollypop lxsession pcmanfm qt5ct sddm \
