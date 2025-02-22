@@ -77,7 +77,7 @@ case $MY_TERM in
     "kitty")
         case $1 in
             "--terminal")
-                kitty
+                kitty -c ~/.config/kitty/kitty.conf
                 ;;
             "--floating")
                 kitty  --title floating
@@ -108,6 +108,9 @@ case $MY_TERM in
                 ;;
             "--process")
                 kitty --title floating --hold -e ~/.bin/bottom_themes/bottom-themes
+                ;;
+            "--visualization")
+                alacritty --config-file ~/.config/alacritty/alacritty.toml --hold -e cava -p ~/.config/cava/config
                 ;;
         esac
         ;;

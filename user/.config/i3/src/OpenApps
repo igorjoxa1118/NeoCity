@@ -79,6 +79,9 @@ case "$1" in
     --soundcontrol)
         pavucontrol
         ;;
+    --visual)
+        ~/.config/i3/src/Term --visualization
+        ;;
         # Eww Widgets
     --KeyHelp)
 		eww -c "$WIDGET_DIR" open --toggle csheet

@@ -31,7 +31,7 @@ for_window [workspace=$ws9] layout tabbed
                                                                                                                                         
 
 ### --- Приложения/программы которые будут открываться на заданном рабочем пространстве $ws(номер экрана)
-assign [class="(?i)xfce4-terminal|alacritty|kitty|xterm|htop"] $ws1
+assign [class="(?i)xfce4-terminal|kitty|xterm|htop"] $ws1
 assign [class="(?i)firefox|chromium|vivaldi-stable"] $ws2
 assign [class="(?i)mousepad|leafpad|code"] $ws3
 assign [class="(?i)thunar|caja"] $ws4
@@ -65,7 +65,7 @@ for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floati
 #  ██   ██ ██      ██      ███████  #
                                 
 ### --- Правила для разных приложений. Ничего особенного... Просто рамки в 1 пиксель и авто-переключение на прогу при ее открытии.
-for_window [class="(?i)firefox|vivaldi-stable|kitty|alacritty|code|mousepad|mupdf|blender|gimp|krita|telegram-desktop|kodi"] border pixel 1, focus
+for_window [class="(?i)firefox|vivaldi-stable|code|mousepad|mupdf|blender|gimp|krita|telegram-desktop|kodi"] border pixel 1, focus
 ### ---------------------------------------------------------END------------------------------------------------------------- ###
 ### --- Правила для разных приложений. Слеоать их плавающими, уменьшить в размере и центрировать.
 for_window [class="(?i)nitrogen|engrampa|flameshot|file-roller|fsearch|qt5ct|PureRef"] floating enable, resize set 600 500, move position center
@@ -92,7 +92,8 @@ for_window [class="(?i)ymuse|vlc"] focus
 #     ██    ███████ ██   ██ ██      ██ ██ ██   ████ ██   ██ ███████ ███████  #
                                                                          
 ### --- Правила для терминалов. Что бы сделать растягиваемое, просто хакоментируй первую строку и раскоментируй вторую.
-for_window [class="(?i)kitty|alacritty"] border pixel 1, focus
+for_window [class="(?i)kitty"] border pixel 1, focus
+for_window [class="(?i)alacritty"] border pixel 0, focus
 #for_window [class="(?i)kitty|alacritty"] floating enable, border pixel 1, resize set 1200 800, move position center, focus
 ### ---------------------------------------------------------END------------------------------------------------------------- ###
 
