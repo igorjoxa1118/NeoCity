@@ -215,21 +215,6 @@ done
 sleep 3
 clear
 
-
-logo_all_done () {
-	echo -en "${GREEN}                                  
- █████  ██      ██          ██ ███████     ██████   ██████  ███    ██ ███████ ██ 
-██   ██ ██      ██          ██ ██          ██   ██ ██    ██ ████   ██ ██      ██ 
-███████ ██      ██          ██ ███████     ██   ██ ██    ██ ██ ██  ██ █████   ██ 
-██   ██ ██      ██          ██      ██     ██   ██ ██    ██ ██  ██ ██ ██         
-██   ██ ███████ ███████     ██ ███████     ██████   ██████  ██   ████ ███████ ██ 
-                                                                                 
-                                                                                 ${ENDCOLOR}\n"
-}
-logo_all_done
-sleep 2
-clear
-
 ########## ---------- Резервная копия файлов и каталогов ---------- ##########
 logo_backup_files () {
 	echo -en "${GREEN}                                  
@@ -332,7 +317,8 @@ if [ -d /etc/sddm.conf.d/ ]; then
     echo -e "${LIGHTCYAN}Done!${ENDCOLOR}"
 fi
 
-if [ -d /etc/lightdm ]; then
+if [ -f /usr/bin/lightdm ]; then 
+  sudo pacman -R lightdm --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG")
   sudo rm -rf /etc/lightdm
 fi
 sleep 3
@@ -492,6 +478,7 @@ if grep -q $VIRTGROUP /etc/group; then
 else
   sudo groupadd libvirt
   sudo usermod -a -G libvirt "$(whoami)"
+  sudo systemctl enable --now libvirtd
   echo -e "${ORANGE}Done!${ENDCOLOR}"
 fi
 sleep 3
