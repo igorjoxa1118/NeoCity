@@ -7,7 +7,7 @@
 ### --- catppuccin-macchiato
 
 # target                     title     bg         text      indicator  border
-client.focused           #b7bdf8 #f5a97f99 #24273a  #f4dbd6  #b7bdf8
+client.focused           #b7bdf8 #cba6f7ff #24273a  #f4dbd6  #b7bdf8
 client.focused_inactive  #6e738d #24273a99 #cad3f5  #f4dbd6  #6e738d
 client.unfocused         #6e738d #24273a99 #cad3f5  #f4dbd6  #6e738d
 client.urgent            #f5a97f #24273a99 #f5a97f  #6e738d  #f5a97f
