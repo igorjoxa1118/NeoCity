@@ -105,7 +105,7 @@ firefox_profiles
 set_dunst_config() {
 dunst_path=""$HOME"/.config/i3/rices/$RICETHEME/dunst/dunstrc"
        if [ -f "$dunst_path" ]; then
-         cp -rf "$dunst_path" "$i3_configd"
+         cp -rf "$dunst_path" ~/.config/dunst/
        else
          echo "Color file not exist!"
        fi

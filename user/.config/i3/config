@@ -7,6 +7,7 @@
 ### --- Переменные.
 set $mod Mod4
 set $mod1 Mod1
+set $confd ~/.config/
 set $i3_scripts ~/.config/i3/src
 set $i3_configd ~/.config/i3/config.d
 set $bins ~/.bin
@@ -18,7 +19,7 @@ set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $ws-right "$(( $( i3-msg -t get_workspaces | jq '.[] | select(.focused).num' ) + 1))";
 set $ws-left "$(( $( i3-msg -t get_workspaces | jq '.[] | select(.focused).num' ) - 1))";
 ### --- Определение имен, для рабочих пространств по умолчанию,
-### --- Для которых будут существуют привязки клавиш в файле "$HOME/.config/i3/config.d/keybinds" и правила в "$HOME/.config/i3/config.d/rules".
+### --- для которых будут существуют привязки клавиш в файле "$HOME/.config/i3/config.d/keybinds" и правила в "$HOME/.config/i3/config.d/rules".
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -55,16 +56,15 @@ include $i3_configd/monitor
 #  ██      ██    ██ ██  ██ ██ ██      ██ ██    ██      ██  #
 #   ██████  ██████  ██   ████ ██      ██  ██████  ███████  #
                                                        
-#default_border normal|none|pixel <px>
-default_border pixel 1
-#default_floating_border normal|none|pixel <px>
-default_floating_border pixel 1
+#normal|none|pixel <px>
+default_border none
+#normal|none|pixel <px>
+default_floating_border none
 
 ### --- Этот параметр реагирует на рамки всех окон. Так же есть параметр hide_edge_borders both.
 #hide_edge_borders smart
 
 # smart_gaps on
-smart_borders on
-floating_modifier $mod
+#smart_borders on
 
 ### ---------------------------------------------------------END------------------------------------------------------------- ###

@@ -77,37 +77,37 @@ case $MY_TERM in
     "kitty")
         case $1 in
             "--terminal")
-                kitty -c ~/.config/kitty/kitty.conf
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh -c ~/.config/kitty/kitty.conf
                 ;;
             "--floating")
-                kitty  --title floating
+                kitty  -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating
                 ;;
             "--update")
-                kitty --title floating --hold -e ~/.config/i3/src/Updates --update-pacman
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating --hold -e ~/.config/i3/src/Updates --update-pacman
                 ;;
             "--checkupdates")
-                kitty --title floating --hold -e ~/.config/i3/src/Updates --print-updates
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating --hold -e ~/.config/i3/src/Updates --print-updates
                 ;;
             "--ranger")
-                kitty --title floating --hold -e ranger
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating --hold -e ranger
                 ;;
             "--yazi")
-                kitty --title floating --hold -e yazi
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating --hold -e yazi
                 ;;
             "--nvim")
-                kitty -e nvim
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh -e nvim
                 ;;
             "--music")
-                kitty --title floating -e ncmpcpp
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating -e ncmpcpp
                 ;;
             "--fetch")
-                kitty -e ~/.local/bin/sysfetch
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh -e ~/.local/bin/sysfetch
                 ;;
             "--connect")
-                kitty --title floating --hold -e ~/.bin/ssh_connect/start
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating --hold -e ~/.bin/ssh_connect/start
                 ;;
             "--process")
-                kitty --title floating --hold -e ~/.bin/bottom_themes/bottom-themes
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating --hold -e ~/.bin/bottom_themes/bottom-themes
                 ;;
             "--visualization")
                 alacritty --config-file ~/.config/alacritty/alacritty.toml --hold -e cava -p ~/.config/cava/config
