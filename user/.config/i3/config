@@ -11,6 +11,7 @@ set $confd ~/.config/
 set $i3_scripts ~/.config/i3/src
 set $i3_configd ~/.config/i3/config.d
 set $bins ~/.bin
+set $local ~/.local/bin
 set $default_gaps_inner 15
 set $default_gaps_outer 15
 set $mode_gaps Gaps: (o) outer, (i) inner

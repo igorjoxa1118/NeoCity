@@ -12,19 +12,19 @@ killall -q polybar
 killall -q eww
 
 ###--Start rice
-theme_rofi_color() {
-	sed -i "s|@import .*|@import \""colors/$RICETHEME.rasi"\"|g" "$HOME"/.config/i3/src/rofi-themes/RiceSelector.rasi
-	sed -i "s|@import .*|@import \""colors/$RICETHEME.rasi"\"|g" "$HOME"/.config/i3/src/rofi-themes/NetManagerDM.rasi
-}
-theme_rofi_color
+# theme_rofi_color() {
+# 	sed -i "s|@import .*|@import \""colors/$RICETHEME.rasi"\"|g" "$HOME"/.config/i3/src/rofi-themes/RiceSelector.rasi
+# 	sed -i "s|@import .*|@import \""colors/$RICETHEME.rasi"\"|g" "$HOME"/.config/i3/src/rofi-themes/NetManagerDM.rasi
+# }
+# theme_rofi_color
 
-rofi_launcher_img() {
-	if [ -f "$HOME/.config/i3/src/rofi-themes/launchpad_v4.rasi" ]; then
-	 echo '' >  "$HOME/.config/i3/src/rofi-themes/launchpad_v4.rasi"
-	 cat "$HOME/.config/i3/src/rofi-themes/img/$RICETHEME.rasi" > "$HOME/.config/i3/src/rofi-themes/launchpad_v4.rasi"
+rofi_launcher_color() {
+	if [ -f "$HOME/.config/i3/src/launchers/type-3/shared/colors.rasi" ]; then
+	 echo '' >  "$HOME/.config/i3/src/launchers/type-3/shared/colors.rasi"
+	 cat "$HOME/.config/i3/rices/$RICETHEME/rofi/shared/colors.rasi" > "$HOME/.config/i3/src/launchers/type-3/shared/colors.rasi"
 	fi
 }
-rofi_launcher_img
+rofi_launcher_color
 
 rofi_calendar_color() {
 	if [ -f "$i3_scr/rofi-calendar/themes/colors.rasi" ]; then

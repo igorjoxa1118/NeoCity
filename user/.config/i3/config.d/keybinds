@@ -139,6 +139,7 @@ bindsym $mod1+s exec --no-startup-id "skippy-xd"
 bindsym $mod1+e exec --no-startup-id "mousepad"
 bindsym $mod1+c  exec --no-startup-id "thunar"
 bindsym Print exec --no-startup-id "kazam -f"
+bindsym $mod+$mod1+v exec --no-startup-id "$local/rofi_video_dmenu/Launch.sh"
 bindsym $mod+shift+k  exec xkill
 
 ### --- END
