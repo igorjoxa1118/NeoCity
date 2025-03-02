@@ -1,0 +1,165 @@
+configuration {
+  modi: "drun,window,windowcd,keys,filebrowser,run,combi";
+
+  font: "MesloLGS NF Regular 14";
+  drun-display-format: " {name} ";
+  sidebar-mode: true;
+  matching: "fuzzy";
+  scroll-method: 0;
+  disable-history: false;
+
+  display-drun: "  Menu";
+  display-run: "  Run";
+  display-window: "   Window";
+  display-windowcd: "   Window+";
+  display-keys: "   Keys";
+  display-filebrowser: "  Browse";
+  display-combi: "   Binds";
+
+  window-thumbnail: true;
+  sort: true;
+  sorting-method: "normal";
+
+  timeout {
+    action: "kb-cancel";
+    delay: 30;
+  }
+
+  filebrowser {
+    directories-first: true;
+    sorting-method: "name";
+  }
+}
+
+@theme"/dev/null"
+
+* {
+  bg: #1e1e2e;
+  fg: #cdd6f4;
+  button: #89b4fa;
+  background-color: @bg;
+  text-color: @fg;
+}
+
+element-text,
+element-icon,
+mode-switcher {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+window {
+  transparency: "real";
+  width: 50%;
+  border: 10px;
+  border-radius: 15px;
+  border-color: #1e1e2e;
+  height: 80%;
+}
+
+prompt {
+  enabled: true;
+  background-color: @bg;
+  padding: 20px 15px 5px 15px;
+  text-color: @fg;
+  border-radius: 50%;
+  expand: true;
+  font: "MesloLGS NF Regular 14";
+}
+
+textbox-prompt-colon {
+  expand: false;
+  padding: 1% 2% 0% 2%;
+  margin: 0% 1% 0% 1%;
+  font: "MesloLGS NF Regular 30";
+  border-radius: 50%;
+  str: " ";
+}
+
+entry {
+  placeholder: "Search";
+  placeholder-color: #cdd6f4;
+  text-color: #cdd6f4;
+  expand: true;
+  padding: 2.0%;
+  border-radius: 50%;
+}
+
+inputbar {
+  children: [prompt,textbox-prompt-colon,entry];
+  background-image: url("~/.local/bin/rofi_video_dmenu/rofi-bg.jpg");
+  expand: false;
+  border-radius: 10px 10px 0 0px;
+  font: "MesloLGS NF Regular 14";
+  margin: 0 0 20px 0;
+  padding: 200px 20px 20px 20px;
+}
+
+listview {
+  columns: 3;
+  lines: 2;
+  cycle: false;
+  dynamic: true;
+  layout: vertical;
+  padding: 0 15px 0 15px;
+  scrollbar: false;
+}
+
+mainbox {
+  children: [inputbar,listview,mode-switcher];
+}
+
+element {
+  orientation: vertical;
+  padding: 5% 2% 2% 0;
+  font: "MesloLGS NF Regular 14";
+  margin: 5px 5px 5px 5px;
+  border-radius: 10px;
+  background-color: #1e1e2e;
+}
+
+element-text {
+  expand: true;
+  vertical-align: 0.5;
+  margin: 0% 1% 0% 1%;
+  font: "MesloLGS NF Regular 14";
+  background-color: inherit;
+  text-color: inherit;
+}
+
+element selected {
+  background-color: @button;
+  font: "MesloLGS NF Regular 14";
+  text-color: #1e1e2e;
+  border-radius: 10px;
+}
+
+mode-switcher {
+  spacing: 0;
+  border-radius: 10px;
+  margin: 0 20px 20px 20px;
+}
+
+button {
+  padding: 15px;
+  margin: 0;
+  font: "MesloLGS NF Regular,MesloLGS NF Regular 14";
+  background-color: #88C0D0;
+  text-color: #1e1e2e;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+}
+
+button selected {
+  padding: 15px;
+  margin: 0;
+  background-color: #1e1e2e;
+  text-color: #89b4fa;
+
+  // border: 0 0 5px 0;
+  // border-color: #88C0D0;
+}
+
+/*
+  vim: ft=rasi
+*/
