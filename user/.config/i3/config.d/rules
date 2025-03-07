@@ -53,8 +53,7 @@ assign [class="(?i)qBittorrent|simplescreenrecorder|transmission-gtk"] $ws10
 ### --- Эллемент floating связан с настройками в ~/.config/i3/src/OpenApps и ~/.config/i3/src/Term
 for_window [title="floating"] move window to scratchpad, scratchpad show, floating enable, resize set 1280 600, move position center, focus
 for_window [window_role="pop-up|bubble|task_dialog|Preferences|setup"] floating enable
-for_window [window_type="dialog|menu"] floating enable
-for_window [window_role="browser|GtkFileChooserDialog"] resize set 800 600, move position center
+for_window [window_role="browser|GtkFileChooserDialog|browser-window"] resize set 800 600, move position center
 for_window [window_role="demo"] move window to scratchpad, scratchpad show, floating enable, resize set 800 600, move absolute position 0 518
 for_window [class="(?i)demo"] move window to scratchpad, scratchpad show, floating enable, resize set 1366 350, move absolute position 0 418
 
@@ -95,7 +94,6 @@ for_window [class="(?i)ymuse|vlc"] focus
 ### --- Правила для терминалов. Что бы сделать растягиваемое, просто хакоментируй первую строку и раскоментируй вторую.
 for_window [class="(?i)kitty"] focus
 for_window [class="(?i)alacritty"] focus
-#for_window [class="(?i)kitty|alacritty"] floating enable, border pixel 0, resize set 1200 800, move position center, focus
 ### ---------------------------------------------------------END------------------------------------------------------------- ###
 
 #  ███████ ██ ██      ███████     ███    ███  █████  ███    ██  █████   ██████  ███████ ██████  ███████  #
@@ -106,5 +104,15 @@ for_window [class="(?i)alacritty"] focus
                                                                                                      
 ### --- Правила для файловых менеджеров. Что бы сделать плавающими, просто хакоментируй первую строку и раскоментируй вторую.
 for_window [class="(?i)thunar|caja"] focus
-#for_window [class="(?i)thunar|caja"] floating enable, border pixel 0, resize set 1200 800, move position center, focus
+### ---------------------------------------------------------END------------------------------------------------------------- ###
+
+#  ██████   ██████  ██████  ██████  ███████ ██████  ███████  #
+#  ██   ██ ██    ██ ██   ██ ██   ██ ██      ██   ██ ██       #
+#  ██████  ██    ██ ██████  ██   ██ █████   ██████  ███████  #
+#  ██   ██ ██    ██ ██   ██ ██   ██ ██      ██   ██      ██  #
+#  ██████   ██████  ██   ██ ██████  ███████ ██   ██ ███████  #
+
+# Если нужны рамки для конкретного окна, тогда для каждого из соответствующего правила выше(For Windows, Apps) нужно добавить параметр "border pixel (размер)".
+for_window [class=".*"] border pixel 0
+# Если изменить параметр pixel на что-то другое, тогда будет видно Title Bar, который не получится скрыть. Это будет выглядеть отвратительно.
 ### ---------------------------------------------------------END------------------------------------------------------------- ###

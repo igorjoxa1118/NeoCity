@@ -94,7 +94,7 @@ fi
 ######### -------------- Зависимости ------------------########
 
 dependencias=(base base-devel sof-firmware alacritty brightnessctl dunst bottom imagemagick \
-              libwebp maim mpc ncmpcpp npm pamixer neovim \
+              libwebp maim mpc ncmpcpp npm pamixer neovim xorg-xhost glib2 xsettingsd \
               papirus-icon-theme pacman-contrib physlock playerctl python-gobject \
               redshift rust ttf-inconsolata ttf-jetbrains-mono ttf-jetbrains-mono-nerd \
               ttf-joypixels ttf-terminus-nerd ueberzug webp-pixbuf-loader xclip \

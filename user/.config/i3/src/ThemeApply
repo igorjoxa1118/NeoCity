@@ -1,4 +1,50 @@
-#!/bin/sh
+# Назначение: Парсинг файла ~/.config/gtk-3.0/settings.ini и применение GTK3/4 темы
+
+# Проверка наличия файла конфигурации
+config="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini"
+if [ ! -f "$config" ]; then
+    echo "Файл конфигурации $config не найден."
+    exit 1
+fi
+
+# Схема Gnome для применения настроек
+gnome_schema="org.gnome.desktop.interface"
+
+# Функция для извлечения значения из файла конфигурации
+get_setting() {
+    grep "^$1" "$config" | sed 's/.*=\s*//'
+}
+
+# Извлечение настроек из файла
+gtk_theme=$(get_setting 'gtk-theme-name')
+icon_theme=$(get_setting 'gtk-icon-theme-name')
+cursor_theme=$(get_setting 'gtk-cursor-theme-name')
+font_name=$(get_setting 'gtk-font-name')
+
+# Применение настроек через gsettings
+if [ -n "$gtk_theme" ]; then
+    gsettings set "$gnome_schema" gtk-theme "$gtk_theme"
+else
+    echo "Предупреждение: GTK тема не найдена в конфигурации."
+fi
+
+if [ -n "$icon_theme" ]; then
+    gsettings set "$gnome_schema" icon-theme "$icon_theme"
+else
+    echo "Предупреждение: Тема иконок не найдена в конфигурации."
+fi
+
+if [ -n "$cursor_theme" ]; then
+    gsettings set "$gnome_schema" cursor-theme "$cursor_theme"
+else
+    echo "Предупреждение: Тема курсора не найдена в конфигурации."
+fi
+
+if [ -n "$font_name" ]; then
+    gsettings set "$gnome_schema" font-name "$font_name"
+else
+    echo "Предупреждение: Шрифт не найден в конфигурации."
+fi#!/bin/sh
 
 # usage: import-gsettings
 config="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini"

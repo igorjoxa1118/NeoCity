@@ -18,7 +18,6 @@ floating_modifier $mod
 
 ### --- «Переключение между открытыми окнами(на одном рабочем пространстве)»
 ### --- «Альтернативное переключение мешду окнами, вы можете использовать стрелочки клавиатуры:
-#bindsym $mod+Tab workspace back_and_forth»
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
@@ -141,7 +140,7 @@ bindsym $mod1+c  exec --no-startup-id "thunar"
 bindsym Print exec --no-startup-id "kazam -f"
 bindsym $mod+$mod1+v exec --no-startup-id "$local/rofi_video_dmenu/Launch.sh"
 bindsym $mod+shift+k  exec xkill
-
-### --- END
+bindsym $mod+Shift+s exec --no-startup-id "flameshot gui"
+### ---------------------------------------------------------END------------------------------------------------------------- ###
 
 

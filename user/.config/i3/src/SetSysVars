@@ -7,42 +7,52 @@
 #  ╚══════╝   ╚═╝   ╚══════╝   ╚═╝   ╚══════╝╚═╝     ╚═╝      ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
 
 
+#!/usr/bin/env bash
+
 CONFIG_FILE="$HOME/.config/i3/config.d/system.ini"
 SFILE="$HOME/.config/i3/config.d/.sys"
 
-# Check if the .sys file already exists
-[[ -f "$SFILE" ]] && exit 0 # The file exists, exit without doing anything
+# Проверка наличия необходимых утилит
+command -v ip >/dev/null 2>&1 || { echo >&2 "Утилита 'ip' не установлена. Установите её и повторите попытку."; exit 1; }
+command -v xrandr >/dev/null 2>&1 || { echo >&2 "Утилита 'xrandr' не установлена. Установите её и повторите попытку."; exit 1; }
+command -v sed >/dev/null 2>&1 || { echo >&2 "Утилита 'sed' не установлена. Установите её и повторите попытку."; exit 1; }
 
-# Function to get and set values
+# Проверка существования файла конфигурации
+if [[ ! -f "$CONFIG_FILE" ]]; then
+    echo >&2 "Файл конфигурации $CONFIG_FILE не найден."
+    exit 1
+fi
+
+# Проверка, был ли уже выполнен скрипт
+[[ -f "$SFILE" ]] && exit 0
+
+# Функция для получения и установки значений
 function setup_system_vars() {
-    # Network interfaces (primary and secondary)
-    # readarray -t ALL_NET < <(ip -o link show up | awk -F': ' '{print $2}' | grep -vE '^(lo|docker|veth|br-)')
-
-	PRIMARY_NET=$(ip -o route get 1 | awk '{print $5; exit}')
-	SECONDARY_NET=$(ip -o link show | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
+    # Сетевые интерфейсы (основной и дополнительный)
+    PRIMARY_NET=$(ip -o route get 1 2>/dev/null | awk '{print $5; exit}')
+    SECONDARY_NET=$(ip -o link show 2>/dev/null | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
 
     [[ -n "$PRIMARY_NET" ]] && sed -i "s/sys_wireless_interface = .*/sys_wireless_interface = $PRIMARY_NET/" "$CONFIG_FILE"
     [[ -n "$SECONDARY_NET" ]] && sed -i "s/sys_network_interface = .*/sys_network_interface = $SECONDARY_NET/" "$CONFIG_FILE"
 
-    # Graphics card (backlight)
-    CARD=$(find /sys/class/backlight -maxdepth 1 -type l | head -n1 | xargs basename)
+    # Графическая карта (подсветка)
+    CARD=$(find /sys/class/backlight -maxdepth 1 -type l 2>/dev/null | head -n1 | xargs basename)
     [[ -n "$CARD" ]] && sed -i "s/sys_graphics_card = .*/sys_graphics_card = $CARD/" "$CONFIG_FILE"
 
-    # Battery and adapter
-    BATTERY=$(find /sys/class/power_supply -maxdepth 1 -type l -name "BAT*" | head -n1 | xargs basename)
-    ADAPTER=$(find /sys/class/power_supply -maxdepth 1 -type l -name "A[CD]*" | head -n1 | xargs basename)
+    # Батарея и адаптер
+    BATTERY=$(find /sys/class/power_supply -maxdepth 1 -type l -name "BAT*" 2>/dev/null | head -n1 | xargs basename)
+    ADAPTER=$(find /sys/class/power_supply -maxdepth 1 -type l -name "A[CD]*" 2>/dev/null | head -n1 | xargs basename)
 
     [[ -n "$BATTERY" ]] && sed -i "s/sys_battery = .*/sys_battery = $BATTERY/" "$CONFIG_FILE"
     [[ -n "$ADAPTER" ]] && sed -i "s/sys_adapter = .*/sys_adapter = $ADAPTER/" "$CONFIG_FILE"
 
-    # Connected moditor
-    CONECT=$(xrandr | grep " connected " | awk '{ print$1 }')
-
-    [[ -n "$CONECT" ]] && sed -i "s/sys_monitor = .*/sys_monitor = $CONECT/" "$CONFIG_FILE"
+    # Подключенные мониторы
+    CONNECTED_MONITORS=$(xrandr 2>/dev/null | grep " connected " | awk '{ print $1 }')
+    [[ -n "$CONNECTED_MONITORS" ]] && sed -i "s/sys_monitor = .*/sys_monitor = $CONNECTED_MONITORS/" "$CONFIG_FILE"
 }
 
-# Ejecutar la configuración
+# Выполнение конфигурации
 setup_system_vars
 
-# Crear el archivo .sys para indicar que la configuración ya se ha realizado
+# Создание файла .sys для указания, что конфигурация выполнена
 touch "$SFILE"

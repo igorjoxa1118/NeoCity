@@ -14,13 +14,12 @@
 #            ╚══════╝╚══════╝╚══════╝╚══════╝ ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
 #
 #set -x
+
 # Some vars
 i3_dir="$HOME/.config/i3"
 current_rice_file="$i3_dir/config.d/.rice"
-preview_dir="$i3_dir/rices/${options[*]}"
 rofi_command="rofi -dmenu -theme $i3_dir/src/rofi-themes/RiceSelector.rasi"
 i3_rice_in_config=$(< "$current_rice_file")
-
 
 # Variables to try to define the correct size of the images for your resolution
 monitor_res=$(xdpyinfo | awk '/dimensions/{print $2}' | cut -d 'x' -f1)
@@ -28,11 +27,13 @@ monitor_scale=$(xdpyinfo | awk '/resolution/{print $2}' | cut -d 'x' -f1)
 monitor_res=$(( monitor_res * 17 / monitor_scale ))
 rofi_override="element-icon{size:${monitor_res}px;}"
 
-# Verificar si xdpyinfo e imagemagick están instalados
-if ! command -v xdpyinfo > /dev/null 2>&1; then
-    dunstify "Missing package" "Please install the xorg-xdpyinfo package to continue" -u critical
-    exit 1
-fi
+# Check if required commands are installed
+for cmd in xdpyinfo rofi feh i3-msg; do
+    if ! command -v "$cmd" > /dev/null 2>&1; then
+        dunstify "Missing package" "Please install the $cmd package to continue" -u critical
+        exit 1
+    fi
+done
 
 # List rices
 options=()
@@ -53,18 +54,23 @@ for rice_dir in "$i3_dir"/rices/*/; do
 done
 
 # Show the rofi selection menu with the starting point set to the current rice and store the result in a variable.
-selected=$(printf "%s\n" "${options[@]}" | while read -r A ; do  echo -en "$A\x00icon\x1f${preview_dir}$A/preview.webp\n" ; done | $rofi_command -theme-str "$rofi_override" -selected-row "$selected_index")
+selected=$(printf "%s\n" "${options[@]}" | while read -r A ; do
+    echo -en "$A\x00icon\x1f$i3_dir/rices/$A/preview.webp\n"
+done | $rofi_command -theme-str "$rofi_override" -selected-row "$selected_index")
 
-# If a valid option was selected, write the value to the configuration file and restart BSPWM.
-[[ -n "$selected" && "$selected" != "$current_rice" ]] || exit 1
+# Exit if no selection was made or if the selection is the same as the current rice
+[[ -n "$selected" && "$selected" != "$current_rice" ]] || exit 0
+
+# Update the current rice file
 echo "$selected" > "$current_rice_file"
 
-###---Global set wallpapers
-feh_walls_list=$(ls "$HOME"/.config/i3/rices/$selected/walls | grep "png" | head -1)
+# Update the wallpaper in the autostart file
+feh_walls_list=$(find "$HOME/.config/i3/rices/$selected/walls" -name "*.png" -o -name "*.webp" | head -1)
 wall_old="catppuccin_triangle.webp"
 
-sed -i "s/"$i3_rice_in_config"/"$selected"/g" "$HOME"/.config/i3/config.d/autostart
-sed -i "s/"$wall_old"/"$feh_walls_list"/g" "$HOME"/.config/i3/config.d/autostart
+sed -i "s/$i3_rice_in_config/$selected/g" "$HOME/.config/i3/config.d/autostart"
+sed -i "s/$wall_old/$(basename "$feh_walls_list")/g" "$HOME/.config/i3/config.d/autostart"
 
+# Restart i3 to apply changes
 i3-msg restart
 exit 0

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+## Catppuccin mocha
 
 read -r RICETHEME < "$HOME"/.config/i3/config.d/.rice
 rice_dir="$HOME/.config/i3/rices/$RICETHEME"
@@ -12,12 +12,6 @@ killall -q polybar
 killall -q eww
 
 ###--Start rice
-# theme_rofi_color() {
-# 	sed -i "s|@import .*|@import \""colors/$RICETHEME.rasi"\"|g" "$HOME"/.config/i3/src/rofi-themes/RiceSelector.rasi
-# 	sed -i "s|@import .*|@import \""colors/$RICETHEME.rasi"\"|g" "$HOME"/.config/i3/src/rofi-themes/NetManagerDM.rasi
-# }
-# theme_rofi_color
-
 rofi_launcher_color() {
 	if [ -f "$HOME/.config/i3/src/launchers/type-3/shared/colors.rasi" ]; then
 	 echo '' >  "$HOME/.config/i3/src/launchers/type-3/shared/colors.rasi"
@@ -25,6 +19,63 @@ rofi_launcher_color() {
 	fi
 }
 rofi_launcher_color
+
+rofi_powermenu() {
+# Удаляем старый блок кода, начиная с "/*****----- Global Properties -----*****/" и заканчивая "}"
+sed -i '/\/\*\*\*\*----- Global Properties -----\*\*\*\*\//,/}/d' $HOME/.config/i3/src/powermenu/type-4/style-5.rasi
+
+# Вставляем новый блок кода на место удалённого
+cat << 'EOF' >> $HOME/.config/i3/src/powermenu/type-4/style-5.rasi
+/*****----- Global Properties -----*****/
+* {
+    /* Resolution : 1920x1080 */
+    mainbox-spacing:             52px;
+    mainbox-margin:              0px 470px;
+    message-margin:              0px 350px;
+    message-padding:             15px;
+    message-border-radius:       100%;
+    listview-spacing:            25px;
+    element-padding:             20px 40px 45px 40px;
+    element-border-radius:       100%;
+
+    prompt-font:                 "MesloLGS NF Regular Bold 32";
+    textbox-font:                "MesloLGS NF Regular 10";
+    element-text-font:           "feather Bold 48";
+
+    /* Gradients */
+    gradient-1:                  linear-gradient(45, #ee99a0, #a6e3a1);
+    gradient-2:                  linear-gradient(0, #ee99a0, #7A72EC);
+    gradient-3:                  linear-gradient(70, #f9e2af, #ee99a0);
+    gradient-4:                  linear-gradient(135, #74c7ec, #ee99a0);
+    gradient-5:                  linear-gradient(to left, #bdc3c7, #2c3e50);
+    gradient-6:                  linear-gradient(to right, #24273a, #24273a, #24273a);
+    gradient-7:                  linear-gradient(to top, #74c7ec, #cba6f7, #ee99a0);
+    gradient-8:                  linear-gradient(to bottom, #f38ba8, #493240);
+    gradient-9:                  linear-gradient(0, #1a2a6c, #ee99a0, #f9e2af);
+    gradient-10:                 linear-gradient(0, #283c86, #a6e3a1);
+    gradient-11:                 linear-gradient(0, #ee99a0, #79CBCA, #E684AE);
+    gradient-12:                 linear-gradient(0, #ff6e7f, #bfe9ff);
+    gradient-13:                 linear-gradient(0, #f38ba8, #ee99a0);
+    gradient-14:                 linear-gradient(0, #cba6f7, #cba6f7);
+    gradient-15:                 linear-gradient(0, #a6e3a1, #a6e3a1);
+    gradient-16:                 linear-gradient(0, #232526, #414345);
+    gradient-17:                 linear-gradient(0, #833ab4, #ee99a0, #f9e2af);
+    gradient-18:                 linear-gradient(0, #ee99a0, #74c7ec, #74c7ec, #ee99a0);
+    gradient-19:                 linear-gradient(0, #03001e, #cba6f7, #ec38bc, #fdeff9);
+    gradient-20:                 linear-gradient(0, #ee99a0, #061161);
+    
+    green:        #a6e3a1;
+    bords:        #cba6f7;
+    
+    background-window:           var(gradient-6);
+    background-normal:           #24273a;
+    background-selected:         #ee99a0;
+    foreground-normal:           #cdd6f4;
+    foreground-selected:         #24273a;
+}
+EOF
+}
+rofi_powermenu
 
 rofi_calendar_color() {
 	if [ -f "$i3_scr/rofi-calendar/themes/colors.rasi" ]; then
@@ -34,36 +85,43 @@ rofi_calendar_color() {
 }
 rofi_calendar_color
 
+# Функция для применения тем GTK3 "на лету" через xsettingsd
 set_gtk_theme() {
-	sed -i "s/gtk-theme-name=.*/gtk-theme-name="$RICETHEME"/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-theme-name=.*/gtk-theme-name="$RICETHEME"/g" "$HOME"/.config/gtk-4.0/settings.ini
-    sed -i "s/gtk-theme-name=.*/gtk-theme-name="\"""$RICETHEME"""\"/g" "$HOME"/.gtkrc-2.0
+    # Создаем временный файл конфигурации для xsettingsd
+    XSETTINGS_CONF="$HOME/.xsettingsd"
+    cat <<EOF > "$XSETTINGS_CONF"
+Net/ThemeName "$RICETHEME"
+Net/IconThemeName "Catppuccin-Macchiato"
+Gtk/CursorThemeName "catppuccin-mocha-teal-cursors"
+EOF
+
+    # Перезапускаем xsettingsd для применения изменений
+    if pgrep -x "xsettingsd" > /dev/null; then
+        killall xsettingsd
+    fi
+    xsettingsd &
 }
 set_gtk_theme
 
 set_icons() {
+    # Изменение иконок в конфигурационных файлах
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Catppuccin-Macchiato"\"/g" "$HOME"/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Catppuccin-Macchiato/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Catppuccin-Macchiato/g" "$HOME"/.config/gtk-4.0/settings.ini	
+    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Catppuccin-Macchiato/g" "$HOME"/.config/gtk-4.0/settings.ini
 }
 set_icons
 
 set_cursor() {
-	sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name="\"catppuccin-mocha-teal-cursors"\"/g" "$HOME"/.gtkrc-2.0
-	sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-teal-cursors/g" "$HOME"/.config/gtk-3.0/settings.ini
+    # Изменение курсоров в конфигурационных файлах
+    sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name="\"catppuccin-mocha-teal-cursors"\"/g" "$HOME"/.gtkrc-2.0
+    sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-teal-cursors/g" "$HOME"/.config/gtk-3.0/settings.ini
     sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-teal-cursors/g" "$HOME"/.config/gtk-4.0/settings.ini
 }
 set_cursor
 
 # NetworkManager launcher
 set_network_manager() {
-	sed -i "$HOME/.config/i3/src/NetManagerDM.rasi" \
-		-e '12s/\(background: \).*/\1#24273a;/' \
-		-e '13s/\(background-alt: \).*/\1#2d3245;/' \
-		-e '14s/\(foreground: \).*/\1#94e2d5;/' \
-		-e '15s/\(selected: \).*/\1#565e82;/' \
-		-e '16s/\(active: \).*/\1#89dceb;/' \
-		-e '17s/\(urgent: \).*/\1#89dceb;/'
+	sed -i 's|@import "colors/catppuccin-[^"]*"|@import "colors/catppuccin-macchiato.rasi"|g' "$HOME/.config/i3/src/rofi-themes/NetManagerDM.rasi"
 }
 set_network_manager
 
@@ -85,7 +143,6 @@ set_term_config() {
 }
 set_term_config
 
-
 # Firefox theme
 firefox_profiles() {
 	THEME_DIR="$HOME/.mozilla/FoxThemes"
@@ -103,18 +160,34 @@ firefox_profiles
 
 # Set dunst config
 set_dunst_config() {
-dunst_path="$HOME"/.config/i3/rices/$RICETHEME/dunst/dunstrc
-       if [ -f "$dunst_path" ]; then
-         cp -rf "$dunst_path" ~/.config/dunst/
-       else
-         echo "Color file not exist!"
-       fi
+    dunst_path="$HOME/.config/i3/rices/$RICETHEME/dunst/dunstrc"
+    if [ -f "$dunst_path" ]; then
+        cp -rf "$dunst_path" ~/.config/dunst/
+
+        # Проверяем, запущены ли dunst и musnify-mpd
+        pid="$(ps aux | grep dunstrc | grep -v grep | awk '{print $2}')"
+        pid2="$(ps aux | grep musnify-mpd | grep -v grep | awk '{print $2}')"
+
+        # Останавливаем процессы, если они запущены
+        if [ -n "$pid" ]; then
+            kill -9 "$pid"
+        fi
+        if [ -n "$pid2" ]; then
+            kill -9 "$pid2"
+        fi
+
+        # Запускаем dunst и musnify-mpd с новой конфигурацией
+        dunst -conf ~/.config/dunst/dunstrc &
+        musnify-mpd &
+    else
+        echo "Color file not exist!"
+    fi
 }
 set_dunst_config
 
 ###---Global. Change colors for Tabbed
 tabbed_settings() {
-tabbed_path="$HOME"/.config/i3/rices/$RICETHEME/tabbed/colors
+tabbed_path=""$HOME"/.config/i3/rices/$RICETHEME/tabbed/colors"
        if [ -f "$tabbed_path" ]; then
          cp -rf "$tabbed_path" "$i3_configd"
        else

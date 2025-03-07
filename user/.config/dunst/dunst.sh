@@ -11,6 +11,11 @@ function closed {
 	killall musnify-mpd
 }
 
+function start { 
+	dunst -conf $HOME/.config/dunst/dunstrc &
+	musnify-mpd &
+}
+
 # exec
 if test "$pid"; then
 	if test "$pid2"; then
@@ -21,8 +26,4 @@ if test "$pid"; then
 	closed
 fi
 
-function start { 
-	dunst -conf $HOME/.config/dunst/dunstrc &
-	musnify-mpd &
-}
 start

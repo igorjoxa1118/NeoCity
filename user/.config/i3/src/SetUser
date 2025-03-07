@@ -2,26 +2,45 @@
 
 UFILE="$HOME/.config/i3/config.d/.usr"
 
-# Check if the .sys file already exists
-[[ -f "$UFILE" ]] && exit 0 # The file exists, exit without doing anything
+# Check if the .usr file already exists
+if [[ -f "$UFILE" ]]; then
+    echo "Configuration already done. Exiting..."
+    exit 0
+fi
 
-sed -i "s/vir0id/${USER}/g" "$HOME"/.config/blender/4.1/config/bookmarks.txt
-sed -i "s/vir0id/${USER}/g" "$HOME"/.gtkrc-2.0
-sed -i "s/vir0id/${USER}/g" "$HOME"/.config/nitrogen/bg-saved.cfg
-sed -i "s/vir0id/${USER}/g" "$HOME"/.config/nitrogen/nitrogen.cfg
-sed -i "s/vir0id/${USER}/g" "$HOME"/.zshrc
-sed -i "s/vir0id/${USER}/g" "$HOME"/.config/gtk-3.0/bookmarks
-sed -i "s/vir0id/${USER}/g" "$HOME"/.local/share/applications/nvim.desktop
-sed -i "s/vir0id/${USER}/g" "$HOME"/.local/share/applications/ranger.desktop
-sed -i "s/vir0id/${USER}/g" "$HOME"/.local/share/applications/zfetch.desktop
-sed -i "s/vir0id/${USER}/g" "$HOME"/.config/kitty/kitty.conf
-sed -i "s/vir0id/${USER}/g" "$HOME"/.config/i3/rices/catppuccin-macchiato/rofi/rofi_launchers/launcher.rasi
-sed -i "s/vir0id/${USER}/g" "$HOME"/.config/i3/rices/catppuccin-mocha/rofi/rofi_launchers/launcher.rasi
-sed -i "s/vir0id/${USER}/g" "$HOME"/.config/i3/rices/catppuccin-frappe/rofi/rofi_launchers/launcher.rasi
-sed -i "s/vir0id/${USER}/g" "$HOME"/.config/i3/rices/catppuccin-latte/rofi/rofi_launchers/launcher.rasi
-sed -i "s/vir0id/${USER}/g" "$HOME"/.config/qt5ct/qt5ct.conf
-sed -i "s/vir0id/${USER}/g" "$HOME"/.config/qBittorrent/qBittorrent.conf
-#sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
+# List of files to modify
+files=(
+    "$HOME/.config/blender/4.1/config/bookmarks.txt"
+    "$HOME/.gtkrc-2.0"
+    "$HOME/.config/nitrogen/bg-saved.cfg"
+    "$HOME/.config/nitrogen/nitrogen.cfg"
+    "$HOME/.zshrc"
+    "$HOME/.config/gtk-3.0/bookmarks"
+    "$HOME/.local/share/applications/nvim.desktop"
+    "$HOME/.local/share/applications/ranger.desktop"
+    "$HOME/.local/share/applications/zfetch.desktop"
+    "$HOME/.config/kitty/kitty.conf"
+    "$HOME/.config/i3/rices/catppuccin-macchiato/rofi/rofi_launchers/launcher.rasi"
+    "$HOME/.config/i3/rices/catppuccin-mocha/rofi/rofi_launchers/launcher.rasi"
+    "$HOME/.config/i3/rices/catppuccin-frappe/rofi/rofi_launchers/launcher.rasi"
+    "$HOME/.config/i3/rices/catppuccin-latte/rofi/rofi_launchers/launcher.rasi"
+    "$HOME/.config/qt5ct/qt5ct.conf"
+    "$HOME/.config/qBittorrent/qBittorrent.conf"
+)
 
-# Crear el archivo .sys para indicar que la configuración ya se ha realizado
+# Replace 'vir0id' with the current username in each file
+for file in "${files[@]}"; do
+    if [[ -f "$file" ]]; then
+        sed -i "s/vir0id/${USER}/g" "$file"
+        echo "Updated $file"
+    else
+        echo "File $file not found, skipping..."
+    fi
+done
+
+# Uncomment the following line if you need to update the cursor theme
+# sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
+
+# Create the .usr file to indicate that the configuration has been done
 touch "$UFILE"
+echo "Configuration completed. Created $UFILE to prevent future runs."
