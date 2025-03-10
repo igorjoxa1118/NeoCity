@@ -7,7 +7,7 @@
 ### --- Catppuccin-frappe
 
 [global]
-frame_width= 1
+frame_width= 0
 frame_color = "#f5a97f"
 font = MesloLGS NF 9
 monitor = 0

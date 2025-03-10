@@ -7,7 +7,7 @@
 ### --- Catppuccin-latte
 
 [global]
-frame_width= 1
+frame_width= 0
 frame_color = "#8839ef"
 font = MesloLGS NF 9
 monitor = 0
