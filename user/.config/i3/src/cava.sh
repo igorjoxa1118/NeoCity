@@ -7,7 +7,7 @@ config_file="/tmp/bar_cava_config"
 cat >"$config_file" <<EOF
 [general]
 bars = 15  # Количество баров
-sensitivity = 250  # Чувствительность
+sensitivity = 70  # Уменьшено для более резкой реакции
 
 [input]
 method = pulse
@@ -23,13 +23,16 @@ ascii_max_range = 7  # Значение по умолчанию
 gradient = 0  # Отключаем градиент
 
 [smoothing]
-integral = 70  # Сглаживание баров
+integral = 50  # Уменьшено для более быстрой реакции
+gravity = 50   # Уменьшено для более быстрого опускания баров
+fft_filter = 1
+frequency_range = 20-1352,1352-2684,2684-4016,4016-5348,5348-6680,6680-8012,8012-9344,9344-10676,10676-12008,12008-13340,13340-14672,14672-16004,16004-17336,17336-18668,18668-20000
 
 [fft]
-mode = high  # Режим FFT
+mode = peak  # Более резкая реакция на изменения звука
 EOF
 
-# Акцентные цвета Catppuccin Mocha
+# Акцентные цвета Catppuccin
 colors=(
     "#89b4fa" "#f38ba8" "#fab387" "#a6e3a1" "#94e2d5"
     "#74c7ec" "#cba6f7" "#f5e0dc" "#89b4fa" "#f38ba8"
@@ -44,22 +47,20 @@ cava -p "$config_file" | while IFS=';' read -r -a bars; do
     # Проходим по каждому бару
     for ((i = 0; i < ${#bars[@]}; i++)); do
         level=${bars[$i]}
-        # Нормализуем уровень до диапазона 0-8 (для символов)
+        # Нормализуем уровень до диапазона 0-8 (для символов ┃)
         normalized_level=$(( (level * 8) / 7 ))
 
-        # Выбираем символ в зависимости от нормализованного уровня
-        case $normalized_level in
-            0) symbol=" ";;
-            1) symbol="▁";;
-            2) symbol="▂";;
-            3) symbol="▃";;
-            4) symbol="▄";;
-            5) symbol="▅";;
-            6) symbol="▆";;
-            7) symbol="▇";;
-            8) symbol="█";;
-            *) symbol=" ";;
-        esac
+        # Добавляем порог для отображения баров
+        if (( normalized_level < 2 )); then
+            symbol=" "
+        else
+            # Выбираем символ в зависимости от нормализованного уровня
+            case $normalized_level in
+                0) symbol=" ";;  # Пустое пространство
+                1|2|3|4|5|6|7|8) symbol="┃";;  # Один символ ┃
+                *) symbol=" ";;  # По умолчанию пустое пространство
+            esac
+        fi
 
         # Добавляем цветной символ в строку вывода
         output+="%{F${colors[$i]}}$symbol%{F-}"

@@ -2,30 +2,76 @@
 
 ## Catppuccin mocha
 
-read -r RICETHEME < "$HOME"/.config/i3/config.d/.rice
+# Логирование
+LOG_FILE="/tmp/theme_script.log"
+echo "Запуск скрипта: $(date)" > "$LOG_FILE"
+
+# Функция для логирования
+log() {
+    echo "$(date): $1" >> "$LOG_FILE"
+}
+
+# Функция для проверки ошибок
+check_error() {
+    if [ $? -ne 0 ]; then
+        log "Ошибка: $1"
+        exit 1
+    fi
+}
+
+# Чтение текущей темы
+if [ ! -f "$HOME/.config/i3/config.d/.rice" ]; then
+    log "Файл .rice не найден!"
+    exit 1
+fi
+
+read -r RICETHEME < "$HOME/.config/i3/config.d/.rice"
 rice_dir="$HOME/.config/i3/rices/$RICETHEME"
 i3_configd="$HOME/.config/i3/config.d"
 i3_scr="$HOME/.config/i3/src"
 
-# Terminate already running bar instances
+# Проверка существования директории темы
+if [ ! -d "$rice_dir" ]; then
+    log "Директория темы $rice_dir не найдена!"
+    exit 1
+fi
+
+# Убиваем запущенные процессы polybar и eww
 killall -q polybar
 killall -q eww
 
 ###--Start rice
+
+# Функция для настройки цветов Rofi Launcher
 rofi_launcher_color() {
-	if [ -f "$HOME/.config/i3/src/launchers/type-3/shared/colors.rasi" ]; then
-	 echo '' >  "$HOME/.config/i3/src/launchers/type-3/shared/colors.rasi"
-	 cat "$HOME/.config/i3/rices/$RICETHEME/rofi/shared/colors.rasi" > "$HOME/.config/i3/src/launchers/type-3/shared/colors.rasi"
-	fi
+    local colors_file="$HOME/.config/i3/src/launchers/type-3/shared/colors.rasi"
+    local source_colors="$rice_dir/rofi/shared/colors.rasi"
+
+    if [ -f "$colors_file" ]; then
+        echo '' > "$colors_file"
+        check_error "Не удалось очистить файл $colors_file"
+
+        if [ -f "$source_colors" ]; then
+            cat "$source_colors" > "$colors_file"
+            check_error "Не удалось скопировать цвета Rofi из $source_colors"
+        else
+            log "Файл цветов Rofi $source_colors не найден!"
+        fi
+    else
+        log "Файл $colors_file не найден!"
+    fi
 }
 rofi_launcher_color
 
+# Функция для настройки Rofi Powermenu
 rofi_powermenu() {
-# Удаляем старый блок кода, начиная с "/*****----- Global Properties -----*****/" и заканчивая "}"
-sed -i '/\/\*\*\*\*----- Global Properties -----\*\*\*\*\//,/}/d' $HOME/.config/i3/src/powermenu/type-4/style-5.rasi
+    local powermenu_file="$HOME/.config/i3/src/powermenu/type-4/style-5.rasi"
 
-# Вставляем новый блок кода на место удалённого
-cat << 'EOF' >> $HOME/.config/i3/src/powermenu/type-4/style-5.rasi
+    if [ -f "$powermenu_file" ]; then
+        sed -i '/\/\*\*\*\*----- Global Properties -----\*\*\*\*\//,/}/d' "$powermenu_file"
+        check_error "Не удалось удалить старый блок кода в $powermenu_file"
+
+        cat << 'EOF' >> "$powermenu_file"
 /*****----- Global Properties -----*****/
 * {
     /* Resolution : 1920x1080 */
@@ -74,149 +120,279 @@ cat << 'EOF' >> $HOME/.config/i3/src/powermenu/type-4/style-5.rasi
     foreground-selected:         #24273a;
 }
 EOF
+        check_error "Не удалось добавить новый блок кода в $powermenu_file"
+    else
+        log "Файл $powermenu_file не найден!"
+    fi
 }
 rofi_powermenu
 
+# Функция для настройки цветов Rofi Calendar
 rofi_calendar_color() {
-	if [ -f "$i3_scr/rofi-calendar/themes/colors.rasi" ]; then
-	 echo '' >  "$i3_scr/rofi-calendar/themes/colors.rasi"
-	 cat "$HOME/.config/i3/src/rofi-themes/colors/$RICETHEME.rasi" > "$i3_scr/rofi-calendar/themes/colors.rasi"
-	fi
+    local colors_file="$i3_scr/rofi-calendar/themes/colors.rasi"
+    local source_colors="$HOME/.config/i3/src/rofi-themes/colors/$RICETHEME.rasi"
+
+    if [ -f "$colors_file" ]; then
+        echo '' > "$colors_file"
+        check_error "Не удалось очистить файл $colors_file"
+
+        if [ -f "$source_colors" ]; then
+            cat "$source_colors" > "$colors_file"
+            check_error "Не удалось скопировать цвета Rofi Calendar из $source_colors"
+        else
+            log "Файл цветов Rofi Calendar $source_colors не найден!"
+        fi
+    else
+        log "Файл $colors_file не найден!"
+    fi
 }
 rofi_calendar_color
 
-# Функция для применения тем GTK3 "на лету" через xsettingsd
+# Функция для настройки GTK темы
 set_gtk_theme() {
-    # Создаем временный файл конфигурации для xsettingsd
-    XSETTINGS_CONF="$HOME/.xsettingsd"
-    cat <<EOF > "$XSETTINGS_CONF"
+    local xsettings_conf="$HOME/.xsettingsd"
+
+    cat <<EOF > "$xsettings_conf"
 Net/ThemeName "$RICETHEME"
 Net/IconThemeName "Catppuccin-Macchiato"
-Gtk/CursorThemeName "catppuccin-mocha-teal-cursors"
+Gtk/CursorThemeName "catppuccin-mocha-mauve-cursors"
 EOF
+    check_error "Не удалось создать файл конфигурации xsettingsd"
 
-    # Перезапускаем xsettingsd для применения изменений
     if pgrep -x "xsettingsd" > /dev/null; then
         killall xsettingsd
+        check_error "Не удалось завершить процесс xsettingsd"
     fi
     xsettingsd &
+    check_error "Не удалось запустить xsettingsd"
 }
 set_gtk_theme
 
+# Функция для настройки иконок
 set_icons() {
-    # Изменение иконок в конфигурационных файлах
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name="\"Catppuccin-Macchiato"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Catppuccin-Macchiato/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Catppuccin-Macchiato/g" "$HOME"/.config/gtk-4.0/settings.ini
+    local gtk2_config="$HOME/.gtkrc-2.0"
+    local gtk3_config="$HOME/.config/gtk-3.0/settings.ini"
+    local gtk4_config="$HOME/.config/gtk-4.0/settings.ini"
+
+    for config in "$gtk2_config" "$gtk3_config" "$gtk4_config"; do
+        if [ -f "$config" ]; then
+            sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=Catppuccin-Macchiato/g" "$config"
+            check_error "Не удалось изменить иконки в $config"
+        else
+            log "Файл $config не найден!"
+        fi
+    done
 }
 set_icons
 
+# Функция для настройки курсоров
 set_cursor() {
-    # Изменение курсоров в конфигурационных файлах
-    sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name="\"catppuccin-mocha-teal-cursors"\"/g" "$HOME"/.gtkrc-2.0
-    sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-teal-cursors/g" "$HOME"/.config/gtk-3.0/settings.ini
-    sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-teal-cursors/g" "$HOME"/.config/gtk-4.0/settings.ini
+    local gtk2_config="$HOME/.gtkrc-2.0"
+    local gtk3_config="$HOME/.config/gtk-3.0/settings.ini"
+    local gtk4_config="$HOME/.config/gtk-4.0/settings.ini"
+
+    for config in "$gtk2_config" "$gtk3_config" "$gtk4_config"; do
+        if [ -f "$config" ]; then
+            sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-mauve-cursors/g" "$config"
+            check_error "Не удалось изменить курсоры в $config"
+        else
+            log "Файл $config не найден!"
+        fi
+    done
 }
 set_cursor
 
-# NetworkManager launcher
+# Функция для настройки цвета теней в Picom
+set_picom_shadow_color() {
+    local picom_config="$HOME/.config/i3/config.d/picom.conf"
+    local shadow_color
+
+    # Определение цвета теней в зависимости от темы
+    case "$RICETHEME" in
+        "catppuccin-mocha")
+            shadow_color="#89b4fa"
+            ;;
+        "catppuccin-macchiato")
+            shadow_color="#ee99a0"
+            ;;
+        "catppuccin-latte")
+            shadow_color="#e64553"
+            ;;
+        "catppuccin-frappe")
+            shadow_color="#ca9ee6"
+            ;;
+        *)
+            log "Тема $RICETHEME не поддерживается для настройки цвета теней."
+            return 1
+            ;;
+    esac
+
+    # Проверка существования файла конфигурации Picom
+    if [ -f "$picom_config" ]; then
+        # Изменение цвета теней в конфигурации Picom
+        sed -i "s/^shadow-color = .*/shadow-color = \"$shadow_color\";/g" "$picom_config"
+        check_error "Не удалось изменить цвет теней в $picom_config"
+
+        # Перезапуск Picom для применения изменений
+        if pgrep -x "picom" > /dev/null; then
+            killall picom
+            check_error "Не удалось завершить процесс Picom"
+        fi
+        picom --config "$picom_config" &
+        check_error "Не удалось запустить Picom"
+    else
+        log "Файл конфигурации Picom $picom_config не найден!"
+    fi
+}
+
+# Вызов функции для настройки цвета теней в Picom
+set_picom_shadow_color
+
+# Функция для настройки NetworkManager
 set_network_manager() {
-	sed -i 's|@import "colors/catppuccin-[^"]*"|@import "colors/catppuccin-macchiato.rasi"|g' "$HOME/.config/i3/src/rofi-themes/NetManagerDM.rasi"
+    local netmanager_file="$HOME/.config/i3/src/rofi-themes/NetManagerDM.rasi"
+
+    if [ -f "$netmanager_file" ]; then
+        sed -i 's|@import "colors/catppuccin-[^"]*"|@import "colors/catppuccin-mocha.rasi"|g' "$netmanager_file"
+        check_error "Не удалось изменить конфигурацию NetworkManager"
+    else
+        log "Файл $netmanager_file не найден!"
+    fi
 }
 set_network_manager
 
-# Reload terminal colors
+# Функция для настройки терминалов
 set_term_config() {
-	AL_CONFIG_DIR="$HOME/.config/alacritty"
-	AL_RICE_DIR="$HOME/.config/i3/rices/$RICETHEME/alacritty"
-		if [ -f $AL_CONFIG_DIR/alacritty.toml ]; then
-			rm -rf $AL_CONFIG_DIR/*
-			cp -rf $AL_RICE_DIR/* $AL_CONFIG_DIR
-		fi
-	KI_CONFIG_DIR="$HOME/.config/kitty"
-	KI_RICE_DIR="$HOME/.config/i3/rices/$RICETHEME/kitty"
-		if [ -f $KI_CONFIG_DIR/kitty.conf ]; then
-			cp -rf $KI_RICE_DIR/kitty.conf $KI_CONFIG_DIR
-		else
-			cp -rf $HOME/.config/i3/rices/$RICETHEME/kitty/kitty.conf $HOME/.config/kitty/
-		fi
+    local al_config_dir="$HOME/.config/alacritty"
+    local al_rice_dir="$rice_dir/alacritty"
+    local ki_config_dir="$HOME/.config/kitty"
+    local ki_rice_dir="$rice_dir/kitty"
+
+    if [ -f "$al_config_dir/alacritty.toml" ]; then
+        rm -rf "$al_config_dir"/*
+        check_error "Не удалось очистить директорию $al_config_dir"
+        cp -rf "$al_rice_dir"/* "$al_config_dir"
+        check_error "Не удалось скопировать конфигурацию Alacritty"
+    fi
+
+    if [ -f "$ki_config_dir/kitty.conf" ]; then
+        cp -rf "$ki_rice_dir/kitty.conf" "$ki_config_dir"
+        check_error "Не удалось скопировать конфигурацию Kitty"
+    else
+        cp -rf "$ki_rice_dir/kitty.conf" "$HOME/.config/kitty/"
+        check_error "Не удалось скопировать конфигурацию Kitty"
+    fi
 }
 set_term_config
 
-# Firefox theme
+# Функция для настройки Firefox
 firefox_profiles() {
-	THEME_DIR="$HOME/.mozilla/FoxThemes"
-	DEST_DIR="$HOME/.mozilla/firefox/"
+    local theme_dir="$HOME/.mozilla/FoxThemes"
+    local dest_dir="$HOME/.mozilla/firefox/"
 
-if [[ $(grep '\[Profile[^0]\]' "$HOME"/.mozilla/firefox/profiles.ini) ]]; then 
-	PROFPATH=$(grep -E '^\[Profile|^Path|^Default' "$HOME"/.mozilla/firefox/profiles.ini | grep -1 '^Default=1' | grep '^Path' | cut -c6-)
-	cp -rf "$THEME_DIR"/* "$DEST_DIR"/"$PROFPATH"
-else 
-	PROFPATH=$(grep 'Path=' "$HOME"/.mozilla/firefox/profiles.ini | sed 's/^Path=//')
-	cp -rf "$THEME_DIR"/* "$DEST_DIR"/"$PROFPATH"
-fi
+    if [[ $(grep '\[Profile[^0]\]' "$HOME/.mozilla/firefox/profiles.ini") ]]; then
+        profpath=$(grep -E '^\[Profile|^Path|^Default' "$HOME/.mozilla/firefox/profiles.ini" | grep -1 '^Default=1' | grep '^Path' | cut -c6-)
+        cp -rf "$theme_dir"/* "$dest_dir/$profpath"
+        check_error "Не удалось скопировать тему Firefox"
+    else
+        profpath=$(grep 'Path=' "$HOME/.mozilla/firefox/profiles.ini" | sed 's/^Path=//')
+        cp -rf "$theme_dir"/* "$dest_dir/$profpath"
+        check_error "Не удалось скопировать тему Firefox"
+    fi
 }
 firefox_profiles
 
-# Set dunst config
+# Функция для настройки Dunst
 set_dunst_config() {
-    dunst_path="$HOME/.config/i3/rices/$RICETHEME/dunst/dunstrc"
+    local dunst_path="$rice_dir/dunst/dunstrc"
+
     if [ -f "$dunst_path" ]; then
         cp -rf "$dunst_path" ~/.config/dunst/
+        check_error "Не удалось скопировать конфигурацию Dunst"
 
-        # Проверяем, запущены ли dunst и musnify-mpd
         pid="$(ps aux | grep dunstrc | grep -v grep | awk '{print $2}')"
         pid2="$(ps aux | grep musnify-mpd | grep -v grep | awk '{print $2}')"
 
-        # Останавливаем процессы, если они запущены
         if [ -n "$pid" ]; then
             kill -9 "$pid"
+            check_error "Не удалось завершить процесс Dunst"
         fi
         if [ -n "$pid2" ]; then
             kill -9 "$pid2"
+            check_error "Не удалось завершить процесс musnify-mpd"
         fi
 
-        # Запускаем dunst и musnify-mpd с новой конфигурацией
         dunst -conf ~/.config/dunst/dunstrc &
+        check_error "Не удалось запустить Dunst"
         musnify-mpd &
+        check_error "Не удалось запустить musnify-mpd"
     else
-        echo "Color file not exist!"
+        log "Файл конфигурации Dunst $dunst_path не найден!"
     fi
 }
 set_dunst_config
 
-###---Global. Change colors for Tabbed
+# Функция для настройки Tabbed
 tabbed_settings() {
-tabbed_path=""$HOME"/.config/i3/rices/$RICETHEME/tabbed/colors"
-       if [ -f "$tabbed_path" ]; then
-         cp -rf "$tabbed_path" "$i3_configd"
-       else
-         echo "Color file not exist!"
-       fi
+    local tabbed_path="$rice_dir/tabbed/colors"
+
+    if [ -f "$tabbed_path" ]; then
+        cp -rf "$tabbed_path" "$i3_configd"
+        check_error "Не удалось скопировать конфигурацию Tabbed"
+    else
+        log "Файл конфигурации Tabbed $tabbed_path не найден!"
+    fi
 }
 tabbed_settings
 
+# Функция замены цветов cava на акцентные catppuccin macchiato
+cava_colors() {
+sed -i '/colors=(/,/)/c\
+colors=(\
+    "#8aadf4" "#ed8796" "#f5a97f" "#a6da95" "#8bd5ca"\
+    "#91d7e3" "#c6a0f6" "#f4dbd6" "#8aadf4" "#ed8796"\
+    "#f5a97f" "#a6da95" "#8bd5ca" "#91d7e3" "#c6a0f6"\
+)' "$HOME/.config/i3/src/cava.sh"
+}
+cava_colors
+
+# Функция для настройки Xresources
 xresources_color() {
-	if [ -f "$HOME/.Xresources.d/colors" ]; then
-	 echo '' >  "$HOME/.Xresources.d/colors"
-	 cat "$HOME/.Xresources.d/themes/$RICETHEME" > "$HOME/.Xresources.d/colors"
-	 xrdb  ~/.Xresources
-	fi
+    local xresources_colors="$HOME/.Xresources.d/colors"
+    local xresources_theme="$HOME/.Xresources.d/themes/$RICETHEME"
+
+    if [ -f "$xresources_colors" ]; then
+        echo '' > "$xresources_colors"
+        check_error "Не удалось очистить файл $xresources_colors"
+
+        if [ -f "$xresources_theme" ]; then
+            cat "$xresources_theme" > "$xresources_colors"
+            check_error "Не удалось скопировать цвета Xresources"
+            xrdb ~/.Xresources
+            check_error "Не удалось применить Xresources"
+        else
+            log "Файл темы Xresources $xresources_theme не найден!"
+        fi
+    else
+        log "Файл $xresources_colors не найден!"
+    fi
 }
 xresources_color
 
-# Wait until the processes have been shut down
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+# Ожидание завершения процессов polybar
+while pgrep -u $UID -x polybar >/dev/null; do
+    sleep 1
+done
 
-DPI=$(xrdb -query | sed -nE 's/^Xft\.dpi:\s*//p')
-# HEIGHT=$((26 * DPI / 96))
-#xrdb -merge $HOME/.Xresources.d/themes/mocha.Xresources
-# Launch the bar
+# Запуск Polybar
 launch_bars() {
-
-	for mon in $(polybar --list-monitors | cut -d":" -f1); do
-		MONITOR=$mon polybar -q main -c "${rice_dir}"/config.ini &
-		MONITOR=$mon polybar -q secondary -c "${rice_dir}"/config.ini &
-	done
+    for mon in $(polybar --list-monitors | cut -d":" -f1); do
+        MONITOR=$mon polybar -q main -c "$rice_dir/config.ini" &
+        check_error "Не удалось запустить Polybar на мониторе $mon"
+        MONITOR=$mon polybar -q secondary -c "$rice_dir/config.ini" &
+        check_error "Не удалось запустить Polybar на мониторе $mon"
+    done
 }
 launch_bars
+
+log "Скрипт успешно завершен!"
