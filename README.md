@@ -53,9 +53,6 @@
 
 Скрипт так же можно использовать с Intel картой.
 
-<details>
-  <summary>Screenshots</summary>
-
 ![](./screenshots/Screen.png)
 ![](./screenshots/Terminal.png)
 ![](./screenshots/AppMenu.png)
@@ -66,116 +63,80 @@
 ![](./screenshots/Telegram.png)
 ![](./screenshots/Firefox.png)
 
-</details>
+# Arch Linux Rice Installation Script
 
-<details>
-  <summary>Ручная установка(Устарело)</summary>
-Нужные пакеты! Если у вас имеется что-то из списка, то устанавливайте те, которых у вас нету.
+Этот скрипт предназначен для автоматической настройки и установки окружения на Arch Linux. Он устанавливает необходимые пакеты, настраивает темы, шрифты, иконки, а также применяет конфигурации для различных компонентов системы, таких как Firefox, SDDM, GRUB и другие.
 
-Пакеты из дефолтных реп
+## Функционал скрипта
 
-```python
-sudo pacman -S dialog yad cmus rsync mpv jq socat stalonetray kitty lsd ranger micro blueman thunar polybar rofi dunst nitrogen picom yt-dlp fzf mcfly neofetch zsh zsh-syntax-highlighting zsh-history-substring-search starship
-```
+1. **Установка зависимостей**:
+   - Скрипт проверяет и устанавливает все необходимые пакеты из официальных репозиториев Arch Linux и AUR.
+   - Устанавливает такие пакеты, как `firefox`, `alacritty`, `polybar`, `rofi`, `picom`, `zsh`, и многие другие.
 
-Гит-пакеты
+2. **Установка AUR-помощника `paru`**:
+   - Если `paru` не установлен, скрипт автоматически установит его для работы с AUR-пакетами.
 
-```python
-yay -S zscroll-git
-yay -S ytdlp-gui
-yay -S oh-my-zsh-git
-yay -S oh-my-posh-bin
-yay -S autotiling
-yay -S musikcube
-yay -S pamac-aur
-yay -S kazam
-```
+3. **Установка AUR-пакетов**:
+   - Скрипт устанавливает дополнительные пакеты из AUR, такие как `cava`, `tor-browser-bin`, `eww-git`, и другие.
 
-$${\color{red}!! ВАЖНО !!}$$ 
-Установочный скрипт пока еще находится в разработке, поэтому обязательсно сделать backup своих конфигураций.
+4. **Резервное копирование файлов**:
+   - Скрипт создает резервную копию текущих конфигурационных файлов в папку `~/.Backup_files`.
 
-```python
-mkdir ~/backup
-rsync -aAEHSXxrv --exclude=".cache/mozilla/*" ~/.[^.]* ~/.Backup_files
-```
+5. **Установка dot-файлов**:
+   - Скрипт копирует конфигурационные файлы (dot-файлы) из текущей директории в домашнюю директорию пользователя.
+   - Устанавливает темы для GRUB и SDDM.
 
-$${\color{lightgreen}Необходимые \space условия \space путей, \space для \space корректной \space работы.}$$
+6. **Настройка Firefox**:
+   - Скрипт копирует темы и расширения для Firefox в соответствующие папки профиля.
 
- 
-1. Содержимое папки user нужно закинуть в домашний каталог "~/" 
+7. **Настройка SDDM**:
+   - Скрипт устанавливает и настраивает SDDM как менеджер входа в систему, применяя тему `catppuccin-mocha`.
 
-> Каталоги polybar и rofi должны быть тут ~/.config/i3
+8. **Настройка GRUB**:
+   - Скрипт применяет тему `catppuccin-mocha` для GRUB.
 
-2. Сделать записи в свой текущий i3/config. 
+9. **Настройка окружения**:
+   - Скрипт настраивает окружение для работы с виртуальными машинами (libvirt) и добавляет пользователя в группу `libvirt`.
+   - Настраивает MPD (Music Player Daemon) для работы на уровне пользователя.
 
->В случае земены содепжимого, эти записи делать не нужно.
+10. **Смена оболочки на Zsh**:
+    - Скрипт меняет оболочку по умолчанию на Zsh, если она еще не установлена.
 
-<details>
-  <summary>Открой</summary>
+11. **Перезагрузка системы**:
+    - После завершения установки скрипт предлагает перезагрузить систему для применения всех изменений.
 
-```python
-exec_always --no-startup-id "$HOME/.config/i3/polybar/NeoCity/launch.sh"
-```
+## Как использовать
 
-```python
-exec --no-startup-id "picom -b --config ~/.config/i3/picom.conf"
-```
+1. **Клонируйте репозиторий**:
+   ```bash
+   git clone https://github.com/igorjoxa1118/NeoCity.git
+   cd NeoCity
+   chmod +x install.sh
+   ./install.sh
 
-```python
-exec_always --no-startup-id autotiling
-```
+Следуйте инструкциям:
+Скрипт будет запрашивать подтверждение НЕ на каждом этапе установки. Внимательно читайте сообщения и отвечайте на вопросы.
 
-</details>
+Перезагрузите систему:
+После завершения установки рекомендуется перезагрузить систему для применения всех изменений.
 
-3. Изменить мой .zshrc
-```python
-# Custom exports
-export MICRO_CONFIG_HOME=/home/vir0id/.config/micro
-```
-на
+Логирование ошибок
+Все ошибки, возникающие в процессе установки, записываются в файл RiceError.log, который находится в домашней директории пользователя. Если что-то пошло не так, проверьте этот файл для получения дополнительной информации.
 
-```python
-# Custom exports
-export MICRO_CONFIG_HOME=/home/ВАШ-ЮЗЕР/.config/micro
-```
+Зависимости
+Скрипт требует наличия следующих инструментов:
 
-4. Установить обоину из .wallpapers туда, куда вам нужно
+`sudo`
+`git`
+`pacman` (пакетный менеджер Arch Linux)
+`curl` (для загрузки файлов)
 
-4.1. Если у вас был bash и вы хотели бы его поменять на кастомный zsh, тогда в терминале нужно ввести команды. Для смены шелла
+Поддерживаемые окружения
+Скрипт был протестирован на Arch Linux и производных дистрибутивах (например, Manjaro). Для других дистрибутивов могут потребоваться дополнительные настройки.
 
-```python
-sudo chsh -s /usr/bin/zsh
-``` 
+Автор
 
-5. Перезапустить i3
-
-$${\color{red}!! ВАЖНО !!}$$
-В любом случае, все модули polybar, которые присутствуют у меня, дожны быть настроены в соответствии с вашими желаниями и вашей машиной.
-
-$${\color{lightgreen}Что \space еще \space ?}$$
-
-1. Еще есть тема оформления для blender. Папка соответствующая.
-```python
-~/.config/blender/Ваша версия/config/colorshemas/
-```
-
-2. Ссылка на тему [Telegram](https://t.me/addtheme/pIK0pC3eIoopeaG7)
-
-3. Цветовая тема для плеера cmus.
-
-> Открыть плеер, нажать ":" и вставить это:
-
-```python
-colorscheme NeoCity
-```
-
-4. Ссылка на тему [Firefox](https://addons.mozilla.org/en-US/firefox/addon/NeoCity/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
-
-5. Плеер mpv умеет искать треки и загружать музыкальный плейлист из Youtube. Иконка присутствует на polybar
-
-$${\color{lightgreen}Управление \space окнами \space в \space случае \space замены \space config.}$$
-
-<details>
+[vir0id]
 
 |        Keybind         |                 Function                 |
 | ---------------------- | ---------------------------------------- |
