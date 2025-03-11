@@ -56,6 +56,49 @@ show_rofi_menu() {
     done | $rofi_command -theme-str "$rofi_override" -selected-row "$selected_index"
 }
 
+update_vscode_theme() {
+    local selected="$1"
+    local vscode_settings="$HOME/.config/Code - OSS/User/settings.json"  # Путь с пробелами
+
+    # Определяем тему Catppuccin в зависимости от выбранного риса
+    case "$selected" in
+        *latte* | *Latte*)
+            vscode_theme="Catppuccin Latte"
+            vscode_icon_theme="catppuccin-latte"
+            ;;
+        *frappe* | *Frappe*)
+            vscode_theme="Catppuccin Frappe"
+            vscode_icon_theme="catppuccin-frappe"
+            ;;
+        *macchiato* | *Macchiato*)
+            vscode_theme="Catppuccin Macchiato"
+            vscode_icon_theme="catppuccin-macchiato"
+            ;;
+        *mocha* | *Mocha*)
+            vscode_theme="Catppuccin Mocha"
+            vscode_icon_theme="catppuccin-mocha"
+            ;;
+        *)
+            echo "No matching VSCode theme for rice: $selected"
+            return
+            ;;
+    esac
+
+    # Проверяем, существует ли файл настроек VSCode
+    if [[ ! -f "$vscode_settings" ]]; then
+        echo "VSCode settings file not found: $vscode_settings"
+        return
+    fi
+
+    # Обновляем тему и иконки в settings.json
+    jq --arg theme "$vscode_theme" --arg icon_theme "$vscode_icon_theme" \
+       '.["workbench.colorTheme"] = $theme | .["workbench.iconTheme"] = $icon_theme' \
+       "$vscode_settings" > /tmp/vscode_settings.json && mv /tmp/vscode_settings.json "$vscode_settings"
+
+    echo "VSCode theme updated to: $vscode_theme"
+    echo "VSCode icon theme updated to: $vscode_icon_theme"
+}
+
 # Function to update the current rice
 update_rice() {
     local selected="$1"
@@ -87,6 +130,9 @@ update_rice() {
 
     # Обновляем текущую тему в autostart
     sed -i "s/$i3_rice_in_config/$selected/g" "$HOME/.config/i3/config.d/autostart"
+
+    # Обновляем тему VSCode
+    update_vscode_theme "$selected"
 
     # Перезапускаем i3 только если это необходимо (например, при изменении темы)
     if [[ "$selected" != "$i3_rice_in_config" ]]; then
