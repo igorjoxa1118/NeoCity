@@ -7,7 +7,7 @@ config_file="/tmp/bar_cava_config"
 cat >"$config_file" <<EOF
 [general]
 bars = 15  # Количество баров
-sensitivity = 70  # Уменьшено для более резкой реакции
+sensitivity = 100  # Уменьшено для более резкой реакции
 
 [input]
 method = pulse
@@ -47,20 +47,12 @@ cava -p "$config_file" | while IFS=';' read -r -a bars; do
     # Проходим по каждому бару
     for ((i = 0; i < ${#bars[@]}; i++)); do
         level=${bars[$i]}
-        # Нормализуем уровень до диапазона 0-8 (для символов ┃)
-        normalized_level=$(( (level * 8) / 7 ))
 
-        # Добавляем порог для отображения баров
-        if (( normalized_level < 2 )); then
-            symbol=" "
-        else
-            # Выбираем символ в зависимости от нормализованного уровня
-            case $normalized_level in
-                0) symbol=" ";;  # Пустое пространство
-                1|2|3|4|5|6|7|8) symbol="┃";;  # Один символ ┃
-                *) symbol=" ";;  # По умолчанию пустое пространство
-            esac
-        fi
+        if (( level <= 2 )); then
+    		symbol="┃"
+		else
+    		symbol=" "
+		fi
 
         # Добавляем цветной символ в строку вывода
         output+="%{F${colors[$i]}}$symbol%{F-}"
