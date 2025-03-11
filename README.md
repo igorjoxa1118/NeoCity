@@ -20,7 +20,6 @@
 - **Music Player Youtube Playlists:** [Mpv](https://mpv.io/)
 
 
-![Превью](https://github.com/igorjoxa1118/NeoCity/blob/main/screenshots/screencast.gif?raw=true)
 
 Установочный скрипт тестировался на чистом Arch Linux в виртуальной машине. 
 Если у вас появятся какие-то проблемы в процессе установки, то я вас предупрежу:
@@ -62,6 +61,7 @@
 ![](./screenshots/Blender.png)
 ![](./screenshots/Telegram.png)
 ![](./screenshots/Firefox.png)
+![Превью](https://github.com/igorjoxa1118/NeoCity/blob/main/screenshots/screencast.gif?raw=true)
 
 # Arch Linux Rice Installation Script
 
