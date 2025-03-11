@@ -61,18 +61,29 @@ update_rice() {
     local selected="$1"
     echo "$selected" > "$RICETHEME"
 
+    # Определяем текущее время
+    current_hour=$(date +%H)
+
+    # Выбираем папку в зависимости от времени суток
+    if [[ $current_hour -ge 6 && $current_hour -lt 18 ]]; then
+        wall_dir="light"  # День
+    else
+        wall_dir="dark"   # Вечер
+    fi
+
     # Находим случайное изображение в папке с обоями для выбранной темы
-    new_wall=$(find "$HOME/.config/i3/rices/$selected/walls/light" -name "*.png" -o -name "*.webp" -o -name "*.jpeg" -o -name "*.jpg" | shuf -n 1)
+    new_wall=$(find "$HOME/.config/i3/rices/$selected/walls/$wall_dir" -name "*.png" -o -name "*.webp" -o -name "*.jpeg" -o -name "*.jpg" | shuf -n 1)
     new_wall=$(basename "$new_wall")  # Получаем только имя файла
 
     echo "Selected theme: $selected"
+    echo "Wallpaper directory: $wall_dir"
     echo "New wallpaper: $new_wall"
 
     # Применяем обои "на лету" с помощью feh
-    feh --no-fehbg --bg-fill "$HOME/.config/i3/rices/$selected/walls/light/$new_wall"
+    feh --no-fehbg --bg-fill "$HOME/.config/i3/rices/$selected/walls/$wall_dir/$new_wall"
 
     # Обновляем строку с обоями в autostart
-    sed -i "/exec --no-startup-id feh -z --no-fehbg --bg-fill /c\exec --no-startup-id feh -z --no-fehbg --bg-fill \$HOME/.config/i3/rices/$selected/walls/light/$new_wall" "$HOME/.config/i3/config.d/autostart"
+    sed -i "/exec --no-startup-id feh -z --no-fehbg --bg-fill /c\exec --no-startup-id feh -z --no-fehbg --bg-fill \$HOME/.config/i3/rices/$selected/walls/$wall_dir/$new_wall" "$HOME/.config/i3/config.d/autostart"
 
     # Обновляем текущую тему в autostart
     sed -i "s/$i3_rice_in_config/$selected/g" "$HOME/.config/i3/config.d/autostart"
