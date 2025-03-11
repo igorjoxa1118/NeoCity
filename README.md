@@ -19,7 +19,7 @@
 - **Music Player:** [Mpd](https://www.musicpd.org/) [ncmpcpp](https://wiki.archlinux.org/title/Ncmpcpp) [Ymuse](https://github.com/yktoo/ymuse)
 - **Music Player Youtube Playlists:** [Mpv](https://mpv.io/)
 
-https://github.com/igorjoxa1118/NeoCity/blob/main/screenshots/screencast.mp4
+![Превью](https://github.com/igorjoxa1118/NeoCity/blob/main/screenshots/screencast.mp4)
 
 Установочный скрипт тестировался на чистом Arch Linux в виртуальной машине. 
 Если у вас появятся какие-то проблемы в процессе установки, то я вас предупрежу:
