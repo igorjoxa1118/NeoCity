@@ -53,11 +53,40 @@ fi
 home_dir=$HOME
 current_dir=$(pwd)
 
-if [ ! -f /usr/bin/firefox ]; then
-     sudo pacman -S firefox-ublock-origin --noconfirm &> /dev/null
-     echo -e "${GREEN}Start Firefox! Its important!${ENDCOLOR}"
-     exit 1
-fi
+firefox_settings() {
+    # Проверяем, установлен ли Firefox
+    if ! command -v firefox &> /dev/null; then
+        echo -e "${YELLOW}Firefox не установлен. Установка Firefox...${ENDCOLOR}"
+        
+        # Установка Firefox с помощью pacman
+        if sudo pacman -S firefox --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG"); then
+            echo -e "${GREEN}Firefox успешно установлен.${ENDCOLOR}"
+        else
+            echo -e "${RED}Ошибка при установке Firefox. Проверьте ${YELLOW}RiceError.log${ENDCOLOR}"
+            log_error "Ошибка при установке Firefox"
+            exit 1
+        fi
+    fi
+
+    # Путь к директории профиля Firefox
+    PROFILE_DIR="$HOME/.mozilla/firefox/"
+
+    # Запуск Firefox в фоновом режиме
+    echo -e "${YELLOW}Запуск Firefox для создания файлов настроек...${ENDCOLOR}"
+    firefox > /dev/null 2>&1 &
+    FF_PID=$!
+
+    # Ожидание создания файлов настроек
+    echo -e "${YELLOW}Ожидание создания файлов настроек Firefox...${ENDCOLOR}"
+    while [ ! -f "$PROFILE_DIR"/*.default-release/prefs.js ]; do
+        sleep 1
+    done
+
+    # Закрытие Firefox
+    kill $FF_PID
+    echo -e "${GREEN}Firefox завершен после создания файлов настроек.${ENDCOLOR}"
+}
+firefox_settings
 
 log_error() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$ERROR_LOG"
