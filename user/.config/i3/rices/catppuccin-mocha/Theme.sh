@@ -148,32 +148,31 @@ rofi_calendar_color() {
 }
 rofi_calendar_color
 
-# Функция для настройки GTK темы
-set_gtk_theme() {
+# Объединенная функция для настройки GTK темы, иконок и курсоров
+set_gtk_theme_icons_cursor() {
     local xsettings_conf="$HOME/.xsettingsd"
+    local gtk2_config="$HOME/.gtkrc-2.0"
+    local gtk3_config="$HOME/.config/gtk-3.0/settings.ini"
+    local gtk4_config="$HOME/.config/gtk-4.0/settings.ini"
+    local gtk_settings_file="$HOME/.config/gtk-4.0/settings.ini"
 
+    # Настройка .xsettingsd
     cat <<EOF > "$xsettings_conf"
 Net/ThemeName "$RICETHEME"
 Net/IconThemeName "TokyoNight-SE"
-Gtk/CursorThemeName "catppuccin-mocha-mauve-cursors"
+Gtk/CursorThemeName "catppuccin-mocha-blue-cursors"
 EOF
     check_error "Не удалось создать файл конфигурации xsettingsd"
 
+    # Перезапуск xsettingsd
     if pgrep -x "xsettingsd" > /dev/null; then
         killall xsettingsd
         check_error "Не удалось завершить процесс xsettingsd"
     fi
     xsettingsd &
     check_error "Не удалось запустить xsettingsd"
-}
-set_gtk_theme
 
-# Функция для настройки иконок
-set_icons() {
-    local gtk2_config="$HOME/.gtkrc-2.0"
-    local gtk3_config="$HOME/.config/gtk-3.0/settings.ini"
-    local gtk4_config="$HOME/.config/gtk-4.0/settings.ini"
-
+    # Настройка иконок для GTK 2, 3 и 4
     for config in "$gtk2_config" "$gtk3_config" "$gtk4_config"; do
         if [ -f "$config" ]; then
             sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=TokyoNight-SE/g" "$config"
@@ -182,25 +181,30 @@ set_icons() {
             log "Файл $config не найден!"
         fi
     done
-}
-set_icons
 
-# Функция для настройки курсоров
-set_cursor() {
-    local gtk2_config="$HOME/.gtkrc-2.0"
-    local gtk3_config="$HOME/.config/gtk-3.0/settings.ini"
-    local gtk4_config="$HOME/.config/gtk-4.0/settings.ini"
-
+    # Настройка курсоров для GTK 2, 3 и 4
     for config in "$gtk2_config" "$gtk3_config" "$gtk4_config"; do
         if [ -f "$config" ]; then
-            sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-mauve-cursors/g" "$config"
+            sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-blue-cursors/g" "$config"
             check_error "Не удалось изменить курсоры в $config"
         else
             log "Файл $config не найден!"
         fi
     done
+
+    # Настройка GTK 4 темы с учетом пробелов вокруг =
+    if [[ -f "$gtk_settings_file" ]]; then
+        sed -i "s/^gtk-theme-name\s*=\s*.*/gtk-theme-name = $RICETHEME/" "$gtk_settings_file"
+        sed -i "s/^gtk-icon-theme-name\s*=\s*.*/gtk-icon-theme-name = TokyoNight-SE/" "$gtk_settings_file"
+        sed -i "s/^gtk-cursor-theme-name\s*=\s*.*/gtk-cursor-theme-name = catppuccin-mocha-blue-cursors/" "$gtk_settings_file"
+        check_error "Не удалось обновить настройки GTK 4"
+    else
+        log "Файл $gtk_settings_file не найден!"
+    fi
 }
-set_cursor
+
+# Вызов объединенной функции
+set_gtk_theme_icons_cursor
 
 # Функция для настройки цвета теней в Picom
 set_picom_shadow_color() {
@@ -291,16 +295,19 @@ firefox_profiles() {
     local dest_dir="$HOME/.mozilla/firefox/"
 
     if [[ $(grep '\[Profile[^0]\]' "$HOME/.mozilla/firefox/profiles.ini") ]]; then
+        # Ищем профиль по умолчанию с суффиксом .default-release
         profpath=$(grep -E '^\[Profile|^Path|^Default' "$HOME/.mozilla/firefox/profiles.ini" | grep -1 '^Default=1' | grep '^Path' | cut -c6-)
+        profpath="${profpath%.default}.default-release"  # Заменяем .default на .default-release
         cp -rf "$theme_dir"/* "$dest_dir/$profpath"
         check_error "Не удалось скопировать тему Firefox"
     else
+        # Если нет профилей, кроме одного, ищем любой профиль и заменяем .default на .default-release
         profpath=$(grep 'Path=' "$HOME/.mozilla/firefox/profiles.ini" | sed 's/^Path=//')
+        profpath="${profpath%.default}.default-release"  # Заменяем .default на .default-release
         cp -rf "$theme_dir"/* "$dest_dir/$profpath"
         check_error "Не удалось скопировать тему Firefox"
     fi
 }
-firefox_profiles
 
 # Функция для настройки Dunst
 set_dunst_config() {
@@ -355,6 +362,46 @@ colors=(\
 )' "$HOME/.config/i3/src/cava.sh"
 }
 cava_colors
+
+# Функция для настройки темы Visual Studio Code
+vscode_theme() {
+    local vscode_settings="$HOME/.config/Code - OSS/User/settings.json"
+    local vscode_theme
+
+    # Определение темы VS Code в зависимости от текущего риса
+    case "$RICETHEME" in
+        "catppuccin-mocha")
+            vscode_theme="Catppuccin Mocha"
+            ;;
+        "catppuccin-macchiato")
+            vscode_theme="Catppuccin Macchiato"
+            ;;
+        "catppuccin-latte")
+            vscode_theme="Catppuccin Latte"
+            ;;
+        "catppuccin-frappe")
+            vscode_theme="Catppuccin Frappé"
+            ;;
+        *)
+            log "Тема $RICETHEME не поддерживается для настройки VS Code."
+            return 1
+            ;;
+    esac
+
+    # Проверка существования файла настроек VS Code
+    if [ -f "$vscode_settings" ]; then
+        # Изменение темы в файле настроек
+        jq --arg theme "$vscode_theme" '."workbench.colorTheme" = $theme' "$vscode_settings" > "$vscode_settings.tmp"
+        check_error "Не удалось изменить тему в $vscode_settings"
+        mv "$vscode_settings.tmp" "$vscode_settings"
+        check_error "Не удалось обновить файл настроек VS Code"
+    else
+        log "Файл настроек VS Code $vscode_settings не найден!"
+    fi
+}
+
+# Вызов функции для настройки темы VS Code
+vscode_theme
 
 # Функция для настройки Xresources
 xresources_color() {
