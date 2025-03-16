@@ -155,6 +155,7 @@ set_gtk_theme_icons_cursor() {
     local gtk3_config="$HOME/.config/gtk-3.0/settings.ini"
     local gtk4_config="$HOME/.config/gtk-4.0/settings.ini"
     local gtk_settings_file="$HOME/.config/gtk-4.0/settings.ini"
+    local default_cursor_file="$HOME/.icons/default/index.theme"
 
     # Настройка .xsettingsd
     cat <<EOF > "$xsettings_conf"
@@ -186,6 +187,7 @@ EOF
     for config in "$gtk2_config" "$gtk3_config" "$gtk4_config"; do
         if [ -f "$config" ]; then
             sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-maroon-cursors/g" "$config"
+            sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-maroon-cursors/g" "$default_cursor_file"
             check_error "Не удалось изменить курсоры в $config"
         else
             log "Файл $config не найден!"

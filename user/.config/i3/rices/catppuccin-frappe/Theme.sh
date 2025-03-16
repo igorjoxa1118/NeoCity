@@ -155,12 +155,13 @@ set_gtk_theme_icons_cursor() {
     local gtk3_config="$HOME/.config/gtk-3.0/settings.ini"
     local gtk4_config="$HOME/.config/gtk-4.0/settings.ini"
     local gtk_settings_file="$HOME/.config/gtk-4.0/settings.ini"
+    local default_cursor_file="$HOME/.icons/default/index.theme"
 
     # Настройка .xsettingsd
     cat <<EOF > "$xsettings_conf"
 Net/ThemeName "$RICETHEME"
 Net/IconThemeName "Catppuccin-Frappe"
-Gtk/CursorThemeName "catppuccin-mocha-peach-cursors"
+Gtk/CursorThemeName "catppuccin-mocha-mauve-cursors"
 EOF
     check_error "Не удалось создать файл конфигурации xsettingsd"
 
@@ -185,7 +186,8 @@ EOF
     # Настройка курсоров для GTK 2, 3 и 4
     for config in "$gtk2_config" "$gtk3_config" "$gtk4_config"; do
         if [ -f "$config" ]; then
-            sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-peach-cursors/g" "$config"
+            sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-mauve-cursors/g" "$config"
+            sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-mauve-cursors/g" "$default_cursor_file"
             check_error "Не удалось изменить курсоры в $config"
         else
             log "Файл $config не найден!"
@@ -196,7 +198,7 @@ EOF
     if [[ -f "$gtk_settings_file" ]]; then
         sed -i "s/^gtk-theme-name\s*=\s*.*/gtk-theme-name = $RICETHEME/" "$gtk_settings_file"
         sed -i "s/^gtk-icon-theme-name\s*=\s*.*/gtk-icon-theme-name = Catppuccin-Frappe/" "$gtk_settings_file"
-        sed -i "s/^gtk-cursor-theme-name\s*=\s*.*/gtk-cursor-theme-name = catppuccin-mocha-peach-cursors/" "$gtk_settings_file"
+        sed -i "s/^gtk-cursor-theme-name\s*=\s*.*/gtk-cursor-theme-name = catppuccin-mocha-mauve-cursors/" "$gtk_settings_file"
         check_error "Не удалось обновить настройки GTK 4"
     else
         log "Файл $gtk_settings_file не найден!"

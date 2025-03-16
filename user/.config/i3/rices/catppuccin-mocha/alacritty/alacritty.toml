@@ -13,11 +13,11 @@ live_config_reload = true
 [cursor]
 blink_interval = 550
 unfocused_hollow = false
-thickness = 0.15
+thickness = 0.3
 
 [cursor.style]
 blinking = "On"
-shape = "Block"
+shape = "Underline"
 
 [selection]
 save_to_clipboard = true
@@ -25,7 +25,7 @@ save_to_clipboard = true
 [window]
 decorations = "none"
 dynamic_title = true
-opacity = 0
+opacity = 1
 dynamic_padding = true
 
 [window.padding]

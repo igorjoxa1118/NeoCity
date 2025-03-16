@@ -31,7 +31,7 @@ for_window [workspace=$ws9] layout tabbed
                                                                                                                                         
 
 ### --- Приложения/программы которые будут открываться на заданном рабочем пространстве $ws(номер экрана)
-assign [class="(?i)xfce4-terminal|kitty|xterm|htop"] $ws1
+assign [class="(?i)xfce4-terminal|alacritty|xterm|htop"] $ws1
 assign [class="(?i)firefox|chromium|vivaldi-stable"] $ws2
 assign [class="(?i)mousepad|leafpad|code"] $ws3
 assign [class="(?i)thunar|caja"] $ws4
