@@ -39,24 +39,50 @@ colors=(
     "#fab387" "#a6e3a1" "#94e2d5" "#74c7ec" "#cba6f7"
 )
 
+# Переменные для отслеживания состояния звука
+last_sound_time=$(date +%s)
+sound_timeout=1  # Таймаут уменьшен до 1 секунды
+default_mode=true
+
 # Запуск CAVA и обработка вывода
 cava -p "$config_file" | while IFS=';' read -r -a bars; do
-    # Строка для вывода в Polybar
+    current_time=$(date +%s)
     output=""
+    sound_detected=false
 
-    # Проходим по каждому бару
-    for ((i = 0; i < ${#bars[@]}; i++)); do
-        level=${bars[$i]}
-
-        if (( level <= 2 )); then
-    		symbol="┃"
-		else
-    		symbol=" "
-		fi
-
-        # Добавляем цветной символ в строку вывода
-        output+="%{F${colors[$i]}}$symbol%{F-}"
+    # Проверяем, есть ли звук (хотя бы один бар выше порога)
+    for level in "${bars[@]}"; do
+        if (( level > 2 )); then
+            sound_detected=true
+            last_sound_time=$current_time
+            break
+        fi
     done
+
+    # Определяем режим отображения
+    if $sound_detected; then
+        default_mode=false
+    elif (( current_time - last_sound_time >= sound_timeout )); then
+        default_mode=true
+    fi
+
+    # Генерируем вывод в зависимости от режима
+    if $default_mode; then
+        # Режим по умолчанию - все бары видны
+        for ((i = 0; i < ${#colors[@]}; i++)); do
+            output+="%{F${colors[$i]}}┃%{F-}"
+        done
+    else
+        # Режим с реакцией на звук
+        for ((i = 0; i < ${#bars[@]}; i++)); do
+            level=${bars[$i]}
+            if (( level > 2 )); then
+                output+="%{F${colors[$i]}}┃%{F-}"
+            else
+                output+=" "
+            fi
+        done
+    fi
 
     # Выводим результат в Polybar
     echo "$output"
