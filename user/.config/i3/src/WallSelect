@@ -1,147 +1,90 @@
 #!/usr/bin/env bash
 
-# Проверка оболочки (bash или zsh)
-if [[ -n "$BASH_VERSION" ]]; then
-    SHELL_NAME="bash"
-elif [[ -n "$ZSH_VERSION" ]]; then
-    SHELL_NAME="zsh"
-else
-    echo "Этот скрипт поддерживает только bash и zsh."
+# Общие настройки
+LOCK_FILE="$HOME/.wallpaper_change.lock"
+THEME_MODE_FILE="/tmp/.wallpaper_theme_mode"  # Временный файл в /tmp
+I3_DIR="$HOME/.config/i3"
+CURRENT_RICE=$(< "$I3_DIR/config.d/.rice")
+CACHE_DIR="$HOME/.cache/$(whoami)/${CURRENT_RICE}"
+
+# Проверка блокировки
+if [ -f "$LOCK_FILE" ]; then
+    dunstify "⚠️ Обои уже меняются!" "Попробуйте позже." -u low
     exit 1
 fi
+touch "$LOCK_FILE"
+trap "rm -f '$LOCK_FILE'" EXIT INT TERM
 
-i3_dir="$HOME/.config/i3"
-current_rice_file="$i3_dir/config.d/.rice"
-i3_rice_in_config=$(< "$current_rice_file")
-
-# Функция для определения времени суток
-get_time_of_day() {
-    current_hour=$(date +%H)
-    if [[ $current_hour -ge 6 && $current_hour -lt 18 ]]; then
-        echo "day"
+# Функция создания миниатюр
+create_thumbnail() {
+    local folder="$1" thumb="$2"
+    first_img=$(find "$folder" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | head -n1)
+    if [ -n "$first_img" ]; then
+        convert -strip "$first_img" -thumbnail 100x100^ -gravity center -extent 100x100 "$thumb"
     else
-        echo "night"
+        convert -size 100x100 xc:gray "$thumb"
+        echo "Нет обоев в директории $folder" >&2
     fi
 }
 
-# Определение времени суток
-time_of_day=$(get_time_of_day)
-
-# Установка темы по умолчанию в зависимости от времени суток
-if [[ "$time_of_day" == "day" ]]; then
-    default_theme_mode="light"
-else
-    default_theme_mode="dark"
-fi
-
-# Файл для сохранения выбора пользователя
-theme_mode_file="${HOME}/.config/i3/config.d/.wallpaper_theme_mode"
-
-# Если файл существует, читаем из него выбор пользователя
-if [[ -f "$theme_mode_file" ]]; then
-    theme_mode=$(< "$theme_mode_file")
-else
-    # Если выбор не сделан, используем значение по умолчанию
-    theme_mode="$default_theme_mode"
-fi
-
-# Set some variables
-cacheDir="${HOME}/.cache/$(whoami)/${i3_rice_in_config}"
-rofi_command="rofi -dmenu -theme ${HOME}/.config/i3/src/rofi-themes/WallSelect.rasi -theme-str ${rofi_override}"
-
-# Создаём кэш-папку, если её нет
-if [ ! -d "${cacheDir}" ] ; then
-    mkdir -p "${cacheDir}"
-fi
-
-# Функция для создания миниатюры папки
-create_folder_thumbnail() {
-    local folder="$1"
-    local thumbnail_path="$2"
-
-    # Находим первое изображение в папке
-    first_image=$(find "$folder" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | head -n 1)
-
-    if [[ -n "$first_image" ]]; then
-        # Создаём миниатюру
-        convert -strip "$first_image" -thumbnail 100x100^ -gravity center -extent 100x100 "$thumbnail_path"
+# Определение темы по времени
+get_time_theme() {
+    local hour=$(date +%H)
+    if [ "$hour" -ge 6 ] && [ "$hour" -lt 18 ]; then
+        echo "light"
     else
-        # Если изображений нет, используем placeholder
-        convert -size 100x100 xc:gray "$thumbnail_path"
+        echo "dark"
     fi
 }
 
-# Создаём миниатюры для папок dark и light
-dark_thumbnail="${cacheDir}/dark_thumbnail.png"
-light_thumbnail="${cacheDir}/light_thumbnail.png"
-
-create_folder_thumbnail "${HOME}/.config/i3/rices/${i3_rice_in_config}/walls/dark" "$dark_thumbnail"
-create_folder_thumbnail "${HOME}/.config/i3/rices/${i3_rice_in_config}/walls/light" "$light_thumbnail"
-
-# Показываем меню выбора темы (тёмные/светлые обои) с миниатюрами
-theme_mode_choice=$(echo -e "dark\x00icon\x1f${dark_thumbnail}\nlight\x00icon\x1f${light_thumbnail}" | rofi -dmenu -theme ${HOME}/.config/i3/src/rofi-themes/WallSelect.rasi -p "Выберите тип обоев")
-
-# Если пользователь выбрал тему, сохраняем её
-if [[ -n "$theme_mode_choice" ]]; then
-    theme_mode="$theme_mode_choice"
-    echo "$theme_mode" > "$theme_mode_file"
+# Получаем текущую тему
+theme_mode=$(get_time_theme)
+if [ -f "$THEME_MODE_FILE" ]; then
+    theme_mode=$(< "$THEME_MODE_FILE")
 fi
 
-# Установка пути к папке с обоями в зависимости от выбора
-wall_dir="${HOME}/.config/i3/rices/${i3_rice_in_config}/walls/${theme_mode}"
+# Подготовка миниатюр
+mkdir -p "$CACHE_DIR"
+dark_thumb="$CACHE_DIR/dark_thumb.png"
+light_thumb="$CACHE_DIR/light_thumb.png"
+create_thumbnail "$I3_DIR/rices/${CURRENT_RICE}/walls/dark" "$dark_thumb"
+create_thumbnail "$I3_DIR/rices/${CURRENT_RICE}/walls/light" "$light_thumb"
 
-# Verifies if xdpyinfo and imagemagick are installed
-if ! command -v xdpyinfo > /dev/null 2>&1; then
-    dunstify "Missing package" "Please install the xorg-xdpyinfo package to continue" -u critical
-    exit 1
-elif ! command -v convert > /dev/null 2>&1; then
-    dunstify "Missing package" "Please install the imagemagick package to continue" -u critical
-    exit 1
+# Меню выбора темы
+rofi_command="rofi -dmenu -theme $I3_DIR/src/rofi-themes/WallSelect.rasi"
+theme_choice=$(echo -e "dark\x00icon\x1f${dark_thumb}\nlight\x00icon\x1f${light_thumb}" | $rofi_command -p "Тема обоев")
+
+if [ -n "$theme_choice" ]; then
+    theme_mode="$theme_choice"
+    echo "$theme_mode" > "$THEME_MODE_FILE"
 fi
 
-# Check if wall directory exists
+# Подготовка кэша обоев
+wall_dir="$I3_DIR/rices/${CURRENT_RICE}/walls/${theme_mode}"
 if [ ! -d "$wall_dir" ]; then
-    dunstify "Wallpaper directory not found" "Directory $wall_dir does not exist" -u critical
+    dunstify "Ошибка" "Директория обоев не найдена: $wall_dir" -u critical
     exit 1
 fi
 
-# Get monitor resolution and scale
-monitor_res=$(xdpyinfo | awk '/dimensions/{print $2}' | cut -d 'x' -f1)
-monitor_scale=$(xdpyinfo | awk '/resolution/{print $2}' | cut -d 'x' -f1)
-monitor_res=$(( monitor_res * 17 / monitor_scale ))
-rofi_override="element-icon{size:${monitor_res}px;border-radius:0px;}"
-
-# Convert images in directory and save to cache dir
-for imagen in "$wall_dir"/*.{jpg,jpeg,png,webp}; do
-    if [ -f "$imagen" ]; then
-        nombre_archivo=$(basename "$imagen")
-        if [ ! -f "${cacheDir}/${nombre_archivo}" ] ; then
-            convert -strip "$imagen" -thumbnail 500x500^ -gravity center -extent 500x500 "${cacheDir}/${nombre_archivo}"
-        fi
+find "$wall_dir" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | while read -r img; do
+    cached="$CACHE_DIR/$(basename "$img")"
+    if [ ! -f "$cached" ]; then
+        convert -strip "$img" -thumbnail 500x500^ -gravity center -extent 500x500 "$cached"
     fi
 done
 
-# Check if there are any wallpapers in the directory
-if [ -z "$(find "$wall_dir" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \))" ]; then
-    dunstify "No wallpapers found" "No wallpapers found in $wall_dir" -u critical
-    exit 1
+# Выбор обоев через Rofi
+wall_selection=$(find "$wall_dir" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) -exec basename {} \; | sort | while read -r img; do
+    echo -e "$img\x00icon\x1f$CACHE_DIR/$img"
+done | $rofi_command -p "Выберите обои")
+
+if [ -n "$wall_selection" ]; then
+    # Установка обоев
+    feh --no-fehbg --bg-fill "$wall_dir/$wall_selection"
+    
+    # Создание и показ превью
+    temp_preview="/tmp/wall_preview.png"
+    convert "$wall_dir/$wall_selection" -resize 200x200^ -gravity center -extent 200x200 "$temp_preview"
+    dunstify "🎨 Обои изменены" "$wall_selection" -i "$temp_preview" -u normal
+    rm -f "$temp_preview"
 fi
-
-# Launch rofi
-wall_selection=$(find "${wall_dir}" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) -exec basename {} \; | sort | while read -r A ; do  echo -en "$A\x00icon\x1f""${cacheDir}"/"$A\n" ; done | $rofi_command)
-
-# Set wallpaper and send notification with preview
-if [[ -n "$wall_selection" ]]; then
-    feh --no-fehbg --bg-fill "${wall_dir}"/"${wall_selection}"
-    # Create a temporary resized image for the notification
-    temp_preview="${cacheDir}/temp_preview.png"
-    convert "${wall_dir}/${wall_selection}" -resize 200x200^ -gravity center -extent 200x200 "${temp_preview}"
-    # Send notification with the preview image
-    dunstify "Wallpaper changed" "Wallpaper set to ${wall_selection}" -i "${temp_preview}" -u normal
-    # Clean up the temporary preview image
-    rm "${temp_preview}"
-else
-    exit 1
-fi
-
-exit 0
