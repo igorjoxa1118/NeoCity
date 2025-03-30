@@ -41,7 +41,7 @@ colors=(
 
 # Переменные для отслеживания состояния звука
 last_sound_time=$(date +%s)
-sound_timeout=1  # Таймаут уменьшен до 1 секунды
+sound_timeout=2  # Таймаут уменьшен до 1 секунды
 default_mode=true
 
 # Запуск CAVA и обработка вывода
