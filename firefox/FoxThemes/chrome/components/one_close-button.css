@@ -3,37 +3,79 @@
 
 /*"Botón de cerrar pestaña" en windows y linux */
 
-:is(#TabsToolbar) .close-icon {
-    width: 15px !important;
-    height: 15px !important;
+@media not -moz-pref("sidebar.verticalTabs") {
+
+    :is(#TabsToolbar) .close-icon {
+        list-style-image: url("../icons/close.svg") !important;
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+    .tabbrowser-tab .tab-close-button{
+        display: none !important;
+    }
+
+    .tabbrowser-tab:not([pinned]):hover .tab-close-button{
+        display: block !important;
+        border-radius: 3px !important;
+    }
+
+    :is(#TabsToolbar) .tab-close-button {
+        padding: 4px !important;
+    }
+
+    :is(#TabsToolbar) .tab-close-button:hover {
+        background-color: color-mix(in srgb, var(--toolbarbutton-hover-background) 40%, var(--border-contrast-color)) !important;
+        fill: var(--lwt-tab-text) !important;
+    }
+
+    :is(#TabsToolbar) tab:not([selected]) .tab-close-button:hover,
+    :root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) :is(#TabsToolbar) tab:not([selected]) .tab-close-button:hover{
+        background-color: color-mix(in srgb, var(--lwt-frame) 70%, transparent) !important;
+    }
+
+    /* Nuevos colores :hover para temas que usan imágenes */
+
+    :root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) :is(#TabsToolbar) .tab-close-button:hover {
+        background-color: var(--toolbarbutton-hover-background) !important;
+        fill: var(--lwt-tab-text) !important;
+    }
 }
 
-.tabbrowser-tab .tab-close-button{
-    display: none !important;
-}
-
-.tabbrowser-tab:not([pinned]):hover .tab-close-button{
-    display: block !important;
-    border-radius: 3px !important;
-}
-
-:is(#TabsToolbar) .tab-close-button {
-    padding: 2px !important;
-}
-
-:is(#TabsToolbar) .tab-close-button:hover {
-    background-color: color-mix(in srgb, var(--toolbarbutton-hover-background) 40%, var(--border-contrast-color)) !important;
-    fill: var(--lwt-tab-text) !important;
-}
+#tabbrowser-tabs[orient="vertical"] {
     
-:is(#TabsToolbar) tab:not([selected]) .tab-close-button:hover,
-:root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) :is(#TabsToolbar) tab:not([selected]) .tab-close-button:hover{
-    background-color: color-mix(in srgb, var(--lwt-frame) 70%, transparent) !important;
-}
+    &:is([selected]):not(:hover) {
+        opacity: 0 !important;
+    }
     
-/* Nuevos colores :hover para temas que usan imágenes */
-    
-:root:not([chromehidden~="toolbar"]):is([lwtheme-image],[style*="--lwt-additional-images"]) :is(#TabsToolbar) .tab-close-button:hover {
-    background-color: var(--toolbarbutton-hover-background) !important;
-    fill: var(--lwt-tab-text) !important;
+    &:not([expanded]) {
+        & .tab-close-button {
+            width: 12px !important;
+            height: 12px !important;
+            padding: 1px !important;
+            background: var(--lwt-tab-text) !important;
+            fill: var(--contrast-color) !important;
+            outline-color: transparent !important;
+            inset-inline-start: 4px !important;
+            
+            &:hover {
+                fill: var(--contrast-color) !important;
+                background: var(--general-color) !important;
+            }
+        }
+    }
+    &[expanded] {
+        & .tab-close-button {
+            height: 20px !important;
+            width:  20px !important;
+            padding: 4px !important;
+            margin-inline-end: -4px !important;
+            border-radius: 2px !important;
+
+            &:hover {
+                background-color: color-mix(in srgb, var(--toolbarbutton-hover-background) 40%, var(--border-contrast-color)) !important;
+                fill: var(--lwt-tab-text) !important;
+            }
+        }
+    }
 }

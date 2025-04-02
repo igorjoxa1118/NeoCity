@@ -35,13 +35,13 @@
     background-color: #da3633 !important;
     color: #f0f6fc !important;
     box-shadow: none !important;
-    fill: #bac2de !important;
+    fill: white !important;
 }
 
 /*color letras de boton "Guardar" marcador en :hover*/
 
 #editBookmarkPanelBottomButtons>#editBookmarkPanelDoneButton {   
-    color: #bac2de !important;
+    color: white !important;
     border-radius: 4px !important;
 }
 
@@ -49,7 +49,7 @@
 
 richlistitem[selected="true"], #editBMPanel_namePicker::selection , #editBMPanel_tagsField::selection{
     background-color: var(--general-color) !important;
-    color: #bac2de !important;
+    color: #ffffff !important;
 }
 
 richlistitem, #editBMPanel_namePicker , #editBMPanel_tagsField{
@@ -69,7 +69,7 @@ panel menulist, panel menulist:not([open]),
 panel menulist:hover, panel menulist[open],
 #editBookmarkPanel .expander-up:hover, #editBookmarkPanel .expander-down:hover{
     background-color: var(--general-color) !important;
-    color: #bac2de !important;
+    color: #ffffff !important;
     box-shadow: none !important;
 }
 
