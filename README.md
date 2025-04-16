@@ -6,7 +6,7 @@
 - **WM:** [i3-wm](https://github.com/Airblader/i3)
 - **Terminal:** [Alacritty](https://alacritty.org/) [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **Text Editor:** [Visual-code](https://code.visualstudio.com/) [Micro](https://micro-editor.github.io/)
-- **File Manager:** [Thunar](https://github.com/neilbrown/thunar) [Ranger](https://github.com/ranger/ranger)
+- **File Manager:** [Yazi](https://yazi-rs.github.io/) [Thunar](https://github.com/neilbrown/thunar) [Ranger](https://github.com/ranger/ranger)
 - **Fonts:** [MesloLGS NF](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) [Iosevka Term](https://github.com/be5invis/Iosevka)
 - **Bar:** [Polybar](https://github.com/polybar/polybar)
 - **Shell:** [Ohmyzsh](https://ohmyz.sh/)
