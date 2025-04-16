@@ -4,7 +4,7 @@
 
 - **OS:** [Any Arch Based Distro](https://en.wikipedia.org/wiki/Arch_Linux)
 - **WM:** [i3-wm](https://github.com/Airblader/i3)
-- **Terminal:** [Kitty](https://sw.kovidgoyal.net/kitty/)
+- **Terminal:** [Alacritty](https://alacritty.org/) [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **Text Editor:** [Visual-code](https://code.visualstudio.com/) [Micro](https://micro-editor.github.io/)
 - **File Manager:** [Thunar](https://github.com/neilbrown/thunar) [Ranger](https://github.com/ranger/ranger)
 - **Fonts:** [MesloLGS NF](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) [Iosevka Term](https://github.com/be5invis/Iosevka)
