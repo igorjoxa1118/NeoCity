@@ -6,64 +6,65 @@
 #  ██║  ██║██║██████╔╝███████╗    ██████╔╝██║  ██║██║  ██║
 #  ╚═╝  ╚═╝╚═╝╚═════╝ ╚══════╝    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 # Simple script to hide/show polybar
-# Author: z0mbi3
-# url:    https://github.com/gh0stzk/dotfiles
+# Author: vir0id
 
-conf_file="$HOME/.config/i3/rices/$RICETHEME/Theme.sh"
-T_Padding=$(grep "bspc config top_padding" "$conf_file" | awk '{print $NF}')
-B_Padding=$(grep "bspc config bottom_padding" "$conf_file" | awk '{print $NF}')
-L_Padding=$(grep "bspc config left_padding" "$conf_file" | awk '{print $NF}')
-R_Padding=$(grep "bspc config right_padding" "$conf_file" | awk '{print $NF}')
+# Конфигурационный файл i3
+conf_file="$HOME/.config/i3/config"
+
+# Получаем значения отступов из конфигурации i3 (если используются i3-gaps)
+T_Padding=$(grep "gaps top" "$conf_file" | awk '{print $NF}')
+B_Padding=$(grep "gaps bottom" "$conf_file" | awk '{print $NF}')
 
 hide() {
-	(polybar-msg cmd hide)
-	(bspc config top_padding 2)
-	(bspc config bottom_padding 2)
+    # Скрываем обе панели Polybar
+    killall polybar
 
-	if pgrep -f 'eww.*bar'; then
-		if [ "$RICETHEME" = "z0mbi3" ]; then
-			if eww -c "$HOME"/.config/i3/rices/z0mbi3/bar active-windows | grep -q "bar: bar"; then
-				(eww -c "$HOME"/.config/i3/rices/z0mbi3/bar close bar)
-				(bspc config left_padding 2)
-				(bspc config right_padding 2)
-			fi
-		elif [ "$RICETHEME" = "andrea" ]; then
-			if eww -c "$HOME"/.config/i3/rices/andrea/andy active-windows | grep -q "bar: bar"; then
-				(eww -c "$HOME"/.config/i3/rices/andrea/andy/ close bar)
-				(bspc config top_padding 2)
-				(bspc config bottom_padding 2)
-			fi
-		fi
-	fi
+    # Устанавливаем отступы (если используется i3-gaps)
+    i3-msg gaps top all set 2
+    i3-msg gaps bottom all set 2
+
+    # Управление eww (оставляем без изменений)
+    if pgrep -f 'eww.*bar'; then
+        if [ "$RICETHEME" = "z0mbi3" ]; then
+            if eww -c "$HOME"/.config/i3/rices/z0mbi3/bar active-windows | grep -q "bar: bar"; then
+                eww -c "$HOME"/.config/i3/rices/z0mbi3/bar close bar
+            fi
+        elif [ "$RICETHEME" = "andrea" ]; then
+            if eww -c "$HOME"/.config/i3/rices/andrea/andy active-windows | grep -q "bar: bar"; then
+                eww -c "$HOME"/.config/i3/rices/andrea/andy close bar
+            fi
+        fi
+    fi
 }
 
 unhide() {
-	(polybar-msg cmd show)
-	(bspc config top_padding "$T_Padding")
-	(bspc config bottom_padding "$B_Padding")
+    # Отображаем обе панели Polybar
+    polybar main &         # Запуск верхней панели
+    polybar secondary &    # Запуск нижней панели
 
-	if pgrep -f 'eww.*bar'; then
-		if [ "$RICETHEME" = "z0mbi3" ]; then
-      if ! eww -c "$HOME"/.config/i3/rices/z0mbi3/bar active-windows | grep -q "bar: bar"; then
-			  (eww -c "$HOME"/.config/i3/rices/z0mbi3/bar open bar)
-			  (bspc config left_padding "$L_Padding")
-			  (bspc config right_padding "$R_Padding")
-      fi
-		elif [ "$RICETHEME" = "andrea" ]; then
-      if ! eww -c "$HOME"/.config/i3/rices/andrea/andy active-windows | grep -q "bar: bar"; then
-			  (eww -c "$HOME"/.config/i3/rices/andrea/andy open bar)
-			  (bspc config top_padding "$T_Padding")
-			  (bspc config bottom_padding "$B_Padding")
-      fi
-		fi
-	fi
+    # Восстанавливаем отступы (если используется i3-gaps)
+    i3-msg gaps top all set "$T_Padding"
+    i3-msg gaps bottom all set "$B_Padding"
+
+    # Управление eww (оставляем без изменений)
+    if pgrep -f 'eww.*bar'; then
+        if [ "$RICETHEME" = "z0mbi3" ]; then
+            if ! eww -c "$HOME"/.config/i3/rices/z0mbi3/bar active-windows | grep -q "bar: bar"; then
+                eww -c "$HOME"/.config/i3/rices/z0mbi3/bar open bar
+            fi
+        elif [ "$RICETHEME" = "andrea" ]; then
+            if ! eww -c "$HOME"/.config/i3/rices/andrea/andy active-windows | grep -q "bar: bar"; then
+                eww -c "$HOME"/.config/i3/rices/andrea/andy open bar
+            fi
+        fi
+    fi
 }
 
 case $1 in
 -h)
-	hide
-	;;
+    hide
+    ;;
 -u)
-	unhide
-	;;
+    unhide
+    ;;
 esac

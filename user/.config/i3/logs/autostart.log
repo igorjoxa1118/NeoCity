@@ -1,0 +1,40 @@
+=== i3 AUTOSTART LOG ===
+[$(date)] Setting X11 env vars
+[Ср 16 апр 2025 05:49:41 EEST] Starting picom
+[Ср 16 апр 2025 05:49:41 EEST] Starting udiskie
+[Ср 16 апр 2025 05:49:41 EEST] Starting power manager
+Configuration already done. Exiting...
+[Ср 16 апр 2025 05:49:41 EEST] Starting polkit
+Скрипт уже был выполнен ранее.
+[Ср 16 апр 2025 05:49:41 EEST] Starting audio effects
+[Ср 16 апр 2025 05:49:41 EEST] Starting DBus
+[Ср 16 апр 2025 05:49:41 EEST] Setting wallpaper
+[Ср 16 апр 2025 05:49:41 EEST] Waiting for i3 socket
+[Ср 16 апр 2025 05:49:41 EEST] Loading Xresources
+[Ср 16 апр 2025 05:49:41 EEST] Starting polybar
+[Ср 16 апр 2025 05:49:41 EEST] Applying theme
+[Ср 16 апр 2025 05:49:41 EEST] Starting autotiling
+[Ср 16 апр 2025 05:49:41 EEST] Starting screen locker
+[Ср 16 апр 2025 05:49:41 EEST] Starting keyring
+gnome-keyring-daemon: no process capabilities, insecure memory might get used
+discover_other_daemon: 1GNOME_KEYRING_CONTROL=/run/user/1000/keyring
+[ 16.04.2025 05:49:41.051 set_animation ERROR ] Invalid trigger defined at line 77
+[ 16.04.2025 05:49:41.051 set_animation ERROR ] Invalid trigger defined at line 86
+[ 16.04.2025 05:49:41.051 set_animation ERROR ] Invalid trigger defined at line 202
+[ 16.04.2025 05:49:41.051 set_animation ERROR ] Invalid trigger defined at line 211
+[ 16.04.2025 05:49:41.051 set_animation ERROR ] Invalid trigger defined at line 304
+[ 16.04.2025 05:49:41.051 set_animation ERROR ] Invalid trigger defined at line 351
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0x1000001 on screen 0 with timestamp 142300
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 16.04.2025 05:49:41.145 set_animation ERROR ] Invalid trigger defined at line 77
+[ 16.04.2025 05:49:41.145 set_animation ERROR ] Invalid trigger defined at line 86
+[ 16.04.2025 05:49:41.145 set_animation ERROR ] Invalid trigger defined at line 202
+[ 16.04.2025 05:49:41.145 set_animation ERROR ] Invalid trigger defined at line 211
+[ 16.04.2025 05:49:41.145 set_animation ERROR ] Invalid trigger defined at line 304
+[ 16.04.2025 05:49:41.145 set_animation ERROR ] Invalid trigger defined at line 351
+
+(xfce4-power-manager:1267): xfce4-power-manager-WARNING **: 05:49:41.723: Unable to connect to session manager : Не удалось подключиться к менеджеру сеансов: networkIdsList argument is NULL
+[W][05:49:42.103914] pw.conf      | [          conf.c: 1204 pw_conf_load_conf_for_context()] setting config.name to client-rt.conf is deprecated, using client.conf
+WARNING: Icon 'music' not found in themes

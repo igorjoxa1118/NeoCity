@@ -7,7 +7,7 @@
 ### --- Catppuccin-mocha
 
 [global]
-frame_width= 1
+frame_width= 0
 frame_color = "#6c7086"
 font = MesloLGS NF 9
 monitor = 0

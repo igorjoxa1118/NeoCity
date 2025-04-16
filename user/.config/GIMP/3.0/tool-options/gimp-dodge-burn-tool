@@ -1,0 +1,11 @@
+# GIMP gimp-dodge-burn-tool options
+
+(foreground
+    (color "R'G'B'A u8" 4 "\36\36\56\377" 0))
+(brush "2. Hardness 075")
+(dynamics "Pressure Size")
+(palette "Предыдущие цвета")
+(brush-size 51)
+(brush-hardness 0.75)
+
+# end of gimp-dodge-burn-tool options

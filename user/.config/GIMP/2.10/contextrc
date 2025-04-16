@@ -1,6 +1,6 @@
 # GIMP user context
 
-(tool "gimp-paintbrush-tool")
+(tool "gimp-move-tool")
 (paint-info "gimp-paintbrush")
 (foreground (color-rgb 0.11764705882352941 0.11764705882352941 0.1803921568627451))
 (brush "2. Hardness 075")

@@ -72,6 +72,9 @@ case $MY_TERM in
             "--process")
                 alacritty --title floating --hold -e ~/.bin/bottom_themes/bottom-themes
                 ;;
+            "--visualization")
+                kitty -c ~/.config/kitty/kitty.conf --hold -e cava -p ~/.config/cava/config
+                ;;
         esac
         ;;
     "kitty")

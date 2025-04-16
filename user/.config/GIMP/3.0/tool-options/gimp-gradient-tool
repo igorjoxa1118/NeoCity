@@ -1,0 +1,9 @@
+# GIMP gimp-gradient-tool options
+
+(foreground
+    (color "R'G'B'A u8" 4 "\36\36\56\377" 0))
+(gradient "Standard")
+(brush-size 51)
+(brush-hardness 0.5)
+
+# end of gimp-gradient-tool options

@@ -4,13 +4,13 @@
 #  ██╔══██║██║     ██╔══██║██║     ██╔══██╗██║   ██║      ██║     ╚██╔╝
 #  ██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║
 #  ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝
-#	vir0id
+#	gh0stzk - https://github.com/gh0stzk/dotfiles
 
 [general]
 import = [
-          "~/.config/alacritty/catppuccin-mocha.toml", 
-          "~/.config/alacritty/fonts.toml"
-         ]
+    "~/.config/alacritty/catppuccin-mocha.toml",
+    "~/.config/alacritty/fonts.toml"
+]
 live_config_reload = true
 
 [cursor]

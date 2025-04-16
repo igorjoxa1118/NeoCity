@@ -3,7 +3,8 @@
 ## Catppuccin mocha
 
 # Логирование
-LOG_FILE="/tmp/theme_script.log"
+LOG_FILE="$HOME/.config/i3/logs/theme_script.log"
+mkdir -p "$(dirname "$LOG_FILE")"
 echo "Запуск скрипта: $(date)" > "$LOG_FILE"
 
 # Функция для логирования
@@ -37,13 +38,16 @@ if [ ! -d "$rice_dir" ]; then
 fi
 
 # Убиваем запущенные процессы polybar и eww
+log "Завершение процессов polybar и eww..."
 killall -q polybar
 killall -q eww
+log "Процессы polybar и eww завершены."
 
 ###--Start rice
 
 # Функция для настройки цветов Rofi Launcher
 rofi_launcher_color() {
+    log "Настройка цветов Rofi Launcher..."
     local colors_file="$HOME/.config/i3/src/launchers/type-3/shared/colors.rasi"
     local source_colors="$rice_dir/rofi/shared/colors.rasi"
 
@@ -60,8 +64,12 @@ rofi_launcher_color() {
     else
         log "Файл $colors_file не найден!"
     fi
+    log "Настройка цветов Rofi Launcher завершена."
 }
+
+log "Настройка Rofi Launcher..."
 rofi_launcher_color
+log "Настройка Rofi Launcher завершена."
 
 # Функция для настройки Rofi Powermenu
 rofi_powermenu() {
@@ -444,4 +452,4 @@ launch_bars() {
 }
 launch_bars
 
-log "Скрипт успешно завершен!"
+log "Скрипт для Mocha успешно завершен!"

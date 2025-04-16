@@ -61,7 +61,7 @@
                 (aux-info
                     (show-button-bar "true"))))
         (book
-            (position 495)
+            (position 496)
             (current-page 0)
             (dockable "gimp-navigation-view"
                 (locked)
@@ -128,11 +128,11 @@
 (session-info "toplevel"
     (factory-entry "gimp-file-export-dialog")
     (position 485 150)
-    (size 950 782))
+    (size 798 598))
 (session-info "toplevel"
     (factory-entry "gimp-file-open-dialog")
     (position 266 0)
-    (size 950 782))
+    (size 798 598))
 (session-info "toplevel"
     (factory-entry "gimp-image-new-dialog")
     (position 695 371))

@@ -10,6 +10,7 @@ set $mod1 Mod1
 set $confd ~/.config/
 set $i3_scripts ~/.config/i3/src
 set $i3_configd ~/.config/i3/config.d
+set $i3_auto_scriptsd ~/.config/i3/config.d/auto-scripts
 set $bins ~/.bin
 set $local ~/.local/bin
 set $default_gaps_inner 15

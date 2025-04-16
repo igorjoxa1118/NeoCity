@@ -1,0 +1,11 @@
+# GIMP gimp-vector-tool options
+
+(foreground
+    (color "R'G'B'A u8" 4 "\36\36\56\377" 0))
+(brush "2. Hardness 075")
+(dynamics "Pressure Size")
+(pattern "Pine")
+(gradient "Standard")
+(palette "Предыдущие цвета")
+
+# end of gimp-vector-tool options

@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 UFILE="$HOME/.config/i3/config.d/.usr"
+STATUS=0  # Переменная для отслеживания статуса выполнения скрипта
 
 # Check if the .usr file already exists
 if [[ -f "$UFILE" ]]; then
@@ -31,16 +32,23 @@ files=(
 # Replace 'vir0id' with the current username in each file
 for file in "${files[@]}"; do
     if [[ -f "$file" ]]; then
-        sed -i "s/vir0id/${USER}/g" "$file"
+        sed -i "s/vir0id/${USER}/g" "$file" || STATUS=1
         echo "Updated $file"
     else
         echo "File $file not found, skipping..."
+        STATUS=1
     fi
 done
 
 # Uncomment the following line if you need to update the cursor theme
-# sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme
+# sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme || STATUS=1
 
 # Create the .usr file to indicate that the configuration has been done
-touch "$UFILE"
-echo "Configuration completed. Created $UFILE to prevent future runs."
+if [[ "$STATUS" -eq 0 ]]; then
+    touch "$UFILE"
+    notify-send "SetUser.sh" "Пользовательские настройки успешно применены."
+else
+    notify-send "SetUser.sh" "Ошибка: скрипт не выполнился корректно."
+fi
+
+exit "$STATUS"

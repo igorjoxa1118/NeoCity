@@ -3,71 +3,44 @@
 #  ███████ ██    ██    ██    ██    ██ ███████    ██    ███████ ██████     ██     #
 #  ██   ██ ██    ██    ██    ██    ██      ██    ██    ██   ██ ██   ██    ██     #
 #  ██   ██  ██████     ██     ██████  ███████    ██    ██   ██ ██   ██    ██     #
-                                                                             
-### --- Установка различных настроек в систему. Экспорт переменных и т.д.
-exec --no-startup-id "$i3_scripts/SetSysVars"
-exec --no-startup-id "$i3_scripts/SetUser"
-exec --no-startup-id "$i3_scripts/ThemeApply"
-### ---------------------------------------------------------END------------------------------------------------------------- ###
 
-### --- Стартуем один раз.
+### --- Инициализация лог-файла ---
+exec --no-startup-id sh -c "$i3_auto_scriptsd/01_init_log.sh"
 
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id udiskie -t
-exec --no-startup-id thunar --daemon
-### ---------------------------------------------------------END------------------------------------------------------------- ###
+### --- Убиваем конфликтующие процессы (исправленная версия) ---
+exec --no-startup-id sh -c "$i3_auto_scriptsd/02_kill_conflicting_processes.sh"
 
-### --- Брелок для хранения сохраненных паролей.
-exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11
-### ---------------------------------------------------------END------------------------------------------------------------- ###
+### --- Системные настройки ---
+exec --no-startup-id sh -c '$i3_auto_scriptsd/03_setsysvars.sh'
+exec --no-startup-id sh -c '$i3_auto_scriptsd/04_setuser.sh'
+exec --no-startup-id sh -c '$i3_auto_scriptsd/05_themeapply.sh'
 
-### --- Polkit используется для управления общесистемными привилегиями. 
-### --- Данный фреймворк используется для предоставления непривилегированным процессам возможность выполнения действий, требующих прав администратора.
-### --- В отличие от sudo, Polkit не наделяет процесс правами суперпользователя, а позволяет точно контролировать, какие действия разрешены, а какие нет.
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-### ---------------------------------------------------------END------------------------------------------------------------- ###
+### --- Композитный менеджер (с исправленным путем к конфигу) ---
+exec --no-startup-id sh -c '$i3_auto_scriptsd/06_picom.sh'
 
-### --- Стуртуем обоину. Если не указывать конкретную картинку (car_trip.jpg), 
-### --- в таком случае картинка будет меняться рандомно с каждым стартом
-exec --no-startup-id feh -z --no-fehbg --bg-fill $HOME/.config/i3/rices/catppuccin-mocha/walls/light/land.jpeg
-### ---------------------------------------------------------END------------------------------------------------------------- ###
+### --- Основные сервисы ---
+exec --no-startup-id sh -c '$i3_auto_scriptsd/07_nm_applet.sh'
+exec --no-startup-id sh -c '$i3_auto_scriptsd/08_power_manager.sh'
+exec --no-startup-id sh -c '$i3_auto_scriptsd/09_udiskie.sh'
 
-### --- Стартуем каждый раз при перезагрузки i3wm.
+### --- Аутентификация ---
+exec --no-startup-id sh -c '$i3_auto_scriptsd/10_keyring.sh'
+exec --no-startup-id sh -c '$i3_auto_scriptsd/11_polkit.sh'
 
-### --- Стартуем композитор, для прозрачности приложений и прочих эффектов рабочего окружения.
-exec_always --no-startup-id picom -b --config $i3_configd/picom.conf
-### ---------------------------------------------------------END------------------------------------------------------------- ###
+### --- Настройки окружения ---
+exec --no-startup-id sh -c '$i3_auto_scriptsd/12_xsettingsd.sh'
 
-### --- Стартуем Dunst уведомления.
-#exec_always --no-startup-id $confd/dunst/dunst.sh
-### ---------------------------------------------------------END------------------------------------------------------------- ###
+### --- Polybar с улучшенным ожиданием IPC ---
+exec_always --no-startup-id sh -c '$i3_auto_scriptsd/13_polybar.sh'
 
-### --- Загружаем цвета и всякие там красивости ИксРесурсов. Нужны обязательно. Отсюда цепляются настройки терминала Xterm или Urxvt
-exec_always --no-startup-id xrdb -load $HOME/.Xresources
-### ---------------------------------------------------------END------------------------------------------------------------- ###
+### --- Обои и темы ---
+exec_always --no-startup-id sh -c '$i3_auto_scriptsd/14_wallpaper.sh'
+exec_always --no-startup-id sh -c '$i3_auto_scriptsd/15_xresources.sh'
+exec_always --no-startup-id sh -c '$i3_auto_scriptsd/16_theme.sh'
 
-### --- 
-#exec_always --no-startup-id xsetroot -cursor_name left_ptr
-### ---------------------------------------------------------END------------------------------------------------------------- ###
+### --- Дополнительные утилиты ---
+exec_always --no-startup-id sh -c '$i3_auto_scriptsd/17_autotiling.sh'
+exec_always --no-startup-id sh -c '$i3_auto_scriptsd/18_screenlocker.sh'
 
-### --- Стартуем главную тему Catppuccin Mocha.
-exec_always --no-startup-id $HOME/.config/i3/rices/catppuccin-mocha/Theme.sh
-### ---------------------------------------------------------END------------------------------------------------------------- ###
-
-
-### --- Стартуем автотайлинг. Эта программа расставляет терминал по местам красиво.
-exec_always --no-startup-id autotiling
-### ---------------------------------------------------------END------------------------------------------------------------- ###
-
-### --- Стартуем блокировщик экрана
-exec_always --no-startup-id xss-lock --ignore-sleep ~/.config/i3/src/ScreenLocker
-### ---------------------------------------------------------END------------------------------------------------------------- ###
-
-### --- Стартуем эквалайзер Pipewire. Полезно для наушников. Отключить за ненадобностью.
-exec --no-startup-id /usr/bin/nohup /usr/bin/easyeffects --gapplication-service
-### ---------------------------------------------------------END------------------------------------------------------------- ###
-
-### --- Стартуем инструмент для применение GTK тем и иконок "на лету"
-exec --no-startup-id xsettingsd
-### ---------------------------------------------------------END------------------------------------------------------------- ###
+### --- Аудио (с исправлением для libadwaita) ---
+exec --no-startup-id sh -c '$i3_auto_scriptsd/19_audio.sh'

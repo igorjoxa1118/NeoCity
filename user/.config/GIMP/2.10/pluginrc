@@ -6,10 +6,10 @@
 (protocol-version 26)
 (file-version 5)
 
-(plug-in-def "${gimp_plug_in_dir}/plug-ins/gmic_gimp_qt/gmic_gimp_qt" 1738093941
+(plug-in-def "${gimp_plug_in_dir}/plug-ins/gmic_gimp_qt/gmic_gimp_qt" 1741360525
     (proc-def "plug-in-gmic-qt" 1
-         "G'MIC-Qt (3.5.2)"
-         "G'MIC-Qt (3.5.2)"
+         "G'MIC-Qt (3.5.3)"
+         "G'MIC-Qt (3.5.3)"
          "Sébastien Fourey"
          "Sébastien Fourey"
          "2017"
