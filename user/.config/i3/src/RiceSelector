@@ -107,37 +107,102 @@ update_rice() {
     # Определяем текущее время
     current_hour=$(date +%H)
 
-    # Выбираем папку в зависимости от времени суток
+    # Выбираем папку с обоями
     if [[ $current_hour -ge 6 && $current_hour -lt 18 ]]; then
-        wall_dir="light"  # День
+        wall_dir="light"
     else
-        wall_dir="dark"   # Вечер
+        wall_dir="dark"
     fi
 
-    # Находим случайное изображение в папке с обоями для выбранной темы
-    new_wall=$(find "$HOME/.config/i3/rices/$selected/walls/$wall_dir" -name "*.png" -o -name "*.webp" -o -name "*.jpeg" -o -name "*.jpg" | shuf -n 1)
-    new_wall=$(basename "$new_wall")  # Получаем только имя файла
+    # Находим случайные обои
+    new_wall=$(find "$HOME/.config/i3/rices/$selected/walls/$wall_dir" -type f | shuf -n 1)
+    new_wall=$(basename "$new_wall")
 
-    echo "Selected theme: $selected"
-    echo "Wallpaper directory: $wall_dir"
-    echo "New wallpaper: $new_wall"
-
-    # Применяем обои "на лету" с помощью feh
+    # Применяем обои
     feh --no-fehbg --bg-fill "$HOME/.config/i3/rices/$selected/walls/$wall_dir/$new_wall"
 
-    # Обновляем строку с обоями в autostart
+    # Обновляем autostart
     sed -i "/exec --no-startup-id feh -z --no-fehbg --bg-fill /c\exec --no-startup-id feh -z --no-fehbg --bg-fill \$HOME/.config/i3/rices/$selected/walls/$wall_dir/$new_wall" "$HOME/.config/i3/config.d/autostart"
-
-    # Обновляем текущую тему в autostart
     sed -i "s/$i3_rice_in_config/$selected/g" "$HOME/.config/i3/config.d/autostart"
 
     # Обновляем тему VSCode
     update_vscode_theme "$selected"
 
-    # Перезапускаем i3 только если это необходимо (например, при изменении темы)
+    # Принудительно применяем GTK-тему
+    apply_gtk_theme "$selected"
+
+    # Перезапускаем i3 если тема изменилась
     if [[ "$selected" != "$i3_rice_in_config" ]]; then
         i3-msg restart
     fi
+}
+
+apply_gtk_theme() {
+    local theme="$1"
+    
+    # Определение иконок и курсоров
+    case "$theme" in
+        "catppuccin-mocha")
+            icon_theme="TokyoNight-SE"
+            cursor_theme="catppuccin-mocha-blue-cursors"
+            ;;
+        "catppuccin-latte")
+            icon_theme="Magna-Dark-Icons"
+            cursor_theme="catppuccin-mocha-maroon-cursors"
+            ;;
+        *)
+            icon_theme="Adwaita"
+            cursor_theme="Adwaita"
+            ;;
+    esac
+
+    # 1. Основные настройки
+    gsettings set org.gnome.desktop.interface gtk-theme "$theme"
+    gsettings set org.gnome.desktop.interface icon-theme "$icon_theme"
+    gsettings set org.gnome.desktop.interface cursor-theme "$cursor_theme"
+
+    # 2. Xsettingsd
+    echo -e "Net/ThemeName \"$theme\"\nNet/IconThemeName \"$icon_theme\"\nGtk/CursorThemeName \"$cursor_theme\"" > ~/.xsettingsd
+    pkill -x xsettingsd && xsettingsd &
+
+    # 3. Специальный обработчик для Thunar
+    update_thunar() {
+        # Получаем все окна Thunar
+        local thunar_windows=$(xdotool search --class "Thunar" 2>/dev/null)
+        
+        # Вариант 1: Мягкое обновление через DBus
+        if dbus-send --session --dest=org.freedesktop.DBus \
+           --type=method_call --print-reply /org/freedesktop/DBus \
+           org.freedesktop.DBus.ListNames 2>/dev/null | grep -q org.xfce.Thunar; then
+            dbus-send --session --dest=org.xfce.Thunar \
+            --type=method_call /org/xfce/FileManager \
+            org.xfce.FileManager.ReconfigureTheme 2>/dev/null
+        fi
+
+        # Вариант 2: Принудительное обновление через xprop
+        for window in $thunar_windows; do
+            xprop -id "$window" -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT "$theme" 2>/dev/null
+            xdotool key --window "$window" F5 2>/dev/null
+        done
+
+        # Вариант 3: Полный перезапуск
+        if ! pgrep -x thunar >/dev/null; then
+            thunar --quit 2>/dev/null
+            sleep 0.5
+            thunar &
+        fi
+    }
+
+    # 4. Обновление кэша иконок
+    gtk-update-icon-cache -f ~/.local/share/icons/* 2>/dev/null || true
+    gtk-update-icon-cache -f /usr/share/icons/* 2>/dev/null || true
+
+    # 5. Применяем изменения
+    update_thunar
+
+    # 6. Для всех GTK-приложений
+    export GTK_THEME="$theme"
+    export ICON_THEME="$icon_theme"
 }
 
 # Main function

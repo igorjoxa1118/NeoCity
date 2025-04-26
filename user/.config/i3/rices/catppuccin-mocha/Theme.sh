@@ -307,30 +307,53 @@ set_gtk_theme_icons_cursor() {
             ;;
     esac
 
-    # Применяем настройки через xsettingsd
+    # Применяем настройки через xsettingsd (здесь кавычки нужны)
     echo -e "Net/ThemeName \"$RICETHEME\"
 Net/IconThemeName \"$ICON_THEME\"
 Gtk/CursorThemeName \"$CURSOR_THEME\"" > "$xsettings_conf"
 
-    # Обновляем GTK конфиги
-    for config in "$gtk2_config" "$gtk3_config" "$gtk4_config"; do
-        [ -f "$config" ] && sed -i \
+    # Для .gtkrc-2.0 - добавляем кавычки
+    if [ -f "$gtk2_config" ]; then
+        sed -i \
             -e "s/gtk-theme-name=.*/gtk-theme-name=\"$RICETHEME\"/g" \
             -e "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=\"$ICON_THEME\"/g" \
+            -e "s/gtk-font-name=.*/gtk-font-name=\"MesloLGS NF Regular 10\"/g" \
             -e "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=\"$CURSOR_THEME\"/g" \
-            "$config"
-    done
+            -e 's/gtk-xft-hintstyle=.*/gtk-xft-hintstyle="hintmedium"/g' \
+            -e 's/gtk-xft-rgba=.*/gtk-xft-rgba="rgb"/g' \
+            "$gtk2_config"
+    fi
+
+    # Для gtk-3.0/settings.ini - без кавычек
+    if [ -f "$gtk3_config" ]; then
+        sed -i \
+            -e "s/gtk-theme-name=.*/gtk-theme-name=$RICETHEME/g" \
+            -e "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=$ICON_THEME/g" \
+            -e "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=$CURSOR_THEME/g" \
+            "$gtk3_config"
+    fi
+
+    # Для gtk-4.0/settings.ini - без кавычек
+    if [ -f "$gtk4_config" ]; then
+        sed -i \
+            -e "s/gtk-theme-name=.*/gtk-theme-name=$RICETHEME/g" \
+            -e "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=$ICON_THEME/g" \
+            -e "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=$CURSOR_THEME/g" \
+            "$gtk4_config"
+    fi
 
     # Обновляем курсор по умолчанию
     [ -f "$default_cursor_file" ] && sed -i "s/Inherits=.*/Inherits=$CURSOR_THEME/" "$default_cursor_file"
 
-    # Применяем через gsettings (если доступен)
+    # Применяем через gsettings (здесь кавычки нужны)
     if command -v gsettings >/dev/null; then
         gsettings set org.gnome.desktop.interface gtk-theme "$RICETHEME"
         gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
         gsettings set org.gnome.desktop.interface cursor-theme "$CURSOR_THEME"
     fi
-
+    # Обновление кэша GTK
+    gtk-update-icon-cache -f ~/.local/share/icons/*
+    gtk-update-icon-cache -f /usr/share/icons/*
     # Перезапускаем xsettingsd
     pkill -x xsettingsd && xsettingsd &
 }

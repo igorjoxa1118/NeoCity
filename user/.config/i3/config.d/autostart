@@ -15,8 +15,6 @@ exec --no-startup-id sh -c '$i3_auto_scriptsd/03_setsysvars.sh'
 exec --no-startup-id sh -c '$i3_auto_scriptsd/04_setuser.sh'
 exec --no-startup-id sh -c '$i3_auto_scriptsd/05_themeapply.sh'
 
-### --- Настройки окружения ---
-exec --no-startup-id sh -c '$i3_auto_scriptsd/12_xsettingsd.sh'
 
 ### --- Композитный менеджер (с исправленным путем к конфигу) ---
 exec --no-startup-id sh -c '$i3_auto_scriptsd/06_picom.sh'
@@ -39,10 +37,12 @@ exec_always --no-startup-id sh -c '$i3_auto_scriptsd/14_wallpaper.sh'
 exec_always --no-startup-id sh -c '$i3_auto_scriptsd/15_xresources.sh'
 exec_always --no-startup-id sh -c '$i3_auto_scriptsd/16_theme.sh'
 
+### --- Настройки окружения ---
+exec --no-startup-id sh -c '$i3_auto_scriptsd/12_xsettingsd.sh'
+
 ### --- Дополнительные утилиты ---
 exec_always --no-startup-id sh -c '$i3_auto_scriptsd/17_autotiling.sh'
 exec_always --no-startup-id sh -c '$i3_auto_scriptsd/18_screenlocker.sh'
 
 ### --- Аудио (с исправлением для libadwaita) ---
 exec --no-startup-id sh -c '$i3_auto_scriptsd/19_audio.sh'
-

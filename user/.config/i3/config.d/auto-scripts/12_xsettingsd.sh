@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-# Просто перезапускает xsettingsd для применения изменений, сделанных Theme.sh
+sleep 0.5
 pkill -x xsettingsd && xsettingsd &
