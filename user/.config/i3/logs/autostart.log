@@ -1,40 +1,1212 @@
 === i3 AUTOSTART LOG ===
 [$(date)] Setting X11 env vars
-[Ср 16 апр 2025 05:49:41 EEST] Starting picom
-[Ср 16 апр 2025 05:49:41 EEST] Starting udiskie
-[Ср 16 апр 2025 05:49:41 EEST] Starting power manager
+[Сб 26 апр 2025 08:22:26 EEST] Starting power manager
+[Сб 26 апр 2025 08:22:26 EEST] Starting nm-applet
 Configuration already done. Exiting...
-[Ср 16 апр 2025 05:49:41 EEST] Starting polkit
+[Сб 26 апр 2025 08:22:26 EEST] Starting udiskie
+[Сб 26 апр 2025 08:22:26 EEST] Starting polkit
 Скрипт уже был выполнен ранее.
-[Ср 16 апр 2025 05:49:41 EEST] Starting audio effects
-[Ср 16 апр 2025 05:49:41 EEST] Starting DBus
-[Ср 16 апр 2025 05:49:41 EEST] Setting wallpaper
-[Ср 16 апр 2025 05:49:41 EEST] Waiting for i3 socket
-[Ср 16 апр 2025 05:49:41 EEST] Loading Xresources
-[Ср 16 апр 2025 05:49:41 EEST] Starting polybar
-[Ср 16 апр 2025 05:49:41 EEST] Applying theme
-[Ср 16 апр 2025 05:49:41 EEST] Starting autotiling
-[Ср 16 апр 2025 05:49:41 EEST] Starting screen locker
-[Ср 16 апр 2025 05:49:41 EEST] Starting keyring
+[Сб 26 апр 2025 08:22:26 EEST] Starting audio effects
+[Сб 26 апр 2025 08:22:26 EEST] Starting DBus
+[Сб 26 апр 2025 08:22:26 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 08:22:26 EEST] Setting wallpaper
+[Сб 26 апр 2025 08:22:26 EEST] Loading Xresources
+[Сб 26 апр 2025 08:22:26 EEST] Starting polybar
+[Сб 26 апр 2025 08:22:26 EEST] Starting screen locker
+[Сб 26 апр 2025 08:22:26 EEST] Starting keyring
+[Сб 26 апр 2025 08:22:26 EEST] Starting autotiling
+[Сб 26 апр 2025 08:22:26 EEST] Applying theme
 gnome-keyring-daemon: no process capabilities, insecure memory might get used
 discover_other_daemon: 1GNOME_KEYRING_CONTROL=/run/user/1000/keyring
-[ 16.04.2025 05:49:41.051 set_animation ERROR ] Invalid trigger defined at line 77
-[ 16.04.2025 05:49:41.051 set_animation ERROR ] Invalid trigger defined at line 86
-[ 16.04.2025 05:49:41.051 set_animation ERROR ] Invalid trigger defined at line 202
-[ 16.04.2025 05:49:41.051 set_animation ERROR ] Invalid trigger defined at line 211
-[ 16.04.2025 05:49:41.051 set_animation ERROR ] Invalid trigger defined at line 304
-[ 16.04.2025 05:49:41.051 set_animation ERROR ] Invalid trigger defined at line 351
+[ 26.04.2025 08:22:26.215 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 08:22:26.215 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 08:22:26.215 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 08:22:26.215 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 08:22:26.215 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 08:22:26.215 set_animation ERROR ] Invalid trigger defined at line 351
 xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
-xsettingsd: Created window 0x1000001 on screen 0 with timestamp 142300
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 32500
 xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
 xsettingsd: Took ownership of selection _XSETTINGS_S0
-[ 16.04.2025 05:49:41.145 set_animation ERROR ] Invalid trigger defined at line 77
-[ 16.04.2025 05:49:41.145 set_animation ERROR ] Invalid trigger defined at line 86
-[ 16.04.2025 05:49:41.145 set_animation ERROR ] Invalid trigger defined at line 202
-[ 16.04.2025 05:49:41.145 set_animation ERROR ] Invalid trigger defined at line 211
-[ 16.04.2025 05:49:41.145 set_animation ERROR ] Invalid trigger defined at line 304
-[ 16.04.2025 05:49:41.145 set_animation ERROR ] Invalid trigger defined at line 351
+[ 26.04.2025 08:22:26.335 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 08:22:26.335 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 08:22:26.335 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 08:22:26.335 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 08:22:26.335 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 08:22:26.335 set_animation ERROR ] Invalid trigger defined at line 351
 
-(xfce4-power-manager:1267): xfce4-power-manager-WARNING **: 05:49:41.723: Unable to connect to session manager : Не удалось подключиться к менеджеру сеансов: networkIdsList argument is NULL
-[W][05:49:42.103914] pw.conf      | [          conf.c: 1204 pw_conf_load_conf_for_context()] setting config.name to client-rt.conf is deprecated, using client.conf
+(xfce4-power-manager:1212): xfce4-power-manager-WARNING **: 08:22:26.877: Unable to connect to session manager : Не удалось подключиться к менеджеру сеансов: networkIdsList argument is NULL
+WARNING: Icon 'music' not found in themes
+[W][08:22:27.287289] pw.conf      | [          conf.c: 1204 pw_conf_load_conf_for_context()] setting config.name to client-rt.conf is deprecated, using client.conf
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+polybar|error: Invalid value for "module/mpd_time.format-foreground", using default value (reason: The reference ${colors.foreground} does not exist (no fallback set))
+polybar|error: Invalid value for "module/mpd_time.format-background", using default value (reason: The reference ${colors.background} does not exist (no fallback set))
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:11:10 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:11:10 EEST] Loading Xresources
+[Сб 26 апр 2025 09:11:10 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:11:10 EEST] Starting autotiling
+[Сб 26 апр 2025 09:11:10 EEST] Applying theme
+[Сб 26 апр 2025 09:11:10 EEST] Starting screen locker
+[Сб 26 апр 2025 09:11:10 EEST] Starting polybar
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 2957133
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:11:10.942 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:11:10.942 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:11:10.942 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:11:10.942 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:11:10.942 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:11:10.942 set_animation ERROR ] Invalid trigger defined at line 351
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:11:24 EEST] Loading Xresources
+[Сб 26 апр 2025 09:11:24 EEST] Starting autotiling
+[Сб 26 апр 2025 09:11:24 EEST] Applying theme
+[Сб 26 апр 2025 09:11:24 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:11:24 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:11:24 EEST] Starting screen locker
+[Сб 26 апр 2025 09:11:24 EEST] Starting polybar
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+[ 26.04.2025 09:11:24.241 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x00200071 (polybar-secondary_DP-0)
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 2970464
+[ 26.04.2025 09:11:24.242 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000001 (polybar-secondary_DP-0)
+[ 26.04.2025 09:11:24.242 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00002 (polybar-main_DP-0)
+[ 26.04.2025 09:11:24.243 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (src - Thunar)
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:11:24.245 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (config.ini - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 09:11:24.245 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 09:11:24.247 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 09:11:24.248 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+[ 26.04.2025 09:11:24.311 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:11:24.311 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:11:24.311 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:11:24.311 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:11:24.311 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:11:24.312 set_animation ERROR ] Invalid trigger defined at line 351
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:11:32 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:11:32 EEST] Applying theme
+[Сб 26 апр 2025 09:11:32 EEST] Starting polybar
+[Сб 26 апр 2025 09:11:32 EEST] Loading Xresources
+[Сб 26 апр 2025 09:11:32 EEST] Starting autotiling
+[Сб 26 апр 2025 09:11:32 EEST] Starting screen locker
+[Сб 26 апр 2025 09:11:32 EEST] Setting wallpaper
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 2978701
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:11:32.487 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04013cb3 (vir0id - Thunar)
+[ 26.04.2025 09:11:32.489 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000001 (polybar-secondary_DP-0)
+[ 26.04.2025 09:11:32.490 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00002 (polybar-main_DP-0)
+[ 26.04.2025 09:11:32.491 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (src - Thunar)
+[ 26.04.2025 09:11:32.493 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (config.ini - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 09:11:32.496 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 09:11:32.498 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 09:11:32.499 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+[ 26.04.2025 09:11:32.626 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:11:32.626 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:11:32.626 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:11:32.626 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:11:32.626 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:11:32.626 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:26:30 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:26:30 EEST] Loading Xresources
+[Сб 26 апр 2025 09:26:30 EEST] Starting autotiling
+[Сб 26 апр 2025 09:26:30 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:26:30 EEST] Starting screen locker
+[Сб 26 апр 2025 09:26:30 EEST] Starting polybar
+[Сб 26 апр 2025 09:26:30 EEST] Applying theme
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+[ 26.04.2025 09:26:30.303 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00002 (polybar-main_DP-0)
+[ 26.04.2025 09:26:30.305 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000001 (polybar-secondary_DP-0)
+[ 26.04.2025 09:26:30.307 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (src - Thunar)
+[ 26.04.2025 09:26:30.309 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (modules.ini - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 09:26:30.313 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 09:26:30.314 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 09:26:30.322 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 3876643
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:26:30.427 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:26:30.427 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:26:30.427 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:26:30.427 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:26:30.428 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:26:30.428 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:26:39 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:26:39 EEST] Loading Xresources
+[Сб 26 апр 2025 09:26:39 EEST] Starting polybar
+[Сб 26 апр 2025 09:26:39 EEST] Starting autotiling
+[Сб 26 апр 2025 09:26:39 EEST] Starting screen locker
+[Сб 26 апр 2025 09:26:39 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:26:39 EEST] Applying theme
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 3885584
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:26:39.401 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01600001 (polybar-secondary_DP-0)
+[ 26.04.2025 09:26:39.402 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01a00002 (polybar-main_DP-0)
+[ 26.04.2025 09:26:39.403 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (src - Thunar)
+[ 26.04.2025 09:26:39.405 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (modules.ini - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 09:26:39.406 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 09:26:39.408 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 09:26:39.513 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:26:39.513 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:26:39.513 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:26:39.513 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:26:39.513 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:26:39.513 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:26:50 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:26:50 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:26:50 EEST] Loading Xresources
+[Сб 26 апр 2025 09:26:50 EEST] Applying theme
+[Сб 26 апр 2025 09:26:50 EEST] Starting polybar
+[Сб 26 апр 2025 09:26:50 EEST] Starting autotiling
+[Сб 26 апр 2025 09:26:50 EEST] Starting screen locker
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 3896609
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:26:50.565 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:26:50.565 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:26:50.565 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:26:50.565 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:26:50.565 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:26:50.566 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:26:57 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:26:57 EEST] Applying theme
+[Сб 26 апр 2025 09:26:57 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:26:57 EEST] Starting autotiling
+[Сб 26 апр 2025 09:26:57 EEST] Starting polybar
+[Сб 26 апр 2025 09:26:57 EEST] Loading Xresources
+[Сб 26 апр 2025 09:26:57 EEST] Starting screen locker
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 3903342
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:26:57.158 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:26:57.158 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:26:57.158 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:26:57.158 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:26:57.158 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:26:57.158 set_animation ERROR ] Invalid trigger defined at line 351
+[ 26.04.2025 09:26:57.159 session_init FATAL ERROR ] Another composite manager is already running
+[ 26.04.2025 09:26:57.159 main FATAL ERROR ] Failed to create new session.
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:27:03 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:27:03 EEST] Loading Xresources
+[Сб 26 апр 2025 09:27:03 EEST] Starting polybar
+[Сб 26 апр 2025 09:27:03 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:27:03 EEST] Starting autotiling
+[Сб 26 апр 2025 09:27:03 EEST] Applying theme
+[Сб 26 апр 2025 09:27:03 EEST] Starting screen locker
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 3910070
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:27:03.879 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:27:03.879 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:27:03.879 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:27:03.879 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:27:03.879 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:27:03.879 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+Event.WINDOW subscribed
+Event.MODE subscribed
+[Сб 26 апр 2025 09:29:09 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:29:09 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:29:09 EEST] Starting polybar
+[Сб 26 апр 2025 09:29:09 EEST] Loading Xresources
+[Сб 26 апр 2025 09:29:09 EEST] Starting autotiling
+[Сб 26 апр 2025 09:29:09 EEST] Applying theme
+[Сб 26 апр 2025 09:29:09 EEST] Starting screen locker
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 4035561
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:29:09.447 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:29:09.447 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:29:09.447 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:29:09.447 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:29:09.447 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:29:09.447 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:29:13 EEST] Applying theme
+[Сб 26 апр 2025 09:29:13 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:29:13 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:29:13 EEST] Loading Xresources
+[Сб 26 апр 2025 09:29:13 EEST] Starting autotiling
+[Сб 26 апр 2025 09:29:13 EEST] Starting screen locker
+[Сб 26 апр 2025 09:29:13 EEST] Starting polybar
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 4039573
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:29:13.354 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (catppuccin-latte - Thunar)
+[ 26.04.2025 09:29:13.356 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (Theme.sh - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 09:29:13.357 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 09:29:13.358 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 09:29:13.359 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+[ 26.04.2025 09:29:13.438 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:29:13.438 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:29:13.439 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:29:13.439 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:29:13.439 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:29:13.439 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:34:24 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:34:24 EEST] Starting polybar
+[Сб 26 апр 2025 09:34:24 EEST] Applying theme
+[Сб 26 апр 2025 09:34:24 EEST] Starting autotiling
+[Сб 26 апр 2025 09:34:24 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:34:24 EEST] Starting screen locker
+[Сб 26 апр 2025 09:34:24 EEST] Loading Xresources
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+[ 26.04.2025 09:34:24.870 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00001 (polybar-secondary_DP-0)
+[ 26.04.2025 09:34:24.871 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000002 (polybar-main_DP-0)
+[ 26.04.2025 09:34:24.872 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (catppuccin-latte - Thunar)
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 4351101
+[ 26.04.2025 09:34:24.878 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (Theme.sh - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 09:34:24.886 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:34:24.889 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 09:34:24.891 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+[ 26.04.2025 09:34:25.029 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:34:25.029 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:34:25.029 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:34:25.029 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:34:25.029 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:34:25.029 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:34:37 EEST] Loading Xresources
+[Сб 26 апр 2025 09:34:37 EEST] Starting screen locker
+[Сб 26 апр 2025 09:34:37 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:34:37 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:34:37 EEST] Starting autotiling
+[Сб 26 апр 2025 09:34:37 EEST] Starting polybar
+[Сб 26 апр 2025 09:34:37 EEST] Applying theme
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+[ 26.04.2025 09:34:37.387 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000002 (polybar-main_DP-0)
+[ 26.04.2025 09:34:37.395 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00001 (polybar-secondary_DP-0)
+[ 26.04.2025 09:34:37.397 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (Theme.sh - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 09:34:37.398 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 09:34:37.400 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 4363626
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:34:37.544 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:34:37.544 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:34:37.544 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:34:37.544 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:34:37.544 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:34:37.544 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:36:10 EEST] Loading Xresources
+[Сб 26 апр 2025 09:36:10 EEST] Applying theme
+[Сб 26 апр 2025 09:36:10 EEST] Starting autotiling
+[Сб 26 апр 2025 09:36:10 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:36:10 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:36:10 EEST] Starting screen locker
+[Сб 26 апр 2025 09:36:10 EEST] Starting polybar
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 4456629
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:36:10.573 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:36:10.573 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:36:10.573 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:36:10.573 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:36:10.573 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:36:10.573 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:36:25 EEST] Loading Xresources
+[Сб 26 апр 2025 09:36:25 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:36:25 EEST] Starting autotiling
+[Сб 26 апр 2025 09:36:25 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:36:25 EEST] Applying theme
+[Сб 26 апр 2025 09:36:25 EEST] Starting screen locker
+[Сб 26 апр 2025 09:36:25 EEST] Starting polybar
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 4471970
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:36:25.777 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x00200076 (polybar-secondary_DP-0)
+[ 26.04.2025 09:36:25.777 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00001 (polybar-secondary_DP-0)
+[ 26.04.2025 09:36:25.777 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000002 (polybar-main_DP-0)
+[ 26.04.2025 09:36:25.778 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (auto-scripts - Thunar)
+[ 26.04.2025 09:36:25.779 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (12_xsettingsd.sh - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 09:36:25.779 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 09:36:25.780 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 09:36:25.780 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+[ 26.04.2025 09:36:25.853 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:36:25.853 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:36:25.854 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:36:25.854 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:36:25.854 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:36:25.854 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:53:35 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:53:35 EEST] Loading Xresources
+[Сб 26 апр 2025 09:53:35 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:53:35 EEST] Applying theme
+[Сб 26 апр 2025 09:53:35 EEST] Starting polybar
+[Сб 26 апр 2025 09:53:35 EEST] Starting screen locker
+[Сб 26 апр 2025 09:53:35 EEST] Starting autotiling
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 5501803
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:53:35.612 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (auto-scripts - Thunar)
+[ 26.04.2025 09:53:35.614 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (12_xsettingsd.sh - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 09:53:35.616 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 09:53:35.617 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 09:53:35.619 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+[ 26.04.2025 09:53:35.762 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:53:35.762 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:53:35.762 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:53:35.762 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:53:35.762 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:53:35.762 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:53:41 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:53:41 EEST] Loading Xresources
+[Сб 26 апр 2025 09:53:41 EEST] Applying theme
+[Сб 26 апр 2025 09:53:41 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:53:41 EEST] Starting polybar
+[Сб 26 апр 2025 09:53:41 EEST] Starting autotiling
+[Сб 26 апр 2025 09:53:41 EEST] Starting screen locker
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+[ 26.04.2025 09:53:41.315 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000001 (polybar-secondary_DP-0)
+[ 26.04.2025 09:53:41.316 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00002 (polybar-main_DP-0)
+[ 26.04.2025 09:53:41.318 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (auto-scripts - Thunar)
+[ 26.04.2025 09:53:41.320 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (12_xsettingsd.sh - (Рабочая область) без названия - Code - OSS)
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 5507543
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:53:41.322 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 09:53:41.323 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 09:53:41.453 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:53:41.453 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:53:41.453 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:53:41.453 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:53:41.453 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:53:41.454 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:57:43 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:57:43 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:57:43 EEST] Applying theme
+[Сб 26 апр 2025 09:57:43 EEST] Starting polybar
+[Сб 26 апр 2025 09:57:43 EEST] Starting screen locker
+[Сб 26 апр 2025 09:57:43 EEST] Loading Xresources
+[Сб 26 апр 2025 09:57:43 EEST] Starting autotiling
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 5749517
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:57:43.485 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:57:43.485 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:57:43.485 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:57:43.485 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:57:43.485 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:57:43.485 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:58:05 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:58:05 EEST] Starting polybar
+[Сб 26 апр 2025 09:58:05 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:58:05 EEST] Applying theme
+[Сб 26 апр 2025 09:58:05 EEST] Starting screen locker
+[Сб 26 апр 2025 09:58:05 EEST] Loading Xresources
+[Сб 26 апр 2025 09:58:05 EEST] Starting autotiling
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 5771545
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:58:05.508 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:58:05.508 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:58:05.508 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:58:05.508 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:58:05.508 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:58:05.508 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:58:14 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:58:14 EEST] Starting polybar
+[Сб 26 апр 2025 09:58:14 EEST] Loading Xresources
+[Сб 26 апр 2025 09:58:14 EEST] Starting autotiling
+[Сб 26 апр 2025 09:58:14 EEST] Applying theme
+[Сб 26 апр 2025 09:58:14 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:58:14 EEST] Starting screen locker
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 5781047
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:58:14.862 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000001 (polybar-secondary_DP-0)
+[ 26.04.2025 09:58:14.863 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00002 (polybar-main_DP-0)
+[ 26.04.2025 09:58:14.864 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (auto-scripts - Thunar)
+[ 26.04.2025 09:58:14.865 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (12_xsettingsd.sh - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 09:58:14.867 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 09:58:14.868 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 09:58:14.870 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+[ 26.04.2025 09:58:15.010 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:58:15.010 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:58:15.010 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:58:15.010 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:58:15.011 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:58:15.011 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:58:51 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:58:51 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:58:51 EEST] Starting polybar
+[Сб 26 апр 2025 09:58:51 EEST] Starting autotiling
+[Сб 26 апр 2025 09:58:51 EEST] Loading Xresources
+[Сб 26 апр 2025 09:58:51 EEST] Starting screen locker
+[Сб 26 апр 2025 09:58:51 EEST] Applying theme
+Failed to set screensaver attributes; is another one running?
+polybar|notice:  Parsing config file: /etc/polybar/config.ini
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 5818155
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:58:51.955 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000001 (polybar-secondary_DP-0)
+[ 26.04.2025 09:58:51.958 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00002 (polybar-main_DP-0)
+[ 26.04.2025 09:58:51.963 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (auto-scripts - Thunar)
+[ 26.04.2025 09:58:51.967 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (autostart - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 09:58:51.971 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 09:58:51.972 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 09:58:51.974 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+[ 26.04.2025 09:58:52.098 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:58:52.098 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:58:52.099 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:58:52.099 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:58:52.099 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:58:52.099 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:58:57 EEST] Starting autotiling
+[Сб 26 апр 2025 09:58:57 EEST] Loading Xresources
+[Сб 26 апр 2025 09:58:57 EEST] Applying theme
+[Сб 26 апр 2025 09:58:57 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:58:57 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:58:57 EEST] Starting polybar
+[Сб 26 апр 2025 09:58:57 EEST] Starting screen locker
+Failed to set screensaver attributes; is another one running?
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 5823894
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:58:57.706 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00001 (polybar-secondary_DP-0)
+[ 26.04.2025 09:58:57.706 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000002 (polybar-main_DP-0)
+[ 26.04.2025 09:58:57.707 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (auto-scripts - Thunar)
+[ 26.04.2025 09:58:57.709 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (autostart - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 09:58:57.711 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 09:58:57.712 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 09:58:57.713 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+[ 26.04.2025 09:58:57.850 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:58:57.850 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:58:57.850 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:58:57.850 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:58:57.851 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:58:57.851 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 09:59:01 EEST] Loading Xresources
+[Сб 26 апр 2025 09:59:01 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 09:59:01 EEST] Applying theme
+[Сб 26 апр 2025 09:59:01 EEST] Setting wallpaper
+[Сб 26 апр 2025 09:59:01 EEST] Starting autotiling
+[Сб 26 апр 2025 09:59:01 EEST] Starting polybar
+[Сб 26 апр 2025 09:59:01 EEST] Starting screen locker
+Failed to set screensaver attributes; is another one running?
+polybar|notice:  Parsing config file: /etc/polybar/config.ini
+polybar|error: Uncaught exception, shutting down: Undefined bar: main. Available bars: example
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 5828192
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 09:59:02.003 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000001 (polybar-secondary_DP-0)
+[ 26.04.2025 09:59:02.003 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00002 (polybar-main_DP-0)
+[ 26.04.2025 09:59:02.003 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (auto-scripts - Thunar)
+[ 26.04.2025 09:59:02.005 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (autostart - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 09:59:02.006 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 09:59:02.007 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 09:59:02.073 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 09:59:02.073 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 09:59:02.073 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 09:59:02.073 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 09:59:02.073 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 09:59:02.073 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 10:08:25 EEST] Setting wallpaper
+[Сб 26 апр 2025 10:08:25 EEST] Starting autotiling
+[Сб 26 апр 2025 10:08:25 EEST] Applying theme
+[Сб 26 апр 2025 10:08:25 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 10:08:25 EEST] Loading Xresources
+[Сб 26 апр 2025 10:08:25 EEST] Starting polybar
+[Сб 26 апр 2025 10:08:25 EEST] Starting screen locker
+Failed to set screensaver attributes; is another one running?
+[ 26.04.2025 10:08:26.055 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000002 (polybar-main_DP-0)
+[ 26.04.2025 10:08:26.055 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00001 (polybar-secondary_DP-0)
+[ 26.04.2025 10:08:26.056 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (i3 - Thunar)
+[ 26.04.2025 10:08:26.057 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (autostart - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 10:08:26.058 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 10:08:26.060 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 10:08:26.061 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 6392422
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 10:08:26.225 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 10:08:26.225 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 10:08:26.225 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 10:08:26.225 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 10:08:26.225 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 10:08:26.225 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 10:08:35 EEST] Setting wallpaper
+[Сб 26 апр 2025 10:08:35 EEST] Loading Xresources
+[Сб 26 апр 2025 10:08:35 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 10:08:35 EEST] Applying theme
+[Сб 26 апр 2025 10:08:35 EEST] Starting polybar
+[Сб 26 апр 2025 10:08:35 EEST] Starting autotiling
+[Сб 26 апр 2025 10:08:35 EEST] Starting screen locker
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+Failed to set screensaver attributes; is another one running?
+Завершено
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0x1200001 on screen 0 with timestamp 6402401
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 10:08:36.179 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 10:08:36.179 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 10:08:36.179 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 10:08:36.179 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 10:08:36.179 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 10:08:36.179 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 10:09:47 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 10:09:47 EEST] Setting wallpaper
+[Сб 26 апр 2025 10:09:47 EEST] Starting polybar
+[Сб 26 апр 2025 10:09:47 EEST] Loading Xresources
+[Сб 26 апр 2025 10:09:47 EEST] Applying theme
+[Сб 26 апр 2025 10:09:47 EEST] Starting autotiling
+[Сб 26 апр 2025 10:09:47 EEST] Starting screen locker
+Failed to set screensaver attributes; is another one running?
+[ 26.04.2025 10:09:48.056 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (config.d - Thunar)
+Завершено
+[ 26.04.2025 10:09:48.057 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (Theme.sh - (Рабочая область) без названия - Code - OSS)
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+[ 26.04.2025 10:09:48.064 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 10:09:48.067 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 10:09:48.071 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+xsettingsd: Created window 0x1200001 on screen 0 with timestamp 6474296
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 10:09:48.213 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 10:09:48.213 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 10:09:48.213 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 10:09:48.213 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 10:09:48.213 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 10:09:48.213 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 10:09:52 EEST] Loading Xresources
+[Сб 26 апр 2025 10:09:52 EEST] Applying theme
+[Сб 26 апр 2025 10:09:52 EEST] Starting autotiling
+[Сб 26 апр 2025 10:09:52 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 10:09:52 EEST] Setting wallpaper
+[Сб 26 апр 2025 10:09:52 EEST] Starting screen locker
+[Сб 26 апр 2025 10:09:52 EEST] Starting polybar
+Failed to set screensaver attributes; is another one running?
+[ 26.04.2025 10:09:52.439 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00001 (polybar-secondary_DP-0)
+Завершено
+[ 26.04.2025 10:09:52.439 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000002 (polybar-main_DP-0)
+[ 26.04.2025 10:09:52.441 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (config.d - Thunar)
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+[ 26.04.2025 10:09:52.443 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (Theme.sh - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 10:09:52.444 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 10:09:52.445 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 10:09:52.446 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+xsettingsd: Created window 0x1200001 on screen 0 with timestamp 6478672
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 10:09:52.508 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 10:09:52.508 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 10:09:52.508 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 10:09:52.508 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 10:09:52.508 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 10:09:52.508 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 10:09:56 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 10:09:56 EEST] Setting wallpaper
+[Сб 26 апр 2025 10:09:56 EEST] Starting polybar
+[Сб 26 апр 2025 10:09:56 EEST] Starting autotiling
+[Сб 26 апр 2025 10:09:56 EEST] Applying theme
+[Сб 26 апр 2025 10:09:56 EEST] Starting screen locker
+[Сб 26 апр 2025 10:09:56 EEST] Loading Xresources
+Failed to set screensaver attributes; is another one running?
+[ 26.04.2025 10:09:56.502 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00002 (polybar-main_DP-0)
+[ 26.04.2025 10:09:56.503 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x00c00001 (polybar-secondary_DP-0)
+[ 26.04.2025 10:09:56.503 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (config.d - Thunar)
+[ 26.04.2025 10:09:56.504 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (Theme.sh - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 10:09:56.505 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 10:09:56.506 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 10:09:56.506 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+Завершено
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 6482799
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 10:09:56.577 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 10:09:56.577 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 10:09:56.577 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 10:09:56.577 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 10:09:56.577 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 10:09:56.577 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 10:10:06 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 10:10:06 EEST] Starting polybar
+[Сб 26 апр 2025 10:10:06 EEST] Loading Xresources
+[Сб 26 апр 2025 10:10:06 EEST] Applying theme
+[Сб 26 апр 2025 10:10:06 EEST] Setting wallpaper
+[Сб 26 апр 2025 10:10:06 EEST] Starting autotiling
+[Сб 26 апр 2025 10:10:06 EEST] Starting screen locker
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+Failed to set screensaver attributes; is another one running?
+Завершено
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 6492778
+[ 26.04.2025 10:10:06.556 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 10:10:06.556 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 10:10:06.556 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 10:10:06.556 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 10:10:06.556 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 10:10:06.556 set_animation ERROR ] Invalid trigger defined at line 351
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 10:10:14 EEST] Setting wallpaper
+[Сб 26 апр 2025 10:10:14 EEST] Loading Xresources
+[Сб 26 апр 2025 10:10:14 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 10:10:14 EEST] Applying theme
+[Сб 26 апр 2025 10:10:14 EEST] Starting polybar
+[Сб 26 апр 2025 10:10:14 EEST] Starting autotiling
+[Сб 26 апр 2025 10:10:14 EEST] Starting screen locker
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+Failed to set screensaver attributes; is another one running?
+Завершено
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+[ 26.04.2025 10:10:14.303 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (config.d - Thunar)
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 6500526
+[ 26.04.2025 10:10:14.304 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (Theme.sh - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 10:10:14.305 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 10:10:14.308 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 10:10:14.310 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+[ 26.04.2025 10:10:14.451 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 10:10:14.452 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 10:10:14.452 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 10:10:14.452 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 10:10:14.452 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 10:10:14.452 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 10:10:26 EEST] Setting wallpaper
+[Сб 26 апр 2025 10:10:26 EEST] Loading Xresources
+[Сб 26 апр 2025 10:10:26 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 10:10:26 EEST] Starting autotiling
+[Сб 26 апр 2025 10:10:26 EEST] Applying theme
+[Сб 26 апр 2025 10:10:26 EEST] Starting polybar
+[Сб 26 апр 2025 10:10:26 EEST] Starting screen locker
+Failed to set screensaver attributes; is another one running?
+[ 26.04.2025 10:10:26.782 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00002 (polybar-main_DP-0)
+[ 26.04.2025 10:10:26.782 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000001 (polybar-secondary_DP-0)
+[ 26.04.2025 10:10:26.784 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (config.d - Thunar)
+[ 26.04.2025 10:10:26.785 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (Theme.sh - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 10:10:26.791 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 10:10:26.793 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 10:10:26.795 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+Завершено
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 6513153
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 10:10:26.934 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 10:10:26.935 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 10:10:26.935 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 10:10:26.935 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 10:10:26.935 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 10:10:26.935 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 10:10:30 EEST] Setting wallpaper
+[Сб 26 апр 2025 10:10:30 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 10:10:30 EEST] Loading Xresources
+[Сб 26 апр 2025 10:10:30 EEST] Starting polybar
+[Сб 26 апр 2025 10:10:30 EEST] Applying theme
+[Сб 26 апр 2025 10:10:30 EEST] Starting screen locker
+[Сб 26 апр 2025 10:10:30 EEST] Starting autotiling
+Failed to set screensaver attributes; is another one running?
+polybar|notice:  Parsing config file: /etc/polybar/config.ini
+polybar|error: Uncaught exception, shutting down: Undefined bar: main. Available bars: example
+[ 26.04.2025 10:10:30.496 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00001 (polybar-secondary_DP-0)
+[ 26.04.2025 10:10:30.496 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01a00002 (polybar-main_DP-0)
+[ 26.04.2025 10:10:30.496 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (config.d - Thunar)
+[ 26.04.2025 10:10:30.497 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 10:10:30.498 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 10:10:30.498 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+Завершено
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 6516742
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 10:10:30.571 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 10:10:30.571 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 10:10:30.571 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 10:10:30.571 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 10:10:30.571 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 10:10:30.571 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 10:13:04 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 10:13:04 EEST] Setting wallpaper
+[Сб 26 апр 2025 10:13:04 EEST] Starting polybar
+[Сб 26 апр 2025 10:13:04 EEST] Loading Xresources
+[Сб 26 апр 2025 10:13:04 EEST] Applying theme
+[Сб 26 апр 2025 10:13:04 EEST] Starting autotiling
+[Сб 26 апр 2025 10:13:04 EEST] Starting screen locker
+Failed to set screensaver attributes; is another one running?
+Завершено
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0xc00001 on screen 0 with timestamp 6670847
+[ 26.04.2025 10:13:04.624 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 10:13:04.624 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 10:13:04.625 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 10:13:04.625 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 10:13:04.625 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 10:13:04.625 set_animation ERROR ] Invalid trigger defined at line 351
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+WARNING: Icon 'music' not found in themes
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 10:13:08 EEST] Setting wallpaper
+[Сб 26 апр 2025 10:13:08 EEST] Loading Xresources
+[Сб 26 апр 2025 10:13:08 EEST] Starting autotiling
+[Сб 26 апр 2025 10:13:08 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 10:13:08 EEST] Starting screen locker
+[Сб 26 апр 2025 10:13:08 EEST] Applying theme
+[Сб 26 апр 2025 10:13:08 EEST] Starting polybar
+Failed to set screensaver attributes; is another one running?
+[ 26.04.2025 10:13:09.035 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x00200070 (polybar-secondary_DP-0)
+[ 26.04.2025 10:13:09.036 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000001 (polybar-secondary_DP-0)
+[ 26.04.2025 10:13:09.036 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01a00002 (polybar-main_DP-0)
+[ 26.04.2025 10:13:09.037 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (config.d - Thunar)
+[ 26.04.2025 10:13:09.038 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 10:13:09.039 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 10:13:09.040 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+Завершено
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0x1200001 on screen 0 with timestamp 6675357
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 10:13:09.135 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 10:13:09.135 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 10:13:09.136 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 10:13:09.136 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 10:13:09.136 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 10:13:09.136 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 10:13:14 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 10:13:14 EEST] Loading Xresources
+[Сб 26 апр 2025 10:13:14 EEST] Starting polybar
+[Сб 26 апр 2025 10:13:14 EEST] Applying theme
+[Сб 26 апр 2025 10:13:14 EEST] Starting autotiling
+[Сб 26 апр 2025 10:13:14 EEST] Setting wallpaper
+[Сб 26 апр 2025 10:13:14 EEST] Starting screen locker
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+Failed to set screensaver attributes; is another one running?
+[ 26.04.2025 10:13:14.421 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01a00001 (polybar-secondary_DP-0)
+[ 26.04.2025 10:13:14.421 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02000002 (polybar-main_DP-0)
+[ 26.04.2025 10:13:14.422 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (config.d - Thunar)
+Завершено
+[ 26.04.2025 10:13:14.423 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (modules.ini - (Рабочая область) без названия - Code - OSS)
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+[ 26.04.2025 10:13:14.428 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+[ 26.04.2025 10:13:14.429 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04200003 (vir0id@viros ~)
+[ 26.04.2025 10:13:14.432 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02400003 (vir0id@viros ~)
+xsettingsd: Created window 0x1200001 on screen 0 with timestamp 6680660
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 10:13:14.566 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 10:13:14.566 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 10:13:14.566 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 10:13:14.566 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 10:13:14.566 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 10:13:14.566 set_animation ERROR ] Invalid trigger defined at line 351
+WARNING: Icon 'music' not found in themes
+Event.WINDOW subscribed
+Event.MODE subscribed
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1119': errno 2 (No such file or directory))
+[Сб 26 апр 2025 10:13:21 EEST] Loading Xresources
+[Сб 26 апр 2025 10:13:21 EEST] Setting wallpaper
+[Сб 26 апр 2025 10:13:21 EEST] Applying theme
+[Сб 26 апр 2025 10:13:21 EEST] Starting autotiling
+[Сб 26 апр 2025 10:13:21 EEST] Waiting for i3 socket
+[Сб 26 апр 2025 10:13:21 EEST] Starting screen locker
+[Сб 26 апр 2025 10:13:21 EEST] Starting polybar
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+Failed to set screensaver attributes; is another one running?
+[ 26.04.2025 10:13:21.583 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x04000007 (config.d - Thunar)
+[ 26.04.2025 10:13:21.586 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x03000004 (modules.ini - (Рабочая область) без названия - Code - OSS)
+[ 26.04.2025 10:13:21.587 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x02e0002d (DeepSeek - Into the Unknown — Mozilla Firefox)
+Завершено
+xsettingsd: Loaded 3 settings from /home/vir0id/.xsettingsd
+xsettingsd: Created window 0x1200001 on screen 0 with timestamp 6687945
+xsettingsd: Selection _XSETTINGS_S0 is owned by 0x0
+xsettingsd: Took ownership of selection _XSETTINGS_S0
+[ 26.04.2025 10:13:21.724 set_animation ERROR ] Invalid trigger defined at line 77
+[ 26.04.2025 10:13:21.724 set_animation ERROR ] Invalid trigger defined at line 86
+[ 26.04.2025 10:13:21.724 set_animation ERROR ] Invalid trigger defined at line 202
+[ 26.04.2025 10:13:21.724 set_animation ERROR ] Invalid trigger defined at line 211
+[ 26.04.2025 10:13:21.724 set_animation ERROR ] Invalid trigger defined at line 304
+[ 26.04.2025 10:13:21.724 set_animation ERROR ] Invalid trigger defined at line 351
 WARNING: Icon 'music' not found in themes

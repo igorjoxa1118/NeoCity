@@ -76,13 +76,28 @@ rofi_powermenu() {
     local powermenu_file="$HOME/.config/i3/src/powermenu/type-4/style-5.rasi"
 
     if [ -f "$powermenu_file" ]; then
+        echo '' > "$powermenu_file"
         sed -i '/\/\*\*\*\*----- Global Properties -----\*\*\*\*\//,/}/d' "$powermenu_file"
         check_error "Не удалось удалить старый блок кода в $powermenu_file"
 
         cat << 'EOF' >> "$powermenu_file"
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Rofi Theme File
+ * Rofi Version: 1.7.3
+ **/
+
+/*****----- Configuration -----*****/
+configuration {
+    show-icons:                 false;
+}
+
 /*****----- Global Properties -----*****/
 * {
-        /* Resolution : 1920x1080 */
+    /* Resolution : 1920x1080 */
     mainbox-spacing:             52px;
     mainbox-margin:              0px 470px;
     message-margin:              0px 350px;
@@ -97,7 +112,7 @@ rofi_powermenu() {
     element-text-font:           "feather Bold 48";
 
     /* Gradients */
-    gradient-1:                  linear-gradient(45, #89b4fa, #a6da95);
+    gradient-1:                  linear-gradient(45, #89b4fa, #a6e3a1);
     gradient-2:                  linear-gradient(0, #eba0ac, #7A72EC);
     gradient-3:                  linear-gradient(70, #f9e2af, #eba0ac);
     gradient-4:                  linear-gradient(135, #74c7ec, #89b4fa);
@@ -106,26 +121,130 @@ rofi_powermenu() {
     gradient-7:                  linear-gradient(to top, #74c7ec, #cba6f7, #eba0ac);
     gradient-8:                  linear-gradient(to bottom, #f38ba8, #493240);
     gradient-9:                  linear-gradient(0, #1a2a6c, #eba0ac, #f9e2af);
-    gradient-10:                 linear-gradient(0, #283c86, #a6da95);
+    gradient-10:                 linear-gradient(0, #283c86, #a6e3a1);
     gradient-11:                 linear-gradient(0, #89b4fa, #79CBCA, #E684AE);
     gradient-12:                 linear-gradient(0, #ff6e7f, #bfe9ff);
     gradient-13:                 linear-gradient(0, #f38ba8, #eba0ac);
     gradient-14:                 linear-gradient(0, #cba6f7, #cba6f7);
-    gradient-15:                 linear-gradient(0, #a6da95, #a6da95);
+    gradient-15:                 linear-gradient(0, #a6e3a1, #a6e3a1);
     gradient-16:                 linear-gradient(0, #232526, #414345);
     gradient-17:                 linear-gradient(0, #833ab4, #eba0ac, #f9e2af);
     gradient-18:                 linear-gradient(0, #89b4fa, #74c7ec, #74c7ec, #89b4fa);
     gradient-19:                 linear-gradient(0, #03001e, #cba6f7, #ec38bc, #fdeff9);
     gradient-20:                 linear-gradient(0, #eba0ac, #061161);
     
-    green:        #a6da95;
-    bords:        #cba6f7;
+    green:        #a6e3a1;
     
     background-window:           var(gradient-6);
     background-normal:           #1e1e2e;
     background-selected:         #89b4fa;
     foreground-normal:           #cdd6f4;
     foreground-selected:         #1e1e2e;
+}
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  true;
+    cursor:                      "default";
+    background-image:            var(background-window);
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     var(mainbox-spacing);
+    margin:                      var(mainbox-margin);
+    background-color:            transparent;
+    children:                    [ "dummy", "userimage", "inputbar", "listview", "message", "dummy" ];
+}
+
+/*****----- User -----*****/
+userimage {
+    margin:                      0px 400px;
+    border:                      2px;
+    border-radius:               100%;
+    border-color:              #eba0ac;
+    background-color:            transparent;
+    background-image:            url("~/.config/i3/src/powermenu/img/user/vir0id.jpg", both);
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    background-color:            transparent;
+    children:                    [ "dummy", "prompt", "dummy"];
+}
+
+dummy {
+    background-color:            transparent;
+}
+
+prompt {
+    enabled:                     true;
+    font:                        var(prompt-font);
+    background-color:            transparent;
+    text-color:                  var(foreground-normal);
+}
+
+/*****----- Message -----*****/
+message {
+    enabled:                     true;
+    margin:                      var(message-margin);
+    padding:                     var(message-padding);
+    border-radius:               var(message-border-radius);
+    background-color:            var(background-normal);
+    text-color:                  var(green);
+}
+textbox {
+    font:                        var(textbox-font);
+    background-color:            transparent;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    expand:                      false;
+    columns:                     5;
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     var(listview-spacing);
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    padding:                     var(element-padding);
+    border-radius:               var(element-border-radius);
+    background-color:            var(background-normal);
+    text-color:                  var(foreground-normal);
+    cursor:                      pointer;
+}
+element-text {
+    font:                        var(element-text-font);
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+element selected.normal {
+    background-color:            var(background-selected);
+    text-color:                  var(foreground-selected);
 }
 EOF
         check_error "Не удалось добавить новый блок кода в $powermenu_file"
@@ -162,55 +281,58 @@ set_gtk_theme_icons_cursor() {
     local gtk2_config="$HOME/.gtkrc-2.0"
     local gtk3_config="$HOME/.config/gtk-3.0/settings.ini"
     local gtk4_config="$HOME/.config/gtk-4.0/settings.ini"
-    local gtk_settings_file="$HOME/.config/gtk-4.0/settings.ini"
     local default_cursor_file="$HOME/.icons/default/index.theme"
 
-    # Настройка .xsettingsd
-    cat <<EOF > "$xsettings_conf"
-Net/ThemeName "$RICETHEME"
-Net/IconThemeName "TokyoNight-SE"
-Gtk/CursorThemeName "catppuccin-mocha-blue-cursors"
-EOF
-    check_error "Не удалось создать файл конфигурации xsettingsd"
+    # Определяем иконки и курсоры в зависимости от темы
+    case "$RICETHEME" in
+        "catppuccin-mocha")
+            ICON_THEME="TokyoNight-SE"
+            CURSOR_THEME="catppuccin-mocha-blue-cursors"
+            ;;
+        "catppuccin-latte")
+            ICON_THEME="Magna-Dark-Icons"
+            CURSOR_THEME="catppuccin-mocha-maroon-cursors"
+            ;;
+        "catppuccin-frappe")
+            ICON_THEME="Catppuccin-Frappe"
+            CURSOR_THEME="catppuccin-mocha-mauve-cursors"
+            ;;
+        "catppuccin-macchiato")
+            ICON_THEME="Catppuccin-Macchiato"
+            CURSOR_THEME="catppuccin-mocha-peach-cursors"
+            ;;
+        *)
+            ICON_THEME="Adwaita"
+            CURSOR_THEME="Adwaita"
+            ;;
+    esac
 
-    # Перезапуск xsettingsd
-    if pgrep -x "xsettingsd" > /dev/null; then
-        killall xsettingsd
-        check_error "Не удалось завершить процесс xsettingsd"
-    fi
-    xsettingsd &
-    check_error "Не удалось запустить xsettingsd"
+    # Применяем настройки через xsettingsd
+    echo -e "Net/ThemeName \"$RICETHEME\"
+Net/IconThemeName \"$ICON_THEME\"
+Gtk/CursorThemeName \"$CURSOR_THEME\"" > "$xsettings_conf"
 
-    # Настройка иконок для GTK 2, 3 и 4
+    # Обновляем GTK конфиги
     for config in "$gtk2_config" "$gtk3_config" "$gtk4_config"; do
-        if [ -f "$config" ]; then
-            sed -i "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=TokyoNight-SE/g" "$config"
-            check_error "Не удалось изменить иконки в $config"
-        else
-            log "Файл $config не найден!"
-        fi
+        [ -f "$config" ] && sed -i \
+            -e "s/gtk-theme-name=.*/gtk-theme-name=\"$RICETHEME\"/g" \
+            -e "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=\"$ICON_THEME\"/g" \
+            -e "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=\"$CURSOR_THEME\"/g" \
+            "$config"
     done
 
-    # Настройка курсоров для GTK 2, 3 и 4
-    for config in "$gtk2_config" "$gtk3_config" "$gtk4_config"; do
-        if [ -f "$config" ]; then
-            sed -i "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=catppuccin-mocha-blue-cursors/g" "$config"
-            sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-blue-cursors/g" "$default_cursor_file"
-            check_error "Не удалось изменить курсоры в $config"
-        else
-            log "Файл $config не найден!"
-        fi
-    done
+    # Обновляем курсор по умолчанию
+    [ -f "$default_cursor_file" ] && sed -i "s/Inherits=.*/Inherits=$CURSOR_THEME/" "$default_cursor_file"
 
-    # Настройка GTK 4 темы с учетом пробелов вокруг =
-    if [[ -f "$gtk_settings_file" ]]; then
-        sed -i "s/^gtk-theme-name\s*=\s*.*/gtk-theme-name = $RICETHEME/" "$gtk_settings_file"
-        sed -i "s/^gtk-icon-theme-name\s*=\s*.*/gtk-icon-theme-name = TokyoNight-SE/" "$gtk_settings_file"
-        sed -i "s/^gtk-cursor-theme-name\s*=\s*.*/gtk-cursor-theme-name = catppuccin-mocha-blue-cursors/" "$gtk_settings_file"
-        check_error "Не удалось обновить настройки GTK 4"
-    else
-        log "Файл $gtk_settings_file не найден!"
+    # Применяем через gsettings (если доступен)
+    if command -v gsettings >/dev/null; then
+        gsettings set org.gnome.desktop.interface gtk-theme "$RICETHEME"
+        gsettings set org.gnome.desktop.interface icon-theme "$ICON_THEME"
+        gsettings set org.gnome.desktop.interface cursor-theme "$CURSOR_THEME"
     fi
+
+    # Перезапускаем xsettingsd
+    pkill -x xsettingsd && xsettingsd &
 }
 
 # Вызов объединенной функции

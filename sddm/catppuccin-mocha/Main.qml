@@ -91,7 +91,7 @@ Pane {
             anchors.centerIn: form
             color: root.palette.window
             visible: config.HaveFormBackground == "true" ? true : false
-            opacity: config.PartialBlur == "true" ? 0.3 : 1
+            opacity: config.PartialBlur == "true" ? 0.85 : 1
             z: 1
         }
 

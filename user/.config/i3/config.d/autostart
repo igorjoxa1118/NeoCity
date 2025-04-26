@@ -15,6 +15,9 @@ exec --no-startup-id sh -c '$i3_auto_scriptsd/03_setsysvars.sh'
 exec --no-startup-id sh -c '$i3_auto_scriptsd/04_setuser.sh'
 exec --no-startup-id sh -c '$i3_auto_scriptsd/05_themeapply.sh'
 
+### --- Настройки окружения ---
+exec --no-startup-id sh -c '$i3_auto_scriptsd/12_xsettingsd.sh'
+
 ### --- Композитный менеджер (с исправленным путем к конфигу) ---
 exec --no-startup-id sh -c '$i3_auto_scriptsd/06_picom.sh'
 
@@ -27,8 +30,6 @@ exec --no-startup-id sh -c '$i3_auto_scriptsd/09_udiskie.sh'
 exec --no-startup-id sh -c '$i3_auto_scriptsd/10_keyring.sh'
 exec --no-startup-id sh -c '$i3_auto_scriptsd/11_polkit.sh'
 
-### --- Настройки окружения ---
-exec --no-startup-id sh -c '$i3_auto_scriptsd/12_xsettingsd.sh'
 
 ### --- Polybar с улучшенным ожиданием IPC ---
 exec_always --no-startup-id sh -c '$i3_auto_scriptsd/13_polybar.sh'
@@ -44,3 +45,4 @@ exec_always --no-startup-id sh -c '$i3_auto_scriptsd/18_screenlocker.sh'
 
 ### --- Аудио (с исправлением для libadwaita) ---
 exec --no-startup-id sh -c '$i3_auto_scriptsd/19_audio.sh'
+
