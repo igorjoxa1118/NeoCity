@@ -191,12 +191,21 @@ apply_gtk_theme() {
             sleep 0.5
             thunar &
         fi
+
+        # Принудительное обновление Thunar
+    if pgrep -x "thunar" >/dev/null; then
+        xdotool search --class "Thunar" | while read -r window; do
+            xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT "$theme" -id "$window"
+            xdotool key --window "$window" F5
+        done
+    fi
     }
 
     # 4. Обновление кэша иконок
     gtk-update-icon-cache -f ~/.local/share/icons/* 2>/dev/null || true
     gtk-update-icon-cache -f /usr/share/icons/* 2>/dev/null || true
-
+    gtk-update-icon-cache -f ~/.icons/* 
+    
     # 5. Применяем изменения
     update_thunar
 
