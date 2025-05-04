@@ -1,2 +1,0 @@
-exec --no-startup-id numlockx off
-exec --no-startup-id setxkbmap -model dell -layout us,ru -option 'grp:alt_shift_toggle,grp_led:scroll'

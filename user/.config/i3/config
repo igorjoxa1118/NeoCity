@@ -1,63 +1,8 @@
-#  ██    ██  █████  ██████  ███████  #
-#  ██    ██ ██   ██ ██   ██ ██       #
-#  ██    ██ ███████ ██████  ███████  #
-#   ██  ██  ██   ██ ██   ██      ██  #
-#    ████   ██   ██ ██   ██ ███████  #
-                                 
-### --- Переменные.
-set $mod Mod4
-set $mod1 Mod1
-set $confd ~/.config/
-set $i3_scripts ~/.config/i3/src
-set $i3_configd ~/.config/i3/config.d
-set $i3_auto_scriptsd ~/.config/i3/config.d/auto-scripts
-set $bins ~/.bin
-set $local ~/.local/bin
-set $default_gaps_inner 15
-set $default_gaps_outer 15
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $ws-right "$(( $( i3-msg -t get_workspaces | jq '.[] | select(.focused).num' ) + 1))";
-set $ws-left "$(( $( i3-msg -t get_workspaces | jq '.[] | select(.focused).num' ) - 1))";
-### --- Определение имен, для рабочих пространств по умолчанию,
-### --- для которых будут существуют привязки клавиш в файле "$HOME/.config/i3/config.d/keybinds" и правила в "$HOME/.config/i3/config.d/rules".
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
-set $ws9 9
-set $ws10 0
-### ---------------------------------------------------------END------------------------------------------------------------- ###
-
 #  ██ ███    ██  ██████ ██      ██    ██ ███████ ███████ ███████  #
 #  ██ ████   ██ ██      ██      ██    ██ ██      ██      ██       #
 #  ██ ██ ██  ██ ██      ██      ██    ██ ███████ █████   ███████  #
 #  ██ ██  ██ ██ ██      ██      ██    ██      ██ ██           ██  #
 #  ██ ██   ████  ██████ ███████  ██████  ███████ ███████ ███████  #
                                                               
-### --- Подключение отдельных файлов конфигураций i3.
-include $i3_configd/autostart
-include $i3_configd/colors
-include $i3_configd/fonts
-include $i3_configd/keybinds
-include $i3_configd/rules
-include $i3_configd/gaps
-include $i3_configd/keyboard
-include $i3_configd/monitor
-
-### ---------------------------------------------------------END------------------------------------------------------------- ###
-
-#   ██████  ██████  ███    ██ ███████ ██  ██████  ███████  #
-#  ██      ██    ██ ████   ██ ██      ██ ██       ██       #
-#  ██      ██    ██ ██ ██  ██ █████   ██ ██   ███ ███████  #
-#  ██      ██    ██ ██  ██ ██ ██      ██ ██    ██      ██  #
-#   ██████  ██████  ██   ████ ██      ██  ██████  ███████  #
-                                                       
-default_floating_border none
-
-### ---------------------------------------------------------END------------------------------------------------------------- ###
+### --- Подключение конфигурационных файлов.
+include ~/.config/i3/config.d/sets.conf
