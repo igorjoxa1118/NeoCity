@@ -1,0 +1,14 @@
+[Unit]
+Description=Automatic wallpaper changer for vir0id
+
+[Service]
+Type=simple
+ExecStart=/home/vir0id/.config/i3/src/set_first_start_wallpaper.sh
+Environment="DISPLAY=:0"
+Environment="DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus"
+StandardOutput=file:/tmp/wallpaper-changer.log
+StandardError=inherit
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

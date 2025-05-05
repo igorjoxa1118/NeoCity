@@ -1,0 +1,10 @@
+[Unit]
+Description=Run wallpaper changer every minute for vir0id
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=5min
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target

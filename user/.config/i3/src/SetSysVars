@@ -2,59 +2,46 @@
 
 CONFIG_FILE="$HOME/.config/i3/config.d/system.ini"
 SFILE="$HOME/.config/i3/config.d/.sys"
-STATUS=0  # Переменная для отслеживания статуса выполнения скрипта
+STATUS=0
 
-# Проверка наличия необходимых утилит
-command -v ip >/dev/null 2>&1 || { echo >&2 "Утилита 'ip' не установлена. Установите её и повторите попытку."; STATUS=1; }
-command -v xrandr >/dev/null 2>&1 || { echo >&2 "Утилита 'xrandr' не установлена. Установите её и повторите попытку."; STATUS=1; }
-command -v sed >/dev/null 2>&1 || { echo >&2 "Утилита 'sed' не установлена. Установите её и повторите попытку."; STATUS=1; }
+# Проверка утилит
+command -v ip >/dev/null || { echo "Утилита 'ip' не установлена."; STATUS=1; }
+command -v xrandr >/dev/null || { echo "Утилита 'xrandr' не установлена."; STATUS=1; }
+command -v sed >/dev/null || { echo "Утилита 'sed' не установлена."; STATUS=1; }
 
-# Проверка существования файла конфигурации
-if [[ ! -f "$CONFIG_FILE" ]]; then
-    echo >&2 "Файл конфигурации $CONFIG_FILE не найден."
-    STATUS=1
-fi
+[[ ! -f "$CONFIG_FILE" ]] && { echo "Файл $CONFIG_FILE не найден."; STATUS=1; }
+[[ -f "$SFILE" ]] && { echo "Скрипт уже выполнен."; exit 0; }
 
-# Проверка, был ли уже выполнен скрипт
-if [[ -f "$SFILE" ]]; then
-    echo "Скрипт уже был выполнен ранее."
-    exit 0
-fi
-
-# Функция для получения и установки значений
-function setup_system_vars() {
-    # Сетевые интерфейсы (основной и дополнительный)
+setup_system_vars() {
+    # Сеть
     PRIMARY_NET=$(ip -o route get 1 2>/dev/null | awk '{print $5; exit}')
-    SECONDARY_NET=$(ip -o link show 2>/dev/null | sed -rn '/^[0-9]+: en/{s/.: ([^:]*):.*/\1/p}')
+    SECONDARY_NET=$(ip -o link show | awk -F': ' '{print $2}' | grep -E 'en|wlan|eth' | head -n1)
+    
+    [[ -n "$PRIMARY_NET" ]] && sed -i "s/sys_wireless_interface = .*/sys_wireless_interface = $PRIMARY_NET/" "$CONFIG_FILE"
+    [[ -n "$SECONDARY_NET" ]] && sed -i "s/sys_network_interface = .*/sys_network_interface = $SECONDARY_NET/" "$CONFIG_FILE"
 
-    [[ -n "$PRIMARY_NET" ]] && sed -i "s/sys_wireless_interface = .*/sys_wireless_interface = $PRIMARY_NET/" "$CONFIG_FILE" || STATUS=1
-    [[ -n "$SECONDARY_NET" ]] && sed -i "s/sys_network_interface = .*/sys_network_interface = $SECONDARY_NET/" "$CONFIG_FILE" || STATUS=1
+    # Подсветка
+    CARD=$(ls /sys/class/backlight/ 2>/dev/null | head -n1)
+    [[ -n "$CARD" ]] && sed -i "s/sys_graphics_card = .*/sys_graphics_card = $CARD/" "$CONFIG_FILE"
 
-    # Графическая карта (подсветка)
-    CARD=$(find /sys/class/backlight -maxdepth 1 -type l 2>/dev/null | head -n1 | xargs basename)
-    [[ -n "$CARD" ]] && sed -i "s/sys_graphics_card = .*/sys_graphics_card = $CARD/" "$CONFIG_FILE" || STATUS=1
+    # Питание
+    BATTERY=$(ls /sys/class/power_supply/ 2>/dev/null | grep -i bat | head -n1)
+    ADAPTER=$(ls /sys/class/power_supply/ 2>/dev/null | grep -i 'ac\|adp' | head -n1)
+    [[ -n "$BATTERY" ]] && sed -i "s/sys_battery = .*/sys_battery = $BATTERY/" "$CONFIG_FILE"
+    [[ -n "$ADAPTER" ]] && sed -i "s/sys_adapter = .*/sys_adapter = $ADAPTER/" "$CONFIG_FILE"
 
-    # Батарея и адаптер
-    BATTERY=$(find /sys/class/power_supply -maxdepth 1 -type l -name "BAT*" 2>/dev/null | head -n1 | xargs basename)
-    ADAPTER=$(find /sys/class/power_supply -maxdepth 1 -type l -name "A[CD]*" 2>/dev/null | head -n1 | xargs basename)
-
-    [[ -n "$BATTERY" ]] && sed -i "s/sys_battery = .*/sys_battery = $BATTERY/" "$CONFIG_FILE" || STATUS=1
-    [[ -n "$ADAPTER" ]] && sed -i "s/sys_adapter = .*/sys_adapter = $ADAPTER/" "$CONFIG_FILE" || STATUS=1
-
-    # Подключенные мониторы
-    CONNECTED_MONITORS=$(xrandr 2>/dev/null | grep " connected " | awk '{ print $1 }')
-    [[ -n "$CONNECTED_MONITORS" ]] && sed -i "s/sys_monitor = .*/sys_monitor = $CONNECTED_MONITORS/" "$CONFIG_FILE" || STATUS=1
+    # Мониторы
+    CONNECTED_MONITORS=$(xrandr --listmonitors 2>/dev/null | awk 'NR>1 {print $NF}')
+    [[ -n "$CONNECTED_MONITORS" ]] && sed -i "s/sys_monitor = .*/sys_monitor = $CONNECTED_MONITORS/" "$CONFIG_FILE"
 }
 
-# Выполнение конфигурации
 setup_system_vars
 
-# Создание файла .sys для указания, что конфигурация выполнена
 if [[ "$STATUS" -eq 0 ]]; then
     touch "$SFILE"
-    notify-send "SetSysVars.sh" "Системные переменные успешно настроены."
+    notify-send "SetSysVars" "Системные переменные успешно настроены."
 else
-    notify-send "SetSysVars.sh" "Ошибка: скрипт не выполнился корректно."
+    notify-send "SetSysVars" "Ошибка: скрипт не выполнился корректно."
 fi
 
 exit "$STATUS"
