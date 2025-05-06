@@ -123,7 +123,7 @@ install_aur_packages() {
 # Backup user files
 backup_files() {
     echo -e "${CYAN}Backing up files to $backup_folder${ENDCOLOR}"
-    rsync -aAEHSXxr --delete --exclude=".cache/mozilla/*" ~/.[^.]* "$backup_folder" || {
+    rsync -aAEHSXxr --delete --exclude=".cache/*" --exclude=".thumbnails/*" --exclude=".local/share/Trash/*" ~/.[^.]* "$backup_folder" || {
         echo -e "${RED}Backup failed!${ENDCOLOR}"
         log_error "Backup failed"
         exit 1
@@ -153,6 +153,7 @@ install_dotfiles() {
             echo -e "${RED}Failed to download additional packages${ENDCOLOR}"
             log_error "Failed to download additional packages"
         }
+        sudo pacman -U "$current_dir"/pkgs_virOS/*.zst --noconfirm >/dev/null 2> >(tee -a "$ERROR_LOG")
     fi
     
     # Copy binary files
@@ -279,43 +280,52 @@ configure_services() {
 
 # Setup wallpaper changer service
 setup_wallpaper_changer() {
-    local SERVICE_FILES=("wallpaper-changer.service" "wallpaper-changer.timer")
-    local TARGET_DIR="$HOME/.config/systemd/user"
+    local service_files=("wallpaper-changer.service" "wallpaper-changer.timer")
+    local target_dir="$HOME/.config/systemd/user"
+    local current_user=$(whoami)  # Получаем текущего пользователя
 
-    mkdir -p "$TARGET_DIR" || {
-        echo -e "${RED}Failed to create $TARGET_DIR!${ENDCOLOR}"
-        log_error "Failed to create directory: $TARGET_DIR"
-        exit 1
-    }
-
-    for file in "${SERVICE_FILES[@]}"; do
-        if [[ -f "$current_dir/systemd/user/$file" ]]; then
-            cp -v "$current_dir/systemd/user/$file" "$TARGET_DIR/" || {
-                echo -e "${RED}Failed to copy $file to $TARGET_DIR!${ENDCOLOR}"
-                log_error "Failed to copy: $file"
-                exit 1
-            }
-            chmod 644 "$TARGET_DIR/$file"
-        else
-            echo -e "${RED}Error: $current_dir/systemd/user/$file not found!${ENDCOLOR}"
-            log_error "Source file not found: $file"
-            exit 1
+    # Проверяем наличие исходных файлов
+    for file in "${service_files[@]}"; do
+        if [ ! -f "$current_dir/systemd/user/$file" ]; then
+            echo -e "${RED}Missing service file: $file${ENDCOLOR}"
+            log_error "Missing service file: $file"
+            return 1
         fi
     done
 
-    systemctl --user daemon-reload || {
-        echo -e "${RED}Failed to reload systemd user daemon.${ENDCOLOR}"
-        log_error "Failed to reload systemd user daemon"
-        exit 1
+    # Создаем директорию, если её нет
+    mkdir -p "$target_dir" || {
+        echo -e "${RED}Failed to create $target_dir!${ENDCOLOR}"
+        log_error "Failed to create: $target_dir"
+        return 1
     }
 
-    systemctl --user enable --now wallpaper-changer.timer || {
-        echo -e "${RED}Failed to enable wallpaper-changer.timer.${ENDCOLOR}"
-        log_error "Failed to enable wallpaper-changer.timer"
-        exit 1
+    # Копируем и заменяем пользователя в .service файле
+    for file in "${service_files[@]}"; do
+        if [ "$file" == "wallpaper-changer.service" ]; then
+            # Заменяем vir0id на текущего пользователя
+            sed "s|/home/vir0id|/home/$current_user|g" \
+                "$current_dir/systemd/user/$file" > "$target_dir/$file"
+            echo -e "${GREEN}Updated $file with user $current_user${ENDCOLOR}"
+        else
+            cp -v "$current_dir/systemd/user/$file" "$target_dir/" 2>> "$ERROR_LOG" || {
+                echo -e "${RED}Failed to copy $file!${ENDCOLOR}"
+                log_error "Failed to copy: $file"
+                return 1
+            }
+        fi
+        chmod 644 "$target_dir/$file"
+    done
+
+    # Перезагружаем демон и включаем сервис
+    systemctl --user daemon-reload 2>> "$ERROR_LOG" || {
+        echo -e "${RED}Failed to reload user daemon!${ENDCOLOR}"
+        log_error "Failed to reload user daemon"
+        return 1
     }
-    
-    echo -e "${GREEN}Wallpaper changer service configured!${ENDCOLOR}"
+
+    enable_service "wallpaper-changer.timer" "user" || return 1
+    echo -e "${GREEN}Wallpaper service installed!${ENDCOLOR}"
 }
 
 # Change shell to zsh if not already
