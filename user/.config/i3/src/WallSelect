@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Общие настройки
-LOCK_FILE="$HOME/.wallpaper_change.lock"
+LOCK_FILE="$HOME/.config/i3/config.d/.wallpaper_change.lock"
 THEME_MODE_FILE="/tmp/.wallpaper_theme_mode"  # Временный файл в /tmp
 I3_DIR="$HOME/.config/i3"
 CURRENT_RICE=$(< "$I3_DIR/config.d/.rice")
@@ -20,9 +20,9 @@ create_thumbnail() {
     local folder="$1" thumb="$2"
     first_img=$(find "$folder" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | head -n1)
     if [ -n "$first_img" ]; then
-        convert -strip "$first_img" -thumbnail 100x100^ -gravity center -extent 100x100 "$thumb"
+        magick -strip "$first_img" -thumbnail 100x100^ -gravity center -extent 100x100 "$thumb"
     else
-        convert -size 100x100 xc:gray "$thumb"
+        magick -size 100x100 xc:gray "$thumb"
         echo "Нет обоев в директории $folder" >&2
     fi
 }
@@ -69,7 +69,7 @@ fi
 find "$wall_dir" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | while read -r img; do
     cached="$CACHE_DIR/$(basename "$img")"
     if [ ! -f "$cached" ]; then
-        convert -strip "$img" -thumbnail 500x500^ -gravity center -extent 500x500 "$cached"
+        magick -strip "$img" -thumbnail 500x500^ -gravity center -extent 500x500 "$cached"
     fi
 done
 
@@ -84,7 +84,7 @@ if [ -n "$wall_selection" ]; then
     
     # Создание и показ превью
     temp_preview="/tmp/wall_preview.png"
-    convert "$wall_dir/$wall_selection" -resize 200x200^ -gravity center -extent 200x200 "$temp_preview"
+    magick "$wall_dir/$wall_selection" -resize 200x200^ -gravity center -extent 200x200 "$temp_preview"
     dunstify "🎨 Обои изменены" "$wall_selection" -i "$temp_preview" -u normal
     rm -f "$temp_preview"
 fi

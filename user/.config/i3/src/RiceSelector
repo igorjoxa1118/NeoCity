@@ -12,6 +12,21 @@ monitor_scale=$(xdpyinfo | awk '/resolution/{print $2}' | cut -d 'x' -f1)
 monitor_res=$(( monitor_res * 17 / monitor_scale ))
 rofi_override="element-icon{size:${monitor_res}px;}"
 
+# Функция для показа уведомлений
+show_notification() {
+    local title="$1"
+    local message="$2"
+    local icon="$3"
+    local timeout=3000  # 3 секунды
+
+    dunstify -a "RiceSelector" \
+             -u normal \
+             -i "$icon" \
+             -t "$timeout" \
+             -h "string:x-dunst-stack-tag:riceselector" \
+             "$title" "$message"
+}
+
 # Function to check for required commands
 check_requirements() {
     for cmd in xdpyinfo rofi feh i3-msg; do
@@ -104,10 +119,8 @@ update_rice() {
     local selected="$1"
     echo "$selected" > "$RICETHEME"
 
-    # Определяем текущее время
+    # Определяем время для выбора светлой/тёмной версии обоев
     current_hour=$(date +%H)
-
-    # Выбираем папку с обоями
     if [[ $current_hour -ge 6 && $current_hour -lt 18 ]]; then
         wall_dir="light"
     else
@@ -128,12 +141,23 @@ update_rice() {
     # Обновляем тему VSCode
     update_vscode_theme "$selected"
 
-    # Принудительно применяем GTK-тему
+    # Применяем GTK-тему и иконки
     apply_gtk_theme "$selected"
+
+    # Показываем уведомление
+    dunstify -a "RiceSelector" \
+             -u normal \
+             -i "$HOME/.config/i3/rices/$selected/preview.webp" \
+             -t 3000 \
+             -h "string:x-dunst-stack-tag:riceselector" \
+             "Тема изменена" "Активирована тема: $selected"
 
     # Перезапускаем i3 если тема изменилась
     if [[ "$selected" != "$i3_rice_in_config" ]]; then
         i3-msg restart
+    else
+        # Если тема та же, просто обновляем интерфейс
+        i3-msg reload
     fi
 }
 
@@ -205,7 +229,7 @@ apply_gtk_theme() {
     gtk-update-icon-cache -f ~/.local/share/icons/* 2>/dev/null || true
     gtk-update-icon-cache -f /usr/share/icons/* 2>/dev/null || true
     gtk-update-icon-cache -f ~/.icons/* 
-    
+
     # 5. Применяем изменения
     update_thunar
 

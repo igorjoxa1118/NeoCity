@@ -1,13 +1,24 @@
 #!/bin/bash
 
-# Путь к временному конфигурационному файлу CAVA
-config_file="/tmp/bar_cava_config"
+# Проверка на уже запущенный экземпляр
+LOCK_FILE="/tmp/cava.lock"
+if [ -f "$LOCK_FILE" ]; then
+    if ps -p $(cat "$LOCK_FILE") >/dev/null 2>&1; then
+        echo "Another instance is already running. Exiting." >&2
+        exit 1
+    else
+        rm "$LOCK_FILE"
+    fi
+fi
+echo $$ > "$LOCK_FILE"
 
-# Создание временного конфигурационного файла для CAVA
-cat >"$config_file" <<EOF
+# Конфигурационный файл
+CONFIG_FILE="/tmp/cava_config_$$"
+cat >"$CONFIG_FILE" <<'EOF'
 [general]
-bars = 15  # Количество баров
-sensitivity = 150  # Уменьшено для более резкой реакции
+bars = 15
+framerate = 25
+sensitivity = 100
 
 [input]
 method = pulse
@@ -17,73 +28,66 @@ source = auto
 method = raw
 raw_target = /dev/stdout
 data_format = ascii
-ascii_max_range = 7  # Значение по умолчанию
+ascii_max_range = 7
 
 [color]
-gradient = 0  # Отключаем градиент
+gradient = 0
 
 [smoothing]
-integral = 150  # Уменьшено для более быстрой реакции
-gravity = 150   # Уменьшено для более быстрого опускания баров
-fft_filter = 1
-frequency_range = 20-1352,1352-2684,2684-4016,4016-5348,5348-6680,6680-8012,8012-9344,9344-10676,10676-12008,12008-13340,13340-14672,14672-16004,16004-17336,17336-18668,18668-20000
-
-[fft]
-mode = peak  # Более резкая реакция на изменения звука
+integral = 100
+gravity = 100
 EOF
 
-# Акцентные цвета Catppuccin
-colors=(
-    "#89b4fa" "#f38ba8" "#fab387" "#a6e3a1" "#94e2d5"
-    "#74c7ec" "#cba6f7" "#f5e0dc" "#89b4fa" "#f38ba8"
-    "#fab387" "#a6e3a1" "#94e2d5" "#74c7ec" "#cba6f7"
-)
+# Цветовая схема Catppuccin
+COLORS=("#89b4fa" "#f38ba8" "#fab387" "#a6e3a1" "#94e2d5" 
+        "#74c7ec" "#cba6f7" "#f5e0dc" "#89b4fa" "#f38ba8"
+        "#fab387" "#a6e3a1" "#94e2d5" "#74c7ec" "#cba6f7")
 
-# Переменные для отслеживания состояния звука
-last_sound_time=$(date +%s)
-sound_timeout=2  # Таймаут уменьшен до 1 секунды
-default_mode=true
+# Очистка при завершении
+cleanup() {
+    rm -f "$CONFIG_FILE" "$LOCK_FILE"
+    [ -n "$CAVA_PID" ] && kill "$CAVA_PID" 2>/dev/null
+    exit 0
+}
+trap cleanup EXIT TERM INT
 
-# Запуск CAVA и обработка вывода
-cava -p "$config_file" | while IFS=';' read -r -a bars; do
-    current_time=$(date +%s)
-    output=""
-    sound_detected=false
+# Запуск CAVA
+cava -p "$CONFIG_FILE" | {
+    LAST_SOUND=$(date +%s)
+    SOUND_TIMEOUT=2
+    DEFAULT_MODE=true
 
-    # Проверяем, есть ли звук (хотя бы один бар выше порога)
-    for level in "${bars[@]}"; do
-        if (( level > 2 )); then
-            sound_detected=true
-            last_sound_time=$current_time
-            break
+    while IFS=';' read -r -a BARS; do
+        NOW=$(date +%s)
+        SOUND=false
+        OUTPUT=""
+
+        # Проверка наличия звука
+        for L in "${BARS[@]}"; do
+            ((L > 2)) && { SOUND=true; LAST_SOUND=$NOW; break; }
+        done
+
+        # Определение режима
+        if $SOUND; then
+            DEFAULT_MODE=false
+        elif ((NOW - LAST_SOUND >= SOUND_TIMEOUT)); then
+            DEFAULT_MODE=true
         fi
+
+        # Генерация вывода
+        if $DEFAULT_MODE; then
+            for C in "${COLORS[@]}"; do
+                OUTPUT+="%{F$C}┃%{F-}"
+            done
+        else
+            for I in "${!BARS[@]}"; do
+                ((BARS[I] > 2)) && OUTPUT+="%{F${COLORS[I]}}┃%{F-}" || OUTPUT+=" "
+            done
+        fi
+
+        echo "$OUTPUT"
     done
+} &
 
-    # Определяем режим отображения
-    if $sound_detected; then
-        default_mode=false
-    elif (( current_time - last_sound_time >= sound_timeout )); then
-        default_mode=true
-    fi
-
-    # Генерируем вывод в зависимости от режима
-    if $default_mode; then
-        # Режим по умолчанию - все бары видны
-        for ((i = 0; i < ${#colors[@]}; i++)); do
-            output+="%{F${colors[$i]}}┃%{F-}"
-        done
-    else
-        # Режим с реакцией на звук
-        for ((i = 0; i < ${#bars[@]}; i++)); do
-            level=${bars[$i]}
-            if (( level > 2 )); then
-                output+="%{F${colors[$i]}}┃%{F-}"
-            else
-                output+=" "
-            fi
-        done
-    fi
-
-    # Выводим результат в Polybar
-    echo "$output"
-done
+CAVA_PID=$!
+wait $CAVA_PID

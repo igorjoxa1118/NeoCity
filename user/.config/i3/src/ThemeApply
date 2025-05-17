@@ -1,20 +1,30 @@
 #!/usr/bin/env bash
 
-config="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini"
-[ ! -f "$config" ] && exit 1
+# Пути к конфигам
+GTK_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini"
+HYPR_CURSOR="catppuccin-mocha-blue-cursors"  # Как в common.conf
 
-get_setting() {
-    grep "^$1" "$config" | sed 's/.*=\s*//'
-}
+# Применение GTK-темы (если файл есть)
+if [ -f "$GTK_CONFIG" ]; then
+    gtk_theme=$(grep 'gtk-theme-name' "$GTK_CONFIG" | sed 's/.*=\s*//')
+    icon_theme=$(grep 'gtk-icon-theme-name' "$GTK_CONFIG" | sed 's/.*=\s*//')
+    cursor_theme=$(grep 'gtk-cursor-theme-name' "$GTK_CONFIG" | sed 's/.*=\s*//')
 
-gtk_theme=$(get_setting 'gtk-theme-name')
-icon_theme=$(get_setting 'gtk-icon-theme-name')
-cursor_theme=$(get_setting 'gtk-cursor-theme-name')
+    [ -n "$gtk_theme" ] && gsettings set org.gnome.desktop.interface gtk-theme "$gtk_theme"
+    [ -n "$icon_theme" ] && gsettings set org.gnome.desktop.interface icon-theme "$icon_theme"
+    [ -n "$cursor_theme" ] && gsettings set org.gnome.desktop.interface cursor-theme "$cursor_theme"
 
-[ -n "$gtk_theme" ] && gsettings set org.gnome.desktop.interface gtk-theme "$gtk_theme"
-[ -n "$icon_theme" ] && gsettings set org.gnome.desktop.interface icon-theme "$icon_theme"
-[ -n "$cursor_theme" ] && gsettings set org.gnome.desktop.interface cursor-theme "$cursor_theme"
+    # Для libadwaita и GTK4
+    export GTK_THEME="$gtk_theme"
+    export ICON_THEME="$icon_theme"
+fi
 
-# Для libadwaita приложений
-export GTK_THEME="$gtk_theme"
-export ICON_THEME="$icon_theme"
+# Применение курсора в Hyprland (если работает под Wayland)
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    hyprctl setcursor "$HYPR_CURSOR" 32
+    gsettings set org.gnome.desktop.interface cursor-theme "$HYPR_CURSOR"
+    gsettings set org.gnome.desktop.interface cursor-size 32
+fi
+
+# Уведомление о применении темы
+notify-send "Тема применена" "Catppuccin Mocha"

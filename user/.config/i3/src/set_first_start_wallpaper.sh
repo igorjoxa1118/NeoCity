@@ -5,7 +5,7 @@ LIGHT_WALLPAPER_DIR="$HOME/.config/i3/rices/catppuccin-mocha/walls/light/"
 DARK_WALLPAPER_DIR="$HOME/.config/i3/rices/catppuccin-mocha/walls/dark/"
 
 # Файлы блокировки и конфигурации
-LOCK_FILE="$HOME/.wallpaper_change.lock"
+LOCK_FILE="$HOME/.config/i3/config.d/.wallpaper_change.lock"
 THEME_MODE_FILE="/tmp/.wallpaper_theme_mode"  # Временный файл в /tmp
 CONFIG_FILE="$HOME/.wallpaper_time_config"
 
