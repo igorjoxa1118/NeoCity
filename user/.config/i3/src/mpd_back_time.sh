@@ -4,6 +4,19 @@ format_time() {
     printf "%02d:%02d" $(($1/60)) $(($1%60))
 }
 
+handle_scroll() {
+    case $1 in
+        "up") mpc seek +5 >/dev/null ;;
+        "down") mpc seek -5 >/dev/null ;;
+    esac
+}
+
+# Обработка аргументов командной строки
+if [ "$1" = "--scroll" ] && [ -n "$2" ]; then
+    handle_scroll "$2"
+    exit 0
+fi
+
 while true; do
     if status=$(mpc status 2>/dev/null); then
         if echo "$status" | grep -q 'playing\|paused'; then

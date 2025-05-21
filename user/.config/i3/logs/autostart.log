@@ -1,91 +1,53 @@
 === i3 AUTOSTART LOG ===
-[$(date)] Setting X11 env vars
-[Сб 26 апр 2025 14:15:45 EEST] Starting picom
-[Сб 26 апр 2025 14:15:45 EEST] Running ThemeApply
-[Сб 26 апр 2025 14:15:45 EEST] Starting nm-applet
-[Сб 26 апр 2025 14:15:45 EEST] Running SetSysVars
-[Сб 26 апр 2025 14:15:45 EEST] Running SetUser
-[Сб 26 апр 2025 14:15:45 EEST] Starting udiskie
-[Сб 26 апр 2025 14:15:45 EEST] Starting DBus
+9:30 EEST] Starting udiskie
 Configuration already done. Exiting...
-[Сб 26 апр 2025 14:15:45 EEST] Starting power manager
-Скрипт уже был выполнен ранее.
-[Сб 26 апр 2025 14:15:45 EEST] Starting polkit
-[Сб 26 апр 2025 14:15:45 EEST] Starting keyring
-[Сб 26 апр 2025 14:15:45 EEST] Starting audio effects
-[Сб 26 апр 2025 14:15:45 EEST] Loading Xresources
-[Сб 26 апр 2025 14:15:45 EEST] Waiting for i3 socket
-[Сб 26 апр 2025 14:15:45 EEST] Setting wallpaper
-[Сб 26 апр 2025 14:15:45 EEST] Applying theme
-[Сб 26 апр 2025 14:15:45 EEST] Starting autotiling
-[Сб 26 апр 2025 14:15:45 EEST] Starting screen locker
-[Сб 26 апр 2025 14:15:45 EEST] Starting polybar
+[$(date)] Setting X11 env vars
+[Ср 21 мая 2025 15:59:30 EEST] Starting DBus
+Скрипт уже выполнен.
+[Ср 21 мая 2025 15:59:30 EEST] Setting wallpaper
+[Ср 21 мая 2025 15:59:30 EEST] Loading Xresources
+[Ср 21 мая 2025 15:59:30 EEST] Applying theme
+[Ср 21 мая 2025 15:59:30 EEST] Waiting for i3 socket
+[Ср 21 мая 2025 15:59:30 EEST] Starting keyring
+[Ср 21 мая 2025 15:59:30 EEST] Starting autotiling
+[Ср 21 мая 2025 15:59:30 EEST] Starting screen locker
+[Ср 21 мая 2025 15:59:30 EEST] Starting polybar
 gnome-keyring-daemon: no process capabilities, insecure memory might get used
 discover_other_daemon: 1GNOME_KEYRING_CONTROL=/run/user/1000/keyring
-[ 26.04.2025 14:15:46.008 set_animation ERROR ] Invalid trigger defined at line 77
-[ 26.04.2025 14:15:46.008 set_animation ERROR ] Invalid trigger defined at line 86
-[ 26.04.2025 14:15:46.008 set_animation ERROR ] Invalid trigger defined at line 202
-[ 26.04.2025 14:15:46.009 set_animation ERROR ] Invalid trigger defined at line 211
-[ 26.04.2025 14:15:46.009 set_animation ERROR ] Invalid trigger defined at line 304
-[ 26.04.2025 14:15:46.009 set_animation ERROR ] Invalid trigger defined at line 351
+[ 21.05.2025 15:59:30.788 set_animation ERROR ] Invalid trigger defined at line 77
+[ 21.05.2025 15:59:30.788 set_animation ERROR ] Invalid trigger defined at line 86
+[ 21.05.2025 15:59:30.788 parse_animation_one ERROR ] Failed to parse animation script at line 102: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
+[ 21.05.2025 15:59:30.788 parse_animation_one ERROR ] Failed to parse animation script at line 112: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
+[ 21.05.2025 15:59:30.788 parse_animation_one ERROR ] Failed to parse animation script at line 122: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
+[ 21.05.2025 15:59:30.788 set_animation ERROR ] Invalid trigger defined at line 239
+[ 21.05.2025 15:59:30.788 set_animation ERROR ] Invalid trigger defined at line 248
+[ 21.05.2025 15:59:30.788 set_animation ERROR ] Invalid trigger defined at line 341
+[ 21.05.2025 15:59:30.788 set_animation ERROR ] Invalid trigger defined at line 388
 gtk-update-icon-cache: No theme index file.
+GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.freedesktop.Notifications': unit failed
 gtk-update-icon-cache: Failed to open file /usr/share/icons/Adwaita/.icon-theme.cache : Отказано в доступе
-[ 26.04.2025 14:15:46.115 set_animation ERROR ] Invalid trigger defined at line 77
-[ 26.04.2025 14:15:46.115 set_animation ERROR ] Invalid trigger defined at line 86
-[ 26.04.2025 14:15:46.115 set_animation ERROR ] Invalid trigger defined at line 202
-[ 26.04.2025 14:15:46.115 set_animation ERROR ] Invalid trigger defined at line 211
-[ 26.04.2025 14:15:46.115 set_animation ERROR ] Invalid trigger defined at line 304
-[ 26.04.2025 14:15:46.115 set_animation ERROR ] Invalid trigger defined at line 351
+Traceback (most recent call last):
+  File "/usr/bin/musnify-mpd", line 236, in <module>
+    musnify.start()
+    ~~~~~~~~~~~~~^^
+  File "/usr/bin/musnify-mpd", line 175, in start
+    self.nw.notifyStatus(status)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/usr/bin/musnify-mpd", line 97, in notifyStatus
+    self.notification.show()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+gi.repository.GLib.GError: g-dbus-error-quark: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.freedesktop.Notifications': unit failed (3)
+[ 21.05.2025 15:59:31.949 set_animation ERROR ] Invalid trigger defined at line 77
+[ 21.05.2025 15:59:31.949 set_animation ERROR ] Invalid trigger defined at line 86
+[ 21.05.2025 15:59:31.949 parse_animation_one ERROR ] Failed to parse animation script at line 102: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
+[ 21.05.2025 15:59:31.949 parse_animation_one ERROR ] Failed to parse animation script at line 112: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
+[ 21.05.2025 15:59:31.949 parse_animation_one ERROR ] Failed to parse animation script at line 122: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
+[ 21.05.2025 15:59:31.949 set_animation ERROR ] Invalid trigger defined at line 239
+[ 21.05.2025 15:59:31.949 set_animation ERROR ] Invalid trigger defined at line 248
+[ 21.05.2025 15:59:31.949 set_animation ERROR ] Invalid trigger defined at line 341
+[ 21.05.2025 15:59:31.949 set_animation ERROR ] Invalid trigger defined at line 388
 
-(xfce4-power-manager:1240): xfce4-power-manager-WARNING **: 14:15:46.599: Unable to connect to session manager : Не удалось подключиться к менеджеру сеансов: networkIdsList argument is NULL
-WARNING: Icon 'music' not found in themes
-[W][14:15:47.105499] pw.conf      | [          conf.c: 1204 pw_conf_load_conf_for_context()] setting config.name to client-rt.conf is deprecated, using client.conf
-Event.WINDOW subscribed
-Event.MODE subscribed
-polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1121': errno 2 (No such file or directory))
-polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1121': errno 2 (No such file or directory))
-polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1121': errno 2 (No such file or directory))
-[Сб 26 апр 2025 14:15:58 EEST] Waiting for i3 socket
-[Сб 26 апр 2025 14:15:58 EEST] Setting wallpaper
-[Сб 26 апр 2025 14:15:58 EEST] Applying theme
-[Сб 26 апр 2025 14:15:58 EEST] Starting autotiling
-[Сб 26 апр 2025 14:15:58 EEST] Loading Xresources
-[Сб 26 апр 2025 14:15:58 EEST] Starting polybar
-[Сб 26 апр 2025 14:15:58 EEST] Starting screen locker
-polybar|notice:  Parsing config file: /etc/polybar/config.ini
-Failed to set screensaver attributes; is another one running?
-[ 26.04.2025 14:15:58.180 c2_window_state_update_from_replies WARN ] Failed to get property 0 for window 0x00200054, some window rules might not work.
-gtk-update-icon-cache: No theme index file.
-gtk-update-icon-cache: Failed to open file /usr/share/icons/Adwaita/.icon-theme.cache : Отказано в доступе
-[ 26.04.2025 14:15:58.384 set_animation ERROR ] Invalid trigger defined at line 77
-[ 26.04.2025 14:15:58.384 set_animation ERROR ] Invalid trigger defined at line 86
-[ 26.04.2025 14:15:58.384 set_animation ERROR ] Invalid trigger defined at line 202
-[ 26.04.2025 14:15:58.384 set_animation ERROR ] Invalid trigger defined at line 211
-[ 26.04.2025 14:15:58.384 set_animation ERROR ] Invalid trigger defined at line 304
-[ 26.04.2025 14:15:58.384 set_animation ERROR ] Invalid trigger defined at line 351
-WARNING: Icon 'music' not found in themes
-polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1121': errno 2 (No such file or directory))
-Event.WINDOW subscribed
-Event.MODE subscribed
-polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1121': errno 2 (No such file or directory))
-polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3 at '/run/user/1000/i3/ipc-socket.1121': errno 2 (No such file or directory))
-[Сб 26 апр 2025 14:16:17 EEST] Waiting for i3 socket
-[Сб 26 апр 2025 14:16:17 EEST] Setting wallpaper
-[Сб 26 апр 2025 14:16:17 EEST] Loading Xresources
-[Сб 26 апр 2025 14:16:17 EEST] Starting polybar
-[Сб 26 апр 2025 14:16:17 EEST] Starting autotiling
-[Сб 26 апр 2025 14:16:17 EEST] Applying theme
-[Сб 26 апр 2025 14:16:17 EEST] Starting screen locker
-Failed to set screensaver attributes; is another one running?
-gtk-update-icon-cache: No theme index file.
-gtk-update-icon-cache: Failed to open file /usr/share/icons/Adwaita/.icon-theme.cache : Отказано в доступе
-[ 26.04.2025 14:16:17.435 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x0220002d (YouTube — Mozilla Firefox)
-[ 26.04.2025 14:16:17.438 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01c00001 (polybar-secondary_DP-0)
-[ 26.04.2025 14:16:17.439 win_clear_flags WARN ] Flags 1 cleared on a destroyed window 0x01600002 (polybar-main_DP-0)
-[ 26.04.2025 14:16:17.507 set_animation ERROR ] Invalid trigger defined at line 77
-[ 26.04.2025 14:16:17.507 set_animation ERROR ] Invalid trigger defined at line 86
-[ 26.04.2025 14:16:17.507 set_animation ERROR ] Invalid trigger defined at line 202
-[ 26.04.2025 14:16:17.507 set_animation ERROR ] Invalid trigger defined at line 211
-[ 26.04.2025 14:16:17.507 set_animation ERROR ] Invalid trigger defined at line 304
-[ 26.04.2025 14:16:17.507 set_animation ERROR ] Invalid trigger defined at line 351
-WARNING: Icon 'music' not found in themes
+(xfce4-power-manager:1236): xfce4-power-manager-WARNING **: 15:59:32.441: Unable to connect to session manager : Не удалось подключиться к менеджеру сеансов: networkIdsList argument is NULL
+[W][15:59:32.611215] pw.conf      | [          conf.c: 1204 pw_conf_load_conf_for_context()] setting config.name to client-rt.conf is deprecated, using client.conf
+[ 21.05.2025 16:40:00.021 sgi_video_sync_scheduler_callback WARN ] Duplicate vblank event found with msc 399812. Possible NVIDIA bug? Number of duplicates so far: 0
+Snapshotting in...☺
