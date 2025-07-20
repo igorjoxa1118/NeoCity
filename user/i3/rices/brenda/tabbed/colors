@@ -1,0 +1,16 @@
+#------------
+## brenda
+#------------
+## Цвета окон 
+#------------
+    # Класс                 border  backgr. text    indicator
+    client.focused          #2d353b #2d353b #d3c6aa #f8f5e4
+    client.unfocused        #2d353b #4E5D65 #2d353b #f8f5e4
+    client.focused_inactive #2d353b #4E5D65 #5D7CBC #f8f5e4
+    client.placeholder      #2d353b #4E5D65 #5D7CBC #f8f5e4
+    client.urgent           #2d353b #4E5D65 #5D7CBC #f8f5e4
+
+    client.background       #2d353b
+
+    
+#--------------

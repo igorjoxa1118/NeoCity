@@ -1,0 +1,11 @@
+#!/bin/bash
+
+read -r RICETHEME < "$HOME"/.config/i3/config.d/.rice
+
+TIPS_STATUS=$(cat $HOME/.config/i3/rices/$RICETHEME/eww/System-Menu/scripts/tips/tips-lock)
+
+if [[ $TIPS_STATUS == "on" ]]; then
+    eww open-many --toggle background-closer0 background-closer1 system-menu tips
+else 
+    eww open-many --toggle background-closer0 background-closer1 system-menu
+fi

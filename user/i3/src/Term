@@ -1,0 +1,120 @@
+#!/usr/bin/env bash
+#  ████████╗███████╗██████╗ ███╗   ███╗██╗███╗   ██╗ █████╗ ██╗
+#  ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║████╗  ██║██╔══██╗██║
+#     ██║   █████╗  ██████╔╝██╔████╔██║██║██╔██╗ ██║███████║██║
+#     ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║██║██║╚██╗██║██╔══██║██║
+#     ██║   ███████╗██║  ██║██║ ╚═╝ ██║██║██║ ╚████║██║  ██║███████╗
+#     ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝
+#   Script to open with selected terminal
+#   Author: z0mbi3
+#   url: https://github.com/gh0stzk/dotfiles
+
+CFG_TERM="$HOME/.config/i3/config.d/.term"
+DEFAULT_TERM="kitty"
+ROFI_THEME="$HOME/.config/i3/src/rofi-themes/TermSelector.rasi"
+
+# Creating config file if not exists.
+[ ! -f "$CFG_TERM" ] && echo "$DEFAULT_TERM" > "$CFG_TERM"
+
+# Main var
+MY_TERM=$(< "$CFG_TERM")
+
+# Function to choose the terminal using rofi
+choose_terminal() {
+    local options=("Alacritty" "Kitty")
+    local current_term=$(tr '[:upper:]' '[:lower:]' < "$CFG_TERM")
+
+    local selected_index=$(printf '%s\n' "${options[@],,}" | awk -v cur="$current_term" '$0==cur {print NR-1; exit}')
+
+    local chosen
+    chosen=$(printf '%s\n' "${options[@]}" | rofi -theme "$ROFI_THEME" -mesg "[ Your current terminal is $MY_TERM ]" -dmenu -selected-row "$selected_index")
+
+    [[ -n "$chosen" ]] && echo "${chosen,,}" > "$CFG_TERM"
+}
+
+# Terminal selector
+[ "$1" = "--selecterm" ] && choose_terminal
+
+# Launch the terminal with appropriate options
+case $MY_TERM in
+    "alacritty")
+        case $1 in
+            "--terminal")
+                alacritty
+                ;;
+            "--floating")
+                alacritty --title floating
+                ;;
+            "--update")
+                alacritty --hold --title floating -e ~/.config/i3/src/Updates --update-pacman
+                ;;
+            "--checkupdates")
+                alacritty --hold -e ~/.config/i3/src/Updates --print-updates
+                ;;
+            "--ranger")
+                alacritty --title floating -e ranger
+                ;;
+            "--yazi")
+                kitty --title floating --hold -e yazi
+                ;;
+            "--nvim")
+                alacritty -e nvim
+                ;;
+            "--music")
+                alacritty --title floating -e ncmpcpp
+                ;;
+            "--fetch")
+                alacritty -e ~/.local/bin/sysfetch
+                ;;
+            "--connect")
+                alacritty --title floating --hold -e ~/.bin/ssh_connect/start
+                ;;
+            "--process")
+                alacritty --title floating --hold -e ~/.bin/bottom_themes/bottom-themes
+                ;;
+            "--visualization")
+                kitty -c ~/.config/kitty/kitty.conf --hold -e cava -p ~/.config/cava/config
+                ;;
+        esac
+        ;;
+    "kitty")
+        case $1 in
+            "--terminal")
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh -c ~/.config/kitty/kitty.conf
+                ;;
+            "--floating")
+                kitty  -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating
+                ;;
+            "--update")
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating --hold -e ~/.config/i3/src/Updates --update-pacman
+                ;;
+            "--checkupdates")
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating --hold -e ~/.config/i3/src/Updates --print-updates
+                ;;
+            "--ranger")
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating --hold -e ranger
+                ;;
+            "--yazi")
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating --hold -e yazi
+                ;;
+            "--nvim")
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh -e nvim
+                ;;
+            "--music")
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating -e ncmpcpp
+                ;;
+            "--fetch")
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh -e ~/.local/bin/sysfetch
+                ;;
+            "--connect")
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating --hold -e ~/.bin/ssh_connect/start
+                ;;
+            "--process")
+                kitty -o shell_integration=no-cursor -o cursor_shape=underline -o shell=zsh --title floating --hold -e ~/.bin/bottom_themes/bottom-themes
+                ;;
+            "--visualization")
+                alacritty --config-file ~/.config/alacritty/alacritty.toml --hold -e cava -p ~/.config/cava/config
+                ;;
+        esac
+        ;;
+esac

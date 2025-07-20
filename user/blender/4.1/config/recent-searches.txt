@@ -1,0 +1,71 @@
+   Material.003
+   Material
+   Galvanized Steel.kromka
+Texture ▸ Wave Texture
+   Galvanized Steel.White
+Texture ▸ Voronoi Texture
+   Crystal
+   emmis_crystal
+   Galvanized Steel.black_emmis
+   Material.001
+   Fabric
+Converter ▸ Combine Color
+   kolbi
+   Material.002
+   Galvanized Steel.Bukvi
+ 0 Galvanized Steel.001
+   Galvanized Steel_stvoli
+   emiss_majak_blue
+Texture ▸ Gradient Texture
+   glass.majak
+   Galvanized Steel.majak
+   Scratched Metal
+ 0 Scratched Metal.majak
+Shader ▸ Principled BSDF
+   fog
+Color ▸ Adjust ▸ Brightness/Contrast
+   Tile
+Vector ▸ Vector Curves
+Input ▸ Attribute
+   glass
+Shader ▸ Emission
+Shader ▸ Transparent BSDF
+   Material.004
+   Majak_plastik
+   Galvanized Steel.001
+   Galvanized Steel.Bolt
+   Galvanized Steel.melkie
+   Scratched Metal.majak
+   Galvanized Steel
+Output ▸ Composite
+Filter ▸ Denoise
+Color ▸ Mix ▸ Mix Color
+Point.003
+Shader ▸ Mix Shader
+Texture ▸ Sky Texture
+Converter ▸ Vector Math
+Converter ▸ Separate XYZ
+Color ▸ Adjust ▸ RGB Curves
+Color ▸ Adjust ▸ Hue Correct
+Point.009
+Point.010
+Point.006
+Point.011
+Point.013
+Point.015
+Point.016
+Point.017
+Filter ▸ Glare
+Color ▸ Adjust ▸ Hue/Saturation/Value
+Color ▸ Hue/Saturation/Value
+Input ▸ Movie Clip
+Output ▸ Viewer
+Bump ▸ Height
+Input ▸ Value
+Converter ▸ Color Ramp
+Converter ▸ Math
+Texture ▸ Noise Texture
+Color Ramp ▸ Fac
+Vector ▸ Bump
+Color ▸ Mix Color
+   setka

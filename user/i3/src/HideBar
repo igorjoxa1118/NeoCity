@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+#  ██╗  ██╗██╗██████╗ ███████╗    ██████╗  █████╗ ██████╗ 
+#  ██║  ██║██║██╔══██╗██╔════╝    ██╔══██╗██╔══██╗██╔══██╗
+#  ███████║██║██║  ██║█████╗      ██████╔╝███████║██████╔╝
+#  ██╔══██║██║██║  ██║██╔══╝      ██╔══██╗██╔══██║██╔══██╗
+#  ██║  ██║██║██████╔╝███████╗    ██████╔╝██║  ██║██║  ██║
+#  ╚═╝  ╚═╝╚═╝╚═════╝ ╚══════╝    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+# Simple script to hide/show polybar
+# Author: vir0id
+
+# Конфигурационный файл i3
+conf_file="$HOME/.config/i3/config"
+
+# Получаем значения отступов из конфигурации i3 (если используются i3-gaps)
+T_Padding=$(grep "gaps top" "$conf_file" | awk '{print $NF}')
+B_Padding=$(grep "gaps bottom" "$conf_file" | awk '{print $NF}')
+
+hide() {
+    # Скрываем обе панели Polybar
+    killall polybar
+
+    # Устанавливаем отступы (если используется i3-gaps)
+    i3-msg gaps top all set 2
+    i3-msg gaps bottom all set 2
+
+    # Управление eww (оставляем без изменений)
+    if pgrep -f 'eww.*bar'; then
+        if [ "$RICETHEME" = "z0mbi3" ]; then
+            if eww -c "$HOME"/.config/i3/rices/z0mbi3/bar active-windows | grep -q "bar: bar"; then
+                eww -c "$HOME"/.config/i3/rices/z0mbi3/bar close bar
+            fi
+        elif [ "$RICETHEME" = "andrea" ]; then
+            if eww -c "$HOME"/.config/i3/rices/andrea/andy active-windows | grep -q "bar: bar"; then
+                eww -c "$HOME"/.config/i3/rices/andrea/andy close bar
+            fi
+        fi
+    fi
+}
+
+unhide() {
+    # Отображаем обе панели Polybar
+    polybar main &         # Запуск верхней панели
+    polybar secondary &    # Запуск нижней панели
+
+    # Восстанавливаем отступы (если используется i3-gaps)
+    i3-msg gaps top all set "$T_Padding"
+    i3-msg gaps bottom all set "$B_Padding"
+
+    # Управление eww (оставляем без изменений)
+    if pgrep -f 'eww.*bar'; then
+        if [ "$RICETHEME" = "z0mbi3" ]; then
+            if ! eww -c "$HOME"/.config/i3/rices/z0mbi3/bar active-windows | grep -q "bar: bar"; then
+                eww -c "$HOME"/.config/i3/rices/z0mbi3/bar open bar
+            fi
+        elif [ "$RICETHEME" = "andrea" ]; then
+            if ! eww -c "$HOME"/.config/i3/rices/andrea/andy active-windows | grep -q "bar: bar"; then
+                eww -c "$HOME"/.config/i3/rices/andrea/andy open bar
+            fi
+        fi
+    fi
+}
+
+case $1 in
+-h)
+    hide
+    ;;
+-u)
+    unhide
+    ;;
+esac

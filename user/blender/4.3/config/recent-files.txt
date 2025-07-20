@@ -1,0 +1,20 @@
+/home/vir0id/Документы/Projects/ParallaxMapping_BL3.5_as.blend
+/home/vir0id/Документы/Projects/Mountains 02.blend
+/home/vir0id/Документы/Projects/Mountains 01.blend
+/home/vir0id/Документы/Projects/Mimoza.blend
+/home/vir0id/Документы/Projects/Magic Orb.blend
+/home/vir0id/Документы/Projects/Lightning_Shader_3D.blend
+/home/vir0id/Документы/Projects/Advanced_Hair_Rig.blend
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/RetroSun/untitled.blend
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Granata_Jinks/cycles.blend
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/alexander-kolyasa/untitled.blend
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LiveWallpapers/archlinux/untitled.blend
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/ServissN1/untitled.blend
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/ChainsawMan/untitled.blend
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Mini_House/untitled.blend
+/home/vir0id/.config/blender/4.3/config/userpref.blend
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Granata_Jinks/eevee.blend
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Granata_Jinks/untitled.blend
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Minijon/untitled.blend
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LiveWallpapers/arcolinux/untitled.blend
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LiveWallpapers/Arch_Catppuccin_mocha.blend

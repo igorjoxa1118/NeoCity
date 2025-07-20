@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+
+# Import Current Theme
+DIR="$HOME/.config/i3/rices/"
+STYLE="catppuccin-latte"
+RASI="$DIR/$STYLE/rofi/rofi_launchers/launchpad_v4.rasi"
+
+# Run
+rofi \
+    -show drun \
+	-kb-cancel Alt-F1 \
+	-theme ${RASI}

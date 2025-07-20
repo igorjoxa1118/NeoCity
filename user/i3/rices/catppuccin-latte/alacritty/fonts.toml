@@ -1,0 +1,31 @@
+## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+##
+## Font configuration ---------------------------------------
+
+[font]
+size = 11
+builtin_box_drawing = true
+
+[font.normal]
+family = "MesloLGS NF"
+style = "Bold"  # Используем полужирный стиль для обычного текста
+
+[font.bold]
+family = "MesloLGS NF"
+style = "Bold"
+
+[font.italic]
+family = "MesloLGS NF"
+style = "Italic"
+
+[font.bold_italic]
+family = "MesloLGS NF"
+style = "Bold Italic"
+
+[font.offset]
+x = 0
+y = 0
+
+[font.glyph_offset]
+x = 0
+y = 1  # Смещение символов вверх

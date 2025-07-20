@@ -1,0 +1,21 @@
+filetype: sxhkdrc
+
+detect:
+  filename: "sxhkdrc"
+
+rules:
+  - constant: "\\b[A-Za-z0-9]\\b"
+  - type: "\\b(super)\\b"
+  - statement: "\\b(Return|space|Escape|shift|ctrl|alt|Left|Right|Up|Down|grave|Tab|bracket|left|right|comma|period)\\b"
+  - operator: "[+\\-{},_@]"
+  - string:
+      start: "\\t"
+      end: "$"
+      rules:
+        - statement: "\\b(bspc|config|node|desktop)\\b"
+        - operator: "[+\\-{},_]"
+
+  - comment:
+      start: "#"
+      end: "$"
+      rules: []

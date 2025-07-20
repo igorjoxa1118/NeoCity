@@ -1,0 +1,6 @@
+filetype: plaintext
+
+detect:
+  filename: ".txt$"
+
+rules: []

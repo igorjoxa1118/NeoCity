@@ -1,0 +1,29 @@
+#!/bin/bash
+
+read -r RICETHEME < "$HOME"/.config/i3/config.d/.rice
+
+fetch() {
+  # Make the API request
+  response=$(curl "https://official-joke-api.appspot.com/random_joke")
+
+  # Extract and print the quote
+  quote=$(echo "$response" | jq -r '.setup')
+  author=$(echo "$response" | jq -r '.punchline')
+
+  echo "$quote" > $HOME/.config/i3/rices/$RICETHEME/eww/Main/tmp-quote.txt
+  echo "$author" >> $HOME/.config/i3/rices/$RICETHEME/eww/Main/tmp-quote.txt
+}
+
+if [[ $1 == "--fetch" ]]; then
+  (fetch)&
+fi
+
+if [[ $1 == "--author" ]]; then
+  author=$(sed -n '2p' $HOME/.config/i3/rices/$RICETHEME/eww/Main/tmp-quote.txt)
+  echo "$author"
+fi
+
+if [[ $1 == "--quote" ]]; then
+  quote=$(sed -n '1p' $HOME/.config/i3/rices/$RICETHEME/eww/Main/tmp-quote.txt)
+  echo "$quote"
+fi

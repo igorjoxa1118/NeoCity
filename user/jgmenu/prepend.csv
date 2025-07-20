@@ -1,0 +1,25 @@
+@icon,,18,17,16,16,0,left,top,#7AA2F7,#7AA2F7,/usr/share/garuda/jgmenu/MenuIcons/search.png
+@search,,42,15,150,20,2,left,top,#c0caf5,#7aa2f7,search ...
+
+Terminal,kitty,/usr/share/garuda/jgmenu/MenuIcons/terminal.png
+
+Web Browser,firefox,/usr/share/garuda/jgmenu/MenuIcons/web-browser.png
+
+File manager,thunar,/usr/share/garuda/jgmenu/MenuIcons/file-manager.png
+
+Text Editor,kitty -e micro,/usr/share/garuda/jgmenu/MenuIcons/edit-note.png
+
+Music Player,music --albumArtCover,/usr/share/garuda/jgmenu/MenuIcons/music.png
+
+^sep()
+Applications,^checkout(lx-apps),/usr/share/garuda/jgmenu/MenuIcons/applications.png
+
+I3,^checkout(i3),/usr/share/garuda/jgmenu/MenuIcons/bspwm.png
+^tag(i3)
+Edit Config, kitty -e micro ~/.config/i3/config, /usr/share/garuda/jgmenu/MenuIcons/edit-note.png
+Restart, i3-msg restart, /usr/share/garuda/jgmenu/MenuIcons/restart.png
+Exit, i3-msg exit, /usr/share/garuda/jgmenu/MenuIcons/exit.png
+Reboot, reboot, /usr/share/garuda/jgmenu/MenuIcons/reboot.png
+Shutdown, shutdown -h now, /usr/share/garuda/jgmenu/MenuIcons/shutdown.png
+
+^tag(lx-apps)

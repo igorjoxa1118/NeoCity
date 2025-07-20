@@ -1,0 +1,16 @@
+#------------
+## melissa
+#------------
+## Цвета окон 
+#------------
+    # Класс                 border  backgr. text    indicator
+    client.focused          #4c566a #5e697d #d8dee9 #bf616a
+    client.unfocused        #5e697d #3b4252 #606B85 #bf616a
+    client.focused_inactive #4c566a #3b4252 #515B71 #bf616a
+    client.placeholder      #4c566a #3b4252 #515B71 #bf616a
+    client.urgent           #4c566a #3b4252 #515B71 #bf616a
+
+    client.background       #3b4252
+
+    
+#--------------

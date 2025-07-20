@@ -1,0 +1,54 @@
+#!/usr/bin/bash
+
+UFILE="$HOME/.config/i3/config.d/.usr"
+STATUS=0  # Переменная для отслеживания статуса выполнения скрипта
+
+# Check if the .usr file already exists
+if [[ -f "$UFILE" ]]; then
+    echo "Configuration already done. Exiting..."
+    exit 0
+fi
+
+# List of files to modify
+files=(
+    "$HOME/.config/blender/4.1/config/bookmarks.txt"
+    "$HOME/.gtkrc-2.0"
+    "$HOME/.config/nitrogen/bg-saved.cfg"
+    "$HOME/.config/nitrogen/nitrogen.cfg"
+    "$HOME/.zshrc"
+    "$HOME/.config/gtk-3.0/bookmarks"
+    "$HOME/.local/share/applications/nvim.desktop"
+    "$HOME/.local/share/applications/ranger.desktop"
+    "$HOME/.local/share/applications/zfetch.desktop"
+    "$HOME/.config/kitty/kitty.conf"
+    "$HOME/.config/i3/rices/catppuccin-macchiato/rofi/rofi_launchers/launcher.rasi"
+    "$HOME/.config/i3/rices/catppuccin-mocha/rofi/rofi_launchers/launcher.rasi"
+    "$HOME/.config/i3/rices/catppuccin-frappe/rofi/rofi_launchers/launcher.rasi"
+    "$HOME/.config/i3/rices/catppuccin-latte/rofi/rofi_launchers/launcher.rasi"
+    "$HOME/.config/qt5ct/qt5ct.conf"
+    "$HOME/.config/qBittorrent/qBittorrent.conf"
+)
+
+# Replace 'vir0id' with the current username in each file
+for file in "${files[@]}"; do
+    if [[ -f "$file" ]]; then
+        sed -i "s/vir0id/${USER}/g" "$file" || STATUS=1
+        echo "Updated $file"
+    else
+        echo "File $file not found, skipping..."
+        STATUS=1
+    fi
+done
+
+# Uncomment the following line if you need to update the cursor theme
+# sudo sed -i "s/Inherits=.*/Inherits=catppuccin-mocha-teal-cursors/g" /usr/share/icons/default/index.theme || STATUS=1
+
+# Create the .usr file to indicate that the configuration has been done
+if [[ "$STATUS" -eq 0 ]]; then
+    touch "$UFILE"
+    notify-send "SetUser.sh" "Пользовательские настройки успешно применены."
+else
+    notify-send "SetUser.sh" "Ошибка: скрипт не выполнился корректно."
+fi
+
+exit "$STATUS"

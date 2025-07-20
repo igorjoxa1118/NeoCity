@@ -1,0 +1,163 @@
+# GIMP sessionrc
+# 
+# This file takes session-specific info (that is info, you want to keep
+# between two GIMP sessions).  You are not supposed to edit it manually, but
+# of course you can do.  The sessionrc will be entirely rewritten every time
+# you quit GIMP.  If this file isn't found, defaults are used.
+
+(session-info "toplevel"
+    (factory-entry "gimp-empty-image-window")
+    (position 200 100)
+    (size 640 480))
+(session-info "toplevel"
+    (factory-entry "gimp-single-image-window")
+    (position 30 90)
+    (size 1860 922)
+    (open-on-exit)
+    (aux-info
+        (left-docks-width "62")
+        (right-docks-width "658")
+        (maximized "yes"))
+    (gimp-toolbox
+        (side left))
+    (gimp-dock
+        (side right)
+        (book
+            (current-page 0)
+            (dockable "gimp-tool-options"
+                (locked)
+                (tab-style icon)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-brush-grid"
+                (locked)
+                (tab-style icon)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-pattern-grid"
+                (locked)
+                (tab-style icon)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-vectors-list"
+                (locked)
+                (tab-style icon)
+                (preview-size 32)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-channel-list"
+                (locked)
+                (tab-style icon)
+                (preview-size 32)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-image-list"
+                (locked)
+                (tab-style icon)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-brush-grid"
+                (tab-style icon)
+                (aux-info
+                    (show-button-bar "true"))))
+        (book
+            (position 511)
+            (current-page 0)
+            (dockable "gimp-navigation-view"
+                (locked)
+                (tab-style icon)
+                (aux-info
+                    (show-button-bar "true")))))
+    (gimp-dock
+        (side right)
+        (position 212)
+        (book
+            (current-page 0)
+            (dockable "gimp-color-editor"
+                (locked)
+                (tab-style icon)
+                (aux-info
+                    (current-page "ColorselWheel")))
+            (dockable "gimp-font-list"
+                (locked)
+                (tab-style icon)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-undo-history"
+                (locked)
+                (tab-style icon)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-dynamics-list"
+                (locked)
+                (tab-style icon)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-histogram-editor"
+                (locked)
+                (tab-style icon)))
+        (book
+            (position 443)
+            (current-page 0)
+            (dockable "gimp-layer-list"
+                (tab-style icon)
+                (preview-size 32)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-channel-list"
+                (tab-style icon)
+                (preview-size 32)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-vectors-list"
+                (tab-style icon)
+                (preview-size 32)
+                (aux-info
+                    (show-button-bar "true"))))))
+(session-info "toplevel"
+    (factory-entry "gimp-preferences-dialog")
+    (position 93 155)
+    (size 1254 548))
+(session-info "toplevel"
+    (factory-entry "gimp-operation-tool-dialog")
+    (position 1138 136))
+(session-info "toplevel"
+    (factory-entry "gimp-file-save-dialog")
+    (position 471 174)
+    (size 950 782))
+(session-info "toplevel"
+    (factory-entry "gimp-file-export-dialog")
+    (position 389 196)
+    (size 899 482))
+(session-info "toplevel"
+    (factory-entry "gimp-file-open-dialog")
+    (position 513 189)
+    (size 899 438))
+(session-info "toplevel"
+    (factory-entry "gimp-image-new-dialog")
+    (position 0 0))
+(session-info "toplevel"
+    (factory-entry "gimp-levels-tool-dialog")
+    (position 168 0)
+    (size 576 610))
+(session-info "toplevel"
+    (factory-entry "gimp-brightness-contrast-tool-dialog")
+    (position 337 112))
+(session-info "toplevel"
+    (factory-entry "gimp-threshold-tool-dialog")
+    (position 331 340))
+(session-info "toplevel"
+    (factory-entry "gimp-curves-tool-dialog")
+    (position 259 16)
+    (size 443 614))
+(session-info "toplevel"
+    (factory-entry "gimp-file-open-location-dialog")
+    (position 0 135))
+
+(hide-docks no)
+(single-window-mode yes)
+(show-tabs yes)
+(tabs-position 0)
+(last-tip-shown 0)
+
+# end of sessionrc

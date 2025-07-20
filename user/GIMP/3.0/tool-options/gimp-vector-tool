@@ -1,0 +1,13 @@
+# GIMP gimp-vector-tool options
+
+(foreground
+    (color "R'G'B'A u8" 4 "\36\36\56\377" 0))
+(background
+    (color "HSVA float" 16 "\0\0\0\0\0\0\0\0\0\0\200\77\0\0\200\77" 0))
+(brush "2. Hardness 075")
+(dynamics "Pencil Generic")
+(pattern "Pine")
+(gradient "По выбору пользователя")
+(palette "Предыдущие цвета")
+
+# end of gimp-vector-tool options

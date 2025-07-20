@@ -1,0 +1,258 @@
+#!/usr/bin/env bash
+
+# Some vars
+i3_dir="$HOME/.config/i3"
+RICETHEME="$i3_dir/config.d/.rice"
+rofi_command="rofi -dmenu -theme $i3_dir/src/rofi-themes/RiceSelector.rasi"
+i3_rice_in_config=$(< "$RICETHEME")
+
+# Variables to try to define the correct size of the images for your resolution
+monitor_res=$(xdpyinfo | awk '/dimensions/{print $2}' | cut -d 'x' -f1)
+monitor_scale=$(xdpyinfo | awk '/resolution/{print $2}' | cut -d 'x' -f1)
+monitor_res=$(( monitor_res * 17 / monitor_scale ))
+rofi_override="element-icon{size:${monitor_res}px;}"
+
+# Функция для показа уведомлений
+show_notification() {
+    local title="$1"
+    local message="$2"
+    local icon="$3"
+    local timeout=3000  # 3 секунды
+
+    dunstify -a "RiceSelector" \
+             -u normal \
+             -i "$icon" \
+             -t "$timeout" \
+             -h "string:x-dunst-stack-tag:riceselector" \
+             "$title" "$message"
+}
+
+# Function to check for required commands
+check_requirements() {
+    for cmd in xdpyinfo rofi feh i3-msg; do
+        if ! command -v "$cmd" > /dev/null 2>&1; then
+            dunstify "Missing package" "Please install the $cmd package to continue" -u critical
+            exit 1
+        fi
+    done
+}
+
+# Function to list available rices
+list_rices() {
+    options=()
+    index=0
+    selected_index=0
+    current_rice=$(< "$RICETHEME")
+
+    for rice_dir in "$i3_dir"/rices/*/; do
+        rice_name=$(basename "$rice_dir")
+        options+=("$rice_name")
+
+        # Check if the current rice matches the current iteration rice
+        if [[ "$current_rice" == "$rice_name" ]]; then
+            selected_index=$index
+        fi
+
+        ((index++))
+    done
+
+    echo "${options[@]}"
+    echo "$selected_index"
+}
+
+# Function to show the rofi selection menu
+show_rofi_menu() {
+    local options=("$@")
+    local selected_index=${options[-1]}
+    unset options[-1]
+
+    printf "%s\n" "${options[@]}" | while read -r A ; do
+        echo -en "$A\x00icon\x1f$i3_dir/rices/$A/preview.webp\n"
+    done | $rofi_command -theme-str "$rofi_override" -selected-row "$selected_index"
+}
+
+update_vscode_theme() {
+    local selected="$1"
+    local vscode_settings="$HOME/.config/Code - OSS/User/settings.json"  # Путь с пробелами
+
+    # Определяем тему Catppuccin в зависимости от выбранного риса
+    case "$selected" in
+        *latte* | *Latte*)
+            vscode_theme="Catppuccin Latte"
+            vscode_icon_theme="catppuccin-latte"
+            ;;
+        *frappe* | *Frappe*)
+            vscode_theme="Catppuccin Frappe"
+            vscode_icon_theme="catppuccin-frappe"
+            ;;
+        *macchiato* | *Macchiato*)
+            vscode_theme="Catppuccin Macchiato"
+            vscode_icon_theme="catppuccin-macchiato"
+            ;;
+        *mocha* | *Mocha*)
+            vscode_theme="Catppuccin Mocha"
+            vscode_icon_theme="catppuccin-mocha"
+            ;;
+        *)
+            echo "No matching VSCode theme for rice: $selected"
+            return
+            ;;
+    esac
+
+    # Проверяем, существует ли файл настроек VSCode
+    if [[ ! -f "$vscode_settings" ]]; then
+        echo "VSCode settings file not found: $vscode_settings"
+        return
+    fi
+
+    # Обновляем тему и иконки в settings.json
+    jq --arg theme "$vscode_theme" --arg icon_theme "$vscode_icon_theme" \
+       '.["workbench.colorTheme"] = $theme | .["workbench.iconTheme"] = $icon_theme' \
+       "$vscode_settings" > /tmp/vscode_settings.json && mv /tmp/vscode_settings.json "$vscode_settings"
+
+    echo "VSCode theme updated to: $vscode_theme"
+    echo "VSCode icon theme updated to: $vscode_icon_theme"
+}
+
+# Function to update the current rice
+update_rice() {
+    local selected="$1"
+    echo "$selected" > "$RICETHEME"
+
+    # Определяем время для выбора светлой/тёмной версии обоев
+    current_hour=$(date +%H)
+    if [[ $current_hour -ge 6 && $current_hour -lt 18 ]]; then
+        wall_dir="light"
+    else
+        wall_dir="dark"
+    fi
+
+    # Находим случайные обои
+    new_wall=$(find "$HOME/.config/i3/rices/$selected/walls/$wall_dir" -type f | shuf -n 1)
+    new_wall=$(basename "$new_wall")
+
+    # Применяем обои
+    feh --no-fehbg --bg-fill "$HOME/.config/i3/rices/$selected/walls/$wall_dir/$new_wall"
+
+    # Обновляем autostart
+    sed -i "/exec --no-startup-id feh -z --no-fehbg --bg-fill /c\exec --no-startup-id feh -z --no-fehbg --bg-fill \$HOME/.config/i3/rices/$selected/walls/$wall_dir/$new_wall" "$HOME/.config/i3/config.d/autostart"
+    sed -i "s/$i3_rice_in_config/$selected/g" "$HOME/.config/i3/config.d/autostart"
+
+    # Обновляем тему VSCode
+    update_vscode_theme "$selected"
+
+    # Применяем GTK-тему и иконки
+    apply_gtk_theme "$selected"
+
+    # Показываем уведомление
+    dunstify -a "RiceSelector" \
+             -u normal \
+             -i "$HOME/.config/i3/rices/$selected/preview.webp" \
+             -t 3000 \
+             -h "string:x-dunst-stack-tag:riceselector" \
+             "Тема изменена" "Активирована тема: $selected"
+
+    # Перезапускаем i3 если тема изменилась
+    if [[ "$selected" != "$i3_rice_in_config" ]]; then
+        i3-msg restart
+    else
+        # Если тема та же, просто обновляем интерфейс
+        i3-msg reload
+    fi
+}
+
+apply_gtk_theme() {
+    local theme="$1"
+    
+    # Определение иконок и курсоров
+    case "$theme" in
+        "catppuccin-mocha")
+            icon_theme="TokyoNight-SE"
+            cursor_theme="catppuccin-mocha-blue-cursors"
+            ;;
+        "catppuccin-latte")
+            icon_theme="Magna-Dark-Icons"
+            cursor_theme="catppuccin-mocha-maroon-cursors"
+            ;;
+        *)
+            icon_theme="Adwaita"
+            cursor_theme="Adwaita"
+            ;;
+    esac
+
+    # 1. Основные настройки
+    gsettings set org.gnome.desktop.interface gtk-theme "$theme"
+    gsettings set org.gnome.desktop.interface icon-theme "$icon_theme"
+    gsettings set org.gnome.desktop.interface cursor-theme "$cursor_theme"
+
+    # 2. Xsettingsd
+    echo -e "Net/ThemeName \"$theme\"\nNet/IconThemeName \"$icon_theme\"\nGtk/CursorThemeName \"$cursor_theme\"" > ~/.xsettingsd
+    pkill -x xsettingsd && xsettingsd &
+
+    # 3. Специальный обработчик для Thunar
+    update_thunar() {
+        # Получаем все окна Thunar
+        local thunar_windows=$(xdotool search --class "Thunar" 2>/dev/null)
+        
+        # Вариант 1: Мягкое обновление через DBus
+        if dbus-send --session --dest=org.freedesktop.DBus \
+           --type=method_call --print-reply /org/freedesktop/DBus \
+           org.freedesktop.DBus.ListNames 2>/dev/null | grep -q org.xfce.Thunar; then
+            dbus-send --session --dest=org.xfce.Thunar \
+            --type=method_call /org/xfce/FileManager \
+            org.xfce.FileManager.ReconfigureTheme 2>/dev/null
+        fi
+
+        # Вариант 2: Принудительное обновление через xprop
+        for window in $thunar_windows; do
+            xprop -id "$window" -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT "$theme" 2>/dev/null
+            xdotool key --window "$window" F5 2>/dev/null
+        done
+
+        # Вариант 3: Полный перезапуск
+        if ! pgrep -x thunar >/dev/null; then
+            thunar --quit 2>/dev/null
+            sleep 0.5
+            thunar &
+        fi
+
+        # Принудительное обновление Thunar
+    if pgrep -x "thunar" >/dev/null; then
+        xdotool search --class "Thunar" | while read -r window; do
+            xprop -f _GTK_THEME_VARIANT 8u -set _GTK_THEME_VARIANT "$theme" -id "$window"
+            xdotool key --window "$window" F5
+        done
+    fi
+    }
+
+    # 4. Обновление кэша иконок
+    gtk-update-icon-cache -f ~/.local/share/icons/* 2>/dev/null || true
+    gtk-update-icon-cache -f /usr/share/icons/* 2>/dev/null || true
+    gtk-update-icon-cache -f ~/.icons/* 
+
+    # 5. Применяем изменения
+    update_thunar
+
+    # 6. Для всех GTK-приложений
+    export GTK_THEME="$theme"
+    export ICON_THEME="$icon_theme"
+}
+
+# Main function
+main() {
+    check_requirements
+
+    local options_and_index=($(list_rices))
+    local selected_index=${options_and_index[-1]}
+    local options=("${options_and_index[@]:0:${#options_and_index[@]}-1}")
+
+    local selected=$(show_rofi_menu "${options[@]}" "$selected_index")
+
+    # Exit if no selection was made or if the selection is the same as the current rice
+    [[ -n "$selected" && "$selected" != "$(cat "$RICETHEME")" ]] || exit 0
+
+    update_rice "$selected"
+}
+
+main
+exit 0

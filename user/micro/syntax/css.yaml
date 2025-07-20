@@ -1,0 +1,41 @@
+filetype: css
+
+detect:
+  filename: "\\.css$"
+
+rules:
+  - constant: "\\b[a-zA-Z0-9\\-_]+\\b"
+  - function: "\\.[a-zA-Z0-9\\-_]+\\b"
+  - type: "\\#[a-zA-Z0-9\\-_]+\\b"
+  - bracket:
+      start: "\\{"
+      end: "\\}"
+      rules:
+        - function: "[a-zA-Z0-9\\-_]+\\("
+        - operator: "\\b(solid|transparent|baseline|block|collapse|right|left)\\b"
+        - statement: "[a-zA-Z0-9\\-_]+:"
+        - operator: "[;:*,]"
+        - bracket: "[{}()]"
+        - number: "[0-9]+"
+        - number: "[0-9]+px"
+        - number: "[0-9]+%"
+        - number: "[0-9]+deg"
+        - string:
+            start: "\""
+            skip: "\\\\."
+            end: "\""
+            rules: []
+        - string:
+            start: "'"
+            skip: "\\\\."
+            end: "'"
+            rules: []
+        - comment:
+            start: "/\\*"
+            end: "\\*/"
+            rules: []
+  - comment:
+      start: "/\\*"
+      end: "\\*/"
+      rules: []
+

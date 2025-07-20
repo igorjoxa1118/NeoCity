@@ -1,0 +1,9 @@
+filetype: test
+
+rules:
+  - operator: "some_rule"
+  - operator: "[,]"
+  - string:
+      start: "'"
+      end: "'"
+      rules: []

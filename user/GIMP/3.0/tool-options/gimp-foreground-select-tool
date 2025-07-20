@@ -1,0 +1,8 @@
+# GIMP gimp-foreground-select-tool options
+
+(foreground
+    (color "R'G'B'A u8" 4 "\36\36\56\377" 0))
+(background
+    (color "HSVA float" 16 "\0\0\0\0\0\0\0\0\0\0\200\77\0\0\200\77" 0))
+
+# end of gimp-foreground-select-tool options

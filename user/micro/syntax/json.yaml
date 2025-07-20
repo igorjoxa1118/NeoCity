@@ -1,0 +1,18 @@
+filetype: json
+
+detect:
+  filename: ".json$"
+
+rules:
+  - number: "-?[0-9]+"
+  - number: "-?[0-9]+\\.[0-9]+"
+  - number: "-?[eE]\\+[0-9]+"
+  - bracket: "[\\{\\}\\[\\]]"
+  - operator: "[:,]"
+  - string:
+      start: "\""
+      skip: "\\\\."
+      end: "\""
+      rules:
+        - string.escape: "\\\\."
+        - string.escape: "\\\\u[0-9a-zA-Z]{4}"

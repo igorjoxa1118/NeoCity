@@ -1,0 +1,16 @@
+# settings
+
+(GimpBrightnessContrastConfig "2025-01-19 12:45:03"
+    (time 1737283503)
+    (brightness 0.023622047244094488)
+    (contrast -0.18110236220472442))
+(GimpBrightnessContrastConfig "2024-12-07 14:53:36"
+    (time 1733576016)
+    (brightness 0.14960629921259844)
+    (contrast 0.18110236220472442))
+(GimpBrightnessContrastConfig "2024-06-15 07:15:45"
+    (time 1718424945)
+    (brightness 0.16535433070866143)
+    (contrast 0.33858267716535434))
+
+# end of settings

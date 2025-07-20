@@ -1,0 +1,11 @@
+#!/bin/bash
+
+read -r RICETHEME < "$HOME"/.config/i3/config.d/.rice
+
+CONKEWW=$(pidof eww)
+
+if [[ ! ${CONKEWW} ]]; then
+  eww --config $HOME/.config/i3/rices/$RICETHEME/eww/KeybindingsHelp/ open conkeww-main
+else
+  kill ${CONKEWW}
+fi

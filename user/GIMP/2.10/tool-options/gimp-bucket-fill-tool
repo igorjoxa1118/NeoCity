@@ -1,0 +1,8 @@
+# GIMP gimp-bucket-fill-tool options
+
+(foreground (color-rgb 0.11764705882352941 0.11764705882352941 0.1803921568627451))
+(pattern "Pine")
+(brush-size 51)
+(brush-hardness 0.5)
+
+# end of gimp-bucket-fill-tool options

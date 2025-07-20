@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=Xfdashboard
+Comment=Maybe a Gnome shell like dashboard for Xfce
+GenericName=Xfdashboard
+TryExec=/usr/bin/xfdashboard
+Exec=/usr/bin/xfdashboard
+Icon=multitasking-view
+Categories=System;
+NotShowIn=GNOME;KDE;Unity;
+Terminal=false
+X-XFCE-Source=file:///usr/share/applications/xfdashboard.desktop
+Path=
+StartupNotify=false
