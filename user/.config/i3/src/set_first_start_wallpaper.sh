@@ -1,8 +1,16 @@
 #!/bin/bash
 
+# Чтение текущей темы
+if [ ! -f "$HOME/.config/i3/config.d/.rice" ]; then
+    log "Файл .rice не найден!"
+    exit 1
+fi
+
+read -r RICETHEME < "$HOME/.config/i3/config.d/.rice"
+
 # Пути к директориям с обоями
-LIGHT_WALLPAPER_DIR="$HOME/.config/i3/rices/catppuccin-mocha/walls/light/"
-DARK_WALLPAPER_DIR="$HOME/.config/i3/rices/catppuccin-mocha/walls/dark/"
+LIGHT_WALLPAPER_DIR="$HOME/.config/i3/rices/$RICETHEME/walls/light/"
+DARK_WALLPAPER_DIR="$HOME/.config/i3/rices/$RICETHEME/walls/dark/"
 
 # Файлы блокировки и конфигурации
 LOCK_FILE="$HOME/.config/i3/config.d/.wallpaper_change.lock"

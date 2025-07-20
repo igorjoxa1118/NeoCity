@@ -2,8 +2,8 @@ sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: pause
-current: 36
-time: 1404.521
+current: 287
+time: 162.762
 random: 0
 repeat: 0
 single: 0
@@ -13,58 +13,305 @@ mixrampdb: 0
 mixrampdelay: -1
 lastloadedplaylist: 
 playlist_begin
-0:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/01.mp3
-1:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/02.mp3
-2:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/03.mp3
-3:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/04.mp3
-4:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/05.mp3
-5:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/06.mp3
-6:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/07.mp3
-7:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/08.mp3
-8:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/09.mp3
-9:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/10.mp3
-10:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/11.mp3
-11:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/12.mp3
-12:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/13.mp3
-13:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/14.mp3
-14:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/15.mp3
-15:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/16.mp3
-16:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/17.mp3
-17:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/18.mp3
-18:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/19.mp3
-19:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/20.mp3
-20:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/21.mp3
-21:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/22.mp3
-22:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/23.mp3
-23:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/24.mp3
-24:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/25.mp3
-25:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/26.mp3
-26:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/27.mp3
-27:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/28.mp3
-28:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/29.mp3
-29:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/30.mp3
-30:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/31.mp3
-31:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/32.mp3
-32:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/33.mp3
-33:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/34.mp3
-34:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/35.mp3
-35:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/36.mp3
-36:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/37.mp3
-37:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/38.mp3
-38:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/39.mp3
-39:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/40.mp3
-40:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/41.mp3
-41:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/42.mp3
-42:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/43.mp3
-43:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/44.mp3
-44:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/45.mp3
-45:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/46.mp3
-46:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/47.mp3
-47:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/48.mp3
-48:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/49.mp3
-49:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/50.mp3
-50:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/51.mp3
-51:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/52.mp3
-52:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/53.mp3
-53:AudioBooks/Константин Образцов - Красные цепи (Максим Сергеев)/54.mp3
+0:Games/Darkman007/2010 - Atomic Insanity/01 - Crucified Bastard.mp3
+1:Games/Darkman007/2010 - Atomic Insanity/02 - Atomic Insanity.mp3
+2:Games/Darkman007/2010 - Atomic Insanity/03 - No Justice.mp3
+3:Games/Darkman007/2010 - Atomic Insanity/04 - Nature Kill.mp3
+4:Games/Darkman007/2010 - Atomic Insanity/05 - The Rocket Flight.mp3
+5:Games/Darkman007/2010 - Atomic Insanity/06 - Marasmus of Mind.mp3
+6:Games/Darkman007/2010 - Atomic Insanity/07 - Perfection Ideas.mp3
+7:Games/Darkman007/2010 - Music Never Die/01 - Escape From The Past.mp3
+8:Games/Darkman007/2010 - Music Never Die/02 - Running Man.mp3
+9:Games/Darkman007/2010 - Music Never Die/03 - Just Play It.mp3
+10:Games/Darkman007/2010 - Music Never Die/04 - Nowhere To Hide.mp3
+11:Games/Darkman007/2010 - Music Never Die/05 - Hard and Heavy.mp3
+12:Games/Darkman007/2010 - Music Never Die/06 - Casual Life.mp3
+13:Games/Darkman007/2010 - Music Never Die/07 - Music Never Die.mp3
+14:Games/Darkman007/2011 - The Power Of Consciousness/01 - Keep Your Light.mp3
+15:Games/Darkman007/2011 - The Power Of Consciousness/02 - Don't Be a Slave.mp3
+16:Games/Darkman007/2011 - The Power Of Consciousness/03 - Break the System.mp3
+17:Games/Darkman007/2011 - The Power Of Consciousness/04 - Like Storm After The Calm.mp3
+18:Games/Darkman007/2011 - The Power Of Consciousness/05 - Stand Up and Solve Your Problems.mp3
+19:Games/Darkman007/2011 - The Power Of Consciousness/06 - Move On And Search The Knowledges.mp3
+20:Games/Darkman007/2011 - The Power Of Consciousness/07 - Less Words More Action.mp3
+21:Games/Darkman007/2011 - The Power Of Consciousness/08 - For being Healthy and Strong.mp3
+22:Games/Darkman007/2011 - The Power Of Consciousness/09 - To Eliminate The Uncertainty.mp3
+23:Games/Darkman007/2011 - The Power Of Consciousness/10 - The Power Of Consciousness.mp3
+24:Games/Darkman007/2011 - The Power Of Consciousness/11 - The Alibi Cover (Original Theme by Laxity and JCH (PC Version)).mp3
+25:Games/Darkman007/2011 - Unimaginable Freedom/01 - Power of Insight.mp3
+26:Games/Darkman007/2011 - Unimaginable Freedom/02 - Sweet Betrayal.mp3
+27:Games/Darkman007/2011 - Unimaginable Freedom/03 - Exposure of Traitor.mp3
+28:Games/Darkman007/2011 - Unimaginable Freedom/04 - Unlimited Napalm.mp3
+29:Games/Darkman007/2011 - Unimaginable Freedom/05 - Kill the Past, Live Now.mp3
+30:Games/Darkman007/2011 - Unimaginable Freedom/06 - Aroma of Spite.mp3
+31:Games/Darkman007/2011 - Unimaginable Freedom/07 - Unimaginable Freedom.mp3
+32:Games/Darkman007/2011 - Unimaginable Freedom/08 - Conception of Reality.mp3
+33:Games/Darkman007/2011 - Unimaginable Freedom/09 - In Another Dimension.mp3
+34:Games/Darkman007/2011 - Unimaginable Freedom/10 - The Positive Justice of Chuck Norris (Bonus Track).mp3
+35:Games/Darkman007/2012 - Covers from Game Themes/01. Barbarian II (zx) - Title Theme.flac
+36:Games/Darkman007/2012 - Covers from Game Themes/02. Alien 3 (nes) - Title Theme.flac
+37:Games/Darkman007/2012 - Covers from Game Themes/03. Battletoads (snes+nes) - Title Screen + some themes from snes.flac
+38:Games/Darkman007/2012 - Covers from Game Themes/04. Blowing (SID) - original by S0ren Lund.flac
+39:Games/Darkman007/2012 - Covers from Game Themes/05. Chip & Dale - Main Theme.flac
+40:Games/Darkman007/2012 - Covers from Game Themes/06. Comix Zone - Episode 1, Page 1-1.flac
+41:Games/Darkman007/2012 - Covers from Game Themes/07. Comix Zone - Episode 1, Page 2-2.flac
+42:Games/Darkman007/2012 - Covers from Game Themes/08. Comix Zone - Title Screen.flac
+43:Games/Darkman007/2012 - Covers from Game Themes/09. Contra Force (nes) - Some Themes.flac
+44:Games/Darkman007/2012 - Covers from Game Themes/10. Duke Nukem - Grabbag (remastered).flac
+45:Games/Darkman007/2012 - Covers from Game Themes/11. Duke Nukem - Grabbag.flac
+46:Games/Darkman007/2012 - Covers from Game Themes/12. F-19 Stealth Fighter (zx) - Main Theme.flac
+47:Games/Darkman007/2012 - Covers from Game Themes/13. H.A.T.E.(zx) - Main Theme.flac
+48:Games/Darkman007/2012 - Covers from Game Themes/14. Maximum Carnage (gens) - Streets of New York.flac
+49:Games/Darkman007/2012 - Covers from Game Themes/15. Maximum Carnage (gens) - Title Theme.flac
+50:Games/Darkman007/2012 - Covers from Game Themes/16. Mission Impossible (nes) - Level 2.flac
+51:Games/Darkman007/2012 - Covers from Game Themes/17. Mission Impossible (nes) - Some Themes.flac
+52:Games/Darkman007/2012 - Covers from Game Themes/18. Redzone (gens) - Datarum.flac
+53:Games/Darkman007/2012 - Covers from Game Themes/19. Robocop 3 (nes) - Main Theme (remastered).flac
+54:Games/Darkman007/2012 - Covers from Game Themes/20. Savage part One (zx) - Main Theme.flac
+55:Games/Darkman007/2012 - Covers from Game Themes/21. Spider-Man and the X-Men in Arcade's Revenge (snes) - Tittle.flac
+56:Games/Darkman007/2012 - Covers from Game Themes/22. Super Mario - 01 - Overworld (nes).flac
+57:Games/Darkman007/2012 - Covers from Game Themes/23. Super Mario - 02 - Dungeon (nes).flac
+58:Games/Darkman007/2012 - Covers from Game Themes/24. TMNT (nes) - BGM1.flac
+59:Games/Darkman007/2012 - Covers from Game Themes/25. Vectorman (gens) - Level 1.flac
+60:Games/Darkman007/2012 - Covers from Game Themes/26. Virtua Fighter (dreamcast) REMASTERED - Theme from Game-Trailer.flac
+61:Games/Darkman007/2012 - Covers from Game Themes/27. Zen Ninja - Oil Rig Stage (nes).flac
+62:Games/Darkman007/2012 - Ultimate Mortal Kombat 3 (Sega) - Metal Cover/01. Ultimate Mortal Kombat (Sega) - 01 - The Subway.flac
+63:Games/Darkman007/2012 - Ultimate Mortal Kombat 3 (Sega) - Metal Cover/02. Ultimate Mortal Kombat (Sega) - 02 - The Rooftop.flac
+64:Games/Darkman007/2012 - Ultimate Mortal Kombat 3 (Sega) - Metal Cover/03. Ultimate Mortal Kombat (Sega) - 03 - The Bridge.flac
+65:Games/Darkman007/2015 - Mortal Kombat (Cover some Variations)/01. Mortal Kombat (Cover some Variations).flac
+66:Games/Darkman007/2016 - Sounds From The Past/01. TMNT III - The Manhattan Project (NES) - Variations.flac
+67:Games/Darkman007/2016 - Sounds From The Past/02. Alien 3 (NES) - Variations.flac
+68:Games/Darkman007/2016 - Sounds From The Past/03. Ninja Gaiden 3 (NES) - Variations.flac
+69:Games/Darkman007/2016 - Sounds From The Past/04. Task Force (ZX) - Title.flac
+70:Games/Darkman007/2016 - Sounds From The Past/05. Mission Impossible (NES) - Variations.flac
+71:Games/Darkman007/2016 - Sounds From The Past/06. Killer Instinct (ARCADE) - Title.flac
+72:Games/Darkman007/2016 - Sounds From The Past/07. Battletoads (NES) - Variations.flac
+73:Games/Darkman007/2016 - Sounds From The Past/08. Vectorman (GENESIS) - Variations.flac
+74:Games/Darkman007/2016 - Sounds From The Past/09. Chronos (ZX) - Title.flac
+75:Games/Darkman007/2016 - Sounds From The Past/10. Dr.Mario (NES) - Variations.flac
+76:Games/Darkman007/2019 - How Much is 8-bit/01. Clinger (cover).flac
+77:Games/Darkman007/2019 - How Much is 8-bit/02. Zelda (cover).flac
+78:Games/Darkman007/2019 - How Much is 8-bit/03. Super Mario Bros. 3 (cover).flac
+79:Games/Darkman007/2019 - How Much is 8-bit/04. How Much is 8-bit- (OST).flac
+80:Games/Darkman007/2019 - How Much is 8-bit/05. Big Abruptness! (cut for Kinaman's film).flac
+81:Games/Darkman007/2019 - Vectormania/01. Mission Start.flac
+82:Games/Darkman007/2019 - Vectormania/02. Opportunity.flac
+83:Games/Darkman007/2019 - Vectormania/03. FYI.flac
+84:Games/Darkman007/2019 - Vectormania/04. Inaguration.flac
+85:Games/Darkman007/2019 - Vectormania/05. Terraport.flac
+86:Games/Darkman007/2019 - Vectormania/06. Ride The Rails.flac
+87:Games/Darkman007/2019 - Vectormania/07. Aquatic Nightscape.flac
+88:Games/Darkman007/2019 - Vectormania/08. -459.67'F.flac
+89:Games/Darkman007/2019 - Vectormania/09. Frozen Hydroponics.flac
+90:Games/Darkman007/2019 - Vectormania/10. Rock'n Roller.flac
+91:Games/Darkman007/2019 - Vectormania/11. Superstructure Ruins.flac
+92:Games/Darkman007/2021 - Metaltoads/01. Title Theme.flac
+93:Games/Darkman007/2021 - Metaltoads/02. Ragnarok Canyon.flac
+94:Games/Darkman007/2021 - Metaltoads/03. Wookie Hole.flac
+95:Games/Darkman007/2021 - Metaltoads/04. Turbo Tunnel (Prelude).flac
+96:Games/Darkman007/2021 - Metaltoads/05. Turbo Tunnel.flac
+97:Games/Darkman007/2021 - Metaltoads/06. Arctic Cavern.flac
+98:Games/Darkman007/2021 - Metaltoads/07. Dark Calling (Cutscene).flac
+99:Games/Darkman007/2021 - Metaltoads/08. Surf City.flac
+100:Games/Darkman007/2021 - Metaltoads/09. Karnath Lair.flac
+101:Games/Darkman007/2021 - Metaltoads/10. Intruder Excluder.flac
+102:Games/Darkman007/2021 - Metaltoads/11. Volkmire's Rat Race.flac
+103:Games/Darkman007/2021 - Metaltoads/12. Game Over, Boss.flac
+104:Games/Darkman007/chiptunes/2007/Darkman007 - Another Life.mp3
+105:Games/Darkman007/chiptunes/2007/Darkman007 - Chipo Five 1.mp3
+106:Games/Darkman007/chiptunes/2007/Darkman007 - Chipo Five 2.mp3
+107:Games/Darkman007/chiptunes/2007/Darkman007 - Chipo Five 3.mp3
+108:Games/Darkman007/chiptunes/2007/Darkman007 - Chipo Five 4.mp3
+109:Games/Darkman007/chiptunes/2007/Darkman007 - Immortality.mp3
+110:Games/Darkman007/chiptunes/2007/Darkman007 - Independent.mp3
+111:Games/Darkman007/chiptunes/2007/Darkman007 - Invite for CC'07.mp3
+112:Games/Darkman007/chiptunes/2007/Darkman007 - Metal World.mp3
+113:Games/Darkman007/chiptunes/2007/Darkman007 - New Conception.mp3
+114:Games/Darkman007/chiptunes/2007/Darkman007 - The End.mp3
+115:Games/Darkman007/chiptunes/2008/Darkman007 - Cool Day.mp3
+116:Games/Darkman007/chiptunes/2008/Darkman007 - Forget the Past.mp3
+117:Games/Darkman007/chiptunes/2008/Darkman007 - Intronicum.mp3
+118:Games/Darkman007/chiptunes/2008/Darkman007 - Just Feel It.mp3
+119:Games/Darkman007/chiptunes/2008/Darkman007 - Remainders of Love.mp3
+120:Games/Darkman007/chiptunes/2009/Darkman007 - Away From Love.mp3
+121:Games/Darkman007/chiptunes/2009/Darkman007 - Brain Distortion.mp3
+122:Games/Darkman007/chiptunes/2009/Darkman007 - Regeneration.mp3
+123:Games/Darkman007/chiptunes/2009/Darkman007 - San's HPBRTHDY ).mp3
+124:Games/Darkman007/chiptunes/2009/Darkman007 - Time Force.mp3
+125:Games/Darkman007/chiptunes/2010/Darkman007 - Confused.mp3
+126:Games/Darkman007/chiptunes/2010/Darkman007 - Dance with a Dream.mp3
+127:Games/Darkman007/chiptunes/2010/Darkman007 - Fun's Abstractions.mp3
+128:Games/Darkman007/chiptunes/2010/Darkman007 - Fun1_v1.18 ()64kb).mp3
+129:Games/Darkman007/chiptunes/2010/Darkman007 - Illusion.mp3
+130:Games/Darkman007/chiptunes/2011/Darkman007 - Grass Near The House (COVER).mp3
+131:Games/Darkman007/chiptunes/2011/Darkman007 - I'm Engineer.mp3
+132:Games/Darkman007/chiptunes/2011/Darkman007 - Light a Fire.mp3
+133:Games/Darkman007/chiptunes/2011/Darkman007 - Memories (original theme by Em(022000) in zx-module).mp3
+134:Games/Darkman007/chiptunes/2011/Darkman007 - Some Feelings.mp3
+135:Games/Darkman007/chiptunes/2011/Darkman007 - Waveform Duplex.mp3
+136:Games/Darkman007/chiptunes/2011/Darkman007 - World's Fractalization.mp3
+137:Games/Darkman007/chiptunes/2012/Darkman007 - 01 - Space Light.mp3
+138:Games/Darkman007/chiptunes/2012/Darkman007 - 02 - Mr. Droichen.mp3
+139:Games/Darkman007/chiptunes/2012/Darkman007 - 03 - Mouse Eater.mp3
+140:Games/Darkman007/chiptunes/2012/Darkman007 - 04 - Android In Rage.mp3
+141:Games/Darkman007/chiptunes/2012/Darkman007 - 05 - Crazy Thought.mp3
+142:Games/Darkman007/chiptunes/2012/Darkman007 - 06 - Create & Destroy.mp3
+143:Games/Darkman007/chiptunes/2012/Darkman007 - 07 - Cosmic.mp3
+144:Games/Darkman007/chiptunes/2012/Darkman007 - 08 - Sad Song.mp3
+145:Games/Darkman007/chiptunes/2012/Darkman007 - 09 - Cheerful Song.mp3
+146:Games/Darkman007/chiptunes/2013/01 - HPNY 2013.mp3
+147:Games/Darkman007/chiptunes/2013/02 - On a Fir-Trees To Heavens.mp3
+148:Games/Darkman007/chiptunes/2013/03 - With a Rocket Engine.mp3
+149:Games/Darkman007/chiptunes/2013/04 - To The Moon.mp3
+150:Games/Darkman007/chiptunes/2013/05 - To See The Other Side.mp3
+151:Games/Darkman007/chiptunes/2013/06 - Passing a Meteorite Rain.mp3
+152:Games/Darkman007/chiptunes/2013/07 - Landing To The Moon.mp3
+153:Games/Darkman007/chiptunes/2013/08 - Inevitable Meeting.mp3
+154:Games/Darkman007/chiptunes/2014/01 - Sorry, My Bad.mp3
+155:Games/Darkman007/chiptunes/2014/02 - Respawn.mp3
+156:Games/Darkman007/chiptunes/2014/03 - Vertical Flip.mp3
+157:Games/Darkman007/chiptunes/2014/04 - Synthez Brains.mp3
+158:Games/Darkman007/chiptunes/2014/05 - To The Impossible.mp3
+159:Games/Darkman007/chiptunes/2014/06 - After Raining.mp3
+160:Games/Darkman007/chiptunes/2014/07 - I Know.mp3
+161:Games/Darkman007/chiptunes/2014/08 - Blue Berry (Cover).mp3
+162:Games/Darkman007/chiptunes/2014_Super_Cyborg/01 - Title.mp3
+163:Games/Darkman007/chiptunes/2014_Super_Cyborg/02 - Area-1.mp3
+164:Games/Darkman007/chiptunes/2014_Super_Cyborg/03 - Area-2.mp3
+165:Games/Darkman007/chiptunes/2014_Super_Cyborg/04 - Area-3.mp3
+166:Games/Darkman007/chiptunes/2014_Super_Cyborg/05 - Area-4.mp3
+167:Games/Darkman007/chiptunes/2014_Super_Cyborg/06 - Area-5.mp3
+168:Games/Darkman007/chiptunes/2014_Super_Cyborg/07 - Area-6.mp3
+169:Games/Darkman007/chiptunes/2014_Super_Cyborg/08 - Area-7.mp3
+170:Games/Darkman007/chiptunes/2014_Super_Cyborg/09 - Boss-1.mp3
+171:Games/Darkman007/chiptunes/2014_Super_Cyborg/10 - Boss-2.mp3
+172:Games/Darkman007/chiptunes/2014_Super_Cyborg/11 - Miniboss.mp3
+173:Games/Darkman007/chiptunes/2014_Super_Cyborg/12 - Lastboss.mp3
+174:Games/Darkman007/chiptunes/2014_Super_Cyborg/13 - Lastboss_2.mp3
+175:Games/Darkman007/chiptunes/2014_Super_Cyborg/14 - Stageclear.mp3
+176:Games/Darkman007/chiptunes/2014_Super_Cyborg/15 - Gameover.mp3
+177:Games/Darkman007/chiptunes/2014_Super_Cyborg/16 - Lastboss_clear.mp3
+178:Games/Darkman007/chiptunes/2014_Super_Cyborg/17 - Ending.mp3
+179:Games/Darkman007/chiptunes/2014_Super_Cyborg/18 - Trailer.mp3
+180:Games/Darkman007/Invasion - Original Game Soundtrack Ep1 (by Darkman007) - 2018/01. Sneaky Bastards.flac
+181:Games/Darkman007/Invasion - Original Game Soundtrack Ep1 (by Darkman007) - 2018/02. Take Your Tank Soldier.flac
+182:Games/Darkman007/Invasion - Original Game Soundtrack Ep1 (by Darkman007) - 2018/03. Kill 'Em All!.flac
+183:Games/Darkman007/Invasion - Original Game Soundtrack Ep1 (by Darkman007) - 2018/04. ..And Be Happy.flac
+184:Games/Darkman007/Invasion - Original Game Soundtrack Ep1 (by Darkman007) - 2018/05. Next Wave.flac
+185:Games/Darkman007/Invasion - Original Game Soundtrack Ep1 (by Darkman007) - 2018/06. Heroic Weekdays.flac
+186:Games/Darkman007/Invasion - Original Game Soundtrack Ep1 (by Darkman007) - 2018/07. It's Time to Save The World.flac
+187:Games/Darkman007/Invasion - Original Game Soundtrack Ep1 (by Darkman007) - 2018/08. Something Really Serious.flac
+188:Games/Darkman007/Invasion - Original Game Soundtrack Ep1 (by Darkman007) - 2018/09. Kick Out The Big Ass.flac
+189:Games/Darkman007/Invasion - Original Game Soundtrack Ep1 (by Darkman007) - 2018/10. Victory!.flac
+190:Games/Darkman007/Invasion - Original Game Soundtrack Ep1 (by Darkman007) - 2018/11. Something Went Wrong.flac
+191:Games/Darkman007/Invasion - Original Game Soundtrack Ep1 (by Darkman007) - 2018/12. Prepare for The Real Battle!.flac
+192:Games/Darkman007/Iron Meat by Darkman007 (2024)/01. A Fight Through the Forest (Forest).mp3
+193:Games/Darkman007/Iron Meat by Darkman007 (2024)/02. Tank Monster (Entrail Blazer MKII).mp3
+194:Games/Darkman007/Iron Meat by Darkman007 (2024)/03. Climbing to the Top (Tower).mp3
+195:Games/Darkman007/Iron Meat by Darkman007 (2024)/04. The Infected Scientist (Yuri Markov, Tower).mp3
+196:Games/Darkman007/Iron Meat by Darkman007 (2024)/05. Railway of Death (Train).mp3
+197:Games/Darkman007/Iron Meat by Darkman007 (2024)/06. Iron Serpent (Carrionvoy).mp3
+198:Games/Darkman007/Iron Meat by Darkman007 (2024)/07. Within the Stronghold (Base).mp3
+199:Games/Darkman007/Iron Meat by Darkman007 (2024)/08. A Monster and Its Prey (Big Rig Carnarach).mp3
+200:Games/Darkman007/Iron Meat by Darkman007 (2024)/09. Assault on the Airship (Sky).mp3
+201:Games/Darkman007/Iron Meat by Darkman007 (2024)/10. The Flying Crocodile (MI-24).mp3
+202:Games/Darkman007/Iron Meat by Darkman007 (2024)/11. Through the Fire and the Meat (City).mp3
+203:Games/Darkman007/Iron Meat by Darkman007 (2024)/12. The Food Comes Home (Monster House).mp3
+204:Games/Darkman007/Iron Meat by Darkman007 (2024)/13. Bloody Ascension (Skyscraper).mp3
+205:Games/Darkman007/Iron Meat by Darkman007 (2024)/14. Markov, Harbinger of the Apocalypse (Yuri Markov, Skyscraper).mp3
+206:Games/Darkman007/Iron Meat by Darkman007 (2024)/15. Assault on the Moon (Moon).mp3
+207:Games/Darkman007/Iron Meat by Darkman007 (2024)/16. Vassal of the Meat (Meat Prophet).mp3
+208:Games/Darkman007/Iron Meat by Darkman007 (2024)/17. Onwards to the End (Moon Base).mp3
+209:Games/Darkman007/Iron Meat by Darkman007 (2024)/18. Interdimensional Horror (The Iron Meat).mp3
+210:Games/Darkman007/Iron Meat by Darkman007 (2024)/19. End of the Invasion (Ending).mp3
+211:Games/Darkman007/Iron Meat by Darkman007 (2024)/20. Consumed (Game Over).mp3
+212:Games/Darkman007/Iron Meat by Darkman007 (2024)/21. On Standby (Title Screen).mp3
+213:Games/Darkman007/Iron Meat by Darkman007 (2024)/22. A Fight Through the Forest (Forest, Retro).mp3
+214:Games/Darkman007/Iron Meat by Darkman007 (2024)/23. Tank Monster (Entrail Blazer MKII, Retro).mp3
+215:Games/Darkman007/Iron Meat by Darkman007 (2024)/24. Climbing to the Top (Tower, Retro).mp3
+216:Games/Darkman007/Iron Meat by Darkman007 (2024)/25. The Infected Scientist (Yuri Markov, Tower, Retro).mp3
+217:Games/Darkman007/Iron Meat by Darkman007 (2024)/26. Railway of Death (Train, Retro).mp3
+218:Games/Darkman007/Iron Meat by Darkman007 (2024)/27. Iron Serpent (Carrionvoy, Retro).mp3
+219:Games/Darkman007/Iron Meat by Darkman007 (2024)/28. Within the Stronghold (Base, Retro).mp3
+220:Games/Darkman007/Iron Meat by Darkman007 (2024)/29. A Monster and Its Prey (Big Rig Carnarach, Retro).mp3
+221:Games/Darkman007/Iron Meat by Darkman007 (2024)/30. Assault on the Airship (Sky, Retro).mp3
+222:Games/Darkman007/Iron Meat by Darkman007 (2024)/31. The Flying Crocodile (MI-24, Retro).mp3
+223:Games/Darkman007/Iron Meat by Darkman007 (2024)/32. Through the Fire and the Meat (City, Retro).mp3
+224:Games/Darkman007/Iron Meat by Darkman007 (2024)/33. The Food Comes Home (Monster House, Retro).mp3
+225:Games/Darkman007/Iron Meat by Darkman007 (2024)/34. Bloody Ascension (Skyscraper, Retro).mp3
+226:Games/Darkman007/Iron Meat by Darkman007 (2024)/35. Markov, Harbinger of the Apocalypse (Yuri Markov, Skyscraper, Retro).mp3
+227:Games/Darkman007/Iron Meat by Darkman007 (2024)/36. Assault on the Moon (Moon, Retro).mp3
+228:Games/Darkman007/Iron Meat by Darkman007 (2024)/37. Vassal of the Meat (Meat Prophet, Retro).mp3
+229:Games/Darkman007/Iron Meat by Darkman007 (2024)/38. Onwards to the End (Moon Base, Retro).mp3
+230:Games/Darkman007/Iron Meat by Darkman007 (2024)/39. Interdimensional Horror (The Iron Meat, Retro).mp3
+231:Games/Darkman007/Iron Meat by Darkman007 (2024)/40. Consumed (Game Over, Retro).mp3
+232:Games/Darkman007/Iron Meat by Darkman007 (2024)/41. On Standby (Title Screen, Retro).mp3
+233:Games/Darkman007/Remakes & Covers From Old Games Themes/Alien 3 (nes) - Title Theme.mp3
+234:Games/Darkman007/Remakes & Covers From Old Games Themes/Barbarian II (zx) - Title Theme.mp3
+235:Games/Darkman007/Remakes & Covers From Old Games Themes/Battletoads (snes+nes) - Title Screen + some themes from snes.mp3
+236:Games/Darkman007/Remakes & Covers From Old Games Themes/Blowing (SID) - original by S0ren Lund.mp3
+237:Games/Darkman007/Remakes & Covers From Old Games Themes/Chip & Dale - Main Theme.mp3
+238:Games/Darkman007/Remakes & Covers From Old Games Themes/Comix Zone (gens) - Title Screen.mp3
+239:Games/Darkman007/Remakes & Covers From Old Games Themes/Contra Force (nes) - Some Themes.MP3
+240:Games/Darkman007/Remakes & Covers From Old Games Themes/Duke Nukem - Grabbag (remastered).mp3
+241:Games/Darkman007/Remakes & Covers From Old Games Themes/Duke Nukem - Grabbag.mp3
+242:Games/Darkman007/Remakes & Covers From Old Games Themes/Exolon (zx) - Main Theme (beta).mp3
+243:Games/Darkman007/Remakes & Covers From Old Games Themes/F-19 Stealth Fighter (zx) - Main Theme.mp3
+244:Games/Darkman007/Remakes & Covers From Old Games Themes/H.A.T.E.(zx) - Main Theme.mp3
+245:Games/Darkman007/Remakes & Covers From Old Games Themes/Maximum Carnage (gens) - Streets of New York.mp3
+246:Games/Darkman007/Remakes & Covers From Old Games Themes/Maximum Carnage (gens) - Title Theme.mp3
+247:Games/Darkman007/Remakes & Covers From Old Games Themes/Mission Impossible (nes) - Level 2.mp3
+248:Games/Darkman007/Remakes & Covers From Old Games Themes/Mission Impossible (nes) - Some Themes.mp3
+249:Games/Darkman007/Remakes & Covers From Old Games Themes/Redzone (gens) - Datarum.mp3
+250:Games/Darkman007/Remakes & Covers From Old Games Themes/Robocop 3 (nes) - Main Theme (remastered).mp3
+251:Games/Darkman007/Remakes & Covers From Old Games Themes/Savage part One - Main Theme.mp3
+252:Games/Darkman007/Remakes & Covers From Old Games Themes/Spider-Man and the X-Men in Arcade's Revenge - Tittle.mp3
+253:Games/Darkman007/Remakes & Covers From Old Games Themes/Super Mario - 01 - Overworld (nes).MP3
+254:Games/Darkman007/Remakes & Covers From Old Games Themes/Super Mario - 02 - Dungeon (nes).MP3
+255:Games/Darkman007/Remakes & Covers From Old Games Themes/TMNT (nes) - BGM1.MP3
+256:Games/Darkman007/Remakes & Covers From Old Games Themes/Vectorman (gens) - Level 1.mp3
+257:Games/Darkman007/Remakes & Covers From Old Games Themes/Virtua Fighter (dreamcast) - Theme from Game-Trailer.mp3
+258:Games/Darkman007/Remakes & Covers From Old Games Themes/Virtua Fighter (dreamcast) REMASTERED - Theme from Game-Trailer.mp3.mp3
+259:Games/Darkman007/Remakes & Covers From Old Games Themes/Zen Ninja - Oil Rig Stage (nes).mp3
+260:Games/Darkman007/Singles/Darkman007 - Away from Love.mp3
+261:Games/Darkman007/Singles/Darkman007 - Brutal Thrash remastered.mp3
+262:Games/Darkman007/Singles/Darkman007 - Flame Of My Heart.mp3
+263:Games/Darkman007/Singles/Darkman007 - Life With Metal Sound.mp3
+264:Games/Darkman007/Singles/Darkman007 - Live For Speed.mp3
+265:Games/Darkman007/Singles/Darkman007 - Ready to Die.mp3
+266:Games/Darkman007/Singles/Darkman007 - Rodents Extermination.mp3
+267:Games/Darkman007/Singles/Darkman007 - Your Breathing.mp3
+268:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/01. Title Theme.flac
+269:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/02. Jungle Arrival.flac
+270:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/03. Laboratory.flac
+271:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/04. Mountains.flac
+272:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/05. Spider's Lair.flac
+273:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/06. Giant Worm Intestines.flac
+274:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/07. Drainage System.flac
+275:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/08. Bio-Complex.flac
+276:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/09. Even Boss.flac
+277:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/10. Odd Boss.flac
+278:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/11. Miniboss.flac
+279:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/12. Last Boss, Pt. 1.flac
+280:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/13. Last Boss, Pt. 2.flac
+281:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/14. Ending (Credits).flac
+282:Games/Darkman007/Super Cyborg Original Game Soundtrack by Darkman007 (2014)/15. Trailer Theme.flac
+283:Games/Zubareus/2010 - From 8 to infinity/01. Contra Force.flac
+284:Games/Zubareus/2010 - From 8 to infinity/02. Silver Surfer.flac
+285:Games/Zubareus/2010 - From 8 to infinity/03. Journey to silius.flac
+286:Games/Zubareus/2010 - From 8 to infinity/04. TMNT 3.flac
+287:Games/Zubareus/2010 - From 8 to infinity/05. Alien 3 intro.flac
+288:Games/Zubareus/2010 - From 8 to infinity/06. Robocop 3.flac
+289:Games/Zubareus/2010 - From 8 to infinity/07. Alien 3 level.flac
+290:Games/Zubareus/2010 - From 8 to infinity/08. Batman ROTJ.flac
+291:Games/Zubareus/2010 - From 8 to infinity/09. Dr Mario.flac
+292:Games/Zubareus/2010 - From 8 to infinity/10. Final mission.flac
+293:Games/Zubareus/2014 - Singles Collection (2011-2013)/01. Jurassic Park.flac
+294:Games/Zubareus/2014 - Singles Collection (2011-2013)/02. Road Rash 3.flac
+295:Games/Zubareus/2014 - Singles Collection (2011-2013)/03. Mr Gimmick feat. Harmsing.flac
+296:Games/Zubareus/2014 - Singles Collection (2011-2013)/04. Duck Tales 2.flac
+297:Games/Zubareus/2014 - Singles Collection (2011-2013)/05. Man of Steel.flac
+298:Games/Zubareus/2014 - Singles Collection (2011-2013)/06. Solbrain (Shatterhand).flac
+299:Games/Zubareus/2014 - Singles Collection (2011-2013)/07. Crisis Force.flac
+300:Games/Zubareus/2014 - Singles Collection (2011-2013)/08. Tiny Toon Adventures.flac
 playlist_end

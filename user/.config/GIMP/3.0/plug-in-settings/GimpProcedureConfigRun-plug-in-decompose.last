@@ -1,0 +1,7 @@
+# settings
+
+(decompose-type "rgb")
+(layers-mode yes)
+(use-registration no)
+
+# end of settings

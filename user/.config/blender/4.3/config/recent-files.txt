@@ -1,3 +1,10 @@
+/home/vir0id/Документы/Projects/ParallaxMapping_BL3.5_as.blend
+/home/vir0id/Документы/Projects/Mountains 02.blend
+/home/vir0id/Документы/Projects/Mountains 01.blend
+/home/vir0id/Документы/Projects/Mimoza.blend
+/home/vir0id/Документы/Projects/Magic Orb.blend
+/home/vir0id/Документы/Projects/Lightning_Shader_3D.blend
+/home/vir0id/Документы/Projects/Advanced_Hair_Rig.blend
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/RetroSun/untitled.blend
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Granata_Jinks/cycles.blend
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/alexander-kolyasa/untitled.blend
@@ -11,7 +18,3 @@
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Minijon/untitled.blend
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LiveWallpapers/arcolinux/untitled.blend
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LiveWallpapers/Arch_Catppuccin_mocha.blend
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/CHALLENGE_Snow_Ball/untitled.blend
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Lizzard/untitled.blend
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/RER/untitled.blend
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/TV/untitled.blend

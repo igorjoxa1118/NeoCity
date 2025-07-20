@@ -7,10 +7,10 @@
 # Preferences dialog.
 
 (prev-language "Russian")
-(config-version "3.0.2")
+(config-version "3.0.4")
 (import-raw-plug-in "${gimp_plug_in_dir}/plug-ins/file-raw-placeholder/file-raw-placeholder")
-(monitor-xresolution 142)
-(monitor-yresolution 141)
+(monitor-xresolution 143)
+(monitor-yresolution 144)
 (default-fullscreen-view
     (show-menubar yes)
     (show-statusbar yes)
@@ -34,6 +34,7 @@
     (padding-in-show-all no))
 (toolbox-foo-area yes)
 (theme "System")
+(show-welcome-dialog no)
 (layer-new-name "black")
 (layer-add-mask-type black)
 (selection-feather-radius 2)

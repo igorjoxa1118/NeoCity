@@ -1,0 +1,8 @@
+[Bookmarks]
+[Recent]
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/alexander-kolyasa/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LiveWallpapers/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LUMAEU/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/Granata_Jinks/
+/home/vir0id/.config/blender/colorshemas/catppuccin-mocha/
+/home/vir0id/.config/

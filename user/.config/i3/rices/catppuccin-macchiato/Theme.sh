@@ -12,6 +12,19 @@ log() {
     echo "$(date): $1" >> "$LOG_FILE"
 }
 
+# Проверка на параллельный запуск
+LOCK_FILE="/tmp/i3_theme_script.lock"
+if [ -f "$LOCK_FILE" ]; then
+    log "Ошибка: Скрипт уже выполняется (lock-файл существует). Выход."
+    exit 1
+fi
+
+# Создание lock-файла
+touch "$LOCK_FILE"
+trap 'rm -f "$LOCK_FILE"; log "Lock-файл удален."' EXIT
+
+log "Lock-файл создан. Скрипт запущен."
+
 # Функция для проверки ошибок
 check_error() {
     if [ $? -ne 0 ]; then
@@ -444,23 +457,6 @@ set_term_config() {
 }
 set_term_config
 
-# Функция для настройки Firefox
-firefox_profiles() {
-    local theme_dir="$HOME/.mozilla/FoxThemes"
-    local dest_dir="$HOME/.mozilla/firefox/"
-
-    if [[ $(grep '\[Profile[^0]\]' "$HOME/.mozilla/firefox/profiles.ini") ]]; then
-        profpath=$(grep -E '^\[Profile|^Path|^Default' "$HOME/.mozilla/firefox/profiles.ini" | grep -1 '^Default=1' | grep '^Path' | cut -c6-)
-        cp -rf "$theme_dir"/* "$dest_dir/$profpath"
-        check_error "Не удалось скопировать тему Firefox"
-    else
-        profpath=$(grep 'Path=' "$HOME/.mozilla/firefox/profiles.ini" | sed 's/^Path=//')
-        cp -rf "$theme_dir"/* "$dest_dir/$profpath"
-        check_error "Не удалось скопировать тему Firefox"
-    fi
-}
-firefox_profiles
-
 # Функция для настройки Dunst
 set_dunst_config() {
     local dunst_path="$rice_dir/dunst/dunstrc"
@@ -493,7 +489,7 @@ set_dunst_config
 
 # Функция для настройки Tabbed
 tabbed_settings() {
-    local tabbed_path="$rice_dir/tabbed/colors"
+    local tabbed_path="$rice_dir/tabbed/colors.conf"
 
     if [ -f "$tabbed_path" ]; then
         cp -rf "$tabbed_path" "$i3_configd"
@@ -577,6 +573,95 @@ xresources_color() {
     fi
 }
 xresources_color
+
+# Функция для настройки цветов mpd_scroller.sh
+set_mpd_scroller_colors() {
+    local mpd_scroller_path="$HOME/.config/i3/src/mpd_scroller.sh"
+    log "Проверка пути: $mpd_scroller_path"
+
+    # Проверка существования файла
+    if [ ! -f "$mpd_scroller_path" ]; then
+        log "Ошибка: mpd_scroller.sh не найден!"
+        return 1
+    fi
+
+    # Защита от симлинков
+    if [[ -L "$mpd_scroller_path" ]]; then
+        log "Ошибка: $mpd_scroller_path — это символическая ссылка!"
+        return 1
+    fi
+
+    # Определение цветов темы
+    case "$RICETHEME" in
+        "catppuccin-mocha")
+            COLOR_PLAYING="#a6e3a1"   # Зеленый
+            COLOR_PAUSED="#f38ba8"    # Красный
+            COLOR_STOPPED="#f9e2af"   # Желтый
+            COLOR_OFFLINE="#bac2de"   # Серый
+            COLOR_TEXT="#cdd6f4"      # Основной текст
+            ;;
+        "catppuccin-frappe")
+            COLOR_PLAYING="#a6d189"   # Зеленый
+            COLOR_PAUSED="#e5c890"    # Желтый
+            COLOR_STOPPED="#e78284"   # Красный
+            COLOR_OFFLINE="#a5adce"   # Серый
+            COLOR_TEXT="#c6d0f5"      # Основной текст
+            ;;
+        "catppuccin-macchiato")
+            COLOR_PLAYING="#8bd5ca"   # Зеленый
+            COLOR_PAUSED="#eed49f"    # Желтый
+            COLOR_STOPPED="#ed8796"   # Красный
+            COLOR_OFFLINE="#b8c0e0"   # Серый
+            COLOR_TEXT="#cad3f5"      # Основной текст
+            ;;
+        "catppuccin-latte")
+            COLOR_PLAYING="#40a02b"   # Зеленый
+            COLOR_PAUSED="#df8e1d"    # Желтый
+            COLOR_STOPPED="#d20f39"   # Красный
+            COLOR_OFFLINE="#7c7f93"   # Серый
+            COLOR_TEXT="#4c4f69"      # Основной текст
+            ;;
+        *)
+            log "Тема $RICETHEME не поддерживается!"
+            return 1
+            ;;
+    esac
+
+    # Создание временного файла с новыми настройками
+    local temp_file=$(mktemp)
+    cat << EOF > "$temp_file"
+# Цвета (Catppuccin $RICETHEME)
+COLOR_PLAYING="$COLOR_PLAYING"   # Зеленый
+COLOR_PAUSED="$COLOR_PAUSED"    # Желтый
+COLOR_STOPPED="$COLOR_STOPPED"   # Красный
+COLOR_OFFLINE="$COLOR_OFFLINE"   # Серый
+COLOR_TEXT="$COLOR_TEXT"      # Основной текст
+EOF
+
+    # Резервное копирование оригинального файла
+    cp "$mpd_scroller_path" "${mpd_scroller_path}.bak"
+    log "Создана резервная копия: ${mpd_scroller_path}.bak"
+
+    # Обновление цветов в файле
+    log "Обновление цветов в $mpd_scroller_path"
+    sed -i '/^# Цвета (Catppuccin/,/^# ===== ФУНКЦИИ =====/ {
+        /^# Цвета (Catppuccin/ {
+            r '"$temp_file"'
+            d
+        }
+        /^# ===== ФУНКЦИИ =====/!d
+    }' "$mpd_scroller_path" || {
+        log "Ошибка sed при изменении $mpd_scroller_path"
+        return 1
+    }
+
+    # Очистка временного файла
+    rm "$temp_file"
+    log "Цвета успешно обновлены в $mpd_scroller_path"
+}
+
+# Вызов функции для настройки цветов mpd_scroller.sh
+set_mpd_scroller_colors
 
 # Ожидание завершения процессов polybar
 while pgrep -u $UID -x polybar >/dev/null; do

@@ -1057,7 +1057,6 @@
 # (action "tools-spacing-minimum")
 # (action "python-fu-palette-offset")
 # (action "drawable-rotate-90")
-# (action "filters-gegl-lens-correct")
 # (action "context-brush-select-previous")
 # (action "plug-in-map-object")
 # (action "view-rotate-270")

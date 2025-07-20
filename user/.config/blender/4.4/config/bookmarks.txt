@@ -1,0 +1,12 @@
+[Bookmarks]
+[Recent]
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LUMAEU/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/addons/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LUMAEU/Render/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LUMAEU/Render/EEVEE/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LUMAEU/Render/backups/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LUMAEU/Render/3DTEXT/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LUMAEU/svg/
+/usr/share/fonts/adobe-source-sans/
+/usr/share/fonts/TTF/
+/home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/LUMAEU/fonts/comic-relief/

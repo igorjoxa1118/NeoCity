@@ -1,0 +1,12 @@
+schema_version = "1.0.0"
+id = "random_flow"
+name = "Random Flow"
+version = "3.2.2"
+tagline = "Collection of random greebling functionalities"
+maintainer = "Blenderguppy"
+type = "add-on"
+tags = ["Mesh", "Modeling"]
+blender_version_min = "4.2.0"
+license = ["SPDX:GPL-2.0-or-later"]
+website = "https://www.blenderguppy.com/add-ons/random-flow"
+copyright = ["2024 Ian Lloyd Dela Cruz"]

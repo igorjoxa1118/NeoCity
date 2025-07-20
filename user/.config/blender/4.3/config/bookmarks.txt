@@ -1,5 +1,6 @@
 [Bookmarks]
 [Recent]
+/home/vir0id/Документы/Projects/
 /home/vir0id/.config/blender/colorshemas/catppuccin-mocha/
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/RetroSun/
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/RetroSun/Render/Eevee/Images/
@@ -9,5 +10,3 @@
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/projects/alexander-kolyasa/
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/World/
 /home/vir0id/Загрузки/GimpArtCraftFromLatvia/blender/assets/CyberCity/
-!Pictures
-/home/vir0id/Изображения/

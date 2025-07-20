@@ -1,4 +1,6 @@
 # GIMP gimp-offset-tool options
 
+(background
+    (color "HSVA float" 16 "\0\0\0\0\0\0\0\0\0\0\200\77\0\0\200\77" 0))
 
 # end of gimp-offset-tool options

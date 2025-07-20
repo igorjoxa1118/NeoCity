@@ -1,53 +1,66 @@
 === i3 AUTOSTART LOG ===
-9:30 EEST] Starting udiskie
-Configuration already done. Exiting...
+8:55 EEST] Starting picom
 [$(date)] Setting X11 env vars
-[Ср 21 мая 2025 15:59:30 EEST] Starting DBus
+[Вс 20 июл 2025 06:38:55 EEST] Starting power manager
+[Вс 20 июл 2025 06:38:55 EEST] Running SetUser
+[Вс 20 июл 2025 06:38:55 EEST] Starting nm-applet
+[Вс 20 июл 2025 06:38:55 EEST] Starting udiskie
+Configuration already done. Exiting...
+[Вс 20 июл 2025 06:38:55 EEST] Starting DBus
+[Вс 20 июл 2025 06:38:55 EEST] Running SetSysVars
+[Вс 20 июл 2025 06:38:55 EEST] Starting polkit
+[Вс 20 июл 2025 06:38:55 EEST] Starting audio effects
 Скрипт уже выполнен.
-[Ср 21 мая 2025 15:59:30 EEST] Setting wallpaper
-[Ср 21 мая 2025 15:59:30 EEST] Loading Xresources
-[Ср 21 мая 2025 15:59:30 EEST] Applying theme
-[Ср 21 мая 2025 15:59:30 EEST] Waiting for i3 socket
-[Ср 21 мая 2025 15:59:30 EEST] Starting keyring
-[Ср 21 мая 2025 15:59:30 EEST] Starting autotiling
-[Ср 21 мая 2025 15:59:30 EEST] Starting screen locker
-[Ср 21 мая 2025 15:59:30 EEST] Starting polybar
+[Вс 20 июл 2025 06:38:55 EEST] Starting keyring
+[Вс 20 июл 2025 06:38:55 EEST] Setting wallpaper
+[Вс 20 июл 2025 06:38:55 EEST] Applying theme
+[Вс 20 июл 2025 06:38:55 EEST] Loading Xresources
+[Вс 20 июл 2025 06:38:55 EEST] Waiting for i3 socket
 gnome-keyring-daemon: no process capabilities, insecure memory might get used
+[Вс 20 июл 2025 06:38:55 EEST] Starting screen locker
+[Вс 20 июл 2025 06:38:55 EEST] Starting autotiling
 discover_other_daemon: 1GNOME_KEYRING_CONTROL=/run/user/1000/keyring
-[ 21.05.2025 15:59:30.788 set_animation ERROR ] Invalid trigger defined at line 77
-[ 21.05.2025 15:59:30.788 set_animation ERROR ] Invalid trigger defined at line 86
-[ 21.05.2025 15:59:30.788 parse_animation_one ERROR ] Failed to parse animation script at line 102: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
-[ 21.05.2025 15:59:30.788 parse_animation_one ERROR ] Failed to parse animation script at line 112: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
-[ 21.05.2025 15:59:30.788 parse_animation_one ERROR ] Failed to parse animation script at line 122: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
-[ 21.05.2025 15:59:30.788 set_animation ERROR ] Invalid trigger defined at line 239
-[ 21.05.2025 15:59:30.788 set_animation ERROR ] Invalid trigger defined at line 248
-[ 21.05.2025 15:59:30.788 set_animation ERROR ] Invalid trigger defined at line 341
-[ 21.05.2025 15:59:30.788 set_animation ERROR ] Invalid trigger defined at line 388
+[Вс 20 июл 2025 06:38:55 EEST] Starting polybar
+[ 20.07.2025 06:38:55.586 set_animation ERROR ] Invalid trigger defined at line 77
+[ 20.07.2025 06:38:55.586 set_animation ERROR ] Invalid trigger defined at line 86
+[ 20.07.2025 06:38:55.586 parse_animation_one ERROR ] Failed to parse animation script at line 102: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
+[ 20.07.2025 06:38:55.586 parse_animation_one ERROR ] Failed to parse animation script at line 112: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
+[ 20.07.2025 06:38:55.586 parse_animation_one ERROR ] Failed to parse animation script at line 122: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
+[ 20.07.2025 06:38:55.586 set_animation ERROR ] Invalid trigger defined at line 239
+[ 20.07.2025 06:38:55.586 set_animation ERROR ] Invalid trigger defined at line 248
+[ 20.07.2025 06:38:55.586 set_animation ERROR ] Invalid trigger defined at line 341
+[ 20.07.2025 06:38:55.586 set_animation ERROR ] Invalid trigger defined at line 388
 gtk-update-icon-cache: No theme index file.
-GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.freedesktop.Notifications': unit failed
 gtk-update-icon-cache: Failed to open file /usr/share/icons/Adwaita/.icon-theme.cache : Отказано в доступе
-Traceback (most recent call last):
-  File "/usr/bin/musnify-mpd", line 236, in <module>
-    musnify.start()
-    ~~~~~~~~~~~~~^^
-  File "/usr/bin/musnify-mpd", line 175, in start
-    self.nw.notifyStatus(status)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^
-  File "/usr/bin/musnify-mpd", line 97, in notifyStatus
-    self.notification.show()
-    ~~~~~~~~~~~~~~~~~~~~~~^^
-gi.repository.GLib.GError: g-dbus-error-quark: GDBus.Error:org.freedesktop.DBus.Error.NameHasNoOwner: Could not activate remote peer 'org.freedesktop.Notifications': unit failed (3)
-[ 21.05.2025 15:59:31.949 set_animation ERROR ] Invalid trigger defined at line 77
-[ 21.05.2025 15:59:31.949 set_animation ERROR ] Invalid trigger defined at line 86
-[ 21.05.2025 15:59:31.949 parse_animation_one ERROR ] Failed to parse animation script at line 102: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
-[ 21.05.2025 15:59:31.949 parse_animation_one ERROR ] Failed to parse animation script at line 112: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
-[ 21.05.2025 15:59:31.949 parse_animation_one ERROR ] Failed to parse animation script at line 122: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
-[ 21.05.2025 15:59:31.949 set_animation ERROR ] Invalid trigger defined at line 239
-[ 21.05.2025 15:59:31.949 set_animation ERROR ] Invalid trigger defined at line 248
-[ 21.05.2025 15:59:31.949 set_animation ERROR ] Invalid trigger defined at line 341
-[ 21.05.2025 15:59:31.949 set_animation ERROR ] Invalid trigger defined at line 388
+[ 20.07.2025 06:38:56.756 set_animation ERROR ] Invalid trigger defined at line 77
+[ 20.07.2025 06:38:56.756 set_animation ERROR ] Invalid trigger defined at line 86
+[ 20.07.2025 06:38:56.756 parse_animation_one ERROR ] Failed to parse animation script at line 102: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
+[ 20.07.2025 06:38:56.756 parse_animation_one ERROR ] Failed to parse animation script at line 112: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
+[ 20.07.2025 06:38:56.756 parse_animation_one ERROR ] Failed to parse animation script at line 122: Invalid variable "blur-background", it must be either a number, a string, or a config group defining a transition.
+[ 20.07.2025 06:38:56.757 set_animation ERROR ] Invalid trigger defined at line 239
+[ 20.07.2025 06:38:56.757 set_animation ERROR ] Invalid trigger defined at line 248
+[ 20.07.2025 06:38:56.757 set_animation ERROR ] Invalid trigger defined at line 341
+[ 20.07.2025 06:38:56.757 set_animation ERROR ] Invalid trigger defined at line 388
+Fontconfig warning: using without calling FcInit()
+Fontconfig warning: using without calling FcInit()
+WARNING: Icon 'music' not found in themes
 
-(xfce4-power-manager:1236): xfce4-power-manager-WARNING **: 15:59:32.441: Unable to connect to session manager : Не удалось подключиться к менеджеру сеансов: networkIdsList argument is NULL
-[W][15:59:32.611215] pw.conf      | [          conf.c: 1204 pw_conf_load_conf_for_context()] setting config.name to client-rt.conf is deprecated, using client.conf
-[ 21.05.2025 16:40:00.021 sgi_video_sync_scheduler_callback WARN ] Duplicate vblank event found with msc 399812. Possible NVIDIA bug? Number of duplicates so far: 0
+(xfce4-power-manager:147898): xfce4-power-manager-WARNING **: 06:38:57.030: Unable to connect to session manager : Не удалось подключиться к менеджеру сеансов: networkIdsList argument is NULL
+[W][06:38:57.273106] pw.context   | [       context.c:  487 pw_context_new()] 0x560b5f839060: no modules loaded from context.modules
+[E][06:38:57.273261] pw.core      | [          core.c:  389 core_new()] 0x560b5fa6b880: can't find protocol 'PipeWire:Protocol:Native': Неподдерживаемая операция
+
+(easyeffects:147920): easyeffects-ERROR **: 06:38:57.273: 	pipe_manager.cpp:1603	context connection failed
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+WARNING: Icon 'music' not found in themes
+[ 20.07.2025 08:17:58.335 sgi_video_sync_scheduler_callback WARN ] Duplicate vblank event found with msc 1319450. Possible NVIDIA bug? Number of duplicates so far: 0
+Snapshotting in...☺
 Snapshotting in...☺

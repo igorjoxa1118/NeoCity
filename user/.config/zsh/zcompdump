@@ -1,4 +1,4 @@
-#files: 1018	version: 5.9
+#files: 1028	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -300,7 +300,6 @@ _comps=(
 'dmidecode' '_dmidecode'
 'doas' '_doas'
 'docpad' '_docpad'
-'dolphin' '_dolphin'
 'domainname' '_yp'
 'dos2unix' '_dos2unix'
 'drill' '_drill'
@@ -403,6 +402,7 @@ _comps=(
 'fixwpps' '_psutils'
 'fixwwps' '_psutils'
 'flac' '_flac'
+'flameshot' '_flameshot'
 'fleetctl' '_fleetctl'
 'flex' '_flex'
 'flex++' '_flex'
@@ -664,7 +664,8 @@ _comps=(
 'htop' '_htop'
 'http' '_httpie'
 'https' '_httpie'
-'hyprshade' '_hyprshade'
+'hyprctl' '_hyprctl'
+'hyprpm' '_hyprpm'
 'ibus' '_ibus'
 'iceweasel' '_mozilla'
 'icombine' '_ispell'
@@ -686,7 +687,7 @@ _comps=(
 'infocmp' '_terminals'
 'initctl' '_initctl'
 'initdb' '_pgsql_utils'
-'insmod' '_modutils'
+'insmod' '_insmod'
 'install' '_install'
 'install-info' '_texinfo'
 'integer' '_typeset'
@@ -724,6 +725,7 @@ _comps=(
 'jmeter-plugins' '_jmeter-plugins'
 'jobs' '_jobs_builtin'
 'joe' '_joe'
+'john' '_john'
 'join' '_join'
 'jonas' '_jonas'
 'journalctl' '_journalctl'
@@ -747,7 +749,6 @@ _comps=(
 'konqueror' '_webbrowser'
 'kpartx' '_kpartx'
 'kpdf' '_pdf'
-'kscreen-doctor' '_kscreen-doctor'
 'ksh' '_sh'
 'ksh88' '_sh'
 'ksh93' '_sh'
@@ -801,7 +802,7 @@ _comps=(
 'lsd' '_lsd'
 'lsdiff' '_patchutils'
 'lsinitcpio' '_mkinitcpio'
-'lsmod' '_modutils'
+'lsmod' '_lsmod'
 'lsns' '_lsns'
 'lsof' '_lsof'
 'lsusb' '_lsusb'
@@ -1164,6 +1165,7 @@ _comps=(
 'qdbus' '_qdbus'
 'qiv' '_qiv'
 'qmk' '_qmk'
+'qpdf' '_qpdf'
 'quilt' '_quilt'
 'r' '_fc'
 'rails' '_rails'
@@ -1227,7 +1229,7 @@ _comps=(
 'rmlint' '_rmlint'
 'rmlint.sh' '_rmlint'
 'rmm' '_mh'
-'rmmod' '_modutils'
+'rmmod' '_rmmod'
 'route' '_route'
 'rrdtool' '_rrdtool'
 'rsh' '_rlogin'
@@ -1265,6 +1267,8 @@ _comps=(
 'schedtool' '_schedtool'
 'scons' '_scons'
 'scp' '_ssh'
+'scrcpy' '_scrcpy'
+'scrcpy.exe' '_scrcpy'
 'screen' '_screen'
 'screencapture' '_screencapture'
 'script' '_script'
@@ -1275,6 +1279,8 @@ _comps=(
 'seaf-cli' '_seafile'
 'sed' '_sed'
 'senlin' '_openstack'
+'sensors' '_sensors'
+'sensors-detect' '_sensors-detect'
 'seq' '_seq'
 'serialver' '_java'
 'service' '_service'
@@ -1383,9 +1389,10 @@ _comps=(
 'svnliteadmin' '_subversion'
 'swaks' '_swaks'
 'swanctl' '_swanctl'
-'sway' '_sway'
+'swayidle' '_swayidle'
 'swaylock' '_swaylock'
-'swaymsg' '_swaymsg'
+'swaync' '_swaync'
+'swaync-client' '_swaync-client'
 'swift' '_swift'
 'swiftc' '_swift'
 'swww' '_swww'
@@ -1895,39 +1902,41 @@ autoload -Uz _afew _alacritty _android _arch-chroot _archlinux-java \
             _code _code-oss _coffee _conan _concourse \
             _console _coredumpctl _cppcheck _curl _dad \
             _dart _dget _dhcpcd _diana _direnv \
-            _dkms _docpad _dolphin _drush _dunst \
-            _dunstctl _ecdsautil _emacs _emacsclient _emulator \
-            _envdir _exportfs _eza _fab _fail2ban-client \
-            _fastfetch _fd _ffind _fleetctl _flutter \
+            _dkms _docpad _drush _dunst _dunstctl \
+            _ecdsautil _emacs _emacsclient _emulator _envdir \
+            _exportfs _eza _fab _fail2ban-client _fastfetch \
+            _fd _ffind _flameshot _fleetctl _flutter \
             _foot _footclient _fvm _fwupdmgr _gas \
             _genfstab _ghc _gist _git-flow _git-pulls \
             _git-revise _git-wtf _glances _golang _google \
             _gpgconf _grpcurl _gtk-launch _hello _hledger \
-            _homestead _hostnamectl _httpie _hyprshade _ibus \
-            _img2sixel _include-what-you-use _inxi _jmeter _jmeter-plugins \
-            _jonas _journalctl _jrnl _kak _kde-inhibit \
-            _kernel-install _kitchen _kitty _knife _kscreen-doctor \
-            _language_codes _lftp _libinput _lilypond _localectl \
-            _loginctl _lsd _lunchy _machinectl _mc \
-            _meson _middleman _mina _mix _mkcert \
-            _mkinitcpio _mpv _mssh _mussh _mvn \
-            _nano _nanoc _neofetch _networkctl _networkQuality \
-            _nftables _ninja _node _nvm _nvme \
-            _oct _oomctl _openssl _openvpn3 _optirun \
-            _paccache _pacdiff _paclist _paclog-pkglist _pacman \
-            _pacscripts _pacsearch _pacsort _pacstrap _pactree \
-            _parallel _paru _patool _periscope _pgsql_utils \
-            _phing _pixz _pkcon _play _playerctl \
-            _pm2 _polybar _polybar_msg _port _protoc \
-            _pulseaudio _pygmentize _qmk _rails _ralio \
+            _homestead _hostnamectl _httpie _hyprctl _hyprpm \
+            _ibus _img2sixel _include-what-you-use _insmod _inxi \
+            _jmeter _jmeter-plugins _john _jonas _journalctl \
+            _jrnl _kak _kde-inhibit _kernel-install _kitchen \
+            _kitty _knife _language_codes _lftp _libinput \
+            _lilypond _localectl _loginctl _lsd _lsmod \
+            _lunchy _machinectl _mc _meson _middleman \
+            _mina _mix _mkcert _mkinitcpio _mpv \
+            _mssh _mussh _mvn _nano _nanoc \
+            _neofetch _networkctl _networkQuality _nftables _ninja \
+            _node _nvm _nvme _oct _oomctl \
+            _openssl _openvpn3 _optirun _paccache _pacdiff \
+            _paclist _paclog-pkglist _pacman _pacscripts _pacsearch \
+            _pacsort _pacstrap _pactree _parallel _paru \
+            _patool _periscope _pgsql_utils _phing _pip \
+            _pixz _pkcon _play _playerctl _pm2 \
+            _polybar _polybar_msg _port _protoc _pulseaudio \
+            _pygmentize _qmk _qpdf _rails _ralio \
             _rankmirrors _redis-cli _resolvectl _rfkill _rg \
-            _rkt _rmlint _rslsync _rspec _rsvm \
-            _rubocop _run0 _sbt _scala _screencapture \
-            _scrub _sdd _sd_hosts_or_user_at_host _sdkmanager _sd_machines \
-            _sd_outputmodes _sd_unit_files _setcap _setup.py _sfdx \
-            _shellcheck _showoff _sq _srm _stack \
-            _starship _subliminal _supervisorctl _svm _sway \
-            _swaylock _swaymsg _swww _systemctl _systemd \
+            _rkt _rmlint _rmmod _rslsync _rspec \
+            _rsvm _rubocop _run0 _sbt _scala \
+            _scrcpy _screencapture _scrub _sdd _sd_hosts_or_user_at_host \
+            _sdkmanager _sd_machines _sd_outputmodes _sd_unit_files _sensors \
+            _sensors-detect _setcap _setup.py _sfdx _shellcheck \
+            _showoff _sq _srm _stack _starship \
+            _subliminal _supervisorctl _svm _swayidle _swaylock \
+            _swaync _swaync-client _swww _systemctl _systemd \
             _systemd-analyze _systemd-delta _systemd-inhibit _systemd-nspawn _systemd-path \
             _systemd-run _systemd-tmpfiles _teamocil _thor _timedatectl \
             _tmuxinator _tox _tsc _ts-node _udevadm \

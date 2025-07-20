@@ -1,0 +1,17 @@
+{
+    "last_check": "2025-06-12 16:28:58.967925",
+    "backup_date": "",
+    "update_ready": true,
+    "ignore": false,
+    "just_restored": false,
+    "just_updated": false,
+    "version_text": {
+        "link": "https://github.com/BlenderKit/BlenderKit/releases/download/v3.16.0.250530/blenderkit-v3.16.0.250530.zip",
+        "version": [
+            3,
+            16,
+            0,
+            250530
+        ]
+    }
+}

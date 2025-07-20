@@ -1,5 +1,11 @@
 # settings
 
+(GimpGegl-gimp-desaturate-config "2025-06-16 15:03:14"
+    (time 1750075394)
+    (mode value))
+(GimpGegl-gimp-desaturate-config "2025-06-16 15:03:01"
+    (time 1750075381)
+    (mode value))
 (GimpGegl-gimp-desaturate-config "2025-01-19 11:52:53"
     (time 1737280373)
     (mode luminance))

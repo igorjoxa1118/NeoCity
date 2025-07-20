@@ -1,0 +1,76 @@
+   dot-2025-02-28_21.26.19.mp4.001
+Geometry ▸ Read ▸ Position
+Utilities ▸ Vector ▸ Separate XYZ
+Color ▸ Light Falloff
+Shader ▸ Glass BSDF
+Input ▸ Ambient Occlusion
+Background
+Foreground
+   uniformDiffuse1_0.001
+   uniform_1009.001
+Bone.003
+Bone.001
+Bone.002
+Bone
+   Luma
+   Black.002
+   mebelj
+   pol
+Input ▸ Fresnel
+   pngwing.com.png
+   Black.004
+   world
+   Black.005
+ 0 emmision_snow
+Noise Texture ▸ Vector
+Texture ▸ Voronoi Texture
+   Glass
+Shader ▸ Transparent BSDF
+Shader ▸ Mix Shader
+Shader ▸ Glossy BSDF
+   Stenka
+   Woven Fabric
+   Black.003
+Shader ▸ Volume Scatter
+Shader ▸ Principled Volume
+ViewLayer
+Color ▸ Mix ▸ Alpha Over
+Filter ▸ Blur ▸ Bokeh Blur
+ 0 FABRIC 1_FRONT_1969
+Shader ▸ Principled BSDF
+Shader ▸ Emission
+Color Ramp ▸ Fac
+Converter ▸ Math
+   Text
+   heart2
+Texture ▸ Gradient Texture
+Converter ▸ Separate XYZ
+Input ▸ Value
+   Sc5c299d7ee5441baa7af27773112b575s.jpg_480x480.jpg
+pin
+   POL
+   dress
+   Black.008
+   Cotton_Twill_FRONT_1227450
+Color ▸ Mix Color
+Color ▸ Brightness/Contrast
+Color ▸ RGB Curves
+Color ▸ Hue/Saturation/Value
+
+Input ▸ Object Info
+Converter ▸ Vector Math
+Vector ▸ Mapping
+Converter ▸ Shader to RGB
+Converter ▸ Color Ramp
+Texture ▸ Noise Texture
+Output ▸ Viewer
+Filter ▸ Glare 
+Transform ▸ Lens Distortion
+   Scene
+Layer
+   Black
+Text
+All
+City
+partikles
+3Dtext
