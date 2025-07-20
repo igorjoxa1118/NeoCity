@@ -1,7 +1,0 @@
-(defwidget logo []
-  (box
-    :class "logo-container"
-    (image 
-      :path "~/.config/eww/logo.svg"
-      :class "logo-image"
-      :onclick "xdg-open https://your-site.com")))

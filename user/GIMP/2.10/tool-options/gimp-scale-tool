@@ -1,6 +1,0 @@
-# GIMP gimp-scale-tool options
-
-(interpolation linear)
-(constrain-scale no)
-
-# end of gimp-scale-tool options

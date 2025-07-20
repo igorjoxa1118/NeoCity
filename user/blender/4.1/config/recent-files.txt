@@ -1,6 +1,0 @@
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Turel/eevee.blend
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Turel/eevee.setka.blend
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Turel/Render/eevee/video/logo/untitled.blend
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Turel/otherColor.blend
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Turel/untitled.blend
-/home/vir0id/Загрузки/GimpArtCraftFromLatvia/Blender/Projects/Turel/test.blend

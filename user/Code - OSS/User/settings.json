@@ -1,9 +1,0 @@
-{
-  "workbench.colorTheme": "Catppuccin Mocha",
-  "workbench.iconTheme": "catppuccin-mocha",
-  "git.autofetch": true,
-  "window.newWindowProfile": "По умолчанию",
-  "security.workspace.trust.untrustedFiles": "open",
-  "git.openRepositoryInParentFolders": "never",
-  "editor.unicodeHighlight.invisibleCharacters": false
-}
