@@ -52,16 +52,16 @@ case $MY_TERM in
                 alacritty --hold -e ~/.config/i3/src/Updates --print-updates
                 ;;
             "--ranger")
-                alacritty --title floating -e ranger
+                alacritty --title floating --hold -e ranger
                 ;;
             "--yazi")
-                kitty --title floating --hold -e yazi
+                alacritty --title floating --hold -e yazi
                 ;;
             "--nvim")
                 alacritty -e nvim
                 ;;
             "--music")
-                alacritty --title floating -e ncmpcpp
+                alacritty --title floating --hold -e ncmpcpp
                 ;;
             "--fetch")
                 alacritty -e ~/.local/bin/sysfetch
@@ -74,6 +74,9 @@ case $MY_TERM in
                 ;;
             "--visualization")
                 kitty -c ~/.config/kitty/kitty.conf --hold -e cava -p ~/.config/cava/config
+                ;;
+            "--dm")
+                alacritty --title floating --hold -e duf
                 ;;
         esac
         ;;

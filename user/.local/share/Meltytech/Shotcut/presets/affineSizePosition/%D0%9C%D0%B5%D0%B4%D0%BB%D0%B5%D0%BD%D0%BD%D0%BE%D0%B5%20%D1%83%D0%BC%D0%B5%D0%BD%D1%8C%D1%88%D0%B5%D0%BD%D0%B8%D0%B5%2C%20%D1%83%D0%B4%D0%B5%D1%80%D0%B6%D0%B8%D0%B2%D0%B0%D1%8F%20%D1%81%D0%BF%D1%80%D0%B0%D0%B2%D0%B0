@@ -1,0 +1,9 @@
+---
+transition.fill: 1
+transition.distort: 0
+transition.rect: "0=-10%/-5%:110%x110%; -1=0%/0%:100%x100%"
+transition.halign: center
+transition.valign: middle
+transition.fix_rotate_x: 0
+"shotcut:animIn": "00:00:38.917"
+...

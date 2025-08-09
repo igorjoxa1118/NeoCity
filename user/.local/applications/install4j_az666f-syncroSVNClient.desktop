@@ -1,8 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Type=Application
-Name=Syncro SVN Client
-Exec="/home/vir0id/Oxygen XML Editor 26/syncroSVNClient" %U
-Icon=/home/vir0id/Oxygen XML Editor 26/.install4j/syncroSVNClient.png
-Categories=Application;
-StartupWMClass=install4j-ro-sync-exml-Oxygen339217144

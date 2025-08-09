@@ -1,9 +1,0 @@
-#!/bin/bash
-# - 06.03.2023 - Add fastfetch preset to bash and fish shell.
-# Remove 'exec --no-startup-id ~/.local/bin/fastfetch-garuda' in '~/.config/i3/config' to disable this script.
-
-set -e
-
-sed -i 's/--load-config neofetch/--load-config garuda/g' ~/.config/fish/config.fish
-
-grep -qxF 'fastfetch -l garuda' ~/.bashrc || echo 'fastfetch -l garuda' >> ~/.bashrc

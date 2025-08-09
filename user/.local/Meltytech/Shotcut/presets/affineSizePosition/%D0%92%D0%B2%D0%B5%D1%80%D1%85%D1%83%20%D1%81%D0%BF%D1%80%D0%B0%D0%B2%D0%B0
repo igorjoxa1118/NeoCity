@@ -1,8 +1,0 @@
----
-transition.fill: 0
-transition.distort: 0
-transition.rect: "50%/0%:50%x50%"
-transition.halign: right
-transition.valign: top
-transition.fix_rotate_x: 0
-...

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=PowerLineUninstall
+Exec=env WINEPREFIX="/home/vir0id/.wine" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\TP-Link\\\\PowerLine\\ Utility\\\\PowerLineUninstall.lnk
+Type=Application
+StartupNotify=true
+Path=/home/vir0id/.wine/dosdevices/c:/windows/
+Icon=4E47_setup.0
+StartupWMClass=setup.exe

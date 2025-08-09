@@ -82,6 +82,9 @@ case "$1" in
     --visual)
         ~/.config/i3/src/Term --visualization
         ;;
+    --disk)
+        ~/.config/i3/src/Term --dm
+        ;;
         # Eww Widgets
     --KeyHelp)
 		eww -c "$WIDGET_DIR" open --toggle csheet

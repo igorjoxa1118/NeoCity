@@ -1,5 +1,5 @@
 * {
-    background:     #1e1e2e;
+    background:     rgba(30, 30, 46, 0.3);
     background-alt: #181825;
     foreground:     #bac2de;
     selected:       #cba6f7;

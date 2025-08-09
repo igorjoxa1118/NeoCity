@@ -1,0 +1,23 @@
+[mc.esc.timeout]
+0=1000000
+
+[cmdline]
+0=cp 
+1=q
+2=
+
+[Dir Hist New Right Panel]
+0=/home/vir0id
+1=/home/vir0id/.local/share/mc/skins/mc
+2=/home/vir0id/.local/share/mc/skins
+3=/home/vir0id/Документы
+4=/home/vir0id/.config
+
+[Dir Hist New Left Panel]
+0=/home/vir0id
+1=/home/vir0id/.local/share/mc/skins/mc
+2=/home/vir0id/Документы/catppuccin-mocha
+3=/home/vir0id/Документы/Dotfilesv2
+4=/home/vir0id/Документы
+5=/home/vir0id/Документы/ranger
+6=/home/vir0id/.config

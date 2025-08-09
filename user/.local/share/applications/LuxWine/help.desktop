@@ -1,0 +1,12 @@
+[Desktop Entry]
+Categories=Lux Wine
+Exec="/home/vir0id/.local/share/LuxWine/bin/lwrun" -help
+Icon=lw_default_icon
+Name=Usage info
+Name[ru_RU]=Использование
+NoDisplay=true
+StartupNotify=true
+Terminal=0
+TerminalOptions=--hold
+Type=Application
+X-KDE-SubstituteUID=false

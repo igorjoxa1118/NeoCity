@@ -1,0 +1,13 @@
+[Desktop Entry]
+Categories=Lux Wine
+Exec="/home/vir0id/.local/share/LuxWine/bin/lwrun" -backupunmnt %f
+Icon=lw_default_icon
+MimeType=application/vnd.squashfs
+Name=Unmount prefix backup
+Name[ru_RU]=Отмонтировать бекап префикса
+NoDisplay=true
+StartupNotify=true
+Terminal=0
+TerminalOptions=--hold
+Type=Application
+X-KDE-SubstituteUID=false

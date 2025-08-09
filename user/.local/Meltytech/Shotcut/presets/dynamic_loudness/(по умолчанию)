@@ -1,7 +1,0 @@
----
-target_loudness: -23.0
-window: 10
-max_gain: 15.0
-min_gain: -15.0
-max_rate: 3.0
-...

@@ -1,8 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Type=Application
-Name=Diff Directories
-Exec="/home/vir0id/Oxygen XML Editor 26/diffDirs" %U
-Icon=/home/vir0id/Oxygen XML Editor 26/.install4j/diffDirs.png
-Categories=Application;
-StartupWMClass=install4j-ro-sync-exml-Oxygen1611076227

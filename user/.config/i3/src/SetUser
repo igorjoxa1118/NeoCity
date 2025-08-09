@@ -27,6 +27,8 @@ files=(
     "$HOME/.config/i3/rices/catppuccin-latte/rofi/rofi_launchers/launcher.rasi"
     "$HOME/.config/qt5ct/qt5ct.conf"
     "$HOME/.config/qBittorrent/qBittorrent.conf"
+    "$HOME/.local/share/user-places.xbel"
+    "$HOME/.local/share/recently-used.xbel"
 )
 
 # Replace 'vir0id' with the current username in each file
