@@ -1,0 +1,13 @@
+# Chicago95 Colors
+set $bg-color            #c0c0c0
+set $inactive-bg-color   #c0c0c0
+set $text-color          #000000
+set $inactive-text-color  #808080
+set $urgent-bg-color      #000080
+
+# Window colors
+#                       border              background         text                 indicator
+client.focused          #000080             #000080            #ffffff              #000080
+client.unfocused        #c0c0c0             #c0c0c0            #000000              #c0c0c0
+client.focused_inactive #c0c0c0             #c0c0c0            #000000              #c0c0c0
+client.urgent           #800000             #800000            #ffffff              #800000

@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+i3_dir="$HOME/.config/i3"
+RICETHEME_FILE="$i3_dir/config.d/.rice"
+THEME_SCRIPT="$i3_dir/src/Theme.sh"
+
+selected=$(ls "$i3_dir/rices/" | rofi -dmenu -p "Rice:" -theme "$i3_dir/src/rofi-themes/RiceSelector.rasi")
+
+if [ -n "$selected" ]; then
+    echo "$selected" > "$RICETHEME_FILE"
+    
+    # Обои
+    wall=$(find "$i3_dir/rices/$selected/walls" -type f | shuf -n 1)
+    feh --bg-fill "$wall"
+
+    # Применяем тему
+    bash "$THEME_SCRIPT"
+
+    # РЕСТАРТ ПРОЦЕССОВ
+    thunar -q
+    pkill -9 thunar
+    sleep 0.3
+    thunar --daemon &
+    
+    i3-msg restart
+fi

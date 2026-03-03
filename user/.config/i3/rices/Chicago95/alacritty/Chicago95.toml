@@ -1,0 +1,57 @@
+[colors.primary]
+# Тот самый серый цвет панели
+background = "#c0c0c0"
+# Насыщенный черный для текста
+foreground = "#000000"
+dim_foreground = "#808080"
+bright_foreground = "#000000"
+
+[colors.cursor]
+# Инверсия при наведении
+text = "#c0c0c0"
+cursor = "#000000"
+
+[colors.vi_mode_cursor]
+text = "#c0c0c0"
+cursor = "#000080"
+
+[colors.selection]
+# Выделение синим, как в классическом меню
+text = "#ffffff"
+background = "#000080"
+
+[colors.search.matches]
+foreground = "#ffffff"
+background = "#808080"
+
+[colors.search.focused_match]
+foreground = "#ffffff"
+background = "#000080"
+
+[colors.normal]
+black   = "#000000"
+red     = "#800000"
+green   = "#008000"
+yellow  = "#808000"
+blue    = "#000080"
+magenta = "#800080"
+cyan    = "#008080"
+white   = "#c0c0c0"
+
+[colors.bright]
+black   = "#808080"
+red     = "#ff0000"
+green   = "#00ff00"
+yellow  = "#ffff00"
+blue    = "#0000ff"
+magenta = "#ff00ff"
+cyan    = "#00ffff"
+white   = "#ffffff"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#800000"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#000080"

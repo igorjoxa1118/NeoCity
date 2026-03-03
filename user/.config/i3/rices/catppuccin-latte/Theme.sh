@@ -303,7 +303,7 @@ set_gtk_theme_icons_cursor() {
             CURSOR_THEME="catppuccin-mocha-blue-cursors"
             ;;
         "catppuccin-latte")
-            ICON_THEME="Magna-Dark-Icons"
+            ICON_THEME="Flatery-Indigo"
             CURSOR_THEME="catppuccin-mocha-maroon-cursors"
             ;;
         "catppuccin-frappe")
@@ -313,6 +313,10 @@ set_gtk_theme_icons_cursor() {
         "catppuccin-macchiato")
             ICON_THEME="Catppuccin-Macchiato"
             CURSOR_THEME="catppuccin-mocha-peach-cursors"
+            ;;
+        "Sweet-Dark")
+            ICON_THEME="candy-icons"
+            CURSOR_THEME="Sweet-cursors"
             ;;
         *)
             ICON_THEME="Adwaita"
@@ -325,33 +329,33 @@ set_gtk_theme_icons_cursor() {
 Net/IconThemeName \"$ICON_THEME\"
 Gtk/CursorThemeName \"$CURSOR_THEME\"" > "$xsettings_conf"
 
-    # Для .gtkrc-2.0 - добавляем кавычки
+    # Для .gtkrc-2.0 - с кавычками
     if [ -f "$gtk2_config" ]; then
         sed -i \
-            -e "s/gtk-theme-name=.*/gtk-theme-name=\"$RICETHEME\"/g" \
-            -e "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=\"$ICON_THEME\"/g" \
-            -e "s/gtk-font-name=.*/gtk-font-name=\"MesloLGS NF Regular 10\"/g" \
-            -e "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=\"$CURSOR_THEME\"/g" \
-            -e 's/gtk-xft-hintstyle=.*/gtk-xft-hintstyle="hintmedium"/g' \
-            -e 's/gtk-xft-rgba=.*/gtk-xft-rgba="rgb"/g' \
+            -e "s/^gtk-theme-name\s*=.*/gtk-theme-name=\"$RICETHEME\"/g" \
+            -e "s/^gtk-icon-theme-name\s*=.*/gtk-icon-theme-name=\"$ICON_THEME\"/g" \
+            -e "s/^gtk-font-name\s*=.*/gtk-font-name=\"MesloLGS NF Regular 10\"/g" \
+            -e "s/^gtk-cursor-theme-name\s*=.*/gtk-cursor-theme-name=\"$CURSOR_THEME\"/g" \
+            -e 's/^gtk-xft-hintstyle\s*=.*/gtk-xft-hintstyle="hintmedium"/g' \
+            -e 's/^gtk-xft-rgba\s*=.*/gtk-xft-rgba="rgb"/g' \
             "$gtk2_config"
     fi
 
     # Для gtk-3.0/settings.ini - без кавычек
     if [ -f "$gtk3_config" ]; then
         sed -i \
-            -e "s/gtk-theme-name=.*/gtk-theme-name=$RICETHEME/g" \
-            -e "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=$ICON_THEME/g" \
-            -e "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=$CURSOR_THEME/g" \
+            -e "s/^gtk-theme-name\s*=.*/gtk-theme-name=$RICETHEME/g" \
+            -e "s/^gtk-icon-theme-name\s*=.*/gtk-icon-theme-name=$ICON_THEME/g" \
+            -e "s/^gtk-cursor-theme-name\s*=.*/gtk-cursor-theme-name=$CURSOR_THEME/g" \
             "$gtk3_config"
     fi
 
-    # Для gtk-4.0/settings.ini - без кавычек
+    # Для gtk-4.0/settings.ini - с пробелами вокруг =
     if [ -f "$gtk4_config" ]; then
         sed -i \
-            -e "s/gtk-theme-name=.*/gtk-theme-name=$RICETHEME/g" \
-            -e "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=$ICON_THEME/g" \
-            -e "s/gtk-cursor-theme-name=.*/gtk-cursor-theme-name=$CURSOR_THEME/g" \
+            -e "s/^gtk-theme-name\s*=.*/gtk-theme-name = $RICETHEME/g" \
+            -e "s/^gtk-icon-theme-name\s*=.*/gtk-icon-theme-name = $ICON_THEME/g" \
+            -e "s/^gtk-cursor-theme-name\s*=.*/gtk-cursor-theme-name = $CURSOR_THEME/g" \
             "$gtk4_config"
     fi
 
@@ -436,23 +440,23 @@ set_network_manager
 # Функция для настройки терминалов
 set_term_config() {
     local al_config_dir="$HOME/.config/alacritty"
-    local al_rice_dir="$rice_dir/alacritty"
-    local ki_config_dir="$HOME/.config/kitty"
-    local ki_rice_dir="$rice_dir/kitty"
+    # Ищем любой .toml файл в папке alacritty темы i3
+    local al_rice_theme=$(find "$rice_dir/alacritty" -maxdepth 1 -name "*.toml" | head -n 1)
 
-    if [ -f "$al_config_dir/alacritty.toml" ]; then
-        rm -rf "$al_config_dir"/*
-        check_error "Не удалось очистить директорию $al_config_dir"
-        cp -rf "$al_rice_dir"/* "$al_config_dir"
-        check_error "Не удалось скопировать конфигурацию Alacritty"
+    mkdir -p "$al_config_dir"
+
+    if [ -f "$al_rice_theme" ]; then
+        ln -sf "$al_rice_theme" "$al_config_dir/current-theme.toml"
+        log "Alacritty: Найдена тема $(basename "$al_rice_theme"), ссылка обновлена."
+    else
+        log "Ошибка: Файл темы Alacritty не найден в $rice_dir/alacritty"
     fi
 
-    if [ -f "$ki_config_dir/kitty.conf" ]; then
-        cp -rf "$ki_rice_dir/kitty.conf" "$ki_config_dir"
-        check_error "Не удалось скопировать конфигурацию Kitty"
-    else
-        cp -rf "$ki_rice_dir/kitty.conf" "$HOME/.config/kitty/"
-        check_error "Не удалось скопировать конфигурацию Kitty"
+    # Для Kitty (если нужно оставить поддержку)
+    local ki_config_dir="$HOME/.config/kitty"
+    mkdir -p "$ki_config_dir"
+    if [ -f "$rice_dir/kitty/kitty.conf" ]; then
+        ln -sf "$rice_dir/kitty/kitty.conf" "$ki_config_dir/current-theme.conf"
     fi
 }
 set_term_config
@@ -512,44 +516,15 @@ colors=(\
 cava_colors
 
 # Функция для настройки темы Visual Studio Code
-vscode_theme() {
-    local vscode_settings="$HOME/.config/Code - OSS/User/settings.json"
-    local vscode_theme
-
-    # Определение темы VS Code в зависимости от текущего риса
-    case "$RICETHEME" in
-        "catppuccin-mocha")
-            vscode_theme="Catppuccin Mocha"
-            ;;
-        "catppuccin-macchiato")
-            vscode_theme="Catppuccin Macchiato"
-            ;;
-        "catppuccin-latte")
-            vscode_theme="Catppuccin Latte"
-            ;;
-        "catppuccin-frappe")
-            vscode_theme="Catppuccin Frappé"
-            ;;
-        *)
-            log "Тема $RICETHEME не поддерживается для настройки VS Code."
-            return 1
-            ;;
-    esac
-
-    # Проверка существования файла настроек VS Code
-    if [ -f "$vscode_settings" ]; then
-        # Изменение темы в файле настроек
-        jq --arg theme "$vscode_theme" '."workbench.colorTheme" = $theme' "$vscode_settings" > "$vscode_settings.tmp"
-        check_error "Не удалось изменить тему в $vscode_settings"
-        mv "$vscode_settings.tmp" "$vscode_settings"
-        check_error "Не удалось обновить файл настроек VS Code"
-    else
-        log "Файл настроек VS Code $vscode_settings не найден!"
+set_vscode_link() {
+    local vscode_config_dir="$HOME/.config/Code - OSS/User"
+    [ ! -d "$vscode_config_dir" ] && vscode_config_dir="$HOME/.config/Code/User"
+    local theme_json="$rice_dir/vscode/theme.json"
+    if [ -f "$theme_json" ]; then
+        ln -sf "$theme_json" "$vscode_config_dir/vscode-theme.json"
     fi
 }
-
-# Вызов функции для настройки темы VS Code
-vscode_theme
+set_vscode_link
 
 # Функция для настройки Xresources
 xresources_color() {

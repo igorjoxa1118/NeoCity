@@ -1,14 +1,15 @@
-Запуск скрипта: Вс 20 июл 2025 06:38:55 EEST
-Вс 20 июл 2025 06:38:55 EEST: Lock-файл создан. Скрипт запущен.
-Вс 20 июл 2025 06:38:55 EEST: Завершение процессов polybar и eww...
-Вс 20 июл 2025 06:38:55 EEST: Процессы polybar и eww завершены.
-Вс 20 июл 2025 06:38:55 EEST: Настройка Rofi Launcher...
-Вс 20 июл 2025 06:38:55 EEST: Настройка цветов Rofi Launcher...
-Вс 20 июл 2025 06:38:55 EEST: Настройка цветов Rofi Launcher завершена.
-Вс 20 июл 2025 06:38:55 EEST: Настройка Rofi Launcher завершена.
-Вс 20 июл 2025 06:38:56 EEST: Проверка пути: /home/vir0id/.config/i3/src/mpd_scroller.sh
-Вс 20 июл 2025 06:38:56 EEST: Создана резервная копия: /home/vir0id/.config/i3/src/mpd_scroller.sh.bak
-Вс 20 июл 2025 06:38:56 EEST: Обновление цветов в /home/vir0id/.config/i3/src/mpd_scroller.sh
-Вс 20 июл 2025 06:38:56 EEST: Цвета успешно обновлены в /home/vir0id/.config/i3/src/mpd_scroller.sh
-Вс 20 июл 2025 06:38:56 EEST: Скрипт для Mocha успешно завершен!
-Вс 20 июл 2025 06:38:56 EEST: Lock-файл удален.
+Запуск скрипта: Вт 03 мар 2026 05:12:13 EET
+Вт 03 мар 2026 05:12:13 EET: Lock-файл создан. Скрипт запущен.
+Вт 03 мар 2026 05:12:13 EET: Завершение процессов polybar и eww...
+Вт 03 мар 2026 05:12:13 EET: Процессы polybar и eww завершены.
+Вт 03 мар 2026 05:12:13 EET: Настройка Rofi Launcher...
+Вт 03 мар 2026 05:12:13 EET: Настройка цветов Rofi Launcher...
+Вт 03 мар 2026 05:12:13 EET: Настройка цветов Rofi Launcher завершена.
+Вт 03 мар 2026 05:12:13 EET: Настройка Rofi Launcher завершена.
+Вт 03 мар 2026 05:12:14 EET: Alacritty: Найдена тема catppuccin-mocha.toml, ссылка обновлена.
+Вт 03 мар 2026 05:12:14 EET: Проверка пути: /home/vir0id/.config/i3/src/mpd_scroller.sh
+Вт 03 мар 2026 05:12:14 EET: Создана резервная копия: /home/vir0id/.config/i3/src/mpd_scroller.sh.bak
+Вт 03 мар 2026 05:12:14 EET: Обновление цветов в /home/vir0id/.config/i3/src/mpd_scroller.sh
+Вт 03 мар 2026 05:12:14 EET: Цвета успешно обновлены в /home/vir0id/.config/i3/src/mpd_scroller.sh
+Вт 03 мар 2026 05:12:14 EET: Скрипт для Mocha успешно завершен!
+Вт 03 мар 2026 05:12:14 EET: Lock-файл удален.

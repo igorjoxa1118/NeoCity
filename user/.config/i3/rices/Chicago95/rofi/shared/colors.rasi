@@ -1,0 +1,9 @@
+* {
+    background:     #c0c0c0;  /* Silver */
+    background-alt: #dfdfdf;  /* Light Grey */
+    foreground:     #000000;  /* Black */
+    selected:       #000080;  /* Navy Blue */
+    active:         #008000;  /* Green */
+    urgent:         #800000;  /* Maroon */
+    transparent-background: #c0c0c0e6; /* 90% opacity */
+}

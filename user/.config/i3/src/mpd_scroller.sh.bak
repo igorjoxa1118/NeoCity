@@ -6,10 +6,10 @@ SCROLL_LEN=25        # Длина видимой области при скро�
 DELAY=0.3            # Скорость скроллинга (меньше = быстрее)
 PADDING="   "        # Буферные пробелы для плавного скролла
 
-# Цвета (Catppuccin catppuccin-mocha)
+# Цвета Catppuccin Mocha
 COLOR_PLAYING="#a6e3a1"   # Зеленый
-COLOR_PAUSED="#f38ba8"    # Желтый
-COLOR_STOPPED="#f9e2af"   # Красный
+COLOR_PAUSED="#f38ba8"    # Красный
+COLOR_STOPPED="#f9e2af"   # Желтый
 COLOR_OFFLINE="#bac2de"   # Серый
 COLOR_TEXT="#cdd6f4"      # Основной текст
 # ===== ФУНКЦИИ =====

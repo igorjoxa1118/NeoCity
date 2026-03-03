@@ -2,6 +2,11 @@
 
 # Защита от параллельного запуска
 LOCK_FILE="/tmp/mpd_back_time.lock"
+
+if [ -f $LOCK_FILE ]; then
+    rm -rf "$LOCK_FILE"
+fi
+
 exec 9>"$LOCK_FILE"
 flock -n 9 || exit 1
 

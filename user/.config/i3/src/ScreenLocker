@@ -11,6 +11,9 @@
 #	Dependencies - i3lock-color, xkb-switch
 #
 
+# Небольшая задержка для стабилизации
+sleep 0.3
+
 TEMP_IMAGE="/tmp/i3lock.jpg"
 
 # Путь к конфигурационному файлу

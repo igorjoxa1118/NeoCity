@@ -1,4 +1,5 @@
 
+
 /**
  * Rofi Theme File (Catppuccin Mocha Edition)
  * Based on original by Aditya Shakya (adi1090x)
@@ -62,7 +63,7 @@ configuration {
     /* Application colors */
     background-window:           transparent;
     background-normal:           var(base);
-    background-selected:         var(mauve);
+    background-selected:         var(blue);
     foreground-normal:           var(text);
     foreground-selected:         var(base);
 }
@@ -120,7 +121,7 @@ message {
     margin:                      var(message-margin);
     padding:                     var(message-padding);
     border-radius:               var(message-border-radius);
-    background-color:            var(base);
+    background-color:            transparent;
     text-color:                  var(green);
 }
 textbox {
@@ -155,7 +156,7 @@ element {
     enabled:                     true;
     padding:                     var(element-padding);
     border-radius:               var(element-border-radius);
-    background-color:            var(base);
+    background-color:            transparent;
     text-color:                  var(foreground-normal);
     cursor:                      pointer;
 }

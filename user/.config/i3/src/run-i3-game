@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+# run-i3-game — универсальный Steam / Proton wrapper для i3 + NVIDIA
+# Работает с ЛЮБЫМИ играми, без хардкода exe
+
+LOG_FILE="/tmp/game_launcher.log"
+PICOM_CONFIG="$HOME/.config/i3/config.d/picom.conf"
+
+log() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" >> "$LOG_FILE"
+}
+
+log "Game launcher started"
+
+# --- Останавливаем picom ---
+if pgrep -x picom >/dev/null 2>&1; then
+    log "Stopping picom"
+    killall picom
+    while pgrep -x picom >/dev/null 2>&1; do
+        sleep 0.2
+    done
+fi
+
+# --- Переменные окружения ---
+export __NV_PRIME_RENDER_OFFLOAD=1
+export __GL_VENDOR_LIBRARY_NAME=nvidia
+export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0
+
+# --- Добавляем -NoLauncher, если его нет ---
+GAME_ARGS=("$@")
+for arg in "$@"; do
+    [[ "$arg" == "-NoLauncher" ]] && HAS_NO_LAUNCHER=1
+done
+[[ -z "${HAS_NO_LAUNCHER:-}" ]] && GAME_ARGS+=("-NoLauncher")
+
+# --- Сохраняем список Proton/Wine процессов ДО запуска ---
+BEFORE_PIDS=$(pgrep -f 'proton|wine|wine64' | tr '\n' ' ')
+
+# --- Запуск игры (НЕ ждём Steam!) ---
+log "Launching game"
+if command -v gamemoderun >/dev/null 2>&1; then
+    gamemoderun "${GAME_ARGS[@]}" &
+else
+    "${GAME_ARGS[@]}" &
+fi
+
+# --- Ждём появления новых Proton/Wine процессов ---
+log "Waiting for Proton/Wine processes"
+while true; do
+    AFTER_PIDS=$(pgrep -f 'proton|wine|wine64' | tr '\n' ' ')
+    NEW_PIDS=$(comm -13 <(echo "$BEFORE_PIDS" | tr ' ' '\n' | sort) \
+                       <(echo "$AFTER_PIDS"  | tr ' ' '\n' | sort))
+    [[ -n "$NEW_PIDS" ]] && break
+    sleep 0.5
+done
+
+log "Game detected (Proton/Wine running)"
+
+# --- Ждём, пока ВСЕ новые Proton/Wine процессы завершатся ---
+while true; do
+    STILL_RUNNING=0
+    for pid in $NEW_PIDS; do
+        if kill -0 "$pid" 2>/dev/null; then
+            STILL_RUNNING=1
+            break
+        fi
+    done
+    [[ "$STILL_RUNNING" -eq 0 ]] && break
+    sleep 1
+done
+
+log "Game exited, restoring picom"
+
+# --- Возвращаем picom ---
+picom -b --config "$PICOM_CONFIG"
+
+exit 0

@@ -1,0 +1,95 @@
+#!/usr/bin/env bash
+# i3_KeyExtractor - Скрипт для извлечения всех действующих комбинаций клавиш i3.
+# Выводит результат в стандартный вывод (STDOUT).
+
+# --- Переменные (предполагаем стандартные пути) ---
+I3_KEYBINDS_FILE="$HOME/.config/i3/config.d/keybinds.conf"
+I3_GAPS_FILE="$HOME/.config/i3/config.d/gaps.conf"
+I3_SETS_FILE="$HOME/.config/i3/config.d/sets.conf"
+
+# --- Функции ---
+
+# 1. Замена переменных i3 на читаемые символы (Юникод)
+replace_mods() {
+    # Чтение модификаторов из sets.conf для точной замены
+    local MOD=$(grep 'set \$mod' "$I3_SETS_FILE" 2>/dev/null | awk '{print $3}' | sed 's/Mod4//g; s/Mod1//g')
+    local MOD1=$(grep 'set \$mod1' "$I3_SETS_FILE" 2>/dev/null | awk '{print $3}' | sed 's/Mod4//g; s/Mod1//g')
+    
+    # Заменяем переменные и служебные клавиши
+    sed -e "s/\$mod\b/$MOD/g" \
+        -e "s/\$mod1\b/$MOD1/g" \
+        -e 's/Shift/⇧/g' \
+        -e 's/Control/Ctrl/g' \
+        -e 's/Return/⏎/g' \
+        -e 's/Escape/⎋/g' \
+        -e 's/Tab/⇥/g' \
+        -e 's/plus/+/g' \
+        -e 's/minus/-/g' \
+        -e 's/space/ /g' \
+        -e 's/dollar/$/g'
+}
+
+# 2. Основной парсинг bind-команд
+parse_binds() {
+    # 1. Объединяем bindsym из keybinds.conf и gaps.conf.
+    # 2. Удаляем комментарии и пустые строки.
+    # 3. Удаляем "bindsym" в начале строки.
+    cat "$I3_KEYBINDS_FILE" "$I3_GAPS_FILE" 2>/dev/null |
+    grep '^bindsym' |
+    grep -v '^#\|^$' | 
+    sed -E 's/bindsym[[:space:]]+//' |
+    
+    # 4. Обрабатываем и форматируем, используя AWK
+    # Используем конструкцию '\'' для безопасного включения ' внутри блока AWK
+    awk '{
+        hotkey = $1;
+        action = $2;
+        
+        # Собираем оставшуюся часть строки в переменную command
+        command = "";
+        for (i = 3; i <= NF; i++) {
+            command = command (command=="" ? "" : " ") $i;
+        }
+
+        description = command;
+
+        # --- Логика описания ---
+        if (action == "kill" || action == "reload" || action == "exit") {
+            description = action;
+        } 
+        else if (action == "exec") {
+            # Удаляем флаг --no-startup-id
+            sub(/^--no-startup-id[[:space:]]*/, "", description);
+            
+            # Парсинг скриптов $i3_scripts
+            if (description ~ /^\$i3_scripts/) {
+                split(description, a, "/");
+                split(a[length(a)], b, "[[:space:]]+"); 
+                description = b[1];
+                sub(/\.sh$/, "", description); 
+            }
+            
+            # БЕЗОПАСНОЕ УДАЛЕНИЕ КАВЫЧЕК (ИСПОЛЬЗУЕМ БЕЗОПАСНЫЙ СИНТАКСИС)
+            gsub(/"/, "", description);
+            gsub(/'\''/, "", description);
+        }
+        else if (action == "mode") {
+            description = "Mode: " description;
+        }
+        else if (action == "gaps") {
+            description = "Gaps: " command;
+        }
+        else if (action == "resize") {
+            description = "Resize: " command;
+        }
+        
+        # Финальный вывод: HOTKEY | DESCRIPTION
+        printf "%-35s | %s\n", hotkey, description;
+    }'
+}
+
+# --- Основная логика ---
+
+# Выводим заголовок, затем данные, пропущенные через замену модификаторов
+echo "=== I3 KEYBINDINGS EXPORT ==="
+parse_binds | replace_mods
